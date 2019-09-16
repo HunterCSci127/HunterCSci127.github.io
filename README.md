@@ -1,2 +1,3 @@
 # Course website for CSci 127 - Introduction to Computer Science
-## Hunter College of The City University of New York
+
+![alt text](https://github.com/HunterCSci127/HunterCSci127.github.io/blob/master/images/hunter_logo.png "Hunter Logo")
