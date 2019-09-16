@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 1, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2019</title>
+    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 1<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2019<br><br>
+</h2>
+</div>
+
+<div>
+<p>
+This week's lab will introduce strings and lists  in Python and some simple Unix commands.
+
+<p>Software tools needed:  web browser and Python IDLE programming
+environment.
+</div>
+
+<div>
+<h3>Quizzes & Code Reviews</h3>
+
+See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week. 
+
+</div>
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See the <a href="lab0.html">introductory lab</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+</div>
+
+<div>
+<h3>Strings</h3>
+
+<p>A sequence of characters (i.e. letters, numbers, symbols) is called a <tt>string</tt>.  To indicate a string, we use quotes (either single or double, just as long as they match up) to indicate the start and end (a fancier way to say that is:  <i>quotes deliminate the string</i>).  For example, for our first program, we wrote:
+<pre style = "background-color:lavender;width:400px">
+print("Hello, World!")
+</pre>
+<p>
+The string, or sequence of characters, <tt>Hello, World!</tt>, was printed to the screen.  We can also store strings to be used again in the program.  For example,
+<pre style = "background-color:lavender;width:400px">
+greeting = "Hello, World!"
+print(greeting)
+</pre>
+<p>
+creates a location in memory that can be accessed by typing the name (or identifier) that we chose:  <tt>greeting</tt>.  <tt>greeting</tt> stores the string <tt>Hello, World!</tt>.  While the quotes are not stored, we will often write <tt>"Hello, World!"</tt> to make it more clear where the string begins and ends.  When we execute the code above, it will create the variable, <tt>greeting</tt>, and then print out the message:
+<pre style = "background-color:lavender;width:400px">
+Hello, World!
+</pre>
+
+<p>We can use the variable any number of times.  For example, if we wanted to print the message twice, we could use:
+<pre style = "background-color:lavender;width:400px">
+greeting = "Hello, World!"
+print(greeting)
+print(greeting)
+</pre>
+
+</div>
+
+<div>
+<h3>More Useful String Methods</h3>
+
+<p> Since strings are used everywhere, there are many built-in functions for strings.
+<ul>
+	<li> Guess which each does from its name, then
+	<li> Click the forward button in the code window below to see if you guess was correct.
+</ul>
+
+<iframe width="800" height="400" frameborder="10" margin="10" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0A%23Guess%20what%20the%20following%20string%20methods%20do%3A%0A%23%20%20Then%20click%20the%20forward%20button%20to%20see%20how%20you%20did%0A%0Aprint%28greeting.upper%28%29%29%0Aprint%28greeting.lower%28%29%29%0Aprint%28len%28greeting%29%29%0Aprint%28greeting.count%28'o'%29%29%0Aprint%28greeting.count%28'%20'%29%29%0Aprint%28greeting.find%28'll'%29%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+<p> For historic reasons, we start counting at 0, instead of 1, in many computer languages, including Python.  When you use <tt>find()</tt> command on the string ``Hello, World!'', the first character is at 0, the next character at 1, etc.
+
+<p>
+<table border = 1>
+	<tr>
+		<td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+	</tr>
+	<tr>
+		<td>H</td><td>e</td></td><td>l</td><td>l</td><td>o</td><td>,</td><td> </td><td>W</td><td>o</td><td>r</td><td>l</td><td>d</td><td>!</td>
+	</tr>
+</table>
+
+<p>
+The <tt>find()</tt> command gives the location of <tt>"ll"</tt> which is 2 if you start by counting the first character as 0.
+
+</div>
+
+<div>
+
+<h3>Getting Input</h3>
+
+<p>Last week, we used the <tt>print()</tt> function to write messages to the user of our program.  This week, we introduce, <tt>input()</tt>, to get information from the user.  Here's the basic format:
+<pre style = "background-color:lavender;width:450px">
+aString = input("Put a message here to show user: ")
+</pre>
+where the string <tt>"Put a message..."</tt> is replaced by the prompt you would like the user to see and <tt>aString</tt> with the name of the string you are using in your program.
+
+<p> <iframe width="800" height="300" frameborder="10" src="https://pythontutor.com/iframe-embed.html#code=mess%20%3D%20input%28'Please%20enter%20a%20message%3A%20'%29%0Aprint%28%22You%20entered%22,%20mess%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22hi%20mom%22%5D&textReferences=false"> </iframe>
+
+<p>
+
+<p>Let's write a program that combines the asking the user for input with the string commands a the beginning of the lab.  The program will:
+<ol>
+	<li> Prompt the user for a message and store it in the variable, <tt>mess</tt>.
+	<li> Print the message to the screen.
+	<li> Print the message in all capital letters.
+	<li> Print the message in all lower case letters.
+</ol>
+
+<p>
+To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines that begin with '#') that includes your name and a short description of what the program does.
+
+<ol>
+	<li> Next, fill in the code that prompt the user for a message and store it in the variable, <tt>mess</tt> (see the example above).
+	<li> Print the message to the screen (also done in the example above).
+	<li> To print in all capital letters, you can use the <tt>upper()</tt> command (see first example in the lab).
+	<li> Print the message in all lower case in a similar way.
+</ol>
+
+<p>Save your file as you go, and then run it.  Try different messages to make sure it works with different inputs.  When it works, see the <a href="ps.html">Programming Problem List</a>.
+</div>
+
+<div>
+<h4>Looping Through Strings</h4>
+
+
+<p> You can also loop through strings.  Try running the code below:
+
+<p>
+<iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p> Each character has a number assigned to it.  When you write a character, it is converted to its number, and that is stored instead to save space.  Python uses the standard Unicode encoding (which extends the popular ASCII encoding to new symbols and alphabets).  For example, <tt>ord('a')</tt> give the Unicode number for the character, <tt>a</tt>, which is 97.
+<p>Let's look at the Unicode of the characters in our string:
+
+<p>
+<iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c,%20ord%28c%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p>Modify the program to:
+<ul>
+	<li> To prompt the user to enter a string and store it in <tt>myString</tt>, and
+	<li> Only print the ASCII code of each character (instead of the character and its ASCII code)
+</ul>
+When it works, add in your name in a comment, and see the <a href="ps.html">Programming Problem List</a>.
+
+<p>To go the other direction, there's a function <tt>chr()</tt> which takes numbers and returns the corresponding character.  For example, <tt>chr(97)</tt> returns <tt>'a'</tt>.  Let's look at the characters with unicode from 65 to 69:
+
+<p>
+<iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%0Afor%20i%20in%20range%2865,70%29%3A%0A%20%20%20%20print%28i,%20chr%28i%29%29%0A%20%20%20%20%0Aprint%28%22That's%20it%20for%20now!%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p>The <tt>range()</tt> statement has several different options:
+<ul>
+	<li> <tt>range(stop)</tt>:  if you have only a single number in the 		parenthesis, it will generate all the numbers from 0 to <tt>stop-1</tt>.  For example, <tt>range(5)</tt> generates the numbers <tt>0, 1, 2, 3, 4</tt>.
+
+	<li> <tt>range(start, stop)</tt>:  if you have only two numbers in the parenthesis, it will generate all the numbers from start to <tt>stop-1</tt>.  For example, <tt>range(65,70)</tt> generates the numbers <tt>65, 66, 67, 68, 690</tt>	.
+
+	<li> <tt>range(start, stop, step)</tt>:  if you have three numbers in the parenthesis, it will generate all the numbers from start to <tt>stop-1</tt>, increasing by <tt>step</tt> each time.  For example, <tt>range(100,200,10)</tt> generates the numbers <tt>100, 110, 120, 130, 140, 150, 160, 170, 180, 190</tt>.
+</ul>
+
+</div>
+
+
+
+<div>
+<h3>Biomolecular Sequences</h3>
+
+<p> Let's apply what we just learned to some questions from biology.  DNA is a molecule that contains instructions for the cell (<a href="https://en.wikipedia.org/wiki/DNA">wiki</a>).  We can represent it as a string of four characters:  <tt>'A'</tt>, <tt>'C'</tt>, <tt>'G'</tt>, and <tt>'T'</tt> corresponding to the four nucleotides that are the building blocks for the sequences.  For example,
+<pre style = "background-color:lavender;">
+insulin = "AGCCCTCCAGGACAGGCTGCATCAGAAGAGGCCATCAAGCAGGTCTGTTCCAAGGGCCTTTGCGTCAGGTGGGCTCAGGATTCCAGGGTGGCTGGACCCCAGGCCCCAGCTCTGCAGCAGGGAGGACGTGGCTGGGCTCGTGAAGCATGTGGGGGTGAGCCCAGGGGCCCCAAGGCAGGGCACCTGGCCTTCAGCCTGCCTCAGCCCTGC"
+</pre>
+is the start of the <a href="https://www.ncbi.nlm.nih.gov/gene?Db=gene&Cmd=DetailsSearch&Term=3630">DNA sequence for insulin in humans</a>.
+
+<p>We have the tools to compute how long the out sequence is as well as GC-content (the fraction of the sequence that is C and G) which is correlated with the stability of the molecule:
+<ul>
+	<li> First, we compute the length of the sequence.
+	<li> Next, we count the number of <tt>'C'</tt> and number of <tt>'G'</tt>.
+	<li> Next, we add the number of <tt>'C'</tt> and number of <tt>'G'</tt> together, and divide by the length.
+	<li> Then, we convert to a percentage by multiplying by 100 and print out the answer.
+</ul>
+
+<p>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23Initial%20fragment%20of%20insulin%20DNA%20%28h.%20sapiens%29%3A%0Ainsulin%20%3D%20%22AGCCCTCCAGGACAGGCTGCATCAGAAGAGGCCATCAAGCAGGTCTGTTCCAAGGGCCTTTGCGTCAGGTGGGCTCAGGATTCCAGGGTGGCTGGACCCCAGGCCCCAGCTCTGCAGCAGGGAGGACGTGGCTGGGCTCGTGAAGCATGTGGGGGTGAGCCCAGGGGCCCCAAGGCAGGGCACCTGGCCTTCAGCCTGCCTCAGCCCTGC%22%0A%0A%23Compute%20the%20length,%20and%20store%20in%20variable%20to%20use%20again%3A%0Al%20%3D%20len%28insulin%29%0Aprint%28%22The%20length%20is%22,%20l%29%0A%0A%23Compute%20amount%20of%20C%20and%20G%20in%20the%20sequence%3A%0AnumC%20%3D%20insulin.count%28'C'%29%0AnumG%20%3D%20insulin.count%28'G'%29%0Aprint%28'Number%20of%20C%20nucleotides',%20numC%29%0Aprint%28'Number%20of%20G%20nucleotides',%20numG%29%0A%0A%23Compute%20the%20GC-content%3A%0Agc%20%3D%20%28numC%20%2B%20numG%29%20/%20l%0A%23Convert%20to%20percentage%20by%20multiplying%20by%20100%3A%0AgcPercent%20%3D%20gc%20*%20100%0Aprint%28'GC-content%20is',%20gcPercent%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<!--
+<p>
+A useful way to view a sequence is in groups of 3 nucleotides, or codons.  How can we do this?
+-->
+
+
+</div>
+<!--
+<div>
+
+<h3>Acronyms</h3>
+
+<p>
+It is often quite useful to break a string into pieces, and work with those pieces, instead of the whole string.  Below is a simple example that foreshadows later programs that we will write for real data sets.
+
+<p> We will write a program that takes a phrase and creates an acronym of the phrase:  that is, the first letter of each word.
+
+<p>Let's break this into steps:
+<ol>
+	<li> Prompt for a phrase & read it in.
+	<li> Make the prhase upper case.
+	<li> Split up the phrase into words.
+	<li> Take the first letter of each work split (after split, print out each part, show as a list), concatendation, and make an acronym of it (turn in as program)
+
+<pre>
+Enter a phrase:  City University New York
+Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
+Acronym:  CUNY
+</pre>
+
+</div>
+
+
+
+<h3>Natural Language Program?</h3>
+
+<p>  Something that works with strings and patterns in language (maybe just focus on generation) and leads into the mad lib from Colgate (give as the homework).
+
+<p> Compute percentage of vowels-- similar to computing CG content in biology
+queuing
+
+
+<p>From http://cs.colgate.edu/~mhay/cosc101sp15/hw/02/hw2.pdf:
+<pre>
+Program 1: Mad libs
+Write a short program that asks for a noun (string) and two verbs (both strings). (You can assume that both verbs are in third person form.) Using the three inputs, your program should print the sentence:
+If it <verb 1> like a <noun> and <verb 2> like a <noun>, it probably is a <noun>.
+Below is an example execution of the program where the user types “duck,” “walks”, and “talks.”:
+What s the noun? duck
+What s the first verb? walks
+What s the second verb? talks
+If it walks like a duck and talks like a duck, it probably is a duck.
+A second example where the user types “loon,” “swims,” and “dives.”: 1
+What s the noun? loon
+What s the first verb? swims
+What s the second verb? dives
+If it swims like a loon and dives like a loon, it probably is a loon.
+</pre>
+-->
+</div>
+
+<div>
+<h3>Looping Through Strings, Revisited</h3>
+
+<p>There's another way we can loop through strings, using the index of each character.  Let's assume that we have:
+<pre style = "background-color:lavender;width:400px">
+greeting = "Hello, World!"
+</pre>
+Before, we printed out the whole string with:
+<pre style = "background-color:lavender;width:400px">
+print(greeting)
+</pre>
+If we wanted to print out only the first letter, we could write:
+<pre style = "background-color:lavender;width:400px">
+print(greeting[0])
+</pre>
+where the number between the square brackets is the index of the character, in this case, 0, or the very first character of the string.
+
+<p>Try guessing what the following code does and then running it:
+
+<p>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0Aprint%28greeting%5B0%5D%29%0Aprint%28greeting%5B1%5D%29%0Aprint%28greeting%5B2%5D%29%0Aprint%28greeting%5B-1%5D%29%0A%0Afor%20j%20in%20range%285%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%0A%20%20%20%20%0Afor%20j%20in%20range%28len%28greeting%29%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%280,10,2%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%2810,0,-1%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+</div>
+
+
+
+
+
+<div>
+<h3> More on Files & Command Line Interface</h3>
+
+<p>
+The terminal has its own set of commands (separate from Python) that we can use to communicate with the operating system.  It's often called the <b>command line interface</b> or shell.  It predates the graphical interface that is now available and is incredibly useful for automating tasks and working on remote servers.  We will slowly introduce shell commands over the course of the semester and eventually incorporate them into some programming assignments.
+
+
+
+<p>
+We have already used the shell in the previous lab.  When you typed:
+<pre style = "background-color:lavender;width:400px">
+$  idle
+</pre>
+you were asking the operating system to launch the program <tt>idle3</tt>.  The laptop was configured to first look in folders containing applications, and then to check your home folder, and then to check the current folder you are using to find an application by that name.
+
+<p>
+Let's create a new <b>directory</b>, or folder, to hold your images (using the shell or command line).  Where it says <tt>thomasH</tt> below, replace with your name.  It is easier if you avoid spaces in the names:
+<ul>
+	<li>  Open a new terminal window (go to the upper left menu icon, search for terminal and click, or if you already have terminal, you can click on its menu to create a new window).
+	<li>  In the terminal window, type:
+	<pre style = "background-color:lavender;width:400px">
+$ pwd</pre>
+	(The <tt>$</tt> represents the prompt at the command line-- no need to type it.)
+	
+	<p>This tell you the <b>path</b>, or location, of your current working directory.  To see what is in the folder, you request a 'listing':
+	<pre style = "background-color:lavender;width:400px">
+$ ls</pre>
+	<li> To add a new directory, we type:
+	<pre style = "background-color:lavender;width:400px">
+$ mkdir thomasH</pre>
+	(replace <tt>thomasH</tt> with your name to create a directory for you!).
+
+	<p>
+	Now, when we list the current directory, we should new item (namely the  directory with your name):
+<pre style = "background-color:lavender;width:400px">
+$ ls</pre>
+
+	<li> Let's change directories:
+<pre style = "background-color:lavender;width:400px">
+$ cd thomasH</pre>
+	If we ask for a listing (<tt>ls</tt>), we will now see the contents of your directory.
+</ul>
+The graphical interface and shell are operating on the same underlying system, so, changes you make with one can be seen by the other.  If you open up the file
+icon (on left hand menu bar) and click the <tt>Home</tt> directory, you will see the folder you just created.
+
+<p> In the next lab, we will explain how to copy and move files between directories.
+
+</div>
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+
+</div>
+
+
+</html>
