@@ -1,0 +1,76 @@
+body {
+	font: sans-serif;
+	background-color: #ddddff;
+}
+
+div {
+	background-color: white;
+	padding: 10px;
+	margin: 10px;
+}
+
+#header {
+	padding: 0px;
+	padding-left: 10px;
+}
+
+#footer {
+	clear: both;
+	font-size: small;
+	text-align: right;
+}
+
+#bookImage {
+	float : left;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+#bookImageRight {
+	float : right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+#cunyImg {
+	float : right;
+	padding: 25px;
+}
+
+th { 
+	text-align: right;
+}
+
+.handouts {
+	border: thin black;
+	border-collapse: collapse;
+}
+
+.announcement {
+	color: red;
+	text-align: center;
+}
+
+.targetDate {
+	font-style: italic;
+	color: #6677ff;
+}
+
+.deadline {
+	font-style: italic;
+	color: #2211ff;
+}
+
+#papers table {
+	margin-left : 5%;
+	margin-right: 5%;
+}
+
+#papers table td,th {
+	padding-top : 15px;
+	padding-right : 15px;
+}
+
+td,th {
+	padding-top : 0px;
+}
