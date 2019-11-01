@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 12, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2017</title>
+    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 12<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2017<br><br>
+</h2>
+</div>
+
+<div>
+
+<p>
+Today's lab will introduce C++.  
+
+<p>Software tools needed:  web browser and the C++ compiler, <tt>g++</tt> and a graphical editor, such as <tt>gEdit</tt>.
+
+
+
+</div>
+
+<div>
+<h3>Using <tt>gcc</tt></h3>
+
+<p> We will be using the 'Gnu Compiler Collection' (aka 'Gnu C Compiler'), or <tt>gcc</tt>, for our C++ programs.  Originally designed for C programs, it was extended to include C++ programs and is one of the most common compilers for C/C++.  The command, <a href="https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html">g++</a> calls <tt>gcc</tt> and automatically specifies the C++ library and treats all files as C++ (instead of the default as C files).
+
+<p>For C/C++ programs, we will do the following steps, at the command line:
+<ul>
+	<li> <pre style = "background-color:lavender;width:350px">gedit hello.cpp</pre>  <br>Opens the gEdit editor with the file <tt>hello.cpp</tt>
+	<li> <pre style = "background-color:lavender;width:350px">g++ hello.cpp -o hello</pre> <br>Compiles <tt>hello.cpp</tt> and store the executable in the ouput file <tt>hello</tt>
+	<li> <pre style = "background-color:lavender;width:350px">./hello</pre> <br> Runs the executable file, <tt>hello</tt>
+</ul>
+
+</div>
+
+
+<div>
+<h3>Hello World</h3>
+
+<p>Let's write our first program that will say "Hello, World!".  You can copy or type the program below into a editor window (either launch <tt>gEdit</tt> from the command line or open via the menu).  Text after the '//' is a comment (just like the '#' in Python).  You should keep the first 3 lines of comments for gradescope:
+
+<pre style = "background-color:lavender;width:500px">
+//Name:  Your name here
+//Date:  November 2017
+//My first program in C++
+
+#include &lt;iostream&gt;  //The built-in library for input/output
+using namespace std; //The names of standard definitions
+
+int main ()          //C++ programs all have a main() function
+{
+  cout << "Hello, World!";  
+                     //Print "Hello, World!" to the terminal
+  return 0;          //Standard way to end function 
+}</pre>
+
+<p>Let's go through line-by-line:
+
+<ul>
+	<li> <pre style = "background-color:lavender;width:500px">
+//Name:  Your name here
+//Date:  November 2017
+//My first program in C++
+</pre>
+	These three lines are comments, containing information about the program.
+
+	<li> <pre style = "background-color:lavender;width:500px">
+#include &lt;iostream&gt;  //The built-in library for input/output
+using namespace std; //The names of standard definitions
+</pre>
+	These two lines include commands that allow you to print to the screen and read input that the user has entered, using standard names and defintions.
+	The <tt>#include</tt> statement is similar in functionality to the <tt>import</tt> statements in Python.
+
+	<li> <pre style = "background-color:lavender;width:500px">
+int main ()          //C++ programs all have a main() function
+</pre>
+	Code in C++ programs occurs in functions.  Each program is expected to have a <tt>main()</tt> function that is called (invoked) when the program is run.  The <tt>int</tt> before the function name is what type of data is returned when the function ends.  In this case, the function will return an <tt>int</tt> or integer value.
+
+
+	<li> <pre style = "background-color:lavender;width:500px">
+{
+</pre>
+	C++ uses the curly brackets ('{' and '}') to indicate blocks of code, instead of indenting.  Indenting code is considered good style, but you have more freedom to decide how much to indent versus Python.  For function definitions and multiple lines of code in a block, the use of the brackets is required.
+
+	<li> <pre style = "background-color:lavender;width:500px">
+  cout << "Hello, World!";  
+                     //Print "Hello, World!" to the terminal
+</pre>
+	<tt>cout &lt;&lt;</tt> is used for printing to the terminal.
+	Note that, as a general rule, command line in C++ ends in a semi-colon.
+	
+	<li> <pre style = "background-color:lavender;width:500px">
+  return 0;          //Standard way to end function 
+</pre>
+
+	When this function ends, it returns the integer 0, a common value for a program ending normally.
+	<li> <pre style = "background-color:lavender;width:500px">
+}</pre>
+
+	The closing bracket for the definition of the function, <tt>main()</tt>.  All opening brackets must have a matching closing bracket.
+
+</ul>
+
+
+<p>Once you have it typed in, try compiling the program:
+<pre style = "background-color:lavender;width:350px">g++ hello.cpp -o hello</pre> 
+
+When it returns without an error, you can run it by typing:
+<pre style = "background-color:lavender;width:350px">./hello</pre> 
+
+<p>When it compiles, and runs correctly (i.e. printing "Hello, World!" to the screen), see the <a href="ps.html">Programming Problem List</a>.
+
+
+</div>
+
+<div>
+<h3>Simple I/O & Variables in C++</h3>
+
+Unlike Python, you must declare variables before using them.  For example, if you want a variable to hold the year, you would first declare it (i.e. request space for it):
+<pre style = "background-color:lavender;width:450px">
+int year;
+</pre>
+
+<pre style = "background-color:lavender;width:450px">
+//Another C++ program, demonstrating variables
+#include &lt;iostream&gt;
+using namespace std;
+
+int main () 
+{
+  int year;
+  cout << "Enter a number: ";
+  cin >> year;
+  cout << "Hello" << year << "!!\n\n";
+  return 0; 
+}</pre>
+
+<p>For each variable, we need to specify what type of variable it is (whole number, real number, character, etc.) before we use it.  For real numbers, we can use <tt>float</tt>, as in Python.  We will introduce more data types next lab, but if you are curious, here is a <a href="https://www.tutorialspoint.com/cplusplus/cpp_variable_types.htm">chart</a> of some common types.  Our program above:
+<ul>
+	<li> Declares the variable <tt>year</tt> to be a whole number (integer).
+	<li> Asks the user for a number. 
+	<li> Reads in the number the user entered and stores it in <tt>year</tt>.
+	<li> Prints out a messsage with that number.
+	<li> Ends the function (returning 0).
+</ul>
+
+<p>To summarize:  <tt>cin</tt> is for input to the program, and <tt>cout</tt> is output from the program.
+
+<p> How could you modify this program to ask the user for a real (floating-point number)?  Most arithmetic works the same in C++ as it does in Python.  With this in mind, modify the above program to convert kilometers to miles.  (Hint:  see the <a href="ps.html">Programming Problem List</a>.) 
+
+</div>
+
+
+<div>
+<h3>Definite Loops in C++</h3>
+
+<p>C++ has for-loops that have are similar, but not identical to for-loops in Python.  The basic format is:
+<pre style = "background-color:lavender;width:450px">
+int i;
+
+for (i = 0; i < 10; i++)
+{
+   command1
+   command2
+   ...
+}
+</pre>
+<p> For the loop above, 
+<ol>
+	<li> The variable <tt>i</tt> first takes on the value 0.  
+	<li> Next, check if the variable <tt>i < 10</tt>?  
+	<li> If no, leave the loop.
+	<li> If yes, do the commands in the body of the loop.
+	<li> Add one to the variable <tt>i</tt> (abbreviated:  <tt>i++</tt>).
+	<li> Go to #2.
+</ol>
+
+<p>Let's use a loop to write "Hello, World!" to the screen 10 times:
+
+<pre style = "background-color:lavender;width:500px">
+//Name:  Your name here
+//Date:  November 2017
+//Prints "Hello, World!" 10 times, using a loop
+
+#include &lt;iostream&gt;            
+using namespace std; 
+
+int main ()          
+{
+  int i;   //The index variable for the loop
+  
+  //Loop will repeat 10 times:
+  for (i = 0; i < 10; i++)
+  {
+    cout << "Hello, World!\n";  
+  }       
+  return 0;          
+}</pre>
+
+<p> Note that <tt>cout</tt> doesn't automatically put output on a newline, so, we need to include the new line character ("\n") at the end of the line.
+
+<p> Follow the steps above to compile and run your program.
+
+<p> Next, modify the program so that it will print 10 times: the Hunter College motto ("Mihi cura futuri" which translates to: "The care of the future is mine") .
+
+<p>When it compiles, and runs correctly, see the <a href="ps.html">Programming Problem List</a>.
+
+</div>
+
+<div>
+<h3>More Useful Unix Commands</h3>
+
+<p>
+Now that we are creating executable programs, it's often useful to figure out what kind of file is in your directory.  For example, if you were not sure what type of file, <tt>hello</tt> is, you could type at the command line:
+<pre style = "background-color:lavender;width:500px">
+file hello
+</pre>
+<tt>file</tt> is the name of the command, and <tt>hello</tt> is the input parameter to the command.  If you would like to find out the type of several 
+files, you could type each separately:
+<pre style = "background-color:lavender;width:500px">
+file hello hello.cpp hello.py
+</pre>
+(assuming all of those files are your working directory).
+
+<p>Or, you could use a "wildcard" that matches all files whose names match a pattern.  For example: 
+<pre style = "background-color:lavender;width:500px">
+file hello*
+</pre>
+will tell you all type of every file that begins with the <tt>hello</tt>.
+
+<p>
+Similarly, 
+<pre style = "background-color:lavender;width:500px">
+file *
+</pre>
+will tell you all type of every file in your current working directory.
+
+</div>
+
+
+<div>
+<h3>In-class Quiz</h3>
+
+During lab, there is a <a href="quizzes.html">quiz</a>.  The password to access the quiz will be given during lab.  To complete the quiz, log on to Blackboard (see <a href="lab1.html">Lab 1</a> for details on using Blackboard).
+
+</div>
+
+<div>
+<h3>Getting g++ on Your Machine</h3>
+
+<p>
+We are using the <tt>gcc</tt> compiler for the C/C++ programming languages, which is freely available.  We include directions below for downloading on your machine:
+
+<ul>
+	<li> <b>Linux</b>:  To get the most up-to-date version, first type:
+	<pre style = "background-color:lavender;width:500px">
+sudo apt-get update
+</pre>
+	to update the package list, and then
+	<pre style = "background-color:lavender;width:500px">
+sudo apt-get install g++
+</pre>	
+	to install g++ and associated libraries and packages.
+	
+	<li> <b>Mac OSX</b>:  The compiler comes with the Mac's XCode tools package.  You can download XCode from the <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store</a>.
+	<li> <b>Windows</b>:  A popular distribution of <tt>gcc</tt> for Windows is <a href="http://www.mingw.org">Minimalist GNU for Windows</a> (see <a href="https://gcc.gnu.org/install/binaries.html">GNU List</a> for other distributions).
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+
+</div>
+
+
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 11, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2017</title>
+    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 11<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2017<br><br>
+</h2>
+</div>
+
+<div>
+
+<p>
+Today's lab will introduce a simplified machine language.
+
+<p>Software tools needed:  web browser and a graphical editor, such as <tt>gEdit</tt>.
+
+<p>References:  
+<ul>
+	<li> <a href="http://rivoire.cs.sonoma.edu/cs351/wemips/">WeMIPS Emulator</a>
+	<li> <a href="http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html">U Idaho reference sheet</a>
+	<li> <a href="https://cs.gmu.edu/~setia/cs365-S02/class3.pdf">Setia's slides</a>
+	<li> <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">Wikibooks</a></div>
+</ul>
+</div>
+
+
+<div>
+<h3>Simplified Machine Language</h3>
+
+<p> In today's lab, we will explore a programming language that is very "low level" in that it maps very closely to the actual commands that are used by the computer's processor.
+
+<p> We will use an emulator, <a href="http://rivoire.cs.sonoma.edu/cs351/wemips/">WeMIPS</a>, to emulate what a machine-level language would do for a popular class of computer processors, MIPS.  Processors with <a href="">MIPS</a> are a Reduced Instructor Set Computer (RISC), meaning they have fewer different types of instructions that the processor knows (and thus fewer that have to be implemented, leading to faster processors).
+
+<p>
+Let's start by looking at a program that will print "Hello World":
+
+<p> <img src = "mipsHello.png" width = 100%>
+
+
+<p> If you would like to follow along, using the 
+<a href="http://rivoire.cs.sonoma.edu/cs351/wemips/">emulator</a>, open the window and toggle the "Show/Hide Demos" button and then click on the "Hello World" demo.
+
+<p> Just as we did with PythonTutor, we can "step" or go through the code line-by-line to see what it does:
+
+<ul>
+	<li> The first line is a comment.  Like in Python, everything after a '#' on a line is ignored by the simulator.
+	<li> The next line says to add -13 to <tt>$sp</tt>, which stands for the stack pointer.  The stack is a region of memory where we can store information (it is very common-- more details in future computer science courses). <br>
+	We are using 13, because to allow enough room to store the message "Hello World" (plus a null character to signal the end of the string).
+	<li> The next line, <tt>SB $t0, 0($sp)</tt> moves the number we stored to the register <tt>$t0</tt> to the stack pointer address (with 0 offset).  Since it is moving a byte of information, <tt>SB</tt> stands for "Store Byte".
+	<li> We repeat with each letter in our message, loading it to register <tt>$t0</tt> and then moving the contents of that register to the next empty memory location.  This contninues until the entire message is loaded.
+	<li> Next, we place 4 into the register <tt>$t0</tt>.  That register is used to tell the simulator what type of system call we would like to make.  4 is used for printing strings.
+	<li> Next, we place the location of the start of our message in <tt>$a0</tt> (that's where the system looks for the location of the string to print).
+	<li> Lastly, we call <tt>syscall</tt>.  Since we have loaded 4 into <tt>$t0</tt>, it will print whatever string starts at the memory location in <tt>$a0</tt>.
+	<li> If the messages are not displaying, toggle to the "Log".  You will see the message in green on the stack.
+</ul>
+
+<p>Try changing the program in the WeMIPS window to print out "Mihi cura futuri".  Once it does, copy the program into a text window:
+
+<pre style = "background-color:lavender;width:500px">
+#YOUR NAME HERE
+#My first MIPS program that prints: Mihi cura futuri
+
+... put your machine language program here ....
+
+</pre>
+
+and see the <a href="ps.html">Programming Problem List</a>.
+
+
+<h4>Loops in Machine Language</h4>
+
+<p> To create loops in our machine language, we use two additional instructions:
+
+<ul>
+	<li> <tt>BEQ</tt> or "Branch When Equal" which, when two values are equal, lets you go to a different part of the program (which you specify), and
+	<li> <tt>J</tt> or "J" which always go to a different part of the program, and is incredibly useful for setting up loops.
+</ul>
+
+Here is a sample of setting up loops in the MIPS machine language (you can copy it into the emulator to step through the code):
+
+<pre style = "background-color:lavender;width:450px">
+#Sample program that loops from 10 down to 0
+ADDI $s0, $zero, 10 #set s0 to 10
+ADDI $s1, $zero, 1  #use to decrement counter, $s0
+AGAIN: SUB $s0, $s0, $s1
+BEQ $s0, $zero, DONE
+J AGAIN
+DONE:  #To break out of the loop
+</pre>
+
+Here's a translation of the code into pseudocode:
+<ol>
+	<li> Set <tt>$s0</tt> to 10.
+	<li> Set <tt>$s1</tt> to 1.
+	<li> Subtract <tt>$s1</tt> from <tt>$s0</tt> and store result in <tt>$s0</tt> (i.e. <tt>$s0 = $s0 - $s1</tt>).
+	<li> If <tt>$s0</tt> equals 0, go to line 6.
+	<li> Else, go back to Line 3 and repeat.
+	<li> Program ends here.
+</ol>
+
+<p>
+This program counts down from 10 to 0.  How could you modify it to count from 1 to 10?  When you have it running, see the <a href="ps.html">Programming Problem List</a>.
+
+<p>(Hint:  store the value 10 in a register to use in the comparison)
+
+<h4>Challenge</h4>
+
+<img src="mipsInteractive.png" height = 200>
+
+<p>As a final machine language challenge, modify the "Interactive" demo (the first lines are in the image above) to use the <i>current year</i> when computing the ages.  When you have it running, see the <a href="ps.html">Programming Problem List</a>.
+
+</div>
+
+<div>
+<h3>A Note on Grading Simplified Machine Language</h3>
+
+
+
+<p>We're going to use just a few commands that move values into registers (physical memory locations), do simple arithmetic, and jump (or branch) to another part of our program.  
+
+<p> Explain stack pointer
+
+<p> To print out numbers from 10 to 0, loop with sub, plus print
+
+
+
+<p>There are many commands that can be used in the full MIPS machine language.  We are working with only a few of them:
+
+	<blockquote>
+	ADD,
+	ADDI,
+	ADDIU,
+	BEQ,
+	J,
+	SB,
+	SUB,
+	SUBU,
+	syscall
+	</blockquote>
+
+As such, the grading script only recognizes the commands above and the '#' style comments.  Anything else will confuse it greatly.  
+
+
+<p>The general format for simplified machine language programs is:
+
+<pre style = "background-color:lavender;width:450px">
+#YOUR NAME HERE
+#My first MIPS program that prints: Mihi cura futuri
+
+Code goes here...
+</pre>
+
+<p>To submit your program for grading:
+<ul>
+	<li> Run and debug your program using <a href="http://rivoire.cs.sonoma.edu/cs351/wemips/">WeMIPS</a>
+	<li> Once it works, copy the text into a text editor and save.  Make sure your file has a comment at the top with your name.
+	<li> Drag and drop the text file onto the <a href="http://gradescope.com">gradescope</a> page for the given program.
+</ul>
+
+</div>
+
+
+<div>
+<h3>More on Unix:  Using Pipes</h3>
+
+<p> In <a href="lab6.html">Lab 6</a>, we introduced making short programs, or scripts, of Unix commands.  In this lab, we introduce a very useful construct to let you glue together simple commands to perform more complex actions.
+
+<p> The command '|' is called a <b>pipe</b> since it takes the data flowing out of a command and directs it to flow into the next command, much like a pipe directing the flow of water.
+
+<p> For example, if you type:
+<pre style = "background-color:lavender;width:450px">
+ls -l
+</pre>
+at the prompt, you will see the 'long' listing for every file in your current directory. (Note that it's the letter "L", not the number "1" that it looks like on some browsers).  For example, if I ran this command in my directory for Program 20, I get:
+<p>
+<img src="lsScreenshot.png" width=600>
+
+<p> showing 7 files, 6 of which were created in October.  Names with '/' after them are directories or folders.  '*' indicates files that can be executed (see <a href="lab6.html">Lab 6</a> for how to change the permissions of a file).
+
+<p> Let's use a pipe to count the number of files from October.  First, we need to take the output from <tt>ls</tt> and direct it into a program that can find patterns.  A popular one on Unix is called <tt>grep</tt> (it searches for patterns, which are also called regular expressions or 're'-- the name comes from global search for regular expressions program).  Let's have it look for 'Oct':
+<pre style = "background-color:lavender;width:450px">
+ls -l | grep "Oct"
+</pre>
+<p> Note that between the <tt>ls -l</tt> and the <tt>grep "Oct"</tt> is a pipe ('|') that directs the outflow from the <tt>ls</tt> command to the inflow of the <tt>grep</tt> command:
+
+<p><img src="lsGrep.png" width=600>
+
+<p>We can use the pipe to take the output of the <tt>grep</tt> command and send it to a program that counts the number of lines.  This program, <tt>wc</tt>, counts characters, words, and lines.  We'll use the <tt>-l</tt> option to count lines:
+
+<pre style = "background-color:lavender;width:450px">
+ls -l | grep "Oct" | wc -l
+</pre>
+
+<p> which gives:
+<p><img src="lsGrepWC.png" width=600>
+
+<p>the number of files in the directory that were last modified.
+
+<p> How could you make a script that counted the number of <tt>.py</tt> files in the directory?  
+
+<p> When you have the answer, put the single line into a script.  Remember to use <tt>Unix</tt> end-of-lines, since gradescope will run what you submit as a Unix script and will be very confused if you have non-Unix (i.e. Windows-style) end-of-lines.  See <a href="ps.html">Programming Problem List</a>.
+
+</div>
+
+   
+
+<div>
+<h3>In-class Quiz</h3>
+
+During lab, there is a <a href="quizzes.html">quiz</a>.  The password to access the quiz will be given during lab.  To complete the quiz, log on to Blackboard (see <a href="lab1.html">Lab 1</a> for details on using Blackboard).
+
+</div>
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+
+</div>
+
+
+
+</html>
