@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Lab 4, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2020</title>
-    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+    <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
 <div id="header">
@@ -246,15 +246,15 @@ For the last part of the lab, let's combine what we have learned about images an
 
 <p> We used their grid extract option on the New York City region:
 
-<p><img src="../f17/gridExtract.png" width=600>
+<p><img src="../images/gridExtract.png" width=600>
 
-<p>to download the elevations for the box bounded by the red dotted line (in 3-second resolution mode).  We then removed the top lines of metadata to create a file, <a href="../f17/elevationsNYC.txt">elevationsNYC.txt</a> of 417 rows with 469 values in each row.
+<p>to download the elevations for the box bounded by the red dotted line (in 3-second resolution mode).  We then removed the top lines of metadata to create a file, <a href="../images/elevationsNYC.txt">elevationsNYC.txt</a> of 417 rows with 469 values in each row.
 
 <p>Using <tt>numpy</tt>, we can look at the data with a default 'color map' that assigns blue to smaller values in the grid (or array) and red to the larger values:
 
 <ol>
 	<li> Create a folder to hold your work (see <a href="lab2.html">Lab 2</a> for directions for doing so from the command line).
-	<li> Download <a href="../f17/elevationsNYC.txt">elevationsNYC.txt</a> and save to your folder (you may need to move it from your <tt>Downloads</tt> folder).
+	<li> Download <a href="../images/elevationsNYC.txt">elevationsNYC.txt</a> and save to your folder (you may need to move it from your <tt>Downloads</tt> folder).
 	<li> Open IDLE, and create the following short program:
 	<pre style = "background-color:lavender;width:600px">
 # Name:  ... your name here ...
@@ -279,8 +279,8 @@ plt.show()
 
 <p>Comparing the NOAA image with the one you created:
 
-<p><img src="../f17/gridExtract.png" height=350>
-<img src="../f17/elevColorMap.png" height=350>
+<p><img src="../images/gridExtract.png" height=350>
+<img src="../images/elevColorMap.png" height=350>
 
 <p> you can see the Hudson River and New York Harbor (bright blue) and the ridges of the Palisades along the Hudson and mountains in Staten Island and western New Jersey in yellow and red.
 
@@ -314,10 +314,10 @@ We can use this data to make a flood map of New York City.  When Hurricane Sandy
 <p>We'll use a very simple (but a bit garish) color scheme, with our "blue" being 0% red, 0% green, and 100% blue.  And similarly, the "red" and the "green" we'll use will be 100% of each, 0% of the others, giving a map like:
 
 <p>
-<img src = "../f17/floodMap.png">
+<img src = "../images/floodMap.png">
 
 
-<p>Here's the code, implementing our outline below.  Copy it into an IDLE window and run it.  It expects that the file <a href="../f17/elevationsNYC.txt">elevationsNYC.txt</a> is in the same directory as your program.
+<p>Here's the code, implementing our outline below.  Copy it into an IDLE window and run it.  It expects that the file <a href="../images/elevationsNYC.txt">elevationsNYC.txt</a> is in the same directory as your program.
 <pre style = "background-color:lavender;width:600px">
 # Name:  ... your name here ...
 # Email: ... your email here ...
@@ -367,7 +367,7 @@ plt.imsave('floodMap.png', floodMap)
 <a href="ps.html">Programming Problem List</a>.
 
 <p>
-<img src = "../f17/floodMap2.png">
+<img src = "../images/floodMap2.png">
 
 </div>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Lab 6, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2020</title>
-    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+    <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
 
@@ -78,7 +78,7 @@ the plotting commands without having to write <tt>matplotlib.pyplot</tt> everyti
 The <tt>as pd</tt> allows us to use pandas commands without writing out <tt>pandas</tt> everytime-- we just write <tt>pd</tt>.
 
 <p>
-Next, save the <a href="../f17/nycHistPop.csv">NYC historical population data</a> to the same directory as your program.
+Next, save the <a href="../images/nycHistPop.csv">NYC historical population data</a> to the same directory as your program.
 This is a "<i>comma separated values</i>" file-- which is a plain text file containing spreadsheet data, with commas separating the different columns (thus, the name).
 Here's the first 10 lines of the file:
 <pre style = "background-color:lavender;width:600px">
@@ -112,7 +112,7 @@ pop.plot(x="Year")
 
 which makes a graphical display of all of the data series in the variable <tt>pop</tt> with the series corresponding to the column "Year" as the x-axis.  Your output should look something like:
 <p>
-<img src="../f17/nycHist.png" height = 400>
+<img src="../images/nycHist.png" height = 400>
 
 <p>
 To recap:  our program is:
@@ -201,7 +201,7 @@ We can save it to a file, by storing the current figure (via "get current figure
 
 shown in the following plot:
 <p>
-<img src="../f17/bronxFraction.png" height = 400>
+<img src="../images/bronxFraction.png" height = 400>
 
 <p>
 Putting this altogether, we have a program:

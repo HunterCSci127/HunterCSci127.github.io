@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Lab 3, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2020</title>
-    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+    <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
 
@@ -167,7 +167,7 @@ for i in range(0,255,10):
 <p>
 The resulting graphics window is:
 <p>
-<img height=400 src="../f17/shadesOfRed.png">
+<img height=400 src="../images/shadesOfRed.png">
 
 <p>
 How would you show shades of blue?  When you have figured out the answer, see the <a href="ps.html">Programming Problem List</a>.
@@ -183,7 +183,7 @@ A common way to represent colors is using hexadecimal numbers.  Our traditional 
 <p> A good way to think about it is to think about what the world would be like if everyone had 8 fingers on each hand, instead of 5.  When we count, on 10 fingers, we can use the symbols 0, 1, 2, ..., 9 to label each finger:
 
 <p>
-<img src="../f17/hands10.png" style="padding:25px">
+<img src="../images/hands10.png" style="padding:25px">
 <br>
 (from <a href ="http://www.i-programmer.info/babbages-bag/478-hexadecimal.html">i-programmer.info</a>)
 
@@ -191,7 +191,7 @@ A common way to represent colors is using hexadecimal numbers.  Our traditional 
 Doing the same for 16 fingers, we use 0, 1, 2, ..., 9, and then A, B, ..., E when we run out of the normal symbols for numbers:
 
 <p>
-<img src="../f17/hands16.png" style="padding:25px">
+<img src="../images/hands16.png" style="padding:25px">
 <br>
 (from <a href ="http://www.i-programmer.info/babbages-bag/478-hexadecimal.html">i-programmer.info</a>)
 
@@ -204,7 +204,7 @@ The first 9 numbers are the same in both decimal and hexadecimal, but larger num
 
 <p>For example, here are some shades of blue, given with their name and hexadecimal value:
 <p>
-<a href="http://www.w3schools.com/colors/colors_hex.asp"><img src="../f17/blues.png" ></a>
+<a href="http://www.w3schools.com/colors/colors_hex.asp"><img src="../images/blues.png" ></a>
 </p>
 
 <p>
@@ -230,7 +230,7 @@ thea.color("#0000CD")
 <p>
 producing a graphics window with:
 <p>
-<img src="../f17/medBlueTurtle.png" style="padding:25px">
+<img src="../images/medBlueTurtle.png" style="padding:25px">
 
 <p>
 The code above always produces a medium blue turtle.  How would you modify the program to let the user specify a hex code for the color of the turtle?
@@ -251,12 +251,12 @@ There are many different formats to store images.  Some store the information ab
 The <a href="http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">textbook</a> has a lovely visualization and explanation:
 
 <p>
-<img src="../f17/thinkGrid.png">
+<img src="../images/thinkGrid.png">
 
 <p> To specify a given pixel, you give its row, <tt>r</tt>, and column, <tt>c</tt>, in the grid.  Counting from the upper left hand corner which has index 0,0.  This is unlike standard Cartesian (math) coordinates but echos how
 matrices are often accessed.
 
-<p><img src="../f17/sic-imageplanes.png" height= 300 align="right">
+<p><img src="../images/sic-imageplanes.png" height= 300 align="right">
 Each pixel is represented by its the percentage of red, green, and blue ("RGB") values. Images are stored as a grid of red values, a grid of green values, and a grid of blue
 values.
 
@@ -283,7 +283,7 @@ where the <tt>r</tt> is the row and <tt>c</tt> is the column of the pixel and <t
 
 
 <p>
-Let's write a program that manipulates an image.  Read through the code first, and then try on your computer.  What does it do?  Note:  this program assumes that you have a file called <a href="../f17/csBridge.png">csBridge.png</a> in the same directory.  You can use that file, or substitute one of your own.
+Let's write a program that manipulates an image.  Read through the code first, and then try on your computer.  What does it do?  Note:  this program assumes that you have a file called <a href="../images/csBridge.png">csBridge.png</a> in the same directory.  You can use that file, or substitute one of your own.
 <pre style = "background-color:lavender;width:650px">
 #Name:  CSci 127 Teaching Staff
 #Date:  Fall 2017

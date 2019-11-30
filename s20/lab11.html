@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Lab 11, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2020</title>
-    <link type="text/css" rel="stylesheet" href="../../../lehman.css" />
+    <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
 
@@ -56,7 +56,7 @@ See the <a href="quizzes.html">quiz & code review page</a> for details of the wo
 <p>
 Let's start by looking at a program that will print "Hello World":
 
-<p> <img src = "../f17/mipsHello.png" width = 100%>
+<p> <img src = "../images/mipsHello.png" width = 100%>
 
 
 <p> If you would like to follow along, using the
@@ -128,7 +128,7 @@ This program counts down from 10 to 0.  How could you modify it to count from 1 
 
 <h4>Challenge</h4>
 
-<img src="../f17/mipsInteractive.png" height = 200>
+<img src="../images/mipsInteractive.png" height = 200>
 
 <p>As a final machine language challenge, modify the "Interactive" demo (the first lines are in the image above) to use the <i>current year</i> when computing the ages.  When you have it running, see the <a href="ps.html">Programming Problem List</a>.
 
@@ -198,7 +198,7 @@ ls -l
 </pre>
 at the prompt, you will see the 'long' listing for every file in your current directory. (Note that it's the letter "L", not the number "1" that it looks like on some browsers).  For example, if I ran this command in my directory for Program 44, I get:
 <p>
-<img src="../f17/lsScreenshot.png" width=600>
+<img src="../images/lsScreenshot.png" width=600>
 
 <p> showing 7 files, 6 of which were created in October.  Names with '/' after them are directories or folders.  '*' indicates files that can be executed (see <a href="lab6.html">Lab 6</a> for how to change the permissions of a file).
 
@@ -208,7 +208,7 @@ ls -l | grep "Oct"
 </pre>
 <p> Note that between the <tt>ls -l</tt> and the <tt>grep "Oct"</tt> is a pipe ('|') that directs the outflow from the <tt>ls</tt> command to the inflow of the <tt>grep</tt> command:
 
-<p><img src="../f17/lsGrep.png" width=600>
+<p><img src="../images/lsGrep.png" width=600>
 
 <p>We can use the pipe to take the output of the <tt>grep</tt> command and send it to a program that counts the number of lines.  This program, <tt>wc</tt>, counts characters, words, and lines.  We'll use the <tt>-l</tt> option to count lines:
 
@@ -217,7 +217,7 @@ ls -l | grep "Oct" | wc -l
 </pre>
 
 <p> which gives:
-<p><img src="../f17/lsGrepWC.png" width=600>
+<p><img src="../images/lsGrepWC.png" width=600>
 
 <p>the number of files in the directory that were last modified.
 
