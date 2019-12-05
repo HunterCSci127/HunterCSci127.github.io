@@ -63,8 +63,8 @@ print("Hello, World!")</pre>
 
 <ol>
 
-	
-	<li > <b>Due Date: 6 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/toctree.html">Chapters 1</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">2</a></b><br>
+
+	<li > <b>Due Date: 6 February</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/toctree.html">Chapters 1</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">2</a></b><br>
 
 	<p>	Write a program that prints "Hello, World!" to the screen.
 
@@ -72,54 +72,56 @@ print("Hello, World!")</pre>
 
 <a id="cr1"></a>
 
-	<li > <b>Due Date:  9 September</b>  <b style="float:right">Reading:  Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a></b><br>
+	<li > <b>Due Date:  7 February</b>  <b style="float:right">Reading:  Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a></b><br>
 
 
-		<p>Write a program that draws an octagon (8-sided polygon).
+		<p>Write a program that draws an decagon (10-sided polygon).
 		<br><br>
-		<i>Note:  Choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
+		<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
 		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".
 		</i>
 
 	<p><i>Hint:  See the  <a href="lab1.html">Lab 1</a>.</i>
 
-	<li > <b>Due Date: 10 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a></b><br>
+	<li > <b>Due Date: 10 February</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a></b><br>
 
-		<p> Copy the program from <a href="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> into a file on your computer and modify the program (with turtles <tt>alex</tt> and <tt>tess</tt>) to have a blue background color and have <tt>tess</tt> draw red lines: 
+		<p> Copy the program from <a href="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> into a file on your computer and modify the program (with turtles <tt>alex</tt> and <tt>tess</tt>) to have a pink background color and have <tt>tess</tt> draw a blue square and alex draw a triangle:
 
 <p>
-<img src="blueScreen.png" height=200>
+<img src="../images/pinkScreen.png" height=200>
 
 
-			
-	<li > <b>Due Date: 11 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> and 
+
+	<li > <b>Due Date: 11 February</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> and
 	<a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/TherangeFunction.html">Section 4.7</a>
 	</b><br>
 
 <a id="cr2"></a>
-
-		<p> Write a program that implements the 
+    <p> You can tell a turtle, lets call it tess, to move without drawing a line by lifting the pen up with tess.penup() and then telling it to move
+    <p> You can then tell a turtle to start writing again when moving by putting the pen dwon with tess.pendown()
+		<p> Write a program that implements the
 	<a href="http://en.wikipedia.org/wiki/Pseudocode">pseudocode</a> ("informal high-level description of the operating principle of a computer program or other algorithm") below:
-	
+
 <pre>
-    Repeat 36 times:
-        Walk forward 100 steps
-        Turn left 55 degrees
-        Walk forward 10 steps
-        Turn left 55 degrees
-        Walk forward 100 steps
+    Repeat i 150 times:
+        Walk forward 0.5*i steps
+        Lift the pen up
+        Walk forward 0.5*i steps
+        Put the pen down
+        Turn left 110 degrees
+
 </pre>
 		Your output should look similar to:
 		<br>
-		<img width=200 src="fallDesign.png">
+		<img width=200 src="../images/fractalFlower.png">
 
-
+<!--
 
 
 	<li > <b>Due Date: 12 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a></b><br>
 
-		<p>Write a program that will prints <b>your name</b> 25 times. 
-		
+		<p>Write a program that will prints <b>your name</b> 25 times.
+
 		<p>For example, the output of Thomas Hunter's program should be:
 <pre style ="background-color:lavender;width:400px">Thomas Hunter
 Thomas Hunter
@@ -153,8 +155,8 @@ Thomas Hunter
 
 
 
-	<li > <b>Due Date: 13 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> and 
-	and 
+	<li > <b>Due Date: 13 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> and
+	and
 	<a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/TherangeFunction.html">Section 4.7</a></b><br>
 
 
@@ -313,8 +315,8 @@ GC-content is 0.0
 
 
 
-	<li > <b>Due Date: 20 September</b>  
-	
+	<li > <b>Due Date: 20 September</b>
+
 		<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Sections 2.7</a> &
 	<a href="http://runestone.academy/runestone/static/thinkcspy/Strings/StringMethods.html">9.5</a>
     </b><br>
@@ -341,11 +343,11 @@ Enter another verb: moves
 New sentence:
 If it sounds like a cat and moves like a cat, it probably is a cat.
 </pre>
-	
+
 <p><i>
 Hint:  Here's a way to approach the problem:
 <ol>
-	<li> Create a variable, <tt>template</tt> and store the string 
+	<li> Create a variable, <tt>template</tt> and store the string
 		<tt>"If it VERB1 like a NOUN and VERB2 like a NOUN, it probably is a NOUN."</tt> in it.
 	<li> Ask the user for a noun and store it in a variable, <tt>noun</tt>.
 	<li> Replace the placeholder in the <tt>template</tt> with the noun the user entered (i.e.  <tt>template = template.replace("NOUN", noun)</tt>).
@@ -354,19 +356,19 @@ Hint:  Here's a way to approach the problem:
 	<li> Ask the user for another verb and store it in a variable, <tt>verb2</tt>.
 	<li> Replace the placeholder in the <tt>template</tt> with the second the verb the user entered.
 	<li> Print out the updated <tt>template</tt> string.
-	
+
 </ol>
 </i>
-	
-	
-	
 
-	
-	
-	
+
+
+
+
+
+
 
 <a id="cr4"></a>
-	
+
 
 
 
@@ -378,10 +380,10 @@ Hint:  Here's a way to approach the problem:
 		Your output should look similar to:
 		<br>
 		<img src="../images/shadesOfBlue.png" height=200>
-	
-	
-	<li > <b>Due Date: 24 September</b>  	
-	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  & 
+
+
+	<li > <b>Due Date: 24 September</b>
+	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b><br>
 
 		<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the blue channel of the original image (that is, no green channel).
@@ -407,16 +409,16 @@ Enter name of the output file:  blueH.png
 
 
 
-	
-	<li > <b>Due Date: 25 September</b> 	
+
+	<li > <b>Due Date: 25 September</b>
 	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
 
 
 	<p>
-	In Lecture 3, we wrote a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a 'C' logo for CUNY on a 30x30 grid.   
+	In Lecture 3, we wrote a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a 'C' logo for CUNY on a 30x30 grid.
 
 	<p>
-	<img src="logo.png" style="padding:5px" height=200>	
+	<img src="logo.png" style="padding:5px" height=200>
 
 	<p> The grading script is expecting:
 	<ul>
@@ -427,13 +429,13 @@ Enter name of the output file:  blueH.png
 	</ul>
 
 	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
-	
+
 	<p><i>Hint:  See notes from Lecture 3.</i>
 
-		
-		
-	<li > <b>Due Date: 26 September</b>  
-		<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  & 
+
+
+	<li > <b>Due Date: 26 September</b>
+		<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b><br>
 
 
@@ -445,9 +447,9 @@ Enter name of the output file:  blueH.png
 
 		<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.show()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
-	
-	
-	
+
+
+
 
 
 	<li > <b>Due Date: 27 September</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a></b><br>
@@ -459,17 +461,17 @@ Enter name of the output file:  blueH.png
 		<p>See <a href="lab4.html">Lab 4</a> for designing Input-Process-Output programs.
 
 
-	
-	
+
+
 
 
 
 
 	<li > <b>Due Date: 2 October</b>  	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a></b><br>
-	
-	
 
-	
+
+
+
 			<p>Write a program that implements the pseudocode below:
 <pre>
 1.  Ask the user for the number of seconds until lecture starts.
@@ -477,7 +479,7 @@ Enter name of the output file:  blueH.png
 3.  Compute the remaining seconds (rem = seconds % 3600).
 4.  Print out the minutes until lecture (minutes = rem // 60).
 5.  Print out the remaining seconds (remSec = rem % 60).
-</pre>	
+</pre>
 
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
@@ -498,11 +500,11 @@ Seconds: 40
 
 		<p><i>Hint: See <a href="http://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
 
-	
 
 
-	
-	
+
+
+
 
 
 
@@ -523,27 +525,27 @@ Enter a number: 80
 
 		<p>and the output should look similar to:
 		<br>
-		<img src="../s18/5turns.png" style="padding:25px" height=200>	
+		<img src="../s18/5turns.png" style="padding:25px" height=200>
 
 
 
-	<li > <b>Due Date: 4 October</b>  	
-	
+	<li > <b>Due Date: 4 October</b>
+
 	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a></b><br>
 
 
-		<p>Write a program that asks the user for a message and then prints the message out, three copies of one character per line. 
+		<p>Write a program that asks the user for a message and then prints the message out, three copies of one character per line.
 
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
 Enter a message: I love Python!
 I I I
-     
+
 l l l
 o o o
 v v v
 e e e
-     
+
 P P P
 y y y
 t t t
@@ -569,7 +571,7 @@ r r r
 		<p> <i>Hint:  See <a href="lab2.html">Lab 2</a> or Lecture 2 notes.</i>
 
 
-	<li > <b>Due Date: 7 October</b>  
+	<li > <b>Due Date: 7 October</b>
 
 
   		<b style="float:right">Reading: <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a></b><br>
@@ -587,7 +589,7 @@ M. Cohn
 M. Dolciani
 M. Rees
 R. Teitelbaum
-R. Yalow 
+R. Yalow
 
 Thank you for using my name organizer!
       </pre>
@@ -599,10 +601,10 @@ Thank you for using my name organizer!
 
 
 
-	<li > <b>Due Date: 10 October</b>  	
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & 
+	<li > <b>Due Date: 10 October</b>
+	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> &
 	<a href="http://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a></b><br>
-	
+
 
 
 		<p>Write a program that implements the pseudocode below:
@@ -621,7 +623,7 @@ Thank you for using my name organizer!
 
 
 
-	<li > <b>Due Date: 11 October</b>  <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  & 
+	<li > <b>Due Date: 11 October</b>  <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b><br>
 
 
@@ -638,16 +640,16 @@ Enter file name:  caDrought2014.png
 Snow count is 38010</pre>
 
 		<p> Note:  for this program, you only need to compute the snow count.  Showing the image will confuse the grading script, since it's only expecting the snow count.
-	
-	
-	
-	
 
 
 
-	<li > <b>Due Date: 15 October</b> 
+
+
+
+
+	<li > <b>Due Date: 15 October</b>
 	<b style="float:right">Reading: <a href="http://www.toves.org/books/logic/">Burch's Logic & Circuits</a></b><br>
-	
+
 
 
 		<p>Write a logical expression that is equivalent to the circuit that computes the majority of 3 inputs, called <tt>in1</tt>, <tt>in2</tt>, <tt>in3</tt>:
@@ -659,12 +661,12 @@ Snow count is 38010</pre>
 		<p> <img src="../images/maj7.png" width=300>
 
 		<p>Save your expression to a text file.
-		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.	
+		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
 
-      
-	<li > <b>Due Date: 16 October</b>  
-	
-      <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  & 
+
+	<li > <b>Due Date: 16 October</b>
+
+      <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b></b>
 
 
@@ -680,7 +682,7 @@ Snow count is 38010</pre>
       		<pre style ="background-color:lavender">
 How blue is the ocean:  0.5
 What is the output file:  medBlue.png
-Thank you for using my program!  
+Thank you for using my program!
 Your map is stored medBlue.png.</pre>
 		<p> Your resulting map should look like:
 		<p> <img src="topoMap.png" width=300>
@@ -706,10 +708,10 @@ Your map is stored medBlue.png.</pre>
 
 		<p>Save your expression to a text file.
 		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
-  
-  
 
-	
+
+
+
 
 
 
@@ -780,11 +782,11 @@ AccountNameGoesHere
 
 
 
-   		<li > <b>Due Date: 24 October</b>      		
+   		<li > <b>Due Date: 24 October</b>
       	<b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapter 7</a></b><br>
 
 
-	
+
        <p>The program, <tt>turtleString.py</tt> (available at:  <a href="https://github.com/stjohn/csci127">
 	https://github.com/stjohn/csci127</a>) takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
         <ul>
@@ -814,11 +816,11 @@ AccountNameGoesHere
 
 
 	<li > <b>Due Date: 25 October</b>     		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
-   		
+
    		<p>
    		Using <tt>pandas</tt>, write a program that asks the user for a recipe (in comma separated value (CSV) format), reads in the corresponding CSV file and prints out quantities and ingredients needed to make a double batch.  Assume that the CSV files have the columns:  <tt>"Amount"</tt>, <tt>"Measurement"</tt>, and <tt>"Ingredient"</tt>.
-	
-		<p>	
+
+		<p>
 		For example if the CSV file, <a href="meringues.csv">meringues.csv</a>, contained:
 
 <p>
@@ -891,13 +893,13 @@ Enter name of output file:  dhsPlot.png
 
 
 		<p> Logical gates can be used to do arithmetic on binary numbers.  For example, we can write a logical circuit whose output is one more than the inputted number.  Our inputs are <tt>in1</tt> and <tt>in2</tt> and the outputs are stored in <tt>out1</tt>, <tt>out2</tt>, and <tt>out3</tt>.
-		
+
 		<p><a href="http://www.neuroproductions.be/logic-lab/index.php?id=80507">
 		<img src="../images/incrementCircuit.png" height=200 ><br>
 		(click to launch new window with circuit)</a>
-		
+
 		<p>Here is a table of the inputs and outputs:
-		
+
 		<table border="1px">
 		<tr>
 		<th colspan=3>Inputs</th><th colspan=4>Outputs</th>
@@ -918,8 +920,8 @@ Enter name of output file:  dhsPlot.png
 		<td>3</td><td>1</td><td>1</td> <td>4</td><td>1</td><td>0</td><td>0</td>
 		</tr>
 		</table>
-		
-		
+
+
 		<p>Submit a text file with each of the outputs on a separate line:
 <pre style = "background-color:lavender;width:400px">
 #Name:  YourNameHere
@@ -931,21 +933,21 @@ out2 = ...
 out3 = ...
 </pre>
 		Where "..." is replaced by your logical expression (see <a href="lab5.html">Lab 5</a>).
-		
-		
+
+
 		<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
-		
-<!--
-  		<li > <b>Due Date: 1 November</b> 
+
+
+  		<li > <b>Due Date: 1 November</b>
 
  <b style="float:right">Reading:  Think CS:  <a href="http://runestone.academy/runestone/static/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
 
-<p>    
-<b>CHANGE</b> 
-<b>Add in a simple webpage page (github markup language) as program!!</b>  	
+<p>
+<b>CHANGE</b>
+<b>Add in a simple webpage page (github markup language) as program!!</b>
 <b>CHANGE</b>
 <p><b>Riff on the nifty hurricane tracker to write a function-based program, using CSV's and turtles-- fill in the missing functions</b>
-    
+
     <p> Write a program that asks the user for the hour of the day (in 24 hour time), and prints
     <ul>
     <li>"Good Morning" if it is strictly before 12,
@@ -995,10 +997,10 @@ Enter output file: logoUR.png
   <p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 
-	 
-  	
-	
-		<li > <b>Due Date: 5 November</b>  
+
+
+
+		<li > <b>Due Date: 5 November</b>
 		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
 <b>CHANGE</b>
@@ -1131,23 +1133,23 @@ Enter edge length:  160
 <b>CHANGE</b>
 <p>
 <b>NEED A FIXING ERRORS PROGRAM</b>
-		
+
 		<p> Write a function, <tt>computeFare()</tt>, that takes as two parameters: the zone and the ticket type, and returns the Long Island Railroad fare.
 		<ul>
 			<li> If the zone is 1 and the ticket type is "peak", the fare is 8.75.
-			<li> If the zone is 1 and the ticket type is "off-peak", the fare is 6.25.			
+			<li> If the zone is 1 and the ticket type is "off-peak", the fare is 6.25.
 			<li> If the zone is 2 or 3 and the ticket type is "peak", the fare is 10.25.
-			<li> If the zone is 2 or 3 and the ticket type is "off-peak", the fare is 7.50.			
+			<li> If the zone is 2 or 3 and the ticket type is "off-peak", the fare is 7.50.
 			<li> If the zone is 4 and the ticket type is "peak", the fare is 12.00.
-			<li> If the zone is 4 and the ticket type is "off-peak", the fare is 8.75.	
-			<li> If the zone is 5, 6, or 7 and the ticket type is "peak", the fare is 13.50.			
+			<li> If the zone is 4 and the ticket type is "off-peak", the fare is 8.75.
+			<li> If the zone is 5, 6, or 7 and the ticket type is "peak", the fare is 13.50.
 			<li> If the zone is 5, 6, or 7 and the ticket type is "off-peak", the fare is 9.75.
 			<li> If the zone is greater than 8, return a negative number (since your calculator does not handle inputs that high).
 		</ul>
-		
-		<p>A template program, <tt>LIRRtransit.py</tt>, is available on the 
+
+		<p>A template program, <tt>LIRRtransit.py</tt>, is available on the
 		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
-		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it). 
+		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
 
 		<p>A sample run:
 <pre style = "background-color:lavender;width:400px">
@@ -1160,14 +1162,14 @@ The fare is 8.75
 Enter the number of zones: 6
 Enter the ticket type (peak/off-peak): peak
 The fare is 13.5
-</pre>		
-		
-		
+</pre>
+
+
 		<p><i>Hint:  See <a href="lab8.html">Lab 8</a>.</i>
 
-	
-	
-	
+
+
+
 	<li > <b>Due Date: 12 November</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
 
 <b>CHANGE</b>
@@ -1178,7 +1180,7 @@ The fare is 13.5
 
 
 
-	 <li > <b>Due Date: 13 November</b>  
+	 <li > <b>Due Date: 13 November</b>
 	 <b style="float:right">Reading: <a href="http://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
 
 <b>CHANGE</b>
@@ -1205,10 +1207,10 @@ Enter output file:  thMap.html
 		<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
 
 
-	  
 
 
-	<li > <b>Due Date: 14 November</b>  
+
+	<li > <b>Due Date: 14 November</b>
 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Debugging/toctree.html#">Chapter 3</a></b><br>
 
 <b>CHANGE</b>
@@ -1216,8 +1218,8 @@ Enter output file:  thMap.html
 		<p>The program,
 		<a href="https://github.com/stjohn/csci127/blob/master/errorsHex.py">errorsHex.py</a>, has lots of errors.  Fix the errors and submit the modified program.
 		<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
-	
-	<li > <b>Due Date: 15 November</b> 	
+
+	<li > <b>Due Date: 15 November</b>
 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
 
 <b>CHANGE</b>
@@ -1270,7 +1272,7 @@ Enter output file: recyc.html
 
 
 
- 
+
 
 	<li > <b>Due Date: 18 November</b> <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a></b> <br>
 
@@ -1361,7 +1363,7 @@ You entered: Mihi cura futuri
 
 		<p><i>Hint:  See  <a href="lab10.html">Lab 10</a>.</i>
 
-	<li > <b>Due Date: 22 November</b>  
+	<li > <b>Due Date: 22 November</b>
 	<b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a></b><br>
 
 <b>CHANGE</b>
@@ -1480,13 +1482,13 @@ Enter a number:  3
 
 <b>CHANGE</b>
 
-		<p> Write a <b>C++ program</b>  that asks the user for the hour of the day (in 24 hour time), and prints 
+		<p> Write a <b>C++ program</b>  that asks the user for the hour of the day (in 24 hour time), and prints
 		<ul>
-			<li>"Good Morning" if it is strictly before 12, 
-			<li> "Good Afternoon" if it is 12 or greater, but strictly before 17, and 
+			<li>"Good Morning" if it is strictly before 12,
+			<li> "Good Afternoon" if it is 12 or greater, but strictly before 17, and
 			<li> "Good Evening" otherwise.
 		</ul>
-		
+
 		<p>A sample run:
 <pre style ="background-color:lavender;width:400px">
 Enter hour (in 24 hour time):  11
@@ -1510,8 +1512,8 @@ Good Afternoon
 
 <b>CHANGE</b>
 
-		<p> Write a <b>C++ program</b> that asks the user for their age, and continue asking until the number entered positive (that is, greater than 0).  
-		
+		<p> Write a <b>C++ program</b> that asks the user for their age, and continue asking until the number entered positive (that is, greater than 0).
+
 		<p>A sample run:
 <pre style ="background-color:lavender;width:400px">
 Please enter age: -6
@@ -1520,9 +1522,9 @@ Please enter age: -50
 Entered a negative number.
 Please enter age: 100
 You entered your age as: 100
-</pre>		
+</pre>
 
-		<p> <i>Hint: Rewrite the <a href="http://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">Python program</a> 
+		<p> <i>Hint: Rewrite the <a href="http://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">Python program</a>
 		from <a href="lab10.html">Lab 10</a> in C++.</i>
 
 
@@ -1535,7 +1537,7 @@ You entered your age as: 100
 <b>CHANGE</b>
 
 		<p> Write a <b>C++ program</b>  that asks the user for the starting amount, and prints out the yearly balance of a savings account, assuming 10% interest, until the amount has doubled.
-		
+
 		<p> A sample run:
 <pre style ="background-color:lavender;width:400px">
 Please enter the starting amount: 1000
