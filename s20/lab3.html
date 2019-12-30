@@ -4,7 +4,7 @@
   <title>Lab 3, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2020</title>
     <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
-<body>
+<p>
 
 <div id="header">
 
@@ -417,7 +417,7 @@ sudo apt-get install spyder3
 <ul>
 	<li> Linux machines:  This is what we have in the labs.  You can launch a terminal by clicking on the icon for a terminal (or using the search feature to find it).
 	<li> Macintosh (OSX) machines:  The OSX operating system, run by modern mac computers, is based on Unix (albeit a slightly different one than Linux).  You can bring up a terminal window by using Spotlight or search for "terminal".
-	<li> Windows machines:  The underlying terminal uses commands that are differnt from Unix (they're based on the Microsoft Disk Operating System, or MS-DOS).  There are several on-line emulators of Unix that you can use via the browser, such as:  <a href="https://www.tutorialspoint.com/unix_terminal_online.php">tutorialspoint online terminal</a>.
+	<li> Windows machines:  The underlying terminal uses commands that are different from Unix (they're based on the Microsoft Disk Operating System, or MS-DOS). You can get a Linux terminal on your Windows machine with the Windows Subsystem for Linux (WSL). You can find directions on how to install it below. WSL is useful to have throughout this course and future comptuer science courses. Alternatively, there are several on-line emulators of Unix that you can use via the browser, such as:  <a href="https://www.tutorialspoint.com/unix_terminal_online.php">tutorialspoint online terminal</a>.
 	<li> Phones/Tablets:  Since most do not run Unix (or allow access to a terminal), the best is to use a web-based terminal emulator above.
 </ul>
 
@@ -425,6 +425,27 @@ sudo apt-get install spyder3
 <a href="https://trinket.io">Trinket</a>.
 </div>
 
+<div>
+<h3>Installing the Windows Subsystem for Linux</h3>
+
+<p> If you are using Windows, here's directions on how to get the Linux terminal on your computer:
+<ol>
+	<li> Search “Turn Windows features on or off” in the Windows search bar and open it.
+	<li> Look for “Windows Subsystem for Linux”, make sure the box is checked, and hit OK (You will have to restart your computer).
+	<li> Open Microsoft Store application and search Ubuntu.
+	<li> Click on Ubuntu, hit get, and wait for it to install (You can use any version, the one without a version number will give you the latest version of Ubuntu).
+	<li> Launch the Ubuntu application and allow first time setup.
+	<li> Create a username and password (When entering a password, no characters will appear, but you are typing your password).
+	<li> Update Ubuntu with the command: <pre style = "background-color:lavender;width:450px"> sudo apt update && sudo apt upgrade </pre>
+	(You will have to enter the password you set) You should run this command periodically as Ubuntu will not update on its own.
+</ol>
+</p>
+
+<p> You have successfully installed and setup WSL and can now use the terminal as you would on Ubuntu. </p>
+
+<p> These installation instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
+
+</div>
 
 
 </html>
