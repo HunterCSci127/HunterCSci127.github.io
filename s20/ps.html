@@ -9,6 +9,7 @@
   }
   </style>
 </head>
+
 <body>
 
 <div id="header"><br>
@@ -45,6 +46,7 @@ print("Hello, World!")</pre>
 	<li> <b>No credit will be given for an assignment submitted late. </b>
 	<li> Before submitting an assignment you are free to ask for help in recitation, during tutoring and office hours, and
 	by e-mail (<b><tt>hunterCSci127help AT gmail.com</tt></b>). Please take advantage of this.
+  <li><b>You must always test your code locally (on your computer) before submittin to Gradescope.</b> When you run your porgram on your computer, if there is an error you will get compiler messages that will help you debug your code. You will not get that kind of feedback from Gradescope. When your program runs correctly on your computer, then you can submit.
 	<li>For more information on using <a href="http://www.gradescope.com">gradescope</a>, see the <a href="lab1.html">Lab 1
 </a>.
 	<li> While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.
@@ -350,59 +352,60 @@ Hint:  Here's a way to approach the problem:
 		<img src="../images/shadesOfPurple.png" height=200>
 
 
-<!--
 
-	<li > <b>Due Date: 24 September</b>
+
+	<li > <b>Due Date: 26 February</b>
 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
-	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b><br>
+	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab3.html">Lab 3</a></b><br>
 
-		<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the blue channel of the original image (that is, no green channel).
+		<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green channel of the original image (that is, no red and blue channels).
+      <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>
 
 
 		<p> A sample run of your program should look like:
 
 <pre style ="background-color:lavender;width:400px">
 Enter name of the input file:  csBridge.png
-Enter name of the output file:  blueH.png
+Enter name of the output file:  greenH.png
 </pre>
 
 <p> Sample input and resulting output files:
 
 <p>
 <img src="../images/csBridge.png" width = 300>
-<img src="../images/blueH.png" width = 300 >
+<img src="../images/greenH.png" width = 300 >
 
 
-	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+	<p> Note:  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>.</i>
 
 
 
 
-	<li > <b>Due Date: 25 September</b>
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
+	<li > <b>Due Date: 27 February</b>
+	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a> & <a href="lab3.html">Lab 3</a></b><br>
 
 
 	<p>
-	In Lecture 3, we wrote a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a 'C' logo for CUNY on a 30x30 grid.
+	In Lecture 3, we designed a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a red 'U' logo for University on a 30x30 grid.
 
 	<p>
-	<img src="logo.png" style="padding:5px" height=200>
+	<img src="../images//uLogo.png" style="padding:5px" height=200>
 
 	<p> The grading script is expecting:
 	<ul>
 		<li> The file to be saved as:  <tt>logo.png</tt>.
 		<li> The grid to be 30 x 30.
-		<li> The 'C' to be 0% red, 0% green, and 100% blue.  The upper part of the 'C' should be the top third of the image; the left part of the 'C' should be the left third of the image; and the lower part of the 'C' should be the the bottom third of the image.
+		<li> The 'U' to be 100% red, 0% green, and 0% blue.  The lower part of the 'U' should be the lower third of the image; the left part of the 'U' should be the left third of the image; and the right part of the 'U' should be the the right third of the image.
 		<li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
 	</ul>
 
-	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+	<p> Note:  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
-	<p><i>Hint:  See notes from Lecture 3.</i>
+	<p><i>Hint:  See notes from Lecture 3. (Lecture slides can be found on the <a href="https://huntercsci127.github.io/s20.html">course outline</a>) </i>
 
-
+<!--
 
 	<li > <b>Due Date: 26 September</b>
 		<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
