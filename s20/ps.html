@@ -490,31 +490,29 @@ Cents: 2
 	<li > <b>Due Date: 4 March</b>  	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a>  & <a href="lab4.html">Lab 4</a></b><br>
 
 		<p>
-		Write a program that implements the following speudocode:
+		Write a program that implements the following speudocode using turtles:
 
-  <code>
-    Ask user for number of steps
+  <pre>
+    Ask the user for number of stamps
+    Set the turtle shape to 'turtle'
     Lift the pen up
-  tess.penup()
-  size = 20
-  for i in range(steps):
-    tess.stamp()
-    size = size + 2
-    tess.forward(size)
-    tess.right(24)
+    Set steps to 20
+    Repeat 'stamp' times:
+        Stamp
+        Increase steps by 2
+        Move forward by steps
+        Turn right by 24 degrees
+  </pre>
+
 
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-Enter a number: 270
-Enter a number: 100
-Enter a number: 190
-Enter a number: 200
-Enter a number: 80
+Please enter the number of turtle steps: 50
 </pre>
 
 		<p>and the output should look similar to:
 		<br>
-		<img src="../s18/5turns.png" style="padding:25px" height=200>
+		<img src="../images/turtleSpiral.png" style="padding:25px" height=200>
 
 <!--
 
