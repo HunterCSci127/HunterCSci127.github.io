@@ -169,8 +169,9 @@ When it works, add in your name in a comment, and see the <a href="ps.html">Prog
 
 <div>
 <h4>Looping Through Lists</h4>
-<p> You can loop through a list the same way as you loop thorugh a string.
+<p> You can loop through a list the same way as you loop through a string.
 <p> The <code>split()</code> function breaks up a string into substrings, throwing away the character or delimiter on which the function splits.
+<p> Then you can loop through the list just like you loop through a string to access the individual substrings.
 <p> For example, given the string <code>"FridaysSaturdaysSundays"</code>, <code>split('s')</code> will break up the string into a list of days: <code>["Friday","Saturday","Sunday",""]</code> throwing away the 's' characters on which it splits.
 <p> Notice that it will produce an empty string at the end because of the 's' character at the end of "Sundays".
 
@@ -182,7 +183,6 @@ When it works, add in your name in a comment, and see the <a href="ps.html">Prog
 <p>Modify the code to remove the 's' at the end of 'Sundays', now run and inspect the list. What changed?
 
 </div>
-
 
 <div>
 <h3>Biomolecular Sequences</h3>
@@ -224,7 +224,7 @@ It is often quite useful to break a string into pieces, and work with those piec
 <p>Let's break this into steps:
 <ol>
 	<li> Prompt for a phrase & read it in.
-	<li> Make the prhase upper case.
+	<li> Make the phrase upper case.
 	<li> Split up the phrase into words.
 	<li> Take the first letter of each work split (after split, print out each part, show as a list), concatendation, and make an acronym of it (turn in as program)
 
