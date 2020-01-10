@@ -228,7 +228,7 @@ EDCBA
 
 
 
-		<p><i>Hint: Loop backwards and print the string character at the loop index. You can tell print not to go to a new line by using the empty string as the end character. For example, with a string varialbe</i> <code>phrase</code> <i>you can print the first character without going to the next line using </i><code>print(phrase[0], end='')</code>  <br>See <a href="lab2.html">Lab 2</a>.</i>
+		<p><i>Hint: Loop backwards and print the string character at the loop index. You can tell</i> <code>print</code> <i>not to go to a new line by using the empty string as the end character. For example, with a string variable</i> <code>phrase</code> <i>you can print the first character without going to the next line using </i><code>print(phrase[0], end='')</code>  <br>See <a href="lab2.html">Lab 2</a>.</i>
 
 
 
@@ -321,7 +321,7 @@ Hint:  Here's a way to approach the problem:
 		<tt>"If it VERB1 like a NOUN and VERB2 like a NOUN, it probably is a NOUN."</tt> in it.
 	<li> Ask the user for a noun and store it in a variable, <tt>noun</tt>.
 	<li> Replace the placeholder in the <tt>template</tt> with the noun the user entered (i.e.  <tt>template = template.replace("NOUN", noun)</tt>).
-	<li> Ask the user for a noun and store it in a variable, <tt>verb1</tt>.
+	<li> Ask the user for a verb and store it in a variable, <tt>verb1</tt>.
 	<li> Replace the placeholder in the <tt>template</tt> with the verb the user entered.
 	<li> Ask the user for another verb and store it in a variable, <tt>verb2</tt>.
 	<li> Replace the placeholder in the <tt>template</tt> with the second the verb the user entered.
@@ -483,14 +483,25 @@ Cents: 2
 
 
 
-<!--
 
 
 
-	<li > <b>Due Date: 3 October</b>  	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> </b><br>
+
+	<li > <b>Due Date: 4 March</b>  	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a>  & <a href="lab4.html">Lab 4</a></b><br>
 
 		<p>
-		Write a program that asks the user for 5 whole (integer) numbers.  For each number, turn the turtle left the degrees entered and then the turtle should move forward 100.
+		Write a program that implements the following speudocode:
+
+  <code>
+    Ask user for number of steps
+    Lift the pen up
+  tess.penup()
+  size = 20
+  for i in range(steps):
+    tess.stamp()
+    size = size + 2
+    tess.forward(size)
+    tess.right(24)
 
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
@@ -505,7 +516,7 @@ Enter a number: 80
 		<br>
 		<img src="../s18/5turns.png" style="padding:25px" height=200>
 
-
+<!--
 
 	<li > <b>Due Date: 4 October</b>
 
