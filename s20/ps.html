@@ -531,11 +531,6 @@ Cents: 2
 
 
 
-
-
-
-
-
 	<li > <b>Due Date: 5 March</b>  	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a>,  <a href="https://huntercsci127.github.io/s20/lab1.html">Lab1</a>  & <a href="lab4.html">Lab 4</a></b><br>
 
 		<p>
@@ -548,7 +543,7 @@ Cents: 2
     Set steps to 20
     Repeat 'stamp' times:
         Stamp
-        Increase steps by 2
+        Increment steps by 2
         Move forward by steps
         Turn right by 24 degrees
   </pre>
@@ -564,7 +559,8 @@ Please enter the number of turtle steps: 50
 		<img src="../images/turtleSpiral.png" style="padding:25px" height=200>
 
 
-    <li > <b>Due Date: 6 March</b>  <b style="float:right">Think CS: <a href="https://interactivepython.org/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a> & <a href="lab3.html">Lab 3</a></b><br>
+    <li > <b>Due Date: 6 March</b> 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
+  	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a>,  <a href="lab3.html">Lab 3</a> & <a href="lab4.html">Lab 4</a></b> <br>
 
   		<p>Write a program that creates an image of blue and white vertical stripes.  Your program should ask the user for the size of your image, the name of the output file, and create a <tt>.png</tt> file of stripes.  For example, if the user enters 10, your program should create a 10x10 image, alternating between blue and white stripes.
 
@@ -593,32 +589,29 @@ Please enter the number of turtle steps: 50
   	<p><i>Hint:  See notes from Lecture 4.</i>
 
 
-<!--
 
 
 
 
-	<li > <b>Due Date: 7 October</b>
+	<li > <b>Due Date: 9 March</b>
 
 
-  		<b style="float:right">Reading: <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a></b><br>
+  		<b style="float:right">Reading: <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>  & <a href="lab2.html">Lab 2</a></b><br>
 
 
-      	<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first initial of the first name, followed by ".", and  followed by the last name.
+      	<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a comma and a space (', ') and the names are entered <tt>lastName firstName</tt> (i.e. separated by ' '). Your program should then print out the names, one per line, with the first initial of the first name, followed by ".", and  followed by the last name.
 
       	<p>A sample run of your program should look like:
       		<pre style ="background-color:lavender">
-Please enter your list of names:  Cohn, Mildred; Dolciani, Mary P.; Rees, Mina; Teitelbaum, Ruth; Yalow, Rosalyn
+Please enter your list of names:  Easley Annie, Wilkes Mary-Ann, Goldberg Adele, Spark-Jones Karen
 
 You entered:
 
-M. Cohn
-M. Dolciani
-M. Rees
-R. Teitelbaum
-R. Yalow
+A. Easley
+M. Wilkes
+A. Goldberg
+K. Spark-Jones
 
-Thank you for using my name organizer!
       </pre>
 
       <p><i>Hint: See <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, what is <tt>s = str[0] + "."</tt>?</i>
@@ -628,27 +621,28 @@ Thank you for using my name organizer!
 
 
 
-	<li > <b>Due Date: 10 October</b>
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> &
-	<a href="http://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a></b><br>
+	<li > <b>Due Date: 10 March</b>
+	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a>,  <a href="https://huntercsci127.github.io/s20/lab1.html">Lab1</a>  & <a href="lab4.html">Lab 4</a></b><br>
 
 
 
 		<p>Write a program that implements the pseudocode below:
 
 <pre>
-    For i = 90, 88, 86, 84, 82, ... ,0:
-        Walk forward 25 steps
-        Turn left i degrees
+    Ask user for number of turns
+    For i = 0, 2, 4, ... , turns:
+        Walk forward i steps
+        Turn right 45 degrees
 </pre>
 		Your output should look similar to:
 		<br>
-		<img src="spiral.png" height=300>
+		<img src="../images/turtleSpiralMaze.png" height=200>
 
 
 		<p> <i>Hint:  See examples of <tt>range(start,stop,step)</tt> in Lecture 2 notes.</i>
 
 
+      <!--
 
 	<li > <b>Due Date: 11 October</b>  <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b><br>
