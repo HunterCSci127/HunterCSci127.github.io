@@ -25,7 +25,7 @@ environment.
 <div>
 <h3>Quizzes & Code Reviews</h3>
 
-See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week. 
+See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week.
 
 </div>
 
@@ -167,6 +167,22 @@ When it works, add in your name in a comment, and see the <a href="ps.html">Prog
 </div>
 
 
+<div>
+<h4>Looping Through Strings</h4>
+<p> You can loop through a list the same way as you loop thorugh a string.
+<p> The <code>split()</code> function breaks up a string into substrings, throwing away the character or delimiter on which the function splits.
+<p> For example, given the string <code>"FridaysSaturdaysSundays"</code>, <code>split('s')</code> will break up the string into a list of days: <code>["Friday","Saturday","Sunday",""]</code> throwing away the 's' characters on which it splits.
+<p> Notice that it will produce an empty string at the end because of the 's' character at the end of "Sundays".
+
+<p>Try running the code below:
+
+<p>
+<iframe width="1100" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22FridaysSaturdaysSundays%22%0A%20%20%20%20%0Adays%20%3D%20myString.split%28's'%29%0A%20%20%20%20%0Afor%20day%20in%20days%3A%0A%20%20%20%20print%28day%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p>Modify the code to remove the 's' at the end of 'Sundays', now run and inspect the list. What changed?
+
+</div>
+
 
 <div>
 <h3>Biomolecular Sequences</h3>
@@ -299,7 +315,7 @@ Let's create a new <b>directory</b>, or folder, to hold your images (using the s
 	<pre style = "background-color:lavender;width:400px">
 $ pwd</pre>
 	(The <tt>$</tt> represents the prompt at the command line-- no need to type it.)
-	
+
 	<p>This tell you the <b>path</b>, or location, of your current working directory.  To see what is in the folder, you request a 'listing':
 	<pre style = "background-color:lavender;width:400px">
 $ ls</pre>
