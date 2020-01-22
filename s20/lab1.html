@@ -242,37 +242,66 @@ For this class, we are using <b>Python 3</b>.  Many features of the language
 (including the syntax of <tt>print</tt> statements) changed between the second and third
 version, so, you must use the Python 3 for submitting programs.
 
+<h4>Linux:</h4>
 <p>
-If you have a Linux machine and would like to match the environment on the lab machines, at a terminal window, type the following commands:
-<pre style = "background-color:lavender;width:450px"> sudo apt-get update
- sudo apt-get -y upgrade
- sudo apt-get install python3 python3-pip idle3
+If you have a Linux machine (Ubuntu or Debian based) and would like to match the environment on the lab machines, at a terminal window, type the following commands:
+<pre style = "background-color:lavender;width:450px"> sudo apt update
+ sudo apt -y upgrade
+ sudo apt install python3 python3-pip idle3
  pip3 install numpy pandas matplotlib scipy folium image 
- sudo apt-get install spyder3
+ sudo apt install spyder3
 </pre>
 
+<h4>Windows:</h4>
 <p>
-If you have a Mac or Windows computer, the easiest installation is <a href="https://docs.continuum.io/anaconda/install/#detailed-installation-information">Anaconda</a>.  When given the choice, choose to "Install for me only" (this avoids some odd permission problems that occur when choosing the install for everyone).  
+If you have a Windows computer, you can install python3 with the following instructions:
 
-<p>Almost all the packages we will use are automatically included in the Anaconda default installation.  The two that are not, image and folium, can be installed via <tt>pip</tt> (Python package manager).  We won't need these immediately, so, you can wait on installing them.  Here are the directions:
-<ul>
-	<li> Check if your machine has pip installed already, by typing:
-	<pre style = "background-color:lavender;width:400px">
-which pip</pre>
-	at the terminal window.  
-	<li> If it prints a line that ends with pip, then it's already on your machine.
-	<li> If it printed nothing, then you need to add pip your machine.  On the Macs, Anaconda installs a program called, <tt>easy_install</tt>, which we'll use to get pip by typing at the terminal:
-	<pre style = "background-color:lavender;width:400px">
-easy_install pip</pre>
-	And then add the packages:
-	<pre style = "background-color:lavender;width:400px">
-pip install image
-pip install folium</pre>
-	<li> For Windows, it's very similar (<a href="https://packaging.python.org/tutorials/installing-packages/">more details</a>).
-</ul>
+<ol>
+	<li> Go to the following link: https://www.python.org/downloads/windows/</li>
+	<li> Click latest Python 3 release.</li>
+	<li> Scroll down to the files section.</li>
+	<li> Click Windows x86-64 executable installer and save the file.</li>
+	<li> Once it is finished downloading, run the installer.</li>
+	<li> Make sure you click Add Python to PATH (This makes it a lot easier to install Python packages).</li>
+	<img src="../images/PythonPATH.png" alt="Python PATH">
+	<li> Click install now.</li>
+	<li> If asked do you want to allow this app to make changes to your device, click yes.</li>
+	<li> Wait until you see the setup was successful screen and then you can hit close.</li>
+</ol>
+You have successfully installed Python on your computer. To open IDlE, search IDLE in the Windows search bar.
 
+<h4>macOS:</h4>
 <p>
-There are many free on-line versions that you could use via a browser, such as <a href="http://pythonanywhere.com">pythonanywhere</a>. 
+	If you have a Mac computer, you can install python3 with the following instructions:
+	
+	<ol>
+		<li> Go to the following link: https://www.python.org/downloads/mac-osx/</li>
+		<li> Click latest Python 3 release.</li>
+		<li> Scroll down to the files section.</li>
+		<li> Click macOS 64-bit installer and save the file.</li>
+		<li> Once it is finished downloading, run the installer.</li>
+		<li> Hit continue, continue again, continue again, and then agree.</li>
+		<li> Click install.</li>
+		<li> Enter your password or use TouchID if prompted.</li>
+		<li> Wait until you see the installation was completed successfully screen and then you can hit close.</li>
+		<li> You can keep the install or move it to the trash.</li>
+	</ol>
+
+	You have successfully installed Python on your computer. To open IDlE, search IDLE in Spotlight search or find it in Launchpad. To open IDLE from terminal, type idle3.
+
+<h4>Python Packages:</h4>
+<p>
+You can install the Python packages used in this course with the following instructions:
+<ol>
+	<li> If on Windows, search cmd in the Windows search bar and open it. If on macOS, search terminal in Spotlight search and open it.</li>
+	<li> Install the Python packages with the following command: 
+		<pre style = "background-color:lavender;width:450px"> pip3 install numpy pandas folium image matplotlib scipy </pre>
+	</li>
+</ol>
+
+<p> These installation instructions were written by Owen Kunhardt. You can find the full guides at the following links: <a href="https://okunhardt.github.io/documents/Installing_Python_on_Windows.pdf">Windows</a> <a href="https://okunhardt.github.io/documents/Installing_Python_on_macOS.pdf">macOS</a>
+<p>
+Alternatively, there are many free on-line versions that you could use via a browser, such as <a href="http://pythonanywhere.com">pythonanywhere</a>. 
 
 </div>
 </html>
