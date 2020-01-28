@@ -75,7 +75,7 @@ summons number, then the license plate, registration state, plate Type, date, an
 <p>
 The sample entry above gives details for a ticket issues on June 9, 2015 to a passenger car with Florida plates, L040HZ.  The red Nissan SUV received the ticket on West 83rd Street.  Each entry also begins with a unique identifier that can be used to look up the parking ticket.
 
-<p>Since there were over 196,000 tickets for the FY 2016 for the 20th precinct, here is truncated version of that data, containing just the first 1000 lines:  <a href="../images/tickets.csv">tickets.csv</a>.
+<p>Since there were over 196,000 tickets for the FY 2016 for the 20th precinct, here is truncated version of that data, containing just the first 1000 lines:  <a href="../files/tickets.csv">tickets.csv</a>.
 
 
 <p>
@@ -96,7 +96,7 @@ For each of these questions, we can traverse the file and count the occurrences 
 
 <p> How can tell which car got the most tickets?  First, we need to figure out a unique way to identify different cars.  Luckily, cars almost always have license plates-- with each state having a unique number.  (For this simple exercise, we'll assume that each license plate is unique on its own-- not an unreasonable assumption since every state has a different schema for assigning numbers, but to be more accurate we should keep track of license plate number and issuing state.)
 
-<p>Open up the CSV file and look at the columns.  Which column contains the license plate number?  Here's all the column names (first line of <a href="../images/tickets.csv">tickets.csv</a>):
+<p>Open up the CSV file and look at the columns.  Which column contains the license plate number?  Here's all the column names (first line of <a href="../files/tickets.csv">tickets.csv</a>):
 <pre style = "background-color:lavender;width:1300px">
 Summons Number,Plate ID,Registration State,Plate Type,Issue Date,Violation Code,Vehicle Body Type,Vehicle Make,Issuing Agency,Street Code1,Street Code2,Street Code3,Vehicle Expiration Date,Violation Location,Violation Precinct,Issuer Precinct,Issuer Code,Issuer Command,Issuer Squad,Violation Time,Time First Observed,Violation County,Violation In Front Of Or Opposite,House Number,Street Name,Intersecting Street,Date First Observed,Law Section,Sub Division,Violation Legal Code,Days Parking In Effect    ,From Hours In Effect,To Hours In Effect,Vehicle Color,Unregistered Vehicle?,Vehicle Year,Meter Number,Feet From Curb,Violation Post Code,Violation Description,No Standing or Stopping Violation,Hydrant Violation,Double Parking Violation
 </pre>
@@ -150,7 +150,7 @@ print(tickets["Plate ID"].value_counts()[:10]) #Print out the dataframe
 </pre>
 
 <p>And run it on all tickets for the 20th precinct for January 2016 (14,000 tickets):
-<a href="../images/Parking_Violations_Jan_2016.csv">Parking_Violations_Jan_2016.csv</a>.
+<a href="../files/Parking_Violations_Jan_2016.csv">Parking_Violations_Jan_2016.csv</a>.
 
 <p>You should see output:
 <pre style = "background-color:lavender;width:750px">
