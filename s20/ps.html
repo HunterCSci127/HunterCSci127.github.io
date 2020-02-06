@@ -704,16 +704,19 @@ Snow count is 38010</pre>
 		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
 
 
-    <!--
-	<li > <b>Due Date: 16 October</b>
+
+
+
+	<li > <b>Due Date: 13 March</b>
 
       <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
-	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a></b></b>
+	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab4.html">Lab 4</a> </b></b>
 
 
-		<p> Modify the map-mapking program from <a href="lab4.html">Lab 4</a> to create a topographic map (highlighting the points that have elevations that are multiples of 10).  Your program should ask the user for the amount of blue (a floating point number between 0.0 and 1.0), the name of the output imagee, create a new image with thaht name and with the pixels colored as follows:
+		<p> Modify the map-mapking program from <a href="lab4.html">Lab 4</a> to create a topographic map (highlighting the points that have elevations that are multiples of 10). Your program should ask the user for the amount of blue (a floating point number between 0.0 and 1.0), the name of the output image, create a new image with that name and with the pixels colored as follows:
 		<ul>
-			<li> If the elevation is less than or equal to 0, color the pixel the amount blue the user specified (and 0% red and 0% green).
+      <li> If the elevation is less than or equal to -10 (deep below sea level), color the pixel dark gray (20% red, 20% green, 20% blue).
+			<li> If the elevation is less than or equal to 0 (below sea level but not so deep), color the pixel the amount blue the user specified (and 0% red and 0% green).
 			<li> If the elevation is divisible by 10, color the pixel black (0% red, 0% green, and 0% blue).
 			<li> Otherwise, the pixel should be colored white (100% red, 100% green, and 100% blue).
 		</ul>
@@ -726,7 +729,7 @@ What is the output file:  medBlue.png
 Thank you for using my program!
 Your map is stored medBlue.png.</pre>
 		<p> Your resulting map should look like:
-		<p> <img src="topoMap.png" width=300>
+		<p> <img src="../images/topo.png" width=300>
 		<p> and be saved to a file called <tt>medBlue.png</tt>.
 
 
@@ -738,7 +741,7 @@ Your map is stored medBlue.png.</pre>
 
 
 
-
+    <!--
 
       <li > <b>Due Date: 17 October</b>  <b style="float:right">Reading: <a href="http://www.toves.org/books/logic/">Burch's Logic & Circuits</a></b><br>
 
