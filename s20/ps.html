@@ -741,21 +741,43 @@ Your map is stored medBlue.png.</pre>
 
 
 
-    <!--
 
-      <li > <b>Due Date: 17 October</b>  <b style="float:right">Reading: <a href="http://www.toves.org/books/logic/">Burch's Logic & Circuits</a></b><br>
+
+      <li > <b>Due Date: 16 March</b>  <b style="float:right">Reading: <a href="http://www.toves.org/books/logic/">Burch's Logic & Circuits</a></b><br>
 
 		<p>
-		Build a circuit that has the same behavior as a <tt>NAND</tt> gate (i.e. for the same inputs, gives identical output) using only <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates.
+		Build a circuit that has the same behavior as a <tt>NOR</tt> gate (i.e. for the same inputs, gives identical output) using only <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates.
 		<p>
-		<img src="../images/nandGate.png" width=300>
+		<img src="../images/norGate.png" width=300>
+
+    <p>Here is the truth table for
+    the <tt>nor</tt> operator:
+
+    <p>
+    <table border="1px">
+    	<tr>
+    		<th><tt>in1</tt></th> <th><tt>in2</tt></th> <th><tt>in1 nor in2</tt></th>
+    	</tr>
+    	<tr>
+    		<td>True</td><td>True</td><td>False</td>
+    	</tr>
+    	<tr>
+    		<td>False</td><td>True</td><td>False</td>
+    	</tr>
+    	<tr>
+    		<td>True</td><td>False</td><td>False</td>
+    	</tr>
+    	<tr>
+    		<td>False</td><td>False</td><td>True</td>
+    	</tr>
+    </table>
 
 		<p>Save your expression to a text file.
 		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
 
 
 
-
+  <!--
 
 
 
