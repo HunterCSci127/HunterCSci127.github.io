@@ -27,7 +27,7 @@ environment with the Pandas package installed.
 <div>
 <h3>Quizzes & Code Reviews</h3>
 
-See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week. 
+See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week.
 
 </div>
 
@@ -227,6 +227,47 @@ fig.savefig('fractionBX.png)
 
 <p>
 How can you modify the program to let the user specify the borough to compute the fraction of the population?  When you have the answer, see the <a href="ps.html">Programming Problem List</a>.
+</div>
+
+
+<div>
+<h3>Aggregating repeated values in a column</h3>
+
+<p> Sometimes you have <b> recurring values in a column</b> and you want to examine the data for a particular value. For example, given the dataset containing weather observation in Australia, <b> find the average rainfall at each location. </b>
+<p> <img src="../images/Rain.png" height = 250>
+
+<p>The pandas function <b>groupby()</b> does exactly that: groups the rows by values in a given column and then aggregates the corresponding values for the other columns via some specified function (e.g. min, max, avg, ..)
+
+<pre style = "background-color:lavender;width:450px">
+#Import libraries.
+import pandas as pd
+
+#Read in the csv file.
+rain = pd.read_csv('AustraliaRain.csv',skiprows=1)
+
+#Group the data by location averages.
+groupAvg = rain.groupby('Location').mean()
+
+#Print the average rainfall at each location.
+print(groupAvg['Rainfall'])
+</pre>
+
+<p> This will print a list of average rainfall measurements at each location:
+<p> <img src="../images/RainOutput.png" height = 175>
+
+<p> To retrieve the data for a particular location, for example "Albury", we can use groupby() along with <b>get_group()</b>.
+<pre style = "background-color:lavender;width:550px">
+
+#Group the data by location get averages for group Albury.
+alburyAvg = rain.groupby(['Location']).get_group('Albury').mean()
+
+#Print the average rainfall.
+print(alburyAvg['Rainfall'])
+
+</pre>
+<p>This will output a single number: the average rainfall in "Albury"
+<p><img src="../images/singleAvgOutput.png" height = 35>
+
 </div>
 
 
