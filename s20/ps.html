@@ -1013,7 +1013,7 @@ out3 = ...
 
 		<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
 
-<!--
+
 
 		<li > <b>Due Date: 27 March</b>
 		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
@@ -1025,7 +1025,7 @@ out3 = ...
       <li> Ask the user for the name of the star type.
 			<li> Print the radii of the largest and the smallest star for the given star type.
 		</ul>
-    <p><b>Note:</b> To keep this in perspective, keep in mind that the radii of the stars are given here as multiples of the Sun's radius!
+    <p><b>Note:</b> To put this in perspective, keep in mind that the radii of the stars are given here as multiples of the Sun's radius! (image credits: space.com)
     <p><img src="../images/starSizes.jpg" height=150 ><br>
 <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
@@ -1045,7 +1045,58 @@ The radius of the smallest Brown Dwarf  is 0.057
 
 <p><b>Note: </b>You may assume that input is correct (e.g. only star types found in the data are entered as input)
 
+  <li > <b>Due Date: 30 March</b>
+  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> </b><br>
 
+
+
+<p> Write a program that asks the user for a CSV of the NYC OpenData Film Permits:
+<ul>
+  <li> There is a sample file for June 2019 film permits on <a href="https://github.com/HunterCSci127/CSci127">github</a>.
+</ul>
+
+Your program should then print out:
+<ul>
+  <li> the total number of permits in the file,
+  <li> the count of permits for each borough, and
+  <li> the five most popular locations (stored in the column: "Parking Held").
+</ul>
+
+<p>A sample run:
+<pre style = "background-color:lavender">
+Enter file name: filmPermitsJune2019.csv
+
+There were 643 film permits.
+Manhattan        336
+Brooklyn         165
+Queens            70
+Staten Island     42
+Bronx             30
+Name: Borough, dtype: int64
+
+The five most popular filming locations were:
+WEST   48 STREET between 6 AVENUE and 7 AVENUE                                                                                                                                       25
+EAST  140 STREET between LOCUST AVENUE and WALNUT AVENUE,  WALNUT AVENUE between EAST  139 STREET and EAST  140 STREET,  EAST  139 STREET between WALNUT AVENUE and LOCUST AVENUE    15
+FROST STREET between DEBEVOISE AVENUE and MORGAN AVENUE,  DEBEVOISE AVENUE between FROST STREET and RICHARDSON STREET                                                                11
+ASHLAND PLACE between LAFAYETTE AVENUE and HANSON PLACE                                                                                                                              10
+EAST   11 STREET between 3 AVENUE and 4 AVENUE,  3 AVENUE between EAST   11 STREET and EAST   12 STREET                                                                               9
+Name: ParkingHeld, dtype: int64
+</pre>
+
+<p> This assignment uses film permit data collected and made publicly by
+<a href="https://nycopendata.socrata.com">New York City Open Data</a>, and can be found at:
+<blockquote>
+  <a href="https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p">https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p</a>.
+</blockquote>
+Since the files are quite large, use the "Filter" option and a range of dates for "StartDateTime" and "Export" (in CSV format) all permits for those dates.
+
+<p> <i>Hint: See <a href="lab6.html">Lab 6</a>  and <a href="lab7.html">Lab 7</a> for accessing and analyzing structured data.</a></i>
+
+
+
+
+
+<!--
 
 	<li > <b>Due Date: 30 March</b>
 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a></b><br>
