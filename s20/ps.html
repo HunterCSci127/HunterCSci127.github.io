@@ -1164,9 +1164,43 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
     </pre>
 
 
-    		<p><i>Hint:  See <a href="lab7.html">Lab 7</a>.</i>
+    <p><i>Hint:  See <a href="lab7.html">Lab 7</a>.</i>
+
+    <li > <b>Due Date: 3 April</b>  <b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
 
 
+    <p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
+
+    <pre>
+        triangle(t, length):
+        1.  If length > 10:
+        2.     Repeat 3 times:
+        3.         Move t, the turtle, forward length steps.
+        4.         Turn t left 120 degrees.
+        5.     Call triangle with t and length/2.
+    </pre>
+
+    <p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
+    <pre>
+        nestedTriangle(t, length):
+        1.  If length > 10:
+        2.     Repeat 3 times:
+        3.         Move t, the turtle, forward length steps.
+        4.         Turn t left 120 degrees.
+        5.         Call nestedTriangle with t and length/2.
+    </pre>
+
+    <p>A template program, <tt>nestingTrianges.py</tt>, is available on the
+    <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+    The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
+
+    <p>A sample run:
+    <pre style = "background-color:lavender;width:400px">
+    Enter edge length:  160
+    </pre>
+    <p>which would produce:
+
+      <p><img height=150 src="../images/nestedTriangles.png">
 
 <!--
 
@@ -1195,42 +1229,7 @@ Name: CONTRIBUTING FACTOR VEHICLE 1, dtype: int64
 
 		<p> <i>Hint: See <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
 
-	<li > <b>Due Date: 8 November</b>  <b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
 
-<b>CHANGE</b>
-
-		<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
-
-<pre>
-    triangle(t, length):
-    1.  If length > 10:
-    2.     Repeat 3 times:
-    3.         Move t, the turtle, forward length steps.
-    4.         Turn t left 120 degrees.
-    5.     Call triangle with t and length/2.
-</pre>
-
-<p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
-<pre>
-    nestedTriangle(t, length):
-    1.  If length > 10:
-    2.     Repeat 3 times:
-    3.         Move t, the turtle, forward length steps.
-    4.         Turn t left 120 degrees.
-    5.         Call nestedTriangle with t and length/2.
-</pre>
-
-		<p>A template program, <tt>nestingTrianges.py</tt>, is available on the
-		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
-		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
-
-		<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter edge length:  160
-</pre>
-		<p>which would produce:
-
-<p><img height=200 src="../s18/triangles.png">
 
 
 
@@ -1241,38 +1240,7 @@ Enter edge length:  160
 <p>
 <b>NEED A FIXING ERRORS PROGRAM</b>
 
-		<p> Write a function, <tt>computeFare()</tt>, that takes as two parameters: the zone and the ticket type, and returns the Long Island Railroad fare.
-		<ul>
-			<li> If the zone is 1 and the ticket type is "peak", the fare is 8.75.
-			<li> If the zone is 1 and the ticket type is "off-peak", the fare is 6.25.
-			<li> If the zone is 2 or 3 and the ticket type is "peak", the fare is 10.25.
-			<li> If the zone is 2 or 3 and the ticket type is "off-peak", the fare is 7.50.
-			<li> If the zone is 4 and the ticket type is "peak", the fare is 12.00.
-			<li> If the zone is 4 and the ticket type is "off-peak", the fare is 8.75.
-			<li> If the zone is 5, 6, or 7 and the ticket type is "peak", the fare is 13.50.
-			<li> If the zone is 5, 6, or 7 and the ticket type is "off-peak", the fare is 9.75.
-			<li> If the zone is greater than 8, return a negative number (since your calculator does not handle inputs that high).
-		</ul>
 
-		<p>A template program, <tt>LIRRtransit.py</tt>, is available on the
-		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
-		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
-
-		<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter the number of zones: 4
-Enter the ticket type (peak/off-peak): off-peak
-The fare is 8.75
-</pre>
-		<p> And another:
-<pre style = "background-color:lavender;width:400px">
-Enter the number of zones: 6
-Enter the ticket type (peak/off-peak): peak
-The fare is 13.5
-</pre>
-
-
-		<p><i>Hint:  See <a href="lab8.html">Lab 8</a>.</i>
 
 
 
