@@ -1131,6 +1131,43 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 		<p><i>Hint:  See notes from Lecture 7 and <a href="lab7.html">Lab 7</a>.</i>
 
 
+      <li > <b>Due Date: 2 April</b>
+
+    <b style="float:right">Reading: Think CS <a <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a>, <a href="lab5.html">Lab 5</a> & <a href="lab7.html">Lab 7</a> </b><br>
+
+    		<p> Write a function, <tt>computePrice()</tt>, that takes as two parameters: the age group and the ticket type, and returns the price for admission to the American Museum of Natural History.
+    		<ul>
+        <li> If the ticket type is is "admission" and the age group is "adult", the price is $23.
+        <li> If the ticket type is is "admission" and the age group is  "child", the price is $13.
+        <li> If the ticket type is is "admission" and the age group is  "senior", the price is $18.
+        <li> If the ticket type is is "+exhibitions" and the age group is "adult", the price is $33.
+        <li> If the ticket type is is "+exhibitions" and the age group is  "child", the price is $20.
+        <li> If the ticket type is is "+exhibitions" and the age group is  "senior", the price is $27.
+        <li> If the ticket type or age group are not one of the above, it returns a negative number.
+    		</ul>
+
+    		<p>A template program, <tt>AMNHAdmission.py</tt>, is available on the
+    		<a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+    		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
+
+    		<p>A sample run:
+    <pre style = "background-color:lavender;width:550px">
+  Enter the age group (child, adult, senior): child
+  Enter the ticket type (admission / +exhibitions): admission
+  The price of your ticket is 13.0
+    </pre>
+    		<p> And another:
+    <pre style = "background-color:lavender;width:550px">
+    Enter the age group (child, adult, senior): senior
+    Enter the ticket type (admission / +exhibitions): +exhibitions
+    The price of your ticket is 27.0
+    </pre>
+
+
+    		<p><i>Hint:  See <a href="lab7.html">Lab 7</a>.</i>
+
+
+
 <!--
 
 	<li > <b>Due Date: 7 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
