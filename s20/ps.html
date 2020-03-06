@@ -1202,32 +1202,81 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 
       <p><img height=150 src="../images/nestedTriangles.png">
 
-<!--
 
-	<li > <b>Due Date: 7 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
-<b>CHANGE</b>
 
-		<p> Write a program that asks the user for a CSV of collision data (see note below about obtaining reported collisions from NYC OpenData).  Your program should then list the top three contributing factors for the primary vehichle of collisions ("CONTRIBUTING FACTOR VEHICLE 1") in the file.
+        <li > <b>Due Date: 4 April</b>
 
-		<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter CSV file name:  collisionsNewYears2016.csv
-Top three contributing factors for collisions:
-Driver Inattention/Distraction    136
-Unspecified                       119
-Following Too Closely              37
-Name: CONTRIBUTING FACTOR VEHICLE 1, dtype: int64
+          <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+
+        <p>
+        In <a href="lab7.html">Lab 7</a>, we worked through a program that displayed the homeless shelter occupancy over time.  The same approach can be used for displaying any dataset where the date and time are stored.
+        <p>For this program, use the lab as a starting point to display <a href="https://data.cityofnewyork.us/Education/2018-2019-Daily-Attendance/x3bb-kg5j">public school attendance</a> from NYC OpenData. If you would like to test your program on other data, you can filter for an individual school by viewing the data and filtering on the school number ("School DBN"). Export the file as CSV and save.  There is a sample file for the <a href="http://www.mhshs.org/hunter-college.html">high school</a> on campus on
+        <a href="https://github.com/stjohn/csci127">github</a>
+
+         <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+          <ul>
+            <li> Ask the user to specify the input file,
+            <li> Ask the user to specify the output file,
+            <li> Convert the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
+            <pre>
+        df["Date"] = pd.to_datetime(df["Date"].apply(str))	</pre>
+            <li> Make a plot of the percent of absent students over time from the data in the input file, and
+            <li> Store the plot in the output file the user specified.
+          </ul>
+
+          <p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+  Enter name of input file:  dailyAttendanceManHunt2018.csv
+  Enter name of output file:  manHunt.png
 </pre>
+          <p> which produces an output:
 
-		<p> This assignment uses collision data collected and made publicly by
-		<a href="https://nycopendata.socrata.com">New York City Open Data</a>, and can be found at:
-		<blockquote>
-			<a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95">https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95</a>.
-		</blockquote>
-		Since the files are quite large, use the "Filter" option and choose your birthday in 2016 and "Export" (in CSV format) all collisions for that day.  We will use this data set for future programs, so, instead of downloading the test files multiple times, save a copy for future use.
+        <p>
+        <img src="../images/manHuntAbsence.png" height = 300>
 
-		<p> <i>Hint: See <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
+          <p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "% Absent" and the range of values be between a percentage between 0 and 100 (<b>Hint:</b> what do you multiply by to convert a fraction into a percentage?).
+
+
+
+<li > <b>Due Date: 13 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a></b>
+
+<p><img src="../images/irmaScreenshot.png" width=400>
+
+<p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty Hurricane Program</a> by Phil Ventura).
+  <p>Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
+  <ul>
+    <li> <tt>t</tt>: a turtle,
+      <li> <tt>lat</tt>: an integer storing the current latitude,
+      <li> <tt>lon</tt>: an integer storing the current longitude, and
+      <li> <tt>wind</tt>: the current wind speed in miles per hour.
+      </ul>
+
+  <p>
+  Your function should move the turtle to the current location (longitude, latitude), and then based on the
+  <a href="https://www.nhc.noaa.gov/aboutsshws.php" target="_blank">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
+  <ul>
+    <li> red and pen size 5 for Category 5 (windspeed > 157 mph)
+    <li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
+    <li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
+    <li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
+    <li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
+    <li> white and pen size 1 if not hurricane strength
+  </ul>
+
+  <p>A template program, <tt>hurricane.py</tt>, and background image, <tt>mapNASA.gif</tt>, are available on the
+    <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
+    The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+  <p>Two test files (<a href="irma.csv" target="_blank">irma.csv</a> and <a href="jose.csv" target="_blank">jose.csv</a>) are from the <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty site</a>.  Additional CSV files are available there.
+
+    <p>
+    <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
+
+
+<!--
 
 
 
