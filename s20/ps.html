@@ -1404,88 +1404,21 @@ The average is 51.25
 
 
 
-<!--
 
 
-	<li > <b>Due Date: 15 November</b>
-	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
-
-<b>CHANGE</b>
-
-
-		<p> Fill in the following functions in a program that maps GIS data from NYC OpenData CSV files and marks the current location and closest point:
-		<ul>
-			<li> <tt>getData()</tt> that asks the user for the name of the CSV and returns a dataframe of the contents.
-			<li> <tt>getColumnNames()</tt> that asks the user for the exact name of the columns that contains the latitude and longitude and returns those values as a tuple.  Since the NYC OpenData files use different names for the columns in different datasets (such as "Lat", "Latitude", "LATITUDE" for latitude), the program asks for the name of the column as well as the name of the data file.
-			<li> <tt>getLocale()</tt> asks the user for latitude and longitude of the user's current location and returns those floating points numbers.
-			<li> <tt>computeDist()</tt> that computes the squared distance
-			between two points <tt>(x1,y1)</tt> and <tt>(x2,y2)</tt>:
-				<blockquote>
-					<tt>(x1-x2)<sup>2</sup> + (y1-y2)<sup>2</sup></tt>
-				</blockquote>
-		</ul>
-
-		<p> A sample run to find the closest CUNY campus to the Brooklyn Navy Yard:
-<pre style ="background-color:lavender;width:400px">
-Enter CSV file name: cunyLocations.csv
-Enter column name for latitude: Latitude
-Enter column name for longitude: Longitude
-Enter current latitude: 40.7021
-Enter current longitude: -73.9708
-Enter output file: closestCUNY.html
-</pre>
-		<p>which would produce the html file:
-
-		<p><iframe src="../images/closestCUNY.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-		<p> Another sample run to find the closest recycling bin to Roosevelt Island (using the list of recycling bins from <a href="https://data.cityofnewyork.us/Environment/Litter-Basket-Inventory/es7t-6u8y">https://data.cityofnewyork.us/Environment/Litter-Basket-Inventory/es7t-6u8y</a>):
-<pre style ="background-color:lavender;width:400px">
-Enter CSV file name: recyclingBins.csv
-Enter column name for latitude: Latitude
-Enter column name for longitude: Longitude
-Enter current latitude: 40.7605
-Enter current longitude: -73.951
-Enter output file: recyc.html
-</pre>
-		<p>which would produce the html file:
-
-		<p><iframe src="../images/recyc.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
-		<p>A template program, <tt>closestPoint.py</tt>, is available on the
-		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
-		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
-
-		<p><i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<li > <b>Due Date: 21 November</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></b><br>
+	<li > <b>Due Date: 5 May</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
 
 		<p>Write an Unix shell script that does the following:
 		<ul>
 			<li> Creates a directory, <tt>projectFiles</tt>.
 			<li> Creates 3 additional directories (as subdirectories of
-			<tt>projectFiles</tt>):  <tt>source</tt>, <tt>data</tt>, and <tt>results</tt>.
+			<tt>projectFiles</tt>):  <tt>images</tt>, <tt>files</tt>, and <tt>results</tt>.
 		</ul>
 
 		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
 
 
-		<p><i>Hint:  See  <a href="lab10.html">Lab 10</a>.</i>
+<!--
 
 	<li > <b>Due Date: 22 November</b>
 	<b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a></b><br>
