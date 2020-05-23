@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 4, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Summer 2020</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+<div id="header">
+
+<h2>Lab 4<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Summer 2020<br><br>
+</h2>
+</div>
+
+<div>
+
+<p>
+Today's lab will focus on getting numerical input and decisions in Python to make augment elevation maps and relative paths in the Unix operating system.
+
+<p>Software tools needed:  terminal (command line), web browser and Python IDLE programming
+environment.
+
+</div>
+
+<div>
+<h3>Quizzes & Code Reviews</h3>
+
+See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week.
+
+</div>
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+</div>
+
+
+
+
+
+<div>
+<h3>Getting Numbers as Input</h3>
+
+<p>
+The simplest way to get input for our programs is via the console.  In <a href="lab2.html">Lab 2</a>, we used the <tt>input()</tt> command to get string input from the command line.
+
+<p>Since Python doesn't know what you will be entering (number, words, etc.), it stores everything as a string, and leaves it to the user to convert it to what they want.  For example, if we wanted a number, we need to convert the letters the user used into a number.  The basic conversion functions are:
+<ul>
+	<li> <tt>int()</tt>:  converts a string (series of letters) into the corresponding integer (whole number).
+	<li> <tt>float()</tt>: converts a string (series of letters) into the corresponding floating point number (real number).
+	<li> <tt>str()</tt>: converts a number into the corresponding sequence of letters.
+</ul>
+
+<p>
+Work through the examples in <a href="http://interactivepython.org/courselib/static/thinkcspy/SimplePythonData/Typeconversionfunctions.html">2.3 Type conversion functions</a> and
+<a href="http://interactivepython.org/courselib/static/thinkcspy/SimplePythonData/Variables.html">2.4 Variables</a>.  Try the quizzes at the end of the section to test your understanding.
+
+<p>
+<h4>Converter Program</h4>
+
+Let's work through a problem that takes numerical input from the user, does a calculation, and prints out the result.
+Here is the
+problem:
+<blockquote>
+	Daniel has started to train for triathalons.  Unfortunately, his bike computer only reads out distances in kilometers.  Write a conversion program for him that 	takes as input kilometers and outputs the corresponding distance in miles.
+</blockquote>
+Our first step is to design the algorithm.  It follows a standard pattern:  <i>Input, Process, Output (IPO)</i>.
+
+<p>
+In a text window in IDLE, write out what the input is, what the process is, and what the output is.
+
+<p>
+Here is one possible design:
+<pre>
+1. Input the distance in kilometers (call it km)
+2. Calculate the distance in miles as ?
+3. Output miles
+</pre>
+
+
+<p>Above, we are missing an important part-- the formula to calculate miles from kilometers.  By typing <tt>1 km = miles</tt> into google, we find that 1 km = 0.621371 miles.  So, we can add
+that to our file:
+<pre style = "background-color:lavender;width:450px">
+#1. Input the distance in kilometers (call it km)
+#2. Calculate the distance in miles as 0.621371*km
+#3. Output miles
+</pre>
+Note that we're preceding the items in our outline by '#', so they can be used as comments for our final program.
+
+<p>If you have not done so already, now would be a good time to save your work as the file,
+<tt>km2miles.py</tt>.
+
+<p>
+Now, we are ready to convert our outline of the algorithm to Python.  Begin by adding a comment to the beginning of the file:
+<pre style = "background-color:lavender;width:450px">
+#Name:  your name
+#Email: your email
+#Date:  September 2019
+#Converter example program from Lab 4
+
+
+#1. Input the distance in kilometers (call it km)
+#2. Calculate the distance in miles as 0.621371*km
+#3. Output miles
+</pre>
+Next, let's print a welcome message:
+<pre style = "background-color:lavender;width:450px">
+#Name:  your name
+#Email: your email
+#Date:  September 2019
+#Converter example program from Lab 4
+
+
+print("Welcome to Daniel's calculator!")
+#1. Input the distance in kilometers (call it km)
+#2. Calculate the distance in miles as 0.621371*km
+#3. Output miles
+</pre>
+Make sure that there are no typos by saving and running your program ('Run Module' in the Run menu).
+
+<p>Next, fill in the program line by line.  First, ask the user for their input:
+<pre style = "background-color:lavender;width:450px">
+#Name:  your name
+#Email: your email
+#Date:  September 2019
+#Converter example program from Lab 4
+
+
+print("Welcome to Daniel's calculator!")
+#1. Input the distance in kilometers (call it km)
+km = float(input('Enter distance in kilometers: '))
+#2. Calculate the distance in miles as 0.621371*km
+#3. Output miles
+
+</pre>
+Test to make sure that the program runs.  Note that it will ask for the input but since no messages after that (we still need to fill those in).
+
+<p>Python cares about spacing and distinguishes between spaces and tabs.  If you get an error above, check that each of the lines beneath the definition is indented using a TAB.
+
+<p>Now, process the input (i.e. do the conversion):
+<pre style = "background-color:lavender;width:450px">
+#Name:  your name
+#Email: your email
+#Date:  September 2019
+#Converter example program from Lab 4
+
+
+print("Welcome to Daniel's calculator!")
+#1. Input the distance in kilometers (call it km)
+km = float(input('Enter distance in kilometers: '))
+#2. Calculate the distance in miles as 0.621371*km
+miles = 0.621371*km
+#3. Output miles
+</pre>
+Save and run your program again.  It will ask for input but does not yet produce output.
+
+<p>Finally, add the print statement that shows the output:
+<pre style = "background-color:lavender;width:450px">
+#Name:  your name
+#Email: your email
+#Date:  September 2019
+#Converter example program from Lab 4
+
+
+print("Welcome to Daniel's calculator!")
+#1. Input the distance in kilometers (call it km)
+km = float(input('Enter distance in kilometers: '))
+#2. Calculate the distance in miles as 0.621371*km
+miles = 0.621371*km
+#3. Output miles
+print("The miles are", miles)
+</pre>
+Save and run your program again.  This time, it will produce output.  Try it with some simple values
+to make sure that it gets the right answer.  For example, if you input 0 km, the output should also
+be 0.  If you input 1 km, you should output 0.621371 miles.
+See the <a href="ps.html">Programming Problem List</a>.
+
+<p>
+In addition to multiplication ('*'), Python has addition ('+'), subtraction ('-'), exponentation ('**'), division ('/'), integer-division ('//') and modulus/remainder ('%') built-in.  See <a href="https://runestone.academy/runestone/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> in the textbook:  there are some short quiz examples to test yourself at the bottom of textbook page.
+</div>
+
+
+<div>
+<h3>Decisions</h3>
+
+<p>Python has a built-in control structure for making decisions.  It's basic form is:
+
+	if <i>test or conditional</i>:
+	    if true do this block
+	elif <i>another test or conditional</i>:
+	    if this next test is true, do this block
+	elif <i>yet another test or conditional</i>:
+	    if this yet another test is true, do this block
+	....
+	else:
+	     only do this block, if all the previous tests failed.
+</pre>
+The tests are expressions that evaluate to either true or false.  The blocks of code can be as long as you would like-- the only caveat is the block be indented, since that indicates what's part of the block and what is not.
+
+<h4>Complementary DNA Strands</h4>
+
+<!--
+<tt>Compute the complement of DNA strand- include images from wiki.  Use if-statements.</tt>-->
+
+<p>Let's do an example to illustrate a decision, or <tt>if</tt>-statement in Python.  In <a href="lab2.html">Lab 2</a>, we examined the initial segment of a DNA strand for insulin in humans.  DNA is double-stranded molecule.  Given one strand of the molecule, we can figure out the complementary strand by the following rules:
+<ul>
+	<li> If the nucleotide is an A, its complement is a T.
+	<li> If the nucleotide is an C, its complement is a G.
+	<li> If the nucleotide is an G, its complement is a C.
+	<li> If the nucleotide is an T, its complement is an A.
+</ul>
+
+Since if the nucleotide is an A, we don't need to check if it's also a C, G, or T (and similarly for the other possible values), we can rewrite this as:
+<pre style = "background-color:lavender;width:450px">
+  if nucleotide == "A":
+      newNucleotide = "T"
+  elif nucleotide == "C":
+      newNucleotide = "G"
+  elif nucleotide == "G":
+      newNucleotide = "C"
+  elif nucleotide == "T":
+      newNucleotide = "A"
+  else:
+      print("Error:  not a valid value!")
+</pre>
+
+<p>Here is a demonstration of our code:
+
+<p>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=nucleotide%20%3D%20input%28'Enter%20a%20nucleotide%3A%20'%29%0A%0Aif%20nucleotide%20%3D%3D%20%22A%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22T%22%0Aelif%20nucleotide%20%3D%3D%20%22C%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22G%22%0Aelif%20nucleotide%20%3D%3D%20%22G%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22C%22%0Aelif%20nucleotide%20%3D%3D%20%22T%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22A%22%20%20%20%20%0Aelse%3A%0A%20%20%20%20print%28%22Error%3A%20%20not%20a%20valid%20value!%22%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22T%22%5D&textReferences=false"> </iframe>
+
+</div>
+
+
+
+
+
+<div>
+<h3>Elevation Data & Flood Maps</h3>
+
+<p>
+For the last part of the lab, let's combine what we have learned about images and decisions to make a flood map of the New York metropolitian area.  The US National Oceanic and Atmospheric Administration (NOAA) provides a searchable database of <a href="https://maps.ngdc.noaa.gov/viewers/wcs-client/">elevation data</a>.
+
+<p> We used their grid extract option on the New York City region:
+
+<p><img src="../images/gridExtract.png" width=600>
+
+<p>to download the elevations for the box bounded by the red dotted line (in 3-second resolution mode).  We then removed the top lines of metadata to create a file, <a href="../files/elevationsNYC.txt">elevationsNYC.txt</a> of 417 rows with 469 values in each row.
+
+<p>Using <tt>numpy</tt>, we can look at the data with a default 'color map' that assigns blue to smaller values in the grid (or array) and red to the larger values:
+
+<ol>
+	<li> Create a folder to hold your work (see <a href="lab2.html">Lab 2</a> for directions for doing so from the command line).
+	<li> Download <a href="../files/elevationsNYC.txt">elevationsNYC.txt</a> and save to your folder (you may need to move it from your <tt>Downloads</tt> folder).
+	<li> Open IDLE, and create the following short program:
+	<pre style = "background-color:lavender;width:600px">
+# Name:  ... your name here ...
+# Email: ... your email here ...
+# Date:  September 2019
+# Takes elevation data of NYC and displays using the default color map
+
+#Import the libraries for arrays and displaying images:
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Read in the data to an array, called elevations:
+elevations = np.loadtxt('elevationsNYC.txt')
+#Load the array into matplotlib.pyplot:
+plt.imshow(elevations)
+#Display the plot:
+plt.show()
+	</pre>
+	Save the file in your folder.
+	<li> Run your program.  A graphics window should appear showing the data stored in elevations.
+</ol>
+
+<p>Comparing the NOAA image with the one you created:
+
+<p><img src="../images/gridExtract.png" height=350>
+<img src="../images/elevColorMap.png" height=350>
+
+<p> you can see the Hudson River and New York Harbor (bright blue) and the ridges of the Palisades along the Hudson and mountains in Staten Island and western New Jersey in yellow and red.
+
+<p>
+We can use this data to make a flood map of New York City.  When Hurricane Sandy hit New York City in 2012, sea level rose 6 feet above normal, causing extensive flooding in low lying areas  (<a href="http://www.nytimes.com/newsgraphics/2012/1120-sandy/survey-of-the-flooding-in-new-york-after-the-hurricane.html?mcubz=1">NYT map</a>).  For our flood map, we can incorporate the storm surge into our coloring scheme:
+
+<pre style = "background-color:lavender;width:600px">
+	if elevation <= 0:
+	    #Below sea level
+	    Color the pixel blue
+	elif elevation <= 6:
+	    #Below the storm surge of Hurricane Sandy (flooding likely)
+	    Color the pixel red
+	else:
+	    #Above the 6 foot storm surge and didn't flood
+	    Color the pixel green
+</pre>
+
+
+
+<p> To give us complete control of the coloring, we will create a new array that will hold the colors for each pixel.  Here's an outline of our program:
+<ol>
+	<li> Import the libraries to manipulate and display arrays.
+	<li> Read in the NYC data and store in the variable, <tt>elevations</tt>
+	<li> Create a new array, <tt>floodMap</tt>, to hold our colors for the map.
+	<li> For each element in <tt>elevations</tt>, make a pixel colored by the schema above.
+	<li> Load our image into <tt>pyplot</tt>.
+	<li> Display the image.
+</ol>
+
+<p>We'll use a very simple (but a bit garish) color scheme, with our "blue" being 0% red, 0% green, and 100% blue.  And similarly, the "red" and the "green" we'll use will be 100% of each, 0% of the others, giving a map like:
+
+<p>
+<img src = "../images/floodMap.png">
+
+
+<p>Here's the code, implementing our outline below.  Copy it into an IDLE window and run it.  It expects that the file <a href="../files/elevationsNYC.txt">elevationsNYC.txt</a> is in the same directory as your program.
+<pre style = "background-color:lavender;width:600px">
+# Name:  ... your name here ...
+# Email: ... your email here ...
+# Date:  September 2019
+# Takes elevation data of NYC and displays using the default color map
+
+
+#Import the libraries for arrays and displaying images:
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+#Read in the data to an array, called elevations:
+elevations = np.loadtxt('elevationsNYC.txt')
+
+#Take the shape (dimensions) of the elevations
+#  and add another dimension to hold the 3 color channels:
+mapShape = elevations.shape + (3,)
+
+#Create a blank image that's all zeros:
+floodMap = np.zeros(mapShape)
+
+for row in range(mapShape[0]):
+    for col in range(mapShape[1]):
+        if elevations[row,col] <= 0:
+            #Below sea level
+           floodMap[row,col,2] = 1.0     #Set the blue channel to 100%
+        elif elevations[row,col] <= 6:
+            #Below the storm surge of Hurricane Sandy (flooding likely)
+           floodMap[row,col,0] = 1.0     #Set the red channel to 100%
+        else:
+            #Above the 6 foot storm surge and didn't flood
+            floodMap[row,col,1] = 1.0   #Set the green channel to 100%
+
+#Load the flood map image into matplotlib.pyplot:
+plt.imshow(floodMap)
+
+#Display the plot:
+plt.show()
+
+#Save the image:
+plt.imsave('floodMap.png', floodMap)
+
+</pre>
+
+<p> What would you change to make a more fine-grained map?  Namely, modify your program to color the region just above the Sandy storm surge (6 feet) and less than or equal to 20 feet the color grey (50% red, 50% green, 50% blue).  Also, modify your program to not show any graphics windows (<tt>plt.show()</tt>) but instead just compute and save the map to <tt>floodMap.png</tt>.  See
+<a href="ps.html">Programming Problem List</a>.
+
+<p>
+<img src = "../images/floodMap2.png">
+
+</div>
+
+
+<div>
+<h3> More on the Command Line Interface:  Relative Paths</h3>
+
+<p>Today, we will explore more about how to navigate the file system from the command line.  Recall in <a href="lab2.html">Lab 2</a>, at a terminal window, we had typed:
+<pre style = "background-color:lavender;width:400px">
+$ mkdir thomasH
+$ cd thomasH
+$ pwd
+</pre>
+which created a new directory, changed the current directory to it, and shows us what directory we were in.
+
+<p>In addition to changing to a directory, we can also change back to its "parent" directory by typing:
+<pre style = "background-color:lavender;width:400px">
+$ cd ../
+</pre>
+which says go to the parent of my current location.  It's often called a <i>relative path</i> since your destination is relative to your current location.  Typing
+<pre style = "background-color:lavender;width:400px">
+$ pwd
+</pre>
+will show the current working directory.  Using <tt>cd ../</tt> and <tt>pwd</tt>, answer the following:
+<ul>
+	<li> What is the parent of your current directory?
+	<li> Change to the parent directory.  What is the parent of your current directory?
+	<li> How many times can your repeat this?
+	<li> Which directory has no parent (i.e. "ancestor" to all the other directories?)?
+</ul>
+
+
+<p>This simple <tt>cd ../</tt> gives a powerful way to navigate the directories (especially when we are working on a server without a graphical user interface or automating a process).  Next lab, we will introduce <i>absolute paths</i> that change directories to the same place each time (independent of your current working directory).
+</div>
+
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+
+</div>
+
+
+
+</html>
