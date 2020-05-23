@@ -10,7 +10,7 @@ newSemesterName = input("Enter Name of New Semester: ")
 
 # Changes semester names to match file path format
 oldName = oldSemesterName[0].lower() + oldSemesterName[-2] + oldSemesterName[-1]
-newName = newSemesterName.lower()[0] + newSemesterName[-2] + newSemesterName[-1]
+newName = newSemesterName[0].lower() + newSemesterName[-2] + newSemesterName[-1]
 
 # Stores file paths in variables
 oldNamePath = "../" + oldName
