@@ -18,14 +18,13 @@ Fall 2020<br><br>
 <p>
 This week's lab will introduce strings and lists  in Python and some simple Unix commands.
 
-<p>Software tools needed:  web browser and Python IDLE programming
-environment.
+<p>Software tools needed:  web browser, Python IDLE programming environment and Unix shell.
 </div>
 
 <div>
-<h3>Quizzes & Code Reviews</h3>
+<h3>Quizzes</h3>
 
-See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week.
+At the end of this lab, <b>don't forget to take Lab Quiz 2!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
 
 </div>
 
@@ -50,7 +49,7 @@ greeting = "Hello, World!"
 print(greeting)
 </pre>
 <p>
-creates a location in memory that can be accessed by typing the name (or identifier) that we chose:  <tt>greeting</tt>.  <tt>greeting</tt> stores the string <tt>Hello, World!</tt>.  While the quotes are not stored, we will often write <tt>"Hello, World!"</tt> to make it more clear where the string begins and ends.  When we execute the code above, it will create the variable, <tt>greeting</tt>, and then print out the message:
+creates a location in memory that can be accessed by typing the name (or identifier) that we chose:  <tt>greeting</tt>.  <tt>greeting</tt> stores the string <tt>Hello, World!</tt>.  While the quotes are not stored, we will often write <tt>"Hello, World!"</tt> to make it more clear where the string begins and ends.  When we execute the code above, the first line will create the <b>variable</b>, <tt>greeting</tt> and store the string <tt>"Hello, World!"</tt> in it. The second line will print out the message:
 <pre style = "background-color:lavender;width:400px">
 Hello, World!
 </pre>
@@ -91,6 +90,7 @@ print(greeting)
 <p>
 The <tt>find()</tt> command gives the location of <tt>"ll"</tt> which is 2 if you start by counting the first character as 0.
 
+
 </div>
 
 <div>
@@ -125,7 +125,7 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
 	<li> Print the message in all lower case in a similar way.
 </ol>
 
-<p>Save your file as you go, and then run it.  Try different messages to make sure it works with different inputs.  When it works, see the <a href="ps.html">Programming Problem List</a>.
+<p>Save your file as you go, and then run it.  Try different messages to make sure it works with different inputs.  When it works add your name in a comment with a short description of what it does and see the <a href="ps.html">Programming Problem List</a>.
 </div>
 
 <div>
@@ -137,25 +137,32 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
 <p>
 <iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
+
 <p> Each character has a number assigned to it.  When you write a character, it is converted to its number, and that is stored instead to save space.  Python uses the standard Unicode encoding (which extends the popular ASCII encoding to new symbols and alphabets).  For example, <tt>ord('a')</tt> give the Unicode number for the character, <tt>a</tt>, which is 97.
 <p>Let's look at the Unicode of the characters in our string:
 
 <p>
 <iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c,%20ord%28c%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
-<p>Modify the program to:
-<ul>
-	<li> To prompt the user to enter a string and store it in <tt>myString</tt>, and
-	<li> Only print the ASCII code of each character (instead of the character and its ASCII code)
-</ul>
-When it works, add in your name in a comment, and see the <a href="ps.html">Programming Problem List</a>.
 
 <p>To go the other direction, there's a function <tt>chr()</tt> which takes numbers and returns the corresponding character.  For example, <tt>chr(97)</tt> returns <tt>'a'</tt>.  Let's look at the characters with unicode from 65 to 69:
-
 <p>
 <iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%0Afor%20i%20in%20range%2865,70%29%3A%0A%20%20%20%20print%28i,%20chr%28i%29%29%0A%20%20%20%20%0Aprint%28%22That's%20it%20for%20now!%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
-<p>The <tt>range()</tt> statement has several different options:
+
+  <p>Combining <tt>ord()</tt> and <tt>chr()</tt> demonstrated in the two programs above, modify the first of the two programs to:
+  <ul>
+  	<li> To prompt the user to enter a string and store it in <tt>myString</tt>, and
+  	<li> print each character, its Unicode number + 1 and the character corresponding to that number.
+  </ul>
+  For example, for character 'a', it prints:
+  <pre style = "background-color:lavender;width:450px">
+  a 98 b
+  </pre>
+  When it works, add in your name in a comment, and see the <a href="ps.html">Programming Problem List</a>.
+
+
+<p><b>The <tt>range()</tt> statement</b> has several different options:
 <ul>
 	<li> <tt>range(stop)</tt>:  if you have only a single number in the 		parenthesis, it will generate all the numbers from 0 to <tt>stop-1</tt>.  For example, <tt>range(5)</tt> generates the numbers <tt>0, 1, 2, 3, 4</tt>.
 
@@ -184,6 +191,8 @@ When it works, add in your name in a comment, and see the <a href="ps.html">Prog
 
 </div>
 
+
+
 <div>
 <h3>Biomolecular Sequences</h3>
 
@@ -211,32 +220,11 @@ A useful way to view a sequence is in groups of 3 nucleotides, or codons.  How c
 
 
 </div>
+
+
+
+
 <!--
-<div>
-
-<h3>Acronyms</h3>
-
-<p>
-It is often quite useful to break a string into pieces, and work with those pieces, instead of the whole string.  Below is a simple example that foreshadows later programs that we will write for real data sets.
-
-<p> We will write a program that takes a phrase and creates an acronym of the phrase:  that is, the first letter of each word.
-
-<p>Let's break this into steps:
-<ol>
-	<li> Prompt for a phrase & read it in.
-	<li> Make the phrase upper case.
-	<li> Split up the phrase into words.
-	<li> Take the first letter of each work split (after split, print out each part, show as a list), concatendation, and make an acronym of it (turn in as program)
-
-<pre>
-Enter a phrase:  City University New York
-Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
-Acronym:  CUNY
-</pre>
-
-</div>
-
-
 
 <h3>Natural Language Program?</h3>
 
@@ -266,7 +254,7 @@ If it swims like a loon and dives like a loon, it probably is a loon.
 </div>
 
 <div>
-<h3>Looping Through Strings, Revisited</h3>
+<h3>Indexing: looping Through Strings, Revisited</h3>
 
 <p>There's another way we can loop through strings, using the index of each character.  Let's assume that we have:
 <pre style = "background-color:lavender;width:400px">
@@ -280,16 +268,53 @@ If we wanted to print out only the first letter, we could write:
 <pre style = "background-color:lavender;width:400px">
 print(greeting[0])
 </pre>
-where the number between the square brackets is the index of the character, in this case, 0, or the very first character of the string.
+where the number between the <b>square brackets</b> is the <b>index</b> of the character, in this case, 0, or the very first character of the string.
 
-<p>Try guessing what the following code does and then running it:
+<p>Try guessing what the following code does and then running it by pressing the <tt>Next</tt> button:
 
 <p>
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0Aprint%28greeting%5B0%5D%29%0Aprint%28greeting%5B1%5D%29%0Aprint%28greeting%5B2%5D%29%0Aprint%28greeting%5B-1%5D%29%0A%0Afor%20j%20in%20range%285%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%0A%20%20%20%20%0Afor%20j%20in%20range%28len%28greeting%29%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%280,10,2%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%2810,0,-1%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 </div>
 
 
+<div>
+<h3>Acronyms</h3>
 
+<p>
+It is often quite useful to break a string into pieces, and work with those pieces, instead of the whole string.
+
+<p> Based on the programs demoed above, combine the use of <tt>split()</tt> and indexing (the use of square brackets to access individual characters in a string using the character's index) to write a program that <i>takes a phrase and creates an acronym of the phrase:  that is, the first letter of each word</i>.
+
+<p>To approach a problem, it is useful to break it into steps:
+<ol>
+	<li> Prompt for a phrase & read it in.
+	<li> Make the phrase upper case.
+	<li> Split up the phrase into words.
+	<li> Take the first letter of each word (keep in mind that <tt>split()</tt> returns a list of the words ), concatenate and make an acronym of it
+</ol>
+
+
+To <b>concatenate</b> strings you can use the + operator. For example:
+<pre style = "background-color:lavender;width:500px">
+  print('hi'+'bye')
+</pre>
+
+will output:
+<pre style = "background-color:lavender;width:500px">
+hibye
+</pre>
+
+Now translate the above <b>pseudocode</b> (informal but detailed description of the steps in a program) into python and test that your program works as follows:
+
+<pre style = "background-color:lavender;width:500px">
+Enter a phrase:  City University New York
+Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
+Acronym:  CUNY
+</pre>
+
+When it works, add in your name in a comment, and see the <a href="ps.html">Programming Problem List</a>.
+
+</div>
 
 
 <div>
@@ -297,6 +322,14 @@ where the number between the square brackets is the index of the character, in t
 
 <p>
 The <b>terminal</b> is a program that allows users to type commands (separate from Python) that we can use to communicate with the operating system.  It's often called the <b>command line interface</b> or <b>shell</b>.  It predates the graphical interface that is now available and is incredibly useful for automating tasks and working on remote servers.  We will slowly introduce <b>shell commands</b> over the course of the semester and eventually incorporate them into some programming assignments.
+<p> To access a Unix shell environment on your computer to run shell commands:
+<ul>
+	<li> Linux: You can launch a terminal by clicking on the icon for a terminal (or using the search feature to find it).
+	<li> Macintosh (OSX):  The OSX operating system, run by modern mac computers, is based on Unix (albeit a slightly different one than Linux).  You can bring up a terminal window by using Spotlight or search for "terminal".
+	<li> Windows:  The underlying terminal uses commands that are different from Unix (they're based on the Microsoft Disk Operating System, or MS-DOS). You can get a Linux terminal on your Windows machine with the Windows Subsystem for Linux (WSL). You can find directions on how to install it in the next section. WSL is useful to have throughout this course and future computer science courses.
+    Alternatively, there are several on-line emulators of Unix that you can use via the browser, such as <a href= "https://cocalc.com/" target = "blank">cocalc.com</a>  which provides a terminal in which you can type shell commands and the ability to create and upload files which will be useful later on.
+	<li> Phones/Tablets:  Since most do not run Unix (or allow access to a terminal), it is best to use a web-based environment with terminal emulator like <a href= "https://cocalc.com/" target = "blank">cocalc.com</a>.
+</ul>
 
 
 
@@ -305,18 +338,19 @@ We have already used the shell in the previous lab.  When you typed:
 <pre style = "background-color:lavender;width:400px">
 $  idle
 </pre>
-you were asking the operating system to launch the program <tt>idle3</tt>.  The laptop was configured to first look in folders containing applications, and then to check your home folder, and then to check the current folder you are using to find an application by that name.
+you were asking the operating system to launch the program <tt>idle3</tt>.
 
 <p>
 Let's create a new <b>directory</b>, or folder, to hold your images (using the shell or command line).  Where it says <tt>thomasH</tt> below, replace with your name.  It is easier if you avoid spaces in the names:
 <ul>
-	<li>  Open a new terminal window (go to the upper left menu icon, search for terminal and click, or if you already have terminal, you can click on its menu to create a new window).
+	<li>  Open a new terminal window.
 	<li>  In the terminal window, type:
 	<pre style = "background-color:lavender;width:400px">
 $ pwd</pre>
 	(The <tt>$</tt> represents the prompt at the command line-- no need to type it.)
 
-	<p>This tell you the <b>path</b>, or location, of your current working directory.  To see what is in the folder, you request a 'listing':
+	<p>This tells you the <b>path</b>, or location, of your current working directory.
+    <li>To see what is in the folder, you request a 'listing':
 	<pre style = "background-color:lavender;width:400px">
 $ ls</pre>
 	<li> To add a new directory, we type:
@@ -325,30 +359,54 @@ $ mkdir thomasH</pre>
 	(replace <tt>thomasH</tt> with your name to create a directory for you!).
 
 	<p>
-	Now, when we list the current directory, we should new item (namely the  directory with your name):
+	Now, when we list the current directory, we should see the new item (namely the  directory with your name):
 <pre style = "background-color:lavender;width:400px">
 $ ls</pre>
 
 	<li> Let's change directories:
 <pre style = "background-color:lavender;width:400px">
 $ cd thomasH</pre>
-	If we ask for a listing (<tt>ls</tt>), we will now see the contents of your directory.
+	If we ask for a listing (<tt>ls</tt>), we will now see the contents of your directory, which is initially empty.
 </ul>
-The graphical interface and shell are operating on the same underlying system, so, changes you make with one can be seen by the other.  If you open up the file
-icon (on left hand menu bar) and click the <tt>Home</tt> directory, you will see the folder you just created.
+The graphical interface and shell are operating on the same underlying system, so, changes you make with one can be seen by the other.
+If you use your OS' graphical user interface to open the folder (directory) you started in when you typed <tt>pwd</tt>, you will see the folder you just created.
 
 <p> In the next lab, we will explain how to copy and move files between directories.
 
 </div>
 
 
+<div>
+<h3>Installing the Windows Subsystem for Linux</h3>
+<p><b>If you don't have a Windows machine, you can move on to the Lab Quiz</b>
+<p> If you are using Windows, here's directions on how to get the Linux terminal on your computer:
+<ol>
+	<li> Search "Turn Windows features on or off" in the Windows search bar and open it.
+	<li> Look for "Windows Subsystem for Linux", make sure the box is checked, and hit OK (You will have to restart your computer).
+	<li> Open Microsoft Store application and search Ubuntu.
+	<li> Click on Ubuntu, hit get, and wait for it to install (You can use any version, the one without a version number will give you the latest version of Ubuntu).
+	<li> Launch the Ubuntu application and allow first time setup.
+	<li> Create a username and password (When entering a password, no characters will appear, but you are typing your password).
+	<li> Update Ubuntu with the command: <pre style = "background-color:lavender;width:450px"> sudo apt update && sudo apt upgrade </pre>
+	(You will have to enter the password you set) You should run this command periodically as Ubuntu will not update on its own.
+</ol>
+</p>
+
+<p> You have successfully installed and setup WSL and can now use the terminal as you would on Ubuntu. </p>
+
+<p> These installation instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
+
+</div>
 
 
 <div>
 
 <h3>What's Next?</h3>
 
-<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<p><b>Now is a great time to take Lab Quiz 2! (15 minutes)</b> It is directly based on  Lab2.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
 </div>
 
