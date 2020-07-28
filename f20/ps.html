@@ -256,7 +256,7 @@ A sample run of your program should look like:
 		<p><i><b>Hint:</b> Use the</i> <code>start, stop, step</code> <i>options in the</i> <code>range()</code> <i>function</i>
 
 
-  	<li > <b>Due Date: 21 September</b>  <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html"> chapter 9</a> & <a href="lab2.html">Lab 2</a></b><br>
+  	<li > <b>Due Date: 21 September</b>  <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html"> chapter 9</a>, <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> & <a href="lab2.html">Lab 2</a></b><br>
 
       <p>Write a problem that does the following:
       <ol>
@@ -441,11 +441,47 @@ Hint:  Here's a way to approach the problem:
 	<p> <i><b>Hint:</b> decrease the amount of red while increasing the amount of blue</i>
 
 
-	<li > <b>Due Date: 25 September</b>
+    <li > <b>Due Date: 1 October</b>
+
+
+      		<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>, <a href="lab2.html">Lab 2</a> & <a href="https://huntercsci127.github.io/s20.html#l3">Lecture 3</a> </b><br>
+
+
+          	<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first initial of the first name, followed by ".", and  followed by the last name.
+
+          	<p>A sample run of your program should look like:
+          		<pre style ="background-color:lavender">
+    Please enter your list of names:  Lovelace, Ada; Fleming, Williamina; Hopper, Grace; Easley, Annie; Wilkes, Mary Allen
+
+    A. Lovelace
+    W. Fleming
+    G. Hopper
+    A. Easley
+    M. Wilkes
+
+    Thank you for using my name organizer!
+          </pre>
+
+          <p><i>Hint: See <a href="http://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, what is <tt>s = str[0] + "."</tt>?</i>
+
+
+
+  <li > <b>Due Date: 2 October</b><b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a>  & <a href="https://huntercsci127.github.io/s20.html#l3">Lecture 3</a></b><br>
+<p>Write a program that asks for the time in 24-hour time and converts it to 12-hour time.
+
+  <p>A sample run of your program should look like:
+  <pre style ="background-color:lavender;width:400px">
+  Please enter the time in seconds: 7695
+  2 h: 8 m: 15 s
+  </pre>
+
+<br><i><b>Hint</b> Don't forget to convert the input into a numeral for calculation.</i>
+
+<p>	<li > <b>Due Date: 25 September</b>
 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab3.html">Lab 3</a></b><br>
 
-		<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green channel of the original image (that is, no red and blue channels).
+		<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the red and blue channels of the original image (that is, no green channel).
       <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>
 
 
@@ -460,13 +496,21 @@ Enter name of the output file:  greenH.png
 
 <p>
 <img src="../images/csBridge.png" width = 300>
-<img src="../images/greenH.png" width = 300 >
+<img src="../images/prupleBridge.png" width = 300 >
 
 
-	<p> Note:  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+	<p> <b>IMPORTANT:</b>  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>.</i>
 
+<h1>CHANGE
+
+      <hr>
+      <p>
+
+      <h2><u> Lecture / Lab 4</u></h2>
+
+      <p>
 
 
 
