@@ -15,10 +15,25 @@ Fall 2020<br><br>
 </div>
 
 <div>
-<p>
-This week's lab will introduce strings and lists  in Python and some simple Unix commands.
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Python strings
+      <li> String methods
+      <li> String indexing
+      <li> Getting input
+      <li> Looping through Strings
+      <li> For loops: the <tt>range()</tt> function
+      <li> Looping through lists
+      <li> The <tt>split()</tt> function
+      <li> The command line
+      <li> Unix commands: listing files, directory navigation, directory creation
+    </ul>
 
 <p>Software tools needed:  web browser, Python IDLE programming environment and Unix shell.
+
+  <p><b><a href="../files/Lab2Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+  <br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
 </div>
 
 <div>
@@ -125,14 +140,14 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
 	<li> Print the message in all lower case in a similar way.
 </ol>
 
-<p>Save your file as you go, and then run it.  Try different messages to make sure it works with different inputs.  When it works add your name in a comment with a short description of what it does and see the <a href="ps.html">Programming Problem List</a>.
+<p>Save your file as you go, and then run it.  Try different messages to make sure it works with different inputs.  When it works add your name in a comment with a short description of what it does and see the <a href="ps.html#ps2">Programming Problem List</a>.
 </div>
 
 <div>
 <h4>Looping Through Strings</h4>
 
 
-<p> You can also loop through strings.  Try running the code below:
+<p> You can also loop through strings.  Try running the code below by clicking the <tt>Next</tt> button to execute each instruction:
 
 <p>
 <iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
@@ -159,7 +174,7 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
   <pre style = "background-color:lavender;width:450px">
   a 98 b
   </pre>
-  When it works, add in your name in a comment, and see the <a href="ps.html">Programming Problem List</a>.
+  When it works, add in your name in a comment, and see the <a href="ps.html#ps2">Programming Problem List</a>.
 
 
 <p><b>The <tt>range()</tt> statement</b> has several different options:
@@ -182,7 +197,7 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
 <p> For example, given the string <code>"FridaysSaturdaysSundays"</code>, <code>split('s')</code> will break up the string into a list of days: <code>["Friday","Saturday","Sunday",""]</code> throwing away the 's' characters on which it splits.
 <p> Notice that it will produce an empty string at the end because of the 's' character at the end of "Sundays".
 
-<p>Try running the code below:
+<p>Try running the code below by clicking the <tt>Next</tt> button to execute each instruction:
 
 <p>
 <iframe width="1100" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22FridaysSaturdaysSundays%22%0A%20%20%20%20%0Adays%20%3D%20myString.split%28's'%29%0A%20%20%20%20%0Afor%20day%20in%20days%3A%0A%20%20%20%20print%28day%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
@@ -270,7 +285,7 @@ print(greeting[0])
 </pre>
 where the number between the <b>square brackets</b> is the <b>index</b> of the character, in this case, 0, or the very first character of the string.
 
-<p>Try guessing what the following code does and then running it by pressing the <tt>Next</tt> button:
+<p>Try guessing what the following code does and then running it by pressing the <tt>Next</tt> button to execute each instruction:
 
 <p>
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0Aprint%28greeting%5B0%5D%29%0Aprint%28greeting%5B1%5D%29%0Aprint%28greeting%5B2%5D%29%0Aprint%28greeting%5B-1%5D%29%0A%0Afor%20j%20in%20range%285%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%0A%20%20%20%20%0Afor%20j%20in%20range%28len%28greeting%29%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%280,10,2%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%2810,0,-1%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
@@ -312,7 +327,7 @@ Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
 Acronym:  CUNY
 </pre>
 
-When it works, add in your name in a comment, and see the <a href="ps.html">Programming Problem List</a>.
+When it works, add in your name in a comment, and see the <a href="ps.html#ps2">Programming Problem List</a>.
 
 </div>
 
@@ -404,7 +419,7 @@ If you use your OS' graphical user interface to open the folder (directory) you 
 <h3>What's Next?</h3>
 
 <p><b>Now is a great time to take Lab Quiz 2! (15 minutes)</b> It is directly based on  Lab2.
-<br>After that, you can continue working on the programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps2">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
 <br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
 Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 

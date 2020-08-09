@@ -15,18 +15,28 @@ Fall 2020<br><br>
 
 <div>
 
-<p>
-Today's lab will focus on getting numerical input and decisions in Python to make augment elevation maps and relative paths in the Unix operating system.
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Getting numbers as input / type conversion
+      <li> Computation (operators and operands)
+      <li> Decisions (if - elif - else)
+      <li> Creating images with numpy and pyplot
+      <li> Accessing and modifying parts of an image
+      <li> Numpy arrays
+      <li> Unix commands: relative paths
+    </ul>
 
-<p>Software tools needed:  terminal (command line), web browser and Python IDLE programming
-environment.
-
+<p>Software tools needed:  terminal (command line), web browser and Python programming
+environment with numpy and matplotlib packages installed.
+<p><b><a href="../files/Lab4Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
 </div>
 
 <div>
-<h3>Quizzes & Code Reviews</h3>
+<h3>Quizzes</h3>
 
-See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week.
+At the end of this lab, <b>don't forget to take Lab Quiz 4!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
 
 </div>
 
@@ -49,9 +59,9 @@ The simplest way to get input for our programs is via the console.  In <a href="
 
 <p>Since Python doesn't know what you will be entering (number, words, etc.), it stores everything as a string, and leaves it to the user to convert it to what they want.  For example, if we wanted a number, we need to convert the letters the user used into a number.  The basic conversion functions are:
 <ul>
-	<li> <tt>int()</tt>:  converts a string (series of letters) into the corresponding integer (whole number).
-	<li> <tt>float()</tt>: converts a string (series of letters) into the corresponding floating point number (real number).
-	<li> <tt>str()</tt>: converts a number into the corresponding sequence of letters.
+	<li> <tt>int()</tt>:  converts a string (series of characters) into the corresponding integer (whole number).
+	<li> <tt>float()</tt>: converts a string (series of characters) into the corresponding floating point number (real number).
+	<li> <tt>str()</tt>: converts a number into the corresponding sequence of characters.
 </ul>
 
 <p>
@@ -67,10 +77,10 @@ problem:
 <blockquote>
 	Daniel has started to train for triathalons.  Unfortunately, his bike computer only reads out distances in kilometers.  Write a conversion program for him that 	takes as input kilometers and outputs the corresponding distance in miles.
 </blockquote>
-Our first step is to design the algorithm.  It follows a standard pattern:  <i>Input, Process, Output (IPO)</i>.
+Our first step is to <b>design the algorithm</b>.  It follows a standard pattern:  <i>Input, Process, Output (IPO)</i>.
 
 <p>
-In a text window in IDLE, write out what the input is, what the process is, and what the output is.
+In a text window in your python environment, write out what the input is, what the process is, and what the output is.
 
 <p>
 Here is one possible design:
@@ -94,7 +104,7 @@ Note that we're preceding the items in our outline by '#', so they can be used a
 <tt>km2miles.py</tt>.
 
 <p>
-Now, we are ready to convert our outline of the algorithm to Python.  Begin by adding a comment to the beginning of the file:
+Now, we are ready to <b>convert our outline of the algorithm to Python</b>.  Begin by adding a comment to the beginning of the file:
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name
 #Email: your email
@@ -119,7 +129,7 @@ print("Welcome to Daniel's calculator!")
 #2. Calculate the distance in miles as 0.621371*km
 #3. Output miles
 </pre>
-Make sure that there are no typos by saving and running your program ('Run Module' in the Run menu).
+Make sure that there are no typos by saving and running your program.
 
 <p>Next, fill in the program line by line.  First, ask the user for their input:
 <pre style = "background-color:lavender;width:450px">
@@ -176,7 +186,7 @@ print("The miles are", miles)
 Save and run your program again.  This time, it will produce output.  Try it with some simple values
 to make sure that it gets the right answer.  For example, if you input 0 km, the output should also
 be 0.  If you input 1 km, you should output 0.621371 miles.
-See the <a href="ps.html">Programming Problem List</a>.
+See the <a href="ps.html#ps4">Programming Problem List</a>.
 
 <p>
 In addition to multiplication ('*'), Python has addition ('+'), subtraction ('-'), exponentation ('**'), division ('/'), integer-division ('//') and modulus/remainder ('%') built-in.  See <a href="https://runestone.academy/runestone/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> in the textbook:  there are some short quiz examples to test yourself at the bottom of textbook page.
@@ -255,7 +265,7 @@ For the last part of the lab, let's combine what we have learned about images an
 <ol>
 	<li> Create a folder to hold your work (see <a href="lab2.html">Lab 2</a> for directions for doing so from the command line).
 	<li> Download <a href="../files/elevationsNYC.txt">elevationsNYC.txt</a> and save to your folder (you may need to move it from your <tt>Downloads</tt> folder).
-	<li> Open IDLE, and create the following short program:
+	<li> In your Python environment, create the following short program:
 	<pre style = "background-color:lavender;width:600px">
 # Name:  ... your name here ...
 # Email: ... your email here ...
@@ -364,7 +374,7 @@ plt.imsave('floodMap.png', floodMap)
 </pre>
 
 <p> What would you change to make a more fine-grained map?  Namely, modify your program to color the region just above the Sandy storm surge (6 feet) and less than or equal to 20 feet the color grey (50% red, 50% green, 50% blue).  Also, modify your program to not show any graphics windows (<tt>plt.show()</tt>) but instead just compute and save the map to <tt>floodMap.png</tt>.  See
-<a href="ps.html">Programming Problem List</a>.
+<a href="ps.html#ps4">Programming Problem List</a>.
 
 <p>
 <img src = "../images/floodMap2.png">
@@ -411,7 +421,10 @@ will show the current working directory.  Using <tt>cd ../</tt> and <tt>pwd</tt>
 
 <h3>What's Next?</h3>
 
-<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<p><b>Now is a great time to take Lab Quiz 4! (15 minutes)</b> It is directly based on Lecture and Lab 4.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps4">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
 </div>
 

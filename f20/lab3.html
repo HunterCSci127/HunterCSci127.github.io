@@ -16,12 +16,26 @@ Fall 2020<br><br>
 
 <div>
 
-<p>
-Today's lab will focus on image files and colors
-in Python and Unix commands for copying and renaming files.
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Colors with turtles by name
+      <li> Colors with turtles by Decimal (RGB amounts)
+      <li> Hexadecimal Numbers
+      <li> Colors with turtles -- by Hexadecimal
+      <li> Images (png)
+      <li> Numpy arrays
+      <li> Reading and writing files with pyplot
+      <li> Unix commands: listing files long format, copy and move (rename)
+    </ul>
 
-<p>Software tools needed:  terminal (command line), web browser and Python IDLE programming
+
+<p>Software tools needed:  terminal (command line), web browser and Python programming
 environment.
+
+<p><b><a href="../files/Lab3Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
+</div>
 
 
 </div>
@@ -172,7 +186,7 @@ The resulting graphics window is:
 <p>
 How would you show shades of blue?
 What happens if you repeat the loop backwards (from 255 to 0)?
-When you have figured out the answer, see the <a href="ps.html">Programming Problem List</a>.
+When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
 
 </div>
 
@@ -236,7 +250,7 @@ producing a graphics window with:
 
 <p>
 The code above always produces a medium blue turtle.  How would you modify the program to let the user specify a hex code for the color of the turtle?
-When you have figured out the answer, see the <a href="ps.html">Programming Problem List</a>.
+When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
 
 </div>
 
@@ -285,8 +299,12 @@ where the <tt>r</tt> is the row and <tt>c</tt> is the column of the pixel and <t
 
 
 <p>
-Let's write a program that manipulates an image.  Read through the code first, and then try on your computer.  What does it do?  Note:  this program assumes that you have a file called <a href="../images/csBridge.png">csBridge.png</a> in the same directory.  You can use that file, or substitute one of your own.
-<pre style = "background-color:lavender;width:650px">
+Let's write a program that manipulates an image.<br>
+To do so we will use a new package used for visualization and plotting called <tt>matplotlib.pyplot</tt> (abbreviated by convention as <tt>plt</tt>)
+When we use <tt>pyplot</tt> to read the image, the data is stored in a <b>grid-like structure as described above, called a <i>numpy array</i></b> (thus the second package, <tt>numpy</tt> abbreviated <tt>np</tt>)
+This program does not use any of the <tt>numpy</tt> functions (we will next week), but that is what <tt>img</tt> and <tt>img2</tt> are.
+Read through the code first, and then try it on your computer.  What does it do?  Note:  this program assumes that you have a file called <a href="../images/csBridge.png">csBridge.png</a> in the same directory.  You can use that file, or substitute one of your own.
+<br><pre style = "background-color:lavender;width:650px">
 #Name:  CSci 127 Teaching Staff
 #Date:  Fall 2017
 #This program loads an image, displays it, and then creates, displays,
@@ -298,7 +316,7 @@ import numpy as np
 
 
 img = plt.imread('csBridge.png')   #Read in image from csBridge.png
-plt.imshow(img)		           #Load image into pyplot
+plt.imshow(img)		                 #Load image into pyplot
 plt.show()                         #Show the image (waits until closed to continue)
 
 img2 = img.copy()        #make a copy of our image
@@ -313,7 +331,7 @@ plt.imsave('reds.png', img2)  #Save the image we created to the file: reds.png
 
 <p>
 The code above always produces an image with only the red channel displayed. What happens if you display only the red and blue channels?
-When you have figured out the answer, see the <a href="ps.html">Programming Problem List</a>.
+When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
 
 
 
@@ -392,7 +410,7 @@ prog1.py
   <h3>What's Next?</h3>
 
   <p><b>Now is a great time to take Lab Quiz 3! (15 minutes)</b> It is directly based on Lecture and Lab 3.
-  <br>After that, you can continue working on the programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+  <br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps3">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
   <br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
   Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
