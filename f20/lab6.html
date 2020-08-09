@@ -22,7 +22,7 @@ Fall 2020<br><br>
   <h3> Learning Objectives:</h3>
     <ul>
       <li> Reading data with pandas
-      <li> Plotting pandas dataframe data with pyplot
+      <li> Plotting dataframe data with pandas and pyplot
       <li> Accessing dataframe series (i.e. columns)
       <li> Generating new series (i.e. columns) from data in other columns
       <li> Aggregating recurring values with <tt>groupby()</tt>
@@ -169,10 +169,10 @@ print("The average number living in the Queens is", pop["Queens"].mean())
 <ul>
 	<li> What happens if you leave off the <tt>x = "Year"</tt>?  Why?
 	<li> What happens if you add in <tt>x = "Year", y = "Bronx"</tt>?
-	<li> What do the series functions:  <tt>min()</tt>, <tt>std()</tt>, and
+	<li> What do the series functions:  <tt>min()</tt>, <tt>median()</tt>, <tt>std()</tt>, and
 	<tt>count()</tt> do?
 </ul>
-
+<p> When you have the answer, see the <a href="ps.html#ps6">Programming Problem List</a>.
 
 </div>
 
@@ -242,7 +242,7 @@ fig.savefig('fractionBX.png')
 </pre>
 
 <p>
-How can you modify the program to let the user specify the borough to compute the fraction of the population?  When you have the answer, see the <a href="ps.html">Programming Problem List</a>.
+How can you modify the program to let the user specify the borough to compute the fraction of the population?  When you have the answer, see the <a href="ps.html#ps6">Programming Problem List</a>.
 </div>
 
 
@@ -251,6 +251,7 @@ How can you modify the program to let the user specify the borough to compute th
 
 <p> Sometimes you have <b> recurring values in a column</b> and you want to examine the data for a particular value. For example, given the dataset containing weather observation in Australia, <b> find the average rainfall at each location. </b>
 <p> <img src="../images/Rain.png" height = 250>
+<p> You may <a href="../files/AustraliaRain.csv" target="blank">download the dataset</a> to test this program locally.
 
 <p>The pandas function <b>groupby()</b> does exactly that: groups the rows by values in a given column and then aggregates the corresponding values for the other columns via some specified function (e.g. min, max, avg, ..)
 
@@ -270,8 +271,16 @@ print(groupAvg['Rainfall'])
 
 <p> This will print a list of average rainfall measurements at each location:
 <p> <img src="../images/RainOutput.png" height = 175>
+<p> <b>Note:</b> you could achieve the above in a single line as follows (it is equivalent to the above)
+    <pre style = "background-color:lavender;width:700px">
+...
 
-<p> To retrieve the data for a particular location, for example "Albury", we can use groupby() along with <b>get_group()</b>.
+#Group the data by location averages and print the average rainfall at each location.
+print(rain.groupby('Location').mean()['Rainfall'])
+
+    </pre>
+
+<p> Finally, to retrieve the data for a particular location, for example "Albury", we can use groupby() along with <b>get_group()</b>.
 <pre style = "background-color:lavender;width:550px">
 
 #Group the data by location get averages for group Albury.
@@ -345,7 +354,7 @@ $ ./helloScript
 
 <p>Make sure to include a comment on the <b>second line</b> with your name (the first line has the <tt>#!</tt> line).  Comments in shell are, like Python, preceded by a <tt>#</tt>.
 
-<p> Once you have a shell script that will print <tt>Hello, World</tt>, see the <a href="ps.html">Programming Problem List</a>.
+<p> Once you have a shell script that will print <tt>Hello, World</tt>, see the <a href="ps.html#ps6">Programming Problem List</a>.
 
 
 </div>

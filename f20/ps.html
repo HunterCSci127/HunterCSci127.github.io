@@ -968,59 +968,65 @@ Your map is stored medBlue.png.</pre>
 
 
 
-<h1>CHANGE</h1>
 
+
+<p>
+<a id="ps6"></a>
+<h2><u> Lecture / Lab 6</u></h2>
 
 <a id="cr7"></a>
-	<li > <b>Due Date: 24 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
+	<li > <b>Due Date: 22 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
 
 
 
-		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the borough, an name for the output file, and then display the fraction of the population that has lived in that borough, over time.
+		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the name of two boroughs, and the name for the output file, and then display the fraction of the population that has lived in both boroughs (i.e. the fraction of their sum), over time.
 
 		<p> A sample run of the program:
 <pre style ="background-color:lavender;width:400px">
-Enter borough name:  Queens
-Enter output file name:  qFraction.png
+Enter first borough name:  Queens
+Enter second borough name:  Brooklyn
+Enter output file name:  QBFraction.png
 </pre>
-		<p> The file <tt>qFraction.png</tt>:
+		<p> The file <tt>QBFraction.png</tt>:
 
-		<p><img src="../images/qFraction.png" width=300>
-
-
-		<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+		<p><img src="../images/QBFraction.png" width=300>
 
 
+		<p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 
-	<li > <b>Due Date: 25 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik" target="_blank">DataCamp Pandas</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
 
 
-		<p> Write a program that computes the minimum, maximum, average and standard deviation of the population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.
+	<li > <b>Due Date: 23 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html" target="_blank">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik" target="_blank">DataCamp Pandas</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
 
-		<p>A sample run of your program:
+
+		<p> Write a program that computes the minimum, maximum, average, median and standard deviation of the population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.
+
+	<p>A sample run of your program:
 <pre style ="background-color:lavender;width:400px">
 Enter borough: Staten Island
-Minimum population:  727
-Maximum population:  474558
-Average population:  139814.23076923078
-Standard deviation:  162706.80974594955
+Min: 727
+Max: 474558
+Mean: 139814.23076923078
+Median: 59357.0
+Standard Deviation: 162706.80974594955
 </pre>
-		<p>and another run:
+<p>and another run:
 <pre style ="background-color:lavender;width:400px">
 Enter borough: Brooklyn
-Minimum population:  2017
-Maximum population:  2738175
-Average population:  1252437.5384615385
-Standard deviation:  1153123.5551968655
+Min: 2017
+Max: 2738175
+Mean: 1252437.5384615385
+Median: 1002564.5
+Standard Deviation: 1153123.5551968655
 </pre>
 
-		<p> <i>Hint: See <a href="lab6.html">Lab 6</a></i>.
+<p> <i>Hint: See <a href="lab6.html">Lab 6</a></i>.
 
 
 
 
-      <li > <b>Due Date: 26 October</b>  <b style="float:right">Reading:
+      <li > <b>Due Date: 23 October</b>  <b style="float:right">Reading:
     	<a href="https://guides.github.com/activities/hello-world/">Github Guide</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
 
 		<p>In <a href="lab6.html">Lab 6</a>, you created a github account.  Submit a text file with the name of your account.	The grading script is expecting a file with the format:
@@ -1031,20 +1037,75 @@ Standard deviation:  1153123.5551968655
 AccountNameGoesHere
 </pre>
 
-		<p>Note:  it takes a few minutes for a newly created github account to be visible.  If you submit to gradescope and get a message that the account doesn't exist, wait a few minutes and try again.
+		<p><B>Note:</b>  it takes a few minutes for a newly created github account to be visible.  If you submit to gradescope and get a message that the account doesn't exist, wait a few minutes and try again.
 
 
 
 
-      	<li > <b>Due Date: 2 November</b>  <b style="float:right">Reading:
-      	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
+<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading:
+<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
+	<p>Write an Unix shell script that prints: <tt> Hello!</tt>
+  <br> Then prints on a new line: <tt> Welcome to Hunter College!!!</tt>
 
-      		<p>Write an Unix shell script that prints: <tt> Hello, Hunter College!!!</tt>
-
-      		<p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
+<p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
 
 
 
+	<li > <b>Due Date: 26 October</b>
+<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
+
+
+	<p> Write a program that, given the <a href="../files/stars.csv">'Stars' dataset</a> will do the following:
+<ul>
+<li> Ask the user for the name of the input file.
+<li> Ask the user for the name of the column they wish to average (one of <tt>Temperature, Luminosity, Radius</tt> or <tt>Absolute Magnitude</tt>)
+<li> Print the average of that column for each star type.
+</ul>
+  <p><b>Note:</b> To put the data in perspective, keep in mind that these measures are given as multiples of those of the Sun! (image credits: space.com)
+  <p><img src="../images/starSizes.jpg" height=150 ><br>
+  <p>A sample run:
+<pre style ="background-color:lavender;width:500px">
+Enter file name: stars.csv
+Enter the name of the column
+(Temperature, Luminosity, Radius or Absolute Magnitude)
+you would like to average: Luminosity
+
+The average Luminosity for each Star type is:
+Star type
+Brown Dwarf           0.000693
+Hypergiant       309246.525000
+Main Sequence     32067.386275
+Red Dwarf             0.005406
+Supergiant       301816.250000
+White Dwarf           0.002434
+Name: Luminosity, dtype: float64
+</pre>
+
+  <p>Another sample run:
+<pre style ="background-color:lavender;width:500px">
+Enter file name: stars.csv
+Enter the name of the column
+(Temperature, Luminosity, Radius or Absolute Magnitude)
+you would like to average: Temperature
+
+The average Temperature for each Star type is:
+Star type
+Brown Dwarf       2997.950
+Hypergiant       11405.700
+Main Sequence    16018.000
+Red Dwarf         3283.825
+Supergiant       15347.850
+White Dwarf      13931.450
+Name: Temperature, dtype: float64
+</pre>
+<p><b>Note: </b>You may assume that input is correct (e.g. only expected columns are entered as input)
+<p><b>Hint: </b>You should use <tt>groupby()</tt> as described in <a href="lab6.html">Lab 6</a>.
+
+<p>
+<h3>Programs 31-60 coming soon!</h3>
+
+<!--
+<h1>CHANGE</h1>
 
 <a id="cr8"></a>
    		<li > <b>Due Date: 3 November</b>
@@ -1077,7 +1138,7 @@ AccountNameGoesHere
 
         <p><i>Hint:  See Lecture 4 notes.</i>
 
-          <!--
+
 
 
 	<li > <b>Due Date: 24 October</b>     		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
@@ -1120,7 +1181,8 @@ Double your recipe is:
 
 
 
--->
+
+
 
 <li > <b>Due Date: 6 November</b> 	<b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
 
@@ -1154,35 +1216,6 @@ Enter name of output file:  dhsPlot.png
 
 
 
-		<li > <b>Due Date: 15 November</b>
-		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
-
-
-		<p> Write a program that, given the <a href="../files/starsNames.csv">'Stars' dataset</a> will do the following:
-		<ul>
-			<li> Ask the user for the name of the input file.
-      <li> Ask the user for the name of the star type.
-			<li> Print the radii of the largest and the smallest star for the given star type.
-		</ul>
-    <p><b>Note:</b> To put this in perspective, keep in mind that the radii of the stars are given here as multiples of the Sun's radius! (image credits: space.com)
-    <p><img src="../images/starSizes.jpg" height=150 ><br>
-<p>A sample run:
-<pre style ="background-color:lavender;width:400px">
-Enter file name:  stars.csv
-Enter the name of the star type:  Hypergiant
-The radius of the largest Hypergiant is 1948.5
-The radius of the smallest Hypergiant is 708.9
-</pre>
-
-<p>Another sample run:
-<pre style ="background-color:lavender;width:400px">
-Enter file name:  stars.csv
-Enter the name of the star type:  Brown Dwarf
-The radius of the largest Brown Dwarf is 0.19
-The radius of the smallest Brown Dwarf  is 0.057
-</pre>
-
-<p><b>Note: </b>You may assume that input is correct (e.g. only star types found in the data are entered as input)
 
   <li > <b>Due Date: 16 November</b>
   <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> & <a href="lab8.html">Lab 8</a> </b><br>
@@ -1765,7 +1798,7 @@ Enter a number: -1
 111111
 </pre>
 
-
+-->
 
 
 </ol>
