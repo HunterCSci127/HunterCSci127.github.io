@@ -14,7 +14,7 @@
 <div id="header"><br>
 <!--<img id="bookImage" alt="mapping quake data" src="../images/mappingQuakeData5.png"
  width="120">-->
-<h2>Honors Programming Problem List<br>
+<h2>Honors Project Problem List<br>
 CSci 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
 Fall 2020<br><br>
@@ -40,130 +40,117 @@ Fall 2020<br><br>
 
 <ul>
 
-	<li > <b>HC 1:  Neighborhoods of the CitiBike Expansion</b>  <b style="float:right">Due Date: 3 September</b>  <br>
-	
+	<li > <b>HC 1:  Team Contract and Dataset (Airbnb or another dataset of your choice)</b>  <b style="float:right">Due Date: 1 September</b>  <br>
+
 	<p>
-	<img src="http://d21xlh2maitm24.cloudfront.net/nyc/pr351-19-citibike-expansion.png?mtime=20190717103528" height = 600>
+	<img src="../images/airbnb.png" height = 200>
 
-	<p>  Throughout the semester, we will focus on the upcoming <a href="https://www.citibikenyc.com/blog/major-citi-bike-expansion-map-revealed">expansion of CitiBike</a>:
+	<p>  Throughout the semester, we will analyze the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019.
 
-		<blockquote>
-			The de Blasio Administration joined Lyft to today announce the boundaries of the planned expansion of Citi Bike over the next five years, which will bring the nation's largest bike share system to a larger and more economically diverse range of communities. Last November, the City and Lyft announced an agreement in which Lyft would invest $100 million to grow and strengthen the system, doubling the size of its service area and tripling the number of bikes over the next five years. The third phase of Citi Bike's expansion will bring Citi Bike to all of Manhattan, as well as into the Bronx, and deeper into Brooklyn and Queens.
-		</blockquote>
+    <h4>Step 1 -- Project structure:</h4>
+    <p>We will work in teams. Each team will choose a borough to analyze. Each team member will then choose a neighborhood in that borough to report on.
+    <br>Throughout the semester each team will provide different analyses of the overall borough supplemented by analyses of the chosen neighborhoods.
+    <br>These analyses will be broken down across different assignments and will be a mix of research and data analysis.
+    <p>We propose to use the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019. However, we give you the freedom to choose a different dataset if that would inspire you more. Another great place to look for data is <a href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data.</a> If you choose a different dataset, it must have the following properties to guarantee that you will be able to fulfill all the assignments despite working with different data:
+      <ul>
+        <li> The data must have an attribute (column) corresponding to neighborhoods (preferably NYC)
+        <li> It must include some numerical data
+        <li> It must include some categorical data
+        <li> It must include geographical locations (latitude and longitude columns, or exact address column)
+      </ul>
+and must be approved by the instructor.
+<p>Discuss with your assigned team to decide on a dataset, then move on to Step 2. <br><i>Note: You don't need to identify the alternate dataset in this assignment, but if you are considering it you should indicate so in Step 2 and <b>must identify the dataset no later than our next meeting on September 4.</b></i>
 
-  and how best to allocate the new bicycles to the next targeted neighborhoods in the South Bronx, Upper Manhattan, and Queens.
+<h4>Step 2 -- Team Contract:</h4>
+ <p>Work with your assigned team to complete the <a href="../files/hcTeamContract.docx">Team Contract</a>.
+<p>Once your contract is complete and signed by all team members, <b>upload a .pdf</b> to the assignment <tt>HC 1.</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>. This will be a group submission (one submission per team). Unlike the Python code, it is not automatically graded.
 
-  <p>To begin, pick a neighborhood (i.e. choose one and sign up on Blackboard).  Create a single page summary of your neighborhood that includes:
+
+
+
+
+
+	<hr>
+
+
+  <li > <b>HC 2:  Neighborhood Analysis
+	</b> <b style="float:right">Due Date: 8 September</b>  <br>
+
+  <p>To begin, discuss with your team to pick a neighborhood in your team's borough (a different neighborhood for each team member). Keep in mind that you want all the neighborhoods together to be representative of the borough. You also want to be sure your neighborhood is well represented in the dataset.
+  <p>Create a single page summary of your neighborhood that includes <b>at least</b> the following:
 	<ul>
 		<li> Name of the neighborhood (include in the title),
 		<li> The zip code(s) of your neighborhood,
-		<li> The census tracts encompassing your neighborhood (see <a href="https://geomap.ffiec.gov/FFIECGeocMap/GeocodeMap1.aspx">Census Tract Finder</a>),
 		<li> A map of New York City with your neighborhood highlighted,
-		<li> An photo or image that captures your neighborhood,
-		<li> The demographics of your neighborhood, and
-		<li> The distance of your neighborhood to Federal Hall and to Empire State Building.
+		<li> A photo or image that captures your neighborhood and
+		<li> The demographics of your neighborhood.
 	</ul>
-	These will be posted in the Blackboard honors section site and form the basis of your showcase presentation (teams for the group projects will be formed based on the adjacency of the neighborhood chosen).
-
-	<p><i>Note:  upload a .pdf to the assignment <tt>HC 1.</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>.  Unlike the Python code, it is not automatically graded. </i></p>
-
-	<hr>
-
-
-  <li > <b>HC 2:  Neighborhood Rankings
-	</b> <b style="float:right">Due Date: 9 September</b>  <br>
-
-		<p> Working in pairs or triples, design a ranking for most desirable features of a neighborhood.
-
-		<p>There are multiple rankings of New York City Neighborhoods.  For example,
-		<ul>
-			<li> <a href="https://www.niche.com/places-to-live/search/best-neighborhoods/m/new-york-city-metro-area/">Niche</a>,
-
-			<li> <a href="https://www.dnainfo.com/new-york/crime-safety-report/ranking">DNA Info's rankings</a>,
-			<li> <a href="https://www.brickunderground.com/live/best-nyc-neighborhoods-for-college-grads-2016">Brick Underground</a>,
-			<li><a href="https://ny.curbed.com/2017/9/19/16329796/nyc-best-neighborhood-transit-walk-bike-score">Curbed's Walkable Neighborhoods</a>,
-			<li> <a href="https://www.buzzfeed.com/perpetua/where-should-you-actually-live-in-new-york-city?utm_term=.dvk8EJ3Ne#.clDxXrwq4">BuzzFeed</a>,
-			<li> <a href="https://www.streetadvisor.com/search/cities-in-new-york-city-new-york">Street Advisor</a>
-		</ul>
-
-
-		With your group:
-		<ul>
-			<li> Assess what these rankings have in common and how they differ.
-			<li> Which ranking do you favor and why?
-			<li> What qualities make a neighborhood desirable place to live?
-			<li> Collate a list of the three most important.
-		</ul>
-
-		<p>Submit a .pdf file containing your assessment of the rankings and the three most desirable qualities.  You should use complete sentences, compare and contrast the rankings above, and justify the three qualities that your group thought most important.
-		</p>
+Your summary should exceed these minimum requirements to receive full credits. Include in your summary any information you think will be relevant to the future analysis of your dataset (e.g. airbnb listings)
+<br>A great resource for your analysis is <a href="https://www.socialexplorer.com/" target="_blank">Social Explorer</a>. <i>Note: you don't need to necessarily create an account. From the top menu, select <tt>Resources - Demographic Profiles</tt> and enter the zip code(s) of your neighborhood to find a wealth of information.</i>
+  <p>Submit a .pdf file containing your summary.
+  </p>
 
 
 
 	<hr>
-		<li > <b>HC 3:  Walking in NYC Neighborhoods
-	</b> <b style="float:right">Due Date: 16 September</b>  <br>
+		<li > <b>HC 3:  Neighborhood Rankings
+	</b> <b style="float:right">Due Date: 15 September</b>  <br>
 
-		<br>
-		<p><iframe frameborder="0" src="https://www.walkscore.com" width="80%" height="400" ></iframe>
+  <p> Design a ranking for the most desirable features of a neighborhood.
+
+  <p>There are multiple rankings of New York City Neighborhoods.  For example,
+  <ul>
+    <li> <a href="https://www.niche.com/places-to-live/search/best-neighborhoods/m/new-york-city-metro-area/">Niche</a>,
+
+    <li> <a href="https://www.dnainfo.com/new-york/crime-safety-report/ranking">DNA Info's rankings</a>,
+    <li> <a href="https://www.brickunderground.com/live/best-nyc-neighborhoods-for-college-grads-2016">Brick Underground</a>,
+    <li><a href="https://ny.curbed.com/2017/9/19/16329796/nyc-best-neighborhood-transit-walk-bike-score">Curbed's Walkable Neighborhoods</a>,
+    <li> <a href="https://www.buzzfeed.com/perpetua/where-should-you-actually-live-in-new-york-city?utm_term=.dvk8EJ3Ne#.clDxXrwq4">BuzzFeed</a>,
+    <li> <a href="https://www.streetadvisor.com/search/cities-in-new-york-city-new-york">Street Advisor</a>
+  </ul>
 
 
-		<p>  Urban planner, Jeff Speck, argues that if a city succeeds at
-		being walkable (and by extension, bikeable), it excels at having a high quality of life (see his
-		<a href="https://www.ted.com/talks/jeff_speck_the_walkable_city">TED talk</a>).
+  With your group:
+  <ul>
+    <li> Assess what these rankings have in common and how they differ.
+    <li> Which ranking do you favor and why?
+    <li> What qualities make a neighborhood a desirable place book a room or apartment in?
+    <li> Collate a list of the three most important.
+    <li> How does each neighborhood in your team's borough fare according to this ranking?
+  </ul>
 
-		<p> Working in pairs or triples, analyze his argument in terms of five neighborhoods in New York City and the ranking you determined in HC 2.  For five of the neighborhoods chosen by class (1-page summaries from HC 1 are available on Blackboard), determine the following:
-		<ul>
-			<li> Rank the five neighborhoods by your ranking from HC 2.  Explain how you determined the neighborhoods ranked (you can have ties, but you need to justify the rankings, even in the case of ties).
-			<li> How did the 5 neighborhoods do in terms of walkability (order the neighborhoods by their <a href= "https://www.walkscore.com">walk scores</a>).
+  <p>Submit a .pdf file containing your assessment of the rankings and the three most desirable qualities, as well as a ranking of your team's borough (if all neighborhoods fare the same, you may indicate so and group the discussion to the borough).  You should use complete sentences, compare and contrast the rankings above and justify the three qualities that your group thought most important.
+ This will be a group submission (one submission per team).
+  </p>
 
-		</ul>
-
-		<p> Does your ranking concur with ranking the neighborhoods by walkability?  Justify your answer.
-
-		<p>Submit a .pdf file analyzing the your rankings and walkability of five neighborhoods chosen for the class.  You should use complete sentences and justify your answers with data.
-		</p>
 
 	<hr>
-		<li > <b>HC 4:  Cost of Commuting
-	</b> <b style="float:right">Due Date: 23 September</b>  <br>
+		<li > <b>HC 4:  Synchronous Discussion
+	</b> <b style="float:right">Due Date: 25 September IN LAB</b>  <br>
 
+   <p>In this meeting we will discuss your findings from <tt>HC 2</tt> and <tt>HC 3</tt>. Before the meeting, your team should select a speaker from the designated speakers in section A.- c. on your Team contract. This team member will be responsible for summarizing the overall discussion of the borough from that of the neighborhoods to the entire group. The speaker may also call on another team member if a neighborhood-specific aspect is particularly relevant to the discussion.
 
-		<br>
-		<p><iframe frameborder="0" scrolling ="no" src="https://project.wnyc.org/transit-time/index.html#40.76700,-73.96361,14,961" width="80%" height="600" ></iframe>
-
-		<p> FiveThirtyEight analyzed the <a href="https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/">cost of commuting</a> in terms of the extra New Yorkers were willing to pay to lessen their commute.  <a href="https://streeteasy.com/blog/subway-commute-time-impact/">StreetEasy</a> did a similar analysis, measuring from given subway stops (and includes a lovely Tableaux map-- scroll down).
-
-		<p> How will availability of CitiBikes affect housing prices?  To narrow down the analysis, we will focus on the distance to two landmarks:  Empire State Building (as a proxy for midtown) and Federal Hall (for the financial district) and 3 locations.  You may find <a href="https://project.wnyc.org/transit-time/">WNYC Transit Time</a> or <a href="https://www.google.com/maps">Google Maps</a> useful, as well as
-		<a href="https://citymapper.com/nyc?lang=en">CityMapper</a>.
-
-    Pick, at random, three <a href="https://streeteasy.com/rentals">rentals</a> in your neighborhood.
-
-		<ul>
-			<li> Compute the <b>shortest commute driving</b> to the Empire State Building or Federal Hall for those locations.  Assume that you are arriving at 8:30am on a weekday.
-			<li> Compute the <b>shortest commute by public transit</b> to the Empire State Building or Federal Hall for those locations.  Assume that you are arriving at 8:30am on a weekday and that you walk to the nearest station.
-      		<li> Compute the <b>shortest commute by public transit, <u>assuming you bike between the apartment and station</u>,</b> to the Empire State Building or Federal Hall for those locations.  Assume that you are arriving at 8:30am on a weekday.
-		</ul>
-
-		<p> Using the analysis from FiveThirtyEight, predict what the tunnel closure will do to the prices of your three chosen apartments. Justify your answer.
-
-		<p>Submit a .pdf file analyzing the time and cost of commuting of your neighborhood.  You should use complete sentences and justify your answers with data.
+		<p>No submission necessary. This assignment will be graded based on your group's contribution to the discussion.
+      <br><b>Grading criteria:</b>
+      <ul>
+        <li>Coming soon...
+      </ul>
 		</p>
 
 	<hr>
 	<li > <b>HC 5:  Highlighted Map
-	</b> <b style="float:right">Due Date: 2 October</b>  <br>
+	</b> <b style="float:right">Due Date: 6 October</b>  <br>
 
 
-    <p><img src="../f18/hunterSatMap.png" height = 300>
-    <img src="../f18/hiLight.png" height = 300>
+    <p><img src="../images/hunterSatMap.png" height = 300>
+    <img src="../images/hiLight.png" height = 300>
 
 		<p>
-    For this program, we will create a highlighted map around centered on your neighborhood, with the region within about a 1/4 mile box at full brightness, the region that outside that box at 50% brightness.
+    For this program, we will create a highlighted map centered around your neighborhood, with the region within about a 1/4 mile box around a marker at the center of the neighborhood at full brightness, the region outside that box at 50% brightness.
 
 		<p> To do this:
 		<ul>
-			<li> Create a .png file of a satellite map, centered on your L-station (Google maps works well for this, but you can use any mapping site to create your base map).
+			<li> Create a .png file of a satellite map, centered on your neighborhood (Google maps works well for this, but you can use any mapping site to create your base map).
 			<li> Write a Python program that reads in an image and saves the image to another file.  Run your program to make sure the reading and saving of an image works.
       <li> Set the upper region of the image to 50% brightness (hint:  uses slices and see example in Lecture 3 and 4).  Run your program to make sure it has dimmed up the upper region and adjust to get the correct dimenssions.
       <li> Set the lower region of the image to 50% brightness (hint:  think about what negative numbers mean as indices).  Run your program and fix any bugs.
@@ -173,11 +160,11 @@ Fall 2020<br><br>
 		<p> Submit your answer as a .pdf file to gradescope.
 
 	<hr>
-	
+
 <i>More to come...</i>
 
 <!--
-	
+
   <li > <b>HC 5:  </b> <b style="float:right">Due Date: 2 October</b>  <br>
 
 	How many stations?  For your neighborhood, how many CitiBike stations would be optimal?  Add in readings on the appropriate density?  Maybe have a lead-up assignment of what are the most popular destinations in the neighbhorhood (work, schools, hospitals, tourist destinations, etc.)
