@@ -15,13 +15,21 @@ Fall 2020<br><br>
 </div>
 
 <div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Mapping GIS data using Turtles
+      <li> Generating interactive maps using Folium
+      <li> Mapping GIS data using Folium
+      <li> Finding Errors (i.e. debugging)
+      <li> Unix commands: regular expressions (wildcard)
+    </ul>
 
-<p>
-Today's lab will focus on mapping data, using pandas, numpy, and folium, and regular expressions at the command line.
-
-<p>Software tools needed:  web browser and Python IDLE programming
+<p>Software tools needed:  web browser and Python programming
 environment with the pandas, numpy, and folium package installed.
 
+<p><b><a href="../files/Lab9Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
 
 
 </div>
@@ -29,9 +37,9 @@ environment with the pandas, numpy, and folium package installed.
 
 
 <div>
-<h3>Quizzes & Code Reviews</h3>
+<h3>Quizzes</h3>
 
-See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week. 
+At the end of this lab, <b>don't forget to take Lab Quiz 9!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
 
 </div>
 
@@ -388,7 +396,7 @@ The <tt>*.py</tt> says match any file that starts with any number (including 0) 
 
 <p>You can use the wildcard operator in multiple places.  For example, if your directory contained:
 <pre style = "background-color:lavender;width:550px">
-$ ls -l 
+$ ls -l
 -rw-r--r--@ 1 stjohn  staff      5308 Mar 21 14:38 quizzes.html
 -rw-r--r--  1 stjohn  staff     54013 Apr 20 18:57 zoneDist.csv
 -rw-r--r--@ 1 stjohn  staff      1519 Apr 22 15:14 zoneMap.py
@@ -401,13 +409,13 @@ $ ls z*
 </pre>
 prints all files that start with  <tt>z</tt> and are followed by any number of characters.
 
-<p>Similarly, 
+<p>Similarly,
 <pre style = "background-color:lavender;width:500px">
 $ ls *zz*
 </pre>
 would all files that start with any number of characters, followed by <tt>zz</tt>, and end with any number of characters.  The only file that contains this "pattern" of <tt>zz</tt> is <tt>quizzes.html</tt>.
 
-<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see 
+<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see
 the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
 
 </div>
@@ -417,7 +425,10 @@ the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
 
 <h3>What's Next?</h3>
 
-<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<p><b>Now is a great time to take <a href="https://www.gradescope.com/" target="_blank">Lab Quiz 9</a>! (15 minutes)</b> It is directly based on Lecture and Lab 9.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps7">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
 </div>
 

@@ -26,7 +26,7 @@ Fall 2020<br><br>
       <li> Accessing dataframe series (i.e. columns)
       <li> Generating new series (i.e. columns) from data in other columns
       <li> Aggregating recurring values with <tt>groupby()</tt>
-      <li> Unix commands: writing shell scripts
+      <li> Unix commands: writing shell scripts ('Hell World' in Bash)
       <li> Github: create an account and access the course repo
     </ul>
 
@@ -338,9 +338,9 @@ ls  # list files
 <p>
 In the shell, the different types of quotes have similar, but different, <a href="https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html">meanings</a>.  We'll use the double quotes since strings in double quotes will have special characters (like <tt>\n</tt> for newline) interpreted as in Python and C++.
 
-<p> Use <tt>gEdit</tt> (you can launch it from the menu bar or by typing <tt>gedit</tt> at a terminal window) to modify the above script to say "Hello, World".  Note that we're leaving off the "!" since it is a bit confusing to print due to its special meaning in the shell (it lists the history, or previous commands, you have typed; for example: <tt>!!</tt> gives all commands in the history, <tt>!cd</tt> will repeat the most recent command you gave that starts with <tt>cd</tt>).  Include in the second and third lines your name and email for the grading scripts (the first line should be the <tt>#!/bin/bash</tt>
+<p> Use any text editor that will allow you to save a file with any or no extension such as <tt>gEdit</tt> (included with some Linux distributions), <tt>textEdit</tt>  (included with MacOS) or <tt>notepad</tt> (included with Windows) to modify the above script to say "Hello, World".  Note that we're leaving off the "!" since it is a bit confusing to print due to its special meaning in the shell (it lists the history, or previous commands, you have typed; for example: <tt>!!</tt> gives all commands in the history, <tt>!cd</tt> will repeat the most recent command you gave that starts with <tt>cd</tt>).  Include in the second and third lines your name and email for the grading scripts (the first line should be the <tt>#!/bin/bash</tt>. Save your file as <tt>helloScript</tt>
 
-<p>Next, we'll change the permissions on the file, so that we can run it directly, by just typing its name:
+<p>Next, we'll change the permissions on the file, so that we can run it directly, by just typing its name. In the terminal, move to the directory where you saved your script and type:
 	<pre style = "background-color:lavender;width:450px">
 $ chmod +x helloScript
 </pre>

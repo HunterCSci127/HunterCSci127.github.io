@@ -15,20 +15,30 @@ Fall 2020<br><br>
 </div>
 
 <div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Getting gcc (c++ compiler) on your computer
+      <li> Using gcc
+      <li> <tt>Hello World!</tt> in C++
+      <li> I/O and variables in C++
+      <li> Definite Loops (<tt>for</tt> Loops) in C++
+      <li> Unix commands: file types and versions  
+    </ul>
 
-<p>
-Today's lab will introduce C++.
 
 <p>Software tools needed:  web browser and the C++ compiler, <tt>g++</tt> and a graphical editor, such as <tt>gEdit</tt>.
 
+  <p><b><a href="../files/Lab12Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+  <br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
 
 
 </div>
 
 <div>
-<h3>Quizzes & Code Reviews</h3>
+<h3>Quizzes</h3>
 
-See the <a href="quizzes.html">quiz & code review page</a> for details of the work due this week. 
+At the end of this lab, <b>don't forget to take Lab Quiz 12!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
 
 </div>
 
@@ -38,6 +48,55 @@ See the <a href="quizzes.html">quiz & code review page</a> for details of the wo
 
 <p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
 </p>
+</div>
+
+
+
+<div>
+<h3>Getting gcc on Your Machine</h3>
+
+<p>
+We are using the <tt>gcc</tt> compiler for the C/C++ programming languages, which is freely available.  We include directions below for downloading on your machine:
+
+<ul>
+	<li> <b>Mac OSX</b>:  The compiler comes with the Mac's XCode tools package.  You can download XCode from the <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store</a>.
+		<li> <b>On-line</b>: The on-line version used in lecture is <a href="https://www.onlinegdb.com">OnlineGDB</a>.
+	<li> <b>Linux (Ubuntu or any other Debian based distribution)</b>:  To get the most up-to-date version, first type:
+	<pre style = "background-color:lavender;width:500px">
+sudo apt update
+</pre>
+	to update the package list, and then
+	<pre style = "background-color:lavender;width:500px">
+sudo apt install g++
+</pre>
+	to install g++ and associated libraries and packages.
+
+
+	<li> <b>Windows</b>:  If you installed the Windows Subsystem for Linux (see bottom of <a href="lab3.html">Lab 3</a>), you can open Ubuntu terminal and follow the Linux (Ubuntu) instructions above. Accessing your C++ files in the Windows Subsystem for Linux can be a bit involved (see next section).
+		These Windows installation instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
+
+</ul>
+
+</div>
+
+<div>
+<h3>Accessing Your Files in the Windows Subsystem for Linux</h3>
+Accessing where your files are stored may be a little tricky. To access your files in Windows, you must first change into the directory /mnt, which you can do with the command:
+<pre style = "background-color:lavender;width:500px">cd /mnt</pre>
+
+You can now use cd to access your files in Windows. If any file or folder contains a space in it, you must put it in quotation marks e.g. "CS Projects".
+
+For example, if your files are stored in your documents folder you can access them by typing the command:
+<pre style = "background-color:lavender;width:500px"> cd /mnt/c/Users/*enter your username here*/Documents </pre>
+
+You want to enter the username set for your account after Users. This is likely different than the username you created for Ubuntu.
+
+If you don't know your username, search cmd in the Windows search bar and open it. Then type the command:
+<pre style = "background-color:lavender;width:500px">echo %username% </pre>
+
+This should be the username you want to put for *enter your username here*. If your username contains a space, you must put it in quotation marks e.g. "Alan Turing".
+<br /> <br />
+These instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
 </div>
 
 <div>
@@ -58,7 +117,7 @@ See the <a href="quizzes.html">quiz & code review page</a> for details of the wo
 <div>
 <h3>Hello World</h3>
 
-<p>Let's write our first program that will say "Hello, World!".  You can copy or type the program below into a editor window (either launch <tt>gEdit</tt> from the command line or open via the menu).  Text after the '//' is a comment (just like the '#' in Python).  You should keep the first 3 lines of comments for gradescope:
+<p>Let's write our first program that will say "Hello, World!".  You can copy or type the program below into a text editor of your choice (<tt>gEdit</tt> in Linux, <tt>TextEdit</tt> in MacOs, notepad in Windows or any other editor that will allow you to save your file with <tt>.cpp</tt> extension).  Text after the '//' is a comment (just like the '#' in Python).  You should keep the first 3 lines of comments for gradescope:
 
 <pre style = "background-color:lavender;width:600px">
 //Name:  Your name here
@@ -123,7 +182,7 @@ int main()                 //C++ programs all have a main() function
 </ul>
 
 
-<p>Once you have it typed in, try compiling the program:
+<p>Once you have it typed in and saved as <tt>hello.cpp</tt>, try compiling the program. In a terminal window, travel to the directory where you saved your file and type:
 <pre style = "background-color:lavender;width:350px">g++ hello.cpp -o hello</pre>
 
 When it returns without an error, you can run it by typing:
@@ -282,59 +341,14 @@ will show the location of the <tt>g++</tt> program.
 -->
 
 
-
-<div>
-<h3>Getting g++ on Your Machine</h3>
-
-<p>
-We are using the <tt>gcc</tt> compiler for the C/C++ programming languages, which is freely available.  We include directions below for downloading on your machine:
-
-<ul>
-	<li> <b>Mac OSX</b>:  The compiler comes with the Mac's XCode tools package.  You can download XCode from the <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store</a>.
-		<li> <b>On-line</b>: The on-line version used in lecture is <a href="https://www.onlinegdb.com">OnlineGDB</a>.
-	<li> <b>Linux (Ubuntu or any other Debian based distribution)</b>:  To get the most up-to-date version, first type:
-	<pre style = "background-color:lavender;width:500px">
-sudo apt update
-</pre>
-	to update the package list, and then
-	<pre style = "background-color:lavender;width:500px">
-sudo apt install g++
-</pre>
-	to install g++ and associated libraries and packages.
-
-	
-	<li> <b>Windows</b>:  If you installed the Windows Subsystem for Linux (see bottom of <a href="lab3.html">Lab 3</a>), you can open Ubuntu terminal and follow the Linux (Ubuntu) instructions above. Accessing your C++ files in the Windows Subsystem for Linux can be a bit involved.
-		These Windows installation instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
-		
-</ul>
-
-</div>
-
-<div>
-<h3>Accessing Your Files in the Windows Subsystem for Linux</h3>
-Accessing where your files are stored may be a little tricky. To access your files in Windows, you must first change into the directory /mnt, which you can do with the command:
-<pre style = "background-color:lavender;width:500px">cd /mnt</pre>
-
-You can now use cd to access your files in Windows. If any file or folder contains a space in it, you must put it in quotation marks e.g. "CS Projects".
-
-For example, if your files are stored in your documents folder you can access them by typing the command:
-<pre style = "background-color:lavender;width:500px"> cd /mnt/c/Users/*enter your username here*/Documents </pre>
-
-You want to enter the username set for your account after Users. This is likely different than the username you created for Ubuntu. 
-
-If you don't know your username, search cmd in the Windows search bar and open it. Then type the command:
-<pre style = "background-color:lavender;width:500px">echo %username% </pre>
-
-This should be the username you want to put for *enter your username here*. If your username contains a space, you must put it in quotation marks e.g. "Alan Turing".
-<br /> <br />
-These instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
-</div>
-
 <div>
 
 <h3>What's Next?</h3>
 
-<p>If you finish the lab early, now is a great time to get a head start on the programming problems due early next week.  There's instructors to help you, and you already have Python up and running.  The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<p><b>Now is a great time to take <a href="https://www.gradescope.com/" target="_blank">Lab Quiz 12</a>! (15 minutes)</b> It is directly based on Lecture and Lab 12.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps7">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
 </div>
 
