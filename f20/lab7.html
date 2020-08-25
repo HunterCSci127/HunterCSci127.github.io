@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 7, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2020</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 7<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2020<br><br>
+</h2>
+</div>
+
+<div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Using NYC OpenData
+      <li> Writing python functions
+      <li> Stand-alone program v.s. module
+      <li> Using Python from the Command Line Interface
+    </ul>
+
+<p>Software tools needed:  web browser and Python  programming
+environment with the pandas and matplotlib packages installed.
+
+<p><b><a href="../files/Lab7Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
+
+
+</div>
+
+
+
+<div>
+<h3>Quizzes</h3>
+
+At the end of this lab, <b>don't forget to take Lab Quiz 7!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
+
+</div>
+
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+</div>
+
+
+<div>
+<h3>Using NYC OpenData</h3>
+
+<p>
+Much of the data collected by city agencies is publicly available at
+<a href="http://opendata.cityofnewyork.us">NYC Open Data</a>.  Let's use pandas to plot some data from NYC OpenData.  Below is a graph of the total number of individuals in New York City's shelter system from 2010 to 2016:
+
+<p>
+<img src="../images/shelterTotal.png" height=400>
+<br>
+
+<p> We'll start by downloading data that has the daily number of families and individuals residing in the Department of Homeless Services (DHS) shelter system:
+<ul>
+	<li> <a href="https://data.cityofnewyork.us/Social-Services/DHS-Daily-Report/k46n-sa2m">https://data.cityofnewyork.us/Social-Services/DHS-Daily-Report/k46n-sa2m</a>
+</ul>
+
+<p>
+Click on the "Explore Data/View Data" button.  To keep the data set from being very large (and avoid some missing values in 2014), we are going filter the data to be all counts after January 1, 2017.  To do this:
+<ul>
+	<li> Click on the "Filter" button.
+	<li> On the menu that pops us, click on "Add a New Filter Condition".
+	<li> Choose "Date of Census" but change the "is" to be "is after".
+	<li> Click in the box below and a calendar will pop up.  Highlight January 1, 2017.
+	<li> Click the check box to the left of the data.
+	<li> It will take a few seconds (it's a large file) but the rows on the left
+	will be filtered to be all counts after January 1, 2017.
+</ul>
+To download the file,
+<ul>
+	<li> Click on the "Export" button.
+	<li> Under "Download", choose "CSV".
+	<li> The download will begin automatically (files are usually stored in "Downloads" folder).
+</ul>
+
+<p>
+Move your CSV file to the directory that you save your programs.  Open with Calc (the built-in spreadsheet program for Ubuntu Linux running on the lab machines), Excel, or your favorite spreadsheet program to make sure it downloaded correctly.  Look at the names of the columns since those will correspond to series we can plot.
+
+<p> Now, we can write a (short) program to display daily counts:
+<pre style = "background-color:lavender;width:575px">
+import pandas as pd
+import matplotlib.pyplot as plt
+
+homeless = pd.read_csv("DHS_Daily_Report.csv")
+homeless.plot(x = "Date of Census", y = "Total Individuals in Shelter")
+plt.show()
+</pre>
+
+The program above assumes that you saved you data as <tt>DHS_Daily_Report.csv</tt>.  If you saved the data under a different name, alter the program above to use that file.
+Save your program and try on your dataset.
+
+
+<h4>Challenges</h4>
+
+<ul>
+	<li> What happens if you leave off the <tt>y = "Total Individuals in Shelter"</tt>?
+	<li> Display a plot that shows the fraction of the total population that is familes, over time.  Is it increasing or decreasing?
+	<li> How can you save your plot to file?  (Hint:  See <a href="lab6.html">Lab 6</a>.)
+</ul>
+
+<p>
+Once you have completed the above, see the <a href="ps.html">Programming Problem List</a>.
+
+</div>
+
+
+
+<div>
+<h3><tt>main()</tt></h3>
+
+<p>Python allows you to write programs as scripts: basically, a list of commands that are executed one after the other.  You can also organize the programs in functions, which groups commands together that can be reused.  Many programming languages (like C++ or Java) require that your programs be organized in functions.
+
+
+<p>To define function in Python, we use the <tt>def</tt> command, which has the basic form:
+
+<pre style = "background-color:lavender;width:450px">
+def myFunction(input1, input2, ...):
+    command1
+    command2
+    ...
+</pre>
+Note that everything indented below the <tt>def</tt> line is considered part of the function.  When you type the function name (followed by parenthesis), it calls (or "invokes") the function, which means it executes all the commands, one after another, that are part of the function.
+
+<p>Let's rewrite our first program, using functions.  By tradition (and since it matches the naming protoccol of C & C++), we will call our function <tt>main()</tt> (see <a href="https://interactivepython.org/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7:  Using a Main Function</a>):
+
+<pre style = "background-color:lavender;width:450px">
+#Name:  your name here
+#Date:  October 2017
+#This program, uses functions, says hello to the world!
+
+def main():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    main()
+</pre>
+
+In Python, we have the option of running our programs as a standalone program, or included as module as part of another program.  Since it's common to do either, we include the last two lines of the file, which say if the program is being run directly (which we can test to see if the variable <tt>__name__</tt> that is set by Python is <tt>__main__</tt>), then we call <tt>main()</tt>.  If it's not, then the file is being included in something else, and leaves it to that program to call it.
+
+<p> Save your program and try running it in IDLE.
+
+<p> Now, at the prompt (the window with the lines beginning with <tt>&gt;&gt;&gt;</tt>), type <tt>main()</tt>.  This calls the function directly.  Note that calling the function either way results in the same actions:  the commands inside <tt>main()</tt> are executed.
+
+<p>
+When you have a running version, see the <a href="ps.html">Programming Problem List</a>.
+</div>
+
+
+
+
+<div>
+<h3>Using Python from the Command Line Interface</h3>
+
+<p> In addition to IDLE (and other development environments with graphical interfaces), Python can also be used directly from the command line.  In fact, this is what the grading scripts do to evaluate your programs, since Gradescope uses a remote cloud server and does not have a graphics window.
+
+<p> To start, we need a command line interface (aka a terminal window).  To launch the terminal, click on the terminal window icon in the left menu, or go to search option in the upper left corner and type and then open <tt>terminal</tt>.
+
+<p> In <a href="lab1.html">Lab 1</a>, we launched IDLE from the terminal by
+typing:
+<pre style = "background-color:lavender;width:450px">
+$ idle3
+</pre>
+
+<p> We can use Python in a similar fashion.  In a terminal window, change directories to where you stored your hello program above (see <a href="lab4.html">Lab 4</a> for changing directories at the command line).
+
+<p> Let's run your hello program from the command line.  If your program is
+called <tt>hello.py</tt>, you would type at the command line:
+<pre style = "background-color:lavender;width:450px">
+$ python3 hello.py
+</pre>
+Notice that the output goes directly to the terminal window.  Try running other programs you have written from the command line.
+
+<!--Include one or two more commands from labs 3 onward...
+<p> sh-bang line?
+
+https://en.wikipedia.org/wiki/Shebang_(Unix)
+
+
+
+<p>Command line script:  Using Unix shell commands, create a directory, <tt>projectFiles</tt>.  The directory should contain three subdirectories:  <tt>source</tt>, <tt>data</tt>, and <tt>results</tt>, as well as a <tt>README</tt> file.  The subdirectories will be empty, but the <tt>README</tt> file should contain the message:  "This project is organized with code (in source), data, and output from the computations (in results)."
+
+<p>All of your commands should be in a single text or shell file.  -->
+
+</div>
+
+
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p><b>Now is a great time to take <a href="https://www.gradescope.com/" target="_blank">Lab Quiz 7</a>! (15 minutes)</b> It is directly based on Lecture and Lab 7.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps7">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
+
+</div>
+
+
+
+</html>
