@@ -1111,8 +1111,107 @@ Name: Temperature, dtype: float64
 <p><b>Note: </b>You may assume that input is correct (e.g. only expected columns are entered as input)
 <p><b>Hint: </b>You should use <tt>groupby()</tt> as described in <a href="lab6.html">Lab 6</a>.
 
+
+  <p>
+  <a id="ps7"></a>
+  <h2><u> Lecture / Lab 7</u></h2>
+
+
+
+  	<li > <b>Due Date: 29 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+      <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+  		<ul>
+  			<li> ask the user to specify the input file,
+  			<li> ask the user to specify the output file,
+  			<li> make a plot of the fraction of the total population that are single adult women over time from the data in input file, and
+  			<li> store the plot in the output file the user specified.
+  		</ul>
+
+  		<p>A sample run of the program:
+  <pre style ="background-color:lavender;width:400px">
+  Enter name of input file:  DHS_2015_2016.csv
+  Enter name of output file:  dhsPlot.png
+  </pre>
+	<p> which produces an output:
+
+	<p><img src="../images/dshWomenPlot.png" height = 300>
+
+	<p> <b>Note:</b>  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Single Women".
+
+
+
+
+
+<li > <b>Due Date: 30 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab6.html">Lab 6</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+  <p>
+  Much of the data collected by city agencies is publicly available at
+  <a href="http://opendata.cityofnewyork.us">NYC Open Data</a>. <b>Let's explore another dataset!</b>
+  <p> We'll start by downloading data that has information from New York City air quality surveillance data:
+    <ul>
+    	<li> <a href="https://data.cityofnewyork.us/Environment/Air-Quality/c3uy-2p5r">https://data.cityofnewyork.us/Environment/Air-Quality/c3uy-2p5r</a>
+    </ul>
+
+    <p>
+    Click on the "View Data" button.  We are going filter the data to be all measurements between 2009 and 2011 and look at Rate measurements.  To do this:
+    <ul>
+    	<li> Click on the "Filter" button.
+    	<li> On the menu that pops us, click on "Add a New Filter Condition".
+    	<li> Choose "year_description" and keep the option "is".
+    	<li> Click in the box below and type "2009-2011".
+    	<li> Click the check box to the left of the data.
+      <li> Click on "Add a New Filter Condition" again (below).
+      	<li> Choose "name" and change the option "contains".
+      	<li> Click in the box below and type "Asthma".
+      	<li> Click the check box to the left of the data.
+       <li> The data will now be filtered to the Asthma visits or hospitalizations that are attributble to air pollution during the years 2009-2001.
+    </ul>
 <p>
-<h3>Programs 31-60 coming soon!</h3>
+    To download the file,
+    <ul>
+    	<li> Click on the "Export" button.
+    	<li> Under "Download", choose "CSV".
+    	<li> The download will begin automatically (files are usually stored in "Downloads" folder).
+    </ul>
+
+<p>
+  Now modify the programs from <a href="lab6.html">Lab 6</a> that aggregates rainfall data and the program from <a href="lab7.html">Lab 7</a> that plots shelter population to:
+
+  <ul>
+    <li> ask the user to specify the input file,
+    <li> ask the user to specify the output file,
+    <li> to observe the average asthma cases due to air pollution by neighborhood:
+      <ul>
+        <li> use <tt>groupby()</tt> to aggregate the data by <tt>'geo_entity_name'</tt> to group the data by neighborhood and average the <tt>'data_valuemessage'</tt> column
+        <li> make a bar plot of the data grouped this way (use <tt>.plot.bar()</tt> on the grouped data)
+        <li> store the plot in the output file the user specified.
+      </ul>
+  </ul>
+
+      <p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Enter name of input file:  air_pollution.csv
+Enter name of output file:  neighborhood_barplot.png
+</pre>
+    <p> which produces an output:
+
+    <p><img src="../images/airplot.png" height = 400>
+
+    <p> <b>Note:</b> To make the neighborhood names visible at the bottom of the bar plot, use <tt> plt.gcf().subplots_adjust(bottom=0.5)</tt> before <tt>plt.gcf()</tt> (see <a href="lab7.html">Lab 7</a> for how to save the plot to a file.)
+
+
+
+  <li > <b>Due Date: 6 November</b> 	<b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+    <p> Write a program, using a function <tt>main()</tt> that prints "I love Python!" to the screen. The program should be executable as stand-alone program as well as included as a module.   See <a href="lab7.html">Lab 7</a>.
+
+
+
+<p>
+<h3>Programs 34-60 coming soon!</h3>
 
 <!--
 <h1>CHANGE</h1>
@@ -1192,36 +1291,6 @@ Double your recipe is:
 
 
 
-
-
-<li > <b>Due Date: 6 November</b> 	<b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
-
-
-    <p> Write a program, using a function <tt>main()</tt> that prints "Hello, Python!" to the screen.   See <a href="lab7.html">Lab 7</a>.
-
-
-
-	<li > <b>Due Date: 13 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
-
-
-    <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
-		<ul>
-			<li> ask the user to specify the input file,
-			<li> ask the user to specify the output file,
-			<li> make a plot of the fraction of the total population that are single over time from the data in input file, and
-			<li> store the plot in the output file the user specified.
-		</ul>
-
-		<p>A sample run of the program:
-<pre style ="background-color:lavender;width:400px">
-Enter name of input file:  DHS_2015_2016.csv
-Enter name of output file:  dhsPlot.png
-</pre>
-		<p> which produces an output:
-
-		<p><img src="../images/dshSinglePlot.png" height = 300>
-
-		<p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Single".
 
 
 
