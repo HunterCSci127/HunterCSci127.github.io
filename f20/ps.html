@@ -1204,30 +1204,68 @@ Enter name of output file:  neighborhood_barplot.png
 
     <p><img src="../images/airplot.png" height = 400>
 
-    <p> <b>Note:</b> To make the neighborhood names visible at the bottom of the bar plot, use <tt> plt.gcf().subplots_adjust(bottom=0.5)</tt> before <tt>plt.gcf()</tt> (see <a href="lab7.html">Lab 7</a> for how to save the plot to a file.)
+    <p> <b>Note:</b> To make the neighborhood names visible at the bottom of the bar plot, use <tt> plt.gcf().subplots_adjust(bottom=0.5)</tt> before <tt>plt.gcf()</tt> (see <a href="lab6.html">Lab 6</a> for how to save the plot to a file.)
 
 
 
-  <li > <b>Due Date: 6 November</b> 	<b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
+  <li > <b>Due Date: 30 October</b> 	<b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
 
 
     <p> Write a program, using a function <tt>main()</tt> that prints "I love Python!" to the screen. The program should be executable as stand-alone program as well as included as a module.   See <a href="lab7.html">Lab 7</a>.
 
 
 
+
+<li > <b>Due Date: 2 November</b>
+
+  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+
 <p>
-<h3>Programs 34-60 coming soon!</h3>
-
-<!--
-<h1>CHANGE</h1>
-
-<a id="cr8"></a>
-   		<li > <b>Due Date: 3 November</b>
-      	<b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle" target="_blank"> Turtle Graphics</a> & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
+  In <a href="lab7.html">Lab 7</a>, we worked through a program that displayed the homeless shelter occupancy over time.  The same approach can be used for displaying any dataset where the date and time are stored.
+<p>For this program, use the lab as a starting point to display <a href="https://data.cityofnewyork.us/Education/2018-2019-Daily-Attendance/x3bb-kg5j">public school attendance</a> from NYC OpenData. If you would like to test your program on other data, you can filter for an individual school by viewing the data and filtering on the school number ("School DBN"). Export the file as CSV and save.  There is a sample file for the <a href="http://www.mhshs.org/hunter-college.html">high school</a> on campus on
+  <a href="https://github.com/stjohn/csci127">github</a>
 
 
+ <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+  <ul>
+  <li> Ask the user to specify the input file,
+  <li> Ask the user to specify the output file,
+  <li> Convert the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
+  <pre>
+  df["Date"] = pd.to_datetime(df["Date"].apply(str))	</pre>
+  <li> Make a plot of the percent of present students over time from the data in the input file, and
+  <li> Store the plot in the output file the user specified.
+</ul>
 
-       <p>The program, <tt>turtleString.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
+<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Enter name of input file:  dailyAttendanceManHunt2018.csv
+Enter name of output file:  manHunt.png
+</pre>
+
+<p> which produces an output:
+
+  <p>
+  <img src="../images/manHunterPlot.png" height = 300>
+  <p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "% Attending" and the range of values be between a percentage between 0 and 100 (<b>Hint:</b> what do you multiply by to convert a fraction into a percentage?).
+
+
+
+
+
+
+
+
+
+   <li > <b>Due Date: 2 November</b>
+<b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle" target="_blank"> Turtle Graphics</a> & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
+
+<p>
+<b>REVIEW</b>
+
+<p>The program, <tt>turtleString.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
 	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
         <ul>
           <li> 'F':  moves the turtle forward 50 steps
@@ -1235,9 +1273,9 @@ Enter name of output file:  neighborhood_barplot.png
           <li> 'R':  turns the turtle 90 degrees to the right
           <li> '^':  lifts the pen
           <li> 'v':  lowers the pen
-		  <li> 'r':	 change turtle color to red
-		  <li> 'g':  change turtle color to green
-		  <li> 'b':  change turtle color to blue
+		      <li> 'r':	 change turtle color to red
+          <li> 'g':  change turtle color to green
+		      <li> 'b':  change turtle color to blue
         </ul>
         For example, if the user enters the string "FLFLFLFL^FFFvFLFLFLFL", the turtle would move forward and then turn left.  It repeats this 4 times, drawing a square.  Next, it lifts the pen and move forward 3, puts the pen back down and draw another square.
 
@@ -1250,10 +1288,16 @@ Enter name of output file:  neighborhood_barplot.png
           <li> 'p':  change the turtle color to purple
         </ul>
 
-        <p><i>Hint:  See Lecture 4 notes.</i>
+        <p><b>Hint:</b>  See Lecture 4 notes.</i>
 
 
 
+  <p>
+<h3>Programs 36-60 coming soon!</h3>
+
+
+          <!--
+          <h1>CHANGE</h1>
 
 	<li > <b>Due Date: 24 October</b>     		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
@@ -1460,40 +1504,6 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 
 
 
-
-        <li > <b>Due Date: 23 November</b>
-
-          <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
-
-
-
-        <p>
-        In <a href="lab7.html">Lab 7</a>, we worked through a program that displayed the homeless shelter occupancy over time.  The same approach can be used for displaying any dataset where the date and time are stored.
-        <p>For this program, use the lab as a starting point to display <a href="https://data.cityofnewyork.us/Education/2018-2019-Daily-Attendance/x3bb-kg5j">public school attendance</a> from NYC OpenData. If you would like to test your program on other data, you can filter for an individual school by viewing the data and filtering on the school number ("School DBN"). Export the file as CSV and save.  There is a sample file for the <a href="http://www.mhshs.org/hunter-college.html">high school</a> on campus on
-        <a href="https://github.com/stjohn/csci127">github</a>
-
-         <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
-          <ul>
-            <li> Ask the user to specify the input file,
-            <li> Ask the user to specify the output file,
-            <li> Convert the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
-            <pre>
-        df["Date"] = pd.to_datetime(df["Date"].apply(str))	</pre>
-            <li> Make a plot of the percent of absent students over time from the data in the input file, and
-            <li> Store the plot in the output file the user specified.
-          </ul>
-
-          <p>A sample run of the program:
-<pre style ="background-color:lavender;width:500px">
-  Enter name of input file:  dailyAttendanceManHunt2018.csv
-  Enter name of output file:  manHunt.png
-</pre>
-          <p> which produces an output:
-
-        <p>
-        <img src="../images/manHuntAbsence.png" height = 300>
-
-          <p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "% Absent" and the range of values be between a percentage between 0 and 100 (<b>Hint:</b> what do you multiply by to convert a fraction into a percentage?).
 
 
 
