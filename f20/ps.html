@@ -1149,7 +1149,7 @@ Name: Temperature, dtype: float64
   <p>
   Much of the data collected by city agencies is publicly available at
   <a href="http://opendata.cityofnewyork.us">NYC Open Data</a>. <b>Let's explore another dataset!</b>
-  <p> We'll start by downloading data that has information from New York City air quality surveillance data:
+  <p> We'll start by downloading data that has information from New York City air quality surveillance:
     <ul>
     	<li> <a href="https://data.cityofnewyork.us/Environment/Air-Quality/c3uy-2p5r">https://data.cityofnewyork.us/Environment/Air-Quality/c3uy-2p5r</a>
     </ul>
@@ -1185,10 +1185,15 @@ Name: Temperature, dtype: float64
     <li> to observe the average asthma cases due to air pollution by neighborhood:
       <ul>
         <li> use <tt>groupby()</tt> to aggregate the data by <tt>'geo_entity_name'</tt> and average the <tt>'data_valuemessage'</tt> column
-        <li> make a bar plot of the data grouped this way (use <tt>.plot.bar()</tt> on the grouped data)
+        <li> make a bar plot of the data grouped this way by using <tt>.plot.bar()</tt> on the grouped data
+          <br> e.g. if you have
+          <br><tt> grouped_data = df.groupby( ... </tt>
+          <br>then use <tt>grouped_data.plot.bar()</tt> to generate the bar plot
         <li> store the plot in the output file the user specified.
       </ul>
   </ul>
+
+
 
       <p>A sample run of the program:
 <pre style ="background-color:lavender;width:500px">
