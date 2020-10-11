@@ -1292,8 +1292,102 @@ Enter name of output file:  manHunt.png
 
 
 
-  <p>
-<h3>Programs 36-60 coming soon!</h3>
+<p>
+<a id="ps8"></a>
+<h2><u> Lecture / Lab 8</u></h2>
+
+
+
+
+<li > <b>Due Date: 5 November</b>  <b style="float:right">Reading: Think CS: <a href="http://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html" target="_blank">Lab 8</a>  </b><br>
+
+
+
+  		<p> Write a function, <tt>computeFare()</tt>, that takes as two parameters: the zone and the ticket type, and returns the Long Island Railroad fare.
+  		<ul>
+  			<li> If the zone is 1 and the ticket type is "peak", the fare is 8.75.
+  			<li> If the zone is 1 and the ticket type is "off-peak", the fare is 6.25.
+  			<li> If the zone is 2 or 3 and the ticket type is "peak", the fare is 10.25.
+  			<li> If the zone is 2 or 3 and the ticket type is "off-peak", the fare is 7.50.
+  			<li> If the zone is 4 and the ticket type is "peak", the fare is 12.00.
+  			<li> If the zone is 4 and the ticket type is "off-peak", the fare is 8.75.
+  			<li> If the zone is 5, 6, or 7 and the ticket type is "peak", the fare is 13.50.
+  			<li> If the zone is 5, 6, or 7 and the ticket type is "off-peak", the fare is 9.75.
+  			<li> If the zone is greater than 8, return a negative number (since your calculator does not handle inputs that high).
+  		</ul>
+
+  		<p>A template program, <tt>LIRRtransit.py</tt>, is available on the
+  		<a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+  		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
+
+  		<p>A sample run:
+  <pre style = "background-color:lavender;width:400px">
+  Enter the number of zones: 4
+  Enter the ticket type (peak/off-peak): off-peak
+  The fare is 8.75
+  </pre>
+  		<p> And another:
+  <pre style = "background-color:lavender;width:400px">
+  Enter the number of zones: 6
+  Enter the ticket type (peak/off-peak): peak
+  The fare is 13.5
+  </pre>
+
+
+	<p><i><b>Hint:</b>  See <a href="lab8.html">Lab 8</a>.</i>
+
+
+
+  <li > <b>Due Date: 16 November</b>
+  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> & <a href="lab8.html">Lab 8</a> </b><br>
+
+
+
+<p> Write a program that asks the user for a CSV of the NYC OpenData Film Permits:
+<ul>
+   <li> There is a sample file for June 2019 film permits on <a href="https://github.com/HunterCSci127/CSci127">github</a>.
+</ul>
+
+Your program should then print out:
+  <ul>
+    <li> the total number of permits in the file,
+    <li> the count of permits for each borough, and
+    <li> the five most popular type of events (stored in the column: "EventType").
+  </ul>
+
+<p>A sample run:
+<pre style = "background-color:lavender">
+  Enter file name: filmPermitsJune2019.csv
+  There were 643 film permits.
+  Manhattan        336
+  Brooklyn         165
+  Queens            70
+  Staten Island     42
+  Bronx             30
+  Name: Borough, dtype: int64
+
+
+  The five most popular type of events were:
+  Shooting Permit                  532
+  Theater Load in and Load Outs     77
+  Rigging Permit                    26
+  DCAS Prep/Shoot/Wrap Permit        8
+  Name: EventType, dtype: int64
+  </pre>
+
+<p> This assignment uses film permit data collected and made publicly by
+<a href="https://nycopendata.socrata.com">New York City Open Data</a>, and can be found at:
+<blockquote>
+<a href="https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p">https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p</a>.
+</blockquote>
+Since the files are quite large, use the "Filter" option and a range of dates for "StartDateTime" and "Export" (in CSV format) all permits for those dates.
+
+<p> <i>Hint: See <a href="lab7.html">Lab 7</a>  and <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
+
+
+
+
+<h3>Programs 41-60 coming soon!</h3>
 
 
           <!--
@@ -1343,55 +1437,6 @@ Double your recipe is:
 
 
 
-
-
-  <li > <b>Due Date: 16 November</b>
-  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> & <a href="lab8.html">Lab 8</a> </b><br>
-
-
-
-<p> Write a program that asks the user for a CSV of the NYC OpenData Film Permits:
-<ul>
-  <li> There is a sample file for June 2019 film permits on <a href="https://github.com/HunterCSci127/CSci127">github</a>.
-</ul>
-
-Your program should then print out:
-<ul>
-  <li> the total number of permits in the file,
-  <li> the count of permits for each borough, and
-  <li> the five most popular locations (stored in the column: "Parking Held").
-</ul>
-
-<p>A sample run:
-<pre style = "background-color:lavender">
-  Enter file name: filmPermitsJune2019.csv
-  There were 643 film permits.
-  Manhattan        336
-  Brooklyn         165
-  Queens            70
-  Staten Island     42
-  Bronx             30
-  Name: Borough, dtype: int64
-
-
-  The five most popular filming locations were
-  WEST   48 STREET between 6 AVENUE and 7 AVENUE                                                                             25
-  EAST  140 STREET between LOCUST AVENUE and WALNUT AVENUE,  WALNUT AVENUE between EAST  139 STREET and EAST  140 STREET,
-  EAST  139 STREET between WALNUT AVENUE and LOCUST AVENUE                                                                    15
-  FROST STREET between DEBEVOISE AVENUE and MORGAN AVENUE,  DEBEVOISE AVENUE between FROST STREET and RICHARDSON STREET       11
-  ASHLAND PLACE between LAFAYETTE AVENUE and HANSON PLACE                                                                     10
-  EAST   11 STREET between 3 AVENUE and 4 AVENUE,  3 AVENUE between EAST   11 STREET and EAST   12 STREET                      9
-  Name: ParkingHeld, dtype: int64
-</pre>
-
-<p> This assignment uses film permit data collected and made publicly by
-<a href="https://nycopendata.socrata.com">New York City Open Data</a>, and can be found at:
-<blockquote>
-  <a href="https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p">https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p</a>.
-</blockquote>
-Since the files are quite large, use the "Filter" option and a range of dates for "StartDateTime" and "Export" (in CSV format) all permits for those dates.
-
-<p> <i>Hint: See <a href="lab7.html">Lab 7</a>  and <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
 
 
 
