@@ -1338,7 +1338,7 @@ Enter name of output file:  manHunt.png
 
 
 
-  <li > <b>Due Date: 16 November</b>
+  <li > <b>Due Date: 6 November</b>
   <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> & <a href="lab8.html">Lab 8</a> </b><br>
 
 
@@ -1367,11 +1367,10 @@ Your program should then print out:
   Name: Borough, dtype: int64
 
 
-  The five most popular type of events were:
+  The three most popular type of events were:
   Shooting Permit                  532
   Theater Load in and Load Outs     77
   Rigging Permit                    26
-  DCAS Prep/Shoot/Wrap Permit        8
   Name: EventType, dtype: int64
   </pre>
 
@@ -1380,14 +1379,54 @@ Your program should then print out:
 <blockquote>
 <a href="https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p">https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p</a>.
 </blockquote>
-Since the files are quite large, use the "Filter" option and a range of dates for "StartDateTime" and "Export" (in CSV format) all permits for those dates.
+Since the files are quite large, use the "Filter" option and a range of dates for "StartDateTime" (for this example we included only permits with 'StartDateTime' in June 2019), then "Export" (in CSV format) all permits for those dates.
 
-<p> <i>Hint: See <a href="lab7.html">Lab 7</a>  and <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
-
-
+<p> <i><b>Hint:</b> See <a href="lab7.html">Lab 7</a> for filtering and downloading data from NYC OpenData and <a href="lab8.html">Lab 8</a> for counting values in structured data.</a></i>
 
 
-<h3>Programs 41-60 coming soon!</h3>
+  <li > <b>Due Date: 6 November</b>  <b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html">Lab 8</a></b>
+
+
+  <p> Write two functions, <tt>squares()</tt> and <tt>nestedSquares()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>squares()</tt> is:
+
+  <pre>
+      squares(t, length):
+      1.  If length > 10:
+      2.     Repeat 4 times:
+      3.         Move t, the turtle, forward length steps.
+      4.         Turn t left 90 degrees.
+      5.     Call squares with t and length/2.
+  </pre>
+
+  <p>The pseudocode for <tt>nestedSquares()</tt> is very similar:
+  <pre>
+      nestedSquares(t, length):
+      1.  If length > 10:
+      2.     Repeat 4 times:
+      3.         Move t, the turtle, forward length steps.
+      4.         Turn t left 90 degrees.
+      5.         Call nestedSquares with t and length/2.
+  </pre>
+
+<p> There is a subdle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two images. Observe the execution and think about it!!!
+  <p>A template program, <tt>nestingSquares.py</tt>, is available on the
+  <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+  The grading script does not run the whole program, but instead tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>squares()</tt> and <tt>nestedSquares()</tt>).
+
+  <p>A sample run:
+  <pre style = "background-color:lavender;width:400px">
+  Enter edge length:  160
+  </pre>
+  <p>which would produce:
+
+    <p><img height=150 src="../images/nestedSquares.png">
+
+
+<p> After you successfully submit this program to Gradescope, play around with it and have fun!!!
+<br>Try drawing nested triangles, nested pentagons, nested hexagons!!! Look at all the interesting patterns you can make (not for submission).
+
+
+<h3>Programs 39-60 coming soon!</h3>
 
 
           <!--
@@ -1510,43 +1549,6 @@ Double your recipe is:
 
 
     <p><i>Hint:  See <a href="lab7.html">Lab 7</a>.</i>
-
-    <li > <b>Due Date: 22 November</b>  <b style="float:right">Reading: Think CS <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
-
-
-    <p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
-
-    <pre>
-        triangle(t, length):
-        1.  If length > 10:
-        2.     Repeat 3 times:
-        3.         Move t, the turtle, forward length steps.
-        4.         Turn t left 120 degrees.
-        5.     Call triangle with t and length/2.
-    </pre>
-
-    <p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
-    <pre>
-        nestedTriangle(t, length):
-        1.  If length > 10:
-        2.     Repeat 3 times:
-        3.         Move t, the turtle, forward length steps.
-        4.         Turn t left 120 degrees.
-        5.         Call nestedTriangle with t and length/2.
-    </pre>
-
-    <p>A template program, <tt>nestingTrianges.py</tt>, is available on the
-    <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
-    The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
-
-    <p>A sample run:
-    <pre style = "background-color:lavender;width:400px">
-    Enter edge length:  160
-    </pre>
-    <p>which would produce:
-
-      <p><img height=150 src="../images/nestedTriangles.png">
-
 
 
 
