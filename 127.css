@@ -7,8 +7,9 @@ div {
 	background-color: white;
 	padding: 10px;
 	margin: 10px;
-	overflow-wrap: normal;
-	word-wrap: break-word;
+	resize: both;
+  overflow: auto;
+
 }
 
 #header {
