@@ -1426,9 +1426,125 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 <br>Try drawing nested triangles, nested pentagons, nested hexagons!!! Look at all the interesting patterns you can make (not for submission).
 
 
-<h3>Programs 39-60 coming soon!</h3>
+<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
 
 
+
+  <p>Fill in the missing functions:
+
+  <ul>
+    <li> <tt>average(region):</tt>  Takes a region of an image and
+      returns the average red, green, and blue values across the region.
+      <li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+    </ul>
+
+  <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+  (inspired by the elegant <a href="http://koalastothemax.com" target="_blank">koalas to the max</a>).
+
+  <p>For example, if you inputted our favorite image, you would see (left to right):
+
+  <p>
+  <img src="../images/refined1.png" width=150>
+    <img src="../images/refined2.png" width=150>
+    <img src="../images/refined3.png" width=150>
+    <img src="../images/refined4.png" width=150>
+    <img src="../images/refined5.png" width=150>
+    <img src="../images/refined6.png" width=150>
+    <img src="../images/refined7.png" width=150>
+    <img src="../images/refined8.png" width=150>
+
+
+  <p> and finally:
+
+    <p> <img src="../images/csBridge.png" width=400>
+
+  <p>A template program, <tt>averageImage.py</tt>, is available on the
+  <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
+  The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+  <p><i>Hint:  See notes from Lecture 8.</i>
+
+
+<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab8.html">Lab 8</a></b><br>
+
+
+
+<p>Write a <i>decision-making program</i> with command-line interface to implement a <b>housing-score calculator</b> (inspired by the 2020 <a href="http://nifty.stanford.edu/2020/peck-decision-makers/" target="_blank">Nifty Decision Makers</a> by Evan Peck)
+
+<p>Your program will consist of two functions:
+<ul>
+  <li><tt>main()</tt>
+    <ul>
+      <li> Asks the user 5 questions and stores the answers: year (int), age (int), probation (string), full-time (int), gpa (float) (see sample run below)
+      <li> Calls <tt>computeScore(answers)</tt>, where <tt>answers</tt> is a list containing the variables in which the answers are stored in the order in which they are received (python lists may contain variables of different type)
+      <li> Prints the value returned by <tt>computeScore</tt>
+    </ul>
+  <li><tt>computeScore(answers)</tt>
+    <ul>
+      <li>Computes the housing score based on the values in <tt>answers</tt> as follows:
+        <ul>
+          <li> Current Freshman: 1 point
+          <li> Current Sophomore: 2 points
+          <li> Current Junior: 3 points
+          <li> Current Senior: 4 points
+          <li> 23+ Years of Age: 1 point
+          <li> Full-Time: 1 point
+          <li> Academic Probation: -1 point
+         <li> 3.5+ GPA: 1 point
+     </ul>
+      <li> Returns the housing score
+    </ul>
+</ul>
+
+  <p> A sample run of the program:
+  <pre style ="background-color:lavender;width:450px">
+  -----------------------------------
+  HOUSING SCORE CALCULATOR
+  -----------------------------------
+
+  QUESTION 1
+  What year are you? (1,2,3,4): 4
+  QUESTION 2
+  How old are you?: 25
+  QUESTION 3
+  Are you currently on probation? (Yes or No): No
+  QUESTION 4
+  Are you Part-time or Full-time? (0 or 1): 1
+  QUESTION 5
+  What is your GPA?: 3.9
+
+  -----------------------------------
+  Your housing score is:  7
+  -----------------------------------
+  </pre>
+
+    <p> And another sample run of the program:
+  <pre style ="background-color:lavender;width:450px">
+  -----------------------------------
+  HOUSING SCORE CALCULATOR
+  -----------------------------------
+
+  QUESTION 1
+  What year are you? (1,2,3,4): 2
+  QUESTION 2
+  How old are you?: 19
+  QUESTION 3
+  Are you currently on probation? (Yes or No): Yes
+  QUESTION 4
+  Are you Part-time or Full-time? (0 or 1): 0
+  QUESTION 5
+  What is your GPA?: 2.7
+
+  -----------------------------------
+  Your housing score is:  1
+  -----------------------------------
+  </pre>
+
+  <p>The grading script runs the whole program as well as each function separately ('unit tests') to determine correctness.  As such, the function names must match exactly as indicated above (else, the scripts cannot find them).
+  <p>Your program may assume that the input (from the user and to the functions) is always in the expected format.
+  <p><i><b>Hint:</b> See <a href="lab4.html">Lab 4</a> for type conversion and decisions, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a> for programming with functions.
+
+<p><h3>Programs 41-60 coming soon!</h3>
           <!--
           <h1>CHANGE</h1>
 
@@ -1589,43 +1705,7 @@ Double your recipe is:
     <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
 
 
-    <li > <b>Due Date: 27 November</b>  <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="http://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a></b><br>
 
-
-
-  		<p>Fill in the missing functions:
-
-  		<ul>
-  			<li> <tt>average(region):</tt>  Takes a region of an image and
-       		returns the average red, green, and blue values across the region.
-       		<li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
-       	</ul>
-
-   		<p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
-   		(inspired by the elegant <a href="http://koalastothemax.com" target="_blank">koalas to the max</a>).
-
-   		<p>For example, if you inputted our favorite image, you would see (left to right):
-
-   		<p>
-   		<img src="../images/refined1.png" width=150>
-    		<img src="../images/refined2.png" width=150>
-    		<img src="../images/refined3.png" width=150>
-    		<img src="../images/refined4.png" width=150>
-    		<img src="../images/refined5.png" width=150>
-    		<img src="../images/refined6.png" width=150>
-    		<img src="../images/refined7.png" width=150>
-    		<img src="../images/refined8.png" width=150>
-
-
-    	<p> and finally:
-
-    		<p> <img src="../images/csBridge.png" width=400>
-
-  		<p>A template program, <tt>averageImage.py</tt>, is available on the
-  		<a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
-  		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
-
-  		<p><i>Hint:  See notes from Lecture 9.</i>
 
 
 
