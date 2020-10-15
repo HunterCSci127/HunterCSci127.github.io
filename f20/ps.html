@@ -1542,9 +1542,106 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 
   <p>The grading script runs the whole program as well as each function separately ('unit tests') to determine correctness.  As such, the function names must match exactly as indicated above (else, the scripts cannot find them).
   <p>Your program may assume that the input (from the user and to the functions) is always in the expected format.
-  <p><i><b>Hint:</b> See <a href="lab4.html">Lab 4</a> for type conversion and decisions, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a> for programming with functions.
+  <p><i><b>Hint:</b> See <a href="lab4.html">Lab 4</a> for type conversion and decisions, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a> for programming with functions.</i>
 
-<p><h3>Programs 41-60 coming soon!</h3>
+
+
+    <p>
+    <a id="ps9"></a>
+    <h2><u> Lecture / Lab 9</u></h2>
+
+
+    <li > <b>Due Date: 12 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
+        <p><b>REVIEW </b>
+    <p><img src="../images/irmaScreenshot.png" width=400>
+
+    <p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty Hurricane Program</a> by Phil Ventura).
+      <p>Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
+      <ul>
+        <li> <tt>t</tt>: a turtle,
+          <li> <tt>lat</tt>: an integer storing the current latitude,
+          <li> <tt>lon</tt>: an integer storing the current longitude, and
+          <li> <tt>wind</tt>: the current wind speed in miles per hour.
+          </ul>
+
+      <p>
+      Your function should move the turtle to the current location (longitude, latitude), and then based on the
+      <a href="https://www.nhc.noaa.gov/aboutsshws.php" target="_blank">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
+      <ul>
+        <li> red and pen size 5 for Category 5 (windspeed > 157 mph)
+        <li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
+        <li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
+        <li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
+        <li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
+        <li> white and pen size 1 if not hurricane strength
+      </ul>
+
+      <p>A template program, <tt>hurricane.py</tt>, and background image, <tt>mapNASA.gif</tt>, are available on the
+        <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
+        The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+      <p>Two test files (<a href="../files/irma.csv" target="_blank">irma.csv</a> and <a href="../files/jose.csv" target="_blank">jose.csv</a>) are from the <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty site</a>.  Additional CSV files are available there.
+
+        <p>
+        <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
+
+
+        <li > <b>Due Date: 13 November</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+          <p><iframe src="../images/nycMap.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+          <p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for the main campus of Hunter College.  The HTML file your program creates should be called: <tt>nycMap.html</tt>
+
+          <p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+
+
+
+
+
+ <li > <b>Due Date: 13 November</b>
+ <b style="float:right">Reading: <a href="http://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+
+<p>	Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.
+
+<p>A sample run:
+  <pre style = "background-color:lavender;width:400px">
+  Enter CSV file name:  collisionsThHunterBday.csv
+  Enter output file:  thMap.html
+</pre>
+<p>which would produce the html file:
+
+<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>(The demo above is for October 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
+<tt>tiles="Cartodb Positron"</tt> when creating the map.)
+
+<p> This assignment uses collision data collected and made publicly by
+<a href="https://nycopendata.socrata.com">New York City Open Data</a>.
+A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterBday.csv</a> from 18 October 2016 was downloaded and can be used to test your program.
+
+
+<p>Note:  when creating datasets to test your program, you will need to filter for both date (to keep the files from being huge) and that there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
+
+	<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
+
+
+  <li > <b>Due Date: 16 November</b>
+  <b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Debugging/toctree.html#">Chapter 3</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+
+  <p>The program,
+  <a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsCircles.py">errorsCircles.py</a>, has lots of errors.  Fix the errors and submit the modified program.
+<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
+
+
+
+
+<p><h3>Programs 45-60 coming soon!</h3>
+
+
+
           <!--
           <h1>CHANGE</h1>
 
@@ -1595,27 +1692,6 @@ Double your recipe is:
 
 
 
-  <li > <b>Due Date: 17 November</b>  	 <b style="float:right">Reading: Think CS <a href="http://interactivepython.org/runestone/static/thinkcspy/Selection/toctree.html">Chapter 7 </a> and <a href="http://interactivepython.org/runestone/static/thinkcspy/Strings/TraversalandtheforLoopByItem.html">Section 9.10</a> & <a href="lab4.html">Lab 4</a></b> <br>
-
-
-  <p> Write a program that asks the user for a string, then counts and prints the number of characters that are uppercase letters, lowercase letters, numbers and special characters.
-  <p> For this program, you should consider all characters in the <a href="https://huntercsci127.github.io/files/ASCIITable.pdf" target="_blank">ASCII table</a> higher than 31 to be special characters if they are not uppercase letters, lowercase letters or numbers.
-  <p><i>Hint: think about the order in which you check for different type of characters. It is also important to think about what characters should you include in your test strings to ensure that your program always produces the correct output (i.e. catch all edge cases!!!)</i>
-
-
-<p> A sample run of the program:
-<pre style ="background-color:lavender;width:850px">
-  Please enter a codeword: 4A%5#8sRTq2
-  Your codeword contains 3 uppercase letters, 2 lowercase letters, 4 numbers, and 2 special characters.
-</pre>
-
-  <p> And another sample run of the program:
-<pre style ="background-color:lavender;width:850px">
-  Please enter a codeword: ! 09:@AZ[`az{~
-  Your codeword contains 2 uppercase letters, 2 lowercase letters, 2 numbers, and 8 special characters.
-</pre>
-
-
 
 	<li > <b>Due Date: 20 November</b>
 	<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab7.html">Lab 7</a></b><br>
@@ -1631,78 +1707,6 @@ Double your recipe is:
 		<p><i>Hint:  See notes from Lecture 7 and <a href="lab7.html">Lab 7</a>.</i>
 
 
-      <li > <b>Due Date: 21 November</b>
-
-    <b style="float:right">Reading: Think CS <a <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a>, <a href="lab5.html">Lab 5</a> & <a href="lab7.html">Lab 7</a> </b><br>
-
-    		<p> Write a function, <tt>computePrice()</tt>, that takes as two parameters: the age group and the ticket type, and returns the price for admission to the American Museum of Natural History.
-    		<ul>
-        <li> If the ticket type is "admission" and the age group is "adult", the price is $23.
-        <li> If the ticket type is "admission" and the age group is  "child", the price is $13.
-        <li> If the ticket type is "admission" and the age group is  "senior", the price is $18.
-        <li> If the ticket type is "+exhibitions" and the age group is "adult", the price is $33.
-        <li> If the ticket type is "+exhibitions" and the age group is  "child", the price is $20.
-        <li> If the ticket type is "+exhibitions" and the age group is  "senior", the price is $27.
-        <li> If the ticket type or age group are not one of the above, it returns -1.
-    		</ul>
-
-    		<p>A template program, <tt>AMNHAdmission.py</tt>, is available on the
-    		<a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
-    		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
-
-    		<p>A sample run:
-    <pre style = "background-color:lavender;width:550px">
-  Enter the age group (child, adult, senior): child
-  Enter the ticket type (admission / +exhibitions): admission
-  The price of your ticket is 13.0
-    </pre>
-    		<p> And another:
-    <pre style = "background-color:lavender;width:550px">
-    Enter the age group (child, adult, senior): senior
-    Enter the ticket type (admission / +exhibitions): +exhibitions
-    The price of your ticket is 27.0
-    </pre>
-
-
-    <p><i>Hint:  See <a href="lab7.html">Lab 7</a>.</i>
-
-
-
-
-
-<li > <b>Due Date: 24 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="http://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a></b>
-
-<p><img src="../images/irmaScreenshot.png" width=400>
-
-<p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty Hurricane Program</a> by Phil Ventura).
-  <p>Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
-  <ul>
-    <li> <tt>t</tt>: a turtle,
-      <li> <tt>lat</tt>: an integer storing the current latitude,
-      <li> <tt>lon</tt>: an integer storing the current longitude, and
-      <li> <tt>wind</tt>: the current wind speed in miles per hour.
-      </ul>
-
-  <p>
-  Your function should move the turtle to the current location (longitude, latitude), and then based on the
-  <a href="https://www.nhc.noaa.gov/aboutsshws.php" target="_blank">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
-  <ul>
-    <li> red and pen size 5 for Category 5 (windspeed > 157 mph)
-    <li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
-    <li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
-    <li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
-    <li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
-    <li> white and pen size 1 if not hurricane strength
-  </ul>
-
-  <p>A template program, <tt>hurricane.py</tt>, and background image, <tt>mapNASA.gif</tt>, are available on the
-    <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
-    The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
-
-  <p>Two test files (<a href="../files/irma.csv" target="_blank">irma.csv</a> and <a href="../files/jose.csv" target="_blank">jose.csv</a>) are from the <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty site</a>.  Additional CSV files are available there.
-
-    <p>
-    <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
 
 
 
@@ -1710,58 +1714,6 @@ Double your recipe is:
 
 
 
-
-
-
-
-<li > <b>Due Date: 28 November</b>
-<b style="float:right">Reading: Think CS: <a href="http://runestone.academy/runestone/static/thinkcspy/Debugging/toctree.html#">Chapter 3</a> & <a href="lab9.html">Lab 9</a></b><br>
-
-
-  <p>The program,
-  <a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsHex.py">errorsHex.py</a>, has lots of errors.  Fix the errors and submit the modified program.
-  <p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
-
-
-
-	<li > <b>Due Date: 29 November</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
-
-    <p><iframe src="../images/nycMap.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-		<p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for the main campus of Hunter College.  The HTML file your program creates should be called: <tt>nycMap.html</tt>
-
-		<p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
-
-
-
-	 <li > <b>Due Date: 30 November</b>
-	 <b style="float:right">Reading: <a href="http://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
-
-
-
-		<p>
-		Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.
-
-		<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter CSV file name:  collisionsThHunterBday.csv
-Enter output file:  thMap.html
-</pre>
-		<p>which would produce the html file:
-
-		<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-      <p>(The demo above is for October 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
-    		<tt>tiles="Cartodb Positron"</tt> when creating the map.)
-
-    		<p> This assignment uses collision data collected and made publicly by
-    		<a href="https://nycopendata.socrata.com">New York City Open Data</a>.
-    		A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterBday.csv</a> from 18 October 2016 was downloaded and can be used to test your program.
-
-
-    		<p>Note:  when creating datasets to test your program, you will need to filter for both date (to keep the files from being huge) and that there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
-
-    		<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
 
 
 
