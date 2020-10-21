@@ -243,7 +243,7 @@ How can you modify the program to let the user specify the borough to compute th
 import pandas as pd
 
 #Read in the csv file.
-rain = pd.read_csv('AustraliaRain.csv',skiprows=1)
+rain = pd.read_csv('AustraliaRain.csv')
 
 #Group the data by location averages.
 groupAvg = rain.groupby('Location').mean()

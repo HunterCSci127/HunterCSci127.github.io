@@ -7,6 +7,9 @@ div {
 	background-color: white;
 	padding: 10px;
 	margin: 10px;
+	resize: both;
+  overflow: auto;
+
 }
 
 #header {
@@ -37,7 +40,7 @@ div {
 	padding: 25px;
 }
 
-th { 
+th {
 	text-align: right;
 }
 
