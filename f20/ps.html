@@ -1671,129 +1671,135 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
    <a id="ps10"></a>
    <h2><u> Lecture / Lab 10</u></h2>
 
-<p><h3>Programs 46-60 coming soon!</h3>
+   <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+
+   <p> Write a program that asks the user for a number and prints out the corresponding month. Your program will consist of two functions:
+     <ul>
+       <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number between 1 and 12 is entered.
+       <li> <tt>monthString()</tt> which returns the string corresponding to the number.
+    </ul>
+     <p> A template <tt>months.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>monthString()</tt></b> to implement its desired behavior  and <b>modify <tt>main()</tt></b> to vaildate the input.
+
+   <p> A sample run of your program:
+   <pre style = "background-color:lavender;width:650px">
+   Enter the number of the month: 15
+   That is not a valid month number. Please enter a number between 1 and 12: 22
+   That is not a valid month number. Please enter a number between 1 and 12: 12
+   The month is December.
+     </pre>
+
+
+   	<p><i><b>Hint:</b>  See <a href="lab10.html">Lab 10</a> for an example of validating the input.</i>
+
+      <!--
+      <li > <b>Due Date: 20 November</b>
+      <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab7.html">Lab 7</a></b><br>
 
 
 
-          <!--
-          <h1>CHANGE</h1>
+        <p>Fill in the missing function, <tt> dayString()</tt>, in the program, <tt>days.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127", target="_blank">
+      https://github.com/HunterCSci127/CSci127</a>).  The function should take number between 0 and 7 as a parameter and returns the corresponding day as a string.  For example, if the parameter is 1, your function should return <tt>"Monday"</tt>.  If the parameter is 2, your function should return out <tt>"Tuesday"</tt>, etc.
 
-	<li > <b>Due Date: 24 October</b>     		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+        <p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since instead of running the entire program, the scripts are "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
 
-   		<p>
-   		Using <tt>pandas</tt>, write a program that asks the user for a recipe (in comma separated value (CSV) format), reads in the corresponding CSV file and prints out quantities and ingredients needed to make a double batch.  Assume that the CSV files have the columns:  <tt>"Amount"</tt>, <tt>"Measurement"</tt>, and <tt>"Ingredient"</tt>.
 
-		<p>
-		For example if the CSV file, <a href="meringues.csv">meringues.csv</a>, contained:
+        <p><i>Hint:  See notes from Lecture 7 and <a href="lab7.html">Lab 7</a>.</i>
+
+-->
+
+
+
+
+
+
+  <li > <b>Due Date: 20 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+	<p> Modify the program from <a href="lab10.html">Lab 10</a> to make a turtle walk 200 times: each "walk" is 5 steps forward and the turtle can turn 0, 30, 60, 90, ..., 360 degrees (chosen randomly) at the beginning of each walk.
+	 <p> A sample run of your program:
+   <p> <img src="../images/randomWalk200-60.png" height=150>
+
+
+
+
+     	<li > <b>Due Date: 20 November</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+     		<p>Write an Unix shell script that does the following:
+     		<ul>
+     			<li> Creates two directories, <tt>programs</tt> and <tt>files</tt>.
+     			<li> Creates 2 additional directories inside of <tt>programs</tt>  (as subdirectories of
+     			<tt>programs</tt> ):  <tt>python</tt> and <tt>c++</tt>.
+          <li> Creates 3 additional directories inside of <tt>files</tt>  (as subdirectories of
+     			<tt>files</tt> ):  <tt>pdf</tt>, <tt>csv</tt> and <tt>images</tt>.
+     		</ul>
+
+       		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
+
+
+
 
 <p>
-<table border=1>
-	<tr>
-		<th>Amount</th><th>Measurement</th><th>Ingredient</th>
-	</tr>
-	<tr>
-		<td>150</td><td>grams</td><td>chocolate chips</td>
-	</tr>
-	<tr>
-		<td>4</td><td>whites of</td><td>eggs</td>
-	</tr>
-	<tr>
-		<td>.25</td><td>teaspoon</td><td>vanilla</td>
-	</tr>
-	<tr>
-		<td>.25</td><td>teaspoon</td><td>cream of tartar</td>
-	</tr>
-<table>
+<li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-	<p>A sample run of your program would be:
-	    <pre style ="background-color:lavender;width:400px">
-Enter recipe name: meringues.csv
-Double your recipe is:
-       Amount Measurement       Ingredient
-    0   300.0       grams  chocolate chips
-    1     8.0   whites of             eggs
-    2     0.5    teaspoon          vanilla
-    3     0.5    teaspoon  cream of tartar
+
+<p> Write a program that <b>repeatedly</b> asks the user for the price of a product, until the user enters a negative number to indicate there are no more prices to enter (<b>sentinel value</b>). The program should then return the total with 8.875% tax the user must pay for the items.
+
+
+  <p> A sample run of your program:
+<pre style = "background-color:lavender;width:650px">
+  ------------------------------------------
+  Welcome to the total with tax calculator!
+  ------------------------------------------
+  Please enter the price of each item you would like to purchase, one at a time.
+  Enter a negative number when you are done.
+
+  Enter the price of an item: 15.5
+  Enter the price of an item: 89.99
+  Enter the price of an item: 54
+  Enter the price of an item: -1
+  The total with tax is $173.445375
+
 </pre>
 
 
+  <p><i><b>Hint:</b>  See <a href="lab4.html">Lab 4</a> for converting input to numbers</i>
+
+
+  <p>
+  <a id="ps11"></a>
+  <h2><u> Lecture / Lab 11</u></h2>
+
+
+<p><h3>Programs 50-60 coming soon!</h3>
+
+  <!--
+
+          <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+
+          <p> Write a program that repeatedly asks the user to enter a number as long as the cumulative average of these numbers is less than 50. Your program should then print out the average.
+
+          <p> A sample run of your program:
+          <pre style = "background-color:lavender;width:200px">
+          Please enter number: 15
+          Please enter number: 65
+          Please enter number: 25
+          Please enter number: 65
+          Please enter number: 45
+          Please enter number: 55
+          Please enter number: 65
+          Please enter number: 75
+          The average is 51.25
+            </pre>
+
+           <p><i>Hint:  See <a href="lab10.html">Lab 10</a>.</i>
+
+
+          <h1>CHANGE</h1>
 
 
 
 
-
-
-
-
-
-	<li > <b>Due Date: 20 November</b>
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab7.html">Lab 7</a></b><br>
-
-
-
-		<p>Fill in the missing function, <tt> dayString()</tt>, in the program, <tt>days.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127", target="_blank">
-	https://github.com/HunterCSci127/CSci127</a>).  The function should take number between 0 and 7 as a parameter and returns the corresponding day as a string.  For example, if the parameter is 1, your function should return <tt>"Monday"</tt>.  If the parameter is 2, your function should return out <tt>"Tuesday"</tt>, etc.
-
-		<p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since instead of running the entire program, the scripts are "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
-
-
-		<p><i>Hint:  See notes from Lecture 7 and <a href="lab7.html">Lab 7</a>.</i>
-
-
-
-
-
-
-
-
-
-
-
-
-    <li > <b>Due Date: 1 December</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
-
-        		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 100 times.  Each "walk" is 20 steps forward and the turtle can turn 0, 5, 10, 15,..., 360 degrees (chosen randomly) at the beginning of each walk.
-
-        		<p> A sample run of your program:
-        <p> <img src="../images/randomWalk2.png" height=200>
-
-
-<li > <b>Due Date: 4 December</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
-
-
-<p> Write a program that repeatedly asks the user to enter a number as long as the cumulative average of these numbers is less than 50. Your program should then print out the average.
-
-<p> A sample run of your program:
-<pre style = "background-color:lavender;width:200px">
-Please enter number: 15
-Please enter number: 65
-Please enter number: 25
-Please enter number: 65
-Please enter number: 45
-Please enter number: 55
-Please enter number: 65
-Please enter number: 75
-The average is 51.25
-  </pre>
-
-	<p><i>Hint:  See <a href="lab10.html">Lab 10</a>.</i>
-
-
-
-
-
-
-
-	<li > <b>Due Date: 5 December</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
-
-		<p>Write an Unix shell script that does the following:
-		<ul>
-			<li> Creates a directory, <tt>projectFiles</tt>.
-			<li> Creates 3 additional directories (as subdirectories of
-			<tt>projectFiles</tt>):  <tt>images</tt>, <tt>files</tt>, and <tt>results</tt>.
-		</ul>
-
-		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
 
 
 
