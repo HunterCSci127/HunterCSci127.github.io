@@ -185,10 +185,15 @@ Your summary should exceed these minimum requirements to receive full credit. In
     <p> Submit your answer as a .pdf file (both code and image) to Gradescope.
 
   <hr>
+<p>
+  <li > <b>HC7 & HC8 Progress Report
+  </b> <b style="float:right">Due Date: 30 October: IN LAB</b>  <br>
+  <p> Each group has <b>5 minutes</b> to report on what they did so far and what they plan to do to wrap up the assignment for next week.
 
-
-  <li > <b>HC 7 & HC8:  Data Analysis
-  </b> <b style="float:right">Due Date: 27 October</b>  <br>
+<hr>
+<p>
+  <li > <b>HC7 & HC8:  Data Analysis
+   </b> <b style="float:right">Due Date: 3 November</b>  <br>
 
   <p>For this assignment, we will analyze our dataset. This assignment will span over the course of two weeks (two meetings).
   <p> <b>During the first meeting</b>, on 16 October, look over <a href="../files/HC7-HC8.html" target="_blank"><b>this data-analysis document</b></a>, it will illustrate how to explore, clean and visualize the data.
@@ -218,123 +223,85 @@ Your summary should exceed these minimum requirements to receive full credit. In
 
 <p>
 
+
+  <hr>
+  <li > <b>HC 9:  Neighborhood  Map
+
+  </b> <b style="float:right">Due Date: 10 November</b>  <br>
+
+
+    <p> Using <tt>folium</tt>, generate an html map with markers for the airbnb listings in your neighborhood.
+      <p><iframe src="../files/manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+    <p> To do so:
+    <ul>
+      <li> Create a neighborhood dataframe by selecting only the rows for your neighborhood
+      <li> Create a map object
+      <li> Loop for each row in the neighborhood dataframe to
+        <ul>
+          <li>create a marker for that latitude and longitude
+            <li> add the marker to the map
+        </ul>
+      <li>Save the map to an html file
+    </ul>
+    <p> <b>Hint:</b> You can mirror the program in Lab9 that creates a map with markers for CUNY campuses.
+    <p> <b>Note:</b> If your neighborhood has too many listings and the map is excessively crowded, you can select a random subset. Don't remove too many, however, so that the map remains representative of the data.
+
+    <p> Submit a screenshot of your map and your code as a .pdf file.
+
+  <hr>
+
+
+  <li > <b>HC 10:  Webpage</b> <b style="float:right">Due Date: 17 November</b>  <br>
+
+  <br>
+
+    <p> We are going to use <a href="https://pages.github.com/" target="blank">github to make webpages</a> for your projects.  There will be only one site for each project, but we want everyone to set up their own neighborhood page the project webpage will link to.
+
+    <p>Create a github page for your neighborhood.
+    <ol>
+      <li> If you haven't done so already, set up a repository for your neighborhood project (see the getting started tutorials from <a href="lab6.html">Lab 6</a> on how to set up a repository).
+      <li> Follow through the <a href="https://pages.github.com/" target="blank">options for setting up a page</a> for your project (right under the "Ready to get started?" choose 'Project site').
+      <li> Include on your neighborhood page:
+        <ul>
+          <li> the name of the neighborhood,
+          <li> the highlighted map from HC6 as an image
+          <li> the basic demographics & statistics from  HC 2
+          <li> one paragraph summarizing your observations from HC3
+          <li> a summary of your results from HC7 and HC8 along with plot images, and
+          <li> the map from HC9 (embedded as iframe -- see below)
+    </ol>
+
+    <p>To embed an html as an <tt>iframe</tt> use the following html tag (assuming your map is called <tt>manhattan.html</tt> and it lives in the same directory as the page you want to embed it into)
+    <br>
+    <pre>
+&lt;iframe src="manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
+    </pre>
+    <br>If you are using markdown, you can insert html code by surrounding it with <tt>dl</tt> tags as in:
+    <pre>
+&lt;dl&gt;
+&lt;iframe src="manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/dl&gt;
+    </pre>
+    <p>  Submit a .pdf file that contains the URL of your project on github (web address) and a screenshot of your project.
+ <p><b> Useful links:</b>
+   <ul>
+     <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" > Markdown Cheatsheet</a>
+     <li>If you prefer to watch a video tutorial instead of following the github tutorial page linked above, <a href="https://www.google.com/search?q=github+pages+official+video+tutorial&rlz=1C5CHFA_enUS824US824&sxsrf=ALeKk03v20_y574_y7P6Bg5t9ZAOiUTFqQ:1604521169616&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjpoeWS2-nsAhUyU98KHXCYCfQQ_AUoAXoECBcQAw&biw=1432&bih=672&dpr=2" target="blank">there are plenty, non-official, youtube videos</a> on how to set up your first Gihub webpage... choose the one you prefer to listen to.
+
+  <hr>
+
+
+
 <i>More to come...</i>
 
 <!--
 
 
 
-	<hr>
-	<li > <b>HC 6:  Neighborhood geoJSON Map
-
-	</b> <b style="float:right">Due Date: 7 October</b>  <br>
-
-  <p><href="http://geojson.org"><img src="geoJSON.png" height = 200></a>
-
-		<p> Move this later-- needs to include where you're stations will be!
-
-		<p> Using the geoJSON mapper (see <a href="geoJSONnotes.html">geoJSON notes</a>), make a JSON file that includes the following features:
-		<ul>
-			<li> Your neighborhood marked as a region (e.g. polygon),
-      		<li> Any subway lines (marked as a line: color code to match the MTA colors, e.g. the A line is blue, the 1 line is red, 4-5-6 lines are green),
-			<li> Other major transportation corridors (e.g. major bus routes or major roads) marked as lines, and
-			<li> Transit stops on your subway lines and major bus routes (marked as points).
-		</ul>
-		<p> Commit to github, and view using the github preview button (you should see you encoding rendered graphically on a map).
-
-		<p> Submit a screenshot of your map as a .pdf file.
-
-	<hr>
-  <li > <b>HC 7:  </b> <b style="float:right">Due Date: 14 October</b>  <br>
-
-Add in: read the JSON feed of citibike
-
-voronoi diagrams of your potential stations
-	<hr>
-
-	<li > <b>HC 8:  Turnstile Entries</b> <b style="float:right">Due Date: 21 October</b>  <br>
-
-    <p><img src="turnstileEntries.png" height=200>
-      <img src="turnstileExits.png" height=200>
-      <img src="turnstileDiff.png" height=200>
-      <br>(Entries, exits, and difference via turnstile #1 at 68th Street-Hunter College station for the week ending 1 September 2018)
 
 
-		<p> In <a href="lab7.html">Lab 7</a>, we introduced
-		<a href="https://opendata.cityofnewyork.us">NYC OpenData</a>.  As part of the OpenData initiative, the <a href="https://data.cityofnewyork.us/Transportation/MTA-Data/mmu8-8w8b">MTA</a> releases information about the subways, buses, and commuter trains.  To access the real-time data, MTA provides feeds (requires registration).  We will focus on the historical data stored about stations.
-
-		<p> THe MTA keeps track of the number of people entering and exiting each station via the <a href="http://web.mta.info/developers/turnstile.html">turnstiles</a>.  Readings of how many people entered and exited are measured every 4 hours.
-    Some stations measure the numbers at midnight, 4am, 8am, noon, 4pm, and 8pm.  Others are measured on slightly shifted schedules, but always 4 hours apart.  For example, the 68th Street-Hunter College station has each turnstile measured at 1am, 5am, 9am, 1pm, 5pm, and 9pm.  These numbers are recorded as cumulative running totals.  For example, here is some of the data from the 68th Street-Hunter College station for September 22:
-
-<pre>
-C/A,UNIT,SCP,STATION,LINENAME,DIVISION,DATE,TIME,DESC,ENTRIES,EXITS
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/22/2018,01:00:00,REGULAR,0026638604,0015384642
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/22/2018,05:00:00,REGULAR,0026638606,0015384646
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/22/2018,09:00:00,REGULAR,0026638640,0015384847
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/22/2018,13:00:00,REGULAR,0026638946,0015385117
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/22/2018,17:00:00,REGULAR,0026639543,0015385340
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/22/2018,21:00:00,REGULAR,0026639975,0015385496
-R246,R177,00-00-00,68ST-HUNTER CO,6,IRT,09/23/2018,01:00:00,REGULAR,0026640099,0015385542
-</pre>
-
-    <p> The last two entries on the lines are the entries and exits for that turnstile (in this case, the numbered <tt>00-00-00</tt>).  At 1am, the entry total was <tt>0026638604</tt> and the exit total was <tt>0015384642</tt>.  Four hours later, the entry total was <tt>0026638606</tt> and the exit total was <tt>0015384646</tt>.  So, over that 4-hour period from 1am to 5am, <tt>0026638606-0026638604 = 2</tt> people entered the station via that turnstile.  Similarly, 4 people left the station via that turnstile.
-
-    <p>Pick a turnstile in your station and make a plot of the number of entries and a plot of the number of exits for the week ending <a href="http://web.mta.info/developers/data/nyct/turnstile/turnstile_180901.txt">1 September 2018</a>.
-
-    <p>Some useful tips:
-    <ul>
-       <li> If you have your turnstile data stored in a variable, <tt>turnsData</tt>, you can select the data for a single station (for example, <tt>68TH-HUNTER CO</tt>) with the command:
-         <pre>
-turnsHunter = turnsData[ turnsData["STATION"] == "68ST-HUNTER CO" ]</pre>
-        You can similarly select a single turns(for example, <tt>00-00-01</tt>) with <tt>turnsHunter</tt> and the column name <tt>SCP</tt>.
-      <li> Some of the data files had extra spaces after "EXITS".  Pandas thinks those spaces are part of the name of your column.  You can either include the spaces (i.e. "EXITS   ") or you can edit the CSV file and remove the trailing spaces and save the revised file.
-      <li> You can create a column that contains the difference between the entries and exits at each time point with:
-        <pre>
-myTurns["Entries - Exits"] = myTurns["ENTRIES"] - myTurns["EXITS"]</pre>
-      <li> Since the default colors for pyplot are a bit garish, the above plots use the <a href="https://seaborn.pydata.org">Seaborn</a> package (can be downloaded as part of the Anaconda distribution or following the directions on their downloads page).  It's totally optional, but if you would like to use a similar palette, including the line with your imports:
-        <pre>
-          import seaborn as sns</pre>
-      will then change the default colors and templates to Seaborn.
-    </ul>
-
-		<p> Submit a .pdf file that includes the following:
-        <ul>
-          <li> The name of your station and the name of the turnstile you are using for your plots.
-          <li> Three plots for the week's data:
-              <ul>
-                  <li> the cumulative number of entries,
-                  <li> the cumulative number of exits, and
-                  <li> the difference of entries and exits.
-                </ul>
-          <li> Any patterns you noticed in the data (e.g. the plots above for turnstile <tt>00-00-00</tt> show that over the weekend it had similar number of people using it for entry and exit, but during the week if was used much more for entries).
-        </ul>
-	<hr>
-
-	<li > <b>HC 9:  Webpage</b> <b style="float:right">Due Date: 28 October</b>  <br>
-
-	<br>
-
-
-
-
-		<p> We are going to be using github to make webpages for your projects.  There will be only one site for each project, but we want everyone to set up there own page as a warm-up exercise.
-
-		<p>Create a github page for your neighborhood.
-		<ol>
-			<li> If you haven't done so already, set up a repository for your neighborhood project (see the getting started tutorials from <a href="lab8.html">Lab 8</a> on how to set up a repository).
-			<li> Follow through the options for setting up a page for your project (right under the "Ready to get started?).
-			<li> Include on your neighborhood page:
-				<ul>
-					<li> the name of the neighborhood,
-					<li> the outline of the neighborhood (the .json file you created in the previous classwork for HC 6),
-					<li> the basic demographics & statistics from the HC 1, and
-					<li> station usage statistics from HC 8.
-		</ol>
-
-		<p>  Submit a .pdf file that contains the URL of your project on github (web address) and a screenshot of your project.
-
-
-	<hr>
 
 
 
@@ -387,7 +354,7 @@ en = entries.to_frame().reset_index()</pre>
   		<blockquote>
   			For 15 months starting in April of 2019, all MTA New York City Transit (NYCT) L train service will be suspended across the East River and within Manhattan to repair damage caused by Superstorm Sandy. The L train will still run within Brooklyn, serving all stops. The temporary closure will directly affect 275,000 of the L Train's 400,000 daily riders, and indirectly affect many more throughout the city. All alternative transit services and traffic management policies are temporary for the duration of the L train closure.
   		</blockquote>
-
+s
     <p>In particular,
       <blockquote>
   			Focusing on different L-train neighborhoods, how will the residents get to work?
@@ -411,48 +378,7 @@ en = entries.to_frame().reset_index()</pre>
 
 
 
-	<li > <b>HC 12: Catchments for L-Train Stations</b> <b style="float:right">Due Date: 18 November</b>  <br>
 
-
-      <p>A <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi diagram</a> divides a region based on the distance to a set of input points.  This simple idea has many applications, one of the most famous was the <a href="http://johnsnowbicentenary.lshtm.ac.uk/about-john-snow/">work of John Snow</a> to study the 1854 cholera outbreak.  Our focus will be on mapping access to public resources and transit.
-
-      <p>The sample program builds a Voronoi diagram will be for libraries across the city (using the
-      library data set from  <a href="https://data.cityofnewyork.us/Business/Library/p4pf-fyc4">NYC Library Locations</a> (download as CSV file).
-      Our map highlights the regions closest to each library:
-
-      <p>
-      <iframe src="../../seminar4/s17/libVor.html" style="width: 95%; height: 700px" name="internal"></iframe>
-
-      <p>To make our map, we
-      <ol>
-      	<li> First take library locations and calculate the Voronoi diagram (using the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Voronoi.html">scipy</a> package).
-      	<li> While going row by row to get the library locations, add markers to the map (we're adding them as separate markers, not a MarkerCluster, since we don't want them to collapse when zooming out).
-      	<li> Show the plot in a matplotlib window to make sure its working (note:  if you have a separate matplotlib window you may need to close it, since the rest of the program is waiting until it's done to continue).
-      	<li> Then write out the locations as a geojson file (using the <a href="https://pypi.python.org/pypi/geojson">geojson</a>).
-      	<li> Load the regions in as a geoJSON layer in folium.
-
-      </ol>
-
-      <p>If you are using anaconda (either spyder, idle3, or jupyter), the scipy and matplotlib packages are included.  To install geojson, type at a terminal window:
-      <pre>
-      	pip install geojson
-      </pre>
-
-      <p> The program, <a href="../../seminar4/s17/makeVor.py">makeVor.py</a>, is a bit rambling, but contains all the steps above (a better design would be to split into separate functions or files for the different tasks).  Try running it on the library dataset (assumes that it is in the same folder as the program).
-
-      <p>Note that it does very well in dense regions but has odd behavior on the edges of the map since we didn't include in the <tt>.json</tt> file any point at infinity and didn't clip the maps to the city boundaries.
-
-      <p>Modify the program to make to make two Voronoi diagrams:
-      <ul>
-      	<li> Make a Voronoi diagram of the <a href="https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49">NYC subway stations</a>
-          (download as CSV).  (Despite the name of the file suggesting that it's from 2010, the file contains the new Second Avenue Subway stops).
-        <li> Make a Voronoi diagram of the <a href="https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49">NYC subway stations</a>
-            <b>without the L-train stations that east of the tunnel</b> in the input file.
-      </ul>
-
-		<p> Submit a .pdf file with a screen capture image of your first HTML map (with all subway stations) and your second HTML map (without L-train stations east of the tunnel).  For each map, center the view on your station.
-
-	<hr>
 
 	<li > <b>HC 13: Project Webpage</b> <b style="float:right">Due Date: 25 November</b>  <br>
 

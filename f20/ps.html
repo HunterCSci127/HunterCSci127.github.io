@@ -721,7 +721,7 @@ Cents: 2
 		<p> <b><i>Note:</b></i>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.imshow()</tt> and <tt>plt.show()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 
-
+  <hr>
       <p>
 <a id="ps5"></a>
       <h2><u> Lecture / Lab 5</u></h2>
@@ -979,7 +979,7 @@ Your map is stored medBlue.png.</pre>
 
 
 
-
+  <hr>
 
 <p>
 <a id="ps6"></a>
@@ -1113,6 +1113,9 @@ Name: Temperature, dtype: float64
 <p><b>Hint: </b>You should use <tt>groupby()</tt> as described in <a href="lab6.html">Lab 6</a>.
 
 
+
+
+  <hr>
   <p>
   <a id="ps7"></a>
   <h2><u> Lecture / Lab 7</u></h2>
@@ -1293,6 +1296,8 @@ Enter name of output file:  manHunt.png
 
 
 
+  <hr>
+
 <p>
 <a id="ps8"></a>
 <h2><u> Lecture / Lab 8</u></h2>
@@ -1353,7 +1358,7 @@ Your program should then print out:
   <ul>
     <li> the total number of permits in the file,
     <li> the count of permits for each borough, and
-    <li> the five most popular type of events (stored in the column: "EventType").
+    <li> the three most popular type of events (stored in the column: "EventType").
   </ul>
 
 <p>A sample run:
@@ -1459,9 +1464,16 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 
     <p> <img src="../images/csBridge.png" width=400>
 
-  <p>A template program, <tt>averageImage.py</tt>, is available on the
+  <p>Use the template program, <tt>averageImage.py</tt>, available on the
   <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
   The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+  <p><b>IMPORTANT</b> Do not remove anything below <b>and including</b> the comment that says:
+<pre style ="background-color:lavender;width:600px">
+  ######################################################################
+  ### DO NOT CHANGE ANYTHING BELOW THIS LINE                         ###
+  ######################################################################
+</pre>
+
 
   <p><i>Hint:  See notes from Lecture 8.</i>
 
@@ -1547,6 +1559,8 @@ Since the files are quite large, use the "Filter" option and a range of dates fo
 
 
 
+
+    <hr>
     <p>
     <a id="ps9"></a>
     <h2><u> Lecture / Lab 9</u></h2>
@@ -1667,314 +1681,322 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
  <tt>tiles="Stamen Watercolor"</tt> when creating the map.)
 
 
+
+
+  <hr>
    <p>
    <a id="ps10"></a>
    <h2><u> Lecture / Lab 10</u></h2>
 
-<p><h3>Programs 46-60 coming soon!</h3>
+   <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+
+   <p> Write a program that asks the user for a number and prints out the corresponding month. Your program will consist of two functions:
+     <ul>
+       <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number between 1 and 12 is entered.
+       <li> <tt>monthString()</tt> which returns the string corresponding to the number.
+    </ul>
+     <p> A template <tt>months.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>monthString()</tt></b> to implement its desired behavior  and <b>modify <tt>main()</tt></b> to vaildate the input.
+
+   <p> A sample run of your program:
+   <pre style = "background-color:lavender;width:650px">
+   Enter the number of the month: 15
+   That is not a valid month number. Please enter a number between 1 and 12: 22
+   That is not a valid month number. Please enter a number between 1 and 12: 12
+   The month is December.
+     </pre>
+
+
+   	<p><i><b>Hint:</b>  See <a href="lab10.html">Lab 10</a> for an example of validating the input.</i>
+
+      <!--
+      <li > <b>Due Date: 20 November</b>
+      <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab7.html">Lab 7</a></b><br>
 
 
 
-          <!--
-          <h1>CHANGE</h1>
+        <p>Fill in the missing function, <tt> dayString()</tt>, in the program, <tt>days.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127", target="_blank">
+      https://github.com/HunterCSci127/CSci127</a>).  The function should take number between 0 and 7 as a parameter and returns the corresponding day as a string.  For example, if the parameter is 1, your function should return <tt>"Monday"</tt>.  If the parameter is 2, your function should return out <tt>"Tuesday"</tt>, etc.
 
-	<li > <b>Due Date: 24 October</b>     		<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+        <p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since instead of running the entire program, the scripts are "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
 
-   		<p>
-   		Using <tt>pandas</tt>, write a program that asks the user for a recipe (in comma separated value (CSV) format), reads in the corresponding CSV file and prints out quantities and ingredients needed to make a double batch.  Assume that the CSV files have the columns:  <tt>"Amount"</tt>, <tt>"Measurement"</tt>, and <tt>"Ingredient"</tt>.
 
-		<p>
-		For example if the CSV file, <a href="meringues.csv">meringues.csv</a>, contained:
+        <p><i>Hint:  See notes from Lecture 7 and <a href="lab7.html">Lab 7</a>.</i>
+
+-->
+
+
+
+
+
+
+  <li > <b>Due Date: 20 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+	<p> Modify the program from <a href="lab10.html">Lab 10</a> to make a turtle walk 200 times: each "walk" is 5 steps forward and the turtle can turn 0, 30, 60, 90, ..., 360 degrees (chosen randomly) at the beginning of each walk.
+	 <p> A sample run of your program:
+   <p> <img src="../images/randomWalk200-60.png" height=150>
+
+
+
+
+     	<li > <b>Due Date: 20 November</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+     		<p>Write an Unix shell script that does the following:
+     		<ul>
+     			<li> Creates two directories, <tt>programs</tt> and <tt>files</tt>.
+     			<li> Creates 2 additional directories inside of <tt>programs</tt>  (as subdirectories of
+     			<tt>programs</tt> ):  <tt>python</tt> and <tt>c++</tt>.
+          <li> Creates 3 additional directories inside of <tt>files</tt>  (as subdirectories of
+     			<tt>files</tt> ):  <tt>pdf</tt>, <tt>csv</tt> and <tt>images</tt>.
+     		</ul>
+
+       		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
+
+
+
 
 <p>
-<table border=1>
-	<tr>
-		<th>Amount</th><th>Measurement</th><th>Ingredient</th>
-	</tr>
-	<tr>
-		<td>150</td><td>grams</td><td>chocolate chips</td>
-	</tr>
-	<tr>
-		<td>4</td><td>whites of</td><td>eggs</td>
-	</tr>
-	<tr>
-		<td>.25</td><td>teaspoon</td><td>vanilla</td>
-	</tr>
-	<tr>
-		<td>.25</td><td>teaspoon</td><td>cream of tartar</td>
-	</tr>
-<table>
+<li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-	<p>A sample run of your program would be:
-	    <pre style ="background-color:lavender;width:400px">
-Enter recipe name: meringues.csv
-Double your recipe is:
-       Amount Measurement       Ingredient
-    0   300.0       grams  chocolate chips
-    1     8.0   whites of             eggs
-    2     0.5    teaspoon          vanilla
-    3     0.5    teaspoon  cream of tartar
+
+<p> Write a program that <b>repeatedly</b> asks the user for the price of a product, until the user enters a negative number to indicate there are no more prices to enter (<b>sentinel value</b>). The program should then return the total with 8.75% tax the user must pay for the items.
+
+
+  <p> A sample run of your program:
+<pre style = "background-color:lavender;width:650px">
+  ------------------------------------------
+  Welcome to the total with tax calculator!
+  ------------------------------------------
+  Please enter the price of each item you would like to purchase, one at a time.
+  Enter a negative number when you are done.
+
+  Enter the price of an item: 15.5
+  Enter the price of an item: 89.99
+  Enter the price of an item: 54
+  Enter the price of an item: -1
+  The total with tax is $173.445375
+
 </pre>
 
 
+  <p><i><b>Hint:</b>  See <a href="lab4.html">Lab 4</a> for converting input to numbers</i>
 
 
 
+  <hr>
+  <p>
+  <a id="ps11"></a>
+  <h2><u> Lecture / Lab 11</u></h2>
 
 
 
+  	<li > <b>Due Date: 23 November</b>
+  	<b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a> & <a href="lab11.html">Lab 11</a></b><br>
 
 
+  		<p> Write a <b>simplified machine language program</b> that prints:  <tt>I love MIPS!</tt>
 
-	<li > <b>Due Date: 20 November</b>
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab7.html">Lab 7</a></b><br>
+  		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
 
+  		<p> <i>Hint:  You may find the following table useful:</i>
+  		<p>
+  		<img src ="../images/ASCIITable.png" height=400>
+  		<br><i>(Image from wikimedia commons)</i>
 
+  		<p><i>Hint:  The grading scripts are matching the phrase exactly, so, you need to include the spacing and punctuation.</i>
 
-		<p>Fill in the missing function, <tt> dayString()</tt>, in the program, <tt>days.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127", target="_blank">
-	https://github.com/HunterCSci127/CSci127</a>).  The function should take number between 0 and 7 as a parameter and returns the corresponding day as a string.  For example, if the parameter is 1, your function should return <tt>"Monday"</tt>.  If the parameter is 2, your function should return out <tt>"Tuesday"</tt>, etc.
 
-		<p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since instead of running the entire program, the scripts are "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
 
+  	<li > <b>Due Date: 30 November</b>  <b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a>& <a href="lab11.html">Lab 11</a></b><br>
 
-		<p><i>Hint:  See notes from Lecture 7 and <a href="lab7.html">Lab 7</a>.</i>
 
 
 
+  		<p>Write a <b>simplified machine language program</b> that has register <tt>$s0</tt> loop through
+  		the numbers 0, 3, 6, 9, ..., 60.
 
+  		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
 
 
 
 
-
-
-
-
-    <li > <b>Due Date: 1 December</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
-
-        		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 100 times.  Each "walk" is 20 steps forward and the turtle can turn 0, 5, 10, 15,..., 360 degrees (chosen randomly) at the beginning of each walk.
-
-        		<p> A sample run of your program:
-        <p> <img src="../images/randomWalk2.png" height=200>
-
-
-<li > <b>Due Date: 4 December</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
-
-
-<p> Write a program that repeatedly asks the user to enter a number as long as the cumulative average of these numbers is less than 50. Your program should then print out the average.
-
-<p> A sample run of your program:
-<pre style = "background-color:lavender;width:200px">
-Please enter number: 15
-Please enter number: 65
-Please enter number: 25
-Please enter number: 65
-Please enter number: 45
-Please enter number: 55
-Please enter number: 65
-Please enter number: 75
-The average is 51.25
-  </pre>
-
-	<p><i>Hint:  See <a href="lab10.html">Lab 10</a>.</i>
-
-
-
-
-
-
-
-	<li > <b>Due Date: 5 December</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
-
-		<p>Write an Unix shell script that does the following:
-		<ul>
-			<li> Creates a directory, <tt>projectFiles</tt>.
-			<li> Creates 3 additional directories (as subdirectories of
-			<tt>projectFiles</tt>):  <tt>images</tt>, <tt>files</tt>, and <tt>results</tt>.
-		</ul>
-
-		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
-
-
-
-
-	<li > <b>Due Date: 6 December</b>
-	<b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a> & <a href="lab11.html">Lab 11</a></b><br>
-
-
-		<p> Write a <b>simplified machine language program</b> that prints:  <tt>Hello, CUNY!</tt>
-
-		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
-
-		<p> <i>Hint:  You may find the following table useful:</i>
-		<p>
-		<img src ="../images/ASCIITable.png" height=400>
-		<br><i>(Image from wikimedia commons)</i>
-
-		<p><i>Hint:  The grading scripts are matching the phrase exactly, so, you need to include the spacing and punctuation.</i>
-
-
-	<li > <b>Due Date: 7 December</b>  <b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a>& <a href="lab11.html">Lab 11</a></b><br>
-
-
-
-
-		<p>Write a <b>simplified machine language program</b> that has register <tt>$s0</tt> loop through
-		the numbers 0, 5, 10, ..., 50.
-
-		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
-
-
-
-
-	<li > <b>Due Date: 7 December</b>  <b style="float:right">Reading:
+  <li > <b>Due Date: 30 November</b>  <b style="float:right">Reading:
 	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a> & <a href="lab11.html">Lab 11</a>.</b><br>
 
-		<p>Using Unix shell commands, write a script that counts the number of <tt>.csv</tt> files in current working directory.
-
-		<p><i>Hint:  See <a href="lab11.html">Lab 11</a>.</i>
+	<p>Using Unix shell commands, write a script that counts the number of <tt>.py</tt> files in the current working directory.
 
 
-
-
-
-	<li > <b>Due Date: 8 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
-
-	<p>	Write a <b>C++ program</b> that prints "Hello, World!" to the screen.
-
-	<p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
-
-	<li > <b>Due Date: Due Date: 8 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+	<p><i>Hint:  See <a href="lab11.html">Lab 11</a>.</i>
 
 
 
-		<p>Write a <b>C++ program</b> that will print "I love CUNY" 9 times.
-
-		<p>The output of your program should be:
-<pre style ="background-color:lavender;width:400px">
-I love CUNY
-I love CUNY
-I love CUNY
-I love CUNY
-I love CUNY
-I love CUNY
-I love CUNY
-I love CUNY
-I love CUNY
-</pre>
-
-	<p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
 
 
-	<li > <b>Due Date: 11 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
 
-		<p> Write a <b>C++ program</b> that converts kilometers to miles.  Your program should prompt the user for the number of kilometers and then print out the number of miles.
+  <hr>
+  <p>
+  <a id="ps12"></a>
+  <h2><u> Lecture / Lab 12</u></h2>
 
-		<p> A useful formula:  <i> miles = 0.621371* kilometers</i>.
+  <li > <b>Due Date: 30 November</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
 
-		<p>See <a href="lab4.html">Lab 4</a> for designing Input-Process-Output programs and <a href="lab12.html">Lab 12</a> for getting started with C++.
+  <p>	Write a <b>C++ program</b> that prints "Hello, World!" to the screen.
+
+  <p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
 
 
-<li > <b>Due Date: 11 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
 
-  <p> Write a <b>C++ program</b> program that asks the user for a number and draws a triangle of that height and width using 'character graphics'.
+<li > <b>Due Date: Due Date: 1 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+
+
+	<p>Write a <b>C++ program</b> that will print "*** Hunter College ***" 16 times.
+
+	<p>The output of your program should be:
+  <pre style ="background-color:lavender;width:400px">
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  *** Hunter College ***
+  </pre>
+
+  	<p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
+
+
+
+  <li > <b>Due Date: 1 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
+	<p> Write a <b>C++ program</b> that converts degrees Celsius to degrees Fahrenheit.  Your program should prompt the user for the degrees in Celsius and then print out the corresponding degrees Fahrenheit.
+
+<p> A useful formula:  <i> Fahrenheit = Celsius/5.0*9.0+32 </i>.
+<p><b>IMPORTANT:</b> For grading purposes, set the precision of Fahrenheit to one decimal place. To do so, add <tt>#include &lt;iomanip&gt;</tt> at the top of the file, and <tt>cout << fixed << setprecision(1); </tt> before outputting the value of Fahrenheit.
+
+<p>See <a href="lab4.html">Lab 4</a> for designing Input-Process-Output programs and <a href="lab12.html">Lab 12</a> for getting started with C++.
+
+
+
+
+
+  <li > <b>Due Date: 3 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+
+  <p> Write a <b>C++ program</b> program that asks the user for a number and draws an upside-down right triangle of that height and width using 'character graphics'.
 
   <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter a number:  6
-*
-**
-***
-****
-*****
-******
+  Please enter a number: 6
+
+  * * * * * *
+  * * * * *
+  * * * *
+  * * *
+  * *
+  *
 </pre>
 
-  <p>Another sample run:
+<p>Another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter a number:  3
-*
-**
-***
+  Please enter a number: 3
+
+  * * *
+  * *
+  *
 </pre>
 
 
 
+<hr>
+<p>
+<a id="ps13"></a>
+<h2><u> Lecture / Lab 13</u></h2>
 
 
-<li > <b>Due Date: 12 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
-  <p> Write a <b>C++ program</b>  that asks the user for the month of the year (as a number), and prints
+<li > <b>Due Date: 4 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+  <p> Write a <b>C++ program</b>  that asks the user for the number of credits, and prints
   <ul>
-    <li>"Happy Winter" if it is strictly before 3 or strictly larger than 11,
-    <li> "Happy Spring" if it is 3 or greater, but strictly before 7, and
-    <li> "Happy Summer" if it is 7 or greater, but strictly before 9, and
-    <li> "Happy Fall" otherwise.
+    <li> "Lower Freshman" if it is 15 or less
+    <li> "Upper Freshman" if it is greater than 15, but less than 28
+    <li> "Lower Sophomore" if it is between 28 and 45
+    <li> "Upper Sophomore" if it is more than 45 but less than 61
+    <li> "Lower Junior" if it is between 61 and 75
+    <li> "Upper Junior" if it is more than 75 but less than 94
+    <li> "Lower Senior" if it is between 94 and 108
+    <li> "Upper Senior" otherwise.
   </ul>
 
   <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter month (as a number):  12
-Happy Winter
+Enter number of credits:  15
+Lower Freshman
 </pre>
   <p>Another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter month (as a number):  8
-Happy Summer
+Enter number of credits:  78
+Upper Junior
 </pre>
-  <p>And another run:
+
+
+
+<li > <b>Due Date: 4 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+
+<p> Write a <b>C++ program</b> that asks the user for an odd number, and continue asking until the number entered is odd.
+
+<p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter month (as a number):  11
-Happy Fall
+  Please enter an odd number: 2
+  You entered an even number.
+  Please enter an odd number: 4
+  You entered an even number.
+  Please enter an odd number: -8
+  You entered an even number.
+  Please enter an odd number: 5
+  Your odd number is: 5
 </pre>
 
+		<p> <i>Hint: This is similar to the <a href="https://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">age Python program</a>
+		from <a href="lab10.html">Lab 10</a>, modify it and write it in C++.</i>
 
 
-	<li > <b>Due Date: 12 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
 
-		<p> Write a <b>C++ program</b> that asks the user for their age, and continue asking until the number entered positive (that is, greater than 0).
+<li > <b>Due Date: 7 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
-		<p>A sample run:
+	<p> Write a <b>C++ program</b>  that asks the user for the starting amount, and prints out the yearly balance of a savings account, assuming 3% interest, until the amount has increased by more than $1000.
+
+<p> A sample run:
 <pre style ="background-color:lavender;width:400px">
-Please enter age: -6
-Entered a negative number.
-Please enter age: -50
-Entered a negative number.
-Please enter age: 100
-You entered your age as: 100
+  Please enter the starting amount: 3000
+  Year 1  3090.00
+  Year 2  3182.70
+  Year 3  3278.18
+  Year 4  3376.53
+  Year 5  3477.82
+  Year 6  3582.16
+  Year 7  3689.62
+  Year 8  3800.31
+  Year 9  3914.32
+  Year 10 4031.75
 </pre>
+	<p> <i>Hint:  Use an indefinite loop and continue looping while the balance is less than the initial amount + $1000.</i>
 
-		<p> <i>Hint: Rewrite the <a href="https://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">Python program</a>
-		from <a href="lab10.html">Lab 10</a> in C++.</i>
-
-
+	<p> Note: the autograder is expecting each line to begin with "Year " and the corresponding number for the year.
 
 
 
 
-	<li > <b>Due Date: 13 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
-
-		<p> Write a <b>C++ program</b>  that asks the user for the starting amount, and prints out the yearly balance of a savings account, assuming 10% interest, until the amount has doubled.
-
-		<p> A sample run:
-<pre style ="background-color:lavender;width:400px">
-Please enter the starting amount: 1000
-Year 1  1100.00
-Year 2  1210.00
-Year 3  1331.00
-Year 4  1464.10
-Year 5  1610.51
-Year 6  1771.56
-Year 7  1948.72
-Year 8  2143.59
-</pre>
-		<p> <i>Hint:  Use an indefinite loop and continue looping while the balance is less than twice the initial amount.</i>
-
-		<p> Note: the autograder is expecting each line to begin with "Year " and the corresponding number for the year.
-
-
-	<li > <b>Due Date: 14 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+	<li > <b>Due Date: 7 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
 		<p> Write a <b>C++ program</b> that asks the user for a whole number between -31 and 31 and prints out the number in "<a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>" notation, using the following algorithm:
 
@@ -2004,7 +2026,7 @@ Enter a number: -1
 111111
 </pre>
 
--->
+
 
 
 </ol>
