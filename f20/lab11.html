@@ -221,7 +221,7 @@ ls -l | grep "Oct"
 
 <p><img src="../images/lsGrep.png" width=600>
 
-<p>We can use the pipe to take the output of the <tt>grep</tt> command and send it to a program that counts the number of lines.  This program, <tt>wc</tt>, counts characters, words, and lines.  We'll use the <tt>-l</tt> option to count lines:
+<p>We can use the pipe to take the output of the <tt>grep</tt> command and send it to a program that counts the number of lines.  This program, <tt>wc</tt>, counts characters (option <tt>-m</tt>), words (option <tt>-w</tt>), and lines (option <tt>-l</tt>).  We'll use the <tt>-l</tt> option to count lines:
 
 <pre style = "background-color:lavender;width:450px">
 ls -l | grep "Oct" | wc -l
