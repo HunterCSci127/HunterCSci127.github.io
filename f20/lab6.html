@@ -284,7 +284,7 @@ print(rain.groupby('Location').mean()['Rainfall'])
 <pre style = "background-color:lavender;width:550px">
 
 #Group the data by location get averages for group Albury.
-alburyAvg = rain.groupby(['Location']).get_group('Albury').mean()
+alburyAvg = rain.groupby('Location').get_group('Albury').mean()
 
 #Print the average rainfall.
 print(alburyAvg['Rainfall'])
