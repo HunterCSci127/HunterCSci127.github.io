@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programming Problem List, Honors Section, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2021</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+  <style type="text/css">
+  	li {
+  		  padding-bottom:	7px ;
+  }
+  </style>
+</head>
+<body>
+
+<div id="header"><br>
+<!--<img id="bookImage" alt="mapping quake data" src="../images/mappingQuakeData5.png"
+ width="120">-->
+<h2>Honors Project Problem List<br>
+CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2021<br><br>
+</h2>
+</div>
+
+
+<div>
+
+<h3>General Notes</h3>
+
+
+<ul>
+	<li> The assignments below are additional to the <a href="ps.html">Programming Problem List</a>.  Students enrolled in the honors section are responsible for <b>both the standard programming problems as well as those below</b>.
+</div>
+
+<div>
+
+<hr>
+<p>Submit the following programs via the honors section of <a href="http://gradescope.com">Gradescope:</a></p>
+<a id="set1"></a>
+<hr>
+
+<ul>
+
+	<li > <b>HC 1:  Team Contract and Dataset (Airbnb or another dataset of your choice)</b>  <b style="float:right">Due Date: 1 September</b>  <br>
+
+	<p>
+	<img src="../images/airbnb.png" height = 200>
+
+	<p>  Throughout the semester, we will analyze the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019.
+
+    <h4>Step 1 -- Project structure:</h4>
+    <p>We will work in teams. Each team will choose a borough to analyze. Each team member will then choose a neighborhood in that borough to report on.
+    <br>Throughout the semester each team will provide different analyses of the overall borough supplemented by analyses of the chosen neighborhoods.
+    <br>These analyses will be broken down across different assignments and will be a mix of research and data analysis.
+    <p>We propose to use the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019. However, we give you the freedom to choose a different dataset if that would inspire you more. Another great place to look for data is <a href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data.</a> If you choose a different dataset, it must have the following properties to guarantee that you will be able to fulfill all the assignments despite working with different data:
+      <ul>
+        <li> The data must have an attribute (column) corresponding to neighborhoods (preferably NYC)
+        <li> It must include some numerical data
+        <li> It must include some categorical data
+        <li> It must include geographical locations (latitude and longitude columns, or exact address column)
+      </ul>
+and must be approved by the instructor.
+<p>Discuss with your assigned team to decide on a dataset, then move on to Step 2. <br><i>Note: You don't need to identify the alternate dataset in this assignment, but if you are considering it you should indicate so in Step 2 and <b>must identify the dataset no later than our next meeting on September 4.</b></i>
+
+<h4>Step 2 -- Team Contract:</h4>
+ <p>Work with your assigned team to complete the <a href="../files/hcTeamContract.docx">Team Contract</a>.
+<p>Once your contract is complete and signed by all team members, <b>upload a .pdf</b> to the assignment <tt>HC 1.</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>. This will be a group submission (one submission per team). Unlike the Python code, it is not automatically graded.
+
+
+
+
+
+
+	<hr>
+
+
+  <li > <b>HC 2:  Neighborhood Analysis
+	</b> <b style="float:right">Due Date: 8 September</b>  <br>
+
+  <p>To begin, discuss with your team to pick a neighborhood in your team's borough (a different neighborhood for each team member). Keep in mind that you want all the neighborhoods together to be representative of the borough. You also want to be sure your neighborhood is well represented <a href="../files/AirBnB_NYC_2019.csv" target="_blank">in the dataset</a>.
+  <p>Create a single page summary of your neighborhood that includes <b>at least</b> the following:
+	<ul>
+		<li> Name of the neighborhood (include in the title),
+		<li> The zip code(s) of your neighborhood,
+		<li> A map of New York City with your neighborhood highlighted,
+		<li> A photo or image that captures your neighborhood and
+		<li> The demographics of your neighborhood.
+	</ul>
+Your summary should exceed these minimum requirements to receive full credit. Include in your summary any information you think will be relevant to the future analysis of your dataset (e.g. airbnb listings)
+<br>A great resource for your analysis is <a href="https://www.socialexplorer.com/" target="_blank">Social Explorer</a>. <i>Note: you don't need to necessarily create an account. From the top menu, select <tt>Resources - Demographic Profiles</tt> and enter the zip code(s) of your neighborhood to find a wealth of information.</i>
+  <p>Submit a .pdf file containing your summary.
+  </p>
+
+
+
+	<hr>
+		<li > <b>HC 3:  Neighborhood Rankings
+	</b> <b style="float:right">Due Date: 15 September</b>  <br>
+
+  <p> Design a ranking for the most desirable features of a neighborhood.
+
+  <p>There are multiple rankings of New York City Neighborhoods.  For example,
+  <ul>
+    <li> <a href="https://www.niche.com/places-to-live/search/best-neighborhoods/m/new-york-city-metro-area/">Niche</a>,
+
+    <li> <a href="https://www.dnainfo.com/new-york/crime-safety-report/ranking">DNA Info's rankings</a>,
+    <li> <a href="https://www.brickunderground.com/live/best-nyc-neighborhoods-for-college-grads-2016">Brick Underground</a>,
+    <li><a href="https://ny.curbed.com/2017/9/19/16329796/nyc-best-neighborhood-transit-walk-bike-score">Curbed's Walkable Neighborhoods</a>,
+    <li> <a href="https://www.buzzfeed.com/perpetua/where-should-you-actually-live-in-new-york-city?utm_term=.dvk8EJ3Ne#.clDxXrwq4">BuzzFeed</a>,
+    <li> <a href="https://www.streetadvisor.com/search/cities-in-new-york-city-new-york">Street Advisor</a>
+  </ul>
+
+
+  With your group:
+  <ul>
+    <li> Assess what these rankings have in common and how they differ.
+    <li> Which ranking do you favor and why?
+    <li> What qualities make a neighborhood a desirable place book a room or apartment in?
+    <li> Collate a list of the three most important.
+    <li> How does each neighborhood in your team's borough fare according to this ranking?
+  </ul>
+
+  <p>Submit a .pdf file containing your assessment of the rankings and the three most desirable qualities, as well as a ranking of your team's borough (if all neighborhoods fare the same, you may indicate so and group the discussion to the borough).  You should use complete sentences, compare and contrast the rankings above and justify the three qualities that your group thought most important.
+ This will be a group submission (one submission per team).
+  </p>
+
+
+	<hr>
+		<li > <b>HC 4:  Synchronous Discussion
+	</b> <b style="float:right">Due Date: 25 September IN LAB</b>  <br>
+
+   <p>In this meeting we will discuss your findings from <tt>HC 2</tt> and <tt>HC 3</tt>. Before the meeting, your team should select a speaker from the designated speakers in section A.- c. on your Team contract. This team member will be responsible for summarizing the overall discussion of the borough from that of the neighborhoods to the entire group. The speaker may also call on another team member if a neighborhood-specific aspect is particularly relevant to the discussion.
+
+		<p>No submission necessary. This assignment will be graded based on your group's contribution to the discussion.
+      <br><b>Grading criteria:</b>
+      <ul>
+        <li> Speaker presents one particular finding from HC2, explains why it was chosen and indicates if individual neighborhood analyses aligned or differed on this particular finding.
+        <li> Speaker presents the 3 neighborhood qualities chosen for HC3, explains why these were chosen and indicates if individual neighborhoods aligned or differed for this ranking.
+        <li> Speaker provides satisfactory summary in 5 minutes or less.
+      </ul>
+		</p>
+
+
+	<hr>
+	<li > <b>HC 5: COVID impact on Airbnb
+	</b> <b style="float:right">Due Date: 6 October </b>  <br>
+
+
+		<p>
+      In lab we will break into groups for 15 minutes to briefly consider/research the topic (browse the web to get an idea of possible topics), then we will reconvene to discuss.
+
+		<p> Discussion should focus on:
+		<ul>
+			<li> Mention at least one source you found intriguing and wish to explore further and tell us why.
+			<li> Tell us if there is a relationship between your HC2 and HC3 analysis (the qualities of your neighborhood) and your source/story (there doesn't have to be one).
+      <li> Airbnb (the company) vs Hosts
+      <li> Hosts vs Guests
+      <li> Airbnb vs Hotels
+		</ul>
+
+		<p> <b>Submission: </b>Choose a source and submit a summary in pdf. Extra credit will be awarded if you can make a connection between the story and your neighborhood (your analysis in HC2 and HC3).
+    This can be a group or individual submission. If you wish to work together as a group you can all submit the same summary. If you do, please indicate so at the top of the document.
+
+	<hr>
+
+  <hr>
+  <li > <b>HC 6:  Highlighted Map
+  </b> <b style="float:right">Due Date: 13 October</b>  <br>
+
+
+    <p><img src="../images/hunterSatMap.png" height = 300>
+    <img src="../images/hiLight.png" height = 300>
+
+    <p>
+    For this program, we will create a highlighted map centered around your neighborhood, with the region within about a 1/4 mile box around a marker at the center of the neighborhood at full brightness, the region outside that box at 50% brightness.
+
+    <p> To do this:
+    <ul>
+      <li> Create a .png file of a satellite map, centered on your neighborhood (Google maps works well for this, but you can use any mapping site to create your base map).
+      <li> Write a Python program that reads in an image and saves the image to another file.  Run your program to make sure the reading and saving of an image works.
+      <li> Set the upper region of the image to 50% brightness (hint:  uses slices and see example in Lecture 3 and 4).  Run your program to make sure it has dimmed up the upper region and adjust to get the correct dimenssions.
+      <li> Set the lower region of the image to 50% brightness (hint:  think about what negative numbers mean as indices).  Run your program and fix any bugs.
+      <li> Next, dim the side regions (hint:  think about what parts of the image have not been dimmed and change only those regions.)
+    </ul>
+
+    <p> Submit your answer as a .pdf file (both code and image) to Gradescope.
+
+  <hr>
+<p>
+  <li > <b>HC7 & HC8 Progress Report
+  </b> <b style="float:right">Due Date: 30 October: IN LAB</b>  <br>
+  <p> Each group has <b>5 minutes</b> to report on what they did so far and what they plan to do to wrap up the assignment for next week.
+
+<hr>
+<p>
+  <li > <b>HC7 & HC8:  Data Analysis
+   </b> <b style="float:right">Due Date: 3 November</b>  <br>
+
+  <p>For this assignment, we will analyze our dataset. This assignment will span over the course of two weeks (two meetings).
+  <p> <b>During the first meeting</b>, on 16 October, look over <a href="../files/HC7-HC8.html" target="_blank"><b>this data-analysis document</b></a>, it will illustrate how to explore, clean and visualize the data.
+  <br>Read this document together, discuss it and make sure you understand it. Then make a plan together about what you will look for in the data and how.
+  <p><b>During the following meeting</b>, on 23 October, you should come with a <i>working-in-progress program</i> (this is not a typo, the program should be complete and working even if not final) and you will work as a team to refine your analysis (your program) and produce the group analysis for the borough.
+
+  <p> Although these will be due the same day, I will separate HC7 and HC8 into two different submissions:
+    <ul>
+      <li>HC7: individual submission analysis of your neighborhood
+      <li>HC8: group submission analysis the borough
+      </ul>
+  <p>These two analyses may mirror each other and the grading criteria for these assignments will be the same and as follows:
+
+  <p><b>Grading Criteria</b>:
+    <ul>
+      <li>Analyzes the data to provide statistics for the neighborhood/borough and discusses these observations in writing (something like what you saw in the <a href="../files/HC7-HC8.html" target="_blank">data-analysis document</a>) but you can simply report and discuss the stats, don't need to include the code. If you observe anything that seems anomalous don't hesitate to report so, data is never perfect! (meets: 2, exceeds:3)
+      <li>Makes observations that go further what may be simply observed by using the <tt>describe()</tt> function. (meets:2, exceeds: 3)
+      <li>Provides and discusses visualization for the data observed (at least 3 plots, more is better). These can be any type of plot, use what makes sense for your observations. Play and have fun with the data!!! Include the images and don't forget to discuss them!!! (meets:2, exceeds: 4)
+      <li><b>Extra Credit:</b> Makes a connection between data analysis and observations made in HC2/HC3, in a paragraph and visually supported with plot(s). (5 points)
+    </ul>
+
+    <p><b>What to submit</b>:
+      <ul>
+        <li>A report of your analysis including statistics and images supported by a discussion. Submit as a <tt>.pdf</tt> file.
+        <li>A copy of your program as a <tt>.pdf</tt> file.
+      </ul>
+
+<p>
+
+
+  <hr>
+  <li > <b>HC 9:  Neighborhood  Map
+
+  </b> <b style="float:right">Due Date: 10 November</b>  <br>
+
+
+    <p> Using <tt>folium</tt>, generate an html map with markers for the airbnb listings in your neighborhood.
+      <p><iframe src="../files/manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+    <p> To do so:
+    <ul>
+      <li> Create a neighborhood dataframe by selecting only the rows for your neighborhood
+      <li> Create a map object
+      <li> Loop for each row in the neighborhood dataframe to
+        <ul>
+          <li>create a marker for that latitude and longitude
+            <li> add the marker to the map
+        </ul>
+      <li>Save the map to an html file
+    </ul>
+    <p> <b>Hint:</b> You can mirror the program in Lab9 that creates a map with markers for CUNY campuses.
+    <p> <b>Note:</b> If your neighborhood has too many listings and the map is excessively crowded, you can select a random subset. Don't remove too many, however, so that the map remains representative of the data.
+
+    <p> Submit a screenshot of your map and your code as a .pdf file.
+
+  <hr>
+
+
+  <li > <b>HC 10:  Webpage</b> <b style="float:right">Due Date: 17 November</b>  <br>
+
+  <br>
+
+    <p> We are going to use <a href="https://pages.github.com/" target="blank">github to make webpages</a> for your projects.  There will be only one site for each project, but we want everyone to set up their own neighborhood page the project webpage will link to.
+
+    <p>Create a github page for your neighborhood.
+    <ol>
+      <li> If you haven't done so already, set up a repository for your neighborhood project (see the getting started tutorials from <a href="lab6.html">Lab 6</a> on how to set up a repository).
+      <li> Follow through the <a href="https://pages.github.com/" target="blank">options for setting up a page</a> for your project (right under the "Ready to get started?" choose 'Project site').
+      <li> Include on your neighborhood page:
+        <ul>
+          <li> the name of the neighborhood,
+          <li> the highlighted map from HC6 as an image
+          <li> the basic demographics & statistics from  HC 2
+          <li> one paragraph summarizing your observations from HC3
+          <li> a summary of your results from HC7 and HC8 along with plot images, and
+          <li> the map from HC9 (embedded as iframe -- see below)
+    </ol>
+
+    <p>To embed an html as an <tt>iframe</tt> use the following html tag (assuming your map is called <tt>manhattan.html</tt> and it lives in the same directory as the page you want to embed it into)
+    <br>
+    <pre>
+&lt;iframe src="manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
+    </pre>
+    <br>If you are using markdown, you can insert html code by surrounding it with <tt>dl</tt> tags as in:
+    <pre>
+&lt;dl&gt;
+&lt;iframe src="manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/dl&gt;
+    </pre>
+    <p>  Submit a .pdf file that contains the URL of your project on github (web address) and a screenshot of your project.
+ <p><b> Useful links:</b>
+   <ul>
+     <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" > Markdown Cheatsheet</a>
+     <li>If you prefer to watch a video tutorial instead of following the github tutorial page linked above, <a href="https://www.google.com/search?q=github+pages+official+video+tutorial&rlz=1C5CHFA_enUS824US824&sxsrf=ALeKk03v20_y574_y7P6Bg5t9ZAOiUTFqQ:1604521169616&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjpoeWS2-nsAhUyU98KHXCYCfQQ_AUoAXoECBcQAw&biw=1432&bih=672&dpr=2" target="blank">there are plenty, non-official, youtube videos</a> on how to set up your first Gihub webpage... choose the one you prefer to listen to.
+  </ul>
+
+  <hr>
+
+
+  <li > <b>HC 11: Draft Presentation and Project Webpage</b> <b style="float:right">Due Date: 24 November</b>  <br>
+    <p> Generate a project webpage with a small introduction that includes the information in your slides, a brief summary of your borough overview (from HC2, HC3, HC8) and links to all neighborhood webpages.
+    <p> Submit the slides of your group presentation (<b>two slides</b>) as  a .pdf file.  Your slides should include who is on the team, the neighborhoods you looked at, a brief description/summary of the project and <b> a link to the project webpage</b> (your presentation must be 3-5 minutes).
+
+
+
+
+
+  <hr>
+
+  <li > <b>HC 12: Feedback Forms</b> <b style="float:right">Due Date: 1 December</b>  <br>
+
+
+    <p> During our meeting each team will share their project webpage and the rest of the class will provide constructive feedback for improvement.
+    <p> As per your Team Contract signed at the beginning of the semester, you will evaluate  each member of your team by filling out and submitting <a href = "../files/HCTeamPeerEvaluation.docx" target="blank">this form</a>. After you fill it out, submit the form as pdf.
+
+
+
+<hr>
+
+<li > <b>HC 13: Final Project Presentation</b> <b style="float:right">Due Date: 4 December -- IN LAB</b>  <br>
+
+  <p> Each team will present their project (5 minutes each, 2 slides), then we will break into groups and our visitors will join different groups where you will do a poster-like presentation using the project webpage to talk more about your project and individual contributions.
+
+
+
+<!--
+
+
+
+
+<p>
+<i>More to come...</i>
+
+
+
+
+
+
+
+-->
+</ul>
+</div>
+
+
+
+
+<div>
+<i style="float:right">(This file was last modified on 14 August 2019.)</i><br>
+</div>
+</body>
+</html>
