@@ -501,36 +501,35 @@ Enter number of stamps the turtle will print: 50
 
 <p>Write a program that implements the pseudocode below:
 <pre>
-1.  Ask the user for the number of cents as an integer (e.g. 99 not 0.99).
-2.  Print out the number of quarters (quarters = cents // 25).
-3.  Compute the remaining change (rem = cents % 25).
-4.  Print out the number of dimes (dimes = rem // 10).
-5.  Compute the remaining change (rem = rem % 10).
-6.  Print out the number of nickels (nickels = rem // 5).
-7.  Print out the remaining cents (cents = rem % 5).
+Ask the user for their taxable income.
+Compute and output the marginal tax rate as follows:
+  -  Error if income is negative
+  -  10% if income $0 - $9,700
+  -  12% if income $9,701 – $39,475
+  -  22% if income $39,476 – $84,200
+  -  24% if income $84,201 – $160,725
+  -  32% if income $160,726 – $204,100
+  -  35% if income $204,101 – $510,300
+  -  37% if income $510,301+
 </pre>
 
-<p>Be sure to print how many of each coin type in the given order (quarters, followed by dimes, followed by nickels, followed by cents) each on a new line.
+<p>Think about the order of your decisions: <b>elif/else clauses are considered only if the previous condition is false!</b>
+
+
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-Enter the number of cents: 99
-Quarters: 3
-Dimes: 2
-Nickels: 0
-Cents: 4
+Enter taxable income: 120000
+Marginal tax rate: 24%
 </pre>
 
 <p>and another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter the number of cents: 62
-Quarters: 2
-Dimes: 1
-Nickels: 0
-Cents: 2
+Enter taxable income: -50000
+Marginal tax rate: Error
 </pre>
 
 
-<p><i>Hint: See <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
+<p><i>Hint: See <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/Chainedconditionals.html">Section 7.7</a>.</i>
 
 
 
@@ -540,10 +539,10 @@ Cents: 2
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab4.html">Lab 4</a></b><br>
 
 
-		<p>Modify the flood map of NYC from <a href="lab4.html">Lab 4</a> to color the region of the map with elevation greater than 5 feet and less than or equal 15 feet above sea level the color grey (50% red, 50% green, and 50% blue).
+		<p>Modify the flood map of NYC from <a href="lab4.html">Lab 4</a> to color the region of the map with elevation greater than 5 feet and less than or equal 20 feet above sea level the color grey (50% red, 50% green, and 50% blue).
 
 		<p> Your resulting map should look like:
-		<p> <img src="../images/floodMap3.png" width=300>
+		<p> <img src="../images/floodMap2.png" width=300>
 		<p> and be saved to a file called <tt>floodMap.png</tt>.
 
 		<p> <b><i>Note:</b></i>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.imshow()</tt> and <tt>plt.show()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
