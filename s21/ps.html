@@ -759,64 +759,43 @@ out3 = ...
 
 
 
-<hr>
-<i>More to come...</i>
-<hr>
-<br>
 
-
-<!--
 
 <a id="cr7"></a>
-	<li > <b>Due Date: 18 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
+	<li > <b>Due Date: 19 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
 
 
 
-		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the name of two boroughs, and the name for the output file, and then display the fraction of the population that has lived in both boroughs (i.e. the fraction of their sum), over time.
-
+<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the name of a borough and the name for the output file.
+<br> The program should compute the minimum, maximum, average, median and standard deviation of the population of the borough entered by the user  and then display the fraction of the population that has lived in that borough over time.
+<p><b>IMPORTANT: </b> The grading script expects the new column to be called 'Fraction'
 		<p> A sample run of the program:
 <pre style ="background-color:lavender;width:400px">
-Enter first borough name:  Queens
-Enter second borough name:  Brooklyn
-Enter output file name:  QBFraction.png
-</pre>
-		<p> The file <tt>QBFraction.png</tt>:
-
-		<p><img src="../images/QBFraction.png" width=300>
-
-
-		<p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
-
-
-
-
-	<li > <b>Due Date: 19 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html" target="_blank">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik" target="_blank">DataCamp Pandas</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
-
-
-		<p> Write a program that computes the minimum, maximum, average, median and standard deviation of the population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.
-
-	<p>A sample run of your program:
-<pre style ="background-color:lavender;width:400px">
-Enter borough: Staten Island
-Min: 727
-Max: 474558
-Mean: 139814.23076923078
-Median: 59357.0
-Standard Deviation: 162706.80974594955
-</pre>
-<p>and another run:
-<pre style ="background-color:lavender;width:400px">
-Enter borough: Brooklyn
+Enter borough name: Brooklyn
+Enter output name: BrooklynFraction.png
 Min: 2017
 Max: 2738175
 Mean: 1252437.5384615385
 Median: 1002564.5
 Standard Deviation: 1153123.5551968655
 </pre>
+<p> The file <tt>BrooklynFraction.png</tt>:
 
-<p> <i>Hint: See <a href="lab6.html">Lab 6</a></i>.
+<p><img src="../images/BrooklynFraction.png" width=300>
 
 
+<p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+
+
+  <hr>
+  <i>More to come...</i>
+  <hr>
+  <br>
+
+
+
+<!--
 
 
       <li > <b>Due Date: 22 March</b>  <b style="float:right">Reading:
