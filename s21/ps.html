@@ -827,53 +827,37 @@ This is tizianaligorio's first shell script.
 <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
 
 
-	<p> Write a program that, given the <a href="../files/stars.csv">'Stars' dataset</a> will do the following:
+<p> Download the <a href="../files/volcanicEruptions.csv">Volcanos dataset</a> and look at the data and, in particular, the column names.
+<p> Then, write a program that
 <ul>
 <li> Ask the user for the name of the input file.
-<li> Ask the user for the name of the column they wish to average (one of <tt>Temperature, Luminosity, Radius</tt> or <tt>Absolute Magnitude</tt>)
-<li> Print the average of that column for each star type.
+<li> Print the average elevation for each Dominant Rock Type
+<li> Print the height of the tallest volcano in Italy
 </ul>
-  <p><b>Note:</b> To put the data in perspective, keep in mind that these measures are given as multiples of those of the Sun! (image credits: space.com)
-  <p><img src="../images/starSizes.jpg" height=150 ><br>
-  <p>A sample run:
+<p>
+<p>
 <pre style ="background-color:lavender;width:500px">
-Enter file name: stars.csv
-Enter the name of the column
-(Temperature, Luminosity, Radius or Absolute Magnitude)
-you would like to average: Luminosity
+Enter file name: volcanicEruptions.csv
 
-The average Luminosity for each Star type is:
-Star type
-Brown Dwarf           0.000693
-Hypergiant       309246.525000
-Main Sequence     32067.386275
-Red Dwarf             0.005406
-Supergiant       301816.250000
-White Dwarf           0.002434
-Name: Luminosity, dtype: float64
+The average height per rock type is as follows:
+Dominant Rock Type
+Andesite / Basaltic Andesite                2153.494810
+Basalt / Picro-Basalt                       1129.892495
+Dacite                                      2538.904255
+Foidite                                     1519.600000
+No Data                                      969.810345
+Phono-tephrite /  Tephri-phonolite          1390.333333
+Phonolite                                   2784.222222
+Rhyolite                                    1564.363636
+Trachyandesite / Basaltic Trachyandesite    1820.700000
+Trachybasalt / Tephrite Basanite            1506.287671
+Trachyte / Trachydacite                     2070.555556
+Name: Elevation (Meters), dtype: float64
+
+The tallest volcano in Italy is 3330 meters high.
 </pre>
 
-  <p>Another sample run:
-<pre style ="background-color:lavender;width:500px">
-Enter file name: stars.csv
-Enter the name of the column
-(Temperature, Luminosity, Radius or Absolute Magnitude)
-you would like to average: Temperature
-
-The average Temperature for each Star type is:
-Star type
-Brown Dwarf       2997.950
-Hypergiant       11405.700
-Main Sequence    16018.000
-Red Dwarf         3283.825
-Supergiant       15347.850
-White Dwarf      13931.450
-Name: Temperature, dtype: float64
-</pre>
-<p><b>Note: </b>You may assume that input is correct (e.g. only expected columns are entered as input)
-<p><b>Hint: </b>You should use <tt>groupby()</tt> as described in <a href="lab6.html">Lab 6</a>.
-
-
+<p><b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a>.
 
 
   <hr>
