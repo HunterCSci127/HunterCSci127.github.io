@@ -253,8 +253,9 @@ How can you modify the program to let the user specify the borough to compute th
 <p> <img src="../images/Rain.png" height = 250>
 <p> You may <a href="../files/AustraliaRain.csv" target="blank">download the dataset</a> to test this program locally.
 
-<p>The pandas function <b>groupby()</b> does exactly that: groups the rows by values in a given column and then aggregates the corresponding values for the other columns via some specified function (e.g. min, max, avg, ..)
 
+<p>The pandas function <b>groupby()</b> does exactly that: groups the rows by values in a given column and then aggregates the corresponding values for the other columns via some specified function (e.g. min, max, avg, ..)
+<br>Thus, to find the average rainfall at each location, we want to group 'Location', look at 'Rainfall' and take the average:
 <pre style = "background-color:lavender;width:450px">
 #Import libraries.
 import pandas as pd
@@ -262,35 +263,35 @@ import pandas as pd
 #Read in the csv file.
 rain = pd.read_csv('AustraliaRain.csv')
 
-#Group the data by location averages.
-groupAvg = rain.groupby('Location').mean()
+#Group the data by location
+groupedData = rain.groupby('Location')
 
-#Print the average rainfall at each location.
-print(groupAvg['Rainfall'])
+#Print the average rainfall
+print(groupedData['Rainfall'].mean())
 </pre>
 
 <p> This will print a list of average rainfall measurements at each location:
 <p> <img src="../images/RainOutput.png" height = 175>
 <p> <b>Note:</b> you could achieve the above in a single line as follows (it is equivalent to the above)
-    <pre style = "background-color:lavender;width:700px">
+<pre style = "background-color:lavender;width:700px">
 ...
 
-#Group the data by location averages and print the average rainfall at each location.
-print(rain.groupby('Location').mean()['Rainfall'])
-
-    </pre>
-
-<p> Finally, to retrieve the data for a particular location, for example "Albury", we can use groupby() along with <b>get_group()</b>.
-<pre style = "background-color:lavender;width:550px">
-
-#Group the data by location get averages for group Albury.
-alburyAvg = rain.groupby('Location').get_group('Albury').mean()
-
-#Print the average rainfall.
-print(alburyAvg['Rainfall'])
+#Group the data by location and print the average rainfall at each location.
+print(rain.groupby('Location')['Rainfall'].mean())
 
 </pre>
-<p>This will output a single number: the average rainfall in "Albury"
+
+<p> Finally, to retrieve the data for a particular location, for example "Albury", we can use groupby() along with <b>get_group()</b>.
+<pre style = "background-color:lavender;width:1000px">
+
+#Group the data by location but look specifically at group 'Albury' (one of the repeated values in the 'Location' column).
+albury = rain.groupby('Location').get_group('Albury')
+
+#Print the average rainfall for Albury.
+print(albury['Rainfall'].mean())
+
+</pre>
+<p>This will output a single number: the average rainfall in 'Albury'
 <p><img src="../images/singleAvgOutput.png" height = 35>
 
 </div>

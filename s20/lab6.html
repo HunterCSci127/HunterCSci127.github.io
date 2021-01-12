@@ -237,7 +237,7 @@ How can you modify the program to let the user specify the borough to compute th
 <p> <img src="../images/Rain.png" height = 250>
 
 <p>The pandas function <b>groupby()</b> does exactly that: groups the rows by values in a given column and then aggregates the corresponding values for the other columns via some specified function (e.g. min, max, avg, ..)
-
+<br>Thus, to find the average rainfall at each location, we want to group 'Location', look at 'Rainfall' and take the average:
 <pre style = "background-color:lavender;width:450px">
 #Import libraries.
 import pandas as pd
@@ -245,11 +245,11 @@ import pandas as pd
 #Read in the csv file.
 rain = pd.read_csv('AustraliaRain.csv')
 
-#Group the data by location averages.
-groupAvg = rain.groupby('Location').mean()
+#Group the data by location
+groupedData = rain.groupby('Location')
 
-#Print the average rainfall at each location.
-print(groupAvg['Rainfall'])
+#Print the average rainfall
+print(groupedData['Rainfall'].mean())
 </pre>
 
 <p> This will print a list of average rainfall measurements at each location:
