@@ -54,6 +54,7 @@ print("Hello, World!")</pre>
 	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (35% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the Office of Student Affairs.
 
 	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the Lecture notes, the Lab and take the Lab Quiz on Tuesday and Wednesday, then set aside a block of time on Thursday, Friday and Monday to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
+  <li> If Gradescope gives you a "Test Failed: list index out of range" error or "The autograder failed to execute..." it means your program does not run. <b>Please check that your program runs correctly on your local machine before submitting to Gradescope.</b>
 <ul>
 </div>
 
@@ -987,7 +988,7 @@ Enter name of output file:  manHunt.png
 <b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle" target="_blank"> Turtle Graphics</a> & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
 
 <p>
-<b>REVIEW</b>
+<b><p><b>Review from Lecture/Lab 4</b></b>
 
 <p>The program, <tt>turtleString.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
 	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
@@ -1262,18 +1263,11 @@ Enter output file name: warhol_collage.png
     <a id="ps9"></a>
     <h2><u> Lecture / Lab 9</u></h2>
 
-    <hr>
-    <i>More to come...</i>
-    <hr>
-    <br>
 
-
-
-    <!--
 
 
     <li > <b>Due Date: 16 April</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
-        <p><b>REVIEW </b>
+        <p><b>REVIEW from Lecture/Lab 4 & 7</b>
     <p><img src="../images/irmaScreenshot.png" width=400>
 
     <p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty Hurricane Program</a> by Phil Ventura).
@@ -1369,8 +1363,9 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
 
  <p>	Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, the name of a borough and creates a map with markers for all the textile drop-off locations in that borough from the input file.
  <p>  To restrict the markers to a particular borough, make a copy of the dataframe after you <tt>groupby("Borough")</tt> and then <tt>get_group</tt> for the borough entered by the user.
-  For example, if you named your dataframe <tt>df</tt> and stored the borough entered by the user in a variable named <tt>br</tt>, then you make a copy of the dataframe as: <tt> dfCopy = df.groupby("Borough").get_group(br)</tt>
-  <br> Now your dataframe copy contains only textile drop-off locations for the borough specified by the user, and you can look at all the rows to extract "Latitude" and "Longitude" as you did in <a href="lab9.html">Lab 9</a> to place markers on the map. You can use the value in the  <tt>"Address"</tt> column to name each marker.
+<!--  For example, if you named your dataframe <tt>df</tt> and stored the borough entered by the user in a variable named <tt>br</tt>, then you make a copy of the dataframe as: <tt> dfCopy = df.groupby("Borough").get_group(br)</tt>
+  <br> Now your dataframe copy contains only textile drop-off locations for the borough specified by the user, and you can look at all the rows to extract "Latitude" and "Longitude" as you did in <a href="lab9.html">Lab 9</a> to place markers on the map. -->
+  You can use the value in the  <tt>"Address"</tt> column to name each marker.
 
 
  <p>A sample run:
@@ -1389,10 +1384,20 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
 
 
 
-  <hr>
-   <p>
-   <a id="ps10"></a>
-   <h2><u> Lecture / Lab 10</u></h2>
+<hr>
+<p>
+<a id="ps10"></a>
+<h2><u> Lecture / Lab 10</u></h2>
+
+
+<hr>
+<i>More to come...</i>
+<hr>
+<br>
+
+
+
+<!--
 
    <li > <b>Due Date: 23 April</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
