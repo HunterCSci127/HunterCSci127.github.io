@@ -1620,87 +1620,94 @@ The length is 2.67ft.
 <a id="ps13"></a>
 <h2><u> Lecture / Lab 13</u></h2>
 
-<hr>
-<i>More to come...</i>
-<hr>
-<br>
-
-
-
-<!--
 
 <li > <b>Due Date: 10 May</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
-  <p> Write a <b>C++ program</b>  that asks the user for the number of credits, and prints
+  <p> Write a <b>C++ program</b>  that asks the user for their numerical grade and prints
   <ul>
-    <li> "Lower Freshman" if it is 15 or less
-    <li> "Upper Freshman" if it is greater than 15, but less than 28
-    <li> "Lower Sophomore" if it is between 28 and 45
-    <li> "Upper Sophomore" if it is more than 45 but less than 61
-    <li> "Lower Junior" if it is between 61 and 75
-    <li> "Upper Junior" if it is more than 75 but less than 94
-    <li> "Lower Senior" if it is between 94 and 108
-    <li> "Upper Senior" otherwise.
+    <li>"Your letter grade is F" if it is strictly less than 60,
+    <li> "Your letter grade is C or D" if it is 60 or greater, but strictly less than 80,
+    <li> "Your letter grade is B" if it is 80 or greater, but strictly less than 90, and
+    <li> "Your letter grade is A" otherwise.
   </ul>
 
   <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter number of credits:  15
-Lower Freshman
+Enter your grade:  93.6
+Your letter grade is A
 </pre>
   <p>Another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter number of credits:  78
-Upper Junior
+Enter your grade:  79.8
+Your letter grade is C or D
 </pre>
+  <p>And another run:
+<pre style ="background-color:lavender;width:400px">
+Enter your grade:  80.8
+Your letter grade is B
+</pre>
+
 
 
 
 <li > <b>Due Date: 11 May</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
 
-<p> Write a <b>C++ program</b> that asks the user for an odd number, and continue asking until the number entered is odd.
+<p> Write a <b>C++ program</b> that asks the user for a number n and a character c, and prints a sideways isosceles triangle using that character.
 
 <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-  Please enter an odd number: 2
-  You entered an even number.
-  Please enter an odd number: 4
-  You entered an even number.
-  Please enter an odd number: -8
-  You entered an even number.
-  Please enter an odd number: 5
-  Your odd number is: 5
+Please enter a number: 5
+Please enter a character: @
+
+@
+@@
+@@@
+@@@@
+@@@@@
+@@@@
+@@@
+@@
+@
 </pre>
 
-		<p> <i>Hint: This is similar to the <a href="https://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">age Python program</a>
-		from <a href="lab10.html">Lab 10</a>, modify it and write it in C++.</i>
 
+<p>Another sample run:
+<pre style ="background-color:lavender;width:400px">
+Please enter a number: 3
+Please enter a character: *
+
+*
+**
+***
+**
+*
+</pre>
 
 
 
 <li > <b>Due Date: 12 May</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
-	<p> Write a <b>C++ program</b>  that asks the user for the starting amount, and prints out the yearly balance of a savings account, assuming 3% interest, until the amount has increased by more than $1000.
+	<p> Write a <b>C++ program</b>  that asks the user for the starting amount, and prints out the yearly balance of a savings account, assuming 5% interest for the first 5 years and 10% interest after that, until the amount has increased by more than $1000.
 
 <p> A sample run:
 <pre style ="background-color:lavender;width:400px">
-  Please enter the starting amount: 3000
-  Year 1  3090.00
-  Year 2  3182.70
-  Year 3  3278.18
-  Year 4  3376.53
-  Year 5  3477.82
-  Year 6  3582.16
-  Year 7  3689.62
-  Year 8  3800.31
-  Year 9  3914.32
-  Year 10 4031.75
+Please enter the starting amount: 1000
+Year 1  1050.00
+Year 2  1102.50
+Year 3  1157.62
+Year 4  1215.51
+Year 5  1276.28
+Year 6  1340.10
+Year 7  1474.11
+Year 8  1621.52
+Year 9  1783.67
+Year 10  1962.03
+Year 11  2158.24
 </pre>
-	<p> <i>Hint:  Use an indefinite loop and continue looping while the balance is less than the initial amount + $1000.</i>
 
-	<p> Note: the autograder is expecting each line to begin with "Year " and the corresponding number for the year.
-
+<p> Note: the autograder is expecting each line to begin with "Year " and the corresponding number for the year.
+<p><b>IMPORTANT:</b> For grading purposes, set the precision of Fahrenheit to one decimal place. To do so, add <tt>#include &lt;iomanip&gt;</tt> at the top of the file, and <tt>cout << fixed << setprecision(2); </tt> before outputting the length in feet.
 
 
 
@@ -1735,13 +1742,23 @@ Enter a number: -1
 </pre>
 
 
+<!--
+<hr>
+<i>More to come...</i>
+<hr>
+<br>
+
+-->
+
+
+
+
 
 
 </ol>
 
 
 
--->
 </div>
 
 <div>
