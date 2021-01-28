@@ -289,114 +289,49 @@ Your summary should exceed these minimum requirements to receive full credit. In
    <ul>
      <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" > Markdown Cheatsheet</a>
      <li>If you prefer to watch a video tutorial instead of following the github tutorial page linked above, <a href="https://www.google.com/search?q=github+pages+official+video+tutorial&rlz=1C5CHFA_enUS824US824&sxsrf=ALeKk03v20_y574_y7P6Bg5t9ZAOiUTFqQ:1604521169616&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjpoeWS2-nsAhUyU98KHXCYCfQQ_AUoAXoECBcQAw&biw=1432&bih=672&dpr=2" target="blank">there are plenty, non-official, youtube videos</a> on how to set up your first Gihub webpage... choose the one you prefer to listen to.
+  </ul>
 
   <hr>
 
 
+  <li > <b>HC 11: Draft Presentation and Project Webpage</b> <b style="float:right">Due Date: 24 November</b>  <br>
+    <p> Generate a project webpage with a small introduction that includes the information in your slides, a brief summary of your borough overview (from HC2, HC3, HC8) and links to all neighborhood webpages.
+    <p> Submit the slides of your group presentation (<b>two slides</b>) as  a .pdf file.  Your slides should include who is on the team, the neighborhoods you looked at, a brief description/summary of the project and <b> a link to the project webpage</b> (your presentation must be 3-5 minutes).
 
-<i>More to come...</i>
+
+
+
+
+  <hr>
+
+  <li > <b>HC 12: Feedback Forms</b> <b style="float:right">Due Date: 1 December</b>  <br>
+
+
+    <p> During our meeting each team will share their project webpage and the rest of the class will provide constructive feedback for improvement.
+    <p> As per your Team Contract signed at the beginning of the semester, you will evaluate  each member of your team by filling out and submitting <a href = "../files/HCTeamPeerEvaluation.docx" target="blank">this form</a>. After you fill it out, submit the form as pdf.
+
+
+
+<hr>
+
+<li > <b>HC 13: Final Project Presentation</b> <b style="float:right">Due Date: 4 December -- IN LAB</b>  <br>
+
+  <p> Each team will present their project (5 minutes each, 2 slides), then we will break into groups and our visitors will join different groups where you will do a poster-like presentation using the project webpage to talk more about your project and individual contributions.
+
+
 
 <!--
 
 
 
 
-
-
-
-
-	<li > <b>HC 10: Morning Commute Snapshot</b> <b style="float:right">Due Date: 4 November</b>  <br>
-
-    <p><img src="turnstileEntryTotals.png" height=300>
-      <img src="turnstileExitTotals.png" height=300>
-      <br>(Entries and exits (all turnstiles) at 68th Street-Hunter College station for morning commute for the week ending 1 September 2018.)
-
-
-		<p> Write a program that takes a weekly turnstile data file and makes a graph of <i>all the entries</i> and a graph of <i>all the exits</i> during the morning commute for your L-train station for that data.  The x-axis of your histogram should be the days of the week.  The bars in your plot should be the number of people entering the station between 5am and 9am (i.e. subtract the cumulative total at 5am from the cumulative total at 9am, or the closest 4-hour block measured for your station).  Similarly, the bars in the second plot should be the exits from your station over the week.
-
-    <p> Hints:
-      <ul>
-          <li> In HC 8, we focused on a single turnstile.  This program asks for <b>all the turnstiles</b> at your station aggegated together.
-            That is, for the morning commute of each day, you need the total number of entries (and exits) summed up across all the turnstiles.  Look at the dataFrame and identify the rows that you will need to compute this and select those to another dataFrame (like what we did in HC 8).
-          <li> Once you have retricted to your station, make two separate data frames, one containing the 5am rows for each turnstile (i.e. rows that have value <tt>== "5:00:00"</tt>) and the other containing the 9am, in a similar fashion to above.
-          <li> Some new pandas commands that are incredibly useful are:
-            <ul>
-              <li> <tt>groupby()</tt>:  which you can use to group rows with the same values
-              <li> <tt>sum()</tt>: will sum up the groups by your chosen columns
-            </ul>
-            For example,
-            <pre>
-entries = turnsHunter9.groupby(by = ['DATE'])['ENTRIES'].sum()-turnsHunter5.groupby(by = ['DATE'])['ENTRIES'].sum()</pre>
-            creates a new series (list) of those who entered each day at 9am and then subtracts off those who entered at 5am (assuming that <tt>turnsHunter9</tt> and <tt>turnsHunter5</tt> were selected as suggested above).
-
-            <li> Two more useful commands:
-              <ul>
-              <li> <tt>to_frame()</tt>:  will take the series (list) that results from <tt>sum()</tt> and convert it into a dataFrame (so we can then plot it in pretty ways)
-              <li> <tt>reset_index()</tt>:  fixes the column labels after the frame is created.
-            </ul>
-            For example,
-            <pre>
-en = entries.to_frame().reset_index()</pre>
-            converts the series above into a dataFrame and then resets the index.  Once done, the techniques for plotting dataFrames can be used for <tt>en</tt>.
-      </ul>
-
-		<p> Submit a .pdf file that contains the name of your station, as well as the plots for the morning commute entries and exits.
-
-	<hr>
-
-	<li > <b>HC 11: Project Plan</b> <b style="float:right">Due Date: 11 November</b>  <br>
-
-    <p><a href="https://streeteasy.com/blog/the-l-train-shutdown-explained-dates-details-closures/"><img height=300 src="LTrain_Impact_StreetEasy.jpg"><br>
-      StreetEasy</a>
-
-		<p> The honors section will have final presentations on 6 December, addressing, the  <a href="http://www.nyc.gov/html/dot/html/about/ltrainclosure.shtml">L-train tunnel closure</a>:
-
-  		<blockquote>
-  			For 15 months starting in April of 2019, all MTA New York City Transit (NYCT) L train service will be suspended across the East River and within Manhattan to repair damage caused by Superstorm Sandy. The L train will still run within Brooklyn, serving all stops. The temporary closure will directly affect 275,000 of the L Train's 400,000 daily riders, and indirectly affect many more throughout the city. All alternative transit services and traffic management policies are temporary for the duration of the L train closure.
-  		</blockquote>
-s
-    <p>In particular,
-      <blockquote>
-  			Focusing on different L-train neighborhoods, how will the residents get to work?
-  		</blockquote>
-
-		<p>You may work in teams of up to 3 students to develop your presentation, which has 2 parts:
-		<ul>
-			<li> A 60-second lightning presentation (upto 2 slides) that contains who is on the team, the neighborhoods you chose (at least one per group member and at least two, whichever is greater), and a brief description of your the effects of the L-train tunnel closure on these neighborhoods, how well will the current MTA plans mitigate the effects, and what additional transit services would be needed, and
-			<li> A computer "poster" (aka a github site) consisting of a website with a description of your neighborhoods, an analysis of the effects of the L-train tunnel closure and MTA plans on your neighborhoods and what additional services are needed.
-		</ul>
-
-		<p>For this group assignment, include in a .pdf file:
-		<ul>
-			<li> The neighborhoods that your team has chosen,
-			<li> The names of the team members,
-			<li> A rough estimate of the effects of the closure on the different neighborhoods and ideas (for example: an estimate of how many riders will be displaced in your neighborhood), and
-			<li> A paragraph outlining what services (e.g. additional buses, ferries, bikes, temporary road reconfigurations or restrictions) your neighborhoods would need to mitigate the effects.
-		</ul>
-
-	<hr>
+<p>
+<i>More to come...</i>
 
 
 
 
 
-	<li > <b>HC 13: Project Webpage</b> <b style="float:right">Due Date: 25 November</b>  <br>
-
-		<p> Submit the URL of your group presentation (the two slides for the presentation)  as part of a .pdf file.  If you have plans to add more to the website, include in the .pdf file any changes you have planned but didn't have a chance to enter yet.
-
-	<hr>
-
-	<li > <b>HC 14: Draft Presentations</b> <b style="float:right">Due Date: 2 December</b>  <br>
-
-		<p> Submit the slides of your group presentation (two slides) as  a .pdf file.  Your slides should include who is on the team, the neighborhood you chose, and a brief description of your solution to how much additional housing, and what additional services would be needed.
-
-	<hr>
-
-	<li > <b>HC 15: Feedback Forms</b> <b style="float:right">Due Date: 6 December</b>  <br>
-
-        <p><img height=300 src="csci127HonorsF18.jpg">
-
-		<p> (This is included for completeness, since the forms will be passed out and returned in section on 5 December.  After you have commented on others group presentations, we will distribute the forms, so that groups can use these to improve their slides and webpages for the final presentation the following week. )
 
 
 -->
