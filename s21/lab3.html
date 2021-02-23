@@ -204,7 +204,7 @@ A common way to represent colors is using hexadecimal numbers.  Our traditional 
 (from <a href ="http://www.i-programmer.info/babbages-bag/478-hexadecimal.html">i-programmer.info</a>)
 
 <p>
-Doing the same for 16 fingers, we use 0, 1, 2, ..., 9, and then A, B, ..., E when we run out of the normal symbols for numbers:
+Doing the same for 16 fingers, we use 0, 1, 2, ..., 9, and then A, B, ..., F when we run out of the normal symbols for numbers:
 
 <p>
 <img src="../images/hands16.png" style="padding:25px">
@@ -280,15 +280,15 @@ values.
 For example, if we stored our image in the variable, <tt>img</tt>, we could access the red
 value by:
 <pre style = "background-color:lavender;width:400px">
-print "Upper left has red:", img[0,0,0]
+print("Upper left has red:", img[0,0,0])
 </pre>
 and the amount of green:
 <pre style = "background-color:lavender;width:400px">
-print "Upper left has green:", img[0,0,1]
+print("Upper left has green:", img[0,0,1])
 </pre>
 and the amount of blue:
 <pre style = "background-color:lavender;width:400px">
-print "Upper left has blue:", img[0,0,2]
+print("Upper left has blue:", img[0,0,2])
 </pre>
 Any point can be accessed via its coordinates <tt>(i,j)</tt> and the color channel (0 for red, 1 for green, and 2 for blue).  In our example above,
 with the picture stored in the variable, <tt>img</tt>:
