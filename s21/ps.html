@@ -1215,10 +1215,11 @@ Enter number of sides: 4
 
   <ul>
     <li> <tt>fourfold_tile(img)</tt>  Takes an image and
-      returns a new image consisting of 4 copies of <tt>img</tt> in a tile layout, with 2 copies at the top and 2 copies at the bottom
+      <b>returns</b> a new larger image that contains 4 copies of <tt>img</tt> in a tile layout, with 2 copies at the top and 2 copies at the bottom
     <li> <tt>remove_hue(img, hue):</tt> Takes an image and a hue, either "red", "green" or "blue",
       and turns off the corresponding color channel in <tt>img</tt>. If the value of <tt>hue</tt> is not one of the expected, it prints: <i>No such hue.</i>
-    <li> <tt>mirror(img, axis)</tt>  Creates and returns a mirrored copy of <tt>img</tt> along <tt>axis</tt>, either 'x', 'y', 'xy' (mirrored along both x and y axes)
+      This function does not return a value, it simply switches off the color channel on the input image.
+    <li> <tt>mirror(img, axis)</tt>  Creates and <b>returns</b> a mirrored copy of <tt>img</tt> along <tt>axis</tt>, either 'x', 'y', 'xy' (mirrored along both x and y axes)
     If the value of <tt>axis</tt> is not one of the expected, it prints: <i>Invalid axis.</i>
     </ul>
 
@@ -1243,6 +1244,13 @@ Enter output file name: warhol_collage.png
 <p><img src="../images/marylin.png" width=150>
 <p>And output:
 <p><img src="../images/warhol_collage.png" width=300>
+
+<p><b>Hints:</b>
+  <ul>
+    <li>To fit four copies of img (two at the top and two at the bottom) the new image must be twice as large and twice as tall
+    <li>To mirror an image over an axis, think of it being the same image but it <b>steps backwards</b> on that axis (mirror on x axis means reversing the rows, etc.)
+    <li>To remove a hue, turn off that color channel (no light in that channel).
+  </ul>
 
 <p>The grading script runs the whole program as well as each function separately ('unit tests') to determine correctness.  As such, the function names must match exactly as indicated above (else, the scripts cannot find them).
 <p><i><b>Hint:</b> See <a href="lab4.html">Lab 4</a> for type conversion and decisions, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a> for programming with functions.</i>
