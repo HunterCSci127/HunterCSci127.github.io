@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>Lab 9, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Summer 2020</title>
+  <title>Lab 9, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Summer 2021</title>
     <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
@@ -10,18 +10,25 @@
 
 <h2>Lab 9<br>CSci 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
-Summer 2020<br><br>
+Summer 2021<br><br>
 </h2>
 </div>
 
 <div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Students will write programs that <b>map GIS data using Turtles</b>
+      <li> Students will write programs that <b>map GIS data using Folium</b>
+      <li> Students will <b>explore finding errors (i.e. debugging)</b>
+      <li> Students will use <b>Unix commands for regular expressions (wildcard)</b>
+    </ul>
 
-<p>
-Today's lab will focus on mapping data, using pandas, numpy, and folium, and regular expressions at the command line.
-
-<p>Software tools needed:  web browser and Python IDLE programming
+<p>Software tools needed:  web browser and Python programming
 environment with the pandas, numpy, and folium package installed.
 
+<p><b><a href="../files/Lab9Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
 
 
 </div>
@@ -31,7 +38,7 @@ environment with the pandas, numpy, and folium package installed.
 <div>
 <h3>Quizzes</h3>
 
-See the <a href="quizzes.html">quiz page</a> for details of the work due this week. 
+At the end of this lab, <b>don't forget to take Lab Quiz 9!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
 
 </div>
 
@@ -145,7 +152,7 @@ folium.Marker(location = [40.768731, -73.964915], popup = "Hunter College").add_
 mapCUNY.save(outfile='nycMap.html')
 </pre>
 
-Save your commands to a file and run via IDLE.  Your program will create an HTML file called, <tt>nycMap.html</tt>.  Open it in your favorite browser to make sure it creates a map of NYC with a marker for Hunter College.  When you have a running program, see the <a href="psSummer.html">Programming Problem List</a>.
+Save your commands to a file and run via IDLE.  Your program will create an HTML file called, <tt>nycMap.html</tt>.  Open it in your favorite browser to make sure it creates a map of NYC with a marker for Hunter College.  When you have a running program, see the <a href="ps.html#ps9">Programming Problem List</a>.
 
 </div>
 
@@ -158,9 +165,9 @@ We can combine the mapping of folium with the tools we have used for CSV files.
 <p>
 <iframe width="600" height="400" frameborder="0" src="../files/cunyLocations.html"></iframe>
 
-<p>Let's make an interactive map of the CUNY campuses.  We can download a CSV file from data.ny.gov:
+<p>Let's make an interactive map of the CUNY campuses.  We can download a CSV file from <a href="https://data.ny.gov/Education/City-University-of-New-York-CUNY-University-Campus/i5b5-imzn/data">data.ny.gov</a>:
 <ul>
-	<li> <a href="https://data.ny.gov/Education/City-University-of-New-York-CUNY-University-Campus/i5b5-imzn/data">CUNY Campuses</a>
+	<li> <a href="../files/CUNYcampuses.csv">CUNY Campuses</a>
 </ul>
 (Export as a <b>.csv</b> file and save in the same directory as your programs.) Open the file to make sure you have all the lines (should be 23) and to check if the column headings occur in the first row (they do, so no need to skip rows when reading in the file).
 
@@ -388,7 +395,7 @@ The <tt>*.py</tt> says match any file that starts with any number (including 0) 
 
 <p>You can use the wildcard operator in multiple places.  For example, if your directory contained:
 <pre style = "background-color:lavender;width:550px">
-$ ls -l 
+$ ls -l
 -rw-r--r--@ 1 stjohn  staff      5308 Mar 21 14:38 quizzes.html
 -rw-r--r--  1 stjohn  staff     54013 Apr 20 18:57 zoneDist.csv
 -rw-r--r--@ 1 stjohn  staff      1519 Apr 22 15:14 zoneMap.py
@@ -401,13 +408,13 @@ $ ls z*
 </pre>
 prints all files that start with  <tt>z</tt> and are followed by any number of characters.
 
-<p>Similarly, 
+<p>Similarly,
 <pre style = "background-color:lavender;width:500px">
 $ ls *zz*
 </pre>
 would all files that start with any number of characters, followed by <tt>zz</tt>, and end with any number of characters.  The only file that contains this "pattern" of <tt>zz</tt> is <tt>quizzes.html</tt>.
 
-<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see 
+<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see
 the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
 
 </div>
@@ -417,7 +424,10 @@ the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
 
 <h3>What's Next?</h3>
 
-<p>If you finish the lab early, now is a great time to get a head start on the programming problems.  There's instructors to help you, and you already have Python up and running.  The <a href="psSummer.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<p><b>Now is a great time to take <a href="https://www.gradescope.com/" target="_blank">Lab Quiz 9</a>! (15 minutes)</b> It is directly based on Lecture and Lab 9.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps9">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
 </div>
 
