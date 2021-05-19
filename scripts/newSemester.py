@@ -44,8 +44,8 @@ oldHtml = "../" + oldName + ".html"
 newHtml = "../" + newName + ".html"
 
 # Copies template semester files
-shutil.copytree(oldNamePath, newNamePath)
-shutil.copy(oldHtml, newHtml)
+shutil.copytree(oldNamePath, newNamePath) # Copies directory
+shutil.copy(oldHtml, newHtml) # Copies index page
 
 # Changes semester in main file
 replacer.replace(newHtml, oldSemesterName, newSemesterName)
