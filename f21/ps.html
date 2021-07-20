@@ -144,17 +144,18 @@ print("Hello, World!")</pre>
 <p>
 
 
-    <li > <b>Due Date: 17 September</b>  <b style="float:right">Reading: Think CS:
+    <li > <b>Due Date: 21 September</b>  <b style="float:right">Reading: Think CS:
   <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>
   	</b><br>
 <p> Write a program that uses turtle graphics to generate the image below:
-<p><img id="turtleFlower" alt="program 5" src="../images/s21program5.png" width="200">
+<p><img id="turtleFlower" alt="program 5" src="../images/f21program5.png" width="250">
 <p>
-  <br><b><i>Hints:</i></b> Let the turtle move forward 200 steps and use the sequence forward/left/stamp.
+  <br><b><i>Hints:</i></b> Create the same image shown above. Turtle should move forward 100 in the direction it starts facing initially.  
   <br>This assignment aims to challenge you to analyze the image to deduce the process (given a description of the output, write the program to produce it), which is how software developers often approach problems.
   <br><b>So what should you do? </b>Try to puzzle out the image, break down what the turtle does, then apply what you have learned so far about definite loops (for loops) and turtle graphics to reproduce that process. Here some guiding questions:
   <ul>
-    <li>How many turtles do you see? How many repetitions?
+    <li>How would you create one rhombus first if the angle is 45?
+    <li>How many turtles do you see? How many repetitions? How many rhombuses do you need to create?
     <li>What does the turtle do in each repetition?
     <li>Once you figured out the answer to the previous two questions, play around with the angle to produce the image.
     <li>Look up the turtle functions <tt>pencolor()</tt> and <tt>fillcolor()</tt> to produce the turtle colors?
@@ -337,16 +338,16 @@ A sample run of your program should look like:
     <i>Note: when we say "Modify the program..." only make the requested modifications, everything else is assumed to be keept as is.</i>
 
 
-    <li > <b>Due Date: 26 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
+    <li > <b>Due Date: 30 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
 
-  		<p>Now modify the program from <a href="lab3.html">Lab 3</a> to transition from shades of red to shades of green by moving forward 25 steps instead of 10.
-
+  		<p>Now modify the program from <a href="lab3.html">Lab 3</a> to create two transitions from shades of yellow to red by moving forward 10 steps.
+        
   		<p>
   		Your output should look similar to:
   		<br>
-  		<img src="../images/s21program12.png" height=200>
+  		<img src="../images/f21program12.png" height=200>
 
-	<p> <i><b>Hint:</b> decrease the amount of red while increasing the amount of green by the same amount using the loop variable</i>
+	<p> <i><b>Hint:</b> decrease the amount of green using the loop variable while keeping the amount red same</i>
 
 
 <li > <b>Due Date: 1 October</b>
@@ -537,15 +538,15 @@ Marginal tax rate: Error
 
 
 
-	<li > <b>Due Date: 10 October</b>
+	<li > <b>Due Date: 13 October</b>
 		<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab4.html">Lab 4</a></b><br>
 
 
-		<p>Modify the flood map of NYC from <a href="lab4.html">Lab 4</a> to color the region of the map with elevation greater than 5 feet and less than or equal 20 feet above sea level the color grey (50% red, 50% green, and 50% blue).
+		<p>Modify the flood map of NYC from <a href="lab4.html">Lab 4</a> to color the region of the map with elevation greater than 5 feet and less than or equal 20 feet above sea level the color grey (50% red, 50% green, and 50% blue). Also, change the blue water to yellow
 
 		<p> Your resulting map should look like:
-		<p> <img src="../images/floodMap2.png" width=300>
+		<p> <img src="../images/f21program20.png" width=300>
 		<p> and be saved to a file called <tt>floodMap.png</tt>.
 
 		<p> <b><i>Note:</b></i>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.imshow()</tt> and <tt>plt.show()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
@@ -686,18 +687,14 @@ Snow count is 38010</pre>
 
 
 
-<li > <b>Due Date: 17 October</b>
+<li > <b>Due Date: 20 October</b>
 <b style="float:right">Reading: <a href="http://www.toves.org/books/logic/">Burch's Logic & Circuits</a></b><br>
 
 
 
-<p>Write a logical expression that is equivalent to the Exclusive OR gate on  2 inputs, called <tt>in1</tt>, <tt>in2</tt>:
-<ul>
-  <li> If either one or the other (but not both) input is <tt>True</tt>, then your expression should evaluate to  <tt>True</tt>.
-    <li> Otherwise (both inputs are <tt>True</tt> or both inputs are <tt>False</tt>), then your expression should evaluate to <tt>False</tt>.
-</ul>
+<p>Write a logical expression that is equivalent to circuit shown below. Use <tt>in1</tt>, <tt>in2</tt> for the inputs. An example is shown in <a href="lab5.html">Lab 5</a>.
 
-<p> <img src="../images/xor.png" width=300>
+<p> <img src="../images/f21program25.png" width=300>
 
 <p>Save your expression to a text file.
 See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
@@ -1030,35 +1027,37 @@ Enter name of output file:  manHunt.png
 
 
 
-<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="https://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html" target="_blank">Lab 8</a>  </b><br>
+<li > <b>Due Date: 4 November</b>  <b style="float:right">Reading: Think CS: <a href="https://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html" target="_blank">Lab 8</a>  </b><br>
 
 
 
-	<p> Write a function, <tt>computeFare()</tt>, that takes as two parameters: the zone and the ticket type, and returns the Copenhagen Transit fare.
-	<ul>
-		<li> If the zone is 2 or smaller and the ticket type is "adult", the fare is 23.
-		<li> If the zone is 2 or smaller and the ticket type is "child", the fare is 11.5.
-		<li> If the zone is 3 and the ticket type is "adult", the fare is 34.5.
-		<li> If the zone is 3 or 4 and the ticket type is "child", the fare is 23.
-		<li> If the zone is 4 and the ticket type is "adult", the fare is 46.
-		<li> If the zone is greater than 4, return a negative number (since your calculator does not handle inputs that high).
+	<p> Write a function, <tt>worldRecord()</tt>, that takes two parameters: gender <tt>(string)</tt> and the event type <tt>(int)</tt>. The function should return a <tt>float</tt> for the Olympic world record for the event.
+	<p>Gender should be: Men's Standard = "men", Women's Standard = "women"</p>
+  <ul>
+		<li> If Men's Standard and event type is 100 meters, the record is 9.63 seconds.
+		<li> If Men's Standard and event type is 200 meters, the record is 19.30 seconds.
+		<li> If Men's Standard and event type is 400 meters, the record is 43.03 seconds.
+		<li> If Women's Standard and event type is 100 meters, the record is 10.62 seconds.
+		<li> If Women's Standard and event type is 200 meters, the record is 21.34 seconds.
+    <li> If Women's Standard and event type is 400 meters, the record is 48.25 seconds.
+		<li> Else return -1 since wordlRecord() function can't handle event type greater than 400 meters
 	</ul>
 
-	<p>A template program, <tt>copenhagenTransit.py</tt>, is available on the
+	<p>A template program, <tt>olympicRecords.py</tt>, is available on the
 	<a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
 	The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
 
 <p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter the number of zones: 3
-Enter the ticket type (adult/child): Adult
-The fare is 34.5
+<pre style = "background-color:lavender;width:450px">
+Enter the gender: women
+Enter the event distance: 400
+The world record for women's 400 meters is 48.25 seconds.
 </pre>
 <p> And another:
-<pre style = "background-color:lavender;width:400px">
-Enter the number of zones: 2
-Enter the ticket type (adult/child): child
-The fare is 11.5
+<pre style = "background-color:lavender;width:450px">
+Enter the gender: men
+Enter the event distance: 100
+The world record for men's 100 meters is 9.63 seconds.
 </pre>
 
 
@@ -1432,12 +1431,34 @@ The day is Thursday
 
 
 
-<li > <b>Due Date: 26 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
+<li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-<p> Modify the program from <a href="lab10.html">Lab 10</a> to make a turtle walk 200 times: each "walk" is 10 steps forward and the turtle can turn 0, 45, 90, ..., 360 degrees (chosen randomly) at the beginning of each walk.
-<br>If the turtle is about to walk for the <tt>ith</tt> time and <tt>i</tt> is a multiple of 10, then instead of moving forward 10 steps, your turtle should move 20 steps without writing.
+<p>Create a rock papers scissors game. You have to print the output as specified below. 
+<p>Must print <tt>ComputerMove</tt> for each round. In another line print out the winner of the round. After the game finishes, you <b>must print out the last-round winner</b>.
+<p>Rules:</p>
+<ul>
+  <li> Player moves: "1" = rock, "2" = paper, "3" = scissors
+  <li> Computer moves:  "1" = rock, "2" = paper, "3" = scissors
+  <li> Must have <b>global winner variable</b> to track status of game. 
+  <li> If player wins (winner = "human")
+  <li> If computer wins (winner = "computer")
+  <li> If round is a tie (winner = "draw")
+  <li> If playermove is invalid, <b>greater than 3 or less than 1</b> (winner = "invalid")
+</ul>
+<p>Game logic:  Loop until playerMove is <b>less than zero</b> (used to terminate game)</p>
+<ul>
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>rock (1)</b>, its a draw. 
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>paper (2)</b>, human wins.
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>scissors (3)</b>, computer wins.
+  <li>  If playerMove is <b>paper (2)</b> and computer move is <b>rock (1)</b>,  human wins.
+  <li>  If playerMove is <b>paper (2)</b> and computer move is <b>paper (2)</b>,  its a draw.
+  <li>  If playerMove is <b>paper (2)</b> and computer move is <b>scissors (3)</b>,  computer wins.
+  <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>rock (1)</b>,  computer wins.
+  <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>paper (2)</b>,  human wins.
+  <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>scissors (3)</b>,  its a draw.
+</ul>
 <p> A sample run of your program:
-<p> <img src="../images/s21program47.png" height=250>
+<p> <img src="../images/f21program47.png" height=300>
 
 
 
@@ -1495,11 +1516,11 @@ The day is Thursday
 
 
 
-  	<li > <b>Due Date: 29 November</b>
+  	<li > <b>Due Date: 24 November</b>
   	<b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a> & <a href="lab11.html">Lab 11</a></b><br>
 
 
-  		<p> Write a <b>simplified machine language program</b> that prints:  <tt>I love CS!</tt>
+  		<p> Write a <b>simplified machine language program</b> that prints:  <tt>MIPS is cool!</tt>
 
   		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
 
@@ -1664,25 +1685,25 @@ Your letter grade is B
 
 
 
-<li > <b>Due Date: 11 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+<li > <b>Due Date: 8 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
 
-<p> Write a <b>C++ program</b> that asks the user for a number n and a character c, and prints a sideways isosceles triangle using that character.
+<p> Write a <b>C++ program</b> that asks the user for a number n and a character c, and prints a trapezoid using that character (shown below).
 
 <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
 Please enter a number: 5
 Please enter a character: @
-
 @
 @@
 @@@
 @@@@
 @@@@@
-@@@@
-@@@
-@@
-@
+@@@@@
+@@@@@
+@@@@@
+@@@@@
+@@@@@
 </pre>
 
 
@@ -1690,12 +1711,12 @@ Please enter a character: @
 <pre style ="background-color:lavender;width:400px">
 Please enter a number: 3
 Please enter a character: *
-
 *
 **
 ***
-**
-*
+***
+***
+***
 </pre>
 
 
