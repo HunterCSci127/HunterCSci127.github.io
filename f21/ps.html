@@ -568,7 +568,16 @@ Marginal tax rate: Error
 <li > <b>Due Date: 11 October</b> 	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
 <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a>,  <a href="lab3.html">Lab 3</a>,  <a href="lab4.html">Lab 4</a> & <a href="../f20.html">Lecture 4</a></b> <br>
 <p><b>REVIEW from Lecture/Lab 4</b>
-<p>Write a program that creates an image of purple and cyan horizontal stripes. Think color not shade: Purple = red and blue only, no green. Cyan = green and blue only, no red.
+<p>Write a program that creates an image of khaki and rosy horizontal and vertical stripes. 
+  <br>
+  <br>The color codes are below. 
+  <br>
+  rgb(188,143,143), #BC8F8F - Rosy Brown 
+  <br>
+  rgb(240, 230,140) #f0e68c - khaki 
+  <br>
+  Use the color converter to get the RGB% from hex:https://andylangton.co.uk/tools/colour-converter
+  <br>
   <br>Your program should ask the user for the size of your image, the name of the output file, and create a <tt>.png</tt> file of stripes.  For example, if the user enters 10, your program should create a 10x10 image, alternating between purple and cyan stripes.
 
 <p>
@@ -767,26 +776,26 @@ out3 = ...
 
 
 <a id="cr7"></a>
-	<li > <b>Due Date: 19 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
+	<li > <b>Due Date: 22 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
 
 
 
-<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the name of a borough and the name of the output file.
-<br> The program should compute the minimum, maximum, average, median and standard deviation of the population of the borough entered by the user  and then display the fraction of the population that has lived in that borough over time.
+<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/covidCases.csv">NYC Covid-19 Cases</a>.  Your program should ask the user for the name of a borough and the name of the output file.
+<br> The program should compute the minimum, maximum, average, median and standard deviation of the covid-19 cases of the borough entered by the user  and then display the fraction of the covid-19 daily cases in that borough over time.
 <p><b>IMPORTANT: </b> The grading script expects the new column to be called 'Fraction'
 		<p> A sample run of the program:
 <pre style ="background-color:lavender;width:400px">
-Enter borough name: Brooklyn
-Enter output name: BrooklynFraction.png
-Min: 2017
-Max: 2738175
-Mean: 1252437.5384615385
-Median: 1002564.5
-Standard Deviation: 1153123.5551968655
+Enter borough name: Bronx
+Enter output name: bronxCovidFraction.png
+Min: 0
+Max: 1514
+Mean: 309.1382113821138
+Median: 136.5
+Standard Deviation: 336.84985082264524
 </pre>
-<p> The file <tt>BrooklynFraction.png</tt>:
+<p> The file <tt>bronxCovidFraction.png</tt>:
 
-<p><img src="../images/BrooklynFraction.png" width=300>
+<p><img src="../images/bronxCovidFraction.png" width=300>
 
 
 <p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
@@ -812,16 +821,16 @@ AccountNameGoesHere
 
 
 
-<li > <b>Due Date: 23 October</b>  <b style="float:right">Reading:
+<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading:
 <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
-<p>Write an Unix shell script that prints: <tt> Hello!</tt>
-<br> Then prints on a new line: <tt>This is $USER's first shell script!!!</tt>
+<p>Write an Unix shell script that prints: <tt> Hello CSCI127 Students!</tt>
+<br> Then prints on a new line: <tt>$USER's is learning shellscripts!</tt>
 <br>where <tt>$USER</tt> is a built-in variable that stores the name of the user.
 
 <p> A sample run of the program with user <tt>tizianaligorio</tt>:
 <pre style ="background-color:lavender;width:400px">
-Hello!
-This is tizianaligorio's first shell script!!!
+Hello CSCI127 Students!
+tizianaligorio is learning shell scripts!
 </pre>
 
 <p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
@@ -1066,57 +1075,54 @@ The fare is 11.5
 
 
 
-  <li > <b>Due Date: 12 November</b>
+  <li > <b>Due Date: 5 November</b>
   <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> & <a href="lab8.html">Lab 8</a> </b><br>
 
 
 
-<p> Write a program that asks the user for a CSV of Dinosaur Genus data:
+<p> Write a program that asks the user for a CSV of Video Games Dataset
 <ul>
    <li> There is a sample file on <a href="https://github.com/HunterCSci127/CSci127">github</a>.
 </ul>
 
 Your program should then print out:
   <ul>
-    <li> The total number of genera (in this dataset each row is a dinosaur genus, genera is the plural of genus)
-    <li> The count of dinosaur genera for each period
-    <li> The three most populated countries.
+    <li> The total number of games
+    <li> The count of video games of each game genre. 
+    <li> The top 3 game publishers
   </ul>
 
 <p>A sample run:
 <pre style = "background-color:lavender;width:500px">
-Enter file name: dinosaur.csv
-There are 1154 dinosaur genera.
+Enter file name: vgsales.csv
+There are 16598 total games
 
-The number of dinosaur genera in each period:
-Cretaceous               763
-Jurassic                 265
-Triassic                  50
-Late Cretaceous           30
-Early Cretaceous          16
-Early Jurassic             7
-Jurassic/Cretaceous        7
-Middle Jurassic            4
-Late Triassic              3
-Triassic or Jurassic       3
-Triassic/Jurassic          3
-Cretaceous                 1
-(unknown)                  1
-Early-Late Cretaceous      1
-Name: Period, dtype: int64
+The number of game genres are 
+Action          3316
+Sports          2346
+Misc            1739
+Role-Playing    1488
+Shooter         1310
+Adventure       1286
+Racing          1249
+Platform         886
+Simulation       867
+Fighting         848
+Strategy         681
+Puzzle           582
+Name: Genre, dtype: int64
 
-
-The three most dinosaur-populated countries were:
-North America    274
-China            217
-South America    149
-Name: Country, dtype: int64
+The top 3 game publishers are 
+Electronic Arts       1351
+Activision             975
+Namco Bandai Games     932
+Name: Publisher, dtype: int64
 </pre>
 
 <p> This assignment uses data freely available on
 <a href="https://www.kaggle.com/">kaggle.com</a>, and can be found at:
 <blockquote>
-<a href="https://www.kaggle.com/kumazaki98/dinosaur-list">https://www.kaggle.com/kumazaki98/dinosaur-list</a>.
+<a href="https://www.kaggle.com/gregorut/videogamesales">https://www.kaggle.com/gregorut/videogamesales</a>.
 </blockquote>
 
 <p> <i><b>Hint:</b> See <a href="lab8.html">Lab 8</a> for counting values in structured data.</a></i>
@@ -1366,13 +1372,13 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
 <p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
 
 
-  <li > <b>Due Date: 22 November</b>
+  <li > <b>Due Date: 17 November</b>
   <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
 
  <p> For this assignment, we will use <tt>folium</tt> again to generate a map with markers for textile drop-off locations in NYC.
    <br> The data is made publicly available by
-  <a href="https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm-wvu5/data">New York City Open Data</a>.
-  You can also obtain the data here: <a href="../files/textileDropoff.csv">textileDropoff.csv</a>
+  <a href="https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw/data">New York City Wifi Hotspot Locations/a>.
+  You can also obtain the data here: <a href="../files/NYC_Wi-Fi_Hotspot_Locations.csv">NYC-Wi-Fi-Hotspot-Locations.csv</a>
 
  <p>	Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, the name of a borough and creates a map with markers for all the textile drop-off locations in that borough from the input file.
  <p>  To restrict the markers to a particular borough, make a copy of the dataframe after you <tt>groupby("Borough")</tt> and then <tt>get_group</tt> for the borough entered by the user.
@@ -1382,14 +1388,14 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
 
 
  <p>A sample run:
-   <pre style = "background-color:lavender;width:500px">
-  Please enter the name of the input file: textileDropoff.csv
+   <pre style = "background-color:lavender;width:700px">
+  Please enter the name of the input file: NYC-Wi-Fi-Hotspot-Locations.csv
   Please enter the name of the output file: manhattan.html
   Please enter the name of the borough: Manhattan
  </pre>
  <p>which would produce the html file:
 
- <p><iframe src="../files/manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+ <p><iframe src="../files/f21_manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
  <p>(The demo above uses the address of the drop-off location ("Address") to label each marker and changed the underlying map with the option:
  <tt>tiles="Stamen Watercolor"</tt> when creating the map.)
@@ -1512,13 +1518,12 @@ The day is Thursday
 
 
 
-  	<li > <b>Due Date: 30 November</b>  <b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a>& <a href="lab11.html">Lab 11</a></b><br>
+  	<li > <b>Due Date: 29 November</b>  <b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a>& <a href="lab11.html">Lab 11</a></b><br>
 
 
 
 
-  		<p>Write a <b>simplified machine language program</b> that has register <tt>$s0</tt> loop through
-  		the numbers 0, 25, 50, 75, 100.
+  		<p>Write a <b>simplified machine language program</b> that has register <tt>$s0</tt> decrements from 100, 75, 50, 25, 0
       <p>Your program must use the <tt>ADDI</tt> instructions and store all numbers in registers for computation.
 
   		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
@@ -1526,10 +1531,29 @@ The day is Thursday
 
 
 
-  <li > <b>Due Date: 3 December</b>  <b style="float:right">Reading:
+  <li > <b>Due Date: 30 November</b>  <b style="float:right">Reading:
 	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a> & <a href="lab11.html">Lab 11</a>.</b><br>
 
-	<p>Using Unix shell commands, write a script that counts the number of <tt>.html</tt> files in the current working directory.
+	<p>You've now mastered UNIX Scripts. 
+    <br>
+    <br>
+    You will organize some files in a cloned GitHub repository. 
+    <br>
+    <br>
+    Clone the repository https://github.com/HunterCSci127/CSci127 with the git command. (Refer to Lab 8 to refresh on cloning a repository)
+    <br>
+    <br>
+    Navigate to this repository and make a new directory called myprojectfiles. 
+    <br>
+    <br>
+    Move nestedPolygons.py into myprojectfiles 
+    <br>
+    <br>
+    Go back to the repository directory, and make another directory called pictures 
+    <br>
+    <br>
+    Move any file that ends in .png in the cloned repo to the pictures directory you just made 
+    
 
 
 	<p><i>Hint:  See <a href="lab11.html">Lab 11</a>.</i>
@@ -1702,25 +1726,19 @@ Please enter a character: *
 
 <li > <b>Due Date: 12 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
-	<p> Write a <b>C++ program</b>  that asks the user for the starting amount, and prints out the yearly balance of a savings account, assuming 5% interest for the first 5 years and 10% interest after that, until the amount has increased by more than $1000.
+	<p> Write a <b>C++ program</b>  that asks the user for their monthly budget on food and coffee and ask the user how much they spend on coffee in a week and print out how much they have left to spend every week after purchasing coffee.
 
 <p> A sample run:
-<pre style ="background-color:lavender;width:400px">
-  Please enter the starting amount: 1000
-  Year 1  1050.00
-  Year 2  1102.50
-  Year 3  1157.62
-  Year 4  1215.51
-  Year 5  1276.28
-  Year 6  1403.91
-  Year 7  1544.30
-  Year 8  1698.73
-  Year 9  1868.60
-  Year 10  2055.46
+<pre style ="background-color:lavender;width:450px">
+  Enter your monthly budget for food and coffee: 400
+  How much are you spending in a week for coffee: 40.50
+  Budget left after week 1	359.5
+  Budget left after week 2	319
+  Budget left after week 3	278.5
+  Budget left after week 4	238
 </pre>
 
-<p> Note: the autograder is expecting each line to begin with "Year " and the corresponding number for the year.
-<p><b>IMPORTANT:</b> For grading purposes, set the precision to two decimal places. To do so, add <tt>#include &lt;iomanip&gt;</tt> at the top of the file, and <tt>cout << fixed << setprecision(2); </tt>.
+<p> Note: the autograder is expecting each line to begin with "Week" and the corresponding number for the week
 
 
 
