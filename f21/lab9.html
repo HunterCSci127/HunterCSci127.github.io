@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 9, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2021</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 9<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2021<br><br>
+</h2>
+</div>
+
+<div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Students will write programs that <b>map GIS data using Turtles</b>
+      <li> Students will write programs that <b>map GIS data using Folium</b>
+      <li> Students will <b>explore finding errors (i.e. debugging)</b>
+      <li> Students will use <b>Unix commands for regular expressions (wildcard)</b>
+    </ul>
+
+<p>Software tools needed:  web browser and Python programming
+environment with the pandas, numpy, and folium package installed.
+
+<p><b><a href="../files/Lab9Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
+
+
+</div>
+
+
+
+<div>
+<h3>Quizzes</h3>
+
+At the end of this lab, <b>don't forget to take Lab Quiz 9!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
+
+</div>
+
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+
+</div>
+
+
+<div>
+<h3>World Maps</h3>
+
+<p>We are going to use Python to make maps.  Let's start by mapping cities of the world.
+Locations in the world are usually indicated by their latitude and longitude.
+<ul>
+	<li> <b>Latitude</b> measures the number of degrees north or south of the equator.  When written as a number, it ranges from -90 (the south pole) to +90 (the north pole).
+	<li> <b>Longitude</b> measures the number of degrees east or west of the prime meridian.  When written as a number, it ranges from -180 to +180.
+</ul>
+
+We will use those ranges to be our coordinates:  (-90, -180) to (90,180).  Let's map some cities:
+
+<p> In the trinket below, map the following cities (GIS coordinates are rounded to the nearest whole number):
+<ul>
+	<li> New York City (longitude: -74, latitude: 41),
+	<li> Los Angeles (longitude: -118, latitude: 34),
+	<li> Paris, France (longitude: 2, latitude:49),
+	<li> Tokyo, Japan (longitude: 140, latitude: 35), and
+	<li> Rio de Janeiro, Brazil (longitude: -43, latitude: -23) .
+</ul>
+<p>
+<iframe src="https://trinket.io/embed/python/7705126110?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+</div>
+
+<div>
+<h3>Folium</h3>
+
+<p>
+<a href="https://pypi.python.org/pypi/folium">Folium</a> is a Python package that uses the javascript <a href="http://leafletjs.com">Leaflet.js</a> library to make interactive maps. Instead of popping up a <tt>matplotlib</tt> window, folium creates an <b>.html</b> file that you can open (and view interactively) with a browser.  After the program runs, open the corresponding <tt>.html</tt> file in a web browser to see your map.
+
+<p>
+(Folium is installed on the lab machines,  To check to see if your home machine has it, type at the Python prompt:
+<tt>
+import folium
+</tt>
+<br>
+If you get an error, go to the terminal, and download it:
+<pre style = "background-color:lavender;width:450px">
+pip install folium
+</pre>
+and the package will download and install.)
+
+<h4>Our First Map</h4>
+
+<p>
+
+<iframe src="../files/world.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+<p>To make a map in folium, the process is:
+<ol>
+	<li> Write a program in Python, using folium.
+	<li> Run the program, which outputs an <tt>.html</tt> file.
+	<li> Open the <tt>.html</tt> file in a browser.
+</ol>
+
+<p> Here's our first program:
+<pre style = "background-color:lavender;width:500px">
+#Import the folium package for making maps
+import folium
+
+#Create a map, centered (0,0), and zoomed out a bit:
+mapWorld = folium.Map(location=[0, 0],zoom_start=3)
+
+#Save the map:
+mapWorld.save(outfile='tempMap.html')
+</pre>
+
+<p>
+Save this file and run it.  It will create a file called <tt>tempMap.html</tt>.
+Open your favorite browser (Chrome, Firefox, IE, etc.) and choose "Open File" and then choose the file <tt>tempMap.html</tt>.  You should see a map of the world.
+
+<h4>Map of New York City</h4>
+
+<!--<p>
+<img src="hunterMap.png" height=400>
+
+<p>
+<b>UPDATE!!</b>-->
+
+<p>
+Let's make another map, focused on New York City.  To do that, when we set up the map object, we need to reset the location to New York City and the increase the zoom level:
+<pre style = "background-color:lavender;width:500px">
+import folium
+
+mapCUNY = folium.Map(location=[40.75, -74.125], zoom_start=10)
+</pre>
+
+<p> Let's add in a marker for Hunter College:
+<pre style = "background-color:lavender;width:725px">
+folium.Marker(location = [40.768731, -73.964915], popup = "Hunter College").add_to(mapCUNY)
+</pre>
+
+<p>and create the .html file:
+<pre style = "background-color:lavender;width:500px">
+mapCUNY.save(outfile='nycMap.html')
+</pre>
+
+Save your commands to a file and run via IDLE.  Your program will create an HTML file called, <tt>nycMap.html</tt>.  Open it in your favorite browser to make sure it creates a map of NYC with a marker for Hunter College.  When you have a running program, see the <a href="ps.html#ps9">Programming Problem List</a>.
+
+</div>
+
+
+<div>
+<h3>Plotting from Files</h3>
+
+We can combine the mapping of folium with the tools we have used for CSV files.
+
+<p>
+<iframe width="600" height="400" frameborder="0" src="../files/cunyLocations.html"></iframe>
+
+<p>Let's make an interactive map of the CUNY campuses.  We can download a CSV file from <a href="https://data.ny.gov/Education/City-University-of-New-York-CUNY-University-Campus/i5b5-imzn/data">data.ny.gov</a>:
+<ul>
+	<li> <a href="../files/CUNYcampuses.csv">CUNY Campuses</a>
+</ul>
+(Export as a <b>.csv</b> file and save in the same directory as your programs.) Open the file to make sure you have all the lines (should be 23) and to check if the column headings occur in the first row (they do, so no need to skip rows when reading in the file).
+
+<p>
+Let's use Pandas to read in the file.  We will need to import pandas and folium:
+<pre style = "background-color:lavender;width:450px">import folium
+import pandas as pd
+</pre>
+
+<p>To read in the CSV file, we'll use pandas' CSV reader.  We'll print out the campus locations to make sure that all were read in:
+<pre style = "background-color:lavender;width:450px">
+cuny = pd.read_csv('cunyLocations.csv')
+print(cuny["Campus"])
+</pre>
+Note:  we saved our CSV file to <tt>cunyLocations.csv</tt>.  If you saved it to a different name, change the input parameters for <tt>read_csv()</tt> to the name of your file.
+
+
+<p>Next, let's set up a map, centered on Hunter College:
+<pre style = "background-color:lavender;width:450px">
+mapCUNY = folium.Map(location=[40.768731, -73.964915])
+</pre>
+
+<p>
+We need to add markers for each campus.  We're going to iterate through the rows of dataframe to create the markers:
+<pre style = "background-color:lavender;width:450px">
+for index,row in cuny.iterrows():
+    lat = row["Latitude"]
+    lon = row["Longitude"]
+    name = row["Campus"]
+    newMarker = folium.Marker([lat, lon], popup=name)
+    newMarker.add_to(mapCUNY)
+</pre>
+For each row in the file, we find the latitude, longitude, and name of the campus, and use those to create a new marker which we add to our map.  We repeat for each row, until we have made markers for all 23 campuses in the file.
+<!--(Note:  we're using an older way to add markers (since it's simpler), and  some versions of folium will give a warning to use the newer version).
+(Note:  this isn't the most efficient way to plot points.  We'll discuss a better way-- creating a geoJSON layer-- next week.)-->
+
+<p>Lastly, let's save our map:
+<pre style = "background-color:lavender;width:450px">
+mapCUNY.save(outfile='cunyLocations.html')
+</pre>
+
+<p>
+To view your map, open a browser.  From the browser, open the file:  <tt>cunyLocations.html</tt>.
+
+
+</div>
+
+
+
+
+<div>
+<h3>Finding Errors</h3>
+
+Finding, and fixing errors, in your programs is a very useful skill.  Let's look at a program with lots of errors and work through how to identify the issues and fix them.  If you cloned the repo above, you will have a copy of <a href="https://github.com/stjohn/csci127/blob/master/errors.py">errors.py</a> on your computer (you can also download from the webpage).  When loaded into IDLE, it does not run:
+<pre style = "background-color:lavender;width:650px"># errors.py is based on dateconvert2.py from Chapter 5 of the Zelle textbook
+#     Converts day month and year numbers into two date formats
+
+def main()
+    # get the day month and year
+    day, month year = eval(input("Please enter day, month, and year numbers: ")
+
+    date1 = str(month)"/"+str(day)+"/"+str(year)
+
+    months = ["January", "February", "March", "April",
+              "May", "June", "July", "August",
+              "September", "October", "November", "December"]
+    monthStr = months[-1]
+    date2 = monthStr+" " + str(day) + ",  + str(year)
+
+    print("The date is" date1, "or", date2+".")
+
+main()
+</pre>
+Instead, a dialog box pops up and says "invalid syntax":<br>
+<br>
+<img src="../images/errorWindow1.jpg">
+<br>
+
+<p>The red line indicates where the intepreter has found an error.  Can you tell what it is?  Syntax is another word for grammar, so, it most likely missing `punctuation' or a misspelling of some sort.  We have spelled <tt>def</tt> correctly and have the right number of parenthesis, so, what else is missing?
+
+<p>The answer is after the parenthesis on a function definition, a colon is required.  Add that in:
+<pre style = "background-color:lavender;width:450px">
+    def main():
+</pre>
+and try to run the program again.
+
+<p>Again, we get a dialog box:<br><br>
+<img src="../images/errorWindow2.jpg"><br>
+<br>Instead of the whole line being highlighted, only the word <tt>year</tt> is.  The Python intepreter was not expecting <tt>year</tt> and says there is a grammatical mistake.  Since <tt>year</tt> does not include any grammatical constructs, we need to look <i>before</i> the message to see where the error is.
+Do you see it?
+
+<p>The answer is lists of variables need commas in between them to distinguish one from the next.  Add the comma in:
+<pre style = "background-color:lavender;width:450px">
+    day, month, year = ...
+</pre>
+and try to run the program again.
+
+<p>
+Once more we get a dialog box:<br><br>
+<img src="../images/errorWindow3.jpg"><br>
+
+<p>It has highlighted the first item, <tt>date1</tt> on the line.  That is a name and looks fine.  So, as above, let's look before the highlighted error to see if there's a problem.  The line above it is:
+<pre style = "background-color:lavender;width:450px">
+    day, month, year = eval(input("Please enter day, month, and year numbers: ")
+</pre>
+It did not highlight this line, so, the problem must be at the end.  Do you see it?
+
+<p>The answer is we are missing a closing parenthesis.  The line has two left parenthesis but only one right parenthesis.  Add the right parenthesis in:
+<pre style = "background-color:lavender;width:450px">
+    ... and year numbers: "))
+</pre>
+and try to run the program again.
+
+<p>
+Again, we get a dialog box:<br><br>
+<img src="../images/errorWindow4.jpg"><br>
+
+<p>The intepreter does not understand the second " on the line.  Why?  What is this line doing?  It's constructing a string and storing it in the variable <tt>date1</tt>.  How do you build a string out of smaller strings?
+
+<p>The answer is to put smaller strings together (called concatenation) we need to use the plus sign (+).  The line is missing a plus sign right before the quotes.  Add the plus sign in:
+<pre style = "background-color:lavender;width:450px">
+    date1 = str(month) + "/" ...
+</pre>
+and try to run the program again.
+
+<p>
+Again, we get a dialog box, but this one has a different message:<br><br>
+<img src="../images/errorWindow5.jpg"><br>
+
+<p><tt>EOL</tt> means "End of the line", so, the message says that the end of the line was reached before you finished defining the string.  How can you fix this?
+
+<p>The answer is to end the string, using quotation marks.  The line is missing a quotation mark at the very end.  Add the quotation mark :
+<pre style = "background-color:lavender;width:450px">
+    ...+ ",  + str(year)"
+</pre>
+and try to run the program again.
+
+<p>
+Our familiar dialog box returns:<br><br>
+<img src="../images/errorWindow6.jpg"><br>
+
+<p>We have seen this type of error before.  How do you fix it?
+
+<p>The answer is lists of arguments need commas in between them to distinguish one from the next.  Add the comma in:
+<pre style = "background-color:lavender;width:450px">
+    ... date is", date1 ...
+</pre>
+and try to run the program again.
+
+<p>It runs!  Now let's make sure it works.  Type in at the prompt:
+<pre style = "background-color:lavender;width:450px">
+Please enter day, month, and year numbers: 31, 12, 2014
+</pre>
+Uh oh, instead of output, we get the following messages:
+<pre style = "color: red">
+Traceback (most recent call last):
+  File "/Users/stjohn/public_html/teaching/cmp/cmp230/f14/errors.py", line 18, in <module>
+    main()
+  File "/Users/stjohn/public_html/teaching/cmp/cmp230/f14/errors.py", line 13, in main
+    monthStr = months[month+1]
+IndexError: list index out of range
+</pre>
+<p>When you see messages like this, go to the very last line:
+<pre style = "color: red">
+IndexError: list index out of range
+</pre>
+It says that the index for our list is out of range.  An index is the item of the list that we're accessing.  For example, <tt>months[1]</tt> has index <tt>1</tt> and will give us <tt>February</tt>.  The range of the index for a list is <tt>0</tt> to one less than the length of the list.  In the case of <tt>months</tt>, the range is <tt>[0,1,2,...,11]</tt>.  What went wrong when we entered <tt>12</tt> for our month?
+
+
+<p>The answer is we used <tt>month+1 = 12 + 1 = 13</tt> as the index:
+<pre style = "background-color:lavender;width:450px">
+    monthStr = months[month+1]
+</pre>
+which is out of range.  What do we want instead?  Instead of adding <tt>1</tt>, we should subtract <tt>1</tt>.  Change it in the program:
+<pre style = "background-color:lavender;width:450px">
+    monthStr = months[month-1]
+</pre>
+and try to run the program again.
+
+<p>It still runs, but does it work?  Let's try the same input again:
+<pre style = "background-color:lavender;width:450px">
+Please enter day, month, and year numbers: 31, 12, 2014
+The date is 12/31/14 or December 31,  + str(year).
+</pre>
+
+<p>Something odd is happening at the end-- <tt>str(year)</tt> does not look right.  Let's look at the print statement:
+<pre style = "background-color:lavender;width:450px">
+date2 = monthStr+" " + str(day) + ",  + str(year)"
+</pre>
+The intepreter is treating <tt>",  + str(year)"</tt> as a string (instead of evaluating <tt>str(year)</tt>), so, we must have put the quotation mark in the wrong place before.  Let's move it:
+<pre style = "background-color:lavender;width:450px">
+date2 = monthStr+" " + str(day) + ","  + str(year)
+</pre>
+and try to run the program again.
+
+<p>Success!  But try a few other inputs, just to make sure.  It is always good to try cases that are near the `boundary' of what's allowed, since those are the places we are most likely to make mistakes:
+<pre style = "background-color:lavender;width:450px">
+Please enter day, month, and year numbers: 1,1,2015
+The date is 1/1/2015 or January 1,2015.
+
+Please enter day, month, and year numbers: 1, 2, 2003
+The date is 2/1/03 or February 1,2003.
+
+Please enter day, month, and year numbers: 4, 7, 1976
+The date is 7/4/1976 or July 4,1976.
+</pre>
+
+<p>We have removed all the errors, and the program now runs correctly!
+
+</div>
+
+<div>
+<h3> More on the Command Line Interface:  Regular Expressions</h3>
+
+<p>Often it's useful to find strings that match a pattern instead of spelling out the exact names of things.  For example, if you wanted to know all the Python programs in your directory that are <tt>.py</tt> files, you could list out all the files and then look through visually to find them:
+<pre style = "background-color:lavender;width:500px">
+$ ls
+</pre>
+But an easier way would be to specify that only the files that end in <tt>.py</tt> be printed.  To do that, you can use the "wildcard" or * operator that:
+<pre style = "background-color:lavender;width:500px">
+$ ls *.py
+</pre>
+
+The <tt>*.py</tt> says match any file that starts with any number (including 0) of characters and ends with <tt>.py</tt>.
+
+<p>You can use the wildcard operator in multiple places.  For example, if your directory contained:
+<pre style = "background-color:lavender;width:550px">
+$ ls -l
+-rw-r--r--@ 1 stjohn  staff      5308 Mar 21 14:38 quizzes.html
+-rw-r--r--  1 stjohn  staff     54013 Apr 20 18:57 zoneDist.csv
+-rw-r--r--@ 1 stjohn  staff      1519 Apr 22 15:14 zoneMap.py
+-rw-r--r--  1 stjohn  staff  16455174 Mar 20 19:02 zoning2.html
+-rw-r--r--  1 stjohn  staff  17343896 Mar 20 18:58 zoningIDS.json
+</pre>
+Then the following command:
+<pre style = "background-color:lavender;width:500px">
+$ ls z*
+</pre>
+prints all files that start with  <tt>z</tt> and are followed by any number of characters.
+
+<p>Similarly,
+<pre style = "background-color:lavender;width:500px">
+$ ls *zz*
+</pre>
+would all files that start with any number of characters, followed by <tt>zz</tt>, and end with any number of characters.  The only file that contains this "pattern" of <tt>zz</tt> is <tt>quizzes.html</tt>.
+
+<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see
+the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
+
+</div>
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p><b>Now is a great time to take <a href="https://www.gradescope.com/" target="_blank">Lab Quiz 9</a>! (15 minutes)</b> It is directly based on Lecture and Lab 9.
+<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps9">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
+
+</div>
+
+
+
+</html>
