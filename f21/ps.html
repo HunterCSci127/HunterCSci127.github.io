@@ -100,7 +100,7 @@ print("Hello, World!")</pre>
 <p><b>Note:</b> Make only the modifications indicated here, all other behaviors should stay the same. (i.e. distance forward, pen size etc.)
 <p> In programming, it is important to learn to follow instructions precisely. A small difference to you may result in a program that runs incorrectly. This is part of what you are learning here: <b>follow specifications to the letter</b>.
 
-	<li > <b>Due Date: 16 September</b>  <b style="float:right">Reading: Think CS:
+	<li > <b>Due Date: 20 September</b>  <b style="float:right">Reading: Think CS:
 <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>
 	</b><br>
 
@@ -109,38 +109,50 @@ print("Hello, World!")</pre>
 	<a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a> ("informal high-level description of the operating principle of a computer program or other algorithm") below:
 
 <pre>
-    Set the turtle shape to be a 'circle'
-    Set the color to 'blue'
+    import turtle
+    create a turtle
 
-    Repeat 9 times:
-        Walk forward 30 steps
-        Turn left 40 degrees
+    set the turtle shape to be 'arrow'
+    set the turtle color to 'purple'
+    set the turtle pensize to 3
 
-    Turn left 90 degrees
+    walk forward 30 steps
 
-    Repeat 9 times:
-        Walk forward 30 steps
-        Turn left 40 degrees
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
 
-    Turn left 90 degrees
+    walk backward 30 steps
+    turn right 90 degrees
+    walk forward 30 steps
 
-    Repeat 9 times:
-        Walk forward 30 steps
-        Turn left 40 degrees
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
 
-    Turn left 90 degrees
+    walk backward 30 steps
+    turn right 90 degrees
+    walk forward 30 steps
 
-    Repeat 9 times:
-        Walk forward 30 steps
-        Turn left 40 degrees
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
 
+    walk backward 30 steps
+    turn right 90 degrees
+    walk forward 30 steps
 
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
+
+    walk backward 30 steps
 
 </pre>
 		Your output should look similar to:
 		<br>
-		<img width=250 src="../images/s21program4.png">
-
+		<img width=250 src="../images/f21_program4.png">
+    <p>Here is a <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a> for your reference.
 <p>
 
 
@@ -263,28 +275,29 @@ A sample run of your program should look like:
 <p><i><b>Hint:</b> Use the</i> <code>start, stop, step</code> <i>options in the</i> <code>range()</code> <i>function</i> and print the loop variable.
 
 
-<li > <b>Due Date: 23 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html"> chapter 9</a>, <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> & <a href="lab2.html">Lab 2</a></b><br>
+<li > <b>Due Date: 27 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html"> chapter 9</a>, <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> & <a href="lab2.html">Lab 2</a></b><br>
 
   <p>Write a problem that does the following:
   <ol>
   	<li> Prompt for a phrase & read it in.
+  	<li> Reverse the phrase and print it.
   	<li> Make the phrase upper case.
-  	<li> Split up the phrase into words.
-  	<li> Take the <b>first letter</b> of each word (keep in mind that <tt>split()</tt> returns a list of the words ) and concatenate from last to first to make a <b>backwards acronym</b> of it
+    <li> Split the phrase into a list of words. 
+  	<li> Take the <b>last letter</b> of each word (by looping through the list) and print it on the same line.
   </ol>
 A sample run of your program should look like:
-<pre style = "background-color:lavender;width:500px">
- Enter a phrase:  City University New York
- Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
- Acronym:  YNUC
+<pre style = "background-color:lavender;width:350px">
+Enter a phrase:  City University New York
+Reversed phrase:  kroY weN ytisrevinU ytiC
+Last letters of reversed words:  YNUC
 </pre>
 
-<p>Another run:
-  <pre style = "background-color:lavender;width:500px">
-  Enter a phrase:  Hunter College
-  Your phrase in capital letters:  HUNTER COLLEGE
-  Acronym:  CH
-  </pre>
+Another run:
+<pre style = "background-color:lavender;width:350px">
+Enter a phrase:  Hunter College
+Reversed phrase:  HUNTER COLLEGE
+Last letters of reversed words: CH
+</pre>
 
 
 
@@ -438,36 +451,42 @@ The temperature is 59.0 degrees Fahrenheit
 <br><i><b>Hint</b> Don't forget to convert the input into a numeral for calculation.</i>
 
 <p>
-<li > <b>Due Date: 5 October</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>,  <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>  & <a href="lab4.html">Lab 4</a></b><br>
+<li > <b>Due Date: 7 October</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>,  <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>  & <a href="lab4.html">Lab 4</a></b><br>
 
 <p>
 Write a program that implements the following pseudocode using turtles:
 
 <pre>
-Ask the user for number of stamps
-Set the turtle shape to 'arrow'
-Set the turtle color to 'cyan'
-Lift the turtle pen up
-Set steps to 10
-Repeat stamps times:
-    Stamp
-    If the number of this loop iteration is divisible by 2
-        Increment steps by 3
-    Move fowrard by steps
-    Turn right by 24 degrees
+    ask the user for number of stamps
+    create a turtle
+    set colormode to 255
+    set the turtle shape to 'circle'
+    lift the turtle pen up
+    set steps to 10, red to 186, green to 164, and blue to 145
+    set turtle color to (red, green, blue)
+
+    repeat stamps times:
+        stamp
+        increment steps by 2
+        if adding 3 to red, green, and blue does not exceed 255:
+          add 3 to red, green, and blue
+        set turtle to new color
+        have turtle move forward by steps
+        have turtle turn right 24 degrees  
+
 </pre>
 
 
 <p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:375px">
 Enter number of stamps the turtle will print: 50
 </pre>
 
 <p>and the output should look similar to:
 <br>
-<img src="../images/s21program17.png" style="padding:25px" height=200>
+<img src="../images/f21_program17.png" style="padding:25px" height=200>
 
-  <p>For your reference, here is a <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a>.
+  <p>For your reference, here is a <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a>. <p><b>Suggested:</b> Set turtle speed to 0.
 
 
 
@@ -631,23 +650,28 @@ Your output should look similar to:
 
 
 <a id="cr6"></a>
-	<li > <b>Due Date: 15 October </b>  <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
+	<li > <b>Due Date: 18 October </b>  <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab5.html">Lab 5</a></b><br>
 
 
-		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the name of a <tt>.png</tt> file and print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue are all above 0.8).
+		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the names of two <tt>.png</tt> files and a threshold for the white pixels. Then, print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue above the threshold) for each image. Calculate the difference between the snow counts and print them out.
 
-		<p>For example, if your file was of the snow pack in the Sierra Nevada mountains in California in September 2014:
+		<p>For example, if your images was of the snow pack in the Sierra Nevada mountains in California in February 2011 and in February 2014:
 
 		<p>
+    <img src="../images/CaliforniaDrought_02232011_md.png" width=300>
 		<img src="../images/CaliforniaDrought_02232014_md.png" width=300>
+
 
 		<p> then a sample run would be:
 		<pre style ="background-color:lavender;width:400px">
-Enter file name:  caDrought2014.png
-Snow count is 38010</pre>
+Enter first image file name:  feb2011.png
+Enter second image file: feb2014.png
+Enter threshold of white pixels: 0.8
+Snow count of first image: 228663
+Snow count of second image: 31171
+Difference between first and second image: 197492</pre>
 
-<p> Note:  for this program, you only need to compute the snow count.  Showing the image will confuse the grading script, since it's only expecting the snow count.
 
 
 
@@ -938,12 +962,18 @@ Enter name of output file:  airbnb_avg_price_barplot.png
 
 
 
-<li > <b>Due Date: 6 November</b> 	<b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
+<li > <b>Due Date: 1 November</b> 	<b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
 
 
-<p> Write a program, using a function <tt>main()</tt> that prints "Hello Functions!" to the screen. <b>The program should be executable as stand-alone program as well as included as a module in another program.</b>   See <a href="lab7.html">Lab 7</a>.
+<p> Write a program using a function <tt>main()</tt> that asks the user for a number <tt>n</tt>  and prints "Hello Functions!" <tt>n</tt> times. <b>The program should be executable as stand-alone program as well as included as a module in another program.</b>   See <a href="lab7.html">Lab 7</a>.
 
-
+<p> A sample run of the program: 
+<pre style = "background-color: lavender; width: 190px;">
+Enter a number: 3
+Hello, Functions!
+Hello, Functions!
+Hello, Functions!
+</pre>
 
 
 <li > <b>Due Date: 7 November</b>
@@ -1162,11 +1192,11 @@ Enter number of sides: 4
 
 
 
-<li > <b>Due Date: 14 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
+<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
 
 
 
-  <p>Fill in the missing functions:
+  <p>Using the template program, <tt> averageImage.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing functions:
 
   <ul>
     <li> <tt>average(region):</tt>  Takes a region of an image and
@@ -1194,9 +1224,7 @@ Enter number of sides: 4
 
     <p> <img src="../images/csBridge.png" width=400>
 
-  <p>Use the template program, <tt>averageImage.py</tt>, available on the
-  <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
-  The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+  <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
   <p><b>IMPORTANT</b> Do not remove anything below <b>and including</b> the comment that says:
 <pre style ="background-color:lavender;width:600px">
   ######################################################################
@@ -1208,68 +1236,26 @@ Enter number of sides: 4
   <p><i>Hint:  See notes from Lecture 8.</i>
 
 
-<li > <b>Due Date: 15 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab8.html">Lab 8</a></b><br>
+<li > <b>Due Date: 10 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab8.html">Lab 8</a></b><br>
 
-<p>Write a program that, given an input image, creates a tile-collage by repeating modified copies of the input image (inspired by the 2013 <a href="http://nifty.stanford.edu/2013/guzdial-collage/" target="_blank">Nifty Collage</a> by Mark Guzdial)
-  <p>Using the template program, <tt>tilesCollage.py</tt>, available on the
-  <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>, fill in the missing functions:
-
+<p> Using the template program, <tt> checkers.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing lines of code to create a program that constructs a checkerboard and a checker piece that moves. Detailed instructions are provided on the template program.
   <ul>
-    <li> <tt>fourfold_tile(img)</tt>  Takes an image and
-      <b>returns</b> a new larger image that contains 4 copies of <tt>img</tt> in a tile layout, with 2 copies at the top and 2 copies at the bottom
-    <li> <tt>remove_hue(img, hue):</tt> Takes an image and a hue, either "red", "green" or "blue",
-      and turns off the corresponding color channel in <tt>img</tt>. If the value of <tt>hue</tt> is not one of the expected, it prints: <i>No such hue.</i>
-      This function does not return a value, it simply switches off the color channel on the input image.
-    <li> <tt>mirror(img, axis)</tt>  Creates and <b>returns</b> a mirrored copy of <tt>img</tt> along <tt>axis</tt>, either 'x', 'y', 'xy' (mirrored along both x and y axes)
-    If the value of <tt>axis</tt> is not one of the expected, it prints: <i>Invalid axis.</i>
-    </ul>
-
-<p> A sample run of the program:
-<pre style ="background-color:lavender;width:450px">
-Enter input file name: octopus.png
-Enter output file name: collage.png
-</pre>
-<p>Which given input image:
-<p><img src="../images/octopus.png" width=150>
-<p>Will produce the collage:
-<p><img src="../images/octo_collage.png" width=300>
-
-
-<p> And another sample run of the program:
-<pre style ="background-color:lavender;width:450px">
-Enter input file name: marylin.png
-Enter output file name: warhol_collage.png
-</pre>
-
-<p>With input:
-<p><img src="../images/marylin.png" width=150>
-<p>And output:
-<p><img src="../images/warhol_collage.png" width=300>
-
-<p><b>Hints:</b>
-  <ul>
-    <li>To fit four copies of img (two at the top and two at the bottom) the new image must be twice as large and twice as tall
-    <li>To mirror an image over an axis, think of it being the same image but it <b>steps backwards</b> on that axis (mirror on x axis means reversing the rows, etc.)
-    <li>To remove a hue, turn off that color channel (no light in that channel).
+    <li> Import libraries necessary for the program </li>
+    <li> <tt>drawBoard(size)</tt>: Creates a checkerboard of <tt>size</tt> pixels as a <tt>numpy</tt> array and saves as <tt>board.png</tt> using <tt>matplotlib</tt>. </li>
+    <li> <tt>setupScreen(size)</tt>: Sets up a <tt>turtle</tt> screen of <tt>size + 100</tt> by <tt>size + 100</tt> with the background image as the board. </li>
+    <li> <tt>createPiece(pieceColor)</tt>: Creates and returns a turtle to act as a checker piece. The turtle shape should be a circle and the color should be the parameter value. The turtle pen should be picked up. </li>
+    <li> <tt>movePiece(size, piece, row, col)</tt>: Moves the checker piece to a specific row and column on the board. </li>
+    <li> <tt>main()</tt>: Asks the user for a size for the checkerboard. Then, creates the checkerboard, sets up the screen, and a creates a single red checker piece. Lastly, asks the user for a row and a column to move the piece to and moves the piece. </li>
   </ul>
 
-<p>The grading script runs the whole program as well as each function separately ('unit tests') to determine correctness.  As such, the function names must match exactly as indicated above (else, the scripts cannot find them).
-<p><i><b>Hint:</b> See <a href="lab4.html">Lab 4</a> for type conversion and decisions, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a> for programming with functions.</i>
-
-<p><b>Not for submission:</b>
-<br>Once you have successfully submitted your program to Gradescope, play around with the program to create different collages:
-  <ul>
-    <li>Can you make collages with 6 tiles?
-    <li>Can the number of tiles be parameterized?
-    <li>Can you add a function that will create different color patterns?
-    <li>Can you randomize the color of each tile?
-    <li>Can you crop the image?
-    <li>Can you combine two or more input images?
-    <li>Anything else?
-    </ul>
-<i>Share with us your creative solutions and we will showcase the best collages in lecture!</i>
-
-
+  <p> A sample run:
+  <pre style="background-color: lavender; width: 400px;">
+Enter size of checkerboard: 400
+Enter row to move piece to: 3
+Enter col to move piece to: 5</pre>  
+  <p> which would produce: 
+  <p><img src="../images/f21_program40.png" width = 400>
+  <p> <b>Important</b>: No lines of code from the template program should be removed or changed. Only add in the missing lines of code. </p>
 
     <hr>
     <p>
@@ -1357,12 +1343,34 @@ A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterB
 
 
 
-  <li > <b>Due Date: 21 November</b>
+  <li > <b>Due Date: 16 November</b>
   <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Debugging/toctree.html#">Chapter 3</a> & <a href="lab9.html">Lab 9</a></b><br>
 
 
   <p>The program,
-  <a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsCircles.py" target="_blank">errorsCircles.py</a>, has lots of errors.  Fix the errors and submit the modified program.
+  <a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsUTAs.py" target="_blank">errorsUTAs.py</a>, has lots of errors.  Fix the errors and submit the modified program. Pay attention to what your program outputs and what it should output!
+  <p> The functional program should output:
+  <pre style = "background-color: lavender; width: 500px;">
+UTA List:
+Aida
+Arterio
+Destiny
+Ghazanfar
+Ifte
+Ilya
+Leonardo
+Mandy
+Nancy
+Sadab
+Stephanie
+Tyler
+
+Lola is not a UTA for CSci 127 Fall 2021.
+Mandy is a UTA for CSci 127 Fall 2021.
+Leonardo is a UTA for CSci 127 Fall 2021.
+Yash is not a UTA for CSci 127 Fall 2021.
+There are 12 UTAs who love helping students in CSci 127 Fall 2021.
+</pre>
 <p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
 
 
@@ -1598,19 +1606,26 @@ The day is Thursday
 
 
 
-<li > <b>Due Date: 6 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
-<p> Write a <b>C++ program</b> that converts inches to feet.  Your program should prompt the user for the length in inches and then print out the length in feet (there are 12 inches in one foot).
+<li > <b>Due Date: 3 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
+<p> Write a <b>C++ program</b> that converts cryptocurrencies to feet. Your program should prompt the user for an amount in cryptocurrency and then print out the conversion from Bitcoin, Ethereum, and Dogecoin to USD.
+
+<p> The current conversion rates (from <a href="https://www.coindesk.com/">Coindesk</a>) as of July 16, 2021:
+  <ul>
+  <li> 1 BTC = $31,901.19 USD </li>
+  <li> 1 ETH = $1,901.54 USD </li>
+  <li> 1 DOGE = $0.179733 USD </li>
+  </ul>
 
 <p><b>IMPORTANT:</b> For grading purposes, set the precision to two decimal places. To do so, add <tt>#include &lt;iomanip&gt;</tt> at the top of the file, and <tt>cout << fixed << setprecision(2); </tt> before outputting the length in feet.
 
 <p>A sample run of your program:
   <pre style ="background-color:lavender;width:400px">
-Please enter the length in inches: 32
-The length is 2.67ft.
+Enter amount in cryptocurrency: 1.27
+1.27 BTC in USD: $40525.94
+1.27 ETH in USD: $2414.96
+1.27 DOGE in USD: $0.23
 </pre>
 <p>See <a href="lab4.html">Lab 4</a> for designing Input-Process-Output programs and <a href="lab12.html">Lab 12</a> for getting started with C++.
-
-
 
 
 
