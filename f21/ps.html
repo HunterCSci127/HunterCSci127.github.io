@@ -1,0 +1,1843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Programming Problem List, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2021</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+  <style type="text/css">
+  	li {
+  		  padding-bottom:	7px ;
+  }
+  </style>
+</head>
+
+<body>
+
+<div id="header"><br>
+<!--<img id="bookImage" alt="mapping quake data" src="../images/mappingQuakeData5.png"
+ width="120">-->
+<h2>Programming Problem List<br>
+CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2021<br><br>
+</h2>
+</div>
+
+
+<div>
+
+<h3>General Notes</h3>
+
+
+<ul>
+	<li> Every program should begin with a comment that includes your name, email and a brief description.
+
+	<pre style ="background-color:lavender;width:400px">
+#Name: Thomas Hunter
+#Email: thomas.hunter1870@myhunter.cuny.edu
+#Date: September 2, 2021
+#This program prints: Hello, World!
+
+print("Hello, World!")</pre>
+
+  <li> You are strongly encouraged to submit your assignments before the due date.  Below lists the
+		last date on which each assignment will be accepted.
+		Assignments must be
+		<b>submitted before 6pm</b> on the date due.
+  <li> For flexibility (to allow you to catch up should you be unable to submit work on a particular day/week), due dates are staggered with one assignment due each day starting the second week of classes. <b>To succeed in this course you should work on assignments the week of the corresponding lab, don't work on an assignment the day it is due!</b>
+     You don't know how long it will take you to debug a program and you will likely miss deadlines.
+	<li> <b>No late assignments will be accepted. </b>
+	<li> Before submitting an assignment you are free to ask for help in Blackboard drop-in tutoring, Blackboard discussion board and by e-mail (<b><tt>hunterCSci127help AT gmail.com</tt></b>). Please take advantage of this, we offer a lot of support but you must be proactive about it.
+  <li><b>You must always test your code locally (on your computer) before submitting to Gradescope.</b> When you run your porgram on your computer, if there is an error you will get compiler messages that will help you debug your code. You will not get that kind of feedback from Gradescope. When your program runs correctly on your computer, then you can submit.
+	<li>For more information on using <a href="https://www.gradescope.com">gradescope</a>, see the <a href="lab1.html">Lab 1
+</a>.
+	<li> While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.
+	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (35% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the Office of Student Affairs.
+
+	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the Lecture notes, the Lab and take the Lab Quiz on Tuesday and Wednesday, then set aside a block of time on Thursday, Friday and Monday to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
+  <li> If Gradescope gives you a "Test Failed: list index out of range" error or "The autograder failed to execute..." it means your program does not run. <b>Please check that your program runs correctly on your local machine before submitting to Gradescope.</b>
+<ul>
+</div>
+
+<div>
+
+<hr>
+<p>Submit the following programs via <a href="https://gradescope.com">Gradescope:</a></p>
+
+<hr>
+
+<div>
+
+<ol>
+<a id="ps1"></a>
+<h2><u> Lecture / Lab 1</u></h2>
+
+	<li > <b>Due Date: 9 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/GeneralIntro/toctree.html">Chapters 1</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">2</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a></b><br>
+
+	<p>	Write a program that prints "Hello, World!" to the screen.
+
+	<p><i>Hint:  See the  <a href="lab1.html">Lab 1</a>.</i>
+
+<a id="cr1"></a>
+
+	<li > <b>Due Date:  10 September</b>  <b style="float:right">Reading:  Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a></b><br>
+
+
+		<p>Write a program that draws a hexagon.
+      <br><img id="hexagon" alt="program 2" src="../images/hexagon.png" width="200">
+		<br><br>
+		<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
+		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".
+		</i>
+
+	<p><i>Hint:  See the  <a href="lab1.html">Lab 1</a>.</i>
+
+	<li > <b>Due Date: 11 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a></b><br>
+
+		<p> Copy the program from <a href="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> into a file on your computer and modify the program to have a 'cyan' background, <tt>tess</tt> color "red", and let <tt>tess</tt> draw a pentagon instead of a triangle and <tt>alex</tt> draw a triangle instead of a square:
+
+<p>
+<img src="../images/s21program3.png" height=200>
+<p><b>Note:</b> Make only the modifications indicated here, all other behaviors should stay the same. (i.e. distance forward, pen size etc.)
+<p> In programming, it is important to learn to follow instructions precisely. A small difference to you may result in a program that runs incorrectly. This is part of what you are learning here: <b>follow specifications to the letter</b>.
+
+	<li > <b>Due Date: 20 September</b>  <b style="float:right">Reading: Think CS:
+<a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>
+	</b><br>
+
+
+		<p> Write a program that implements the
+	<a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a> ("informal high-level description of the operating principle of a computer program or other algorithm") below:
+
+<pre>
+    import turtle
+    create a turtle
+
+    set the turtle shape to be 'arrow'
+    set the turtle color to 'purple'
+    set the turtle pensize to 3
+
+    walk forward 30 steps
+
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
+
+    walk backward 30 steps
+    turn right 90 degrees
+    walk forward 30 steps
+
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
+
+    walk backward 30 steps
+    turn right 90 degrees
+    walk forward 30 steps
+
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
+
+    walk backward 30 steps
+    turn right 90 degrees
+    walk forward 30 steps
+
+    repeat 3 times:
+      walk forward 50 steps
+      turn right 120 degrees
+
+    walk backward 30 steps
+
+</pre>
+		Your output should look similar to:
+		<br>
+		<img width=250 src="../images/f21_program4.png">
+    <p>Here is a <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a> for your reference.
+<p>
+
+
+    <li > <b>Due Date: 21 September</b>  <b style="float:right">Reading: Think CS:
+  <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>
+  	</b><br>
+<p> Write a program that uses turtle graphics to generate the image below:
+<p><img id="turtleFlower" alt="program 5" src="../images/f21program5.png" width="250">
+<p>
+  <br><b><i>Hints:</i></b> Create the same image shown above. Turtle should move forward 100 in the direction it starts facing initially.  
+  <br>This assignment aims to challenge you to analyze the image to deduce the process (given a description of the output, write the program to produce it), which is how software developers often approach problems.
+  <br><b>So what should you do? </b>Try to puzzle out the image, break down what the turtle does, then apply what you have learned so far about definite loops (for loops) and turtle graphics to reproduce that process. Here some guiding questions:
+  <ul>
+    <li>How would you create one rhombus first if the angle is 45?
+    <li>How many turtles do you see? How many repetitions? How many rhombuses do you need to create?
+    <li>What does the turtle do in each repetition?
+    <li>Once you figured out the answer to the previous two questions, play around with the angle to produce the image.
+    <li>Look up the turtle functions <tt>pencolor()</tt> and <tt>fillcolor()</tt> to produce the turtle colors?
+    <li>You have used that background color before, what color was it?
+  </ul>
+  Hope this helps!!!
+  <p>Here is a <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a> for your reference.
+
+
+
+
+
+<hr>
+<p>
+<a id="ps2"></a>
+<h2><u> Lecture / Lab 2</u></h2>
+
+<p>
+
+
+  <li > <b>Due Date: 18 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a> & <a href="lab2.html">Lab 2</a></b><br>
+
+		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that <b>prompts the user for a message</b>, and then prints <b>that message</b>, the message in upper case letters and the message in lower case letters.
+
+<p>A sample run of your program should look like:>
+<pre style ="background-color:lavender;width:400px">
+Enter a message:  Mihi cura futuri
+Mihi cura futuri
+MIHI CURA FUTURI
+mihi cura futuri
+</pre>
+
+<p>Another sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter a message:  I love Python!
+I love Python!
+I LOVE PYTHON!
+i love python!
+</pre>
+
+	<p><i>Hint:  Your program should be able to take any phrase the user enters.  To do that, you need to store the phrase in a variable and print variations of the stored variable.
+	</i>
+  <br>
+
+
+
+
+
+<li > <b>Due Date: 23 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a> & <a href="lab2.html">Lab 2</a></b><br>
+
+  <p>Combining <tt>ord()</tt> and <tt>chr()</tt> write a program that:
+  <ul>
+  	<li> Prompts the user to enter a message
+  	<li> Prints each character in the message, and the character corresponding to the unicode + 5.
+  </ul>
+A sample run of your program should look like:
+<pre style = "background-color:lavender;width:450px">
+ Enter a message:  abc
+ a shifted by 5 characters is: f
+ b shifted by 5 characters is: g
+ c shifted by 5 characters is: h
+</pre>
+
+<p>Another run:
+<pre style = "background-color:lavender;width:450px">
+ Enter a message: Hello
+ H shifted by 5 characters is: M
+ e shifted by 5 characters is: j
+ l shifted by 5 characters is: q
+ l shifted by 5 characters is: q
+ o shifted by 5 characters is: t
+</pre>
+
+
+<p><i> Note:  the grading scripts expect the email associated with your Gradescope account.  If you get an error that the email does not match, compare carefully the email you printed and the email on file.</i>
+
+
+
+
+<li > <b>Due Date: 22 September</b>  <b style="float:right">Reading: Think CS:	<a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/TherangeFunction.html">Section 4.7</a> & <a href="https://huntercsci127.github.io/f20/lab2.html">Lab2</a></b><br>
+
+
+<p>Write a program that prints out multiples of 3 up to 45.
+
+
+<p>The output of your program should be:
+<pre style ="background-color:lavender;width:200px">
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+</pre>
+
+
+<p><i><b>Hint:</b> Use the</i> <code>start, stop, step</code> <i>options in the</i> <code>range()</code> <i>function</i> and print the loop variable.
+
+
+<li > <b>Due Date: 27 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html"> chapter 9</a>, <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> & <a href="lab2.html">Lab 2</a></b><br>
+
+  <p>Write a problem that does the following:
+  <ol>
+  	<li> Prompt for a phrase & read it in.
+  	<li> Reverse the phrase and print it.
+  	<li> Make the phrase upper case.
+    <li> Split the phrase into a list of words. 
+  	<li> Take the <b>last letter</b> of each word (by looping through the list) and print it on the same line.
+  </ol>
+A sample run of your program should look like:
+<pre style = "background-color:lavender;width:350px">
+Enter a phrase:  City University New York
+Reversed phrase:  kroY weN ytisrevinU ytiC
+Last letters of reversed words:  YNUC
+</pre>
+
+Another run:
+<pre style = "background-color:lavender;width:350px">
+Enter a phrase:  Hunter College
+Reversed phrase:  HUNTER COLLEGE
+Last letters of reversed words: CH
+</pre>
+
+
+
+
+<a id="cr3"></a>
+	<li > <b>Due Date: 24 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a> & <a href="lab2.html">Lab 2</a></b><br>
+
+    <p><img src = "../images/ciphrdsk.gif" height=200>
+      <br><i>(The cipher disk above shifts 'A' to 'N', 'B' to 'O', ... 'Z' to 'M', or a shift of 13.  From <a href="https://www.secretcodebreaker.com/history2.html">secretcodebreaker.com</a>.)</i>
+
+
+		<p>Write a program that prompts the user to enter a word and then prints out the word with each letter <b>shifted right by 13</b> characters.
+
+      <br>Assume that all inputted words are in <b>upper case letters</b>: 'A',...,'Z'.
+
+		<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:400px">
+  Enter a word: ZEBRA
+  Your word in code is MROEN
+</pre>
+
+
+		<p> <i><b>Hint:</b>  See the example programs from Lecture  to find out how to wrap around (Lecture slides can be found on the <a href="https://huntercsci127.github.io/f20.html">course outline</a>).</i>
+
+
+<hr>
+<p>
+<a id="ps3"></a>
+<h2><u> Lecture / Lab 3</u></h2>
+
+<p>
+
+
+
+
+<a id="cr4"></a>
+
+
+
+
+	<li > <b>Due Date: 25 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
+
+		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of green and then move the turtle forward 300 steps without writing (use the <tt>penup()</tt> and <tt>pendown()</tt> turtle functions) and repeat the same loop, but backwards.
+
+		<p>
+		Your output should look similar to:
+		<br>
+		<img src="../images/s21program11.png" height=200>
+    <br>
+    <i>Note: when we say "Modify the program..." only make the requested modifications, everything else is assumed to be keept as is.</i>
+
+
+    <li > <b>Due Date: 30 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
+
+  		<p>Now modify the program from <a href="lab3.html">Lab 3</a> to create two transitions from shades of yellow to red by moving forward 10 steps.
+        
+  		<p>
+  		Your output should look similar to:
+  		<br>
+  		<img src="../images/f21program12.png" height=200>
+
+	<p> <i><b>Hint:</b> decrease the amount of green using the loop variable while keeping the amount red same</i>
+
+
+<li > <b>Due Date: 1 October</b>
+
+
+<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>, <a href="lab2.html">Lab 2</a> & <a href="https://huntercsci127.github.io/f20.html#l3">Lecture 3</a> </b><br>
+
+
+<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a hyphen surrounded by spaces (" - ") and the names are entered <tt>firstName lastName, </tt> (i.e. separated by space " " ). Your program should then print out the names, one per line, with the last name followed by the first initial of the first name, followed in turn by "."
+
+<p>A sample run of your program should look like:
+<pre style ="background-color:lavender">
+Please enter your list of names: Ada Lovelace - Williamina Fleming - Grace Hopper - Annie Easley
+Lovelace A.
+Fleming W.
+Hopper G.
+Easley A.
+
+Thank you for using my name organizer!
+</pre>
+
+<p><i>Hint: See <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, how do you index to extract the first character?</i>
+
+
+
+  <li > <b>Due Date: 4 October</b>
+
+
+
+<b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>, <a href="lab2.html">Lab 2</a>  & <a href="lab3.html">Lab 3</a></b><br>
+
+<p>Write a program that asks the user for a 6-digit hex number and uses it as the hex code to stamp 4 turtles of that color into a square
+<br>Let the turtle walk forward 100 steps between stamps and use the sequence stamp/forward (i.e. stamp before moving the turtle, such that the last turtle is produced by its position, not a stamp).
+
+<p>A sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Please enter a 6-digit Hexadecimal number: 00FFFF
+
+</pre>
+  <p> which produces an output:
+
+  <p><img src="../images/f21_program14.png" height = 100>
+
+<p><i><b>Hint:</b> don't forget to add the '#' at the beginning of the hex number to use it as a hex encoding for color! For string concatenation see <a href="lab2.html">Lab 2.</a> You may assume that the user always inputs a valid 6-digit Hex number. </i>
+
+<p>	<li > <b>Due Date: 3 October</b>
+<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
+<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab3.html">Lab 3</a></b><br>
+
+<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green and blue channels of the original image (that is, no red channel).
+  <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>
+
+
+<p> A sample run of your program should look like:
+
+<pre style ="background-color:lavender;width:400px">
+Enter name of the input file:  csBridge.png
+Enter name of the output file:  nored.png
+</pre>
+
+<p> Sample input and resulting output files:
+
+<p>
+<img src="../images/csBridge.png" width = 300>
+<img src="../images/cyanBridge.png" width = 300 >
+
+
+<p> <b>IMPORTANT:</b>  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>.</i>
+
+
+
+      <hr>
+      <p>
+<a id="ps4"></a>
+      <h2><u> Lecture / Lab 4</u></h2>
+<p>
+
+  <li > <b>Due Date: 4 October</b><b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a>  & <a href="lab4.html">Lab 4</a></b><br>
+<p>Write a program that asks for the temperature in degrees Celsius (C) and outputs the temperature in degrees Fahrenheit (F) where <i> F = (C*9/5)+32</i>.
+
+<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:400px">
+Please enter the temperature in degrees Celsius: 15
+The temperature is 59.0 degrees Fahrenheit
+</pre>
+
+<br><i><b>Hint</b> Don't forget to convert the input into a numeral for calculation.</i>
+
+<p>
+<li > <b>Due Date: 7 October</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>,  <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>  & <a href="lab4.html">Lab 4</a></b><br>
+
+<p>
+Write a program that implements the following pseudocode using turtles:
+
+<pre>
+    ask the user for number of stamps
+    create a turtle
+    set colormode to 255
+    set the turtle shape to 'circle'
+    lift the turtle pen up
+    set steps to 10, red to 186, green to 164, and blue to 145
+    set turtle color to (red, green, blue)
+
+    repeat stamps times:
+        stamp
+        increment steps by 2
+        if adding 3 to red, green, and blue does not exceed 255:
+          add 3 to red, green, and blue
+        set turtle to new color
+        have turtle move forward by steps
+        have turtle turn right 24 degrees  
+
+</pre>
+
+
+<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:375px">
+Enter number of stamps the turtle will print: 50
+</pre>
+
+<p>and the output should look similar to:
+<br>
+<img src="../images/f21_program17.png" style="padding:25px" height=200>
+
+  <p>For your reference, here is a <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a>. <p><b>Suggested:</b> Set turtle speed to 0.
+
+
+
+
+	<li > <b>Due Date: 8 October</b>
+<b style="float:right">Reading: Think CS: <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a>,  <a href="lab3.html">Lab 3</a> & <a href="../f20.html">Lecture 4</a></b> <br>
+
+
+	<p>
+	In Lecture 4, we designed a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a green 'T' logo for Thomas Hunter on a 30x30 grid.
+
+	<p>
+	<img src="../images/s21program18.png" style="padding:5px" height=200>
+
+	<p> The grading script is expecting:
+	<ul>
+		<li> The file to be saved as:  <tt>logo.png</tt>.
+		<li> The grid to be 30 x 30.
+		<li> The 'T' to be 0% red, 100% green, and 0% blue.  The top part of the 'T' should be the top third of the image and the bottom part of the 'T' should be the center third of the image.
+		<li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
+	</ul>
+
+	<p> Note:  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+	<p><i>Hint:  See notes from Lecture 4. (Lecture slides can be found on the <a href="https://huntercsci127.github.io/f20.html">course outline</a>) </i>
+
+
+
+
+<li > <b>Due Date: 9 October</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> & <a href="lab4.html">Lab 4</a></b><br>
+
+
+
+
+<p>Write a program that implements the pseudocode below:
+<pre>
+Ask the user for their taxable income.
+Compute and output the marginal tax rate as follows:
+  -  Error if income is negative
+  -  10% if income $0 - $9,700
+  -  12% if income $9,701 – $39,475
+  -  22% if income $39,476 – $84,200
+  -  24% if income $84,201 – $160,725
+  -  32% if income $160,726 – $204,100
+  -  35% if income $204,101 – $510,300
+  -  37% if income $510,301+
+</pre>
+
+<p>Think about the order of your decisions: <b>elif/else clauses are considered only if the previous condition is false!</b>
+
+
+<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:400px">
+Enter taxable income: 120000
+Marginal tax rate: 24%
+</pre>
+
+<p>and another sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter taxable income: -50000
+Marginal tax rate: Error
+</pre>
+
+
+<p><i>Hint: See <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/Chainedconditionals.html">Section 7.7</a>.</i>
+
+
+
+
+	<li > <b>Due Date: 13 October</b>
+		<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
+	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab4.html">Lab 4</a></b><br>
+
+
+		<p>Modify the flood map of NYC from <a href="lab4.html">Lab 4</a> to color the region of the map with elevation greater than 5 feet and less than or equal 20 feet above sea level the color grey (50% red, 50% green, and 50% blue). Also, change the blue water to yellow
+
+		<p> Your resulting map should look like:
+		<p> <img src="../images/f21program20.png" width=300>
+		<p> and be saved to a file called <tt>floodMap.png</tt>.
+
+		<p> <b><i>Note:</b></i>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.imshow()</tt> and <tt>plt.show()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+
+
+
+
+  <hr>
+      <p>
+<a id="ps5"></a>
+      <h2><u> Lecture / Lab 5</u></h2>
+
+
+
+
+
+
+
+<li > <b>Due Date: 14 October</b> 	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
+<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a>,  <a href="lab3.html">Lab 3</a>,  <a href="lab4.html">Lab 4</a> & <a href="../f20.html">Lecture 4</a></b> <br>
+<p><b>REVIEW from Lecture/Lab 4</b>
+<p>Write a program that creates an image of khaki and rosy horizontal and vertical stripes. 
+  <br>
+  <br>The color codes are below. 
+  <br>
+  RGB(188,143,143), #BC8F8F - Rosy Brown 
+  <br>
+  RGB(240, 230,140) #F0E68C - khaki 
+  <br>
+  Use the color converter to get the RGB% from hex:https://andylangton.co.uk/tools/colour-converter
+  <br>
+  <br>Your program should ask the user for the size of your image, the name of the output file, and create a <tt>.png</tt> file of stripes.  For example, if the user enters 10, your program should create a 10x10 image, alternating between khaki and rosy brown stripes.
+
+<p>
+A sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Enter the size: 10
+Enter output file: 10stripes.png
+</pre>
+<br>
+<img src="../images/f21_10stripes.png" style="padding:5px" height=200>
+
+<p>
+Another sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Enter the size: 50
+Enter output file: 50stripes.png
+</pre>
+<br>
+<img src="../images/f21_50stripes.png" style="padding:5px" height=200>
+
+
+
+<p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+<p><i>Hint:  See notes from Lecture 4.</i>
+
+
+
+
+
+
+
+
+
+
+<li > <b>Due Date: 12 October</b>
+<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a>,  <a href="https://huntercsci127.github.io/s20/lab1.html">Lab1</a>, <a href="lab2.html">Lab 2</a>  & <a href="lab4.html">Lab 4</a></b><br>
+
+
+
+<p>Write a program that implements the <a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a> ("informal high-level description of the operating principle of a computer program or other algorithm") below for drawing a spiral of squares using turtles:
+<br>Observe the process: the outer loop shifts the square then the inner loop draws the square!
+<pre>
+Let length be 25
+Repeat 100 times:
+    Turn right 5 degrees
+    Increment length by 2%
+    Repeat 4 times:
+        Walk forward length steps
+        Turn right 90 degrees
+</pre>
+Your output should look similar to:
+<br>
+<img src="../images/squareSpiral.png" height=200>
+<br>
+<i>Reminder: to calculate 2%  of quantity x, you can multiply x by 0.02.
+  To increment, you can add that number to x or you can directly multiply x by 1.02</i>
+
+
+
+
+<a id="cr6"></a>
+	<li > <b>Due Date: 18 October </b>  <b style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/static/thinkcspy/Selection/toctree.html">Chapters 7</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">8.10</a>  &
+	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab5.html">Lab 5</a></b><br>
+
+
+		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the names of two <tt>.png</tt> files and a threshold for the white pixels. Then, print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue above the threshold) for each image. Calculate the difference between the snow counts and print them out.
+
+		<p>For example, if your images was of the snow pack in the Sierra Nevada mountains in California in February 2011 and in February 2014:
+
+		<p>
+    <img src="../images/CaliforniaDrought_02232011_md.png" width=300>
+		<img src="../images/CaliforniaDrought_02232014_md.png" width=300>
+
+
+		<p> then a sample run would be:
+		<pre style ="background-color:lavender;width:400px">
+Enter first image file name:  feb2011.png
+Enter second image file: feb2014.png
+Enter threshold of white pixels: 0.8
+Snow count of first image: 228663
+Snow count of second image: 31171
+Difference between first and second image: 197492</pre>
+
+
+
+
+<li > <b>Due Date: 16 October</b>  <b style="float:right">Reading: <a href="https://www.toves.org/books/logic/">Burch's Logic & Circuits</a> & <a href="lab5.html">Lab 5</a></b><br>
+
+  <p>
+  Build a circuit that has the same behavior as a <tt>NOR</tt> gate (i.e. true only when all inputs are false) using only <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates.
+  <p>
+  <img src="../images/norGate.png" width=300>
+
+  <p>Here is the truth table for
+  the <tt>nor</tt> operator:
+
+  <p>
+  <table border="1px">
+    <tr>
+      <th><tt>in1</tt></th> <th><tt>in2</tt></th> <th><tt>in1 nor in2</tt></th>
+    </tr>
+    <tr>
+      <td>True</td><td>True</td><td>False</td>
+    </tr>
+    <tr>
+      <td>False</td><td>True</td><td>False</td>
+    </tr>
+    <tr>
+      <td>True</td><td>False</td><td>False</td>
+    </tr>
+    <tr>
+      <td>False</td><td>False</td><td>True</td>
+    </tr>
+  </table>
+
+  <p>Save your expression to a text file.
+  See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
+
+
+
+
+<li > <b>Due Date: 20 October</b>
+<b style="float:right">Reading: <a href="http://www.toves.org/books/logic/">Burch's Logic & Circuits</a></b><br>
+
+
+
+<p>Write a logical expression that is equivalent to circuit shown below. Use <tt>in1</tt>, <tt>in2</tt> for the inputs. An example is shown in <a href="lab5.html">Lab 5</a>.
+
+<p> <img src="../images/f21program25.png" width=300>
+
+<p>Save your expression to a text file.
+See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
+
+
+
+<hr>
+
+<p>
+<a id="ps6"></a>
+<h2><u> Lecture / Lab 6</u></h2>
+
+
+<li > <b>Due Date: 18 October</b>  <b style="float:right">Reading: <a href="https://www.toves.org/books/logic/">Burch's Logic & Circuits</a> & <a href="lab5.html">Lab 5</a></b><br>
+<p><b>REVIEW from Lecture/Lab 5</b>
+<a id="cr25"></a>
+	<p> Logical gates can be used to do arithmetic on binary numbers.  For example, we can write a logical circuit whose output is one more than the inputted number.  Our inputs are <tt>in1</tt> and <tt>in2</tt> and the outputs are stored in <tt>out1</tt>, <tt>out2</tt>, and <tt>out3</tt>.
+
+	<p>
+	<img src="../images/incrementer.png" height=200 ><br>
+
+
+	<p>Here is a table of the inputs and outputs:
+
+	<table border="1px">
+	<tr>
+	<th colspan=3>Inputs</th><th colspan=4>Outputs</th>
+	</tr>
+	<tr>
+	<th>Decimal<br>Number</th><th>in1</th><th>in2</th><th>Decimal<br>Number</th><th>out1</th><th>out2</th><th>out3</th>
+	</tr>
+	<tr>
+	<td>0</td><td>0</td><td>0</td> <td>1</td><td>0</td><td>0</td><td>1</td>
+	</tr>
+	<tr>
+	<td>1</td><td>0</td><td>1</td> <td>2</td><td>0</td><td>1</td><td>0</td>
+	</tr>
+	<tr>
+	<td>2</td><td>1</td><td>0</td> <td>3</td><td>0</td><td>1</td><td>1</td>
+	</tr>
+	<tr>
+	<td>3</td><td>1</td><td>1</td> <td>4</td><td>1</td><td>0</td><td>0</td>
+	</tr>
+	</table>
+
+  <p><iframe width="600px" height="400px" src="https://circuitverse.org/simulator/embed/incrementer" id="projectPreview" scrolling="no" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
+ <p>Toggle the inputs, by clicking on the input boxes for <tt>in1</tt> and <tt>in2</tt>, and observe the output. Then translate the circuit into a logical expression.
+	<p>Submit a <b>text file (.txt)</b> with each of the outputs on a separate line:
+<pre style = "background-color:lavender;width:400px">
+#Name:  YourNameHere
+#Date:  November 2017
+#Logical expressions for a 3-bit incrementer
+
+out1 = ...
+out2 = ...
+out3 = ...
+</pre>
+	Where "..." is replaced by your logical expression (see <a href="lab5.html">Lab 5</a>).
+
+
+	<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
+
+
+
+
+
+
+
+<a id="cr7"></a>
+	<li > <b>Due Date: 22 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
+
+
+
+<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/covidCases.csv">NYC Covid-19 Cases</a>.  Your program should ask the user for the name of a borough and the name of the output file.
+<br> The program should compute the minimum, maximum, average, median and standard deviation of the covid-19 cases of the borough entered by the user  and then display the fraction of the covid-19 daily cases in that borough over time.
+<p><b>IMPORTANT: </b> The grading script expects the new column to be called 'Fraction'
+		<p> A sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Enter borough name: Bronx
+Enter output name: bronxCovidFraction.png
+Min: 0
+Max: 1514
+Mean: 309.1382113821138
+Median: 136.5
+Standard Deviation: 336.84985082264524
+</pre>
+<p> The file <tt>bronxCovidFraction.png</tt>:
+
+<p><img src="../images/bronxCovidFraction.png" width=300>
+
+
+<p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+
+
+
+
+
+<li > <b>Due Date: 25 October</b>  <b style="float:right">Reading:
+<a href="https://guides.github.com/activities/hello-world/">Github Guide</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
+
+<p>In <a href="lab6.html">Lab 6</a>, you created a github account.  Submit a text file with the name of your account.	The grading script is expecting a file with the format:
+<pre style = "background-color:lavender;width:400px">#Name:  Your name
+#Date:  September 2020
+#Account name for my github account
+
+AccountNameGoesHere
+</pre>
+
+<p><B>Note:</b>  it takes a few minutes for a newly created github account to be visible.  If you submit to gradescope and get a message that the account doesn't exist, wait a few minutes and try again.
+
+
+
+
+<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading:
+<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
+<p>Write an Unix shell script that prints: <tt> Hello CSCI127 Students!</tt>
+<br> Then prints on a new line: <tt>$USER's is learning shellscripts!</tt>
+<br>where <tt>$USER</tt> is a built-in variable that stores the name of the user.
+
+<p> A sample run of the program with user <tt>tizianaligorio</tt>:
+<pre style ="background-color:lavender;width:400px">
+Hello CSCI127 Students!
+tizianaligorio is learning shell scripts!
+</pre>
+
+<p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
+<br><b>Note:</b> The output will not display a username on Gradescope  since there is no login on the cloud image where the grading script runs.
+
+
+<li > <b>Due Date: 24 October</b>
+<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
+
+
+<p> Download the <a href="../files/volcanicEruptions.csv">Volcanos dataset</a> and look at the data and, in particular, the column names.
+<p> Then, write a program that
+<ul>
+<li> Ask the user for the name of the input file.
+<li> Print the average elevation for each Dominant Rock Type
+<li> Print the height of the tallest volcano in Italy
+</ul>
+<p>
+<p>
+<pre style ="background-color:lavender;width:500px">
+Enter file name: volcanicEruptions.csv
+
+The average height per rock type is as follows:
+Dominant Rock Type
+Andesite / Basaltic Andesite                2153.494810
+Basalt / Picro-Basalt                       1129.892495
+Dacite                                      2538.904255
+Foidite                                     1519.600000
+No Data                                      969.810345
+Phono-tephrite /  Tephri-phonolite          1390.333333
+Phonolite                                   2784.222222
+Rhyolite                                    1564.363636
+Trachyandesite / Basaltic Trachyandesite    1820.700000
+Trachybasalt / Tephrite Basanite            1506.287671
+Trachyte / Trachydacite                     2070.555556
+Name: Elevation (Meters), dtype: float64
+
+The tallest volcano in Italy is 3330 meters high.
+</pre>
+
+<p><b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a>.
+
+
+<hr>
+<p>
+<a id="ps7"></a>
+<h2><u> Lecture / Lab 7</u></h2>
+
+
+<li > <b>Due Date: 25 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+<p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+<ul>
+<li> ask the user to specify the input file,
+<li> ask the user to specify the output file,
+<li> make a plot of the fraction of the total population that are children over time from the data in input file, and
+<li> store the plot in the output file the user specified.
+</ul>
+
+<p>A sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Enter name of input file:  DHS_2015_2016.csv
+Enter name of output file:  dhsPlot.png
+</pre>
+<p> which produces an output:
+
+<p><img src="../images/dhsPlot.png" height = 300>
+
+<p> <b>Note:</b>  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Children".
+
+
+
+
+
+<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab6.html">Lab 6</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+<p>
+
+<b>Let's explore another dataset!</b>
+<br>Consider the the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019.
+<br>You can <a href="../files/AirBnB_NYC_2019.csv">obtain the csv file directly here.</a>
+<br>First download and inspect the data by looking at the <b>column names</b> and type of data in each column.
+<p>
+Now modify the programs from <a href="lab6.html">Lab 6</a> that aggregates rainfall data and the program from <a href="lab7.html">Lab 7</a> that plots shelter population to write a new program that:
+<ul>
+<li> Ask the user for the name of the input file.
+<li> Ask the user for the name of the output file.
+<li> To observe the average airbnb listing price in each borough:
+  <ul>
+    <li> Use <tt>groupby()</tt> to aggregate the data by <tt>'neighbourhood_group'</tt>, which in this dataset represents the borough, and average the <tt>'price'</tt> column
+    <li> Make a bar plot of the data grouped this way by using <tt>.plot.bar()</tt> on the grouped data
+      <br> e.g. if you have
+      <br><tt> grouped_data = df.groupby( ... </tt>
+      <br>then use <tt>grouped_data.plot.bar()</tt> to generate the bar plot
+    <li> Label the x-asix using <tt>plt.xlabel('Borough')</tt>
+    <li> Label the y-axis using <tt>plt.ylabel('Average Price')</tt>
+    <li> Store the plot in the output file the user specified.
+  </ul>
+</ul>
+
+
+
+<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Enter name of input file:  airbnb2019.csv.csv
+Enter name of output file:  airbnb_avg_price_barplot.png
+</pre>
+<p> which produces an output:
+
+<p><img src="../images/airbnb_avg_price_barplot.png" height = 300>
+
+<p> <b>Note:</b> To make the borough names visible at the bottom of the bar plot, use <tt> plt.gcf().subplots_adjust(bottom=0.25)</tt> before <tt>plt.gcf()</tt> (see <a href="lab6.html">Lab 6</a> for how to save the plot to a file.)
+
+
+
+<li > <b>Due Date: 1 November</b> 	<b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+<p> Write a program using a function <tt>main()</tt> that asks the user for a number <tt>n</tt>  and prints "Hello Functions!" <tt>n</tt> times. <b>The program should be executable as stand-alone program as well as included as a module in another program.</b>   See <a href="lab7.html">Lab 7</a>.
+
+<p> A sample run of the program: 
+<pre style = "background-color: lavender; width: 190px;">
+Enter a number: 3
+Hello, Functions!
+Hello, Functions!
+Hello, Functions!
+</pre>
+
+
+<li > <b>Due Date: 7 November</b>
+
+  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+
+
+<p>
+  In <a href="lab7.html">Lab 7</a>, we worked through a program that displayed the homeless shelter occupancy over time.  The same approach can be used for displaying any dataset where the date and time are stored.
+<p>For this program, use the lab as a starting point to display <a href="https://data.cityofnewyork.us/Education/2018-2019-Daily-Attendance/x3bb-kg5j">public school attendance</a> from NYC OpenData. If you would like to test your program on other data, you can filter for an individual school by viewing the data and filtering on the school number ("School DBN"). Export the file as CSV and save.  There is a sample file for the <a href="https://www.mhshs.org/" target='blank'>high school</a> on campus on
+  <a href="https://github.com/stjohn/csci127">github</a>
+
+
+ <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+  <ul>
+  <li> Ask the user to specify the input file,
+  <li> Ask the user to specify the output file,
+  <li> Convert the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
+  <pre>
+  df["Date"] = pd.to_datetime(df["Date"].apply(str))	</pre>
+  <li> Make a plot of the percent of absent students over time from the data in the input file, and
+  <li> Store the plot in the output file the user specified.
+</ul>
+
+<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Enter name of input file:  dailyAttendanceManHunt2018.csv
+Enter name of output file:  manHunt.png
+</pre>
+
+<p> which produces an output:
+
+  <p>
+  <img src="../images/manHuntAbsence.png" height = 300>
+  <p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "% Absent" and the range of values be between a percentage between 0 and 100 (<b>Hint:</b> what do you multiply by to convert a fraction into a percentage?).
+
+
+
+
+
+
+
+
+
+   <li > <b>Due Date: 8 November</b>
+<b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle" target="_blank"> Turtle Graphics</a> & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
+
+<p>
+<b><p><b>Review from Lecture/Lab 4</b></b>
+
+<p>The program, <tt>turtleString.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
+	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
+        <ul>
+          <li> 'F':  moves the turtle forward 50 steps
+          <li> 'L':  turns the turtle 90 degrees to the left
+          <li> 'R':  turns the turtle 90 degrees to the right
+          <li> '^':  lifts the pen
+          <li> 'v':  lowers the pen
+		      <li> 'r':	 change turtle color to red
+          <li> 'g':  change turtle color to green
+		      <li> 'b':  change turtle color to blue
+        </ul>
+        For example, if the user enters the string "FLFLFLFL^FFFvFLFLFLFL", the turtle would move forward and then turn left.  It repeats this 4 times, drawing a square.  Next, it lifts the pen and move forward 3, puts the pen back down and draw another square.
+
+        <p>
+        Modify this program to allow the user also to specify with the following symbols:
+        <ul>
+          <li> 'c':  change the turtle color to <tt>"cyan"</tt>
+          <li> 'T':  stamps a turtle shape
+          <li> 'S':  draws a square with side = 50 and sequence forward/left
+        </ul>
+
+        <p><b>Hint:</b>  See Lecture 4 notes.</i>
+
+
+
+  <hr>
+
+<p>
+<a id="ps8"></a>
+<h2><u> Lecture / Lab 8</u></h2>
+
+
+
+
+<li > <b>Due Date: 4 November</b>  <b style="float:right">Reading: Think CS: <a href="https://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html" target="_blank">Lab 8</a>  </b><br>
+
+
+
+	<p> Write a function, <tt>worldRecord()</tt>, that takes two parameters: gender <tt>(string)</tt> and the event type <tt>(int)</tt>. The function should return a <tt>float</tt> for the Olympic world record for the event.
+  <ul>
+    <li>  Men's Standard, event type 100 meters: record is 9.36 seconds.
+    <li>  Men's Standard, event type 200 meters: record is 19.30 seconds.
+    <li>  Men's Standard, event type 400 meters: record is 43.03 seconds.
+    <li>  Women's Standard, event type 100 meters: record is 10.62 seconds.
+    <li>  Women's Standard, event type 200 meters: record is 21.34 seconds.
+    <li>  Women's Standard, event type 400 meters: record is 48.25 seconds.
+    <li>  Return -1 for any other value
+	</ul>
+
+	<p>A template program, <tt>olympicRecords.py</tt>, is available on the
+	<a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+	The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
+
+<p>A sample run:
+<pre style = "background-color:lavender;width:450px">
+Enter the gender: women
+Enter the event distance: 400
+The world record for women's 400 meters is 48.25 seconds.
+</pre>
+<p> And another:
+<pre style = "background-color:lavender;width:450px">
+Enter the gender: men
+Enter the event distance: 100
+The world record for men's 100 meters is 9.63 seconds.
+</pre>
+
+
+	<p><i><b>Hint:</b>  See <a href="lab8.html">Lab 8</a>.</i>
+
+
+
+  <li > <b>Due Date: 5 November</b>
+  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a> & <a href="lab8.html">Lab 8</a> </b><br>
+
+
+
+<p> Write a program that asks the user for a CSV of Video Games Dataset
+<ul>
+   <li> There is a sample file on <a href="https://github.com/HunterCSci127/CSci127">github</a>.
+</ul>
+
+Your program should then print out:
+  <ul>
+    <li> The total number of games
+    <li> The count of video games of each game genre. 
+    <li> The top 3 game publishers
+  </ul>
+
+<p>A sample run:
+<pre style = "background-color:lavender;width:500px">
+Enter file name: vgsales.csv
+There are 16598 total games
+
+The number of game in each genre are 
+Action          3316
+Sports          2346
+Misc            1739
+Role-Playing    1488
+Shooter         1310
+Adventure       1286
+Racing          1249
+Platform         886
+Simulation       867
+Fighting         848
+Strategy         681
+Puzzle           582
+Name: Genre, dtype: int64
+
+The top 3 game publishers are 
+Electronic Arts       1351
+Activision             975
+Namco Bandai Games     932
+Name: Publisher, dtype: int64
+</pre>
+
+<p> This assignment uses data freely available on
+<a href="https://www.kaggle.com/">kaggle.com</a>, and can be found at:
+<blockquote>
+<a href="https://www.kaggle.com/gregorut/videogamesales">https://www.kaggle.com/gregorut/videogamesales</a>.
+</blockquote>
+
+<p> <i><b>Hint:</b> See <a href="lab8.html">Lab 8</a> for counting values in structured data.</a></i>
+
+
+  <li > <b>Due Date: 13 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html">Lab 8</a></b>
+
+
+  <p> Write two functions, <tt>nestedPolygon()</tt> and <tt>fractalPolygon()</tt>.  Both functions take three parameters: a turtle, an edge length and number of sides.  The pseudocode for <tt>nestedPolygon()</tt> is:
+
+  <pre>
+      nestedPolygon(t, length, sides):
+      1.  If length > 10:
+      2.     Repeat sides times:
+      3.         Move t, the turtle, forward length steps.
+      4.         Turn t left 360/sides degrees.
+      5.     Call nestedPolygon with t, length/2 and sides.
+  </pre>
+
+  <p>The pseudocode for <tt>fractalPolygon()</tt> is very similar:
+  <pre>
+      fractalPolygon(t, length, sides):
+      1.  If length > 10:
+      2.     Repeat sides times:
+      3.         Move t, the turtle, forward length steps.
+      4.         Turn t left 360/sides degrees.
+      5.         Call fractalPolygon with t, length/2 and sides.
+  </pre>
+
+<p> There is a subdtle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two images. Observe the execution and think about it!!!
+  <p>A template program, <tt>nestingPolygons.py</tt>, is available on the
+  <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+  The grading script does not run the whole program, but instead tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>nestedPolygon()</tt> and <tt>fractalPolygon()</tt>).
+
+<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter edge length:  160
+Enter number of sides: 4
+</pre>
+<p>which would produce:
+
+    <p><img height=150 src="../images/nestedSquares.png">
+
+
+
+<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
+
+
+
+  <p>Using the template program, <tt> averageImage.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing functions:
+
+  <ul>
+    <li> <tt>average(region):</tt>  Takes a region of an image and
+      returns the average red, green, and blue values across the region.
+      <li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+    </ul>
+
+  <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+  (inspired by the elegant <a href="https://koalastothemax.com" target="_blank">koalas to the max</a>).
+
+  <p>For example, if you inputted our favorite image, you would see (left to right):
+
+  <p>
+  <img src="../images/refined1.png" width=150>
+    <img src="../images/refined2.png" width=150>
+    <img src="../images/refined3.png" width=150>
+    <img src="../images/refined4.png" width=150>
+    <img src="../images/refined5.png" width=150>
+    <img src="../images/refined6.png" width=150>
+    <img src="../images/refined7.png" width=150>
+    <img src="../images/refined8.png" width=150>
+
+
+  <p> and finally:
+
+    <p> <img src="../images/csBridge.png" width=400>
+
+  <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+  <p><b>IMPORTANT</b> Do not remove anything below <b>and including</b> the comment that says:
+<pre style ="background-color:lavender;width:600px">
+  ######################################################################
+  ### DO NOT CHANGE ANYTHING BELOW AND INCLUDING THIS LINE           ###
+  ######################################################################
+</pre>
+
+
+  <p><i>Hint:  See notes from Lecture 8.</i>
+
+
+<li > <b>Due Date: 10 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab8.html">Lab 8</a></b><br>
+
+<p> Using the template program, <tt> checkers.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing lines of code to create a program that constructs a checkerboard and a checker piece that moves. Detailed instructions are provided on the template program.
+  <ul>
+    <li> Import libraries necessary for the program </li>
+    <li> <tt>drawBoard(size)</tt>: Creates a checkerboard of <tt>size</tt> pixels as a <tt>numpy</tt> array and saves as <tt>board.png</tt> using <tt>matplotlib</tt>. </li>
+    <li> <tt>setupScreen(size)</tt>: Sets up a <tt>turtle</tt> screen of <tt>size + 100</tt> by <tt>size + 100</tt> with the background image as the board. </li>
+    <li> <tt>createPiece(pieceColor)</tt>: Creates and returns a turtle to act as a checker piece. The turtle shape should be a circle and the color should be the parameter value. The turtle pen should be picked up. </li>
+    <li> <tt>movePiece(size, piece, row, col)</tt>: Moves the checker piece to a specific row and column on the board. </li>
+    <li> <tt>main()</tt>: Asks the user for a size for the checkerboard. Then, creates the checkerboard, sets up the screen, and a creates a single red checker piece. Lastly, asks the user for a row and a column to move the piece to and moves the piece. </li>
+  </ul>
+
+  <p> A sample run:
+  <pre style="background-color: lavender; width: 400px;">
+Enter size of checkerboard: 400
+Enter row to move piece to: 3
+Enter col to move piece to: 5</pre>  
+  <p> which would produce: 
+  <p><img src="../images/f21_program40.png" width = 400>
+  <p> <b>Important</b>: No lines of code from the template program should be removed or changed. Only add in the missing lines of code. </p>
+
+    <hr>
+    <p>
+    <a id="ps9"></a>
+    <h2><u> Lecture / Lab 9</u></h2>
+
+
+
+
+    <li > <b>Due Date: 16 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
+        <p><b>REVIEW from Lecture/Lab 4 & 7</b>
+    <p><img src="../images/irmaScreenshot.png" width=400>
+
+    <p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty Hurricane Program</a> by Phil Ventura).
+      <p>Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
+      <ul>
+        <li> <tt>t</tt>: a turtle,
+          <li> <tt>lat</tt>: an integer storing the current latitude,
+          <li> <tt>lon</tt>: an integer storing the current longitude, and
+          <li> <tt>wind</tt>: the current wind speed in miles per hour.
+          </ul>
+
+      <p>
+      Your function should move the turtle to the current location (longitude, latitude), and then based on the
+      <a href="https://www.nhc.noaa.gov/aboutsshws.php" target="_blank">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
+      <ul>
+        <li> red and pen size 5 for Category 5 (windspeed > 157 mph)
+        <li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
+        <li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
+        <li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
+        <li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
+        <li> white and pen size 1 if not hurricane strength
+      </ul>
+
+      <p>A template program, <tt>hurricane.py</tt>, and background image, <tt>mapNASA.gif</tt>, are available on the
+        <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
+        The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+      <p>Two test files (<a href="../files/irma.csv" target="_blank">irma.csv</a> and <a href="../files/jose.csv" target="_blank">jose.csv</a>) are from the <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty site</a>.  Additional CSV files are available there.
+
+        <p>
+        <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
+
+
+        <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+          <p><iframe src="../images/nycMap.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+          <p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for the main campus of Hunter College.  The HTML file your program creates should be called: <tt>nycMap.html</tt>
+
+          <p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+
+
+
+
+
+ <li > <b>Due Date: 20 November</b>
+ <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+
+<p>	Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.
+
+<p>A sample run:
+  <pre style = "background-color:lavender;width:400px">
+  Enter CSV file name:  collisionsThHunterBday.csv
+  Enter output file:  thMap.html
+</pre>
+<p>which would produce the html file:
+
+<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>(The demo above is for October 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
+<tt>tiles="Cartodb Positron"</tt> when creating the map.)
+
+<p> This assignment uses collision data collected and made publicly by
+<a href="https://nycopendata.socrata.com">New York City Open Data</a>.
+A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterBday.csv</a> from 18 October 2016 was downloaded and can be used to test your program.
+
+
+<p>Note:  when creating datasets to test your program, you will need to filter for both date (to keep the files from being huge) and that there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
+
+	<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
+
+
+
+
+  <li > <b>Due Date: 16 November</b>
+  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Debugging/toctree.html#">Chapter 3</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+
+  <p>The program,
+  <a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsUTAs.py" target="_blank">errorsUTAs.py</a>, has lots of errors.  Fix the errors and submit the modified program. Pay attention to what your program outputs and what it should output!
+  <p> The functional program should output:
+  <pre style = "background-color: lavender; width: 500px;">
+UTA List:
+Aida
+Arterio
+Destiny
+Ghazanfar
+Ifte
+Ilya
+Leonardo
+Mandy
+Nancy
+Sadab
+Stephanie
+Tyler
+
+Lola is not a UTA for CSci 127 Fall 2021.
+Mandy is a UTA for CSci 127 Fall 2021.
+Leonardo is a UTA for CSci 127 Fall 2021.
+Yash is not a UTA for CSci 127 Fall 2021.
+There are 12 UTAs who love helping students in CSci 127 Fall 2021.
+</pre>
+<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
+
+
+  <li > <b>Due Date: 17 November</b>
+  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+ <p> For this assignment, we will use <tt>folium</tt> again to generate a map with markers for textile drop-off locations in NYC.
+   <br> The data is made publicly available by
+  <a href="https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw/data">New York City Wifi Hotspot Locations/a>.
+  You can also obtain the data here: <a href="../files/NYC_Wi-Fi_Hotspot_Locations.csv">NYC-Wi-Fi-Hotspot-Locations.csv</a>
+
+ <p>	Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, the name of a borough and creates a map with markers for all the textile drop-off locations in that borough from the input file.
+ <p>  To restrict the markers to a particular borough, make a copy of the dataframe after you <tt>groupby("Borough")</tt> and then <tt>get_group</tt> for the borough entered by the user.
+<!--  For example, if you named your dataframe <tt>df</tt> and stored the borough entered by the user in a variable named <tt>br</tt>, then you make a copy of the dataframe as: <tt> dfCopy = df.groupby("Borough").get_group(br)</tt>
+  <br> Now your dataframe copy contains only textile drop-off locations for the borough specified by the user, and you can look at all the rows to extract "Latitude" and "Longitude" as you did in <a href="lab9.html">Lab 9</a> to place markers on the map. -->
+  You can use the value in the  <tt>"Address"</tt> column to name each marker.
+
+
+ <p>A sample run:
+   <pre style = "background-color:lavender;width:700px">
+  Please enter the name of the input file: NYC-Wi-Fi-Hotspot-Locations.csv
+  Please enter the name of the output file: manhattan.html
+  Please enter the name of the borough: Manhattan
+ </pre>
+ <p>which would produce the html file:
+
+ <p><iframe src="../files/f21_manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+ <p>(The demo above uses the address of the drop-off location ("Address") to label each marker and changed the underlying map with the option:
+ <tt>tiles="Stamen Watercolor"</tt> when creating the map.)
+
+
+
+
+<hr>
+<p>
+<a id="ps10"></a>
+<h2><u> Lecture / Lab 10</u></h2>
+
+
+
+
+<li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+
+<p> Write a program that asks the user for a number and prints out the corresponding day of the week. Your program will consist of two functions:
+ <ul>
+   <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number between 1 and 7 is entered.
+   <li> <tt>dayString()</tt> which returns the day of the week corresponding to the number.
+</ul>
+ <p> A template <tt>days.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>dayString()</tt></b> to implement its desired behavior  and <b>modify <tt>main()</tt></b> to validate the input.
+
+<p> A sample run of your program:
+<pre style = "background-color:lavender;width:650px">
+Enter the number of the day: 12
+That is not a valid weekday number. Please enter a number beween 1 and 7: -5
+That is not a valid weekday number. Please enter a number beween 1 and 7: 4
+The day is Thursday
+</pre>
+
+ <p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since in addition to running the entire program, the scripts are also "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
+
+	<p><i><b>Hint:</b>  See <a href="lab10.html">Lab 10</a> for an example of validating the input.</i>
+
+
+
+
+
+
+<li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+<p>Create a rock papers scissors game. You have to print the output as specified below. 
+<p>Must print <tt>ComputerMove</tt> for each round. In another line print out the winner of the round. After the game finishes, you <b>must print out the last-round winner</b>.
+<p>Rules:</p>
+<ul>
+  <li> Player moves: "1" = rock, "2" = paper, "3" = scissors
+  <li> Computer moves:  "1" = rock, "2" = paper, "3" = scissors
+  <li> Must have <b>global winner variable</b> to track status of game. 
+  <li> If player wins (winner = "human")
+  <li> If computer wins (winner = "computer")
+  <li> If round is a tie (winner = "draw")
+  <li> If playermove is invalid, <b>greater than 3 or less than 1</b> (winner = "invalid")
+</ul>
+<p>Game logic:  Loop until playerMove is <b>less than zero</b> (used to terminate game)</p>
+<ul>
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>rock (1)</b>, its a draw. 
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>paper (2)</b>, human wins.
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>scissors (3)</b>, computer wins.
+  <li>  If playerMove is <b>paper (2)</b> and computer move is <b>rock (1)</b>,  human wins.
+  <li>  If playerMove is <b>paper (2)</b> and computer move is <b>paper (2)</b>,  its a draw.
+  <li>  If playerMove is <b>paper (2)</b> and computer move is <b>scissors (3)</b>,  computer wins.
+  <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>rock (1)</b>,  computer wins.
+  <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>paper (2)</b>,  human wins.
+  <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>scissors (3)</b>,  its a draw.
+</ul>
+<p> A sample run of your program:
+<p> <img src="../images/f21program47.png" height=300>
+
+
+
+
+<li > <b>Due Date: 27 November</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+	<p>Write an Unix shell script that does the following:
+	<ul>
+		<li> Creates two directories, <tt>images</tt> and <tt>courses</tt>.
+		<li> Creates 3 additional directories inside of <tt>images</tt>  (as subdirectories of
+		<tt>images</tt> ):  <tt>png</tt>, <tt>jpg</tt>  and <tt>gif</tt>.
+  <li> Creates 2 additional directories inside of <tt>courses</tt>  (as subdirectories of
+		<tt>courses</tt> ):  <tt>csci127</tt> and <tt>math150</tt>.
+	</ul>
+
+		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
+
+
+
+
+<p>
+<li > <b>Due Date: 28 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
+
+
+<p> Write a program that <b>repeatedly</b> asks the user for the price of a product, until the user enters a negative number to indicate there are no more prices to enter (<b>sentinel value</b>). The program should then return the average price.
+
+
+<p> A sample run of your program:
+<pre style = "background-color:lavender;width:650px">
+  ------------------------------------------
+  Welcome to the average price calculator!
+  ------------------------------------------
+  Please enter the price of each item, one at a time.
+  Enter a negative number when there are no more prices to enter.
+
+  Enter the price of an item: 99.9
+  Enter the price of an item: 35
+  Enter the price of an item: 12.5
+  Enter the price of an item: 42
+  Enter the price of an item: 9.99
+  Enter the price of an item: -1
+  The average price is $39.878
+
+</pre>
+
+
+  <p><i><b>Hint:</b>  See <a href="lab4.html">Lab 4</a> for converting input to numbers</i>
+
+
+
+  <hr>
+  <p>
+  <a id="ps11"></a>
+  <h2><u> Lecture / Lab 11</u></h2>
+
+
+
+  	<li > <b>Due Date: 24 November</b>
+  	<b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a> & <a href="lab11.html">Lab 11</a></b><br>
+
+
+  		<p> Write a <b>simplified machine language program</b> that prints:  <tt>MIPS is cool!</tt>
+
+  		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
+
+  		<p> <i>Hint:  You may find the following table useful:</i>
+  		<p>
+  		<img src ="../images/ASCIITable.png" height=400>
+  		<br><i>(Image from wikimedia commons)</i>
+
+  		<p><i>Hint:  The grading scripts are matching the phrase exactly, so, you need to include the spacing and punctuation.</i>
+
+
+
+  	<li > <b>Due Date: 29 November</b>  <b style="float:right">Reading: <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a>& <a href="lab11.html">Lab 11</a></b><br>
+
+
+
+
+  		<p>Write a <b>simplified machine language program</b> that has register <tt>$s0</tt> decrements from 100, 75, 50, 25, 0
+      <p>Your program must use the <tt>ADDI</tt> instructions and store all numbers in registers for computation.
+
+  		<p> See <a href="lab11.html">Lab 11</a> for details on submitting the simplified machine language programs.
+
+
+
+
+  <li > <b>Due Date: 30 November</b>  <b style="float:right">Reading:
+	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a> & <a href="lab11.html">Lab 11</a>.</b><br>
+
+	<p>You've now mastered UNIX Scripts. 
+    <br>
+    <br>
+    You will organize some files in a cloned GitHub repository. 
+    <br>
+    <br>
+    Clone the repository https://github.com/HunterCSci127/CSci127 with the git command. (Refer to Lab 8 to refresh on cloning a repository)
+    <br>
+    <br>
+    Navigate to this repository and make a new directory called myprojectfiles. 
+    <br>
+    <br>
+    Move nestedPolygons.py into myprojectfiles 
+    <br>
+    <br>
+    Go back to the repository directory, and make another directory called pictures 
+    <br>
+    <br>
+    Move any file that ends in .png in the cloned repo to the pictures directory you just made 
+    
+
+
+	<p><i>Hint:  See <a href="lab11.html">Lab 11</a>.</i>
+
+
+
+
+
+
+  <hr>
+  <p>
+  <a id="ps12"></a>
+  <h2><u> Lecture / Lab 12</u></h2>
+
+
+
+  <li > <b>Due Date: 4 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+
+  <p>	Write a <b>C++ program</b> that prints "Hello, World!" on one line and "Hello, C++!" on a new line.
+
+<p>The output of your program should be:
+<pre style ="background-color:lavender;width:400px">
+  Hello, World!
+  Hello, C++!
+</pre>
+
+  <p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
+
+
+
+<li > <b>Due Date: Due Date: 5 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+
+
+<p>Write a <b>C++ program</b> that will print "I love C++" 25 times.
+
+<p>The output of your program should be:
+  <pre style ="background-color:lavender;width:400px">
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  I love C++
+  </pre>
+
+  	<p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
+
+
+
+<li > <b>Due Date: 3 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
+<p> Write a <b>C++ program</b> that converts cryptocurrencies to feet. Your program should prompt the user for an amount in cryptocurrency and then print out the conversion from Bitcoin, Ethereum, and Dogecoin to USD.
+
+<p> The current conversion rates (from <a href="https://www.coindesk.com/">Coindesk</a>) as of July 16, 2021:
+  <ul>
+  <li> 1 BTC = $31,901.19 USD </li>
+  <li> 1 ETH = $1,901.54 USD </li>
+  <li> 1 DOGE = $0.179733 USD </li>
+  </ul>
+
+<p><b>IMPORTANT:</b> For grading purposes, set the precision to two decimal places. To do so, add <tt>#include &lt;iomanip&gt;</tt> at the top of the file, and <tt>cout << fixed << setprecision(2); </tt> before outputting the length in feet.
+
+<p>A sample run of your program:
+  <pre style ="background-color:lavender;width:400px">
+Enter amount in cryptocurrency: 1.27
+1.27 BTC in USD: $40525.94
+1.27 ETH in USD: $2414.96
+1.27 DOGE in USD: $0.23
+</pre>
+<p>See <a href="lab4.html">Lab 4</a> for designing Input-Process-Output programs and <a href="lab12.html">Lab 12</a> for getting started with C++.
+
+
+
+  <li > <b>Due Date: 7 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+
+  <p> Write a <b>C++ program</b> program that asks the user for a number n and a word. The program then counts down from n and finally prints the word.
+
+
+  <p>A sample run:
+<pre style ="background-color:lavender;width:400px">
+  Please enter a number: 5
+  Please type a word: BlastOff
+  5,4,3,2,1,
+  BlastOff
+</pre>
+
+
+
+<hr>
+<p>
+<a id="ps13"></a>
+<h2><u> Lecture / Lab 13</u></h2>
+
+
+<li > <b>Due Date: 10 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+  <p> Write a <b>C++ program</b>  that asks the user for their numerical grade and prints
+  <ul>
+    <li>"Your letter grade is F" if it is strictly less than 60,
+    <li> "Your letter grade is C or D" if it is 60 or greater, but strictly less than 80,
+    <li> "Your letter grade is B" if it is 80 or greater, but strictly less than 90, and
+    <li> "Your letter grade is A" otherwise.
+  </ul>
+
+  <p>A sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter your grade:  93.6
+Your letter grade is A
+</pre>
+  <p>Another sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter your grade:  79.8
+Your letter grade is C or D
+</pre>
+  <p>And another run:
+<pre style ="background-color:lavender;width:400px">
+Enter your grade:  80.8
+Your letter grade is B
+</pre>
+
+
+
+
+<li > <b>Due Date: 8 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+
+<p> Write a <b>C++ program</b> that asks the user for a number n and a character c, and prints a trapezoid using that character (shown below).
+
+<p>A sample run:
+<pre style ="background-color:lavender;width:400px">
+Please enter a number: 5
+Please enter a character: @
+@
+@@
+@@@
+@@@@
+@@@@@
+@@@@@
+@@@@@
+@@@@@
+@@@@@
+@@@@@
+</pre>
+
+
+<p>Another sample run:
+<pre style ="background-color:lavender;width:400px">
+Please enter a number: 3
+Please enter a character: *
+*
+**
+***
+***
+***
+***
+</pre>
+
+
+
+<li > <b>Due Date: 9 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+	<p> Write a <b>C++ program</b>  that asks the user for their monthly budget on food and coffee and ask the user how much they spend on coffee in a week and print out how much they have left to spend every week after purchasing coffee.
+
+<p> A sample run:
+<pre style ="background-color:lavender;width:450px">
+  Enter your monthly budget for food and coffee: 400
+  How much are you spending in a week for coffee: 40.50
+  Budget left after week 1	359.5
+  Budget left after week 2	319
+  Budget left after week 3	278.5
+  Budget left after week 4	238
+</pre>
+
+<p> 
+
+
+
+	<li > <b>Due Date: 10 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+		<p> Write a <b>C++ program</b> that asks the user for a whole number between -31 and 31 and prints out the number in "<a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>" notation, using the following algorithm:
+
+<ol>
+    <li> Ask the user for a number, n.
+	<li> If the number is negative, print a 1 and let x = 32 + n.
+	<li> If the number is not negative, print a 0 and let x = n.
+	<li> Let b = 16.
+	<li> While b > 0.5:
+		<ol>
+			<li> If x >= b then print 1, otherwise print 0
+			<li> Let x be the remainder of dividing x by b.
+			<li> Let b be b/2.
+		</ol>
+	<li> Print a new line ('\n').
+</ol>
+
+<p>A sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter a number:  8
+001000
+</pre>
+
+<p>Another run:
+<pre style ="background-color:lavender;width:400px">
+Enter a number: -1
+111111
+</pre>
+
+
+<!--
+<hr>
+<i>More to come...</i>
+<hr>
+<br>
+
+-->
+
+
+
+
+
+
+</ol>
+
+
+
+</div>
+
+<div>
+Here's <a href="https://xkcd.com">xkcd</a> on the simplicity of Python:
+
+	<p>
+	<img src="https://imgs.xkcd.com/comics/python.png">
+</div>
+
+<!--
+<div>
+<i style="float:right">(This file was last modified on 11 November 2019.)</i><br>
+</div>
+-->
+</body>
+</html>
