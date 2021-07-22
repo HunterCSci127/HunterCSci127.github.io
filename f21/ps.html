@@ -83,7 +83,7 @@ print("Hello, World!")</pre>
 
 
 		<p>Write a program that draws a nonagon.
-      <br><img id="nonagon" alt="program 2" src="../images/s21program2.png" width="200">
+      <br><img id="nonagon" alt="program 2" src="../images/f21program2.png" width="200">
 		<br><br>
 		<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
 		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".
@@ -346,7 +346,7 @@ Last letters of reversed words: CH
 		<p>
 		Your output should look similar to:
 		<br>
-		<img src="../images/s21program11.png" height=200>
+		<img src="../images/f21program11.png" height=200>
     <br>
     <i>Note: when we say "Modify the program..." only make the requested modifications, everything else is assumed to be keept as is.</i>
 
@@ -406,11 +406,11 @@ Please enter a 6-digit Hexadecimal number: 00FFFF
 
 <p><i><b>Hint:</b> don't forget to add the '#' at the beginning of the hex number to use it as a hex encoding for color! For string concatenation see <a href="lab2.html">Lab 2.</a> You may assume that the user always inputs a valid 6-digit Hex number. </i>
 
-<p>	<li > <b>Due Date: 3 October</b>
+<p>	<li > <b>Due Date: 5 October</b>
 <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
 <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab3.html">Lab 3</a></b><br>
 
-<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green and blue channels of the original image (that is, no red channel).
+<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green and red channels of the original image (that is, no blue channel).
   <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>
 
 
@@ -418,14 +418,14 @@ Please enter a 6-digit Hexadecimal number: 00FFFF
 
 <pre style ="background-color:lavender;width:400px">
 Enter name of the input file:  csBridge.png
-Enter name of the output file:  nored.png
+Enter name of the output file:  noblue.png
 </pre>
 
 <p> Sample input and resulting output files:
 
 <p>
 <img src="../images/csBridge.png" width = 300>
-<img src="../images/cyanBridge.png" width = 300 >
+<img src="../images/yellowBridge.png" width = 300 >
 
 
 <p> <b>IMPORTANT:</b>  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
@@ -517,23 +517,22 @@ Enter number of stamps the turtle will print: 50
 
 
 
-<li > <b>Due Date: 9 October</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> & <a href="lab4.html">Lab 4</a></b><br>
+<li > <b>Due Date: 12 October</b>  	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> & <a href="lab4.html">Lab 4</a></b><br>
 
 
 
 
 <p>Write a program that implements the pseudocode below:
 <pre>
-Ask the user for their taxable income.
-Compute and output the marginal tax rate as follows:
-  -  Error if income is negative
-  -  10% if income $0 - $9,700
-  -  12% if income $9,701 – $39,475
-  -  22% if income $39,476 – $84,200
-  -  24% if income $84,201 – $160,725
-  -  32% if income $160,726 – $204,100
-  -  35% if income $204,101 – $510,300
-  -  37% if income $510,301+
+Ask the user for amount of social media followers they have.
+Compute and output the their influencer tier as follows:
+  - Error if followers less than 0
+  - Hyper Influencer if amount of followers less than 1K followers
+  - Nano Influencer if amount of followers 1K-10K followers (not including 10k)
+  - Micro Influencer if amount of followers 10K-100K followers (not including 100k)
+  - Mid-Tier Influencer if amount of followers 100K-500K followers (not including 500k)
+  - Macro-Influencer if amount of followers 500K-1M followers (not including 1M)
+  - Celebrity Influencer if amount of followers greater than 1M followers
 </pre>
 
 <p>Think about the order of your decisions: <b>elif/else clauses are considered only if the previous condition is false!</b>
@@ -541,14 +540,14 @@ Compute and output the marginal tax rate as follows:
 
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-Enter taxable income: 120000
-Marginal tax rate: 24%
+Enter amount of social media followers: 150
+Your influencer tier is: Hyper Influencer
 </pre>
 
 <p>and another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter taxable income: -50000
-Marginal tax rate: Error
+Enter amount of social media followers: -200
+Your influencer tier is: Error
 </pre>
 
 
