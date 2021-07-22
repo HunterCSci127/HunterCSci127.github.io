@@ -857,42 +857,39 @@ tizianaligorio is learning shell scripts!
 <br><b>Note:</b> The output will not display a username on Gradescope  since there is no login on the cloud image where the grading script runs.
 
 
-<li > <b>Due Date: 24 October</b>
+<li > <b>Due Date: 27 October</b>
 <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
 
 
-<p> Download the <a href="../files/volcanicEruptions.csv">Volcanos dataset</a> and look at the data and, in particular, the column names.
+<p> Download the <a href="../files/ramenRatings.csv">Ramen dataset</a> and look at the data and, in particular, the column names.
 <p> Then, write a program that
 <ul>
 <li> Ask the user for the name of the input file.
-<li> Print the average elevation for each Dominant Rock Type
-<li> Print the height of the tallest volcano in Italy
+<li> Print the average rating, out of 5 stars, per serving style.
+<li> Print the lowest rating for a ramen spot in Singapore, and the name of the place.
 </ul>
 <p>
 <p>
 <pre style ="background-color:lavender;width:500px">
-Enter file name: volcanicEruptions.csv
+Enter file name:ramenRatings.csv
 
-The average height per rock type is as follows:
-Dominant Rock Type
-Andesite / Basaltic Andesite                2153.494810
-Basalt / Picro-Basalt                       1129.892495
-Dacite                                      2538.904255
-Foidite                                     1519.600000
-No Data                                      969.810345
-Phono-tephrite /  Tephri-phonolite          1390.333333
-Phonolite                                   2784.222222
-Rhyolite                                    1564.363636
-Trachyandesite / Basaltic Trachyandesite    1820.700000
-Trachybasalt / Tephrite Basanite            1506.287671
-Trachyte / Trachydacite                     2070.555556
-Name: Elevation (Meters), dtype: float64
+The average stars per serving style:
+Style
+Bar     5.000000
+Bowl    3.937165
+Box     4.291667
+Can     3.500000
+Cup     3.619075
+Pack    3.863330
+Tray    3.682203
+Name: Stars, dtype: float32
 
-The tallest volcano in Italy is 3330 meters high.
+KOKA has the lowest rating in Singapore with 2.5 stars.
 </pre>
 
-<p><b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a>.
-
+<p>
+<b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a> as well as <tt>idxmin()</tt>.
+<b>IMPORTANT: </b>After reading in the csv file, add the following line -> <tt>df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")</tt>
 
 <hr>
 <p>
@@ -900,7 +897,7 @@ The tallest volcano in Italy is 3330 meters high.
 <h2><u> Lecture / Lab 7</u></h2>
 
 
-<li > <b>Due Date: 25 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+<li > <b>Due Date: 27 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
 
 
 <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
@@ -1024,32 +1021,34 @@ Enter name of output file:  manHunt.png
 
 
 
-   <li > <b>Due Date: 8 November</b>
+   <li > <b>Due Date: 3 November</b>
 <b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle" target="_blank"> Turtle Graphics</a> & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
 
 <p>
 <b><p><b>Review from Lecture/Lab 4</b></b>
 
-<p>The program, <tt>turtleString.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
-	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
-        <ul>
-          <li> 'F':  moves the turtle forward 50 steps
-          <li> 'L':  turns the turtle 90 degrees to the left
-          <li> 'R':  turns the turtle 90 degrees to the right
-          <li> '^':  lifts the pen
-          <li> 'v':  lowers the pen
-		      <li> 'r':	 change turtle color to red
-          <li> 'g':  change turtle color to green
-		      <li> 'b':  change turtle color to blue
-        </ul>
-        For example, if the user enters the string "FLFLFLFL^FFFvFLFLFLFL", the turtle would move forward and then turn left.  It repeats this 4 times, drawing a square.  Next, it lifts the pen and move forward 3, puts the pen back down and draw another square.
-
+<p>The program, <tt>mazeRunner.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
+	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control where the user goes throughout the maze (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).
         <p>
-        Modify this program to allow the user also to specify with the following symbols:
+        Modify the function playGame() to allow the user use the following symbols:
         <ul>
-          <li> 'c':  change the turtle color to <tt>"cyan"</tt>
-          <li> 'T':  stamps a turtle shape
-          <li> 'S':  draws a square with side = 50 and sequence forward/left
+          <li> 'R':  go Right of the current location
+          <li> 'L':  go Left of the current location
+          <li> 'U':  go Up from the current location
+	  <li> 'D':  go Down from the current location
+        </ul>
+	
+	<p>
+	You must check first if each command is a valid move, utilizing the given functions, then update the location of the User (thru the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
+
+	As per the display of the maze, each tile is represented by a 3x3 of special characters.
+		
+	<ul>
+          <li> '*':  represents the wall tile
+          <li> ' ':  represents a walkable tile
+          <li> 'S':  represents the start tile
+	  <li> 'X':  represents the end tile
+	  <li> 'v':  represents the current location of the user
         </ul>
 
         <p><b>Hint:</b>  See Lecture 4 notes.</i>
