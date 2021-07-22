@@ -888,7 +888,7 @@ KOKA has the lowest rating in Singapore with 2.5 stars.
 </pre>
 
 <p>
-<b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a> as well as <tt>idxmin()</tt>.
+<b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a> as well as <tt>idxmin()</tt> to find the row containing the restaurant with the lowest star rating in Singapore to get the name of the place (here is a useful resource <a href = "https://www.geeksforgeeks.org/python-pandas-dataframe-idxmin/"> from GeeksForGeeks </a>).
 <b>IMPORTANT: </b>After reading in the csv file, add the following line -> <tt>df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")</tt>
 
 <hr>
@@ -1030,7 +1030,7 @@ Enter name of output file:  manHunt.png
 <p>The program, <tt>mazeRunner.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
 	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control where the user goes throughout the maze (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).
         <p>
-        Modify the function playGame() to allow the user use the following symbols:
+        Modify the function playGame() to allow the user to use the following symbols:
         <ul>
           <li> 'R':  go Right of the current location
           <li> 'L':  go Left of the current location
@@ -1039,10 +1039,8 @@ Enter name of output file:  manHunt.png
         </ul>
 	
 	<p>
-	You must check first if each command is a valid move, utilizing the given functions, then update the location of the User (thru the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
-
+	You must check first if each command is a valid move, utilizing the given functions, then update the location of the User (through the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
 	As per the display of the maze, each tile is represented by a 3x3 of special characters.
-		
 	<ul>
           <li> '*':  represents the wall tile
           <li> ' ':  represents a walkable tile
@@ -1459,13 +1457,13 @@ Enter col to move piece to: 5</pre>
 
 <p><iframe src="../images/map43.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-<p>Use the name of the attractions ("NAME") to label each marker and changed the underlying map with the option:
+<p>(Use the name of the attractions ("NAME") to label each marker and changed the underlying map with the option:
 <tt>tiles="Cartodb Positron"</tt> when creating the map.)
 
 <p>A sample file, <a href="../files/attractions.csv">attractions.csv</a> can be downloaded and used to test your program.
 
 
-<p>Note:  when creating datasets to test your program, you will need to filter for if there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
+<p>Note:  In your code, make sure that each row in the given dataset has a value for LONGITUDE and LATITUDE before attempting to create a marker for that location on the map.
 
 	<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
 
@@ -1845,10 +1843,10 @@ Enter amount in cryptocurrency: 1.27
 
   <p> Write a <b>C++ program</b>  that asks the user for the current temperature and prints
   <ul>
-    <li> If the given temperature is 32 degrees or lower, print "It's freezing!"
-    <li> If the given temperature is less than 68 degrees and greater than 32 degrees, print "It's cold!"
-    <li> If the given temperature is at least 68 degrees and less than 73 degrees, print "It's warm!"
-    <li> If the given temperature is 73 degrees or greater, print "It's hot!"
+    <li> "It's freezing!" if the given temperature is 32 degrees or lower
+    <li> "It's cold!" if the given temperature is less than 68 degrees and greater than 32 degrees
+    <li> "It's warm!" if the given temperature is at least 68 degrees and less than 73 degrees
+    <li> "It's hot!" if the given temperature is 73 degrees or greater
   </ul>
 
   <p>A sample run:
