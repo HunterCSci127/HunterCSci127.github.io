@@ -1618,29 +1618,51 @@ The day is Thursday
 
 
 <p>
-<li > <b>Due Date: 28 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
+<li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
 
-<p> Write a program that <b>repeatedly</b> asks the user for the price of a product, until the user enters a negative number to indicate there are no more prices to enter (<b>sentinel value</b>). The program should then return the average price.
-
+<p> Write a program that creates a 10 by 10 image of a color of the users choice. Instead of simply asking the user for a color, the user will be creating the color by <b>iteratively increasing and decreasing</b> the rgb values until they are finished.
+Starting with an image of zeros, you must ask the user what they would like to save the new image as and then <b>repeatedly</b> ask how much they would like to increase/decrease each rbg values of their color. Since we are starting with an image of zeros, then the rgb values should start at 0 initially. Assume that the user can input any positive or negative number, but the max a color can be is of value 255 and at lowest 0. If the user enters a 0 for increasing/decreasing each color, then the program ends and saves the image as the name provided.
 
 <p> A sample run of your program:
 <pre style = "background-color:lavender;width:650px">
-  ------------------------------------------
-  Welcome to the average price calculator!
-  ------------------------------------------
-  Please enter the price of each item, one at a time.
-  Enter a negative number when there are no more prices to enter.
+------------------------------------------
+Welcome to the Color Maker!
+------------------------------------------
+Please enter for each rbg color the value in which to increase/decrease them.
+If all 3 values given are 0, the program will end and save the resulting image.
 
-  Enter the price of an item: 99.9
-  Enter the price of an item: 35
-  Enter the price of an item: 12.5
-  Enter the price of an item: 42
-  Enter the price of an item: 9.99
-  Enter the price of an item: -1
-  The average price is $39.878
+Enter outfile name: yourColor.png
+
+How much do you want to change the red value by? 10
+How much do you want to change the green value by? 100
+How much do you want to change the blue value by? 10
+The current rgb values are: [0.03921568627450979,0.392156862745098,0.03921568627450979]
+
+How much do you want to change the red value by? 100
+How much do you want to change the green value by? -50
+How much do you want to change the blue value by? 200
+The current rgb values are: [0.4313725490196079,0.196078431372549,0.8235294117647061]
+
+How much do you want to change the red value by? 62
+How much do you want to change the green value by? 0
+How much do you want to change the blue value by? 70
+The current rgb values are: [0.6745098039215687,0.196078431372549,1.0]
+
+How much do you want to change the red value by? 0
+How much do you want to change the green value by? 0
+How much do you want to change the blue value by? -100
+The current rgb values are: [0.6745098039215687,0.196078431372549,0.6078431372549019]
+
+How much do you want to change the red value by? 0
+How much do you want to change the green value by? 0
+How much do you want to change the blue value by? 0
+The current rgb values are: [0.6745098039215687,0.196078431372549,0.6078431372549019]
+
+You're done! Congrats on the color, it looks beautiful!
 
 </pre>
+<p> <img src="../images/f21program49.png" height=300>
 
 
   <p><i><b>Hint:</b>  See <a href="lab4.html">Lab 4</a> for converting input to numbers</i>
@@ -1821,28 +1843,28 @@ Enter amount in cryptocurrency: 1.27
 
 <li > <b>Due Date: 10 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
 
-  <p> Write a <b>C++ program</b>  that asks the user for their numerical grade and prints
+  <p> Write a <b>C++ program</b>  that asks the user for the current temperature and prints
   <ul>
-    <li>"Your letter grade is F" if it is strictly less than 60,
-    <li> "Your letter grade is C or D" if it is 60 or greater, but strictly less than 80,
-    <li> "Your letter grade is B" if it is 80 or greater, but strictly less than 90, and
-    <li> "Your letter grade is A" otherwise.
+    <li> If the given temperature is 32 degrees or lower, print "It's freezing!"
+    <li> If the given temperature is less than 68 degrees and greater than 32 degrees, print "It's cold!"
+    <li> If the given temperature is at least 68 degrees and less than 73 degrees, print "It's warm!"
+    <li> If the given temperature is 73 degrees or greater, print "It's hot!"
   </ul>
 
   <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter your grade:  93.6
-Your letter grade is A
+Enter the temperature: 0
+It's freezing!
 </pre>
   <p>Another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter your grade:  79.8
-Your letter grade is C or D
+Enter the temperature: 49
+It's col!
 </pre>
   <p>And another run:
 <pre style ="background-color:lavender;width:400px">
-Enter your grade:  80.8
-Your letter grade is B
+Enter the temperature: 68
+It's warm!
 </pre>
 
 
