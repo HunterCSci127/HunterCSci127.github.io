@@ -188,27 +188,31 @@ print("Hello, World!")</pre>
 <p>
 
 
-  <li > <b>Due Date: 18 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a> & <a href="lab2.html">Lab 2</a></b><br>
+  <li > <b>Due Date: 22 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a> & <a href="lab2.html">Lab 2</a></b><br>
 
-		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that <b>prompts the user for a message</b>, and then prints <b>that message</b>, the message in upper case letters and the message in lower case letters.
+		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that <b>prompts the user for a message and a letter</b>, and then prints <b>that message</b>, the message in upper case letters and the message in lower case letters and then prints out how many times the <b>given letter</b> is found in the given message.
 
 <p>A sample run of your program should look like:>
 <pre style ="background-color:lavender;width:400px">
 Enter a message:  Mihi cura futuri
+Enter a letter: i
 Mihi cura futuri
 MIHI CURA FUTURI
 mihi cura futuri
+3
 </pre>
 
 <p>Another sample run:
 <pre style ="background-color:lavender;width:400px">
 Enter a message:  I love Python!
+Enter a letter: s
 I love Python!
 I LOVE PYTHON!
 i love python!
+0
 </pre>
 
-	<p><i>Hint:  Your program should be able to take any phrase the user enters.  To do that, you need to store the phrase in a variable and print variations of the stored variable.
+	<p><i>Hint:  Your program should be able to take any phrase and letter the user enters.  To do that, you need to store the phrase and the letter in a variable, then print variations of the stored variable as well as how many times the letter appears in the phrase.
 	</i>
   <br>
 
@@ -369,20 +373,20 @@ Last letters of reversed words: CH
 <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>, <a href="lab2.html">Lab 2</a> & <a href="https://huntercsci127.github.io/f20.html#l3">Lecture 3</a> </b><br>
 
 
-<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a hyphen surrounded by spaces (" - ") and the names are entered <tt>firstName lastName, </tt> (i.e. separated by space " " ). Your program should then print out the names, one per line, with the last name followed by the first initial of the first name, followed in turn by "."
+<p>Write a program that prompts the user to enter a list of books and their authors. Each book with its respective author is separated from the next by a semicolon followed by a space ("; "). The names are entered <tt>firstName lastName, </tt> (i.e. separated by space " " ). he title of the book and the the author of the book is separated by a hyphen surrounded by spaces ( - ). Your program should then print out the name of the book, one per line, with the string "by", followed by the the first name initial of the author and then a "." and the last name initial of the author, also followed by a "."
 
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender">
-Please enter your list of names: Ada Lovelace - Williamina Fleming - Grace Hopper - Annie Easley
-Lovelace A.
-Fleming W.
-Hopper G.
-Easley A.
+Please enter a list of books and their authors: Frankenstein - Mary Shelley; Lucy - Jamaica Kincaid; Beloved - Toni Morrison; Annabel - Kathleen Winter
+Frankenstein by M.S.
+Lucy by J.K.
+Beloved by T.M.
+Annabel by K.W.
 
-Thank you for using my name organizer!
+Thank you for using my book organizer!
 </pre>
 
-<p><i>Hint: See <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, how do you index to extract the first character?</i>
+<p><i>Hint: See <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by each book and author (what should the delimiter be?). After that, split the name of the book from the author. Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, how do you index to extract the first character?</i>
 
 
 
@@ -497,7 +501,7 @@ Enter number of stamps the turtle will print: 50
 
 
 	<p>
-	In Lecture 4, we designed a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a green 'T' logo for Thomas Hunter on a 30x30 grid.
+	In Lecture 4, we designed a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a pink 'P' logo for Python on a 30x30 grid.
 
 	<p>
 	<img src="../images/s21program18.png" style="padding:5px" height=200>
@@ -506,8 +510,8 @@ Enter number of stamps the turtle will print: 50
 	<ul>
 		<li> The file to be saved as:  <tt>logo.png</tt>.
 		<li> The grid to be 30 x 30.
-		<li> The 'T' to be 0% red, 100% green, and 0% blue.  The top part of the 'T' should be the top third of the image and the bottom part of the 'T' should be the center third of the image.
-		<li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
+		<li> The 'P' to be 50% red, 0% green, and 50% blue.  It is best to sketch this before starting to code. The body and the head thickness of the "P" is 1/6 of the grid. 
+		<li> The remaining pixels in the image should be black (0% red, 0% green, and 0% blue).
 	</ul>
 
 	<p> Note:  before submitting your program for grading, <b>remove the commands that show the image</b> (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
@@ -684,23 +688,23 @@ Difference between first and second image: 197492</pre>
 
 
 
-<li > <b>Due Date: 16 October</b>  <b style="float:right">Reading: <a href="https://www.toves.org/books/logic/">Burch's Logic & Circuits</a> & <a href="lab5.html">Lab 5</a></b><br>
+<li > <b>Due Date: 19 October</b>  <b style="float:right">Reading: <a href="https://www.toves.org/books/logic/">Burch's Logic & Circuits</a> & <a href="lab5.html">Lab 5</a></b><br>
 
   <p>
-  Build a circuit that has the same behavior as a <tt>NOR</tt> gate (i.e. true only when all inputs are false) using only <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates.
+  Given the incomplete circuit and the truth table, provide a logical expression that matches the circuit and the table.
   <p>
-  <img src="../images/norGate.png" width=300>
+  <img src="../images/mystery_circuit.png" width=300>
 
   <p>Here is the truth table for
-  the <tt>nor</tt> operator:
+  the <tt>mystery circuit</tt> operator:
 
   <p>
   <table border="1px">
     <tr>
-      <th><tt>in1</tt></th> <th><tt>in2</tt></th> <th><tt>in1 nor in2</tt></th>
+      <th><tt>in1</tt></th> <th><tt>in2</tt></th> <th><tt>in1 ___ in2</tt></th>
     </tr>
     <tr>
-      <td>True</td><td>True</td><td>False</td>
+      <td>True</td><td>True</td><td>True</td>
     </tr>
     <tr>
       <td>False</td><td>True</td><td>False</td>
@@ -978,7 +982,7 @@ Hello, Functions!
 </pre>
 
 
-<li > <b>Due Date: 7 November</b>
+<li > <b>Due Date: 2 November</b>
 
   <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
 
@@ -986,32 +990,31 @@ Hello, Functions!
 
 <p>
   In <a href="lab7.html">Lab 7</a>, we worked through a program that displayed the homeless shelter occupancy over time.  The same approach can be used for displaying any dataset where the date and time are stored.
-<p>For this program, use the lab as a starting point to display <a href="https://data.cityofnewyork.us/Education/2018-2019-Daily-Attendance/x3bb-kg5j">public school attendance</a> from NYC OpenData. If you would like to test your program on other data, you can filter for an individual school by viewing the data and filtering on the school number ("School DBN"). Export the file as CSV and save.  There is a sample file for the <a href="https://www.mhshs.org/" target='blank'>high school</a> on campus on
-  <a href="https://github.com/stjohn/csci127">github</a>
+	<p>For this program, use the csv file <a href="https://github.com/HunterCSci127/HunterCSci127.github.io">Superbowl_Finals.cvs/a>. Export the file as CSV and save.
 
 
- <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+ <p> You can look at the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to create a program that:
   <ul>
   <li> Ask the user to specify the input file,
   <li> Ask the user to specify the output file,
   <li> Convert the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
   <pre>
   df["Date"] = pd.to_datetime(df["Date"].apply(str))	</pre>
-  <li> Make a plot of the percent of absent students over time from the data in the input file, and
+  <li> Make a plot of the percent of winning points out of total points over time from the data in the input file, and
   <li> Store the plot in the output file the user specified.
 </ul>
 
 <p>A sample run of the program:
 <pre style ="background-color:lavender;width:500px">
-Enter name of input file:  dailyAttendanceManHunt2018.csv
-Enter name of output file:  manHunt.png
+Enter name of input file:  Superbowl_Finals.csv
+Enter name of output file:  results.png
 </pre>
 
 <p> which produces an output:
 
   <p>
-  <img src="../images/manHuntAbsence.png" height = 300>
-  <p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "% Absent" and the range of values be between a percentage between 0 and 100 (<b>Hint:</b> what do you multiply by to convert a fraction into a percentage?).
+  <img src="../images/superbowl_finals_graph.png" height = 300>
+  <p> Note: The grading script is expecting that the label (i.e. name of your new column) is "% Points" and the range of values be between a percentage between 0 and 100 (Hints: how do you calculate the total points? What do you multiply by to convert a fraction into a percentage?).
 
 
 
@@ -1394,39 +1397,33 @@ Enter col to move piece to: 5</pre>
 
 
 
-    <li > <b>Due Date: 16 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
+    <li > <b>Due Date: 11 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
         <p><b>REVIEW from Lecture/Lab 4 & 7</b>
-    <p><img src="../images/irmaScreenshot.png" width=400>
+    <p><img src="../images/python_calculator.png" width=400>
+	    
+    <p>The template program, <tt>python_calculator.py</tt> is available on the <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>. 
 
-    <p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty Hurricane Program</a> by Phil Ventura).
-      <p>Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
+    <p>Fill in the missing function to a simple python calculator.
+      <p>Your function, <tt>main</tt> takes as input:
       <ul>
-        <li> <tt>t</tt>: a turtle,
-          <li> <tt>lat</tt>: an integer storing the current latitude,
-          <li> <tt>lon</tt>: an integer storing the current longitude, and
-          <li> <tt>wind</tt>: the current wind speed in miles per hour.
+        <li> <tt>select</tt>: a number for the operation,
+          <li> <tt>number_1</tt>: the first integer, and
+          <li> <tt>number_2</tt>: the second integer.
           </ul>
 
       <p>
-      Your function should move the turtle to the current location (longitude, latitude), and then based on the
-      <a href="https://www.nhc.noaa.gov/aboutsshws.php" target="_blank">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
+      You should fill in the fucntions below that are blank in order for the calculator to run:
       <ul>
-        <li> red and pen size 5 for Category 5 (windspeed > 157 mph)
-        <li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
-        <li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
-        <li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
-        <li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
-        <li> white and pen size 1 if not hurricane strength
+	      <li> <tt>add(num1, num2)</tt> that takes two numbers and returns the result of their addition.
+	      <li> <tt>subtract(num1, num2)</tt> that takes two numbers and returns the result of their subtraction.
+	      <li> <tt>multiply(num1, num2)</tt> that takes two numbers and returns the result of their multiplication.
+	      <li> <tt>divide(num1, num2)</tt> that takes two numbers and returns the result of their division.
+	      <li> <tt>sqrt(num1)</tt> that takes a number and returns the square root of that number.
+	      <li> <tt>squared(num1)</tt> that takes a number and returns the result of that number squared.
+	      <li> <tt>exponent(num1, num2)</tt> that takes two numbers and returns the result of thr first number to the exponent of the second number.
       </ul>
 
-      <p>A template program, <tt>hurricane.py</tt>, and background image, <tt>mapNASA.gif</tt>, are available on the
-        <a href="https://github.com/HunterCSci127/CSci127" target="_blank">CSci 127 repo on github</a>.
-        The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
-
-      <p>Two test files (<a href="../files/irma.csv" target="_blank">irma.csv</a> and <a href="../files/jose.csv" target="_blank">jose.csv</a>) are from the <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html" target="_blank">Nifty site</a>.  Additional CSV files are available there.
-
-        <p>
-        <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
+      <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness. As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
 
 
         <li > <b>Due Date: 12 November</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
@@ -1599,15 +1596,18 @@ The day is Thursday
 
 
 
-<li > <b>Due Date: 27 November</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
+<li > <b>Due Date: 22 November</b>  <b style="float:right">Reading: <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a></b><br>
 
 	<p>Write an Unix shell script that does the following:
 	<ul>
-		<li> Creates two directories, <tt>images</tt> and <tt>courses</tt>.
+		<li> Creates a directory, <tt>csci127</tt>.
+		<li> Creates two additional directories inside of <tt>csci127</tt>  (as subdirectories of
+		<tt>csci217</tt> ):  <tt>images</tt> and <tt>files</tt>.
 		<li> Creates 3 additional directories inside of <tt>images</tt>  (as subdirectories of
 		<tt>images</tt> ):  <tt>png</tt>, <tt>jpg</tt>  and <tt>gif</tt>.
-  <li> Creates 2 additional directories inside of <tt>courses</tt>  (as subdirectories of
-		<tt>courses</tt> ):  <tt>csci127</tt> and <tt>math150</tt>.
+  		<li> Creates 2 additional directories inside of <tt>files</tt>  (as subdirectories of
+		<tt>files</tt> ):  <tt>csv</tt> and <tt>txt</tt>.
+			<tt> Lists everything in the directory <tt>files</tt>
 	</ul>
 
 		Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
@@ -1820,15 +1820,20 @@ Enter amount in cryptocurrency: 1.27
 
   <li > <b>Due Date: 7 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
 
-  <p> Write a <b>C++ program</b> program that asks the user for a number n and a word. The program then counts down from n and finally prints the word.
+  <p> Write a <b>C++ program</b> program that asks the user for a number n and a word for what this is a reminder for. TThe program then counts down from n and finally prints "Time for <tt>[word]</tt>!".
 
 
   <p>A sample run:
 <pre style ="background-color:lavender;width:400px">
-  Please enter a number: 5
-  Please type a word: BlastOff
-  5,4,3,2,1,
-  BlastOff
+  Please enter a number: 6
+  Please type a word: Class
+  6,
+  5,
+  4
+  3,
+  2,
+  1,
+  Time for Class!
 </pre>
 
 
