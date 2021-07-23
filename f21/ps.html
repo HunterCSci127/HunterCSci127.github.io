@@ -91,12 +91,43 @@ print("Hello, World!")</pre>
 
 	<p><i>Hint:  See the  <a href="lab1.html">Lab 1</a>.</i>
 
-	<li > <b>Due Date: 11 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a></b><br>
+	<li > <b>Due Date: 17 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a></b><br>
 
-		<p> Copy the program from <a href="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> into a file on your computer and modify the program to have a 'cyan' background, <tt>tess</tt> color "red", and let <tt>tess</tt> draw a pentagon instead of a triangle and <tt>alex</tt> draw a triangle instead of a square:
+		<p> Copy the program from <a href="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> into a file on your computer and modify the program as described below:
+            
+      <pre>
+  Make the background 'khaki', 
+  set turtle '<tt>tess</tt>' color to "darkblue",
+  set turtle '<tt>alex</tt>' color to "violet",
 
-<p>
-<img src="../images/s21program3.png" height=200>
+  Make tess draw a square instead of alex, and have the square be 100*100.
+
+  alex should then:
+      turn left 90 degrees,
+      move forward 100.
+
+  Now alex is at the top of the square drawn by tess, and at this point
+  alex should draw an equilateral triangle which will become the roof of
+  our house. The triangle should have sides of length 100 to match with
+  the square drawn by tess.
+      </pre>
+      <p><i>
+      Make sure that your turtle turns the proper number of times, and no more. 
+      For example, the instructions the turtle should follow should be the same 
+      as the provided square in the assignment, and for the triangle, the turtle 
+      should turn and then move, so there should be no extra turns after the 
+      triangle has been made.
+  
+      Gradescope will not test to see if you draw a house. Gradescope will test
+      to see how precisely you followed the above instructions. If it looks like 
+      a house and does not get full credit, you may have departed from these
+      instructions. Note the overlaping colors in the image, and make sure yours 
+      looks identical!
+      </i></p>
+      The result should look as follows: 
+  
+  <p>
+  <img src="../images/f21program3.png" height=250>
 <p><b>Note:</b> Make only the modifications indicated here, all other behaviors should stay the same. (i.e. distance forward, pen size etc.)
 <p> In programming, it is important to learn to follow instructions precisely. A small difference to you may result in a program that runs incorrectly. This is part of what you are learning here: <b>follow specifications to the letter</b>.
 
@@ -251,30 +282,27 @@ A sample run of your program should look like:
 
 
 
-<li > <b>Due Date: 22 September</b>  <b style="float:right">Reading: Think CS:	<a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/TherangeFunction.html">Section 4.7</a> & <a href="https://huntercsci127.github.io/f20/lab2.html">Lab2</a></b><br>
+<li > <b>Due Date: 24 September</b>  <b style="float:right">Reading: Think CS:	<a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/TherangeFunction.html">Section 4.7</a> & <a href="https://huntercsci127.github.io/f20/lab2.html">Lab2</a></b><br>
 
 
-<p>Write a program that prints out multiples of 3 up to 45.
+  <p>Write a program that prints out the numbers 2-20 incrementing by 2. Next to each number, print out the number + 10, separated by a '|' symbol and formatted as follows:
 
 
-<p>The output of your program should be:
-<pre style ="background-color:lavender;width:200px">
-3
-6
-9
-12
-15
-18
-21
-24
-27
-30
-33
-36
-39
-42
-45
-</pre>
+    <p>The output of your program should be:
+    <pre style ="background-color:lavender;width:300px">
+
+ current value: 2 | value+10: 12
+ current value: 4 | value+10: 14
+ current value: 6 | value+10: 16
+ current value: 8 | value+10: 18
+ current value: 10 | value+10: 20
+ current value: 12 | value+10: 22
+ current value: 14 | value+10: 24
+ current value: 16 | value+10: 26
+ current value: 18 | value+10: 28
+ current value: 20 | value+10: 30
+    </pre>
+    
 
 
 <p><i><b>Hint:</b> Use the</i> <code>start, stop, step</code> <i>options in the</i> <code>range()</code> <i>function</i> and print the loop variable.
@@ -444,14 +472,38 @@ Enter name of the output file:  noblue.png
       <h2><u> Lecture / Lab 4</u></h2>
 <p>
 
-  <li > <b>Due Date: 4 October</b><b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a>  & <a href="lab4.html">Lab 4</a></b><br>
-<p>Write a program that asks for the temperature in degrees Celsius (C) and outputs the temperature in degrees Fahrenheit (F) where <i> F = (C*9/5)+32</i>.
+  <li > <b>Due Date: 6 October</b><b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a>  & <a href="lab4.html">Lab 4</a></b><br>
+    <p>For this program, you'll be doing a very common conversion: parsecs to light-years, and light-years to parsecs. As I'm sure we all know, <i> 1 parsec = 3.26156 light-years</i>.
 
-<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:400px">
-Please enter the temperature in degrees Celsius: 15
-The temperature is 59.0 degrees Fahrenheit
-</pre>
+      <p>With this information, write a program which operates as follows:</p> 
+      <p>1. Asks the user which conversion they want to do:</p>
+      <pre>
+       enter 'a' for Light-Year to Parsec,
+       enter 'b' for Parsec to Light-Year.
+      </pre>
+      <p>2. So if I type the character 'b' and press enter, the program will compute light-years to parsecs, and if I type the character 'a' and press enter, the program will compute parsecs to light-years. </p>
+      <p>3. Then compute the result based off of what the user enters and output the result!</p>
+      <p>
+          A sample run of your program should look like:
+      <pre style ="background-color:lavender;width:400px">
+      
+    Please enter the conversion you want to do:
+    'a' for Light-Year to Parsec conversion
+    'b' for Parsec to Light-Year conversion
+    Your selection: a
+    Please enter a number of Light-Years: 3
+    3.0 Light-Years is equal to 0.919803 Parsecs.
+
+    ### Another run of the program:
+
+    Please enter the conversion you want to do:
+    'a' for Light-Year to Parsec conversion
+    'b' for Parsec to Light-Year conversion
+    Your selection: b
+    Please Enter a number of Parsecs: 1
+    1.0 Parsecs is equal to 3.26156 Light-Years.
+      
+      </pre>
 
 <br><i><b>Hint</b> Don't forget to convert the input into a numeral for calculation.</i>
 
@@ -636,29 +688,34 @@ Enter output file: 50stripes.png
 
 
 
-<li > <b>Due Date: 12 October</b>
+<li > <b>Due Date: 15 October</b>
 <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a>,  <a href="https://huntercsci127.github.io/s20/lab1.html">Lab1</a>, <a href="lab2.html">Lab 2</a>  & <a href="lab4.html">Lab 4</a></b><br>
 
 
 
 <p>Write a program that implements the <a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a> ("informal high-level description of the operating principle of a computer program or other algorithm") below for drawing a spiral of squares using turtles:
-<br>Observe the process: the outer loop shifts the square then the inner loop draws the square!
-<pre>
-Let length be 25
-Repeat 100 times:
-    Turn right 5 degrees
-    Increment length by 2%
-    Repeat 4 times:
-        Walk forward length steps
-        Turn right 90 degrees
-</pre>
-Your output should look similar to:
-<br>
-<img src="../images/squareSpiral.png" height=200>
-<br>
-<i>Reminder: to calculate 2%  of quantity x, you can multiply x by 0.02.
-  To increment, you can add that number to x or you can directly multiply x by 1.02</i>
-
+  <br>
+  <pre>
+  Set the turtle colormode to 255
+  (optional) set the turtle speed to 0 to make things faster
+  set the pensize to 5
+  set the turtle background color to "khaki" for aesthetic purposesof course
+  
+  loop 36 times:
+      change the pencolor to be 0 red, (i*7) green, and 0 blue
+      move the turtle forward 10
+      turn the turtle left 10
+      loop 4 times:
+          turn left 90
+          move forward 300
+          move backward 50
+  </pre>
+  Your output should look similar to:
+  <br>
+  <br>
+  <img src="../images/squareEye.png" height=250>
+  <br>
+  <br>
 
 
 
@@ -901,72 +958,68 @@ KOKA has the lowest rating in Singapore with 2.5 stars.
 <h2><u> Lecture / Lab 7</u></h2>
 
 
-<li > <b>Due Date: 27 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
+
+<li > <b>Due Date: 28 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab7.html">Lab 7</a></b><br>
 
 
-<p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
-<ul>
-<li> ask the user to specify the input file,
-<li> ask the user to specify the output file,
-<li> make a plot of the fraction of the total population that are children over time from the data in input file, and
-<li> store the plot in the output file the user specified.
-</ul>
-
-<p>A sample run of the program:
-<pre style ="background-color:lavender;width:400px">
-Enter name of input file:  DHS_2015_2016.csv
-Enter name of output file:  dhsPlot.png
-</pre>
-<p> which produces an output:
-
-<p><img src="../images/dhsPlot.png" height = 300>
-
-<p> <b>Note:</b>  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Children".
-
-
-
+  <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+    <ul>
+    <li> ask the user to specify the input file,
+    <li> ask the user to specify the output file,
+    <li> make a plot of the fraction of total single adults in shelter over the total individuals in shelter
+    <li> store the plot in the output file the user specified.
+    </ul>
+    
+    <p>A sample run of the program:
+    <pre style ="background-color:lavender;width:400px">
+    Enter name of input file:  DHS_2015_2016.csv
+    Enter name of output file:  dhsPlot.png
+    </pre>
+    <p> which produces an output:
+    
+    <p><img src="../images/dhsPlot.png" height = 300>
+    
+    <p> <b>Note:</b>  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Single Adults".
+    
 
 
-<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab6.html">Lab 6</a> & <a href="lab7.html">Lab 7</a></b><br>
+<li > <b>Due Date: 29 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab6.html">Lab 6</a> & <a href="lab7.html">Lab 7</a></b><br>
 
-<p>
+  <p>
 
-<b>Let's explore another dataset!</b>
-<br>Consider the the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019.
-<br>You can <a href="../files/AirBnB_NYC_2019.csv">obtain the csv file directly here.</a>
-<br>First download and inspect the data by looking at the <b>column names</b> and type of data in each column.
-<p>
-Now modify the programs from <a href="lab6.html">Lab 6</a> that aggregates rainfall data and the program from <a href="lab7.html">Lab 7</a> that plots shelter population to write a new program that:
-<ul>
-<li> Ask the user for the name of the input file.
-<li> Ask the user for the name of the output file.
-<li> To observe the average airbnb listing price in each borough:
-  <ul>
-    <li> Use <tt>groupby()</tt> to aggregate the data by <tt>'neighbourhood_group'</tt>, which in this dataset represents the borough, and average the <tt>'price'</tt> column
-    <li> Make a bar plot of the data grouped this way by using <tt>.plot.bar()</tt> on the grouped data
-      <br> e.g. if you have
-      <br><tt> grouped_data = df.groupby( ... </tt>
-      <br>then use <tt>grouped_data.plot.bar()</tt> to generate the bar plot
-    <li> Label the x-asix using <tt>plt.xlabel('Borough')</tt>
-    <li> Label the y-axis using <tt>plt.ylabel('Average Price')</tt>
-    <li> Store the plot in the output file the user specified.
-  </ul>
-</ul>
+    <b>Let's explore another dataset!</b>
+    <br>Consider the the <a href="https://www.kaggle.com/NUFORC/ufo-sightings?select=scrubbed.csv" target="_blank">UFO dataset</a> NUFORC data by Sigmond Axel.
+    <br>You can <a href="../files/UFO_sightings_US.csv">obtain the csv file directly here.</a>
+    <br>First download and inspect the data by looking at the <b>column names</b> and type of data in each column.
+    <p>
+    Now modify the programs from <a href="lab6.html">Lab 6</a> that aggregates rainfall data and the program from <a href="lab7.html">Lab 7</a> that plots shelter population to write a new program that:
+    <ul>
+    <li> Asks the user for the name of the input file.
+    <li> Asks the user for the name of the output file.
+    <li> Plots a bar diagram of the 10 states in dataframe with the longest average UFO sightings:
+      <ul>
+        <li> Use <tt>groupby()</tt> to aggregate the data by <tt>'state'</tt>, which in this dataset represents the state in which the UFO was seen, and average the <tt>'duration (seconds)'</tt> column.
+        <li> Now sort the values with .sort_values(ascending=False)[:10] to get the top 10 states with the longest average UFO sighting (note, you'll notice that the averages are quite large, that is because this data contains some inconsistencies leading to a few records which report yearlong UFO sightings, etc.)</li>
+        <li> Make a bar plot of the data grouped this way by using <tt>.plot.bar()</tt> on the grouped data
+          <br> e.g. if you have
+          <br><tt> grouped_data = df.groupby( ... </tt>
+          <br>then use <tt>grouped_data.plot.bar()</tt> to generate the bar plot
+        <li> Label the x-axis using <tt>plt.xlabel('State')</tt>
+        <li> Label the y-axis using <tt>plt.ylabel('Seconds')</tt>
+        <li> Store the plot in the output file the user specified.
+      </ul>
+    </ul>
 
+    
 
-
-<p>A sample run of the program:
-<pre style ="background-color:lavender;width:500px">
-Enter name of input file:  airbnb2019.csv.csv
-Enter name of output file:  airbnb_avg_price_barplot.png
-</pre>
-<p> which produces an output:
-
-<p><img src="../images/airbnb_avg_price_barplot.png" height = 300>
-
-<p> <b>Note:</b> To make the borough names visible at the bottom of the bar plot, use <tt> plt.gcf().subplots_adjust(bottom=0.25)</tt> before <tt>plt.gcf()</tt> (see <a href="lab6.html">Lab 6</a> for how to save the plot to a file.)
-
-
+  <p>A sample run of the program:
+  <pre style ="background-color:lavender;width:500px">
+   Enter name of input file:  UFO_sightings_US.csv
+   Enter name of output file:  UFO_sightings_barplot.png
+  </pre>
+  <p> which produces an output:
+  
+  <p><img src="../images/UFO_sightings_barplot.png" height = 300>
 
 <li > <b>Due Date: 1 November</b> 	<b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
 
@@ -1283,46 +1336,66 @@ Name: Publisher, dtype: int64
 
 <p> <i><b>Hint:</b> See <a href="lab8.html">Lab 8</a> for counting values in structured data.</a></i>
 
-
-  <li > <b>Due Date: 13 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html">Lab 8</a></b>
-
-
-  <p> Write two functions, <tt>nestedPolygon()</tt> and <tt>fractalPolygon()</tt>.  Both functions take three parameters: a turtle, an edge length and number of sides.  The pseudocode for <tt>nestedPolygon()</tt> is:
-
-  <pre>
-      nestedPolygon(t, length, sides):
-      1.  If length > 10:
-      2.     Repeat sides times:
-      3.         Move t, the turtle, forward length steps.
-      4.         Turn t left 360/sides degrees.
-      5.     Call nestedPolygon with t, length/2 and sides.
-  </pre>
-
-  <p>The pseudocode for <tt>fractalPolygon()</tt> is very similar:
-  <pre>
-      fractalPolygon(t, length, sides):
-      1.  If length > 10:
-      2.     Repeat sides times:
-      3.         Move t, the turtle, forward length steps.
-      4.         Turn t left 360/sides degrees.
-      5.         Call fractalPolygon with t, length/2 and sides.
-  </pre>
-
-<p> There is a subdtle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two images. Observe the execution and think about it!!!
-  <p>A template program, <tt>nestingPolygons.py</tt>, is available on the
-  <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
-  The grading script does not run the whole program, but instead tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>nestedPolygon()</tt> and <tt>fractalPolygon()</tt>).
-
-<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter edge length:  160
-Enter number of sides: 4
-</pre>
-<p>which would produce:
-
-    <p><img height=150 src="../images/nestedSquares.png">
+    <li > <b>Due Date: 8 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html">Lab 8</a></b>
 
 
+      <p> Write three functions, <tt>setUp()</tt>, <tt>fractalRight()</tt>, and <tt>fractalLeft()</tt>. 
+    
+      <p> Provided in the class <a href="https://github.com/HunterCSci127/CSci127">Github</a> is a template program, <tt>'turtleTree.py'</tt>. Using the pseudocode attached to the template, implement your program as follows:</p>
+    
+      <pre style = "background-color:lavender;width:800px">
+    
+        setUp():
+          Takes no parameters, and simply sets up the turtle, returning to caller.
+          Here you should:
+              1. Instiantiate the turtle,
+              2. optionally hide the turtle (use .hideturtle())
+              3. set the heading to 90 (which will face the turtle upwards)
+              4. set the speed (t.speed(speed=0), you will want this)
+              5. return the turtle to the calling function.
+    
+        fractalRight():
+          Takes three parameters: a turtle t, distance 'distance', and i, the
+          color value. This function does the following: if the distance is greater than 10,
+          it will:
+              1. Set the value of i to be i % 255,
+              2. set the color of the turtle to be the value of i in the green channel (0,i,0)
+              3. turn right 30 degrees
+              4. move forward 'distance' steps
+              5. stamp the turtle
+              6. set the value of newDistance to distance-5
+              7. call fractalRight with the parameters t, newDistance, i+25
+              8. move backward by 'distance' steps, NOT newDistance,
+              9. turn left 30 degrees
+              10. call fractalLeft with parameters t, newDistance, i+25
+    
+        fractalLeft():
+          This is pretty much the same as fractalRight, just to the left:
+          Takes three parameters: a turtle t, distance 'distance', and i, the
+          color value. This function does the following: if the distance is greater than 10,
+          it will:
+              1. Set the value of i to be i % 255,
+              2. set the color of the turtle to be the value of i in the green channel (0,i,0)
+              3. turn left 30 degrees
+              4. move forward 'distance' steps
+              5. stamp the turtle
+              6. set the value of newDistance to distance-5
+              7. call fractalLeft with the parameters t, newDistance, i+25
+              8. move backward by 'distance' steps, NOT newDistance,
+              9. turn right 30 degrees
+              10. call fractalRight with parameters t, newDistance, i+25
+    
+      </pre>
+    
+    <p> There is a subdtle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two results. Observe the execution (hopefully by increasing the speed to save some time) and think about it!!!
+      <p>Again, the template program, <tt>turtleTree.py</tt>, is available on the
+      <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+      The grading script does not run the whole program, but instead tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>nestedPolygon()</tt> and <tt>fractalPolygon()</tt>).
+    
+    <p>A sample run:
+        <p><img height=250 src="../images/turtleTree.png">
+    
+    
 
 <li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
 
@@ -1537,32 +1610,55 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 
 
 
-<li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
+<li > <b>Due Date: 18 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
+  <p> Create a program which asks the user for an integer input. Using input validation (while loop), check to see if the input is a perfect square. If it is not, continue asking the user to re-enter their input until it is a perfect square.
+    Your program will consist of three functions, but you only need to implement one. The other two are provided:
+   <ul>
+     <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number is entered (a perfect square).
+     <li> <tt>perfectSquareChecker()</tt> which, as the name suggests, will output whether or not the passed integer value is a perfect square to the user.
+     <li> <tt>is_square()</tt> the function perfectSquareChecker uses to check if a number is square, will return true if the integer passed as a parameter is a perfect square, and false if not.</li>
+  </ul>
+  
+  <pre style="background-color: lavender;width:500px;">
+  
+    A perfect square is the product of an integer squared. 
+    Thus, a perfect square will have a whole integer root.
+  
+    e.g. 4 is a perfect square because 2^2 = 4. 
+    e.g. 16 is a perfect square because 4^2 = 16.
+  
+    You should take input and validate said input in your 'main' 
+    function. You will be provided a 'is_square' function which 
+    takes a positive integer as a parameter and returns whether 
+    or not it is a perfect square.
+  
+    Once you have validated your input, pass your validated input 
+    to the 'perfectSquareChecker' function provided, which will 
+    ensure that your validation is correct.
+  
+  </pre>
+  
+   <p> A template <tt>perfectSquare.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>main()</tt></b> to implement its desired behavior.
+  
+  <p> A sample run of your program:
+  <pre style = "background-color:lavender;width:500px">
 
-<p> Write a program that asks the user for a number and prints out the corresponding day of the week. Your program will consist of two functions:
- <ul>
-   <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number between 1 and 7 is entered.
-   <li> <tt>dayString()</tt> which returns the day of the week corresponding to the number.
-</ul>
- <p> A template <tt>days.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>dayString()</tt></b> to implement its desired behavior  and <b>modify <tt>main()</tt></b> to validate the input.
-
-<p> A sample run of your program:
-<pre style = "background-color:lavender;width:650px">
-Enter the number of the day: 12
-That is not a valid weekday number. Please enter a number beween 1 and 7: -5
-That is not a valid weekday number. Please enter a number beween 1 and 7: 4
-The day is Thursday
-</pre>
-
- <p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since in addition to running the entire program, the scripts are also "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
-
-	<p><i><b>Hint:</b>  See <a href="lab10.html">Lab 10</a> for an example of validating the input.</i>
-
-
-
-
-
+  Enter a square integer: 12
+  That is not a perfect square. Try again: -5
+  That is not a perfect square. Try again: 123
+  That is not a perfect square. Try again: 31
+  That is not a perfect square. Try again: 21
+  That is not a perfect square. Try again: 9
+  This number is a perfect square. It is the product of 3.0 squared.
+  </pre>
+  
+   <p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since in addition to running the entire program, the scripts are also "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
+  
+    <p><i><b>Hint:</b>  See <a href="lab10.html">Lab 10</a> for an example of validating the input.</i>
+  
+  
+  
 
 <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
 
@@ -1743,7 +1839,7 @@ You're done! Congrats on the color, it looks beautiful!
 
 
 
-  <li > <b>Due Date: 4 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+  <li > <b>Due Date: 1 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
 
   <p>	Write a <b>C++ program</b> that prints "Hello, World!" on one line and "Hello, C++!" on a new line.
 
@@ -1757,43 +1853,25 @@ You're done! Congrats on the color, it looks beautiful!
 
 
 
-<li > <b>Due Date: Due Date: 5 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
+<li > <b>Due Date: Due Date: 2 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
 
 
-<p>Write a <b>C++ program</b> that will print "I love C++" 25 times.
+  
+<p>Write a <b>C++ program</b> that will print "01" 5 times in one row, for 5 rows.
 
-<p>The output of your program should be:
-  <pre style ="background-color:lavender;width:400px">
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  I love C++
-  </pre>
-
-  	<p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
-
-
+  <p>The output of your program should be:
+    <pre style ="background-color:lavender;width:100px">
+    
+  0101010101
+  0101010101
+  0101010101
+  0101010101
+  0101010101
+    </pre>
+  
+      <p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
+      <p> <i>Extra hint:  You can accomplish this very quickly with a nested for loop. Write a for loop for each row, and inside of that for loop write another for loop to iterate through each column.
+      
 
 <li > <b>Due Date: 3 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
 <p> Write a <b>C++ program</b> that converts cryptocurrencies to feet. Your program should prompt the user for an amount in cryptocurrency and then print out the conversion from Bitcoin, Ethereum, and Dogecoin to USD.
