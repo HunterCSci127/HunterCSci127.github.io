@@ -5,12 +5,13 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 
+
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '1lWkUdQsn_bGEDb-MFFlh2deysNfRUH3XFRTqP_mk4zY'
-SAMPLE_RANGE_NAME = 'Responses!A1:E2'
+SAMPLE_RANGE_NAME = 'Responses!A:E'
 
 def main():
     """Shows basic usage of the Sheets API.
