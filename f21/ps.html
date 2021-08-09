@@ -373,7 +373,7 @@ Last letters of reversed words: CH
 
 	<li > <b>Due Date: 29 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
 
-		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of yellow in the shape of a psuedo-heart. The turtle draws on a 60 degree angle and on a 120 degree angle respectively from the start, so once drawing one side, go back to the start without drawing to draw the other side using <tt>penup()</tt> and <tt>pendown()</tt>.
+		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of yellow in the shape of a psuedo-heart. The turtle draws on a 60 degree angle an a 120 degree angle respectively from the start. Once you draw one side, go back to where you started, without drawing, to draw the other side. Remember to use <tt>penup()</tt> and <tt>pendown()</tt>.
 
 		<p>
 		Your output should look similar to:
@@ -443,7 +443,7 @@ Please enter a 6-digit Hexadecimal number: 00FFFF
 <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab3.html">Lab 3</a></b><br>
 
 <p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green and red channels of the original image (that is, no blue channel).
-  <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>
+  <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>.
 
 
 <p> A sample run of your program should look like:
@@ -950,7 +950,11 @@ KOKA has the lowest rating in Singapore with 2.5 stars.
 
 <p>
 <b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a> as well as <tt>idxmin()</tt> to find the row containing the restaurant with the lowest star rating in Singapore to get the name of the place (here is a useful resource <a href = "https://www.geeksforgeeks.org/python-pandas-dataframe-idxmin/"> from GeeksForGeeks </a>).
-<b>IMPORTANT: </b>After reading in the csv file, add the following line -> <tt>df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")</tt>
+<b>IMPORTANT: </b>After reading in the csv file, add the following line:
+<p>
+<pre style ="background-color:lavender;width:500px"> 
+df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
+</pre>
 
 <hr>
 <p>
@@ -1083,7 +1087,9 @@ Enter name of output file:  results.png
 <p>
 <b><p><b>Review from Lecture/Lab 4</b></b>
 
-<p>The program, <tt>mazeRunner.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
+<p>
+	<b>You are a student attempting to take an Introduction to Computer Science course. Using what you have learned so far, you must finish this incomplete game titled <tt>Maze Runner</tt>. The objective of the game is, given the maze, the user must navigate through it safely and reach the end. If not done so, they will restart from the beginning.
+	<b>The program, <tt>mazeRunner.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
 	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control where the user goes throughout the maze (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).
         <p>
         Modify the function playGame() to allow the user to use the following symbols:
@@ -1503,7 +1509,7 @@ Enter col to move piece to: 5</pre>
 
           <p><iframe src="../images/nycMap.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-          <p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for Little Island (in Chelsea Piers).  The HTML file your program creates should be called: <tt>nycMap.html</tt>
+          <p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for Little Island (in Chelsea Piers).  The HTML file your program creates should be called: <tt>nycMap.html</tt>.
 
           <p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
 
@@ -1715,8 +1721,10 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 <li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
 
-<p> Write a program that creates a 10 by 10 image of a color of the users choice. Instead of simply asking the user for a color, the user will be creating the color by <b>iteratively increasing and decreasing</b> the rgb values until they are finished.
-Starting with an image of zeros, you must ask the user what they would like to save the new image as and then <b>repeatedly</b> ask how much they would like to increase/decrease each rbg values of their color. Since we are starting with an image of zeros, then the rgb values should start at 0 initially. Assume that the user can input any positive or negative number, but the max a color can be is of value 255 and at lowest 0. If the user enters a 0 for increasing/decreasing each color, then the program ends and saves the image as the name provided.
+<p> 
+	<b>Write a program that creates a 10 by 10 image of a color of the users choice. Instead of simply asking the user for a color, the user will be creating the color by <b>iteratively increasing and decreasing</b> the rgb values until they are finished.
+<b>Starting with an image of zeros, you must ask the user what they would like to save the new image as and then <b>repeatedly</b> ask how much they would like to increase/decrease each rbg values of their color. Since we are starting with an image of zeros, then the rgb values should start at 0 initially. 
+	<b>Assume that the user can input any positive or negative number, but the max a color can be is of value 255 and at lowest 0. If the user enters a 0 for increasing/decreasing each color, then the program ends and saves the image as the name provided.
 
 <p> A sample run of your program:
 <pre style = "background-color:lavender;width:650px">
@@ -1940,7 +1948,7 @@ It's freezing!
   <p>Another sample run:
 <pre style ="background-color:lavender;width:400px">
 Enter the temperature: 49
-It's col!
+It's cold!
 </pre>
   <p>And another run:
 <pre style ="background-color:lavender;width:400px">
