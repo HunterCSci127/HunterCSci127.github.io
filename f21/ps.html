@@ -53,7 +53,7 @@ print("Hello, World!")</pre>
 	<li> While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.
 	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (35% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the Office of Student Affairs.
 
-	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the Lecture notes, the Lab and take the Lab Quiz on Tuesday and Wednesday, then set aside a block of time on Thursday, Friday and Monday to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
+	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the week's Lecture notes and the Lab, then set aside a block of time to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
   <li> If Gradescope gives you a "Test Failed: list index out of range" error or "The autograder failed to execute..." it means your program does not run. <b>Please check that your program runs correctly on your local machine before submitting to Gradescope.</b>
 <ul>
 </div>
@@ -83,7 +83,7 @@ print("Hello, World!")</pre>
 
 
 		<p>Write a program that draws a nonagon.
-      <br><img id="nonagon" alt="program 2" src="../images/f21program2.png" width="200">
+      <br><img id="nonagon" alt="program 2" src="../images/f21program2.png" width="250">
 		<br><br>
 		<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
 		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".
@@ -94,17 +94,17 @@ print("Hello, World!")</pre>
 	<li > <b>Due Date: 17 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a></b><br>
 
 		<p> Copy the program from <a href="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> into a file on your computer and modify the program as described below:
-            
-      <pre>
-  Make the background 'khaki', 
-  set turtle '<tt>tess</tt>' color to "darkblue",
-  set turtle '<tt>alex</tt>' color to "violet",
 
-  Make tess draw a square instead of alex, and have the square be 100*100.
+      <pre>
+  - change the background to be 'khaki',
+  - change the turtle '<tt>tess</tt>' color to "darkblue",
+  - set the turtle '<tt>alex</tt>' color to "violet" and set its pensize to also be 5
+
+  - next, make tess draw a square instead of alex, and have the square be 100*100.
 
   alex should then:
-      turn left 90 degrees,
-      move forward 100.
+  - turn left 90 degrees,
+  - move forward 100.
 
   Now alex is at the top of the square drawn by tess, and at this point
   alex should draw an equilateral triangle which will become the roof of
@@ -112,24 +112,24 @@ print("Hello, World!")</pre>
   the square drawn by tess.
       </pre>
       <p><i>
-      Make sure that your turtle turns the proper number of times, and no more. 
-      For example, the instructions the turtle should follow should be the same 
-      as the provided square in the assignment, and for the triangle, the turtle 
-      should turn and then move, so there should be no extra turns after the 
-      triangle has been made.
-  
+      <u>Important</u>: Make sure that your turtle turns the proper number of times, and no more.
+      For example, the instructions the turtle should follow must be the same
+      as the provided square in the assignment, and for the triangle, alex
+      should first turn and then move, so there should be no extra turns after the
+      triangle has been drawn.
+
       Gradescope will not test to see if you draw a house. Gradescope will test
-      to see how precisely you followed the above instructions. If it looks like 
+      to see how precisely you followed the above instructions. If it looks like
       a house and does not get full credit, you may have departed from these
-      instructions. Note the overlaping colors in the image, and make sure yours 
+      instructions. Note the overlapping colors in the image, and make sure yours
       looks identical!
       </i></p>
-      The result should look as follows: 
-  
+      The result should look as follows:
+
   <p>
   <img src="../images/f21program3.png" height=250>
 <p><b>Note:</b> Make only the modifications indicated here, all other behaviors should stay the same. (i.e. distance forward, pen size etc.)
-<p> In programming, it is important to learn to follow instructions precisely. A small difference to you may result in a program that runs incorrectly. This is part of what you are learning here: <b>follow specifications to the letter</b>.
+<p> In programming, it is important to learn to follow instructions precisely. A small difference to you may result in a program that runs incorrectly. This is part of what you are learning here: <b>follow specifications to the letter!</b>
 
 	<li > <b>Due Date: 20 September</b>  <b style="float:right">Reading: Think CS:
 <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://huntercsci127.github.io/f20/lab1.html">Lab1</a>
@@ -193,13 +193,14 @@ print("Hello, World!")</pre>
 <p> Write a program that uses turtle graphics to generate the image below:
 <p><img id="turtleFlower" alt="program 5" src="../images/f21program5.png" width="250">
 <p>
-  <br><b><i>Hints:</i></b> Create the same image shown above. Turtle should move forward 100 in the direction it starts facing initially.  
+  <br><b><i>Hints:</i></b> Create the same image shown above. Turtle should move forward 100 in the direction it starts facing initially.
   <br>This assignment aims to challenge you to analyze the image to deduce the process (given a description of the output, write the program to produce it), which is how software developers often approach problems.
   <br><b>So what should you do? </b>Try to puzzle out the image, break down what the turtle does, then apply what you have learned so far about definite loops (for loops) and turtle graphics to reproduce that process. Here some guiding questions:
   <ul>
-    <li>How would you create one rhombus first if the angle is 45?
-    <li>How many turtles do you see? How many repetitions? How many rhombuses do you need to create?
+    <li>How would you create one rhombus first if the wide angle is 45?
+    <li>How many turtles do you see? How many repetitions? How many rhombuses do you need to draw?
     <li>What does the turtle do in each repetition?
+    <li>What direction is the turtle facing before it stamps? Does it stamp before or after it turns?
     <li>Once you figured out the answer to the previous two questions, play around with the angle to produce the image.
     <li>Look up the turtle functions <tt>pencolor()</tt> and <tt>fillcolor()</tt> to produce the turtle colors?
     <li>You have used that background color before, what color was it?
@@ -221,7 +222,7 @@ print("Hello, World!")</pre>
 
   <li > <b>Due Date: 22 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html">9</a> & <a href="lab2.html">Lab 2</a></b><br>
 
-		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that <b>prompts the user for a message and a letter</b>, and then prints <b>that message</b>, the message in upper case letters and the message in lower case letters and then prints out how many times the <b>given letter</b> is found in the given message.
+		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that <b>prompts the user for a message and a letter</b>, and then prints <b>that message</b>, the message in upper case letters and the message in lower case letters. Finally, it prints out how many times the <b>given letter</b> is found in the message.
 
 <p>A sample run of your program should look like:>
 <pre style ="background-color:lavender;width:400px">
@@ -277,7 +278,7 @@ A sample run of your program should look like:
 </pre>
 
 
-<p><i> Note:  the grading scripts expect the email associated with your Gradescope account.  If you get an error that the email does not match, compare carefully the email you printed and the email on file.</i>
+
 
 
 
@@ -302,7 +303,7 @@ A sample run of your program should look like:
  current value: 18 | value+10: 28
  current value: 20 | value+10: 30
     </pre>
-    
+
 
 
 <p><i><b>Hint:</b> Use the</i> <code>start, stop, step</code> <i>options in the</i> <code>range()</code> <i>function</i> and print the loop variable.
@@ -310,13 +311,13 @@ A sample run of your program should look like:
 
 <li > <b>Due Date: 27 September</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Strings/toctree.html"> chapter 9</a>, <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> & <a href="lab2.html">Lab 2</a></b><br>
 
-  <p>Write a problem that does the following:
+  <p>Write a program that does the following:
   <ol>
-  	<li> Prompt for a phrase & read it in.
+  	<li> Prompt the user for a phrase.
   	<li> Reverse the phrase and print it.
   	<li> Make the phrase upper case.
-    <li> Split the phrase into a list of words. 
-  	<li> Take the <b>last letter</b> of each word (by looping through the list) and print it on the same line.
+    <li> Split the phrase into a list of words.
+  	<li> Take the <b>last letter</b> of each word (by looping through the list of words) and print it on the same line.
   </ol>
 A sample run of your program should look like:
 <pre style = "background-color:lavender;width:350px">
@@ -373,7 +374,7 @@ Last letters of reversed words: CH
 
 	<li > <b>Due Date: 29 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
 
-		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of yellow in the shape of a psuedo-heart. The turtle draws on a 60 degree angle an a 120 degree angle respectively from the start. Once you draw one side, go back to where you started, without drawing, to draw the other side. Remember to use <tt>penup()</tt> and <tt>pendown()</tt>.
+		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of yellow in the shape of a pseudo-heart. The turtle draws on a 60 degree angle and then a 120 degree angle respectively from the start. Once you draw one side, go back to where you started, without drawing, to draw the other side. Remember to use <tt>penup()</tt> and <tt>pendown()</tt>.
 
 		<p>
 		Your output should look similar to:
@@ -385,14 +386,14 @@ Last letters of reversed words: CH
 
     <li > <b>Due Date: 30 September</b>   	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b> <br>
 
-  		<p>Now modify the program from <a href="lab3.html">Lab 3</a> to create two transitions from shades of yellow to red by moving forward 10 steps.
-        
+  		<p>Now modify the program from <a href="lab3.html">Lab 3</a> to create two transitions from shades of yellow to red by moving forward 10 steps each.
+
   		<p>
   		Your output should look similar to:
   		<br>
-  		<img src="../images/f21program12.png" height=200>
+  		<img src="../images/f21program12.png" height=250>
 
-	<p> <i><b>Hint:</b> decrease the amount of green using the loop variable while keeping the amount red same</i>
+	<p> <i><b>Hint:</b> decrease the amount of green using the loop variable while keeping the amount red the same.</i>
 
 
 <li > <b>Due Date: 1 October</b>
@@ -401,11 +402,14 @@ Last letters of reversed words: CH
 <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>, <a href="lab2.html">Lab 2</a> & <a href="https://huntercsci127.github.io/f20.html#l3">Lecture 3</a> </b><br>
 
 
-<p>Write a program that prompts the user to enter a list of books and their authors. Each book with its respective author is separated from the next by a semicolon followed by a space ("; "). The names are entered <tt>firstName lastName, </tt> (i.e. separated by space " " ). he title of the book and the the author of the book is separated by a hyphen surrounded by spaces ( - ). Your program should then print out the name of the book, one per line, with the string "by", followed by the the first name initial of the author and then a "." and the last name initial of the author, also followed by a "."
+<p>Write a program that prompts the user to enter a list of books and their authors. Each book with its respective author is separated from the next by a semicolon followed by a space ("; ").
+  The names are entered <tt>firstName lastName, </tt> (i.e. separated by space " " ).
+  The title of the book is separated from the the author by a hyphen surrounded by spaces ( - ).
+  Your program should then print out the name of the book, one per line, followed by the string "by", followed by the the first name initial and last name initial of the author both followed by "."
 
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender">
-Please enter a list of books and their authors: Frankenstein - Mary Shelley; Lucy - Jamaica Kincaid; Beloved - Toni Morrison; Annabel - Kathleen Winter
+Enter a list of books and their authors:Frankenstein - Mary Shelley; Lucy - Jamaica Kincaid; Beloved - Toni Morrison; Annabel - Kathleen Winter
 Frankenstein by M.S.
 Lucy by J.K.
 Beloved by T.M.
@@ -414,7 +418,8 @@ Annabel by K.W.
 Thank you for using my book organizer!
 </pre>
 
-<p><i>Hint: See <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by each book and author (what should the delimiter be?). After that, split the name of the book from the author. Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, how do you index to extract the first character?</i>
+<p><i>Hint: See <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by each book and author (what should the delimiter be?). After that, split the name of the book from the author. Then, split each person's name into first and last name (what should the delimiter be here?).
+  If you have a string <tt>str</tt>, how do you index to extract the first character?</i>
 
 
 
@@ -425,7 +430,7 @@ Thank you for using my book organizer!
 <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/Lists/StringsandLists.html?highlight=split">Section 10.24</a>, <a href="lab2.html">Lab 2</a>  & <a href="lab3.html">Lab 3</a></b><br>
 
 <p>Write a program that asks the user for a 6-digit hex number and uses it as the hex code to stamp 4 turtles of that color into a square
-<br>Let the turtle walk forward 100 steps between stamps and use the sequence stamp/forward (i.e. stamp before moving the turtle, such that the last turtle is produced by its position, not a stamp).
+<br>Let the turtle walk forward 100 steps between stamps and use the sequence turn/forward/stamp.
 
 <p>A sample run of the program:
 <pre style ="background-color:lavender;width:400px">
@@ -434,7 +439,7 @@ Please enter a 6-digit Hexadecimal number: 00FFFF
 </pre>
   <p> which produces an output:
 
-  <p><img src="../images/f21_program14.png" height = 100>
+  <p><img src="../images/f21_program14.png" height = 150>
 
 <p><i><b>Hint:</b> don't forget to add the '#' at the beginning of the hex number to use it as a hex encoding for color! For string concatenation see <a href="lab2.html">Lab 2.</a> You may assume that the user always inputs a valid 6-digit Hex number. </i>
 
@@ -442,7 +447,7 @@ Please enter a 6-digit Hexadecimal number: 00FFFF
 <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
 <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab3.html">Lab 3</a></b><br>
 
-<p>Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green and red channels of the original image (that is, no blue channel).
+<p>Write a program that asks the user for the name of an image <tt>.png</tt> file and the name of an output file.  Your program should create a new image that has only the green and red channels of the original image (that is, no blue channel).
   <p>To test your program you can download <a href="../images/csBridge.png">csBridge.png</a>.
 
 
@@ -473,20 +478,21 @@ Enter name of the output file:  noblue.png
 <p>
 
   <li > <b>Due Date: 6 October</b><b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a>  & <a href="lab4.html">Lab 4</a></b><br>
-    <p>For this program, you'll be doing a very common conversion: parsecs to light-years, and light-years to parsecs. As I'm sure we all know, <i> 1 parsec = 3.26156 light-years</i>.
+    <p><a href="https://en.wikipedia.org/wiki/Parsec" target="_blank">The parsec</a> is a unit of length used to measure the large distances to astronomical objects outside the Solar System, approximately equal to 3.26 light-years, i.e. 30.9 trillion kilometres (19.2 trillion miles).
+      <p>For this program, you'll be doing a very common conversion: parsecs to light-years, and light-years to parsecs. You will use the formula: <i> 1 parsec = 3.26156 light-years</i>.
 
-      <p>With this information, write a program which operates as follows:</p> 
+      <p>With this information, write a program that does the following:</p>
       <p>1. Asks the user which conversion they want to do:</p>
       <pre>
        enter 'a' for Light-Year to Parsec,
        enter 'b' for Parsec to Light-Year.
       </pre>
-      <p>2. So if I type the character 'b' and press enter, the program will compute light-years to parsecs, and if I type the character 'a' and press enter, the program will compute parsecs to light-years. </p>
-      <p>3. Then compute the result based off of what the user enters and output the result!</p>
+      <p>2. If the user enters the character 'a', the program will prompt for the number of lightyears to be converted and computes light-years to parsecs; if the user enters the character 'b' instead, the program will prompt for the number of parsecs to be converted and computes parsecs to light-years.</p>
+      <p>3. Then the program will print the appropriate result.</p>
       <p>
           A sample run of your program should look like:
       <pre style ="background-color:lavender;width:400px">
-      
+
     Please enter the conversion you want to do:
     'a' for Light-Year to Parsec conversion
     'b' for Parsec to Light-Year conversion
@@ -502,7 +508,7 @@ Enter name of the output file:  noblue.png
     Your selection: b
     Please Enter a number of Parsecs: 1
     1.0 Parsecs is equal to 3.26156 Light-Years.
-      
+
       </pre>
 
 <br><i><b>Hint</b> Don't forget to convert the input into a numeral for calculation.</i>
@@ -529,7 +535,7 @@ Write a program that implements the following pseudocode using turtles:
           add 3 to red, green, and blue
         set turtle to new color
         have turtle move forward by steps
-        have turtle turn right 24 degrees  
+        have turtle turn right 24 degrees
 
 </pre>
 
@@ -556,13 +562,13 @@ Enter number of stamps the turtle will print: 50
 	In Lecture 4, we designed a program to make a Hunter logo 'H' on a 10x10 grid.   Write a program that creates a pink 'P' logo for Python on a 30x30 grid.
 
 	<p>
-	<img src="../images/s21program18.png" style="padding:5px" height=200>
+	<img src="../images/f21program18.png" style="padding:5px" height=200>
 
 	<p> The grading script is expecting:
 	<ul>
 		<li> The file to be saved as:  <tt>logo.png</tt>.
 		<li> The grid to be 30 x 30.
-		<li> The 'P' to be 50% red, 0% green, and 50% blue.  It is best to sketch this before starting to code. The body and the head thickness of the "P" is 1/6 of the grid. 
+		<li> The 'P' to be 50% red, 0% green, and 50% blue.  It is best to sketch this before starting to code. The body and the head thickness of the "P" is 1/6 of the grid.
 		<li> The remaining pixels in the image should be black (0% red, 0% green, and 0% blue).
 	</ul>
 
@@ -583,12 +589,12 @@ Enter number of stamps the turtle will print: 50
 Ask the user for amount of social media followers they have.
 Compute and output the their influencer tier as follows:
   - Error if followers less than 0
-  - Hyper Influencer if amount of followers less than 1K followers
-  - Nano Influencer if amount of followers 1K-10K followers (not including 10k)
-  - Micro Influencer if amount of followers 10K-100K followers (not including 100k)
-  - Mid-Tier Influencer if amount of followers 100K-500K followers (not including 500k)
-  - Macro-Influencer if amount of followers 500K-1M followers (not including 1M)
-  - Celebrity Influencer if amount of followers greater than 1M followers
+  - Hyper Influencer if number of followers less than 1K followers
+  - Nano Influencer if number of followers 1K-10K followers (not including 10k)
+  - Micro Influencer if number of followers 10K-100K followers (not including 100k)
+  - Mid-Tier Influencer if number of followers 100K-500K followers (not including 500k)
+  - Macro-Influencer if number of followers 500K-1M followers (not including 1M)
+  - Celebrity Influencer if number of followers greater than 1M followers
 </pre>
 
 <p>Think about the order of your decisions: <b>elif/else clauses are considered only if the previous condition is false!</b>
@@ -643,13 +649,13 @@ Your influencer tier is: Error
 <li > <b>Due Date: 14 October</b> 	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a>  &
 <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a>,  <a href="lab3.html">Lab 3</a>,  <a href="lab4.html">Lab 4</a> & <a href="../f20.html">Lecture 4</a></b> <br>
 <p><b>REVIEW from Lecture/Lab 4</b>
-<p>Write a program that creates an image of khaki and rosy horizontal and vertical stripes. 
+<p>Write a program that creates an image of khaki and rosy horizontal and vertical stripes.
   <br>
-  <br>The color codes are below. 
+  <br>The color codes are below.
   <br>
-  RGB(188,143,143), #BC8F8F - Rosy Brown 
+  RGB(188,143,143), #BC8F8F - Rosy Brown
   <br>
-  RGB(240, 230,140) #F0E68C - khaki 
+  RGB(240, 230,140) #F0E68C - khaki
   <br>
   Use the color converter to get the RGB% from hex:https://andylangton.co.uk/tools/colour-converter
   <br>
@@ -700,7 +706,7 @@ Enter output file: 50stripes.png
   (optional) set the turtle speed to 0 to make things faster
   set the pensize to 5
   set the turtle background color to "khaki" for aesthetic purposesof course
-  
+
   loop 36 times:
       change the pencolor to be 0 red, (i*7) green, and 0 blue
       move the turtle forward 10
@@ -952,7 +958,7 @@ KOKA has the lowest rating in Singapore with 2.5 stars.
 <b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a> as well as <tt>idxmin()</tt> to find the row containing the restaurant with the lowest star rating in Singapore to get the name of the place (here is a useful resource <a href = "https://www.geeksforgeeks.org/python-pandas-dataframe-idxmin/"> from GeeksForGeeks </a>).
 <b>IMPORTANT: </b>After reading in the csv file, add the following line:
 <p>
-<pre style ="background-color:lavender;width:500px"> 
+<pre style ="background-color:lavender;width:500px">
 df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
 </pre>
 
@@ -973,18 +979,18 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
     <li> make a plot of the fraction of total single adults in shelter over the total individuals in shelter
     <li> store the plot in the output file the user specified.
     </ul>
-    
+
     <p>A sample run of the program:
     <pre style ="background-color:lavender;width:400px">
     Enter name of input file:  DHS_2015_2016.csv
     Enter name of output file:  dhsPlot.png
     </pre>
     <p> which produces an output:
-    
+
     <p><img src="../images/dhsPlot.png" height = 300>
-    
+
     <p> <b>Note:</b>  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Single Adults".
-    
+
 
 
 <li > <b>Due Date: 29 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab6.html">Lab 6</a> & <a href="lab7.html">Lab 7</a></b><br>
@@ -1014,7 +1020,7 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
       </ul>
     </ul>
 
-    
+
 
   <p>A sample run of the program:
   <pre style ="background-color:lavender;width:500px">
@@ -1022,7 +1028,7 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
    Enter name of output file:  UFO_sightings_barplot.png
   </pre>
   <p> which produces an output:
-  
+
   <p><img src="../images/UFO_sightings_barplot.png" height = 300>
 
 <li > <b>Due Date: 1 November</b> 	<b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/mainfunction.html">Section 6.7</a> & <a href="lab7.html">Lab 7</a></b><br>
@@ -1030,7 +1036,7 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
 
 <p> Write a program using a function <tt>main()</tt> that asks the user for a number <tt>n</tt>  and prints "Hello Functions!" <tt>n</tt> times. <b>The program should be executable as stand-alone program as well as included as a module in another program.</b>   See <a href="lab7.html">Lab 7</a>.
 
-<p> A sample run of the program: 
+<p> A sample run of the program:
 <pre style = "background-color: lavender; width: 190px;">
 Enter a number: 3
 Hello, Functions!
@@ -1099,7 +1105,7 @@ Enter name of output file:  results.png
           <li> 'U':  go Up from the current location
 	  <li> 'D':  go Down from the current location
         </ul>
-	
+
 	<p>
 	You must check first if each command is a valid move, utilizing the given functions, then update the location of the User (through the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
 	As per the display of the maze, each tile is represented by a 3x3 of special characters.
@@ -1110,7 +1116,7 @@ Enter name of output file:  results.png
 	  <li> 'X':  represents the end tile
 	  <li> 'v':  represents the current location of the user
         </ul>
-	   
+
 	<p>A sample run of the program using an example maze (which you can use for testing here: <a href="https://github.com/HunterCSci127/CSci127"target="_blank">maze1.txt</a>)
 <pre style ="background-color:lavender;width:500px">
 Hello Everyone! Welcome to Maze Runner!
@@ -1303,7 +1309,7 @@ The world record for men's 100 meters is 9.63 seconds.
 Your program should then print out:
   <ul>
     <li> The total number of games
-    <li> The count of video games of each game genre. 
+    <li> The count of video games of each game genre.
     <li> The top 3 game publishers
   </ul>
 
@@ -1312,7 +1318,7 @@ Your program should then print out:
 Enter file name: vgsales.csv
 There are 16598 total games
 
-The number of game in each genre are 
+The number of game in each genre are
 Action          3316
 Sports          2346
 Misc            1739
@@ -1327,7 +1333,7 @@ Strategy         681
 Puzzle           582
 Name: Genre, dtype: int64
 
-The top 3 game publishers are 
+The top 3 game publishers are
 Electronic Arts       1351
 Activision             975
 Namco Bandai Games     932
@@ -1345,12 +1351,12 @@ Name: Publisher, dtype: int64
     <li > <b>Due Date: 8 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html">Lab 8</a></b>
 
 
-      <p> Write three functions, <tt>setUp()</tt>, <tt>fractalRight()</tt>, and <tt>fractalLeft()</tt>. 
-    
+      <p> Write three functions, <tt>setUp()</tt>, <tt>fractalRight()</tt>, and <tt>fractalLeft()</tt>.
+
       <p> Provided in the class <a href="https://github.com/HunterCSci127/CSci127">Github</a> is a template program, <tt>'turtleTree.py'</tt>. Using the pseudocode attached to the template, implement your program as follows:</p>
-    
+
       <pre style = "background-color:lavender;width:800px">
-    
+
         setUp():
           Takes no parameters, and simply sets up the turtle, returning to caller.
           Here you should:
@@ -1359,7 +1365,7 @@ Name: Publisher, dtype: int64
               3. set the heading to 90 (which will face the turtle upwards)
               4. set the speed (t.speed(speed=0), you will want this)
               5. return the turtle to the calling function.
-    
+
         fractalRight():
           Takes three parameters: a turtle t, distance 'distance', and i, the
           color value. This function does the following: if the distance is greater than 10,
@@ -1374,7 +1380,7 @@ Name: Publisher, dtype: int64
               8. move backward by 'distance' steps, NOT newDistance,
               9. turn left 30 degrees
               10. call fractalLeft with parameters t, newDistance, i+25
-    
+
         fractalLeft():
           This is pretty much the same as fractalRight, just to the left:
           Takes three parameters: a turtle t, distance 'distance', and i, the
@@ -1390,18 +1396,18 @@ Name: Publisher, dtype: int64
               8. move backward by 'distance' steps, NOT newDistance,
               9. turn right 30 degrees
               10. call fractalRight with parameters t, newDistance, i+25
-    
+
       </pre>
-    
+
     <p> There is a subdtle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two results. Observe the execution (hopefully by increasing the speed to save some time) and think about it!!!
       <p>Again, the template program, <tt>turtleTree.py</tt>, is available on the
       <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
       The grading script does not run the whole program, but instead tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>nestedPolygon()</tt> and <tt>fractalPolygon()</tt>).
-    
+
     <p>A sample run:
         <p><img height=250 src="../images/turtleTree.png">
-    
-    
+
+
 
 <li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
 
@@ -1463,8 +1469,8 @@ Name: Publisher, dtype: int64
   <pre style="background-color: lavender; width: 400px;">
 Enter size of checkerboard: 400
 Enter row to move piece to: 3
-Enter col to move piece to: 5</pre>  
-  <p> which would produce: 
+Enter col to move piece to: 5</pre>
+  <p> which would produce:
   <p><img src="../images/f21_program40.png" width = 400>
   <p> <b>Important</b>: No lines of code from the template program should be removed or changed. Only add in the missing lines of code. </p>
 
@@ -1479,8 +1485,8 @@ Enter col to move piece to: 5</pre>
     <li > <b>Due Date: 11 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
         <p><b>REVIEW from Lecture/Lab 4 & 7</b>
     <p><img src="../images/python_calculator.png" width=400>
-	    
-    <p>The template program, <tt>python_calculator.py</tt> is available on the <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>. 
+
+    <p>The template program, <tt>python_calculator.py</tt> is available on the <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
 
     <p>Fill in the missing function to a simple python calculator.
       <p>Your function, <tt>main</tt> takes as input:
@@ -1625,28 +1631,28 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
      <li> <tt>perfectSquareChecker()</tt> which, as the name suggests, will output whether or not the passed integer value is a perfect square to the user.
      <li> <tt>is_square()</tt> the function perfectSquareChecker uses to check if a number is square, will return true if the integer passed as a parameter is a perfect square, and false if not.</li>
   </ul>
-  
+
   <pre style="background-color: lavender;width:500px;">
-  
-    A perfect square is the product of an integer squared. 
+
+    A perfect square is the product of an integer squared.
     Thus, a perfect square will have a whole integer root.
-  
-    e.g. 4 is a perfect square because 2^2 = 4. 
+
+    e.g. 4 is a perfect square because 2^2 = 4.
     e.g. 16 is a perfect square because 4^2 = 16.
-  
-    You should take input and validate said input in your 'main' 
-    function. You will be provided a 'is_square' function which 
-    takes a positive integer as a parameter and returns whether 
+
+    You should take input and validate said input in your 'main'
+    function. You will be provided a 'is_square' function which
+    takes a positive integer as a parameter and returns whether
     or not it is a perfect square.
-  
-    Once you have validated your input, pass your validated input 
-    to the 'perfectSquareChecker' function provided, which will 
+
+    Once you have validated your input, pass your validated input
+    to the 'perfectSquareChecker' function provided, which will
     ensure that your validation is correct.
-  
+
   </pre>
-  
+
    <p> A template <tt>perfectSquare.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>main()</tt></b> to implement its desired behavior.
-  
+
   <p> A sample run of your program:
   <pre style = "background-color:lavender;width:500px">
 
@@ -1658,23 +1664,23 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
   That is not a perfect square. Try again: 9
   This number is a perfect square. It is the product of 3.0 squared.
   </pre>
-  
+
    <p>Note:  The grading scripts are expecting that your function is called <tt>dayString()</tt>.  You need to use that name, since in addition to running the entire program, the scripts are also "unit testing" the function-- that is, calling that function, in isolation, with different inputs to verify that it performs correctly.
-  
+
     <p><i><b>Hint:</b>  See <a href="lab10.html">Lab 10</a> for an example of validating the input.</i>
-  
-  
-  
+
+
+
 
 <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-<p>Create a rock papers scissors game. You have to print the output as specified below. 
+<p>Create a rock papers scissors game. You have to print the output as specified below.
 <p>Must print <tt>ComputerMove</tt> for each round. In another line print out the winner of the round. After the game finishes, you <b>must print out the last-round winner</b>.
 <p>Rules:</p>
 <ul>
   <li> Player moves: "1" = rock, "2" = paper, "3" = scissors
   <li> Computer moves:  "1" = rock, "2" = paper, "3" = scissors
-  <li> Must have <b>global winner variable</b> to track status of game. 
+  <li> Must have <b>global winner variable</b> to track status of game.
   <li> If player wins (winner = "human")
   <li> If computer wins (winner = "computer")
   <li> If round is a tie (winner = "draw")
@@ -1682,7 +1688,7 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 </ul>
 <p>Game logic:  Loop until playerMove is <b>less than zero</b> (used to terminate game)</p>
 <ul>
-  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>rock (1)</b>, its a draw. 
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>rock (1)</b>, its a draw.
   <li>  If playerMove is <b>rock (1)</b> and computer move is <b>paper (2)</b>, human wins.
   <li>  If playerMove is <b>rock (1)</b> and computer move is <b>scissors (3)</b>, computer wins.
   <li>  If playerMove is <b>paper (2)</b> and computer move is <b>rock (1)</b>,  human wins.
@@ -1721,9 +1727,9 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 <li > <b>Due Date: 23 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
 
-<p> 
+<p>
 	<b>Write a program that creates a 10 by 10 image of a color of the users choice. Instead of simply asking the user for a color, the user will be creating the color by <b>iteratively increasing and decreasing</b> the rgb values until they are finished.
-<b>Starting with an image of zeros, you must ask the user what they would like to save the new image as and then <b>repeatedly</b> ask how much they would like to increase/decrease each rbg values of their color. Since we are starting with an image of zeros, then the rgb values should start at 0 initially. 
+<b>Starting with an image of zeros, you must ask the user what they would like to save the new image as and then <b>repeatedly</b> ask how much they would like to increase/decrease each rbg values of their color. Since we are starting with an image of zeros, then the rgb values should start at 0 initially.
 	<b>Assume that the user can input any positive or negative number, but the max a color can be is of value 255 and at lowest 0. If the user enters a 0 for increasing/decreasing each color, then the program ends and saves the image as the name provided.
 
 <p> A sample run of your program:
@@ -1811,26 +1817,26 @@ You're done! Congrats on the color, it looks beautiful!
   <li > <b>Due Date: 30 November</b>  <b style="float:right">Reading:
 	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab10.html">Lab 10</a> & <a href="lab11.html">Lab 11</a>.</b><br>
 
-	<p>You've now mastered UNIX Scripts. 
+	<p>You've now mastered UNIX Scripts.
     <br>
     <br>
-    You will organize some files in a cloned GitHub repository. 
+    You will organize some files in a cloned GitHub repository.
     <br>
     <br>
     Clone the repository https://github.com/HunterCSci127/CSci127 with the git command. (Refer to Lab 8 to refresh on cloning a repository)
     <br>
     <br>
-    Navigate to this repository and make a new directory called myprojectfiles. 
+    Navigate to this repository and make a new directory called myprojectfiles.
     <br>
     <br>
-    Move nestedPolygons.py into myprojectfiles 
+    Move nestedPolygons.py into myprojectfiles
     <br>
     <br>
-    Go back to the repository directory, and make another directory called pictures 
+    Go back to the repository directory, and make another directory called pictures
     <br>
     <br>
-    Move any file that ends in .png in the cloned repo to the pictures directory you just made 
-    
+    Move any file that ends in .png in the cloned repo to the pictures directory you just made
+
 
 
 	<p><i>Hint:  See <a href="lab11.html">Lab 11</a>.</i>
@@ -1864,22 +1870,22 @@ You're done! Congrats on the color, it looks beautiful!
 <li > <b>Due Date: Due Date: 2 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a></b><br>
 
 
-  
+
 <p>Write a <b>C++ program</b> that will print "01" 5 times in one row, for 5 rows.
 
   <p>The output of your program should be:
     <pre style ="background-color:lavender;width:100px">
-    
+
   0101010101
   0101010101
   0101010101
   0101010101
   0101010101
     </pre>
-  
+
       <p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
       <p> <i>Extra hint:  You can accomplish this very quickly with a nested for loop. Write a for loop for each row, and inside of that for loop write another for loop to iterate through each column.
-      
+
 
 <li > <b>Due Date: 3 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab12.html">Lab 12</a> </b><br>
 <p> Write a <b>C++ program</b> that converts cryptocurrencies to feet. Your program should prompt the user for an amount in cryptocurrency and then print out the conversion from Bitcoin, Ethereum, and Dogecoin to USD.
@@ -2009,7 +2015,7 @@ Please enter a character: *
   Budget left after week 4	238
 </pre>
 
-<p> 
+<p>
 
 
 
