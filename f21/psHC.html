@@ -43,27 +43,28 @@ Fall 2021<br><br>
 	<li > <b>HC 1:  Team Contract and Dataset (Airbnb or another dataset of your choice)</b>  <b style="float:right">Due Date: 1 September</b>  <br>
 
 	<p>
-	<img src="../images/airbnb.png" height = 200>
+	<img src="../images/open_restaurants.png" height = 200>
 
-	<p>  Throughout the semester, we will analyze the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019.
-
+	<p>  Throughout the semester, we will analyze the <a href="https://data.cityofnewyork.us/Transportation/Open-Restaurant-Applications/pitm-atqc" target="_blank">Open Restaurant Applications dataset</a>,
+a dataset of applications from food service establishments seeking authorization to re-open under Phase Two of the State’s <a href="https://forward.ny.gov/" target=blank>New York Forward Plan</a>, and place outdoor seating in front of their business on the sidewalk and/or roadway.
+More info on <a href="https://www1.nyc.gov/html/dot/html/pedestrians/openrestaurants.shtml" target=blank>NYC DOT Open Restaurants can be found here.</a>
     <h4>Step 1 -- Project structure:</h4>
     <p>We will work in teams. Each team will choose a borough to analyze. Each team member will then choose a neighborhood in that borough to report on.
     <br>Throughout the semester each team will provide different analyses of the overall borough supplemented by analyses of the chosen neighborhoods.
-    <br>These analyses will be broken down across different assignments and will be a mix of research and data analysis.
-    <p>We propose to use the <a href="https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data" target="_blank">Airbnb dataset</a> of New York listings from 2019. However, we give you the freedom to choose a different dataset if that would inspire you more. Another great place to look for data is <a href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data.</a> If you choose a different dataset, it must have the following properties to guarantee that you will be able to fulfill all the assignments despite working with different data:
+    <br>These analyses will be broken down across different assignments and will be summarized at the end of the semester in a showcase presentation.
+    <p>We propose that you use the <a href="https://data.cityofnewyork.us/Transportation/Open-Restaurant-Applications/pitm-atqc" target="_blank">Open Restaurant Applications dataset</a>. However, we give you the freedom to choose a different dataset if that would inspire you more. A great place to look for data is <a href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data.</a> If you choose a different dataset, it must have the following properties to guarantee that you will be able to fulfill all the assignments despite working with different data:
       <ul>
         <li> The data must have an attribute (column) corresponding to neighborhoods (preferably NYC)
         <li> It must include some numerical data
         <li> It must include some categorical data
         <li> It must include geographical locations (latitude and longitude columns, or exact address column)
       </ul>
-and must be approved by the instructor.
-<p>Discuss with your assigned team to decide on a dataset, then move on to Step 2. <br><i>Note: You don't need to identify the alternate dataset in this assignment, but if you are considering it you should indicate so in Step 2 and <b>must identify the dataset no later than our next meeting on September 4.</b></i>
+and <b>must be approved by the instructor</b>.
+<p>Discuss with your assigned team to decide on a dataset, then move on to Step 2. <br><i>Note: You don't need to identify the alternate dataset in this assignment, but if you are considering it you should indicate so in Step 2 and <b>must identify the dataset no later than our next meeting on September 10.</b></i>
 
 <h4>Step 2 -- Team Contract:</h4>
- <p>Work with your assigned team to complete the <a href="../files/hcTeamContract.docx">Team Contract</a>.
-<p>Once your contract is complete and signed by all team members, <b>upload a .pdf</b> to the assignment <tt>HC 1.</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>. This will be a group submission (one submission per team). Unlike the Python code, it is not automatically graded.
+ <p>Work with your assigned team to complete the <a href="../files/hcTeamContract.pdf">Team Contract</a>.
+<p>Once your contract is complete and signed by all team members, <b>upload a .pdf</b> to the assignment <tt>HC1</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>. This will be a group submission (one submission per team). Unlike the Python code, it is not automatically graded.
 
 
 
@@ -74,9 +75,9 @@ and must be approved by the instructor.
 
 
   <li > <b>HC 2:  Neighborhood Analysis
-	</b> <b style="float:right">Due Date: 8 September</b>  <br>
+	</b> <b style="float:right">Due Date: 15 September</b>  <br>
 
-  <p>To begin, discuss with your team to pick a neighborhood in your team's borough (a different neighborhood for each team member). Keep in mind that you want all the neighborhoods together to be representative of the borough. You also want to be sure your neighborhood is well represented <a href="../files/AirBnB_NYC_2019.csv" target="_blank">in the dataset</a>.
+  <p>To begin, discuss with your team to pick a neighborhood in your team's borough (a different neighborhood for each team member). Keep in mind that you want all the neighborhoods together to be representative of the borough. You also want to be sure your neighborhood is well represented <a href="../files/open_restaurant_applications.csv" target="_blank">in the dataset</a>.
   <p>Create a single page summary of your neighborhood that includes <b>at least</b> the following:
 	<ul>
 		<li> Name of the neighborhood (include in the title),
@@ -85,7 +86,7 @@ and must be approved by the instructor.
 		<li> A photo or image that captures your neighborhood and
 		<li> The demographics of your neighborhood.
 	</ul>
-Your summary should exceed these minimum requirements to receive full credit. Include in your summary any information you think will be relevant to the future analysis of your dataset (e.g. airbnb listings)
+Your summary should exceed these minimum requirements to receive full credit. Include in your summary any information you think will be relevant to the future analysis of your dataset (restaurants and bars in the area)
 <br>A great resource for your analysis is <a href="https://www.socialexplorer.com/" target="_blank">Social Explorer</a>. <i>Note: you don't need to necessarily create an account. From the top menu, select <tt>Resources - Demographic Profiles</tt> and enter the zip code(s) of your neighborhood to find a wealth of information.</i>
   <p>Submit a .pdf file containing your summary.
   </p>
@@ -94,7 +95,7 @@ Your summary should exceed these minimum requirements to receive full credit. In
 
 	<hr>
 		<li > <b>HC 3:  Neighborhood Rankings
-	</b> <b style="float:right">Due Date: 15 September</b>  <br>
+	</b> <b style="float:right">Due Date: 22 September</b>  <br>
 
   <p> Design a ranking for the most desirable features of a neighborhood.
 
@@ -114,17 +115,21 @@ Your summary should exceed these minimum requirements to receive full credit. In
   <ul>
     <li> Assess what these rankings have in common and how they differ.
     <li> Which ranking do you favor and why?
-    <li> What qualities make a neighborhood a desirable place book a room or apartment in?
+    <li> What qualities make a neighborhood a desirable place for outdoor dining?
     <li> Collate a list of the three most important.
     <li> How does each neighborhood in your team's borough fare according to this ranking?
   </ul>
-
-  <p>Submit a .pdf file containing your assessment of the rankings and the three most desirable qualities, as well as a ranking of your team's borough (if all neighborhoods fare the same, you may indicate so and group the discussion to the borough).  You should use complete sentences, compare and contrast the rankings above and justify the three qualities that your group thought most important.
+  <p> You can share a Google Doc or you can use a collaboration tool for this project like <a href="https://miro.com/" target=blank>Miro</a> or <a href="https://padlet.com/" target=blank>Padlet</a>. Both have a free plan option that should be enough for the purpose of this project.
+  <p>Your final submission must be a single .pdf file containing your assessment of the rankings and the three most desirable qualities, as well as a ranking of your team's borough (if all neighborhoods fare the same, you may indicate so and group the discussion to the borough).  You should use complete sentences, compare and contrast the rankings above and justify the three qualities that your group thought most important.
  This will be a group submission (one submission per team).
   </p>
 
 
 	<hr>
+
+  <p> More coming soon!...
+
+    <!--
 		<li > <b>HC 4:  Synchronous Discussion
 	</b> <b style="float:right">Due Date: 25 September IN LAB</b>  <br>
 
