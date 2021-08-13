@@ -7,7 +7,7 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -97,8 +97,6 @@ async function getSignOutData() {
    )
 
    return data;
-
-   
 }
 
 /**
@@ -116,6 +114,7 @@ function chartData(signInData, signOutData) {
    // students['signedIn']: number of students who signed in
    // students['signedOut']: number of students who signed out
    const students = getStudents(signInData, signOutData);
+   console.log(students)
 
    const data = {
       labels: lab_hours,
@@ -172,9 +171,9 @@ function chartData(signInData, signOutData) {
             },
             subtitle: {
                display: true,
-               text: new Date().toDateString() + "  |  Click on a label below to show/hide data  |  Refresh page to update graph",
+               text: new Date().toDateString() + "  |  Refresh page to update graph",
                font: {
-                  size: 18
+                  size: 16
                },
                padding: 10
             },
@@ -207,10 +206,8 @@ function getStudents(signInData, signOutData) {
    
    // create object to hold arrays for plotting on chart 
    // entries correspond to [11am,12pm,1pm,2pm,3pm,4pm,5pm]
-   // signouts is only for calculating purposes, not used for charting
-   let s = {'visits': [0, 0, 0, 0, 0, 0, 0], 'in': [0, 0, 0, 0, 0, 0, 0], 'out': [0, 0, 0, 0, 0, 0, 0], 'signouts': [0, 0, 0, 0, 0, 0, 0], 'signins': [0, 0, 0, 0, 0, 0, 0]}
-
-   
+   // signouts is only for calculation purposes, not used for charting
+   let s = {'visits': [0, 0, 0, 0, 0, 0, 0], 'in': [0, 0, 0, 0, 0, 0, 0], 'out': [0, 0, 0, 0, 0, 0, 0], 'signouts': [0, 0, 0, 0, 0, 0, 0]}
 
    let date, time, key, num_students = 0, signouts = 0;
    for(let i = 0; i < signOutData.length; i++) {
@@ -230,7 +227,7 @@ function getStudents(signInData, signOutData) {
       }
    }
 
-   for(let i = 1; i < signInData.length; i++) {
+   for(let i = 0; i < signInData.length; i++) {
       // split timestamp into date and time
       data = signInData[i][TIMESTAMP].split(" ")
       date = data[0]
@@ -243,7 +240,6 @@ function getStudents(signInData, signOutData) {
       if (date === today && key >= 11 && key < 18) {  
          num_students++;
          // s['visits'][key-11] = num_students; 
-
          for(let n = key; n <= current_time; n++) {
             s['visits'][n-11] = num_students;
             s['in'][n-11] = num_students - s['signouts'][n-11];
@@ -255,6 +251,7 @@ function getStudents(signInData, signOutData) {
    
    return s;
 }
+
 /* 
 function generate__colors() : generates a list of colors to plot the bar graph
 The color that corresponds to the current time is darker to highlight current lab hours.
