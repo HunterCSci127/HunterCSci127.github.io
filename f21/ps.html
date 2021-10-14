@@ -928,7 +928,7 @@ AccountNameGoesHere
 <li > <b>Due Date: 26 October</b>  <b style="float:right">Reading:
 <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a> & <a href="lab6.html" target="_blank">Lab 6</a></b><br>
 <p>Write an Unix shell script that prints: <tt> Hello CSCI127 Students!</tt>
-<br> Then prints on a new line: <tt>$USER's is learning shellscripts!</tt>
+<br> Then prints on a new line: <tt>$USER is learning shells cripts!</tt>
 <br>where <tt>$USER</tt> is a built-in variable that stores the name of the user.
 
 <p> A sample run of the program with user <tt>tizianaligorio</tt>:
@@ -945,11 +945,11 @@ tizianaligorio is learning shell scripts!
 <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a> & <a href="lab6.html">Lab 6</a></b><br>
 
 
-<p> Download the <a href="../files/ramenRatings.csv">Ramen dataset</a> and look at the data and, in particular, the column names.
-<p> Then, write a program that
+<p> Download the <a href="../files/ramenRatings.csv">Ramen dataset</a>, look at the data and, in particular, the column names.
+<p> Then, write a program that:
 <ul>
-<li> Ask the user for the name of the input file.
-<li> Print the average rating, out of 5 stars, per serving style.
+<li> Asks the user for the name of the input file.
+<li> Prints the average rating, out of 5 stars, per serving style.
 <li> Print the lowest rating for a ramen spot in Singapore, and the name of the place.
 </ul>
 <p>
@@ -973,7 +973,7 @@ KOKA has the lowest rating in Singapore with 2.5 stars.
 
 <p>
 <b>Hint: </b>You should use <tt>groupby()</tt> and <tt>get_group()</tt> as described in <a href="lab6.html">Lab 6</a> as well as <tt>idxmin()</tt> to find the row containing the restaurant with the lowest star rating in Singapore to get the name of the place (here is a useful resource <a href = "https://www.geeksforgeeks.org/python-pandas-dataframe-idxmin/"> from GeeksForGeeks </a>).
-<b>IMPORTANT: </b>After reading in the csv file, add the following line:
+<br><b>IMPORTANT: </b>After reading in the csv file, add the following line:
 <p>
 <pre style ="background-color:lavender;width:500px">
 df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
@@ -1006,7 +1006,7 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
 
     <p><img src="../images/dhsPlot.png" height = 300>
 
-    <p> <b>Note:</b>  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Single Adults".
+    <p> <b>Note:</b>  The grading script is expecting that the name of your new column is "Fraction Single Adults".
 
 
 
@@ -1015,7 +1015,7 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
   <p>
 
     <b>Let's explore another dataset!</b>
-    <br>Consider the the <a href="https://www.kaggle.com/NUFORC/ufo-sightings?select=scrubbed.csv" target="_blank">UFO dataset</a> NUFORC data by Sigmond Axel.
+    <br>Consider the <a href="https://www.kaggle.com/NUFORC/ufo-sightings?select=scrubbed.csv" target="_blank">UFO dataset</a> NUFORC data by Sigmond Axel.
     <br>You can <a href="../files/UFO_sightings_US.csv">obtain the csv file directly here.</a>
     <br>First download and inspect the data by looking at the <b>column names</b> and type of data in each column.
     <p>
@@ -1023,7 +1023,7 @@ df["Stars"] = pd.to_numeric(df["Stars"], downcast="float")
     <ul>
     <li> Asks the user for the name of the input file.
     <li> Asks the user for the name of the output file.
-    <li> Plots a bar diagram of the 10 states in dataframe with the longest average UFO sightings:
+    <li> Plots a bar plot of the 10 states in the dataframe with the longest average UFO sightings:
       <ul>
         <li> Use <tt>groupby()</tt> to aggregate the data by <tt>'state'</tt>, which in this dataset represents the state in which the UFO was seen, and average the <tt>'duration (seconds)'</tt> column.
         <li> Now sort the values with .sort_values(ascending=False)[:10] to get the top 10 states with the longest average UFO sighting (note, you'll notice that the averages are quite large, that is because this data contains some inconsistencies leading to a few records which report yearlong UFO sightings, etc.)</li>
@@ -1070,18 +1070,18 @@ Hello, Functions!
 
 <p>
   In <a href="lab7.html">Lab 7</a>, we worked through a program that displayed the homeless shelter occupancy over time.  The same approach can be used for displaying any dataset where the date and time are stored.
-	<p>For this program, use the csv file <a href="https://github.com/HunterCSci127/HunterCSci127.github.io">Superbowl_Finals.cvs/a>. Export the file as CSV and save.
+	<p>For this program, use the csv file <a href="https://github.com/HunterCSci127/HunterCSci127.github.io">Superbowl_Finals.cvs</a>. Export the file as CSV and save.
 
 
  <p> You can look at the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to create a program that:
   <ul>
-  <li> Ask the user to specify the input file,
-  <li> Ask the user to specify the output file,
-  <li> Convert the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
+  <li> Asks the user to specify the input file,
+  <li> Asks the user to specify the output file,
+  <li> Converts the date column (which is stored as 'YYYYMMDD') to a datetime format recognized by pandas, for example if your dataframe is <tt>df</tt>, overwrite the 'Date' column to be:
   <pre>
   df["Date"] = pd.to_datetime(df["Date"].apply(str))	</pre>
-  <li> Make a plot of the percent of winning points out of total points over time from the data in the input file, and
-  <li> Store the plot in the output file the user specified.
+  <li> Makes a plot of the percent of winning points out of total points over time from the data in the input file, and
+  <li> Stores the plot in the output file specified by the user.
 </ul>
 
 <p>A sample run of the program:
@@ -1094,7 +1094,7 @@ Enter name of output file:  results.png
 
   <p>
   <img src="../images/superbowl_finals_graph.png" height = 300>
-  <p> Note: The grading script is expecting that the label (i.e. name of your new column) is "% Points" and the range of values be between a percentage between 0 and 100 (Hints: how do you calculate the total points? What do you multiply by to convert a fraction into a percentage?).
+  <p> <b>IMPORTANT</b>: The grading script expects the name of your new column to be "% Points" and the percentage to be between 0 and 100 (Hints: how do you calculate the total points? What do you multiply by to convert a fraction into a percentage?).
 
 
 
@@ -1105,7 +1105,7 @@ Enter name of output file:  results.png
 
 <a id="cr9"></a>
    <li > <b>Due Date: 3 November</b>
-<b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle" target="_blank"> Turtle Graphics</a> & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
+<b  style="float:right">Reading: Think CS:  <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html" target="_blank">Chapter 7.4</a>, <a href="lab4.html" target="_blank">Lab 4</a>  & <a href="lab6.html" target="_blank">Lab 6</a> </b><br>
 
 <p>
 <p><b>Review from Lecture/Lab 4</b>
@@ -1114,8 +1114,8 @@ Enter name of output file:  results.png
 	You are a student attempting to take an Introduction to Computer Science course. Using what you have learned so far, you must finish this incomplete game titled <tt>Maze Runner</tt>. The objective of the game is, given the maze, the user must navigate through it safely and reach the end. If not done so, they will restart from the beginning.
 	The program, <tt>mazeRunner.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
 	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control where the user goes throughout the maze (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).
-        <p>
-        Modify the function playGame() to allow the user to use the following symbols:
+        <p><b>Your task:</b>
+        <br>Implement the function <tt>playGame()</tt> to allow the user to use the following symbols:
         <ul>
           <li> 'R':  go Right of the current location
           <li> 'L':  go Left of the current location
@@ -1124,7 +1124,7 @@ Enter name of output file:  results.png
         </ul>
 
 	<p>
-	You must check first if each command is a valid move, utilizing the given functions, then update the location of the User (through the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
+	<tt>playGame()</tt> must first check, utilizing the other functions in the program, if each command is a valid move. Then update the location of the User (through the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
 	As per the display of the maze, each tile is represented by a 3x3 of special characters.
 	<ul>
           <li> '*':  represents the wall tile
@@ -1135,7 +1135,7 @@ Enter name of output file:  results.png
         </ul>
 
 	<p>A sample run of the program using an example maze (which you can use for testing here: <a href="https://github.com/HunterCSci127/CSci127"target="_blank">maze1.txt</a>)
-<pre style ="background-color:lavender;width:500px">
+<pre style ="background-color:lavender;width:700px">
 Hello Everyone! Welcome to Maze Runner!
 To succeed in this Computer Science class, you must go through some trials and tribulations...
 So tonight, you must pass through our maze!
@@ -1263,7 +1263,7 @@ moved Down, current location is:  9 1
 Congrats on escaping the maze! Please do join us again :)
 </pre>
 
-        <p><b>Hint:</b>  See Lecture 4 notes.</i>
+<p><b>Hint:</b>  See <a href="lab4.html" target="_blank">Lab 4</a> </i>
 
 
 
@@ -1320,7 +1320,7 @@ The world record for men's 100 meters is 9.63 seconds.
 
 <p> Write a program that asks the user for a CSV of Video Games Dataset
 <ul>
-   <li> There is a sample file on <a href="https://github.com/HunterCSci127/CSci127">github</a>.
+   <li> A sample dataset <tt>vgsales.csv</tt> can be found on <a href="https://github.com/HunterCSci127/CSci127">our github repo</a>.
 </ul>
 
 Your program should then print out:
@@ -1335,7 +1335,7 @@ Your program should then print out:
 Enter file name: vgsales.csv
 There are 16598 total games
 
-The number of game in each genre are
+The number of games in each genre is
 Action          3316
 Sports          2346
 Misc            1739
