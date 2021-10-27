@@ -1603,16 +1603,14 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
   <li > <b>Due Date: 17 November</b>
   <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
 
- <p> For this assignment, we will use <tt>folium</tt> again to generate a map with markers for textile drop-off locations in NYC.
-   <br> The data is made publicly available by
+ <p> Using folium, write a program that asks the user for the name of a CSV file, name of the output file, the name of a borough and creates a map with markers for all the NYC Wi-Fi Hotspot locations in that borough from the input file.
+Use the NYC_Wi-Fi_Hotspot_locations.csv file.
+ 
+   <p> The data is made publicly available by
   <a href="https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw/data">New York City Wifi Hotspot Locations/a>.
   You can also obtain the data here: <a href="../files/NYC_Wi-Fi_Hotspot_Locations.csv">NYC-Wi-Fi-Hotspot-Locations.csv</a>
 
- <p>	Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, the name of a borough and creates a map with markers for all the textile drop-off locations in that borough from the input file.
- <p>  To restrict the markers to a particular borough, make a copy of the dataframe after you <tt>groupby("Borough")</tt> and then <tt>get_group</tt> for the borough entered by the user.
-<!--  For example, if you named your dataframe <tt>df</tt> and stored the borough entered by the user in a variable named <tt>br</tt>, then you make a copy of the dataframe as: <tt> dfCopy = df.groupby("Borough").get_group(br)</tt>
-  <br> Now your dataframe copy contains only textile drop-off locations for the borough specified by the user, and you can look at all the rows to extract "Latitude" and "Longitude" as you did in <a href="lab9.html">Lab 9</a> to place markers on the map. -->
-  You can use the value in the  <tt>"Address"</tt> column to name each marker.
+
 
 
  <p>A sample run:
