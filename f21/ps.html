@@ -1769,12 +1769,12 @@ Use the NYC_Wi-Fi_Hotspot_locations.csv file.
 
 
 <p>
-	Write a program that creates a 10 by 10 image of a color of the users choice. Instead of simply asking the user for a color, the user will be creating the color by <b>iteratively increasing and decreasing</b> the rgb values until they are finished.
-<br>Starting with an image of zeros, you must ask the user what they would like to save the new image as and then <b>repeatedly</b> ask how much they would like to increase/decrease each rbg values of their color. Since we are starting with an image of zeros, then the rgb values should start at 0 initially.
-	<br>Assume that the user can input any positive or negative number, but the max a color can be is of value 255 and at lowest 0. If the user enters a 0 for increasing/decreasing each color, then the program ends and saves the image as the name provided.
+	Write a program that creates a 10 by 10 image of a color of the users choice. Instead of simply asking the user for a color, the user will be creating the color by <b>iteratively increasing and decreasing</b> the <tt>rgb</tt> values until they are finished.
+<br>Starting with an image of zeros, the program asks the user for the name of the file the image will be saved to and then <b>repeatedly</b> ask how much they would like to increase/decrease each <tt>rbg</tt> values of their color. The <tt>rbg</tt> are initially all 0.
+	<br>Assume that the user can input any positive or negative number, but the max a color can be is of value 255 and at lowest 0. <b>If the user enters a 0</b> for increasing/decreasing each color, then <b>the program ends</b> and saves the image with the name provided by the user.
 
 <p> A sample run of your program:
-<pre style = "background-color:lavender;width:650px">
+<pre style = "background-color:lavender; width:700px">
 ------------------------------------------
 Welcome to the Color Maker!
 ------------------------------------------
