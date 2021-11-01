@@ -1111,7 +1111,7 @@ Enter name of output file:  results.png
 <p><b>Review from Lecture/Lab 4</b>
 
 <p>
-	You are a student attempting to take an Introduction to Computer Science course. Using what you have learned so far, you must finish this incomplete game titled <tt>Maze Runner</tt>. The objective of the game is, given the maze, the user must navigate through it safely and reach the end. If not done so, they will restart from the beginning.
+	You are a student attempting to take an Introduction to Computer Science course. Using what you have learned so far, you must finish this incomplete game titled <tt>Maze Runner</tt>. The objective of the game is, given the maze, the user must provide a string of commands that will navigate through the maze and reach the end. If the end is not reached, the game will restart from the beginning.
 	The program, <tt>mazeRunner.py</tt> (available at:  <a href="https://github.com/HunterCSci127/CSci127"target="_blank">
 	https://github.com/HunterCSci127/CSci127</a>) takes a string as input and uses that string to control where the user goes throughout the maze (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).
         <p><b>Your task:</b>
@@ -1124,8 +1124,8 @@ Enter name of output file:  results.png
         </ul>
 
 	<p>
-	<tt>playGame()</tt> must first check, utilizing the other functions in the program, if each command is a valid move. Then update the location of the User (through the given variables 'row' and 'col'). If the user attempts to go through walls or simply does not reach the end of the maze after all of their commands have been executed, return false. If they reach the end (represented by an <tt>'X'</tt> at the location), return True.
-	As per the display of the maze, each tile is represented by a 3x3 of special characters.
+	<tt>playGame()</tt> must first check, utilizing the other functions in the program, if each command (i.e. each character in the input string) is a valid move. Then update the location of the user (through the given variables <tt>'row'</tt> and <tt>'col'</tt>). If the user attempts to go through walls or simply does not reach the end of the maze after all of the commands have been executed,  <tt>PlayGame()</tt> returns false. If they reach the end (represented by an <tt>'X'</tt> at the location), it returns True.
+	As per the display of the maze, each tile is represented by a 3x3 tile of special characters.
 	<ul>
           <li> '*':  represents the wall tile
           <li> ' ':  represents a walkable tile
@@ -1135,7 +1135,7 @@ Enter name of output file:  results.png
         </ul>
 
 	<p>A sample run of the program using an example maze (which you can use for testing here: <a href="https://github.com/HunterCSci127/CSci127"target="_blank">maze1.txt</a>)
-<pre style ="background-color:lavender;width:700px">
+<pre style ="background-color:lavender;width:800px">
 Hello Everyone! Welcome to Maze Runner!
 To succeed in this Computer Science class, you must go through some trials and tribulations...
 So tonight, you must pass through our maze!
@@ -1501,20 +1501,20 @@ Enter col to move piece to: 5</pre>
 
     <li > <b>Due Date: 11 November</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/PythonTurtle/toctree.html">Chapters 4</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">6</a> & <a href="lab8.html">Lab 8</a></b>
         <p><b>REVIEW from Lecture/Lab 4 & 7</b>
-    <p><img src="../images/python_calculator.png" width=400>
 
-    <p>The template program, <tt>python_calculator.py</tt> is available on the <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
 
-    <p>Fill in the missing function to a simple python calculator.
-      <p>Your function, <tt>main</tt> takes as input:
+    <p>Write a program that implements a basic calculator. The template program, <tt>python_calculator.py</tt> is available on the <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
+
+
+      <p>The <tt>main</tt> function takes as input:
       <ul>
-        <li> <tt>select</tt>: a number for the operation,
-          <li> <tt>number_1</tt>: the first integer, and
-          <li> <tt>number_2</tt>: the second integer.
+        <li> <tt>select</tt>: a number that indicates the operation,
+          <li> <tt>number_1</tt>: the first opearnd and
+          <li> <tt>number_2</tt>: the second operand.
           </ul>
 
       <p>
-      You should fill in the fucntions below that are blank in order for the calculator to run:
+      <b>You must implement the following functions:</b>
       <ul>
 	      <li> <tt>add(num1, num2)</tt> that takes two numbers and returns the result of their addition.
 	      <li> <tt>subtract(num1, num2)</tt> that takes two numbers and returns the result of their subtraction.
@@ -1522,10 +1522,28 @@ Enter col to move piece to: 5</pre>
 	      <li> <tt>divide(num1, num2)</tt> that takes two numbers and returns the result of their division.
 	      <li> <tt>sqrt(num1)</tt> that takes a number and returns the square root of that number.
 	      <li> <tt>squared(num1)</tt> that takes a number and returns the result of that number squared.
-	      <li> <tt>exponent(num1, num2)</tt> that takes two numbers and returns the result of thr first number to the exponent of the second number.
+	      <li> <tt>exponent(num1, num2)</tt> that takes two numbers and returns the result of the first number to the exponent indicated by the second number.
       </ul>
 
-      <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness. As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+      <p>The grading script does not run the whole program, instead it runs each of your functions separately ('unit tests') to determine correctness. As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+    <p> A sample run of your program:
+    <pre style="background-color: lavender; width: 400px;">
+ Please select an operation -
+ 1. Add
+ 2. Subtract
+ 3. Multiply
+ 4. Divide
+ 5. Square root
+ 6. Squared
+ 7. Exponent
+
+ Select operations from: 1, 2, 3, 4, 5, 6, 7 : 4
+ Enter first number: 5
+ Enter second number: 3
+ 5 / 3 = 2
+    </pre>
+
 
 
         <li > <b>Due Date: 12 November</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
@@ -1605,7 +1623,7 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 
  <p> Using folium, write a program that asks the user for the name of a CSV file, name of the output file, the name of a borough and creates a map with markers for all the NYC Wi-Fi Hotspot locations in that borough from the input file.
 Use the NYC_Wi-Fi_Hotspot_locations.csv file.
- 
+
    <p> The data is made publicly available by
   <a href="https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw/data">New York City Wifi Hotspot Locations/a>.
   You can also obtain the data here: <a href="../files/NYC_Wi-Fi_Hotspot_Locations.csv">NYC-Wi-Fi-Hotspot-Locations.csv</a>
