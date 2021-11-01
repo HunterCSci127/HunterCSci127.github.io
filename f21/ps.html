@@ -1708,8 +1708,14 @@ Use the NYC_Wi-Fi_Hotspot_locations.csv file.
 
 <li > <b>Due Date: 19 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-<p>Create a rock papers scissors game. You have to print the output as specified below.
-<p>Must print <tt>ComputerMove</tt> for each round. In another line print out the winner of the round. After the game finishes, you <b>must print out the last-round winner</b>.
+<p>Create a rock papers scissors game. Your program must print the <b>output</b> as specified below:
+  <ul>
+    <li>Print <tt>ComputerMove</tt> for each round.
+    <li> Print the winner of each round on a new line.
+    <li> At the end of the game, print the winner of the last round.
+  </ul>
+
+
 <p>Rules:</p>
 <ul>
   <li> Player moves: "1" = rock, "2" = paper, "3" = scissors
@@ -1718,9 +1724,10 @@ Use the NYC_Wi-Fi_Hotspot_locations.csv file.
   <li> If player wins (winner = "human")
   <li> If computer wins (winner = "computer")
   <li> If round is a tie (winner = "draw")
-  <li> If playermove is invalid, <b>greater than 3 or less than 1</b> (winner = "invalid")
+  <li> If the <tt>playerMoveove</tt> is invalid, <b> > 3 </b> (winner = "invalid")
+  <li> If If the <tt>playerMoveove</tt> is  <b> < 1, terminate the game. </b>
 </ul>
-<p>Game logic:  Loop until playerMove is <b>less than zero</b> (used to terminate game)</p>
+<p>Game logic: <b> Loop until playerMove is less than zero</b> </p>
 <ul>
   <li>  If playerMove is <b>rock (1)</b> and computer move is <b>rock (1)</b>, its a draw.
   <li>  If playerMove is <b>rock (1)</b> and computer move is <b>paper (2)</b>, human wins.
