@@ -1370,7 +1370,7 @@ Name: Publisher, dtype: int64
 
       <p> Write three functions, <tt>setUp()</tt>, <tt>fractalRight()</tt>, and <tt>fractalLeft()</tt>.
 
-      <p> Provided in the class <a href="https://github.com/HunterCSci127/CSci127">Github</a> is a template program, <tt>'turtleTree.py'</tt>. Using the pseudocode attached to the template, implement your program as follows:</p>
+      <p> Provided in the class <a href="https://github.com/HunterCSci127/CSci127">Github</a> is a template program, <tt>'turtleTree.py'</tt>. Starting from this template and using the pseudocode below (also included as comments in the template), implement your program as follows:</p>
 
       <pre style = "background-color:lavender;width:800px">
 
@@ -1416,10 +1416,10 @@ Name: Publisher, dtype: int64
 
       </pre>
 
-    <p> There is a subdtle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two results. Observe the execution (hopefully by increasing the speed to save some time) and think about it!!!
+    <p> There is a subtle difference in the pseudocode of the two functions above, but it is very important and makes the difference between the two results. Observe the execution (hopefully by increasing the speed to save some time) and think about it!!!
       <p>Again, the template program, <tt>turtleTree.py</tt>, is available on the
       <a href="https://github.com/HunterCSci127/CSci127">CSci 127 repo on github</a>.
-      The grading script does not run the whole program, but instead tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>setUp()</tt>, <tt>fractalLeft()</tt> and <tt>fractalRight()</tt>).
+      The grading script does not run the whole program, but instead it tests your functions separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>setUp()</tt>, <tt>fractalLeft()</tt> and <tt>fractalRight()</tt>).
 
     <p>A sample run:
         <p><img height=250 src="../images/turtleTree.png">
@@ -1472,14 +1472,14 @@ Name: Publisher, dtype: int64
 <a id="cr10"></a>
 <li > <b>Due Date: 10 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab8.html">Lab 8</a></b><br>
 
-<p> Using the template program, <tt> checkers.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing lines of code to create a program that constructs a checkerboard and a checker piece that moves. Detailed instructions are provided on the template program.
+<p> Using the template program, <tt> checkers.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing lines of code to create a program that constructs a checkerboard and a checker piece that moves. Detailed instructions are provided in the template program.
   <ul>
     <li> Import libraries necessary for the program </li>
     <li> <tt>drawBoard(size)</tt>: Creates a checkerboard of <tt>size</tt> pixels as a <tt>numpy</tt> array and saves as <tt>board.png</tt> using <tt>matplotlib</tt>. </li>
     <li> <tt>setupScreen(size)</tt>: Sets up a <tt>turtle</tt> screen of <tt>size + 100</tt> by <tt>size + 100</tt> with the background image as the board. </li>
     <li> <tt>createPiece(pieceColor)</tt>: Creates and returns a turtle to act as a checker piece. The turtle shape should be a circle and the color should be the parameter value. The turtle pen should be picked up. </li>
     <li> <tt>movePiece(size, piece, row, col)</tt>: Moves the checker piece to a specific row and column on the board. </li>
-    <li> <tt>main()</tt>: Asks the user for a size for the checkerboard. Then, creates the checkerboard, sets up the screen, and a creates a single red checker piece. Lastly, asks the user for a row and a column to move the piece to and moves the piece. </li>
+    <li> <tt>main()</tt>: Asks the user for the size of the checkerboard. Then, creates the checkerboard, sets up the screen, and a creates a single red checker piece. Lastly, asks the user for a row and a column and moves the piece to that location. </li>
   </ul>
 
   <p> A sample run:
@@ -1489,7 +1489,7 @@ Enter row to move piece to: 3
 Enter col to move piece to: 5</pre>
   <p> which would produce:
   <p><img src="../images/f21_program40.png" width = 300>
-  <p> <b>Important</b>: No lines of code from the template program should be removed or changed. Only add in the missing lines of code. </p>
+  <p> <b>IMPORTANT</b>: No lines of code from the template program should be removed or changed. Only add in the missing code. </p>
 
     <hr>
     <p>
@@ -1593,8 +1593,8 @@ Enter col to move piece to: 5</pre>
 
   <p>The program,
   <a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsUTAs.py" target="_blank">errorsUTAs.py</a>, has lots of errors.  Fix the errors and submit the modified program. Pay attention to what your program outputs and what it should output!
-  <p> The functional program should output:
-  <pre style = "background-color: lavender; width: 500px;">
+  <p> The correct program should output:
+  <pre style = "background-color: lavender; width: 550px;">
 UTA List:
 Aida
 Arterio
@@ -1626,7 +1626,7 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 <br>Use the NYC_Wi-Fi_Hotspot_locations.csv file.
 
    <p> The data is made publicly available by
-  <a href="https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw/data">New York City Wifi Hotspot Locations/a>.
+  <a href="https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw/data">New York City Wifi Hotspot Locations</a>.
   You can also obtain the data here: <a href="../files/NYC_Wi-Fi_Hotspot_Locations.csv">NYC-Wi-Fi-Hotspot-Locations.csv</a>
 
 
@@ -1642,8 +1642,8 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 
  <p><iframe src="../files/f21_manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
- <p>(You can use the value in the "Name" column to label each marker and changed the underlying map with the option:
- <tt>tiles="Stamen Watercolor"</tt> when creating the map.)
+ <p><i>Note:</i> You can use the value in the "Name" column to label each marker and changed the underlying map with the option:
+ <tt>tiles="Stamen Watercolor"</tt> when creating the map.
 
 
 
@@ -1658,32 +1658,25 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 
 <li > <b>Due Date: 18 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>, <a href="lab7.html">Lab 7</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-  <p> Create a program which asks the user for an integer input. Using input validation (while loop), check to see if the input is a perfect square. If it is not, continue asking the user to re-enter their input until it is a perfect square.
-    Your program will consist of three functions, but you only need to implement one. The other two are provided:
-   <ul>
-     <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number is entered (a perfect square).
-     <li> <tt>perfectSquareChecker()</tt> which, as the name suggests, will output whether or not the passed integer value is a perfect square to the user.
-     <li> <tt>is_square()</tt> the function perfectSquareChecker uses to check if a number is square, will return true if the integer passed as a parameter is a perfect square, and false if not.</li>
-  </ul>
+  <p> Write a program that asks the user for an integer input. Using input validation (while loop), check to see if the input is a perfect square. If it is not, continue asking the user to re-enter the input until it is a perfect square.
+
+    <p>
+
+      A perfect square is the product of an integer squared.
+      Thus, a perfect square will have a whole integer root.
+  <br>
+      e.g. 4 is a perfect square because 2^2 = 4.
+  <br>
+      e.g. 16 is a perfect square because 4^2 = 16.
 
   <p>
-
-    A perfect square is the product of an integer squared.
-    Thus, a perfect square will have a whole integer root.
-<br>
-    e.g. 4 is a perfect square because 2^2 = 4.
-<br>
-    e.g. 16 is a perfect square because 4^2 = 16.
-<br>
-    You should take input and validate said input in your 'main'
-    function. You will be provided a 'is_square' function which
-    takes a positive integer as a parameter and returns whether
-    or not it is a perfect square.
-<br>
-    Once you have validated your input, pass your validated input
-    to the 'perfectSquareChecker' function provided, which will
-    ensure that your validation is correct.
-
+    Your program will consist of three functions, but you only need to implement <tt>main()</tt>. The other two are provided in the template program <tt>perfectSquare.py</tt>, available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a>
+<p> The three functions are:
+   <ul>
+     <li> <tt>main()</tt> is responsible for obtaining <b>and validating</b> the input and printing the output. In order to validate the input, it will <b>repeatedly</b> ask for a number until a valid number is entered (a perfect square).
+     <li> <tt>perfectSquareChecker()</tt> which, as the name suggests, will output whether or not the input integer is a perfect square.
+     <li> <tt>is_square()</tt> the function used by <tt>perfectSquareChecker</tt> uses to check if a number is a square. It will return true if the input integer is a perfect square, and false otherwise.</li>
+  </ul>
 
 
    <p> A template <tt>perfectSquare.py</tt> is available on our <a href="https://github.com/HunterCSci127/CSci127">github repo.</a> You must <b>fill in <tt>main()</tt></b> to implement its desired behavior.
