@@ -1714,7 +1714,7 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 <ul>
   <li> Player moves: "1" = rock, "2" = paper, "3" = scissors
   <li> Computer moves:  "1" = rock, "2" = paper, "3" = scissors
-  <li> Must have <b>winner variable</b> to track status of game across turns.
+  <li> Must have <b>winner variable</b> to track the winner at the end of the game (the winner of the last turn).
   <li> If player wins (winner = "human")
   <li> If computer wins (winner = "computer")
   <li> If round is a tie (winner = "draw")
@@ -1724,8 +1724,8 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 <p>Game logic: <b> Loop until playerMove is less than zero</b> </p>
 <ul>
   <li>  If playerMove is <b>rock (1)</b> and computer move is <b>rock (1)</b>, its a draw.
-  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>paper (2)</b>, human wins.
-  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>scissors (3)</b>, computer wins.
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>paper (2)</b>, computer wins.
+  <li>  If playerMove is <b>rock (1)</b> and computer move is <b>scissors (3)</b>, human wins.
   <li>  If playerMove is <b>paper (2)</b> and computer move is <b>rock (1)</b>,  human wins.
   <li>  If playerMove is <b>paper (2)</b> and computer move is <b>paper (2)</b>,  its a draw.
   <li>  If playerMove is <b>paper (2)</b> and computer move is <b>scissors (3)</b>,  computer wins.
@@ -1734,7 +1734,26 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
   <li>  If playerMove is <b>scissors (3)</b> and computer move is <b>scissors (3)</b>,  its a draw.
 </ul>
 <p> A sample run of your program:
-<p> <img src="../images/f21program47.png" height=300>
+<pre style = "background-color:lavender;width:600px">
+
+  enter 1 for rock, 2 for paper, or 3 for scissors: 3
+  computerMove: 1
+  round finished and winner is: computer
+  enter 1 for rock, 2 for paper, or 3 for scissors 1
+  computerMove: 3
+  round finished and winner is: human
+  enter 1 for rock, 2 for paper, or 3 for scissors 2
+  computerMove: 2
+  round finished and winner is: draw
+  enter 1 for rock, 2 for paper, or 3 for scissors 23
+  computerMove: 1
+  round finished and winner is: invalid
+  enter 1 for rock, 2 for paper, or 3 for scissors 3
+  computerMove: 2
+  round finished and winner is: human
+  enter 1 for rock, 2 for paper, or 3 for scissors 0
+  game finished and winner is: human
+</pre>
 
 
 
