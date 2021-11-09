@@ -1476,7 +1476,7 @@ Name: Publisher, dtype: int64
   <ul>
     <li> Import libraries necessary for the program </li>
     <li> <tt>drawBoard(size)</tt>: Creates a checkerboard of <tt>size</tt> pixels as a <tt>numpy</tt> array and saves as <tt>board.png</tt> using <tt>matplotlib</tt>. </li>
-    <li> <tt>setupScreen(size)</tt>: Sets up a <tt>turtle</tt> screen of <tt>size + 100</tt> by <tt>size + 100</tt> with the background image as the board. </li>
+    <li> <tt>setupScreen(size)</tt>: Sets up a <tt>turtle</tt> screen of <tt>size + 100</tt> by <tt>size + 100</tt> with the background image as the board. <b>Hint:</b> See Lab 9 for an example of screen setup. </li>
     <li> <tt>createPiece(pieceColor)</tt>: Creates and returns a turtle to act as a checker piece. The turtle shape should be a circle and the color should be the parameter value. The turtle pen should be picked up. </li>
     <li> <tt>movePiece(size, piece, row, col)</tt>: Moves the checker piece to a specific row and column on the board. </li>
     <li> <tt>main()</tt>: Asks the user for the size of the checkerboard. Then, creates the checkerboard, sets up the screen, and a creates a single red checker piece. Lastly, asks the user for a row and a column and moves the piece to that location. </li>
@@ -1714,7 +1714,7 @@ There are 12 UTAs who love helping students in CSci 127 Fall 2021.
 <ul>
   <li> Player moves: "1" = rock, "2" = paper, "3" = scissors
   <li> Computer moves:  "1" = rock, "2" = paper, "3" = scissors
-  <li> Must have <b>global winner variable</b> to track status of game.
+  <li> Must have <b>winner variable</b> to track status of game across turns.
   <li> If player wins (winner = "human")
   <li> If computer wins (winner = "computer")
   <li> If round is a tie (winner = "draw")
