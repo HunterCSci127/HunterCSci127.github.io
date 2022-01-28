@@ -282,12 +282,7 @@ mroen
 
 		<p> <i>Hint:  See the example programs from Lecture 2.</i>
 
-
-
-
-
-
-	<li > <b>Due Date: 23 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a></b><br>
+	<li > <b>Due Date: 23 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
 		<p>Write a program that implements the pseudocode below:
 
@@ -302,6 +297,163 @@ mroen
 
 
 		<p> <i>Hint:  See examples of <tt>range(start,stop,step)</tt> in Lecture 2 notes.</i>
+
+<a id="set3"></a>
+<hr>
+
+	<li > <b>Due Date: 24 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
+
+		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of blue.
+
+		<p>
+		Your output should look similar to:
+		<br>
+		<img src="../images/shadesOfBlue.png" height=200>
+
+
+	<li > <b>Due Date: 25 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
+
+		<p>Write a program that asks the user for the hexcode of a color and then displays a turtle that color.
+
+		<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:400px">
+Enter a hex string:  #A922A9
+</pre>
+
+		<p>and the output should look similar to:
+		<br>
+		<img src="../images/purplyTurtle.png" style="padding:25px">
+
+		<p> <i>Hint:  See <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> for setting the background color and <a href="lab3.html">Lab 3</a> for colors.</i>
+
+	<li > <b>Due Date: 28 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
+
+		<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  Your program should create a new image that has only the blue channel of the original image.
+
+
+		<p> A sample run of your program should look like:
+
+<pre style ="background-color:lavender;width:400px">
+Enter name of the input file:  csBridge.png
+Enter name of the output file:  blueH.png
+</pre>
+
+<p> Sample input and resulting output files:
+
+<p>
+<img src="../images/csBridge.png" width = 300>
+<img src="../images/blueH.png" width = 300 >
+
+
+	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>.</i>
+
+	<li > <b>Due Date: 1 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
+
+		<p>Write a program that asks the user for a message and then prints the message out, two copies of each character per line.
+
+<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:400px">
+Enter a message:  I love Python!
+I I
+
+l l
+o o
+v v
+e e
+
+P P
+y y
+t t
+h h
+o o
+n n
+! !
+</pre>
+
+		<p> <i>Hint:  See <a href="lab2.html">Lab 2</a> or Lecture 2 notes.</i>
+
+
+
+
+
+
+
+
+	<li > <b>Due Date: 2 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
+
+		Implement the following piece of pseudocode as a complete program:
+
+		<pre>
+    1.  Prompt the user to enter a string and call it s.
+    2.  Let ls be the length of s.
+    3.  For i from 0 upto ls-1:
+    4.     Print s[0:i]
+    5.  For i from 0 upto ls-1:
+    6.     Print s[i:ls]
+    5.  Print a closing statement
+		</pre>
+
+<p>A sample run of your program should look like:
+<pre style ="background-color:lavender;width:400px">
+Enter string: a man a plan a canal panama
+
+a
+a
+a m
+a ma
+a man
+a man
+a man a
+a man a
+a man a p
+a man a pl
+a man a pla
+a man a plan
+a man a plan
+a man a plan a
+a man a plan a
+a man a plan a c
+a man a plan a ca
+a man a plan a can
+a man a plan a cana
+a man a plan a canal
+a man a plan a canal
+a man a plan a canal p
+a man a plan a canal pa
+a man a plan a canal pan
+a man a plan a canal pana
+a man a plan a canal panam
+a man a plan a canal panama
+ man a plan a canal panama
+man a plan a canal panama
+an a plan a canal panama
+n a plan a canal panama
+ a plan a canal panama
+a plan a canal panama
+ plan a canal panama
+plan a canal panama
+lan a canal panama
+an a canal panama
+n a canal panama
+ a canal panama
+a canal panama
+ canal panama
+canal panama
+anal panama
+nal panama
+al panama
+l panama
+ panama
+panama
+anama
+nama
+ama
+ma
+a
+
+Thank you for using my program!</pre>
 
 
 <!--
