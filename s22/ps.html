@@ -856,6 +856,174 @@ Enter hour (in 24 hour time):  15
 Good Afternoon
 </pre>
 
+<a id="set8"></a>
+<hr>
+
+<!--Problem 36 of F18-->
+	<li > <b>Due Date: 31 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+		<p> Modify the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
+		<ul>
+			<li> Ask the user for the name of the input file.
+			<li> Ask the user for the attribute (column header) to search by.
+		</ul>
+
+		<p>A sample run:
+		<pre style ="background-color:lavender;width:450px">
+Enter file name:  Parking_Violations_Jan_2016.csv
+Enter attribute:  Vehicle Color
+The 10 worst offenders are:
+WHITE    2801
+WH       2695
+GY       1420
+BK       1153
+BLACK    1054
+BROWN     727
+BL        656
+GREY      574
+SILVE     450
+BLUE      412
+Name: Vehicle Color, dtype: int64
+</pre>
+
+		<p>And another run:
+<pre style ="background-color:lavender;width:450px">
+Enter file name:  Parking_Violations_Jan_2016.csv
+Enter attribute:  Vehicle Year
+The 10 worst offenders are:
+0       3927
+2015    1265
+2014    1143
+2013    1105
+2012     772
+2011     666
+2007     643
+2008     559
+2010     509
+2006     499
+Name: Vehicle Year, dtype: int64
+</pre>
+
+<!--Problem 37 of F18-->
+<li > <b>Due Date: 1 April</b>  <b style="float:right">Reading: <a href="https://guides.github.com/activities/hello-world/">Github Guide</a></b><br>
+
+<p> Logical gates can be used to do arithmetic on binary numbers.  For example, we can write a logical circuit whose output is one more than the inputted number.  Our inputs are <tt>in1</tt> and <tt>in2</tt> and the outputs are stored in <tt>out1</tt>, <tt>out2</tt>, and <tt>out3</tt>.
+
+<p><a href="http://www.neuroproductions.be/logic-lab/index.php?id=80507">
+<img src="../images/incrementCircuit.png" height=200 ><br>
+(click to launch new window with circuit)</a>
+
+<p>Here is a table of the inputs and outputs:
+
+<table border="1px">
+<tr>
+<th colspan=3>Inputs</th><th colspan=4>Outputs</th>
+</tr>
+<tr>
+<th>Decimal<br>Number</th><th>in1</th><th>in2</th><th>Decimal<br>Number</th><th>out1</th><th>out2</th><th>out3</th>
+</tr>
+<tr>
+<td>0</td><td>0</td><td>0</td> <td>1</td><td>0</td><td>0</td><td>1</td>
+</tr>
+<tr>
+<td>1</td><td>0</td><td>1</td> <td>2</td><td>0</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td>2</td><td>1</td><td>0</td> <td>3</td><td>0</td><td>1</td><td>1</td>
+</tr>
+<tr>
+<td>3</td><td>1</td><td>1</td> <td>4</td><td>1</td><td>0</td><td>0</td>
+</tr>
+</table>
+
+<p>Submit a text file with each of the outputs on a separate line:
+<pre style = "background-color:lavender;width:500px">
+#Name:  YourNameHere
+#Date:  November 2017
+#Logical expressions for a 4-bit incrementer
+
+out1 = ...
+out2 = ...
+out3 = ...
+</pre>
+Where "..." is replaced by your logical expression (see <a href="lab5.html">Lab 5</a>).
+
+<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
+
+<!--Problem 38 of f18-->
+	<li > <b>Due Date: 4 April</b>
+	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b><br>
+
+		<p>Fill in the missing function, <tt>monthString()</tt>, in the program, <tt>months.py</tt> (available at:  <a href="https://github.com/stjohn/csci127">
+	https://github.com/stjohn/csci127</a>).  The function should take number between 1 and 12 as a parameter and returns the corresponding month as a string.  For example, if the parameter is 1, your function should return <tt>"January"</tt>.  If the parameter is 2, your function should return out <tt>"February"</tt>, etc.
+
+		<p>Note:  The grading scripts are expecting that your function is called <tt>monthString()</tt>.  You need to use that name, since instead of running the entire program, the scripts are "unit testing" the function-- that is, calling that function, in isolation, with differrent inputs to verify that it performs correctly.
+
+
+		<p><i>Hint:  See notes from Lecture 7 and <a href="lab8.html">Lab 8</a>.</i>
+
+<!--Problem 39-->
+	<li > <b>Due Date: 5 April</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+		<p> Write a program that asks the user for a CSV of collision data (see note below about obtaining reported collisions from NYC OpenData).  Your program should then list the top three contributing factors for the primary vehichle of collisions ("CONTRIBUTING FACTOR VEHICLE 1") in the file.
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:500px">
+Enter CSV file name:  collisionsNewYears2016.csv
+Top three contributing factors for collisions:
+Driver Inattention/Distraction    136
+Unspecified                       119
+Following Too Closely              37
+Name: CONTRIBUTING FACTOR VEHICLE 1, dtype: int64
+</pre>
+
+		<p> This assignment uses collision data collected and made publicly by
+		<a href="https://nycopendata.socrata.com">New York City Open Data</a>, and can be found at:
+		<blockquote>
+			<a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95">https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95</a>.
+		</blockquote>
+		Since the files are quite large, use the "Filter" option and choose your birthday in 2016 and "Export" (in CSV format) all collisions for that day.  We will use this data set for future programs, so, instead of downloading the test files multiple times, save a copy for future use.
+
+		<p> <i>Hint: See <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
+
+<!--Problem 40-->
+	<li > <b>Due Date: 6 April</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
+
+		<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
+
+<pre>
+    triangle(t, length):
+    1.  If length > 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.     Call triangle with t and length/2.
+</pre>
+
+<p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
+<pre>
+    nestedTriangle(t, length):
+    1.  If length > 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.         Call nestedTriangle with t and length/2.
+</pre>
+
+		<p>A template program, <tt>nestingTrianges.py</tt>, is available on the
+		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
+		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter edge length:  160
+</pre>
+		<p>which would produce:
+
+<p><img height=200 src="../images/nestedTriangles.png">
+
+
+
 <!--
 <p><b>Note:</b> Make only the modifications indicated here, all other behaviors should stay the same. (i.e. distance forward, pen size etc.)
 <p> In programming, it is important to learn to follow instructions precisely. A small difference to you may result in a program that runs incorrectly. This is part of what you are learning here: <b>follow specifications to the letter!</b>
