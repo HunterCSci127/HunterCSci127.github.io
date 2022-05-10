@@ -23,7 +23,7 @@ for ch in commands:
     elif ch == 'v':          #lower pen
         tess.pendown()
     else:                   #for any other character, print an error message 
-        print("Error: do not know the command:", c)
+        print("Error: do not know the command:", ch) #typo, was c before
 
 print("See graphics window for your image")
 myWin.exitonclick()         #Close the window when clicked
