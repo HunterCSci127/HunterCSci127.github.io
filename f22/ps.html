@@ -194,7 +194,7 @@ WOW
         Enter user name, change it to lower case letters, followed by "@hunter.cuny.edu".</p>
 
 		<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:635px">
+<pre style ="background-color:lavender;width:640px">
 Enter name in format firstName lastName: John Smith
 name in LASTNAME, firstName format: SMITH, John
 Enter user name of email: Js216
@@ -210,7 +210,7 @@ email: js216@hunter.cuny.edu
 		<p>Write a program that prompts the user to enter a phrase. Then for each character in the phrase, print out character, its ASCII code, and the next two letter in ASCII table.</p>
 
 		<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:320px">
+<pre style ="background-color:lavender;width:350px">
 Enter a phrase: I love Python!
 letter ASCII next_two_letter
      I    73               K
@@ -230,20 +230,22 @@ letter ASCII next_two_letter
 </pre>
 
 <p>And another sample run:
-<pre style ="background-color:lavender;width:300px">
+<pre style ="background-color:lavender;width:350px">
 Enter a phrase: ABC
-In ASCII:
-65
-66
-67
+letter ASCII next_two_letter
+     A    65               C
+     B    66               D
+     C    67               E
 </pre>
 
 
 		<p><i>Hint:  If <tt>c</tt> is a character, <tt>ord(c)</tt> returns its ASCII code.  For example, if <tt>c</tt> is 'I', then <tt>ord(c)</tt> returns 73.  See <a href="lab2.html">Lab 2</a>.</i>
-        <p><i>To right aligned the output, we can use print("%6c %5i %15c"%(<tt>character, ASCII code of character, next two letter of character</tt>)).
-    where 6c since title "letter" has 6 letters, c means character,
+        <p><i>To right aligned the print out, use print("%6c %5i %15c"%(<tt>character, ASCII_code_of_character, next_two_letter_of_character</tt>)).</i></p>
+
+    <p>Explanation: 
+    6c since title "letter" has 6 letters, c means character, 
     5i since title "ASCII" has 5 letters, i means int,
-    15c since title "next_two_letter" has 15 letters</t></p>
+    15c since title "next_two_letter" has 15 letters</p>
 
 <!--problem 9-->
 	<li > <b>Due Date: 25 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
