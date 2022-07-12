@@ -194,7 +194,7 @@ WOW
         Enter user name, change it to lower case letters, followed by "@hunter.cuny.edu".</p>
 
 		<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:620px">
+<pre style ="background-color:lavender;width:635px">
 Enter name in format firstName lastName: John Smith
 name in LASTNAME, firstName format: SMITH, John
 Enter user name of email: Js216
@@ -205,29 +205,28 @@ email: js216@hunter.cuny.edu
 	</i></p>
 
 <!--problem 8-->
-	<li > <b>Due Date: 24 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
+	<li > <b>Due Date: 24 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
 
-		<p>Write a program that prompts the user to enter a phrase and then prints out the ASCII code of each character in the phrase.
+		<p>Write a program that prompts the user to enter a phrase. Then for each character in the phrase, print out character, its ASCII code, and the next two letter in ASCII table.</p>
 
 		<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:300px">
-Enter a phrase:  
-I love Python!
-In ASCII:
-73
-32
-108
-111
-118
-101
-32
-80
-121
-116
-104
-111
-110
-33
+<pre style ="background-color:lavender;width:320px">
+Enter a phrase: I love Python!
+letter ASCII next_two_letter
+     I    73               K
+          32               "
+     l   108               n
+     o   111               q
+     v   118               x
+     e   101               g
+          32               "
+     P    80               R
+     y   121               {
+     t   116               v
+     h   104               j
+     o   111               q
+     n   110               p
+     !    33               #
 </pre>
 
 <p>And another sample run:
@@ -240,8 +239,11 @@ In ASCII:
 </pre>
 
 
-
 		<p><i>Hint:  If <tt>c</tt> is a character, <tt>ord(c)</tt> returns its ASCII code.  For example, if <tt>c</tt> is 'I', then <tt>ord(c)</tt> returns 73.  See <a href="lab2.html">Lab 2</a>.</i>
+        <p><i>To right aligned the output, we can use print("%6c %5i %15c"%(<tt>character, ASCII code of character, next two letter of character</tt>)).
+    where 6c since title "letter" has 6 letters, c means character,
+    5i since title "ASCII" has 5 letters, i means int,
+    15c since title "next_two_letter" has 15 letters</t></p>
 
 <!--problem 9-->
 	<li > <b>Due Date: 25 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
