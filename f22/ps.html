@@ -248,7 +248,7 @@ letter ASCII next_two_letter
     15c since title "next_two_letter" has 15 letters</p>
 
 <!--problem 9-->
-	<li > <b>Due Date: 25 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
+	<li > <b>Due Date: 25 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
 
     <p><img src = "../images/ciphrdsk.gif" height=200>
       <br><i>(The cipher disk above shifts 'A' to 'N', 'B' to 'O', ... 'Z' to 'M', or a shift of 13.  From <a href="http://www.secretcodebreaker.com/history2.html">secretcodebreaker.com</a>.)</i>
@@ -260,16 +260,21 @@ letter ASCII next_two_letter
 
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-Enter a word: zebra
-Your word in code is:
-mroen
+Enter an all-small-letter string: zebra
+Enter a non-negative int to shift: 13
+ciphered string: mroen
 </pre>
 
-
+<pre style ="background-color:lavender;width:400px">
+Enter an all-small-letter string: owqfka
+Enter a non-negative int to shift: 6
+ciphered string: ucwlqg
+</pre>
 
 
 		<p> <i>Hint:  See the example programs from Lecture 2.</i>
 
+<!--TODOTODO-->
 <!-- problem 10 -->
 	<li > <b>Due Date: 28 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
@@ -1671,14 +1676,14 @@ Last letters of reversed words: CH
       <br><i>(The cipher disk above shifts 'A' to 'N', 'B' to 'O', ... 'Z' to 'M', or a shift of 13.  From <a href="https://www.secretcodebreaker.com/history2.html">secretcodebreaker.com</a>.)</i>
 
 
-		<p>Write a program that prompts the user to enter a word and then prints out the word with each letter <b>shifted right by 13</b> characters.
+		<p>Write a program that prompts the user to enter a word and then prints out the word with each letter and a non-negative integer <b>shifted right by the given number</b> characters.
 
-      <br>Assume that all inputted words are in <b>upper case letters</b>: 'A',...,'Z'.
+      <br>Assume that all inputted words are in <b>lower case letters</b>: 'a',...,'z'.
 
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-  Enter a word: ZEBRA
-  Your word in code is MROEN
+  Enter a word: zebra
+  Your word in code is mroen
 </pre>
 
 
