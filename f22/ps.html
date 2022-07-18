@@ -261,13 +261,14 @@ letter ASCII next_two_letter
 		<p>Assume that all inputted words are in lower case letters:  'a',...,'z'.
 
 		<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:500px">
+<pre style ="background-color:lavender;width:516px">
 Enter an all-small-letter string: zebra
 Enter a non-negative int to shift: 13
 ciphered string: mroen
 </pre>
 
-<pre style ="background-color:lavender;width:500px">
+		<p>Here is another sample run of your program.
+<pre style ="background-color:lavender;width:516px">
 Enter an all-small-letter string: owqfka
 Enter a non-negative int to shift: 6
 ciphered string: ucwlqg
@@ -276,21 +277,29 @@ ciphered string: ucwlqg
 
 		<p> <i>Hint:  See the example programs from Lecture 2.</i>
 
-<!--TODOTODO-->
 <!-- problem 10 -->
-	<li > <b>Due Date: 28 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
+	<li > <b>Due Date: 28 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
-		<p>Write a program that implements the pseudocode below:
+		<p>Enter a phrase, reverse it, then capitalize each letter of the reversed string. Afterwards, get an abbreviation of the last letter of each word, starting from the last word to the first one.
 
-<pre>
-    For i = 5, 10, 15, 20, 25, ... ,300:
-        Walk forward i steps
-        Turn left 91 degrees
+		<p>A sample run of your program should look like:
+
+<pre style ="background-color:lavender;width:516px">
+input: City Univ of New York
+
+user reverse: kroY weN fo vinU ytiC
+user reverse upper: KROY WEN FO VINU YTIC
+user abbreviation: CUONY
 </pre>
-		Your output should look similar to:
-		<br>
-		<img src="../images/twistingSquare.png" height=300>
 
+		<p>Here is another sample run of your program.
+<pre style ="background-color:lavender;width:516px">
+input: Srbkts L Cizyjb
+
+user reverse: bjyziC L stkbrS
+user reverse upper: BJYZIC L STKBRS
+user abbreviation: SLC
+</pre>
 
 		<p> <i>Hint:  See examples of <tt>range(start,stop,step)</tt> in Lecture 2 notes.</i>
 
@@ -299,14 +308,31 @@ ciphered string: ucwlqg
 
 <h3><u> Lecture 3 and Lab 3</u></h2>
 <!--problem 11-->
-	<li > <b>Due Date: 1 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
+	<li > <b>Due Date: 19 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
 		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of blue.
 
 		<p>
 		Your output should look similar to:
 		<br>
-		<img src="../images/shadesOfBlue.png" height=200>
+		<img src="../images/shades_right_up_cyan.png" height=200>
+
+<pre>
+    t = turtle.Turtle()
+
+    t.penup()
+    t.backward(100)
+    t.left(90)
+    t.backward(100)
+    t.right(??) #you fill in a degree in ??
+    t.pendown()
+
+    #TODO: draw right shade
+
+    #TODO: move to the start direction of up shade
+
+    #TODO: draw up shade
+</pre>
 
 <!--problem 12-->
 	<li > <b>Due Date: 2 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
