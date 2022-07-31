@@ -361,33 +361,38 @@ user abbreviation: SLC
 <p> <i>Hint:  See <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html">Section 4.3</a> for setting the background color and <a href="lab3.html">Lab 3</a> for colors.</i>
 -->
 
-<!--problem 13-->
+<!--problem 14-->
+	<li > <b>Due Date: 27 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
-<!--problem 13-->
-	<li > <b>Due Date: 3 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
-
-		<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  Your program should create a new image that has only the blue channel of the original image.
+		<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  Your program should create a new image that sets red channel of the original image to be zero.
 
 
 		<p> A sample run of your program should look like:
 
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:450px">
 Enter name of the input file:  csBridge.png
-Enter name of the output file:  blueH.png
+Enter name of the output file:  csBridge_wo_red.png
 </pre>
 
 <p> Sample input and resulting output files:
 
 <p>
 <img src="../images/csBridge.png" width = 300>
-<img src="../images/blueH.png" width = 300 >
+<img src="../images/cyanBridge.png" width = 300>
 
+<p>As another example, run the above program on shades of purple in a white background. Since purple is the combination of red and blue, after setting red channel to be zero, which equals to remove red, the shade becomes blue. As for the original white background, which is combination of 100% red, 100% blue, and 100% green, after removing red channel, the background has only blue and green, which changes to cyan color.   
+
+<p> Sample input and resulting output files:
+
+<p>
+<img src="../images/shadesOfPurple.png" width = 300>
+<img src="../images/shadesOfPurple_wo_red.png" width = 300>
 
 	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>.</i>
 
-<!--problem 14-->
+<!--problem 15-->
 	<li > <b>Due Date: 4 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
 
 		<p>Write a program that asks the user for a message and then prints the message out, two copies of each character per line.
