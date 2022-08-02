@@ -399,28 +399,29 @@ Enter name of the output file:  csBridge_wo_red.png
 <!--problem 15-->
 	<li > <b>Due Date: 6 October</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
 
-		<p>Write a program that asks the user for a message and then prints the message out, two copies of each character per line.
+		<p>Write a program that asks the user for a message and then prints the message out, one fewer word a line until there is only one word, then continue to add one word a line until becoming the original message.
 
 <p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-Enter a message:  I love Python!
-I I
-
-l l
-o o
-v v
-e e
-
-P P
-y y
-t t
-h h
-o o
-n n
-! !
+Enter a phrase: how are you?
+how are you?
+how are
+how
+how are
+how are you?
 </pre>
 
 		<p> <i>Hint:  See <a href="lab2.html">Lab 2</a> or Lecture 2 notes.</i>
+
+Use split method to break the original message by a a list of words. Then use for-loop to display partial of the list. To display a list of words as a string, use ' '.join(list_of_words). For example,
+
+<pre>
+lst = ['a', 'bc', 'd', 'e']
+print(' '.join(lst[:2])) 
+#display the first 2 elements of lst, joined by a space, 
+#that is, display
+#a bc
+</pre>
 
 <!--problem 15-->
 	<li > <b>Due Date: 7 October</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
