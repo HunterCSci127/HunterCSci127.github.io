@@ -423,81 +423,6 @@ print(' '.join(lst[:2]))
 #a bc
 </pre>
 
-<!--problem 15-->
-	<li > <b>Due Date: 7 October</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
-
-		Implement the following piece of pseudocode as a complete program:
-
-		<pre>
-    1.  Prompt the user to enter a string and call it s.
-    2.  Let ls be the length of s.
-    3.  For i from 0 upto ls-1:
-    4.     Print s[0:i]
-    5.  For i from 0 upto ls-1:
-    6.     Print s[i:ls]
-    5.  Print a closing statement
-		</pre>
-
-<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:400px">
-Enter string: a man a plan a canal panama
-
-a
-a
-a m
-a ma
-a man
-a man
-a man a
-a man a
-a man a p
-a man a pl
-a man a pla
-a man a plan
-a man a plan
-a man a plan a
-a man a plan a
-a man a plan a c
-a man a plan a ca
-a man a plan a can
-a man a plan a cana
-a man a plan a canal
-a man a plan a canal
-a man a plan a canal p
-a man a plan a canal pa
-a man a plan a canal pan
-a man a plan a canal pana
-a man a plan a canal panam
-a man a plan a canal panama
- man a plan a canal panama
-man a plan a canal panama
-an a plan a canal panama
-n a plan a canal panama
- a plan a canal panama
-a plan a canal panama
- plan a canal panama
-plan a canal panama
-lan a canal panama
-an a canal panama
-n a canal panama
- a canal panama
-a canal panama
- canal panama
-canal panama
-anal panama
-nal panama
-al panama
-l panama
- panama
-panama
-anama
-nama
-ama
-ma
-a
-
-Thank you for using my program!</pre>
-
 <h3><u> Lecture 4 and Lab 4</u></h2>
 <!--problem 16-->
 	<li > <b>Due Date: 11 October</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> </b><br>
@@ -521,44 +446,26 @@ Enter a number: 80
 <!--problem 17-->
 	<li > <b>Due Date: 12 October</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> </b><br>
 
-	<p>Write a program that asks the user for a noun and two verbs (inspired by a <a href="https://colgateuniversitycomputerscience.github.io/cosc101/">Colgate University COSC 101 program</a>).  Using the words the user entered, print out a new sentence of the form:
-	<pre>
-	If it VERB1 like a NOUN and VERB2 like a NOUN, it probably is a NOUN.
-	</pre>
-	A sample run of the program:
-<pre style ="background-color:lavender;width:600px">
-Enter a noun: duck
-Enter a verb: walks
-Enter another verb: talks
+	<p>Write a program that asks users for output file name to save the following image.
 
-New sentence:
-If it walks like a duck and talks like a duck, it probably is a duck.
-</pre>
-	Another sample run of the program:
-<pre style ="background-color:lavender;width:600px">
-Enter a noun: cat
-Enter a verb: sounds
-Enter another verb: moves
-
-New sentence:
-If it sounds like a cat and moves like a cat, it probably is a cat.
+    A sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+    Enter output file name: shape_t.png
 </pre>
 
+		<img src="../images/shape_t.png" style="padding:25px" height=200>
+       
 <p><i>
 Hint:  Here's a way to approach the problem:
 <ol>
-	<li> Create a variable, <tt>template</tt> and store the string
-		<tt>"If it VERB1 like a NOUN and VERB2 like a NOUN, it probably is a NOUN."</tt> in it.
-	<li> Ask the user for a noun and store it in a variable, <tt>noun</tt>.
-	<li> Replace the placeholder in the <tt>template</tt> with the noun the user entered (i.e.  <tt>template = template.replace("NOUN", noun)</tt>).
-	<li> Ask the user for a noun and store it in a variable, <tt>verb1</tt>.
-	<li> Replace the placeholder in the <tt>template</tt> with the verb the user entered.
-	<li> Ask the user for another verb and store it in a variable, <tt>verb2</tt>.
-	<li> Replace the placeholder in the <tt>template</tt> with the second the verb the user entered.
-	<li> Print out the updated <tt>template</tt> string.
-
+	<li> Create a 3D array with 30 x 30 x 3 using numpy.		
+	<li> Set background color to be yellow, which is a combination of red and green.
+    <li> The horizontal line runs from 5 to 8 in vertical direction and from 5 to 25 in horizontal direction. Color is blue.
+    <li> The vertical line runs from 8 to 25 in vertical direction and from 13 to 16 in horizontal direction. Color is green.
+	<li> Enter an output file name and save it. 
+	<li> Remove any imshow or show statement of plt before submission. 
 </ol>
-</i>
+
 
 <!--problem 18-->
 	<li > <b>Due Date: 13 October</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/Theforlooprevisited.html">Section 8.2</a></b><br>
