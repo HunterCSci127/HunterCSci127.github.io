@@ -496,9 +496,18 @@ Enter output file: stripes50.png
 <!--problem 19-->
 	<li > <b>Due Date: 14 October</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a></b><br>
 
-        Test your code using <a href="https://www.rapidtables.com/convert/length/cm-to-feet-inch.html">cm to feet and inch</a>
+<p>You may need to use the following information.
+1 feet = 30.48 centimeters
+1 inch = 2.54 centimeters
 
-		<p>Write a program that implements the pseudocode below:
+To round a decimal number <t>num</t> by 2 decimal numbers, use
+round(<t>num</t>, 2).
+
+To round <t>num</t> to a whole number, use round(<t>num</t>).
+
+Test your code using <a href="https://www.rapidtables.com/convert/length/cm-to-feet-inch.html">cm to feet and inch</a>
+
+<p>Write a program that implements the pseudocode below:
 <pre>
 (a) convert centimeters to feet
 (b) convert centimeters to feet and inches
@@ -509,7 +518,7 @@ Enter output file: stripes50.png
 
 <p>Choose Option a.
 When converting centimeters to feet, round the result to two decimal numbers after the decimal point.
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:500px">
 (a) convert centimeters to feet
 (b) convert centimeters to feet and inches
 (c) convert feet and inches to centimeters
@@ -519,7 +528,7 @@ height is 4.92 feet
 </pre>
 
 <p>Choose Option b. Values of feet and inches are integers (whole numbers).
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:500px">
 (a) convert centimeters to feet
 (b) convert centimeters to feet and inches
 (c) convert feet and inches to centimeters
@@ -528,15 +537,15 @@ Enter height in centimeters: 150
 height is 4 feet and 11 inches
 </pre>
 
-Hints to convert centimeters to feet and inches.
+Hints for converting centimeters to feet and inches.
 <ol>
    <li>Divide centimeters by 30.48, truncate decimal parts by int(<t>centimeters / 30.48</t>). That is the number of feet.</li>
    <li>Calculate the remaining, divide it by 2.54, get the whole number by int(<t>(centimeters - num_of_feet * 30.48) / 2.54</t>). That is number of inches.</li>
-   <li>Need to consider the possibility that number of inches is zero.</li>
+   <li>Optional: consider the possibility that number of inches is zero.</li>
 </ol>
 
-<p>Choose Option b when inch is zero. In this situation, only display feet, no inch is displayed.
-<pre style ="background-color:lavender;width:400px">
+<p>Choose Option b and the resulting inch is zero. In this situation, display only feet, not inch.
+<pre style ="background-color:lavender;width:500px">
 (a) convert centimeters to feet
 (b) convert centimeters to feet and inches
 (c) convert feet and inches to centimeters
@@ -546,7 +555,7 @@ height is 3 feet
 </pre>
 
 <p>Choose Option c. Round the centimeters to 1 decimal number. 
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:600px">
 (a) convert centimeters to feet
 (b) convert centimeters to feet and inches
 (c) convert feet and inches to centimeters
@@ -555,8 +564,16 @@ Enter height in feet and inches, separated by a space: 4 11
 height is 150 cm
 </pre>
 
+In this task, take two inputs using
+<pre>
+feet_str, inches_str = input("Enter height in feet and inches, separated by a space: ").split()
+
+#convert feet_str to an int using 
+feet = int(feet_str) 
+</pre>
+
 <p>Choose an option other than a, b, or c.
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:500px">
 (a) convert centimeters to feet
 (b) convert centimeters to feet and inches
 (c) convert feet and inches to centimeters
@@ -564,16 +581,7 @@ Enter a or b or c: 1
 Wrong choice, please enter only a or b or c.
 </pre>
 
-<p>You may need to use the following information.
-1 feet = 30.48 centimeters
-1 inch = 2.54 centimeters
-
-To round a decimal number <t>num</t> by 2 decimal numbers, use
-round(<t>num</t>, 2).
-
-To round <t>num</t> to a whole number, use round(<t>num</t>).
-
-		<p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
+<p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
 
 <!--problem 20-->
 	<li > <b>Due Date: 17 October</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a></b><br>
