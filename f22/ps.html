@@ -602,19 +602,22 @@ color the region just above the Sandy storm surge (6 feet) and less than or equa
 	<li > <b>Due Date: 18 October</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a> &
     <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html"> Section 8.11</a></b><br>
 
-		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the name of a png file and print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue are all above 0.75).
+		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the name of a png file and a threshold, print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue are all above the given threshold). Also, calculate the percentage of those pixels divided by the total number of pixels in the picture.
 
 		<p>For example, if your file was of the snow pack in the Sierra Nevada mountains in California in September 2014:
 
 		<p>
 		<img src="../images/CaliforniaDrought_02232014_md.png" width=300>
 
-		<p> then a sample run would be:
+		<p> Suppose the file is saved as caDrought2014.png, then a sample run would be:
 		<pre style ="background-color:lavender;width:400px">
-Enter file name:  caDrought2014.png
-Snow count is 38010</pre>
+Enter file name: caDrought2014.png
+Enter threshold: 0.75
+number of white pixels: 38010
+percent of white pixels: 2.26 %
+</pre>
 
-		<p> Note:  for this program, you only need to compute the snow count.  Showing the image will confuse the grading script, since it's only expecting the snow count.
+		<p> Note:  for this program, you only need to compute the snow count.  Showing the image will confuse the grading script, since it's only expecting the snow count and its percentage.
 
 <!--problem 22-->
 	<li > <b>Due Date: 19 October</b>  <b style="float:right">Reading: <a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a></b><br>
