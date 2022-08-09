@@ -631,9 +631,67 @@ percent of white pixels: 2.26 %
 <!--problem 23-->
 	<li > <b>Due Date: 20 October</b>  <b style="float:right">Reading: <a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a></b><br>
 
-		Build a circuit that has the same behavior as a <tt>nand</tt> gate (i.e. for the same inputs, gives identical output) using only <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> gates.
+		Build a circuit that satisfy the following truth table. The missing gate is either an <tt>and</tt> or an <tt>or</tt> gate.
 		<p>
-		<img src="../images/nandGate.png" width=300>
+		<img src="../images/p23_f22_guess_gate.png" width=300>
+
+<table>
+  <tr>
+    <!--table header-->
+    <th>in1</th>
+    <th>in2</th>
+    <th>in3</th>
+    <th>output</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+</table>
 
 		<p>Save your expression to a text file.
 		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
