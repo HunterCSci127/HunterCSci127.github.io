@@ -700,33 +700,45 @@ percent of white pixels: 2.26 %
 	<li > <b>Due Date: 21 October</b>  <b style="float:right">Reading: Think CS:
 	<a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a></b><br>
 
-  		<p> Write a program that asks the user for a list of nouns (separated by spaces) and approximates the fraction that are plural by counting the fraction that end in "s".  Your program should output the total number of words and the fraction that end in "s".  Assume that words are separated by spaces (and ignore the possibility of tabs and punctuation between words.)
+  		<p> Write a program that asks the user for a list of words (separated by spaces), count number of words, and calculate those words ending with letter 'a' or 'b', then calculate its fraction rounded by two decimal numbers after the decimal point. Your program should output the total number of words and the fraction that end in 'a' or 'b'.  Assume that words are separated by spaces (and ignore the possibility of tabs and punctuation between words.)
 
   <p> A sample run of the program:
-<pre style ="background-color:lavender;width:400px">
-Enter nouns: apple bananas cantalopes durian
-Number of words:  4
-Fraction of your list that is plural is 0.5
+<pre style ="background-color:lavender;width:500px">
+Enter a list of words, separated by a space: apple banana cantalope durian shrub
+number of words: 5
+number of words ending with a or b: 2
+fraction of words starting with a or b: 0.4
 </pre>
 
   		<p> And another sample run of the program:
-<pre style ="background-color:lavender;width:400px">
-Enter nouns: hats gloves coats glasses scarves
-Number of words:  5
-Fraction of your list that is plural is 1.0
+<pre style ="background-color:lavender;width:500px">
+Enter a list of words, separated by a space: af bce gdfgb agcg edc dade fggga gb
+number of words: 8
+number of words ending with a or b: 3
+fraction of words ending with a or b: 0.38
 </pre>
 
+Round <i>num</i> by two decimal numbers after the decimal point using
+<pre>
+round(num, 2)
+</pre>
 
-  		<p><i>Hint:  Break this problem into pieces:
+  		<p><i>Approach 1
   		<ol>
-  			<li> First, count the number of words in the string the user entered (hint:  count the number of spaces).  Print out the number of words.  Make sure this works before going onto the next part.
-  			<li> Next, ignoring the last word (which is a special case and can be dealt with separately), count the number of words ending in 's' (hint:  count the number of "s "). Test that this part works before going on to the next step.
-  			<li> Last, check the last word to see if it ends in "s"-- since it's the last word, the "s" will always occur at the same index in the string.
+  			<li> First, count the number of words in the string the user entered (hint:  use split method of a string to break the string into a list of words, then use len method of a list to find number of items in the list).  Print out the number of words.  Make sure this works before going onto the next part.
+  			<li> Next, count the number of words ending in 'a' or 'b' (hint:  find out the last letter of a word). Test that this part works before going on to the next step.
   		</ol>
+        </i>
 
-  		Implement (and test!) each part and then go on to the next.  See notes from Lecture 3.</i>
-  		<br>
+     <p><i>Approach 2
+     <ol>
+       <li>First, count the number of words in the string the user entered (hint: count the number of spaces). Print out the number of words. Make sure this works before going onto the next part.
 
+       <li>Next, ignoring the last word (which is a special case and can be dealt with separately), count the number of words ending in 'a' or 'b' (hint: count the number of "a " or "b "). Test that this part works before going on to the next step.
+
+       <li>Last, check the last word to see if it ends in "a" or "b"-- since it's the last word, the "a" or "b" will always occur at the same index in the string.
+
+  	Implement (and test!) each part and then go on to the next.  See notes from Lecture 3.</i>
 
 <!--problem 25-->
       <li > <b>Due Date: 24 October</b>  <b style="float:right">Reading:  Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
