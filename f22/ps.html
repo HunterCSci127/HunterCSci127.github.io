@@ -753,13 +753,14 @@ set base to be the base of binary number
 initialize weight to be 1, for the least significant digit
 set length to be the number of letters of string
 
-Move i from the last index downto the first index
+Move i from the rightmost index downto the leftmost index
     put ith letter of string to variable ch 
     if ch is '1'
          increase num by weight 
     otherwise, if ch is not '0'
          print that Letter ch is not allowed in a binary string
          call exit method to exit current program
+    #num is not updated when ch is '0'
 
     update weight by multiplying it with base 
 
@@ -767,12 +768,14 @@ print out num followed by prompt "num ="
 </pre>
 
 		<p> some sample input/output are as follows.
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:450px">
 Enter a string with 0 or 1 only: 100101
 num = 37
 </pre>
 
-<pre style ="background-color:lavender;width:400px">
+<p>When an input string has more than one letter that is neither '0' or '1', only report the first violation that is closest to the least significant bit in the rightmost position.
+
+<pre style ="background-color:lavender;width:450px">
 Enter a string with 0 or 1 only: a20
 Letter 2 is not allowed in binary string.
 </pre>
