@@ -801,12 +801,12 @@ round(num, 2)
 Here is an analysis.
 <ol>
    <li>When inputs are 00, 01, 10, 11, the expected output should be 01, 10, 11, 100, correspondingly. 
-   <li>First, calculate the least significant of output. When input is 0<b>0</b>, 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, the output should be 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, 10<b>0</b>. The least significant digit of output, out3, is solely depending on the least significant digit of input in2. When in2 is 0, out3 is 1. When in2 is 1, out3 is 0. 
-   <li>Next, calculate the second digit of output. Observe that when input is 01 or 10, output out2 is 1, otherwise, out2 is 0. Note that 01 means in1 is 0 and in2 is 1, that is, not in1 and in2 is one way to make out2 become 1. 
+   <li>First, work on the least significant of output, out3. When input is 0<b>0</b>, 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, the output should be 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, 10<b>0</b>. The least significant digit of output, out3, is solely depending on the least significant digit of input in2. When in2 is 0, out3 is 1. When in2 is 1, out3 is 0. 
+   <li>Next, work on the second digit of output, out2. Observe that when input is 01 or 10, output out2 is 1, otherwise, out2 is 0. Without loss of generality, check the case when input is 01, which means in1 is 0 and in2 is 1, that is, not in1 and in2.
 
-   Equally, out2 is 1 when in1 and in2 are neither 00 nor 11. Use this approach, you can design a simpler circuit than our current one with same functionality.
+   Equally, out2 is 1 when in1 and in2 are neither 00 nor 11. Use this approach, you can design a simpler circuit than our current one, with the same functionality.
 
-   <li>Only when in1 and in2 are both 1, can out3 (carrier bit) bbecomes 1.
+   <li>Finally, work on the most significant digit of output, out1. Only when in1 and in2 are both 1, can out1 become 1.
 </ol>
 
   <p><iframe width="600px" height="400px" src="https://circuitverse.org/simulator/embed/add_1" id="projectPreview" scrolling="no" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
