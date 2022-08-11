@@ -680,7 +680,7 @@ Fraction of your list that is plural is 1.0
 
         <p><i>Hint:  See Lecture 4 notes.</i>
 
-<!--problem 26-->
+<!--problem 26, up to date, updated on 8/11/22-->
 
 	<li > <b>Due Date: 22 March</b>  <b style="float:right">Reading: <a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a></b><br>
 
@@ -716,9 +716,9 @@ Fraction of your list that is plural is 1.0
 Here is an analysis.
 <ol>
    <li>When inputs are 00, 01, 10, 11, the expected output should be 01, 10, 11, 100, correspondingly. 
-   <li>First, calculate the least significant of output. When input is 0<b>0</b>, 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, the output should be 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, 10<b>0</b>. The least significant digit of output, out3, is solely depending on the least significant digit of input in2. When in2 is 0, out3 is 1. When in2 is 1, out3 is 0. 
-   <li>Next, calculate the second digit of output. Observe that out2 is 1 when in1 and in2 are neither 00 nor 11, while 00 representing in1 is 0 and in2 is 0, which can be written as neither in1 nor in2 is 1.
-   <li>Only when in1 and in2 are both 1, can out3 (carrier bit) bbecomes 1.
+   <li>First, work on the least significant of output, out3. When input is 0<b>0</b>, 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, the output should be 0<b>1</b>, 1<b>0</b>, 1<b>1</b>, 10<b>0</b>. The least significant digit of output, out3, is solely depending on the least significant digit of input in2. When in2 is 0, out3 is 1. When in2 is 1, out3 is 0. 
+   <li>Next, work on the second digit of output, out2. Observe that out2 is 1 when in1 and in2 are neither 00 nor 11, while 00 representing in1 is 0 and in2 is 0, which can be written as neither in1 nor in2 is 1.
+   <li>Finally, work on the most significant digit of output, out1. Only when in1 and in2 are both 1, can out1 become 1.
 </ol>
 
   <p><iframe width="600px" height="400px" src="https://circuitverse.org/simulator/embed/add_1_simple_circuit" id="projectPreview" scrolling="no" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
