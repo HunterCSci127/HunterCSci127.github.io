@@ -736,7 +736,7 @@ round(num, 2)
 
        <li>Next, ignoring the last word (which is a special case and can be dealt with separately), count the number of words ending in 'a' or 'b' (hint: count the number of "a " or "b "). Test that this part works before going on to the next step.
 
-       <li>Last, check the last word to see if it ends in "a" or "b"-- since it's the last word, the "a" or "b" will always occur at the same index in the string.
+       <li>Last, check the last word to see if it ends in "a" or "b".
        </ol>
 
   	Implement (and test!) each part and then go on to the next.  See notes from Lecture 3.</i>
@@ -844,22 +844,31 @@ out3 = ...
 	<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
 
 <!--problem 27-->
+<!--dataset: https://data.cityofnewyork.us/Education/DYCD-after-school-programs-Beacon-Programs/35sw-rdxj-->
 	<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
+<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/covid_daily_cases.csv">NYC Covid-19 Cases</a>.  Your program should ask the user for the name of a borough and the name of the output file.
+<br> The program should compute the minimum, maximum, average, median and standard deviation of the covid-19 cases of the borough entered by the user  and then display the fraction of the covid-19 daily cases in that borough over time and saves it using the file name entered by the user.
 
-		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the borough, an name for the output file, and then display the fraction of the population that has lived in that borough, over time.
+<br> Note that mean and standard deviation are rounded to 3 decimal numbers after the decimal point. Read the attached csv file to see column names. Use exact the same column name in your program.
 
+<p><b>IMPORTANT: </b> The grading script expects the new column to be called 'Fraction'
 		<p> A sample run of the program:
-<pre style ="background-color:lavender;width:450px">
-Enter borough name:  Queens
-Enter output file name:  qFraction.png
+<pre style ="background-color:lavender;width:500px">
+Enter borough name: Queens
+Enter output name: queensCovidFraction.png
+Min: 0
+Max: 15201
+Mean: 728.066
+Median: 329.0
+Standard Deviation: 1552.465
 </pre>
-		<p> The file <tt>qFraction.png</tt>:
+<p> The file <tt>queensCovidFraction.png</tt>:
 
-		<p><img src="../images/qFraction.png" width=300>
+<p><img src="../images/queensCovidFraction.png" width=300>
 
 
-		<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+<p> <b>Note:</b>  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 <!--problem 28-->
 	<li > <b>Due Date: 27 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
