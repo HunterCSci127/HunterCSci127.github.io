@@ -1,0 +1,61 @@
+borough,year,affected_children
+Bronx,2005,8245
+Bronx,2006,7272
+Bronx,2007,6174
+Bronx,2008,4254
+Bronx,2009,2742
+Bronx,2010,2625
+Bronx,2011,1996
+Bronx,2012,1396
+Bronx,2013,1312
+Bronx,2014,1186
+Bronx,2015,971
+Bronx,2016,884
+Brooklyn,2005,15015
+Brooklyn,2006,14199
+Brooklyn,2007,12622
+Brooklyn,2008,8288
+Brooklyn,2009,6719
+Brooklyn,2010,6182
+Brooklyn,2011,5483
+Brooklyn,2012,4017
+Brooklyn,2013,3370
+Brooklyn,2014,2929
+Brooklyn,2015,2458
+Brooklyn,2016,2314
+Manhattan,2005,4851
+Manhattan,2006,4531
+Manhattan,2007,3935
+Manhattan,2008,2428
+Manhattan,2009,1579
+Manhattan,2010,1228
+Manhattan,2011,992
+Manhattan,2012,654
+Manhattan,2013,622
+Manhattan,2014,539
+Manhattan,2015,399
+Manhattan,2016,289
+Queens,2005,8238
+Queens,2006,7638
+Queens,2007,6699
+Queens,2008,4821
+Queens,2009,3649
+Queens,2010,3528
+Queens,2011,2649
+Queens,2012,1864
+Queens,2013,1638
+Queens,2014,1658
+Queens,2015,1377
+Queens,2016,1247
+Staten Island,2005,990
+Staten Island,2006,983
+Staten Island,2007,1049
+Staten Island,2008,611
+Staten Island,2009,528
+Staten Island,2010,388
+Staten Island,2011,317
+Staten Island,2012,246
+Staten Island,2013,260
+Staten Island,2014,238
+Staten Island,2015,164
+Staten Island,2016,192

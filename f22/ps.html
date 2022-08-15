@@ -449,15 +449,15 @@ J. Monroe
     Enter output file name: shape_t.png
 </pre>
 
-		<img src="../images/shape_t.png" style="padding:25px" height=200>
-       
-<p><i>
-Hint:  Here's a way to approach the problem:
-<ol>
-	<li> Create a 3D array with 30 x 30 x 3 using numpy.		
-	<li> Set background color to be yellow, which is a combination of red and green.
-    <li> The horizontal line runs from 5 to 8 in vertical direction and from 5 to 25 in horizontal direction. Color is blue.
-    <li> The vertical line runs from 8 to 25 in vertical direction and from 13 to 16 in horizontal direction. Color is green.
+            <img src="../images/shape_t.png" style="padding:25px" height=200>
+           
+    <p><i>
+    Hint:  Here's a way to approach the problem:
+    <ol>
+        <li> Create a 3D array with 30 x 30 x 3 using numpy.		
+        <li> Set background color to be yellow, which is a combination of red and green.
+        <li> The horizontal line runs from 5 to 8 in vertical direction and from 5 to 25 in horizontal direction. Color is blue.
+        <li> The vertical line runs from 8 to 25 in vertical direction and from 13 to 16 in horizontal direction. Color is green.
 	<li> Enter an output file name and save it. 
 	<li> Remove any imshow or show statement of plt before submission. 
 </ol>
@@ -873,21 +873,71 @@ Standard Deviation: 1552.465
 <!--problem 28-->
 	<li > <b>Due Date: 27 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
-		<p> Write a program that computes the average and maximum population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.
+		<p> Write a program that analyzes children under six affected by lead in five boroughs of NYC in 2005 to 2016. Data is extracted from <a href="https://opendata.cityofnewyork.us/">open data of NYC</a> and saved in <a href="../files/children_lead.csv">children_lead.csv</a>. Your program should assume that above data file is in the same directory.
 
-		<p>A sample run of your program:
+        The file has three columns: borough, year, and affected_children. Each row records the number of children under six whose blood lead level is at least 5 micrograms of lead per deciliter of blood (μg/dL) in the specific borough and year. 
+
+        Choose Option a to group by borough, report average of number of affected children in each borough. Enter a specific borough. Report the minimum, maximum, and average number of affected children in those years.
+
+    Choose Option b to group by year, report average of number of affected children in each year. Enter a specific year. Report the minimum, maximum, and average number of affected children in the boroughs. 
+
+
+		<p>A sample run of your program to group by borough.
 <pre style ="background-color:lavender;width:450px">
-Enter borough: Staten Island
-Average population:  139814.23076923078
-Maximum population:  474558
-</pre>
-		<p>and another run:
-<pre style ="background-color:lavender;width:450px">
-Enter borough: Brooklyn
-Average population:  1252437.5384615385
-Maximum population:  2738175
+Enter a choice:
+a. group by borough
+b. group by year
+a
+average number of affected children by borough
+borough
+Bronx            3254.750000
+Brooklyn         6966.333333
+Manhattan        1837.250000
+Queens           3750.500000
+Staten Island     497.166667
+Name: affected_children, dtype: float64
+Enter a borough: Staten Island
+average number of affected children of Staten Island is  497.1666666666667
+min number of affected children of Staten Island is  164
+max number of affected children of Staten Island is  1049
 </pre>
 
+       
+		<p>Here is a run to group by year.
+<pre style ="background-color:lavender;width:450px">
+Enter a choice:
+a. group by borough
+b. group by year
+b
+average number of affected children by year
+year
+2005    7467.8
+2006    6924.6
+2007    6095.8
+2008    4080.4
+2009    3043.4
+2010    2790.2
+2011    2287.4
+2012    1635.4
+2013    1440.4
+2014    1310.0
+2015    1073.8
+2016     985.2
+Name: affected_children, dtype: float64
+Enter a year (2005 - 2016): 2014
+average number of affected children in 2014 is 1310.0
+min number of affected children in 2014 is 238
+max number of affected children in 2014 is 2929
+</pre>
+
+		<p>A sample run of your program to choose options other than a or b is as follows.
+<pre>
+Enter a choice:
+a. group by borough
+b. group by year
+c
+wrong choice
+</pre>
 		<p> <i>Hint: See <a href="lab6.html">Lab 6</a></i>.
 
 
