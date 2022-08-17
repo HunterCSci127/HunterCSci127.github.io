@@ -847,7 +847,7 @@ out3 = ...
 <!--dataset: https://data.cityofnewyork.us/Education/DYCD-after-school-programs-Beacon-Programs/35sw-rdxj-->
 	<li > <b>Due Date: 26 October</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
-<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/covid_daily_cases.csv">NYC Covid-19 Cases</a>.  Your program should ask the user for the name of a borough and the name of the output file.
+<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/covid_daily_cases.csv">NYC Covid-19 Cases</a>.  Your program should ask the user for the name of csv file, name of a borough and the name of the output file.
 <br> The program should compute the minimum, maximum, average, median and standard deviation of the covid-19 cases of the borough entered by the user  and then display the fraction of the covid-19 daily cases in that borough over time and saves it using the file name entered by the user.
 
 <br> Note that mean and standard deviation are rounded to 3 decimal numbers after the decimal point. Read the attached csv file to see column names. Use exact the same column name in your program.
@@ -855,7 +855,8 @@ out3 = ...
 <p><b>IMPORTANT: </b> The grading script expects the new column to be called 'Fraction'
 		<p> A sample run of the program:
 <pre style ="background-color:lavender;width:500px">
-Enter borough name: Queens
+Enter a csv file: covid_daily_cases.csv
+Enter borough (Bronx, Brooklyn, Queens, Manhattan, Staten Island): Queens
 Enter output name: queensCovidFraction.png
 Min: 0
 Max: 15201
@@ -863,6 +864,7 @@ Mean: 728.066
 Median: 329.0
 Standard Deviation: 1552.465
 </pre>
+
 <p> The file <tt>queensCovidFraction.png</tt>:
 
 <p><img src="../images/queensCovidFraction.png" width=300>
