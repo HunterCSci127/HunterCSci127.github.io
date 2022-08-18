@@ -1107,6 +1107,37 @@ Good Afternoon
 <hr>
 
 <!--problem 36-->
+    <p> Write a function, <tt>computePrice()</tt>, that takes two parameters: liquid <tt>(string)</tt> and the size type <tt>(string)</tt>. The function should return a <tt>float</tt> for the price of the liquid of that size.
+  <ul>
+    <li>coffee, small, 2.5
+    <li>coffee, medium, 2.75
+    <li>coffee, large, 3.00
+    <li>misto, small, 3.15
+    <li>misto, medium, 3.35
+    <li>misto, large, 3.7
+    <li>mocha, small, 3.5
+    <li>mocha, medium, 3.8
+    <li>mocha, large, 4.25
+    <li>tea, small, 2.35
+    <li>tea medium, 2.45
+    <li>tea large, 2.90
+    <li>any other choice, return -1
+	</ul>
+
+	The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
+
+<p>A sample run:
+<pre style = "background-color:lavender;width:450px">
+medium size tea: 2.45
+</pre>
+<p> And another:
+<pre style = "background-color:lavender;width:450px">
+medium size wine: -1
+</pre>
+
+	<p><i><b>Hint:</b>  See <a href="lab8.html">Lab 8</a>.</i>
+
+<!--problem 37-->
 	<li > <b>Due Date: 8 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
 		<p> Modify the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
@@ -1150,52 +1181,6 @@ The 10 worst offenders are:
 2006     499
 Name: Vehicle Year, dtype: int64
 </pre>
-
-<!--problem 37-->
-<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: <a href="https://guides.github.com/activities/hello-world/">Github Guide</a></b><br>
-
-<p> Logical gates can be used to do arithmetic on binary numbers.  For example, we can write a logical circuit whose output is one more than the inputted number.  Our inputs are <tt>in1</tt> and <tt>in2</tt> and the outputs are stored in <tt>out1</tt>, <tt>out2</tt>, and <tt>out3</tt>.
-
-<p><a href="http://www.neuroproductions.be/logic-lab/index.php?id=80507">
-<img src="../images/incrementCircuit.png" height=200 ><br>
-(click to launch new window with circuit)</a>
-
-<p>Here is a table of the inputs and outputs:
-
-<table border="1px">
-<tr>
-<th colspan=3>Inputs</th><th colspan=4>Outputs</th>
-</tr>
-<tr>
-<th>Decimal<br>Number</th><th>in1</th><th>in2</th><th>Decimal<br>Number</th><th>out1</th><th>out2</th><th>out3</th>
-</tr>
-<tr>
-<td>0</td><td>0</td><td>0</td> <td>1</td><td>0</td><td>0</td><td>1</td>
-</tr>
-<tr>
-<td>1</td><td>0</td><td>1</td> <td>2</td><td>0</td><td>1</td><td>0</td>
-</tr>
-<tr>
-<td>2</td><td>1</td><td>0</td> <td>3</td><td>0</td><td>1</td><td>1</td>
-</tr>
-<tr>
-<td>3</td><td>1</td><td>1</td> <td>4</td><td>1</td><td>0</td><td>0</td>
-</tr>
-</table>
-
-<p>Submit a text file with each of the outputs on a separate line:
-<pre style = "background-color:lavender;width:500px">
-#Name:  YourNameHere
-#Date:  November 2017
-#Logical expressions for a 4-bit incrementer
-
-out1 = ...
-out2 = ...
-out3 = ...
-</pre>
-Where "..." is replaced by your logical expression (see <a href="lab5.html">Lab 5</a>).
-
-<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
 
 <!--problem 38-->
 	<li > <b>Due Date: 10 November</b>
@@ -2838,14 +2823,9 @@ Congrats on escaping the maze! Please do join us again :)
 <a id="ps8"></a>
 <h2><u> Lecture / Lab 8</u></h2>
 
-
-
-
 <li > <b>Due Date: 4 November</b>  <b style="float:right">Reading: Think CS: <a href="https://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab8.html" target="_blank">Lab 8</a>  </b><br>
 
-
-
-	<p> Write a function, <tt>worldRecord()</tt>, that takes two parameters: gender <tt>(string)</tt> and the event type <tt>(int)</tt>. The function should return a <tt>float</tt> for the Olympic world record for the event.
+	<p> Write a function, <tt>computePrice()</tt>, that takes two parameters: gender <tt>(string)</tt> and the event type <tt>(int)</tt>. The function should return a <tt>float</tt> for the Olympic world record for the event.
   <ul>
     <li>  Men's Standard, event type 100 meters: record is 9.63 seconds.
     <li>  Men's Standard, event type 200 meters: record is 19.30 seconds.
