@@ -981,7 +981,7 @@ AccountNameGoesHere
 <!--problem 31-->
 	<li > <b>Due Date: 1 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
-<p> Refer to the program from <a href="lab7.html">Lab 7</a>. Read <a href="../files/country_internet.csv">internet users in countries</a>to:
+<p> Refer to the program from <a href="lab7.html">Lab 7</a>. Read <a href="../files/country_internet.csv">internet users by countries</a> downloaded from <a href="kaggle.com">kaggle.com</a>.
 		<ul>
 			<li> ask the user to specify the output file,
 			<li> make a plot of the <b>percentage</b> of the internet users over the population of every country, and
@@ -1013,12 +1013,21 @@ number of 'o' in "Hello, how are you?" is 3
 <!--problem 33-->
 	<li > <b>Due Date: 3 November</b><b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a></b><br>
 
-  <p>Write a program that asks the user for the name of an image, the name of an output file.  Your program should then save the lower left quarter of the image to the output file specified by the user.
+  <p>Write a program that asks the user for a choice.
+
+  <ul>
+     <li>If the choice is 1, then enter the name of an output file. Your program should then save the upper right quarter of the image to the output file specified by the user.
+     <li>If the choice is 1, then enter the name of an output file to save the middle portion (from 1/4 of height to 3/4 of height and from 1/4 of width to 3/4 of width) of the original figure.
+     
+  </ul>  
 
   <p>A sample run of your program should look like:
-  <pre style ="background-color:lavender;width:400px">
-Enter image file name: hunterLogo.png
-Enter output file: logoLL.png
+  <pre style ="background-color:lavender;width:500px">
+Enter 1 to get upper right corner
+Enter 2 to get middle portion
+Your choice: 1
+Enter input file name: hunter_logo.png
+Enter output file name: hunter_logo_upper_right.png
 </pre>
 
   <p>which would have as input and output:
@@ -1026,9 +1035,27 @@ Enter output file: logoLL.png
   <img src="../images/hunterLogo2.png" width = 400>
   <img src="../images/logoLL.png" width = 200 >
 
+  <p>Another sample run of your program should look like:
+  <pre style ="background-color:lavender;width:500px">
+Enter 1 to get upper right corner
+Enter 2 to get middle portion
+Your choice: 2
+Enter input file name: hunter_logo.png
+Enter output file name: hunter_logo_middle.png
+</pre>
+ 
+   <p>When entering any number other than 1 or 2, here is an output:
+   <pre style ="background-color:lavender;width:500px">
+     Enter 1 to get upper right corner
+     Enter 2 to get middle portion
+     Your choice: 3
+     wrong choice
+   </pre>
+
 
   <p> <i>Hint:  See sample programs from Lectures 4 and 6.</i>
 
+<p><i> Hint: When input a choice other than '1' or '2', print "wrong choice" and exit the program. Otherwise, enter the input file name and output file name, then depending on the choice (either '1' or '2'), cut the image and save the portion to the output file. </i>
 
   <p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
