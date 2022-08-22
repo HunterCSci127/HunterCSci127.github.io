@@ -1004,23 +1004,79 @@ Enter name of output file:  internet_users_percentage.png
 <!--problem 32-->
 	<li > <b>Due Date: 2 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a></b><br>
 
-    <p> Write a program, using a function <tt>main()</tt> that enter a string and a letter, count the number of occurrence of that letter in the string. See <a href="lab7.html">Lab 7</a>.
+<p> Refer to the program from <a href="lab7.html">Lab 7</a>. Read <a href="../files/country_internet.csv">country_internet.csv</a> downloaded from <a href="kaggle.com">kaggle.com</a>.
+
+Your program will do the following,
+<ul>
+    <li> find out print out the average of <b>NO. OF Internet Plans</b> in each <b>Continental region</b>, pay attention to the corresponding column name, need to be strictly case to case, letter to letter.
+    <li> Choose a continental region. You may print <i>grouped_data.groups.keys()</i> to display all possible continental regions, where variable <tt>grouped_data</tt> holds the return of groupby smethod of data frame object read from csv file.
+    <li> For the chosen region, find out and print the maximum and minimum number of internet plans among all countries and the number of countries in the region.
+	<li> ask the user to specify the output file.
+    <li> make a bar plot of the <b>NO. OF Internet Plans</b> of every country in the chosen region, and
+	<li> store the plot in the output file the user specified.
+</ul>
+ 
+You may use the following statements.
+<pre>
+grouped_data.get_group(chosen_region).plot.bar(...)
+    #the first parameter of bar method is the column name representing country, the second parameter is the number of internet plans
+plt.gcf().subplots_adjust(bottom=0.25)
+    #so that the country name is displayed in full
+plt.xlabel(...)
+    #The parameter in xlabel should be "Country in ...", where ... is the name of chosen region. The region name should be exactly the same as the corresponding region the csv file.
+plt.ylabel("NO. OF Internet Plans")
+</pre>
+
+		<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Continental region
+ASIA (EX. NEAR EAST)    37.964286
+BALTICS                 26.333333
+CARIBBEAN               17.068966
+CENTRAL AMERICA         24.500000
+CIS (FORMER USSR)       23.909091
+EASTERN EUROPE          28.714286
+Europe                        NaN
+NEAR EAST               31.750000
+NORTHERN AFRICA         23.285714
+NORTHERN AMERICA        32.250000
+OCEANIA                 17.318182
+SOUTH AMERICA           32.692308
+SUB-SAHARAN AFRICA      28.391304
+WESTERN EUROPE          24.566667
+Name: NO. OF Internet Plans, dtype: float64
+
+possible regions are
+dict_keys(['ASIA (EX. NEAR EAST)', 'BALTICS', 'CARIBBEAN', 'CENTRAL AMERICA', 'CIS (FORMER USSR)', 'EASTERN EUROPE', 'Europe', 'NEAR EAST', 'NORTHERN AFRICA', 'NORTHERN AMERICA', 'OCEANIA', 'SOUTH AMERICA', 'SUB-SAHARAN AFRICA', 'WESTERN EUROPE'])
+choose a region: <mark>NORTHERN AMERICA</mark>
+In region NORTHERN AMERICA
+number of countries:  4
+maximum number of internet plans:  60.0
+minimum number of internet plans:  3.0
+Please enter output file name: <mark>internet_plans_northern_america.png</mark>
+</pre>
+		<p> which produces an output:
+
+		<p><img src="../images/internet_plans_northern_america.png" height = 300>
+
+
+<!--problem 33-->
+	<li > <b>Due Date: 3 November</b><b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a></b><br>
+
+   <p> Write a program, using a function <tt>main()</tt> that enter a string and a letter, count the number of occurrence of that letter in the string. See <a href="lab7.html">Lab 7</a>.
 
 <pre style ="background-color:lavender;width:526px">
 Enter a string: Hello, how are you?
 Enter a char: o
 number of 'o' in "Hello, how are you?" is 3
-</pre>
 
-<!--problem 33-->
-	<li > <b>Due Date: 3 November</b><b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a></b><br>
+<!--problem 34-->
+  <li > <b>Due Date: 4 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a></b><br>
 
   <p>Write a program that asks the user for a choice.
-
   <ul>
      <li>If the choice is 1, then enter the name of an output file. Your program should then save the upper right quarter of the image to the output file specified by the user.
      <li>If the choice is 1, then enter the name of an output file to save the middle portion (from 1/4 of height to 3/4 of height and from 1/4 of width to 3/4 of width) of the original figure.
-     
   </ul>  
 
   <p>A sample run of your program should look like:
@@ -1072,9 +1128,7 @@ Enter output file name: magic_logo_middle.png
 
   <p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
-<!--problem 34-->
-  <li > <b>Due Date: 4 November</b>  <b style="float:right">Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a></b><br>
-
+<!--
       		<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first names first followed by the last names.
 
       		<p>A sample run of your program should look like:
@@ -1094,7 +1148,7 @@ Thank you for using my name organizer!
       </pre>
 
       <p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).</i>
-
+-->
 <!--problem 35-->
 	<li > <b>Due Date: 7 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
     <p> Write a program that asks the user for the hour of the day (in 24 hour time), and prints
