@@ -1209,8 +1209,48 @@ medium size wine: -1
 
 	<p><i><b>Hint:</b>  See <a href="lab8.html">Lab 8</a>.</i>
 
-<!--TODO-->
+<!--problem 37-->
+<li > <b>Due Date: 14 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
 
+		<p> Write three functions, <tt>draw_pantegon()</tt>, <tt>pantegon()</tt> and <tt>nested_pantegon()</tt>.  Function <tt>draw_pantegon</tt> takes three parameters: a turtle, an edge length, and number of edges. Functions <tt>pantegon</tt> and <tt>nested_pantegon</tt> take two parameters: a turtle and an edge length.  The pseudocode for <tt>draw_pantegon()</tt> is:
+
+<pre>
+#recursive function to draw a pantegon
+def drawPantegon(t, length, numEdges):
+   if numEdges > 0:
+      move the turtle object, t, forward length steps
+      t turn left 72 degrees
+      call drawPantegon with t, length, and numEdges-1
+</pre>
+
+pseudocode of cornerPantegon, which draws pantegon nested in left corner.
+<pre>
+def cornerPantegon(t, length):
+   if length >= 25:
+      1. call drawPantegon with t, length and 5
+      2. reduced length by half (use integer division)
+      3. call cornerPantegon with t and length, that is, draw a pantegon with t and updated length
+</pre>
+
+<pre>
+def nestedPantegon(t, length):
+    if length >= 25:
+       1. call drawPantegon with t, length, and 5
+       2. Turtle t moves forward length/2
+       3. Turtle t turns left 36 degrees
+       4. call position function of t and put the return to variable pos
+       5. call nestedPantegon with t, length * math.sin(54/180 * math.pi)
+</pre>
+
+    The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
+
+		<p>A sample run with length 100 would produce:
+
+<p><img height=200 src="../images/nestedPantegon.png">
+
+<p><img height=200 src="../images/cornerPantegon.png">
+
+<!--TODO: insert here-->
 <!--problem 37-->
 <!--
 	<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
@@ -1308,6 +1348,7 @@ Name: CONTRIBUTING FACTOR VEHICLE 1, dtype: int64
 
 </div>
 
+
 <!--TODO: change back the contents after filling the above problems-->
 <div style="display:none">
 
@@ -1328,42 +1369,6 @@ Here's <a href="https://xkcd.com">xkcd</a> on the simplicity of Python:
 -->
 </body>
 </html>
-<!--TODO-->
-<!--
-	<li > <b>Due Date: 14 November</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
-
-		<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
-
-<pre>
-    triangle(t, length):
-    1.  If length > 10:
-    2.     Repeat 3 times:
-    3.         Move t, the turtle, forward length steps.
-    4.         Turn t left 120 degrees.
-    5.     Call triangle with t and length/2.
-</pre>
-
-<p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
-<pre>
-    nestedTriangle(t, length):
-    1.  If length > 10:
-    2.     Repeat 3 times:
-    3.         Move t, the turtle, forward length steps.
-    4.         Turn t left 120 degrees.
-    5.         Call nestedTriangle with t and length/2.
-</pre>
-
-		<p>A template program, <tt>nestingTrianges.py</tt>, is available on the
-		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
-		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
-
-		<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter edge length:  160
-</pre>
-		<p>which would produce:
-
-<p><img height=200 src="../images/nestedTriangles.png">
 
 
 <!--problem 41-->
