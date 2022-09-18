@@ -320,7 +320,7 @@ user abbreviation: SLC
 <!--problem 11-->
 	<li > <b>Due Date: 28 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
-		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of blue.
+		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of cyan.
 
 		<p>
 		Your output should look similar to:
@@ -343,6 +343,16 @@ user abbreviation: SLC
 
     #TODO: draw up shade
 </pre>
+
+<p>Warning: for the purpose of grading script, the right shade is drawn before the up shade.
+
+<p>Hints: you may use one of the following approaches.
+<ul>
+   <li>Simplest approach: create two turtles, one to draw the right shade and the other to draw the up shade. By default, each turtle starts from the origin -- coordinates x and y are both zero and faces east.
+   <li>Use only one turtle. After drawing the right shade, the turtle moves backward appropriate steps to its start point (you may need to calculate the total distance from the turtle's current position to the start point). You may need to penup, pendown and pensize methods of the turtle before drawing the up shade.
+   <li>Use only one turle. After drawing the right shade, the turtle go to the start point. You may need use penup, pendown, and pensize methods of the turtle before drawing the up shade.
+   <li>For explanation of turtle commands, read<a href="https://docs.python.org/3/library/turtle.html">turtle library</a>.
+</ul>
 
 <!--problem 12-->
 	<li > <b>Due Date: 29 September</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
@@ -375,7 +385,6 @@ user abbreviation: SLC
 	<li > <b>Due Date: 3 October</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
 		<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  Your program should create a new image that sets red channel of the original image to be zero.
-
 
 		<p> A sample run of your program should look like:
 
