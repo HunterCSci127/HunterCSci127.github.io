@@ -7,11 +7,9 @@ import matplotlib.pyplot as plt
 
 #TODO: input height and width
 
-
 #TODO: create a height x width image with blue background
+img = np.ones((height, width, 3))
 
 #TODO: draw red vertical lines in even indices
 
 #TODO: show img
-plt.imshow(img)
-plt.show()

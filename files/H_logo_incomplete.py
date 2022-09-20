@@ -5,17 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #TODO: create a white background 10 x 10 image to draw H logo
-
+img = np.ones((10, 10, 3)) #ones means every value is 1, that is, red, green, blue are all ones, so each pixel is white, we havea  white background.
 
 #H is in purple color
 #TODO: the leftmost 3 vertical lines represents left vertical line in H
 
-
 #TODO: the rightmost 3 vertical lines represents right vertical line in H
-
 
 #Use your fingers to find out the middle two lines. 
 #TODO: the middle line in H is in the fifth and sixth horizontal lines, ie, indices 4 and 5. 
-
 
 #TODO: show image img

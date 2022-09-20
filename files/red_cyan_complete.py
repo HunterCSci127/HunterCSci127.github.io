@@ -1,4 +1,4 @@
-##File name: /Users/laptopuser/Documents/courses/cs127/class_exercises/f22/lecture4_class_exercises/red_cyan_incomplete.py
+##File name: /Users/laptopuser/Documents/courses/cs127/class_exercises/f22/lecture4_class_exercises/red_cyan_complete.py
 ##name: Tong Yi
 ##email: ty680@hunter.cuny.edu
 
@@ -18,10 +18,13 @@ img = np.zeros((height, width, 3)) #cannot omit () around height, width, 3
 #np.zeros((height, width, 3)) create a height x width image with black background, the background is black since red/green/blue channels are all zero.
 
 #TODO: set background to be cyan (green + blue)
+img[:, :, 1] = 1 #green channel to be 1
+img[:, :, 2] = 1 #blue channel to be 1
 
 #TODO: set the horizontal half to be red
-#NOTE: background is cyan by now, so blue and green channels
-#are set by 1 already.
+img[:height//2, :, 0] = 1 #red channel of first horizontal half is red
+img[:height//2, :, 1] = 0
+img[:height//2, :, 2] = 0
 
 #display img
 plt.imshow(img)

@@ -1,4 +1,4 @@
-##File name: /Users/laptopuser/Documents/courses/cs127/class_exercises/f22/lecture4_class_exercises/blue_bridge_todo.py
+##File name: /Users/laptopuser/Documents/courses/cs127/class_exercises/f22/lecture4_class_exercises/blue_bridge_complete.py
 ##name: CSci 127 teaching staff 
 
 #install using pip3 install numpy
@@ -22,11 +22,15 @@ img2 = img.copy()
 
 #TODO: remove the red and green channel of img2,
 #ie, set these two channel to be zero.
+#img2[:, :, 0] = 0 #set red channel to be zero
+img2[:, :, 1] = 0 #set green channel to be zero
 
 #TODO: challenge: set the middle half in height
 #to be blue, while keeping the rest the original color
 
 #TODO: display img2
+plt.imshow(img2)
+plt.show()
 
 #save the img2 to a file called "csBridge_blue.png"
 plt.imsave("csBridge_blue.png", img2)
