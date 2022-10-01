@@ -294,34 +294,39 @@ print(albury['Rainfall'].mean())
 <p>This will output a single number: the average rainfall in 'Albury'
 <p><img src="../images/singleAvgOutput.png" height = 35>
 
-<p>Steps on using groupby and get_group in pandas, illustrated with student_info.csv, which stores information for students, columns (attributes to describe a student) can be name, age, gender, academic standing (freshmen, sophomore, junior, and senior), and scores. 
-
+<div>
+<h3>Steps on using groupby and get_group in pandas</h3>
+<p>Illustrate with <a href="../files/student_info.csv" target="blank">student_info.csv</a>, which stores information for students. Columns (attributes to describe a student) are Name, Age, Gender, Grade Level (freshmen, sophomore, junior, and senior), and Score. 
 <ol>
    <li> Use read_csv method of pandas to read a csv file, put the result in a data frame. 
    <pre>
        students = pd.read_csv('student_info.csv')
    </pre>
 
-   <li> Examine file structure of csv file to be analysized, choose a column to be grouped using groupby method of data frame of pandas. Suppose you choose to group by academic standing, then we have four groups: freshmen, sophomore, junior, and senior.
+   <li> Examine file structure of csv file to be analysized, choose a column to be grouped using groupby method of data frame of pandas. Suppose you choose to group by Grade Level, then we have four groups: freshmen, sophomore, junior, and senior.
+
+Note that python is a case-sensitive language. Since the column name is Grade Level, you cannot write it as grade level.
 
    <pre>
-       groupedData = students.groupby('academic standing')
+       groupedData = students.groupby('Grade Level')
    </pre>
 
    <li> You may calculate aggregate functions, say, max, min, mean (average), standard deviation, median of a numerical attribute -- for example, age, score -- of the grouped data. In the above example, you may choose to calcuate the average of scores in each group.
 
    <pre>
-       print(groupedData['score'].mean())
+       print(groupedData['Score'].mean())
    </pre>
 
    <li> You can also pick up a specific group using get_group method on grouped data, and apply aggregate functions on corresponding column (attribute) of that group. 
    <pre>
        #pick up the group of senior students
-       seniorStudents = groupedData.get_group('senior')
+       seniorStudents = groupedData.get_group('Senior')
 
        #find out the maximum score of senior students 
-       max = seniorStudents['score'].max()
+       max = seniorStudents['Score'].max()
    </pre>
+
+   <li> Can you group by Age? by Gender?
 </ol>
 
 </div>
