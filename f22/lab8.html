@@ -177,7 +177,43 @@ Name: Plate ID, dtype: int64
 </pre>
 <p>For just the month of January 2016, there were 9 cars that got more than a ticket a day.
 
+<div>
+<h4>Connection between groupby and value_counts</h4>
 
+<p>We can also implement value_counts by groupby and sort_values methods.
+
+<pre>
+print(tickets["Plate ID"].value_counts()[:10]) 
+</pre>
+
+can be replaced by
+
+<pre>
+grouped = df.groupby('Plate ID')
+print(grouped['Plate ID'].count().sort_values(ascending=False)[:10])
+</pre>
+
+<p> Explanation
+<ul>
+  <li> Variable grouped stores records grouped by Plate IDs.
+       That is, grouped are records sharing with an identical Plate ID.
+  <li> grouped['Plate ID'].count() does the following:
+for each group identified by a Plate ID,
+count all the records with that identifier.
+That is, grouped['Plate ID'].count() returns
+the number of records with a specific Plate ID.
+Warning: grouped.count() returns a TABLE showing
+the number of columns for each column in each group.
+
+<li> grouped['Plate ID'].count().sort_values(ascending=False)
+sort numbers of Plate ID by ascending order.
+
+<li> grouped['Plate ID'].count().sort_values(ascending=False)[:10] displays the first 10 Plate IDs appearing the most in
+tickets.csv, that is, the 10 Plate IDs with most tickets.
+</ul>
+</div>
+
+<div>
 <h4>Binning Other Data</h4>
 
 <p>Now that you have a program to use as a basic template, answer the following questions:
@@ -187,9 +223,7 @@ Name: Plate ID, dtype: int64
 	<li> Which location yields the most tickets?
 </ul>
 (Remember to check the CSV file for the name used for the columns and use that as the index.)
-
 </div>
-
 
 <div>
 <h3>Top Down Design</h3>
