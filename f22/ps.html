@@ -1306,55 +1306,75 @@ def nestedPantegon(t, length):
 <p><img height=200 src="../images/nestedPantegon.png">
 
 
-<!--TODO: insert here-->
-<!--problem 37-->
-<!--
-	<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+<!--problem 39-->
+	<li > <b>Due Date: 10 November</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
-		<p> Modify the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
+		<p> Mimic the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
 		<ul>
-			<li> Ask the user for the name of the input file.
-			<li> Ask the user for the attribute (column header) to search by.
+            <li> Read <a href="../files/movie_locations.csv">movie_locations.csv</a> which lists NYC sites in movies.
+			<li> Ask the user for the number of most popular neighborhoods in movies. 
+			<li> Ask the user for the first several directors/film makers who filmed NYC in their movies.
 		</ul>
 
 		<p>A sample run:
-		<pre style ="background-color:lavender;width:450px">
-Enter file name:  Parking_Violations_Jan_2016.csv
-Enter attribute:  Vehicle Color
-The 10 worst offenders are:
-WHITE    2801
-WH       2695
-GY       1420
-BK       1153
-BLACK    1054
-BROWN     727
-BL        656
-GREY      574
-SILVE     450
-BLUE      412
-Name: Vehicle Color, dtype: int64
-</pre>
-
-		<p>And another run:
 <pre style ="background-color:lavender;width:450px">
-Enter file name:  Parking_Violations_Jan_2016.csv
-Enter attribute:  Vehicle Year
-The 10 worst offenders are:
-0       3927
-2015    1265
-2014    1143
-2013    1105
-2012     772
-2011     666
-2007     643
-2008     559
-2010     509
-2006     499
-Name: Vehicle Year, dtype: int64
+order of most popular neighborhoods in movies: 3
+Midtown            39
+Brooklyn           32
+Lower Manhattan    25
+Name: Neighborhood, dtype: int64
+order of directors/filmmakers making most movies in NYC: 5
+Spike Lee          11
+Woody Allen        11
+David Greene        8
+Sidney Lumet        6
+Martin Scorsese     6
+Name: Director/Filmmaker Name, dtype: int64
 </pre>
--->
 
-<!--problem 38-->
+<!--problem 40-->
+<li > <b>Due Date: 11 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
+
+  <p>Using the template program, <tt> averageImage.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing functions:
+
+  <ul>
+    <li> <tt>average(region):</tt>  Takes a region of an image and
+      returns the average red, green, and blue values across the region.
+      <li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+    </ul>
+
+  <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+  (inspired by the elegant <a href="https://koalastothemax.com" target="_blank">koalas to the max</a>).
+
+  <p>For example, if you inputted our favorite image, you would see (left to right):
+
+  <p>
+  <img src="../images/refined1.png" width=150>
+    <img src="../images/refined2.png" width=150>
+    <img src="../images/refined3.png" width=150>
+    <img src="../images/refined4.png" width=150>
+    <img src="../images/refined5.png" width=150>
+    <img src="../images/refined6.png" width=150>
+    <img src="../images/refined7.png" width=150>
+    <img src="../images/refined8.png" width=150>
+
+
+  <p> and finally:
+
+    <p> <img src="../images/csBridge.png" width=400>
+
+  <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+  <p><b>IMPORTANT</b> Do not remove anything below <b>and including</b> the comment that says:
+<pre style ="background-color:lavender;width:600px">
+  ######################################################################
+  ### DO NOT CHANGE ANYTHING BELOW AND INCLUDING THIS LINE           ###
+  ######################################################################
+</pre>
+
+
+  <p><i>Hint:  See notes from Lecture 8.</i>
+
+
 <!--TODO-->
 <!--
 	<li > <b>Due Date: 10 November</b>
@@ -1369,6 +1389,7 @@ Name: Vehicle Year, dtype: int64
 		<p><i>Hint:  See notes from Lecture 7 and <a href="lab8.html">Lab 8</a>.</i>
 -->
 
+<!--TODO: insert here-->
 <!--problem 39-->
 <!--TODO-->
 <!--
@@ -3144,49 +3165,6 @@ Name: Publisher, dtype: int64
         <p><img height=250 src="../images/turtleTree.png">
 
 
-
-<li > <b>Due Date: 9 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
-
-
-
-  <p>Using the template program, <tt> averageImage.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing functions:
-
-  <ul>
-    <li> <tt>average(region):</tt>  Takes a region of an image and
-      returns the average red, green, and blue values across the region.
-      <li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
-    </ul>
-
-  <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
-  (inspired by the elegant <a href="https://koalastothemax.com" target="_blank">koalas to the max</a>).
-
-  <p>For example, if you inputted our favorite image, you would see (left to right):
-
-  <p>
-  <img src="../images/refined1.png" width=150>
-    <img src="../images/refined2.png" width=150>
-    <img src="../images/refined3.png" width=150>
-    <img src="../images/refined4.png" width=150>
-    <img src="../images/refined5.png" width=150>
-    <img src="../images/refined6.png" width=150>
-    <img src="../images/refined7.png" width=150>
-    <img src="../images/refined8.png" width=150>
-
-
-  <p> and finally:
-
-    <p> <img src="../images/csBridge.png" width=400>
-
-  <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
-  <p><b>IMPORTANT</b> Do not remove anything below <b>and including</b> the comment that says:
-<pre style ="background-color:lavender;width:600px">
-  ######################################################################
-  ### DO NOT CHANGE ANYTHING BELOW AND INCLUDING THIS LINE           ###
-  ######################################################################
-</pre>
-
-
-  <p><i>Hint:  See notes from Lecture 8.</i>
 
 <a id="cr10"></a>
 <li > <b>Due Date: 10 November</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab8.html">Lab 8</a></b><br>
