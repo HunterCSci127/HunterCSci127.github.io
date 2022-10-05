@@ -1311,7 +1311,7 @@ def nestedPantegon(t, length):
 
 		<p> Mimic the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
 		<ul>
-            <li> Read <a href="../files/movie_locations.csv">movie_locations.csv</a> which lists NYC sites in movies.
+            <li> Read <a href="../files/movie_locations.csv">movie_locations.csv</a> which lists NYC sites in movies. The original data is from <a href="https://data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm">Filming Locations (Scenes from the City)</a>.
 			<li> Ask the user for the number of most popular neighborhoods in movies. 
 			<li> Ask the user for the first several directors/film makers who filmed NYC in their movies.
 		</ul>
@@ -1385,6 +1385,22 @@ Name: Director/Filmmaker Name, dtype: int64
           <p> Write a program that uses folium to make a map centered in New York City (40.75, -74.125) and add a marker for Central Park (warning: case sensitive) at coordinates 40.7812, -73.9665.  The HTML file your program creates should be called: <tt>nyc_Central_Park.html</tt>.
 
           <p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+<!--problem 42-->
+	 <li > <b>Due Date: 15 November</b>  
+	 <b style="float:right">Reading: <a href="http://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
+
+		<p>
+		Using folium (see <a href="lab9.html">Lab 9</a>), write a program that reads <a href="../files/nyc_hospitals.csv">NYC hospitals</a>, which is adapted from <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-patient-care-locations-2011/f7b6-v6v3">NYC Health + Hospitals patient care locations - 2011</a> from <a href="https://opendata.cityofnewyork.us/data/">NYC OpenData</a>, removing facilities without latitude and longitude information. 
+        <p>Input name of the output file, and creates a map with markers for all the hospitals from the input file.
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter output file:  nyc_hospitals.html
+</pre>
+		<p>which would produce the html file:
+
+		<p><iframe src="../images/nyc_hospitals.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 <!--TODO-->
 <!--
