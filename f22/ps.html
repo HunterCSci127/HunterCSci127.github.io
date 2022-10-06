@@ -1402,6 +1402,52 @@ Enter output file:  nyc_hospitals.html
 
 		<p><iframe src="../images/nyc_hospitals.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+<!--problem 43-->
+	 <li > <b>Due Date: 16 November</b>  
+
+  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+ <p> Using folium, write a program that asks the user to read <a href="../files/after_school.csv">after_school.csv</a>, which is downloaded from <a href="https://data.cityofnewyork.us/Education/DYCD-after-school-programs/mbd7-jfnc">DYCD after-school programs</a> from NYC OpenData. Get rid of records without lagitude and longitude information, change some typos and modify some column names -- for example, change BOROUGH/COMMUNITY to Borough/Community -- for consistence. So make sure to use the above after_school.csv file.
+
+<p>Choose 1 for "Borough/Community", enter the name of a borough/community, create a map with markers for all after school programs in that region.
+
+<p>Choose 2 for "Grade Level / Age Group", enter a grade level, create a map with markers for all the after school programs for that group.
+
+<p>The file name should be saved as <b>lower cases</b> of <tt>group_name</tt>, replacing every space with a underscore ('_') character and every forward slash ('/') with a underscore ('_').
+Forward slash should be replaced, otherwise it will be mistakenas a separator between directories in Linux system.
+
+   <br> <b>Hint:</b> You can use <tt>groupby</tt> and <tt>get_group</tt> to consider only the rows for the input borough/community or grade level / age group. You can also use <tt>mygroup.groups.keys()</tt> to list the keys of <tt>mygroup<tt>, which holds the return of <tt>groupby</tt>.
+
+ <p><i>Note:</i> You can use the value in the "Name" column to label each marker.
+
+ <p>A sample run:
+<pre style = "background-color:lavender;width:700px">
+  Enter 1 for Borough/Community,
+2 for Grade Level / Age Group
+1
+dict_keys(['Astoria', 'Bronx', 'Brooklyn', 'Corona', 'Flushing', 'Forest Hills', 'Jackson Heights', 'Jamaica', 'Kew Gardens', 'Long Island City', 'Manhattan', 'New York', 'Queens', 'Staten Island', 'Woodside'])
+Enter Borough/Community name: Jackson Heights 
+</pre>
+
+ <p>which would produce a html file named <tt>jackson_heights_after_school.html</tt>:
+
+ <p><iframe src="../files/jackson_heights_after_school.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+Another sample run of the program, when we chooose grade level MS/HS.
+
+<pre style="background-color:lavender;width=700px">
+Enter 1 for Borough/Community,
+2 for Grade Level / Age Group
+2
+dict_keys(['11+', '13 to 21', '14 to 24', '14-Nov', '16 to 21', '16 to 24', '16+', '18+', '20-May', '6 and up', 'A parent 16 Years Old or Older', 'Adults', 'All Ages', 'ESOL/Civics', 'Elem/MS', 'Elem/MS/HS', 'Elementary', 'High School', 'MS/HS', 'Middle School', 'OST', 'Seniors', 'grades 6 to 8'])
+Enter Grade Level / Age Group name: MS/HS
+</pre>
+
+ <p>which would produce a html file named <tt>ms_hs_after_school.html</tt>:
+
+ <p><iframe src="../files/jackson_heights_after_school.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<hr>
 <!--TODO-->
 <!--
 	<li > <b>Due Date: 10 November</b>
