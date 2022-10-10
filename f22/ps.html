@@ -1433,7 +1433,7 @@ Enter Borough/Community name: Jackson Heights
 
  <p><iframe src="../files/jackson_heights_after_school.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-Another sample run of the program, when we chooose grade level MS/HS.
+<p>Another sample run of the program, when we chooose grade level MS/HS.
 
 <pre style="background-color:lavender;width=700px">
 Enter 1 for Borough/Community,
@@ -1445,60 +1445,66 @@ Enter Grade Level / Age Group name: MS/HS
 
  <p>which would produce a html file named <tt>ms_hs_after_school.html</tt>:
 
- <p><iframe src="../files/jackson_heights_after_school.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+ <p><iframe src="../files/ms_hs_after_school.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 <!--problem 44-->	
-<li > <b>Due Date: 18 November</b> 
+<li > <b>Due Date: 17 November</b> 
 
 Read <i>Top Down Design</i> in <a href="lab8.html">Lab 8</a>. Define functions to draw flower as follows.
 
-a green flower with nine petals
+<p>a green flower with nine petals
 <img src="../images/green_flower_f22.png" width=150>
 
 <!--a cyan flower with seven petals-->
 <!--<img src="../images/cyan_flower_f22_p44.png" width=150>-->
 
-a blue flower with six petals
+<p>a blue flower with six petals
 <img src="../images/blue_flower_f22_p44.png" width=150>
 
-From the above figures, we can see each flower has petals, where each petal has color and head in different directions. Drawing of petal can refer to <a href="lab3.html">lab 3</a>.
+<p>From the above figures, we can see each flower has petals, and each petal has color and heads in different directions. Drawing of petal can refer to <a href="lab3.html">lab 3</a>.
+
+img {
+    float: left;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+}
 
 <p>Here is a blue petal tilting 0 degree from east direction, which is the default facing direction of a turtle.
-<img src="../images/blue_petal_0.png" width=150>
+<img src="../images/blue_petal_0.png" width=150 height=150 object-fit=cover>
 
 <!--<img src="../images/blue_petal_60.png" width=150>-->
 
-<p>Here is a blue petal tilted 60 degrees from east direction.
+<p>Here is a blue petal tilting 60 degrees from east direction.
 The angle between the central line of this petal and the east direction is 60 degrees.
 
 <img src="../images/blue_petal_60_degree.png" width=150>
 
-<p>Here is a blue petal tilted 120 degrees from the east direction.
+<p>Here is a blue petal tilting 120 degrees from the east direction.
 <img src="../images/blue_petal_120_degree.png" width=150>
 
-
-<p>Here is a blue petal tilted 180 degrees from the east direction.
+<p>Here is a blue petal tilting 180 degrees from the east direction.
 <img src="../images/blue_petal_180_degree.png" width=150>
 
-<p>Here is a blue petal tilted 240 degrees from the east direction.
+<p>Here is a blue petal tilting 240 degrees from the east direction.
 <img src="../images/blue_petal_240_degree.png" width=150>
 
-<p>Here is a blue petal tilted 300 degree from the east direction.
+<p>Here is a blue petal tilting 300 degree from the east direction.
 <img src="../images/blue_petal_300_degree.png" width=150>
 
 It can be seen that a blue flower with 6 petals has petals tilted 0, 60, 120, 180, 240, and 300 degrees.
 
-In this problem, define <tt>petal, flower, and main</tt> functions.
+<p>In this problem, define <tt>petal, flower, and main</tt> functions.
 
 <ul>
    <li>Define function <tt>petal</tt>, whose first parameter is color and second parameter is angle. The color can be red, green, blue, yellow, purple, and cyan. If the actual parameter for color is none of the above choices, set the color to be green. 
 
-   <i>Hint: use <tt>t = turtle.Turtle(visible=False) #visible=False hides arrow key of turtle when drawing</tt></i>, otherwise, you might see a little arrow key in each petal as follows.
-<img src="../images/cyan_flower_arrow.png" width=150>
+   <i>Hint: use <tt>t = turtle.Turtle(visible=False) #visible=False hides arrow key of turtle when drawing</tt></i>, otherwise, you will see a little arrow key in each petal as follows, where the little arrows are circled out.
+<p><img src="../images/cyan_flower_arrow.png" width=150>
 
-   <li>Define function <tt>flower</tt>, whose first parameter is color and the second parameter is number of petals. Call <tt>petal</tt> to draw a flower with that color and number of petals. For example, for a flower with 6 petals, the first petal tilts 0 degree, the second petal tilts 60 degrees, where 60 is <tt> 360 / number of petals</tt> and 360 is the degree of a circle. The third petal tilts 120 degrees, ..., the sixth petal tilts 300 degrees, 
+   <li>Define function <tt>flower</tt>, whose first parameter is color and the second parameter is number of petals. Inside this function, call <tt>petal</tt> to draw a flower with that color and number of petals. For example, for a flower with 6 petals, the first petal tilts 0 degree, the second petal tilts 60 degrees, where 60 is <tt> 360 / number of petals</tt> and 360 is the degree of a circle. The third petal tilts 120 degrees, ..., the sixth petal tilts 300 degrees. 
 
-    <li>Define function <tt>main</tt>, draw a green flower with 9 petals.
+    <li>Define function <tt>main</tt>, draw a green flower with 9 petals. Change parameters to draw flowers with different colors and different number of petals.
 </ul>
 
 <hr>
