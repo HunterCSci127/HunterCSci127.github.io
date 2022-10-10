@@ -1493,6 +1493,9 @@ In this problem, define <tt>petal, flower, and main</tt> functions.
 <ul>
    <li>Define function <tt>petal</tt>, whose first parameter is color and second parameter is angle. The color can be red, green, blue, yellow, purple, and cyan. If the actual parameter for color is none of the above choices, set the color to be green. 
 
+   <i>Hint: use <tt>t = turtle.Turtle(visible=False) #visible=False hides arrow key of turtle when drawing</tt></i>, otherwise, you might see a little arrow key in each petal as follows.
+<img src="../images/cyan_flower_arrow.png" width=150>
+
    <li>Define function <tt>flower</tt>, whose first parameter is color and the second parameter is number of petals. Call <tt>petal</tt> to draw a flower with that color and number of petals. For example, for a flower with 6 petals, the first petal tilts 0 degree, the second petal tilts 60 degrees, where 60 is <tt> 360 / number of petals</tt> and 360 is the degree of a circle. The third petal tilts 120 degrees, ..., the sixth petal tilts 300 degrees, 
 
     <li>Define function <tt>main</tt>, draw a green flower with 9 petals.
