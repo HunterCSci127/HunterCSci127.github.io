@@ -1,5 +1,5 @@
 # Name: 
-# EmaiL:
+# Email:
 # Program #45: Correct the errors in the program to output the correct results.
 
 """ printCities(cityList) prints out ONCE Ten biggest cities in the USA, then print every city on the list of cityList, one per line """
