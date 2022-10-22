@@ -1510,6 +1510,84 @@ The angle between the central line of this petal and the east direction is 60 de
 		<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
 	
 <hr>
+
+<a id="cr10"></a>
+<a id="ps10"></a>
+<h2><u> Lecture / Lab 10</u></h2>
+<!--problem 46-->
+<li > <b>Due Date: 21 November</b> A perfect integer is a positive integer which equals to the sum of all its factors other than itself. For example, 6 is a perfect number, since it has factors 1, 2, 3, and 6. The total of all the factors other than itself is 1 + 2 + 3 = 6. 
+
+<p>Integer -1 is not a perfect number since it is not positive. 
+
+<p>Integer 8 is not a perfect number. It has factors 1, 2, 4, and 8, and the sum of factors of 8 other than itself is 1 + 2 + 4 = 7, which does not equal to 8.
+
+<p>Define function <tt>isPerfect</tt> for an given integer, test whether it is perfect or not. For example, isPerfect(6) returns True but isPerfect(8) returns False.
+
+<p>Define function <tt>main</tt> to ask a user to enter an integer until that integer is perfect. Here is a sample input and output.
+
+<pre style="background-color:lavender;width=700px">
+Enter a perfect number: 8
+8 is not a perfect number. Re-enter: -1
+-1 is not a perfect number. Re-enter: 6
+Congratulations! 6 is a perfect number.
+</pre>
+
+Hints: in function <tt>isPerfect</tt>, do the following:
+
+<pre>
+def isPerfect(num):
+    #if num is not positive, ie, 
+    #that is, num is smaller than or equla to 0, return False. 
+    #The return statement leaves the current function, isPerfect,
+    #and returns to its caller with value False.
+
+    #Set total to be zero. This variable holds the sum of all
+    #the factors of num other than itself.
+    #Its value is initialized to be zero in the very beginning.
+
+    #Now num is positive -- 
+    #otherwise, we would have returned False 
+    #in the above if-statement. We will check whether
+    #num is perfect or not.
+
+    #Factors of num other than itself
+    #can be as small as 1 or as big as half of num.
+    #Check each integer in [1, half of num]
+    #to see whether it is actually a factor of num,
+    #that is, whether num can be divided by that integer,
+    #or equavalently, check remainder of num divided 
+    #by that integer is zero or not,
+    #if yes, add that integer to total.
+
+    #Once we finish the loop of checking every integer in
+    #[1, half of num] and add founded factors to total,
+    #check whether total equals sum or not.
+    #If yes, return True, otherwise, return False.
+    #You can use 
+    #return total (a-relational-comparison-operator) num
+    #to substitute for an if-else statement,
+    #where relational comparison operators can be
+    #equal, not equal, larger than, larger than or equal,
+    #less than, less than or equal.
+</pre>
+
+For function <tt>main</tt>, here is an outline.
+<pre>
+With prompt "Enter a perfect integer: ",
+ask user to enter an integer to variable num.
+This is to initialize num.
+
+as long as num is not perfect:
+   print num is not a perfect number and re-enter.
+   enter another integer and put it in num,
+   so num holds the new input.
+
+#Once we leave the above loop, num must be a perfect number,
+#otherwise, we would still be stuck inside the loop.
+#The condition to leave the loop is num is perfect.
+print "Congratulations!" and report num is a perfect number.
+</pre>
+
 <!--TODO-->
 <!--
 	<li > <b>Due Date: 10 November</b>
