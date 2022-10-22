@@ -1536,7 +1536,7 @@ Hints: in function <tt>isPerfect</tt>, do the following:
 
 <pre>
 def isPerfect(num):
-    #if num is not positive, ie, 
+    #if num is not positive,
     #that is, num is smaller than or equla to 0, return False. 
     #The return statement leaves the current function, isPerfect,
     #and returns to its caller with value False.
@@ -1573,22 +1573,23 @@ def isPerfect(num):
 
 For function <tt>main</tt>, here is an outline.
 <pre>
-With prompt "Enter a perfect integer: ",
-ask user to enter an integer to variable num.
-This is to initialize num.
+def main():
+    With prompt "Enter a perfect integer: ",
+    ask user to enter an integer to variable num.
+    This is to initialize num.
 
-as long as num is not perfect:
-   print num is not a perfect number and re-enter.
-   enter another integer and put it in num,
-   so num holds the new input.
+    as long as num is not perfect:
+        print num is not a perfect number and re-enter.
+        enter another integer and put it in num,
+        so num holds the new input.
 
-#Once we leave the above loop, num must be a perfect number,
-#otherwise, we would still be stuck inside the loop.
-#The condition to leave the loop is num is perfect.
-print "Congratulations!" and report num is a perfect number.
+    #Once we leave the above loop, num must be a perfect number,
+    #otherwise, we would still be stuck inside the loop.
+    #The condition to leave the loop is num is perfect.
+    print "Congratulations!" and report num is a perfect number.
 </pre>
 
-<p>Challenge (optional): can you use isPerfect function defined above to find all perfect numbers between 1 and 100000? For verification, those numbers are 6, 28, 496, and 8128.
+<p>Challenge (optional): can you use isPerfect function to find all perfect numbers between 1 and 100000? For verification, those numbers are 6, 28, 496, and 8128.
 
 <!--TODO-->
 <!--
