@@ -1252,6 +1252,12 @@ def flowerRecursion(t, n):
       t.right(170)
    
       call flowerRecursion with t and n-1. 
+
+def main():
+    #call flowerRecursion function to draw a flower
+
+if __name__ == '__main__':
+   main()
 </pre>
 
   <p>
@@ -1534,7 +1540,7 @@ Congratulations! 6 is a perfect number.
 
 Hints: in function <tt>isPerfect</tt>, do the following:
 
-<pre>
+<pre style="background-color:lavender;width=700px">
 def isPerfect(num):
     #if num is not positive,
     #that is, num is smaller than or equla to 0, return False. 
@@ -1590,6 +1596,185 @@ def main():
 </pre>
 
 <p>Challenge (optional): can you use isPerfect function to find all perfect numbers between 1 and 100000? For verification, those numbers are 6, 28, 496, and 8128.
+
+<!--problem 46-->
+<li > <b>Due Date: 22 November</b> Write a program to let computer guess an integer between 0 and 100, both ends included. We adopt an approach similar to <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">binary search</a>. Using this approach, we can guarantee that for any int in [0, 100], we can guess it with no more than 7 tries. That is, in the worst case, it takes 7 guesses. Here is how the game is played. 
+
+<p>Every time a computer makes a guess, you can only give responses from 1 to 3, where 1 means too small, 2 means too big and 3 is just right. Suppose the number in your mind is 25. When you run your code, you can pick any integer, as long as it is in [0, 100].
+
+<ol>
+   <li>Let start be the left boundary 0 and end be the right boundary 100 of range [0, 100], where the integer is picked.
+   <li>For the first guess, we pick the mid of start and end, which is 50. You need to use integer division // to find out the mid point, since the target (ie, answer) is an int.
+   <li>User can respond with either 1 (too small), 2 (too big), or 3 (just right), since the answer in mind is 25 while the current guess is 50, the user chooses 2, which means the guess is too big.
+   <li>Since 50 is too big for the answer, we know that the answer cannot be in range [50, 100]. Said differently, we now concentrate on range [0, 49]. That is, when a user gives feedback as 2 (too big), start is still the same but the end is changed to 49. What is the relationship between the recent guess 50 and the modified end 49?
+   <li>Now start is 0 and end is 49, its mid point is 24 (use integer division!). Use 24 as current guess. Ask feedback from the user, who would respond 1 (too small) since the guess is too small compared with the number in mind, 25.
+   <li>In the current range [0, 49], 24 is too small, so we need to concentrate on the right half of range, that is, [25, 49]. Said differently, when a user gives feedback as 1 (too small), keep current end, but modify current start. What is the relationship between modified start, 25 in this case, with the recent guess 24? 
+   <li>With the newly narrowed range [25, 49], find its mid point as the new guess. That is, (25 + 49) // 2 returns 37. Compare 37 with answer 25, the guess is too big, so the user gives feedback 2 (too big).
+   <li>In the current range [25, 49], when 37 is too big compared with answer 25, the answer must be somewhere in [25, 36]. That is, we throw away the right half of [25, 49], the thrown part is [37, 49]. Equivalently, update the right end of the range to be 36. In short, when feedback is 2 (too big), update end. What is the relationship between next end 36 and current guess 37?
+   <li>In the current range [25, 36], calculate its mid point (25 + 36)//2 = 30, as the current guess. Compare 30 with answer 25, the user would give feedback 2 (too big) since 30 is larger than the answer.
+   <li>Based on feedback 2 (too big) with current guess 30, narrow current range from [25, 36] to [25, 29]. That is, when feedback is 2 (too big), update current end 36 to 29. What is relationship between to-be-updated end 29 and most recent guess 30?
+   <li>With newly updated range [25, 29], calculate mid point (25 + 29) // 2 = 27 as current guess. Get feedback from the user, who would respond 2 (too big) since 27 is larger than answer 25.
+   <li>Based on feedback 2 (too big) and guess 27, update current range from [25, 29] to [25, 26]. What is the relationship between 26 and current guess 27?
+   <li>With newly updated range [25, 26], calculate mid point (25 + 26) // 2 = 26 as current guess. The user would respond with 3 (just right). The guess game ends.
+   <li>As a side note, if the answer is 26, then the user would have responded with 1 (too small) in the above step. Then range is updated from [25, 26] to [26, 26]. Since the range has only one integer, we can conclude that the answer must be 26.
+   <li>Optional: It takes at most 7 tries to guess an integer in range [0, 100]. Here is an explanation. In the very beginning, there are 101 elements in range [0, 100]. After calculating mid point and adjust start and end when answer is not 3, the newly updated range, for example, [0, 49] has only 50 elements, roughly half of the original size. Similarly, the next range to consider is [25, 49]. Note that mid point of [0, 49] is 24, which is smaller than 25. We only need to consider range [25, 49], which has 25 elements, half of the original size. So by this approach, the number of integers in a range is reduced by half each time. That is, the number of elements goes from 101, 50, 25, 12, 6, 3, 1, in 7 rounds. In general, when number of elements is n and we cut the range by half each time, it takes ceiling(log<sub>2</sub> n) times to shrink the original range to a range with only one element. 
+   <p>Optional: if there are 1000 elements, what is the maximum number of guesses to guess an integer? Hint: 2<sup>10</sup> = 1024 and 2<sup>9</sup> = 512.
+</ol>
+
+A sample run of program when answer is 25 is as follows.
+
+<pre>
+Pick an integer in [0, 100] in your mind.
+Guess 1: is it 50?
+1: too small   2: too big   3: just right
+Enter choice 1-3: -1
+Enter choice 1-3: 6
+Enter choice 1-3: -2
+Enter choice 1-3: 2
+Guess 2: is it 24?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 1
+Guess 3: is it 37?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 4: is it 30?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 5: is it 27?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 6: is it 25?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 3
+Congratulations! The answer is 25
+</pre>
+
+<pre style="background-color=lavender;width=700px">
+Pick an integer in [0, 100] in your mind.
+Guess 1: is it 50?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 2: is it 24?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 1
+Guess 3: is it 37?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 4: is it 30?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 5: is it 27?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 2
+Guess 6: is it 25?
+1: too small   2: too big   3: just right
+Enter choice 1-3: 1
+Guess 7: the answer must be 26
+</pre>
+
+So the key idea is as follows.
+
+<pre>
+initialize start and end
+
+make first guess as the mid of start and end
+
+get response (1-3 only), where 1 is too small, 
+2 is too big, and 3 is just right. 
+Put user input as an int in variable feedback
+
+initialize numGuesses, variable to trace number of guesses, by 1
+while feedback is not 3: #not get the answer yet
+    if feedback is too small:
+       what to update, start or end, and how to update
+    else: #feedback is too large
+       what to update, start or end, and how to update
+
+    increase numGuesses by 1
+    update guess as the mid of start and end
+    get a valid feedback 1-3, put to feedback variable
+</pre>
+
+A skeleton of the code is as follows.
+
+<pre>
+##name: 
+##email: 
+
+#TODO: import necessary library to generate random number
+
+#TODO: make sure that user only input choice 1-3.
+def validFeedback():
+    #TODO: print prompt "1. too small   2. too big  3. just right"
+
+    #Ask user to input feedback as an integer in 1-3,
+    #the input prompt MUST be "Enter choice 1-3: " 
+    #if you want to see choice chosen in gradescript.
+    feedback = int(input("Enter choice 1-3: "))
+
+    while feedback is not 1, 2, or 3: 
+        #TODO: prompt user to enter an int in 1-3,
+        #input prompt MUST be "Enter choice 1-3: "
+        #if you want to see choice chosen in gradescript.
+
+
+    #TODO: do not forget to return feedback after
+    #we get feedback 1, 2, or 3.
+
+def guessGame():
+    #TODO: set start to be 0 and end to be 100
+
+    print("Pick an integer in [" + str(start) + ", " + str(end) + "] in your mind.")
+
+    #TODO: set guess to be mid of start and end
+    
+    #TODO: set variable numGuesses to be 1 
+    
+    print("Guess " + str(numGuesses) + ": is it " + str(guess) + "?")
+
+    #TODO: call validFeedback function, put its return to feedback
+
+    #user does not choose "3. just right" yet
+    while feedback is not 3: 
+        if feedback is 1: #too small
+           #TODO: what to update, start or end, and how? 
+        else: 
+             #feedback cannot be 3, otherwise, 
+             #it would not go inside the loop. 
+             #By the condition of if-statement, 
+             #feedback is not 1, or it would go to 
+             #if-statement. Furthermore, due to setting
+             #of variable feedback, it can only take
+             #value 1, 2, or 3,
+             #now it is neither 1 nor 3,
+             #the value of feedback must be 2.
+           #TODO: what to update, start or end, and how? 
+
+        #TODO: put the mid point of start and end to guess
+
+        #TODO: increase numGuesses by 1
+
+        if there is only one element in the [start, end], what does that mean for relationship between start and end?
+           print("Guess " + str(numGuesses) + ": the answer must be", guess)
+           #TODO: leave the current function 
+           #by calling return statement, 
+           #since we find the answer
+           #and finish guess game now. 
+
+        print("Guess " + str(numGuesses) + ": is it " + str(guess) + "?")
+        
+        #TODO: call validFeedback function, 
+        #put its return to feedback
+
+    #TODO: now we are outside the loop, the number is guessed
+    #print out Congratulations and what the value of guess is.
+
+def main():
+    #TODO: call guessGame function 
+
+if __name__ == '__main__':
+   main()
+</pre>
 
 <!--TODO-->
 <!--
