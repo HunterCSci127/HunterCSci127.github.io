@@ -1283,7 +1283,7 @@ pseudocode of cornerPantegon, which draws pantegon nested in left corner.
 def cornerPantegon(t, length):
    if length >= 25:
       1. call drawPantegon with t, length and 5
-      2. reduced length by half (use integer division)
+      2. reduced length by half (use <b>integer division</b> in this function)
       3. call cornerPantegon with t and length, that is, draw a pantegon with t and updated length
 </pre>
 
@@ -1293,8 +1293,7 @@ def nestedPantegon(t, length):
        1. call drawPantegon with t, length, and 5
        2. Turtle t moves forward length/2
        3. Turtle t turns left 36 degrees
-       4. call position function of t and put the return to variable pos
-       5. call nestedPantegon with t, length * math.sin(54/180 * math.pi)
+       4. call nestedPantegon with t, length * math.sin(54/180 * math.pi)
 </pre>
 
     The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>cornerPantegon()</tt> and <tt>nestedPantegon()</tt>).
