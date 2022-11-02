@@ -1293,7 +1293,7 @@ def nestedPantegon(t, length):
        1. call drawPantegon with t, length, and 5
        2. Turtle t moves forward length/2
        3. Turtle t turns left 36 degrees
-       4. call nestedPantegon with t, length * math.sin(54/180 * math.pi)
+       4. call nestedPantegon with t, length * math.sin(54/180 * math.pi). To use sin function from math library, need to <tt>import math</tt>.
 </pre>
 
     The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the github program (it is expecting <tt>cornerPantegon()</tt> and <tt>nestedPantegon()</tt>).
