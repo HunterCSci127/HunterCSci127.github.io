@@ -2003,6 +2003,71 @@ Enter a symbol other than space: $
 $$$$$$
 </pre>
 
+<!--problem 59-->
+	<li > <b>Due Date: 12 December</b> 
+    <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+<p>Write a C++ program that asks the user for their annual budget for a task (for example, foods, movie) and estimated monthly expense. Suppose due to inflation, monthly expense in July to December is 15% than that in January to June. 
+
+<p>Print out month, monthly expense, and remaining balance in the budget in the end of a month. The remaining balance can be negative, meaning a user under-estimates the expenses. If the remaining balance after a year is negative, print "need higher budget".
+
+<p>A sample run:
+
+<pre style ="background-color:lavender;width:500px">
+Input your annual budget: 1000
+Input your month expense: 60
+month	expense	remaining balance of budget
+    1	 155.00	                    1845.00
+    2	 155.00	                    1690.00
+    3	 155.00	                    1535.00
+    4	 155.00	                    1380.00
+    5	 155.00	                    1225.00
+    6	 155.00	                    1070.00
+    7	 178.25	                     891.75
+    8	 178.25	                     713.50
+    9	 178.25	                     535.25
+   10	 178.25	                     357.00
+   11	 178.25	                     178.75
+   12	 178.25	                       0.50
+</pre>
+
+<p>Another sample run
+
+<pre style ="background-color:lavender;width:500px">
+Input your annual budget: 1000
+Input your month expense: 90
+month	expense	remaining balance of budget
+    1	  90.00	                     910.00
+    2	  90.00	                     820.00
+    3	  90.00	                     730.00
+    4	  90.00	                     640.00
+    5	  90.00	                     550.00
+    6	  90.00	                     460.00
+    7	 103.50	                     356.50
+    8	 103.50	                     253.00
+    9	 103.50	                     149.50
+   10	 103.50	                      46.00
+   11	 103.50	                     -57.50
+   12	 103.50	                    -161.00
+need higher budget
+</pre>
+
+<p>To right aligned numbers in each column, suppose variables representing month is <tt>i</tt>, for monthly expense, use <tt>monExpense</tt>, for remaining balance of budget, use <tt>budget</tt>. Suppose column headers are as follows.
+
+<tt>month expense remaining balance of budget</tt>
+
+<p>Use the following print out statement in C++.
+
+<tt>printf("%5d\t%7.2f\t%27.2f\n", i, monExpense, budget);</tt>
+
+<p>Explanation: <tt>%5d</tt> in double quotes of printf statement is a place holder for variable <tt>i</tt>, meaning to display the value of <tt>i</tt> in a 5-letter column, right aligned. Letter <tt>d</tt> in <tt>%5d</tt> means the value to be inserted is an integer and 5 in <tt>%5d</tt> is width of that column, represented by the maximum number of letters held in that column. 
+
+<p>Similarly, <tt>%7.2f</tt> is place holder for <tt>monExpense</tt>, where <tt>f</tt> means floating point number, or number with decimal numbers, and <tt>.2f</tt> means to display two decimal numbers of <tt>monExpense</tt> by rounding it to two decimal numbers to the decimal point. If there are not enough decimal numbders, add zero. For example, suppose monExpense is <tt>12.3</tt>, then it will be displayed as <tt>12.30</tt>. <tt>7</tt> in <tt>%7.2f</tt> is the number of letters in column header <tt>expense.</tt>
+
+<p>You can check <tt>%27.2f</tt> yourself.
+
+Note that monthly expense and remaining balance must display two decimal numbers, or gradescope scripts might not accept your submission.
+
 <!--
 	<li > <b>Due Date: 10 November</b>
 	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b><br>
