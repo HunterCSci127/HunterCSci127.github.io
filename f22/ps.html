@@ -2013,7 +2013,7 @@ $$$$$$
 
 <p>A sample run:
 
-<pre style ="background-color:lavender;width:500px">
+<pre style ="background-color:lavender;width:510px">
 Input your annual budget: 1000
 Input your month expense: 60
 month	expense	remaining balance of budget
@@ -2033,7 +2033,7 @@ month	expense	remaining balance of budget
 
 <p>Another sample run
 
-<pre style ="background-color:lavender;width:500px">
+<pre style ="background-color:lavender;width:510px">
 Input your annual budget: 1000
 Input your month expense: 90
 month	expense	remaining balance of budget
@@ -2058,15 +2058,17 @@ need higher budget
 
 <p>Use the following print out statement in C++.
 
-<tt>printf("%5d\t%7.2f\t%27.2f\n", i, monExpense, budget);</tt>
+<p><tt>printf("%5d\t%7.2f\t%27.2f\n", i, monExpense, budget);</tt>
 
 <p>Explanation: <tt>%5d</tt> in double quotes of printf statement is a place holder for variable <tt>i</tt>, meaning to display the value of <tt>i</tt> in a 5-letter column, right aligned. Letter <tt>d</tt> in <tt>%5d</tt> means the value to be inserted is an integer and 5 in <tt>%5d</tt> is width of that column, represented by the maximum number of letters held in that column. 
 
 <p>Similarly, <tt>%7.2f</tt> is place holder for <tt>monExpense</tt>, where <tt>f</tt> means floating point number, or number with decimal numbers, and <tt>.2f</tt> means to display two decimal numbers of <tt>monExpense</tt> by rounding it to two decimal numbers to the decimal point. If there are not enough decimal numbders, add zero. For example, suppose monExpense is <tt>12.3</tt>, then it will be displayed as <tt>12.30</tt>. <tt>7</tt> in <tt>%7.2f</tt> is the number of letters in column header <tt>expense.</tt>
 
-<p>You can check <tt>%27.2f</tt> yourself.
+<p>You can check <tt>%27.2f</tt> yourself. Hint: how many letters in column header "remaining balance of budget"?
 
-Note that monthly expense and remaining balance must display two decimal numbers, or gradescope scripts might not accept your submission.
+<p>Character <\tt>\t<\tt> is tab key, and <\tt>\n<\tt> is new line character. They are special characters in ASCII table.
+
+<p>Note that monthly expense and remaining balance must display two decimal numbers, or gradescope scripts might not accept your submission.
 
 <!--
 	<li > <b>Due Date: 10 November</b>
