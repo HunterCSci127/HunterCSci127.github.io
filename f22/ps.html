@@ -2188,19 +2188,15 @@ th {
   </tr>
 </table>
 
-<p>In short, with 3-bit, we can represent 2<sup>3</sup> = 8 integers. For unsigned integers in [0, 2<sup>3</sup>-1], that is, [0, 7]. Or for signed integers in [-2<sup>2</sup>, 2<sup>2</sup>-1], that is, [-4, 3]. In signed integers, there are 4 negative integers, one zero, and 3 positive integers. There is one fewer positive integers in the range because 0 used one slot, both zero and positive integers have sign bit 0.
+<p>In short, with 3-bit, we can represent 2<sup>3</sup> = 8 integers. Three-bit can represent unsigned integers in [0, 2<sup>3</sup>-1], that is, [0, 7]. Three-bit can also represent signed integers in [-2<sup>2</sup>, 2<sup>2</sup>-1], that is, [-4, 3]. In signed integers, there are 4 negative integers, one zero, and 3 positive integers. There is one fewer positive integers in the range, this is because zero and positive integers share sign bit 0.
 
-<p>Similarly, with 8-bit, we can represent 2<sup>8</sup> = 256 integers. For unsigned integers in [0, 2<sup>8</sup>-1], that is, [0, 255]. Or for signed integers in [-2<sup>7</sup>, 2<sup>7</sup>-1] since with the leftmost bit as sign bit, we have only 7 bits to represent data, that is, [-128, 127].
+<p>Similarly, with 8-bit, we can represent 2<sup>8</sup> = 256 integers. Eight-bit can represent unsigned integers in [0, 2<sup>8</sup>-1], that is, [0, 255]. As in the case of signed integer representation, with the leftmost bit used as a sign bit, we have only 7 bits to represent data, so signed integers represented by 8-bit are in range [-2<sup>7</sup>, 2<sup>7</sup>-1], that is, [-128, 127].
 
 <p>In C++, an integer is represented by 4-byte, where a byte is 8-bit. So in C++, we can represent unsigned integers in [0, 2<sup>32</sup>-1]. Or for signed integers in [-2<sup>31</sup>, 2<sup>31</sup>-1]. Type <tt>int</tt> in C++ represents signed integers.
 
+Here is an algorithm to find out Two's complement for an integer in [-128, 127]. We use a string with 8 character to store the result.
+
 <ol>
-     
-    
-
-    cout << "binary string: " << result << endl;
-
-
     <li> Ask the user for an int <tt>n</tt> in [-128, 127], both ends are included.
     <li> Save <tt>n</tt> in variable <tt>num</tt>. 
 	<li> If <tt>num</tt> is negative, set <tt>num</tt> to be -num -1. 
@@ -2209,22 +2205,25 @@ th {
 	<li> as long as num > 0:
 		<ol>
 			<li> Save the remainder of <tt>num</tt> divided by 2 to <tt>rem</tt>.
-			<li> Concatenate <tt>to_string(rem)</tt> to the left of string <tt>result</tt> and save to <tt>result</tt>. Expression <tt>to_string(rem)</tt> converts integer <tt>rem</tt> to a string.  
+			<li> Concatenate <tt>to_string(rem)</tt> to the left of string <tt>result</tt> and save to <tt>result</tt>. Expression <tt>to_string(rem)</tt> converts integer <tt>rem</tt> to a string in C++.  
 			<li> Let <tt>num</tt> be <tt>num/2</tt>.
 		</ol>
 	<li> Declare integer variable <tt>size</tt> and initialize it to be 8. 
-    <li> Put <tt>result.length()</tt>, which returns the number of letters in string <tt>result</tt>, to integer variable len. Unlike Python, len is not a function in C++. Comparison, we use <tt>len(result)</tt> to find out the number of letters in <tt>result</tt> in Python.
-    <li> Run the following statement to pad (size - len) zeros to the left of <tt>result</tt>
+    <li> Put <tt>result.length()</tt>, which returns the number of letters in string <tt>result</tt>, to integer variable len. Unlike Python, len is not a function in C++. For comparison, we use <tt>len(result)</tt> to find out the number of letters in <tt>result</tt> in Python.
+    <li> Run the following statement to pad (size - len) zeros to the left of <tt>result</tt>. We would like string result to have eight letters, which are either '0' or '1'.
     <tt>
       for (int i = 0; i < size - len; i++)
           result = "0" + result;
     </tt>
 
-    <p>Warning: cannot replace i < size - len by i < size - result.length() in the above statemen. Reason: after result = "0" + result, the length of result is changed. Suppose in the beginning string result has 6 characters, then we are supposed to pad 8 - 6 = 2 zeros to its left. 
+    <p>Warning: cannot replace i < size - len by i < size - result.length() in the above statemen. Reason: after result = "0" + result, the length of result is changed. 
 
-    <p>In the beginning, variable i is 0, size is 8, and result.length() is 6, since i < size - result.length(), we enter the loop and pad one zero to the left of string result. Then i is increased by 1 by i++ statement and check the condition i < size - result.length() again.
+    <p>Suppose in the beginning, string result has 6 characters, then we are supposed to pad 8 - 6 = 2 zeros to its left. 
 
-    <p>But after we pad the first zero, the length of result is changed to 7, then size - result.length() returns 1. Now i is 1, so i < size - result.length() does not hold. Exit the loop.
+    <p>In the beginning, variable i is 0, size is 8, and result.length() is 6, since i < size - result.length(), we enter the loop and pad one zero to the left of string result. Then i is increased by 1 by i++ statement.
+
+    <p>Check condition i < size - result.length() to see whether we need to enter the loop.
+   After we pad the first zero, the length of result is changedfrom 6 to 7, thus size - result.length() returns 1. Now i is 1, so i < size - result.length() does not hold. Exit the loop.
 
     <p>So we only pad one zero, and the length of result is 7, not 8 as we expect.
     
