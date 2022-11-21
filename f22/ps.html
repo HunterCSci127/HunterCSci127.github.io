@@ -2066,7 +2066,173 @@ need higher budget
 
 <p>Character <tt>\t</tt> is tab key, and <tt>\n</tt> is new line character. They are special characters in ASCII table.
 
-<p>Note that monthly expense and remaining balance must display two decimal numbers, or gradescope scripts might not accept your submission.
+<p>Note that monthly expense and remaining balance must display with two decimal numbers, or gradescope scripts might not accept your submission.
+
+<!--problem 60-->
+	<li > <b>Due Date: 13 December</b>  <b style="float:right">Reading: <a href="https://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a> & <a href="lab13.html">Lab 13</a></b><br>
+
+		<p> Write a <b>C++ program</b> that asks the user for a whole number between -128 and 127 and prints out the number in "<a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>" notation.
+
+<p>With 3-bit memory, we can represent 8 integers. Reason: each bit has either 0 or 1, and each bit is independent, so there are 2 * 2 * 2 = 2<sup>3</sup> = 8 integers.
+
+<p>If we represent unsigned integers with 3-bit, the integers are in [0, 7]. Here are some details.
+
+<table>
+  <tr>
+    <th>unsigned decimal number</th>
+    <th>binary representation</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>000</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>001</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>010 = 1 * 2<sup>1</sup></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>011 = 1 * 2<sup>1</sup> + 1 * 2<sup>0</sup>, where 2<sup>0</sup> returns 1.</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>100 = 1 * 2<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>101 = 1 * 2<sup>2</sup> + 1 * 2<sup>0</sup></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>110 = 1 * 2<sup>2</sup> + 1 * 2<sup>1</sup></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>111 = 1 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 1 * 2<sup>0</sup></td>
+  </tr>
+
+<p>Two's-complement is a notation to represent signed integers -- integers range from negative, zero, and positive.
+
+<p>To represent signed integers, in the world of binary, we cannot have negative sign, so we will use the leftmost bit as sign bit, where negative is represented by 1 and non-negative is 0.The other bits are used to represent data, while in unsigned integers, every bit is used for data since there is no need to have a sign bit.
+
+<p>With 3-bit, we can also represent 8 signed integers, which are in [-4, 3].
+
+<table>
+  <tr>
+    <th>signed decimal number</th>
+    <th>binary representation</th>
+  </tr>
+  <tr>
+    <td>-4</td>
+    <td>100 = -1 * 2<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td>-3</td>
+    <td>101 = -1 * 2<sup>2</sup> + 1 * 2<sup>0</sup></td>
+  </tr>
+  <tr>
+    <td>-2</td>
+    <td>110 = -1 * 2<sup>2</sup> + 1 * 2<sup>1</sup></td>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>111 = -1 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 1 * 2<sup>0</sup></td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>000</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>001</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>010 = 1 * 2<sup>1</sup></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>011 = 1 * 2<sup>1</sup> + 1 * 2<sup>0</sup>, where 2<sup>0</sup> returns 1.</td>
+  </tr>
+</table>
+
+<p>In short, with 3-bit, we can represent 2<sup>3</sup> = 8 integers. For unsigned integers in [0, 2<sup>3</sup>-1], that is, [0, 7]. Or for signed integers in [-2<sup>2</sup>, 2<sup>2</sup>-1], that is, [-4, 3]. In signed integers, there are 4 negative integers, one zero, and 3 positive integers. There is one fewer positive integers in the range because 0 used one slot, both zero and positive integers have sign bit 0.
+
+<p>Similarly, with 8-bit, we can represent 2<sup>8</sup> = 256 integers. For unsigned integers in [0, 2<sup>8</sup>-1], that is, [0, 255]. Or for signed integers in [-2<sup>7</sup>, 2<sup>7</sup>-1] since with the leftmost bit as sign bit, we have only 7 bits to represent data, that is, [-128, 127].
+
+<p>In C++, an integer is represented by 4-byte, where a byte is 8-bit. So in C++, we can represent unsigned integers in [0, 2<sup>32</sup>-1]. Or for signed integers in [-2<sup>31</sup>, 2<sup>31</sup>-1]. Type <tt>int</tt> in C++ represents signed integers.
+
+<ol>
+     
+    
+
+    cout << "binary string: " << result << endl;
+
+
+    <li> Ask the user for an int <tt>n</tt> in [-128, 127], both ends are included.
+    <li> Save <tt>n</tt> in variable <tt>num</tt>. 
+	<li> If <tt>num</tt> is negative, set <tt>num</tt> to be -num -1. 
+	<li> Declare string variable <tt>result</tt> and initialize it to be an empty string "".
+    <li> Declare integer variable <tt>rem</tt>.
+	<li> as long as num > 0:
+		<ol>
+			<li> Save the remainder of <tt>num</tt> divided by 2 to <tt>rem</tt>.
+			<li> Concatenate <tt>to_string(rem)</tt> to the left of string <tt>result</tt> and save to <tt>result</tt>. Expression <tt>to_string(rem)</tt> converts integer <tt>rem</tt> to a string.  
+			<li> Let <tt>num</tt> be <tt>num/2</tt>.
+		</ol>
+	<li> Declare integer variable <tt>size</tt> and initialize it to be 8. 
+    <li> Put <tt>result.length()</tt>, which returns the number of letters in string <tt>result</tt>, to integer variable len. Unlike Python, len is not a function in C++. Comparison, we use <tt>len(result)</tt> to find out the number of letters in <tt>result</tt> in Python.
+    <li> Run the following statement to pad (size - len) zeros to the left of <tt>result</tt>
+    <tt>
+      for (int i = 0; i < size - len; i++)
+          result = "0" + result;
+    </tt>
+
+    <p>Warning: cannot replace i < size - len by i < size - result.length() in the above statemen. Reason: after result = "0" + result, the length of result is changed. Suppose in the beginning string result has 6 characters, then we are supposed to pad 8 - 6 = 2 zeros to its left. 
+
+    <p>In the beginning, variable i is 0, size is 8, and result.length() is 6, since i < size - result.length(), we enter the loop and pad one zero to the left of string result. Then i is increased by 1 by i++ statement and check the condition i < size - result.length() again.
+
+    <p>But after we pad the first zero, the length of result is changed to 7, then size - result.length() returns 1. Now i is 1, so i < size - result.length() does not hold. Exit the loop.
+
+    <p>So we only pad one zero, and the length of result is 7, not 8 as we expect.
+    
+    <li> Work with number that is negative. Note that num is modified from original value n by num = n and num = -num-1 in previous steps. We need to check whether the original number is negative or not by checking n. 
+    if (n < 0)
+       //TODO: write code to invert(or flip) each bit of string result.
+       //That is, if the current bit is '0', change it to '1',
+       //otherwise, change the current bit to '0'. 
+       //Note that string result has 8 characters now.
+
+	<li> Print the value of result. This is the two's complement we seek. 
+</ol>
+
+<p>A sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter an int in [-128, 127]: 8
+binary string: 00001000
+</pre>
+
+<p>Another run:
+<pre style ="background-color:lavender;width:400px">
+Enter an int in [-128, 127]: -1
+binary string: 11111111
+</pre>
+
+<p>Yet another run:
+<pre style ="background-color:lavender;width:400px">
+Enter an int in [-128, 127]: -128
+binary string: 10000000
+</pre>
+
+<p>Yet another run:
+<pre style ="background-color:lavender;width:400px">
+Enter an int in [-128, 127]: -74
+binary string: 10110110
+</pre>
 
 <!--
 	<li > <b>Due Date: 10 November</b>
