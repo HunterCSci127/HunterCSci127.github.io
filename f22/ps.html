@@ -2204,7 +2204,7 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
 	<li> Declare string variable <tt>result</tt> and initialize it to be an empty string "".
     <li> Declare integer variable <tt>rem</tt>.
 	<li> as long as num > 0:
-		<ol>
+		<ol style="list-style-type:lower-alpha">
 			<li> Save the remainder of <tt>num</tt> divided by 2 to <tt>rem</tt>.
 			<li> Concatenate <tt>to_string(rem)</tt> to the left of string <tt>result</tt> and save to <tt>result</tt>. Expression <tt>to_string(rem)</tt> converts integer <tt>rem</tt> to a string in C++.  
 			<li> Let <tt>num</tt> be <tt>num/2</tt>.
@@ -2214,10 +2214,10 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
     <li> Run the following statement to pad (size - len) zeros to the left of <tt>result</tt>. We would like string result to have eight letters, which are either '0' or '1'.
 
     <p>
-    <tt>
+    <pre>
       for (int i = 0; i < size - len; i++)
           result = "0" + result;
-    </tt>
+    </pre>
 
     <p>Warning: cannot replace i < size - len by i < size - result.length() in the above statemen. Reason: after result = "0" + result, the length of result is changed. 
 
@@ -2231,11 +2231,14 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
     <p>So we only pad one zero, and the length of result is 7, not 8 as we expect.
     
     <li> Work with number that is negative. Note that num is modified from original value n by num = n and num = -num-1 in previous steps. We need to check whether the original number is negative or not by checking n. 
+
+    <pre>
     if (n < 0)
        //TODO: write code to invert(or flip) each bit of string result.
        //That is, if the current bit is '0', change it to '1',
        //otherwise, change the current bit to '0'. 
        //Note that string result has 8 characters now.
+    </pre>
 
 	<li> Print the value of result. This is the two's complement we seek. 
 </ol>
