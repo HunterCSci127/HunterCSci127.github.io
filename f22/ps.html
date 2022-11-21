@@ -2297,8 +2297,9 @@ binary string: 10110110
 <p>Two's complement of num = 10000<sub>2</sub> - binary representation of -num = 10000<sub>2</sub> -1 - binary representation of -num -1. Note that 10000<sub>2</sub> -1 is 1111<sub>2</sub>, and 1111 - binary representation of (-num-1) is equivalent to invert the binary representation of (-num-1). So our algorithm is implemented as follows.
 
 <ol>
-\li Find out binary representation of (-num-1).
-\li Invert the above binary representation by changing '0' to '1' and '1' to '0'.
+<li> Find out binary representation of (-num-1).
+<li> Pad zeros to the left of binary representation to get 8-letter length string.
+<li> Invert the above binary representation by changing '0' to '1' and '1' to '0'.
 </ol> 
 
 <!--
