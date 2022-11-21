@@ -2212,6 +2212,8 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
 	<li> Declare integer variable <tt>size</tt> and initialize it to be 8. 
     <li> Put <tt>result.length()</tt>, which returns the number of letters in string <tt>result</tt>, to integer variable len. Unlike Python, len is not a function in C++. For comparison, we use <tt>len(result)</tt> to find out the number of letters in <tt>result</tt> in Python.
     <li> Run the following statement to pad (size - len) zeros to the left of <tt>result</tt>. We would like string result to have eight letters, which are either '0' or '1'.
+
+    <p>
     <tt>
       for (int i = 0; i < size - len; i++)
           result = "0" + result;
