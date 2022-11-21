@@ -2077,6 +2077,7 @@ need higher budget
 
 <p>If we represent unsigned integers with 3-bit, the integers are in [0, 7]. Here are some details.
 
+<p>
 <table>
 <style>
 table, td, th {
@@ -2136,6 +2137,7 @@ th {
 
 <p>With 3-bit, we can also represent 8 signed integers, which are in [-4, 3].
 
+<p>
 <table>
 <style>
 table, td, th {
@@ -2200,8 +2202,8 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
 <ol>
     <li> Ask the user for an int <tt>n</tt> in [-128, 127], both ends are included.
     <li> Save <tt>n</tt> in variable <tt>num</tt>. 
-	<li> If <tt>num</tt> is negative, set <tt>num</tt> to be -num -1. 
-	<li> Declare string variable <tt>result</tt> and initialize it to be an empty string "".
+	<li> If <tt>num</tt> is negative, set <tt>num</tt> to be -num -1.
+	<li> Declare string variable <tt>result</tt> and initialize it to be an empty string "". This variable stores the binary representation of num.
     <li> Declare integer variable <tt>rem</tt>.
 	<li> as long as num > 0:
 		<ol style="list-style-type:lower-alpha">
@@ -2209,17 +2211,16 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
 			<li> Concatenate <tt>to_string(rem)</tt> to the left of string <tt>result</tt> and save to <tt>result</tt>. Expression <tt>to_string(rem)</tt> converts integer <tt>rem</tt> to a string in C++.  
 			<li> Let <tt>num</tt> be <tt>num/2</tt>.
 		</ol>
-	<li> Declare integer variable <tt>size</tt> and initialize it to be 8. 
+	<li> Declare integer variable <tt>size</tt> and initialize it to be 8. Next, pad zeros to the left of result to make it a 8-letter string. 
     <li> Put <tt>result.length()</tt>, which returns the number of letters in string <tt>result</tt>, to integer variable len. Unlike Python, len is not a function in C++. For comparison, we use <tt>len(result)</tt> to find out the number of letters in <tt>result</tt> in Python.
     <li> Run the following statement to pad (size - len) zeros to the left of <tt>result</tt>. We would like string result to have eight letters, which are either '0' or '1'.
 
-    <p>
-    <pre style ="background-color:lavender;width:400px">
-      for (int i = 0; i < size - len; i++)
-          result = "0" + result;
-    </pre>
+<pre style ="background-color:lavender;width:400px">
+for (int i = 0; i < size - len; i++)
+    result = "0" + result;
+</pre>
 
-    <p>Warning: cannot replace i < size - len by i < size - result.length() in the above statemen. Reason: after result = "0" + result, the length of result is changed. 
+    <p>Warning: cannot replace i < size - len by i < size - result.length() in the above statemen. Reason: after result = "0" + result, the length of result is changed. The following is an example.
 
     <p>Suppose in the beginning, string result has 6 characters, then we are supposed to pad 8 - 6 = 2 zeros to its left. 
 
@@ -2230,7 +2231,7 @@ Here is an algorithm to find out Two's complement for an integer in [-128, 127].
 
     <p>So we only pad one zero, and the length of result is 7, not 8 as we expect.
     
-    <li> Work with number that is negative. Note that num is modified from original value n by num = n and num = -num-1 in previous steps. We need to check whether the original number is negative or not by checking n. 
+    <li> Work with number that is negative. Note that num is modified from original value n by num = n and num = -num-1 in previous steps. Since num has been modified to be non-negative, we need to check whether the original number is negative or not by checking n. 
 
     <pre style ="background-color:lavender;width:400px">
     if (n < 0)
@@ -2266,6 +2267,39 @@ binary string: 10000000
 Enter an int in [-128, 127]: -74
 binary string: 10110110
 </pre>
+
+<p>Optional: for non-negative integers, its two's complement is the same as its binary representation. In the next, we will illustrate the key idea of calculating two's complement for negative number.
+
+<p>In general, these are steps we calculate Two's complement of a negative integers. Suppose the number is saved in variable num.
+
+<ol>
+<li>Convert the negative integer to a positive by multiplying by -1.
+<li>Find out the binary representation of the positive integer -num. 
+<li>Invert the above binary string. That is, change '0' to '1' and '1' to '0' for each bit. 
+<li>Add 1 to the above binary number, this is the two's complement of num.
+</ol>
+
+<p>We will illustrate the steps using an example. For simplicity, suppose we work with 4-bit, which can represent integers in [-8, 7]. To find out the two's complement of -5, saved in variable num, we do the following.
+
+<ol>
+<li>Multiply num by -1, we get the corresponding positive number.
+<li>Find out the binary representation of -num, which is 5. In this example, binary representation of 5 is 0101. 
+<li>Invert the above string. The result is 1010. 
+<li>Add 1 to the above binary number, the result is 1011, which is Two's representation of -5. We can verify by calculating -1 * 2<sup>3</sup> + 1 * 2<sup>1</sup> + 1 * 2<sup>0</sup> = -5.
+</ol>
+
+<p>Let x be two's complement of num. Note that the sum of binary representation of -num and the result in Step 3 -- say y -- is binary number 1111, written as 1111<sub>2</sub> since base of binary number is 2. That is, binary representation of -num + y = 1111<sub>2</sub>. 
+
+<p>By Step 4, we learn that x = y + 1. Thus, binary representation of -num + x = binary representation of -num + y + 1 = 1111<sub>2</sub> + 1 = 10000<sub>2</sub>. Said differently, x, two's complement of num, is calculated by 10000<sub>2</sub> - binary representation of -num when we work with 4-bit integers.
+
+<p>It is a little complicate to implement minus operation for binary number, or add 1 to a binary number. so we calculate two's complement of negative integer num as follows.
+
+<p>Two's complement of num = 10000<sub>2</sub> - binary representation of -num = 10000<sub>2</sub> -1 - binary representation of -num -1. Note that 10000<sub>2</sub> -1 is 1111<sub>2</sub>, and 1111 - binary representation of (-num-1) is equivalent to invert the binary representation of (-num-1). So our algorithm is implemented as follows.
+
+<ol>
+\li Find out binary representation of (-num-1).
+\li Invert the above binary representation by changing '0' to '1' and '1' to '0'.
+</ol> 
 
 <!--
 	<li > <b>Due Date: 10 November</b>
