@@ -185,25 +185,23 @@ Done!
 <!--problem 7-->
 	<li > <b>Due Date: February 21</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
 
-		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that prompts the user for a message, and then prints the message, the message in upper case letters, and the message in lower case letters.
+		<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that prompts the user for a three-word phrase separated by comma (,). Create a new phrase, where those three words are separated by a space and in reversed order. That is, the first word in the input phrase is the last word in the new phrase while the third word in the input phrase is the first word in the new phrase. Print new phrase in upper case letters and lower case letters.
 
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:420px">
-Enter a message:  Mihi cura futuri
-Mihi cura futuri
-MIHI CURA FUTURI
-mihi cura futuri
+Enter three words separated by comma (,): One,Two,Three
+upper case: THREE TWO ONE
+lower case: three two one
 </pre>
 
-		<p>Another run:
-<pre style ="background-color:lavender;width:400px">
-Enter a message:  I love Python!
-I love Python!
-I LOVE PYTHON!
-i love python!
+<p>Another run:
+<pre style ="background-color:lavender;width:420px">
+Enter three words separated by comma (,): Big,Medium,Small
+upper case: SMALL MEDIUM BIG
+lower case: small medium big
 </pre>
 
-	<p><i>Hint:  Your program should be able to take any phrase the user enters and prints it, it in upper case letters, and it in lower case letters.  To do that, you need to store the phrase in a variable and print variations of the stored variable.
+	<p><i>Hint:  Your program should be able to take any phrase the user enters and prints it, it in upper case letters, and it in lower case letters.  To do that, you need to store the phrase in a variable and print variations of the stored variable. You also need to find those three words from the resulting list after applying split method on the input string. Then concatenate those words to get a new phrase.
 	</i>
 
 <!--problem 8-->
