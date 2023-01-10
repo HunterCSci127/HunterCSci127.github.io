@@ -250,22 +250,49 @@ letter ASCII two_letter_before
     <p><img src = "../images/ciphrdsk.gif" height=200>
       <br><i>(The cipher disk above shifts 'A' to 'N', 'B' to 'O', ... 'Z' to 'M', or a shift of 13.  From <a href="http://www.secretcodebreaker.com/history2.html">secretcodebreaker.com</a>.)</i>
 
-
-		<p>Write a program that prompts the user to enter a word and then prints out the word with each letter <b>shifted right</b> by 13.  That is, 'a' becomes 'n', 'b' becomes 'o', ... 'y' becomes 'l', and 'z' becomes 'm'.
+<p>Write a program that prompts the user to enter a word and then prints out the word with each letter <b>shifted right</b> by 13.  That is, 'a' becomes 'n', 'b' becomes 'o', ... 'y' becomes 'l', and 'z' becomes 'm'.
 
 		<p>Assume that all inputted words are in lower case letters:  'a',...,'z'.
 
 		<p>A sample run of your program should look like:
-<pre style ="background-color:lavender;width:400px">
-Enter a word: zebra
-Your word in code is:
-mroen
+<pre style ="background-color:lavender;width:516px">
+Enter an all-small-letter string: zebra
+Enter a non-negative int to shift: 13
+ciphered string: mroen
 </pre>
 
-
-
+		<p>Here is another sample run of your program.
+<pre style ="background-color:lavender;width:516px">
+Enter an all-small-letter string: owqfka
+Enter a non-negative int to shift: 6
+ciphered string: ucwlqg
+</pre>
 
 		<p> <i>Hint:  See the example programs from Lecture 2.</i>
+
+<p>This example is an illustration of modular operation and conversion between ASCII code and letter.</p>
+
+<p>We introduce modular operator % using clock. For easy of calculation, we represent 12 as 0. Suppose current time is 3 o'clock, what time is after 17 hours?</p>
+
+		<img src="../images/clock3.png" height=300>
+
+<p>Remember a clock has 12 scales, from 0 to 11. Then (3 + 17) % 12 = 20 % 12, meaning 20 divided by 12, the remainder is 8. That is, 17 hours after 3 o'clock is 8 o'clock. This is similar to move a number forward (right) 17 hours.</p>
+
+		<img src="../images/clock8.png" height=300>
+
+<p>Imagine we have a clock of letters. Then there are 26 scales, from 'A' to 'Z'.</p>
+
+		<img src="../images/clock_small_letter.png" height=300>
+
+<p>If only we can have the following clock ...</p>
+
+		<img src="../images/clock_small_letter_match.png" height=300>
+
+<p>How to match 'A' to 0, match 'B' to 1, ..., match 'Z' to 25? Hint: suppose the letter is 'A', what is the value of ord('A') - ord('A')? Suppose the letter is 'B', what is the value of ord('B') - ord('A')? Suppose the letter is 'Z', what is the value of ord('Z') - ord('A')?
+
+<p>Then shift right operation is like modular operation. For example, when we shift right 6 from letter 'Z', it like to (25 + 6) % 26 = 5.
+
+<p>It remains to match number in [0, 25] to letter ['A', 'Z']. Hint: you can use chr function.
 
 <!-- problem 10 -->
 	<li > <b>Due Date: 28 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
