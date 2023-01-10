@@ -207,45 +207,45 @@ upper case: SMALL MEDIUM BIG
 	</i>
 
 <!--problem 8-->
-	<li > <b>Due Date: 24 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
+	<li > <b>Due Date: February 22</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
 
-		<p>Write a program that prompts the user to enter a phrase and then prints out the ASCII code of each character in the phrase.
-
+<p>Write a program that prompts the user to enter a phrase. Then for each character in the phrase, print out character, its ASCII code, and the character second to the left of the corresponding character of the string in ASCII table.</p>
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:400px">
-Enter a phrase:  I love Python!
-In ASCII:
-73
-32
-108
-111
-118
-101
-32
-80
-121
-116
-104
-111
-110
-33
+Enter a phrase: Hello
+letter ASCII two_letter_before
+     H    72                 F
+     e   101                 c
+     l   108                 j
+     l   108                 j
+     o   111                 m
 </pre>
 
 <p>And another sample run:
 <pre style ="background-color:lavender;width:400px">
-Enter a phrase: ABC
-In ASCII:
-65
-66
-67
+Enter a phrase: BDE
+letter ASCII two_letter_before
+     B    66                 @
+     D    68                 B
+     E    69                 C
 </pre>
 
+<p><i>Hint:  If <tt>c</tt> is a character, <tt>ord(c)</tt> returns its ASCII code.  For example, if <tt>c</tt> is 'H', then <tt>ord(c)</tt> returns 72.  See <a href="lab2.html">Lab 2</a>.</i>
+        <p><i>To right aligned the print out, use print("%6c %5i %17c"%(<tt>character, ASCII_code_of_character, two_letter_before_current_character</tt>)). You need to find out expression to represent current character, ASCII_code_of_current_character, and two_character_before_current_character.</i></p>
 
+    <p>Explanation: 
+    Use 6c since column header "letter" has 6 letters, c means character, for example, letter 'H' in string "Hello".   
+    Use 5i since column header "ASCII" has 5 letters, i means int, which is the ASCII code of the current letter.
+    Use 17c since column header "two_letter_before" has 17 letters, c means a letter, which is the character two characters ahead of the current letter.</p>
 
-		<p><i>Hint:  If <tt>c</tt> is a character, <tt>ord(c)</tt> returns its ASCII code.  For example, if <tt>c</tt> is 'I', then <tt>ord(c)</tt> returns 73.  See <a href="lab2.html">Lab 2</a>.</i>
+    <p>Note that some characters in ASCII code are not printable. For example, character with ASCII code 27 means ESC key in keyboard, which is not printable. Similarly, ASCII code 30 is record separator, which is not printable. Space character, which has ASCII code 32, is not printable.</p>
+
+    <p>When you test your print, do not include space, exclamation symbol ! (ASCII code 33), or double quotes symbol " (ASCII code 34), since the characters two positions before them are non-printable, you cannot check results visually.</p> 
+
+<p><b>Warning</b>: do <u>not</u> forget to print column names "letter ASCII two_letter_before".
 
 <!--problem 9-->
-	<li > <b>Due Date: 25 February</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
+	<li > <b>Due Date: February 23</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Strings/toctree.html">Chapter 9</a></b><br>
 
     <p><img src = "../images/ciphrdsk.gif" height=200>
       <br><i>(The cipher disk above shifts 'A' to 'N', 'B' to 'O', ... 'Z' to 'M', or a shift of 13.  From <a href="http://www.secretcodebreaker.com/history2.html">secretcodebreaker.com</a>.)</i>
