@@ -250,22 +250,22 @@ letter ASCII two_letter_before
     <p><img src = "../images/ciphrdsk.gif" height=200>
       <br><i>(The cipher disk above shifts 'A' to 'N', 'B' to 'O', ... 'Z' to 'M', or a shift of 13.  From <a href="http://www.secretcodebreaker.com/history2.html">secretcodebreaker.com</a>.)</i>
 
-<p>Write a program that prompts the user to enter a word and then prints out the word with each letter <b>shifted right</b> by 13.  That is, 'a' becomes 'n', 'b' becomes 'o', ... 'y' becomes 'l', and 'z' becomes 'm'.
+<p>Write a program that prompts the user to enter a word and then prints out the word with each letter <b>shifted right</b> by 13.  That is, 'A' becomes 'N', 'B' becomes 'O', ... 'Y' becomes 'L', and 'Z' becomes 'M'.
 
-		<p>Assume that all inputted words are in lower case letters:  'a',...,'z'.
+		<p>Assume that all inputted words are in upper case letters:  'A',...,'Z'.
 
 		<p>A sample run of your program should look like:
 <pre style ="background-color:lavender;width:516px">
-Enter an all-small-letter string: zebra
+Enter an all-small-letter string: ZEBRA
 Enter a non-negative int to shift: 13
-ciphered string: mroen
+ciphered string: MROEN
 </pre>
 
 		<p>Here is another sample run of your program.
 <pre style ="background-color:lavender;width:516px">
-Enter an all-small-letter string: owqfka
+Enter an all-small-letter string: OWQFKA
 Enter a non-negative int to shift: 6
-ciphered string: ucwlqg
+ciphered string: UCWLQG
 </pre>
 
 		<p> <i>Hint:  See the example programs from Lecture 2.</i>
@@ -282,11 +282,11 @@ ciphered string: ucwlqg
 
 <p>Imagine we have a clock of letters. Then there are 26 scales, from 'A' to 'Z'.</p>
 
-		<img src="../images/clock_small_letter.png" height=300>
+		<img src="../images/clock_big_letter.png" height=300>
 
 <p>If only we can have the following clock ...</p>
 
-		<img src="../images/clock_small_letter_match.png" height=300>
+		<img src="../images/clock_big_letter_match.png" height=300>
 
 <p>How to match 'A' to 0, match 'B' to 1, ..., match 'Z' to 25? Hint: suppose the letter is 'A', what is the value of ord('A') - ord('A')? Suppose the letter is 'B', what is the value of ord('B') - ord('A')? Suppose the letter is 'Z', what is the value of ord('Z') - ord('A')?
 
