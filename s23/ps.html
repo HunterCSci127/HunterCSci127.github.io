@@ -315,15 +315,41 @@ ciphered string: UCWLQG
 <hr>
 
 <!--problem 11-->
-	<li > <b>Due Date: 1 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
+	<li > <b>Due Date: February 27</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
-		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of blue.
+		<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the following image. 
 
-		<p>
-		Your output should look similar to:
 		<br>
-		<img src="../images/shadesOfBlue.png" height=200>
+		<img src="../images/shades_left_green_down_cyan.png" height=200>
 
+<pre>
+    t = turtle.Turtle()
+
+    t.penup()
+    t.backward(100)
+    t.left(90)
+    t.forward(100) #now t is in (-100, 100), why?
+    t.right(??) #you fill in a degree in ??
+    t.pendown()
+
+    #TODO: draw green shade
+
+    #TODO: move to the start direction of up shade
+
+    #TODO: draw cyan shade
+</pre>
+
+<p><b>Warning:</b> for the purpose of grading script, green shade is drawn before cyan shade. They cannot be drawn at the same time. 
+
+<p>Hints: you may use one of the following approaches.
+<ul>
+   <li>Simplest approach: create two turtles, one to draw green shade and the other to draw cyan shade. By default, each turtle starts from the origin -- coordinates x and y are both zero and faces east. You can use goto method of turtle to move to (-100, 100) so that the shades can be fully displayed in the screen. But that step is optional.
+   <li>Use only one turtle. After drawing green shade, the turtle moves backward appropriate steps to its start point (you may need to calculate the total distance from the turtle's current position to the start point). You may need to penup, pendown and pensize methods of the turtle before drawing cyan shade.
+   <li>Use only one turle. After drawing green shade, the turtle go to the start point. You may need use penup, pendown, and pensize methods of the turtle before drawing cyan shade.
+   <li>For explanation of turtle commands, read <a href="https://docs.python.org/3/library/turtle.html">turtle library</a>.
+</ul>
+
+<p></p>
 <!--problem 12-->
 	<li > <b>Due Date: 2 March</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapters 2</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">4</a></b><br>
 
