@@ -464,7 +464,7 @@ James M.
             <img src="../images/shape_6.png" style="padding:25px" height=200>
 
 <p><i>
-    Hint:  Here's a way to approach the problem:
+    Hint:</i>  Here's a way to approach the problem:
     <ol>
         <li> Create a 3D array with 30 x 30 x 3 using numpy.		
         <li> Set background color to be yellow, which is a combination of red and green.
@@ -570,11 +570,17 @@ Also, modify your program to not show any graphics windows (plt.show()) but inst
 <a id="set5"></a>
 <hr>
 <!--problem 21-->
-	<li > <b>Due Date: 15 March</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a> &
+	<li > <b>Due Date: March 13</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a> &
     <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html"> Section 8.11</a></b><br>
 
-		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the name of a png file and print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue are all above 0.75).
+		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the name of a png file and a floating point number in [0, 1]. 
 
+<ol>
+<li> Print the number of pixels whose fraction of red, the fraction of green, and the fraction of blue are all samller than that give threshold. 
+<li> Print the percentage of such pixels in the original figure.
+<li>Generate an image whose color is complement of the original image, that is, suppose a pixel has color r, g, b, then the corresponding pixel in the complement picture is 1-r, 1-g, 1-b. 
+<li>Save the complement image as the original file name followed by "_complement.png", for example, suppose the original figure is "caDrought2014.png", then the complement file name should be "caDrought2014_complement.png". 
+</ol>
 		<p>For example, if your file was of the snow pack in the Sierra Nevada mountains in California in September 2014:
 
 		<p>
@@ -582,8 +588,15 @@ Also, modify your program to not show any graphics windows (plt.show()) but inst
 
 		<p> then a sample run would be:
 		<pre style ="background-color:lavender;width:400px">
-Enter file name:  caDrought2014.png
-Snow count is 38010</pre>
+Enter file name: caDrought2014.png
+Enter threshold: 0.1 
+number of pixels whose rgb are small than threshold in original figure: 863323
+percent of those pixels: 51.39 %
+</pre>
+
+The generated complement image is as follows.
+
+<img src="../images/CaliforniaDrought_02232014_md_complement_expected.png" width=300>
 
 		<p> Note:  for this program, you only need to compute the snow count.  Showing the image will confuse the grading script, since it's only expecting the snow count.
 
@@ -2118,7 +2131,7 @@ Enter output file: 50stripes.png
 	<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp Numpy Tutorial</a> & <a href="lab5.html">Lab 5</a></b><br>
 
 
-		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the names of two <tt>.png</tt> files and a threshold for the white pixels. Then, print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue above the threshold) for each image. Calculate the difference between the snow counts and print them out.
+		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the names of two <tt>.png</tt> files and a threshold for the white pixels. Then, print the number of pixels whose fraction of red, the fraction of green, and the fraction of blue are all smaller than the threshold. Calculate the difference between the snow counts and print them out.
 
 		<p>For example, if your images was of the snow pack in the Sierra Nevada mountains in California in February 2011 and in February 2014:
 
