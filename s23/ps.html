@@ -717,29 +717,52 @@ round(num, 2)
   	Implement (and test!) each part and then go on to the next.  See notes from Lecture 3.
 
 <!--problem 25-->
-      <li > <b>Due Date: 21 March</b>  <b style="float:right">Reading:  Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
+      <li > <b>Due Date: March 17</b>  
+<b style="float:right">Reading:  Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
 
-        <p>The program <a href="../files/turtleString.py">turtleString.py</a> takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
-        <ul>
-          <li> 'F':  moves the turtle forward 50 steps
-          <li> 'L':  turns the turtle 90 degrees to the left
-          <li> 'R':  turns the turtle 90 degrees to the right
-          <li> '^':  lifts the pen
-          <li> 'v':  lowers the pen
-        </ul>
-        For example, if the user enters the string "FLFLFLFL^FFFvFLFLFLFL", the turtle would move forward and then turn left.  It repeats this 4 times, drawing a square.  Next, it lifts the pen and move forward 3, puts the pen back down and draw another square.
+Implement the following pseudocode to convert a hexadecimal string to a decimal number. If the string contains any letter other than '0'-'9', 'A'-'F' (can be small letter), exit and report errors.
 
-        <p>
-        Modify this program to allow the user also to specify with the following symbols:
-        <ul>
-          <li> 'B':  moves the turtle backwards 50 steps
-          <li> 'S':  makes the turtle stamp
-          <li> 'l':  turns the turle 45 degrees to the left
-          <li> 'r':  turns the turtle 45 degrees to the right
-          <li> 'p':  change the pen color to purple
-        </ul>
+<pre>
+input a string, put in variable string
+set num to be 0
+set base to be the base of hexadecimal number
+initialize weight to be 1, for the least significant digit
+set length to be the number of letters of string
 
-        <p><i>Hint:  See Lecture 4 notes.</i>
+Get the upper case of string, put in string. 
+All letter are big letter in string. 
+
+Move i from the rightmost index downto the leftmost index, ie, move from least significant digit to the most significant digit
+    put ith letter of string to variable ch 
+    if ch is '0'..'9'
+         increase num by weight * (ord(ch) - ord('0')). For example, if ch is '9', then ord(ch) - ord('0') returns the difference between ASCII code of '9' and ASCII code of '0', that is, 9. Related example, remember in Problem 9, when we match letter 'A' to 0, letter 'B' to 1, ..., by subtract ord('A') from the corresponding ASCII code of current letter?
+    otherwise, if ch is 'A'..'F':
+                  value = ord(ch) - ord('A') + 10. For example, if ch is 'C', then ord(ch) - ord('A') + 10 = 12. Note that 'C' is 12 in hexadecimal system.
+                  increase number by value * weight
+    othewise:
+         print current Letter ch is not allowed in a hexadecimal string
+         call exit method to exit current program
+
+    update weight by multiplying it with base since we move to the next significant digit
+
+print out num followed by prompt "num ="
+</pre>
+
+		<p> some sample input/output are as follows.
+<pre style ="background-color:lavender;width:450px">
+Enter a string with 0-9, a-f only: 25
+num = 37
+</pre>
+
+<p>When an input string has more than one letter that other than '0'-'9', 'A'-'F', only report the first violation that is closest to the least significant digit in the rightmost position.
+
+<pre style ="background-color:lavender;width:450px">
+Enter a string with 0-9, a-f only: AT0
+Letter T is not allowed in hexadecimal string.
+</pre>
+
+    <p><i>Hint:  See Lecture 4 notes.</i>
+    <p><i>Warning:</i> Python provides int(string, base) to convert a string representation in base to its decimal number. For example, int("1A", 16) returns 26 and int("101", 2) returns 5. You cannot use this function. Must implement the pseudocode.
 
 <!--problem 26, up to date, updated on 8/11/22-->
 
