@@ -810,8 +810,8 @@ Here is an analysis.
 	<p>Submit a <b>text file (.txt)</b> with each of the outputs on a separate line:
 <pre style = "background-color:lavender;width:400px">
 #Name:  YourNameHere
-#Date:  August 2022
-#Logical expressions for a 3-bit incrementer
+#Date:  March 2023
+#Logical expressions for a 3-bit decrementer
 
 out1 = ...
 out2 = ...
@@ -822,10 +822,10 @@ out3 = ...
 	<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
 
 <!--problem 27-->
-	<li > <b>Due Date: 23 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+	<li > <b>Due Date: March 21</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
 
-		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the borough, an name for the output file, and then display the fraction of the population that has lived in that borough, over time.
+		<p> Download csv file from <a href="../files/2013_2018_demo_boro.csv">2013 to 2018 Demographic Snapshot Borough</a>. Your program should ask the user for the borough, an name for the output file, and then display the fraction of Grade K to 6 enrollment that has lived in that borough, over time.
 
 		<p> A sample run of the program:
 <pre style ="background-color:lavender;width:450px">
@@ -834,13 +834,20 @@ Enter output file name:  qFraction.png
 </pre>
 		<p> The file <tt>qFraction.png</tt>:
 
-		<p><img src="../images/qFraction.png" width=300>
+		<p><img src="../images/queensGradeK_6Fraction_expected.png" width=300>
 
+<p> <i>Hint:</i>, first create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data using query method. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
 
-		<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+<pre>
+borough_data = df.query("Borough == '" + borough + "'")
+</pre>
+
+<p>Then <tt>borough_data</tt> has data for the specific borough. Plot fraction using this data.
+
+<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 <!--problem 28-->
-	<li > <b>Due Date: 24 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+	<li > <b>Due Date: March 22</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
 		<p> Write a program that computes the average and maximum population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.
 
