@@ -829,16 +829,17 @@ out3 = ...
 
 		<p> A sample run of the program:
 <pre style ="background-color:lavender;width:450px">
-Enter borough name:  Queens
-Enter output file name:  qFraction.png
+Enter borough name:  Bronx
+Enter output file name:  bronxFraction.png
 </pre>
-		<p> The file <tt>qFraction.png</tt>:
+		<p> The file <tt>bronxFraction.png</tt>:
 
-		<p><img src="../images/bronx_ans.png" width=300>
+		<p><img src="../images/bronxFraction.png" width=300>
 
-<p> <i>Hint:</i>, first create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data using query method. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
 
-<pre>
+<p><i>Hint:</i>, first create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data usig either groupby and get_group function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
+
+<pre style ="background-color:lavender;width:450px">
 borough_data = df.query("Borough == '" + borough + "'")
 </pre>
 
@@ -868,7 +869,7 @@ Maximum population:  2738175
 
 
 <!--problem 29-->
-	<li > <b>Due Date: 25 March</b>  <b style="float:right">Reading:
+	<li > <b>Due Date: March 23</b>  <b style="float:right">Reading:
 	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></b><br>
 
 		<p>Write an Unix shell script that prints <tt>Hello, World</tt> to the screen.
@@ -876,7 +877,7 @@ Maximum population:  2738175
 		<p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
 
 <!--problem 30-->
-      <li > <b>Due Date: 28 March</b>  <b style="float:right">Reading:
+      <li > <b>Due Date: March 24</b>  <b style="float:right">Reading:
     	<a href="https://guides.github.com/activities/hello-world/">Github Guide</a></b><br>
 
 		<p>In <a href="lab6.html">Lab 6</a>, you created a github account.  Submit a text file with the name of your account.	The grading script is expecting a file with the format:
