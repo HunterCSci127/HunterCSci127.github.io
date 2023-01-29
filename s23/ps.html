@@ -880,17 +880,19 @@ Date,Store,Amount,Category
 
     <p>Before choosing a category, you may want to print out all possible categories. To do so, print <i>grouped_data.groups.keys()</i>, where variable <tt>grouped_data</tt> holds the return of groupby method of data frame object read from csv file, and groupby method applies to category. 
 
-    <p>For example, if <tt>grouped_data</tt> is the return of groupby of Category (check column name, need to match case to case), then <i>grouped_data.groups.keys()</i> are all available categories. If we apply <tt>groupby</tt> on month and put return to <tt>grouped_data</tt>, then <i>grouped_data.groups.keys()</i> are all available months.
+    <p>For example, if <tt>grouped_data</tt> is the return of groupby of Category (check column name, need to match case to case), then <i>grouped_data.groups.keys()</i> are all available categories.     
 
-    <li> If choice is b, group by month, print out the total amount of each month. Afterwards, enter a specific month, calculate its minimum, maximum, average, and total of amount for that month.
+    <li> If choice is b, group by month of a year (abbreviated as 'Year Month'), print out the total amount of each Year Month. Afterwards, enter a specific Year Month, calculate its minimum, maximum, average, and total of amount for that month.
 
-    <p>Use <a href=https://sparkbyexamples.com/pandas/pandas-extract-month-and-year-separately-from-datetime-column/>to extract year and month from mm/dd/yyyy to yyyy-mm</a>. The following code creates a column called 'Year Month' to store year and month information extracted from Date column.
+    <p>One step in this task is to create a column yyyy-mm from mm/dd/yyyy. The following code creates a column called 'Year Month' to store year and month information extracted from column 'Date'. Refer to <a href=https://sparkbyexamples.com/pandas/pandas-extract-month-and-year-separately-from-datetime-column/>link</a> for more details.
 
     <pre>
      df['Year Month'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m')
     </pre>
 
-     <p>With the above code, record <tt>12/31/22</tt> in Date column  is converted to <tt>2022-12</tt>, put in column 'Year Month'.
+     <p>With the above code, record <tt>12/31/22</tt> in Date column is converted to <tt>2022-12</tt>, put in column 'Year Month'.
+
+<p>If we apply <tt>groupby</tt> on 'Year Month' and put return to <tt>grouped_data</tt>, then <i>grouped_data.groups.keys()</i> are all available pairs of 'Year Month'.
 
     <li> If choice is c, enter an integer, print out the first many most visited stores, that is, the first several stores in the file. 
 	<li> For any other choice, print "wrong choice". 
@@ -913,8 +915,8 @@ transportation     61.15
 Name: Amount, dtype: float64
 available category: dict_keys(['Internet', 'electronics', 'food', 'groceries', 'medicine', 'transportation'])
 Choose a category and calculate its minimum, maximum, average, and total: groceries
-max: 32.55
 min: 15.66
+max: 32.55
 mean: 26.1
 sum: 78.29
 </pre>
