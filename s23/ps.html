@@ -966,7 +966,7 @@ Enter a choice: d
 wrong choice
 </pre>
 
-<p><i>Hint:</i> to pass gradescope scripts, round average and total by 2 decimal numbers to the decimal point. You may use <tt>round(<i>value</i>, 2) to round variable <i>value</i> two decimal numbers to the decimal point.
+<p><i>Hint:</i> to pass gradescope scripts, round average and total by 2 decimal numbers to the decimal point. You may use <tt>round(<i>value</i>, 2)</tt> to round variable <i>value</i> two decimal numbers to the decimal point.
 
 		<p> <i>Hint: See <a href="lab6.html">Lab 6</a></i>.
 
@@ -1354,7 +1354,7 @@ Enter CSV file name:  collisionsThHunterBday.csv
 Enter output file:  thMap.html
 </pre>
 		<p>which would produce the html file:
-
+<!--
 		<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 		<p>(The demo above is for March 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
@@ -1362,7 +1362,8 @@ Enter output file:  thMap.html
 
 		<p> This assignment uses collision data collected and made publicly by
 		<a href="https://nycopendata.socrata.com">New York City Open Data</a>.
-		<!--TODO: See Programming Problem #39 for details on this data set.-->  When creating datasets to test your program, you will need to filter for both date (to keep the files from being huge) and that there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
+		<!--TODO: See Programming Problem #39 for details on this data set.-->  
+        <!--When creating datasets to test your program, you will need to filter for both date (to keep the files from being huge) and that there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
 
 		<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
 
