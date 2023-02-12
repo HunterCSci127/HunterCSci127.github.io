@@ -1013,7 +1013,8 @@ AccountNameGoesHere
 <p> Read <a href="lab7.html">Lab 7</a>. Download <a href="files/workforce.csv">workforce.csv</a> from <a href="https://data.cityofnewyork.us/Social-Services/Workforce-1-for-NYCHA-Residents-by-Borough-Local-L/v7hc-c85a">NYC open data</a> which shows workforce data for NYCHA residents in NYC boroughs from 2017 to 2021. We modified the data from text to number and remove rows with data "&lt 5".
 		<ul>
 			<li> ask the user to specify a year from 2017 to 2021.
-			<li> ask the user to specify the output file,
+			<li> ask the user to specify the output file.
+            <li> report the maximum acceptance rate and the correponding rate in that given year.
 			<li> make a plot of the acceptance rate in percentage  by boroughs in that year. Acceptance rate is calculated by the population that <tt> Were placed into full-time or part-time jobs</tt> over the population that <tt>Applied for the program</tt>. To represent the value in percentage, multiple the quotient by 100. 
 			<li> store the plot in the output file the user specified.
 		</ul>
@@ -1040,9 +1041,9 @@ Enter output file name: output_2021.png
 
 <p><i>Hints: </i>since the calculated acceptance rate is based on a borough in a specific year, we first create a column called <tt>"Acceptance rate"</tt>, calculated by dividing column <tt>"Were placed into full-time or part-time jobs"</tt> by column <tt>"Applied for the program"</tt> multiplied by 100.
 
-<p>Unlike shelter program in <a href="lab7.html">Lab 7</a>, where data are for each day in census, workforce data are based on a year and a borough. We need to run steps to extract data of different boroughs of a given year. Here is a pseudocode.
+<p>Unlike shelter program in <a href="lab7.html">Lab 7</a>, where data are for each day in census, workforce data are based on a year and a borough. We need to run steps to extract data of different boroughs of a given year using either groupby and get_group or loc method (google its usage). Here is a pseudocode.
 
-<pre style ="background-color:lavender;width:400px">
+<pre style ="background-color:lavender;width:600px">
 #TODO: fill in right hand side expression.
 #Use pandas to read "workforce.csv".
 df = ...
@@ -1082,11 +1083,13 @@ maxIdx = chosenYear['Acceptance rate'].idxmax()
 #chosenYear["Borough"][maxIdx].
 #Print this value out.
 
+#TODO: prompt to enter output file name.
+
 #TODO: plot acceptance rate by different boroughs
 #in that GIVEN year.
 
-#TODO: prompt to enter output file name,
-#save the plot in the given output file.
+#TODO: save the plot in the given output file.
+
 </pre>
 <!--Note that you can use df.loc[df['Year'] == year] to 
 substitute for df.groupby('Year').get_group(year)-->
