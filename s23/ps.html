@@ -1008,49 +1008,86 @@ AccountNameGoesHere
 <hr>
 
 <!--problem 31-->
-<!--
-TODO
-	<li > <b>Due Date: 29 March</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+	<li > <b>Due Date: March 27</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
-<p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+<p> Read <a href="lab7.html">Lab 7</a>. Download <a href="files/workforce.csv">workforce.csv</a> from <a href="https://data.cityofnewyork.us/Social-Services/Workforce-1-for-NYCHA-Residents-by-Borough-Local-L/v7hc-c85a">NYC open data</a> which shows workforce data for NYCHA residents in NYC boroughs from 2017 to 2021. We modified the data from text to number and remove rows with data "&lt 5".
 		<ul>
-			<li> ask the user to specify the input file,
+			<li> ask the user to specify a year from 2017 to 2021.
 			<li> ask the user to specify the output file,
-			<li> make a plot of the fraction of the total population that are single adults over time from the data in input file, and
+			<li> make a plot of the acceptance rate in percentage  by boroughs in that year. Acceptance rate is calculated by the population that <tt> Were placed into full-time or part-time jobs</tt> over the population that <tt>Applied for the program</tt>. To represent the value in percentage, multiple the quotient by 100. 
 			<li> store the plot in the output file the user specified.
 		</ul>
 
 		<p>A sample run of the program:
 <pre style ="background-color:lavender;width:400px">
-Enter name of input file:  DHS_2015_2016.csv
-Enter name of output file:  dhsPlot.png
+Enter a year from 2017 to 2021: 2020
+maximum acceptance rate in 2020 is 10.55 % from Brooklyn
+Enter output file name: output_2020.png
 </pre>
 		<p> which produces an output:
 
-		<p><img src="../images/dhsPlot.png" height = 300>
+		<p><img src="../images/p31_s23_output_2020.png" height = 300>
 
-		<p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Children".
-
-    <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
-		<ul>
-			<li> ask the user to specify the input file,
-			<li> ask the user to specify the output file,
-			<li> make a plot of the fraction of the total population that are children over time from the data in input file, and
-			<li> store the plot in the output file the user specified.
-		</ul>
-
-		<p>A sample run of the program:
-<pre style ="background-color:lavender;width:500px">
-Enter name of input file:  DHS_Daily_Report.csv
-Enter name of output file:  dhsPlot.png
+<pre style ="background-color:lavender;width:400px">
+Enter a year from 2017 to 2021: 2021
+maximum acceptance rate in 2021 is 13.65 % from Staten Island
+Enter output file name: output_2021.png
 </pre>
 		<p> which produces an output:
 
-		<p><img src="../images/fraction_children_shelter.png" height = 300>
+		<p><img src="../images/p31_s23_output_2021.png" height = 300>
+		<p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "Acceptance rate".
 
+<p><i>Hints: </i>since the calculated acceptance rate is based on a borough in a specific year, we first create a column called <tt>"Acceptance rate"</tt>, calculated by dividing column <tt>"Were placed into full-time or part-time jobs"</tt> by column <tt>"Applied for the program"</tt> multiplied by 100.
 
-		<p> Note:  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Children".
--->
+<p>Unlike shelter program in <a href="lab7.html">Lab 7</a>, where data are for each day in census, workforce data are based on a year and a borough. We need to run steps to extract data of different boroughs of a given year. Here is a pseudocode.
+
+<pre style ="background-color:lavender;width:400px">
+#TODO: fill in right hand side expression.
+#Use pandas to read "workforce.csv".
+df = ...
+
+#TODO: fill in right hand side expression.
+#Create a column called "Acceptance rate" by 
+#dividing column "Were placed into full-time or part-time jobs"
+#by column "Applied for the program", then
+#multiplied by 100.
+df['Acceptance rate'] = ...
+
+#TODO: enter a year from 2017 to 2021.
+year = ...
+
+#chosenYear extracts all records in the original dataframe df
+#for the given year. Each record of chosenYear
+#represents for a borough in a GIVEN year.
+chosenYear = df.loc[df['Year'] == year]
+
+#To find out which borough has the highest acceptance rate
+#in that GIVEN year, need to apply idxmax method on
+#the column 'Acceptance rate' of chosenYear.
+#Note that if you use df['Acceptance rate'].idxMax(),
+#the returned value is the highest acceptance rate
+#among all boroughs in all the years, not just that GIVEN year.
+maxIdx = chosenYear['Acceptance rate'].idxmax()
+
+#TODO: find the maximum acceptance rate among all records
+#(ie, in this example, a record is for a borough),
+#in a GIVEN year by 
+#chosenYear['Acceptance rate'][maxIdx]
+#Print out this value rounded by two decimal numbers
+#using round function as round(value_to_be_rounded, 2).
+
+#TODO: find the borough with highest acceptance rate
+#in a GIVEN year by 
+#chosenYear["Borough"][maxIdx].
+#Print this value out.
+
+#TODO: plot acceptance rate by different boroughs
+#in that GIVEN year.
+
+#TODO: prompt to enter output file name,
+#save the plot in the given output file.
+</pre>
 
 <!--problem 32-->
 <!--
