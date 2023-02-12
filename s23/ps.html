@@ -1060,7 +1060,7 @@ year = ...
 #chosenYear extracts all records in the original dataframe df
 #for the given year. Each record of chosenYear
 #represents for a borough in a GIVEN year.
-chosenYear = df.loc[df['Year'] == year]
+chosenYear = df.groupby(...).get_group(...)
 
 #To find out which borough has the highest acceptance rate
 #in that GIVEN year, need to apply idxmax method on
@@ -1088,6 +1088,8 @@ maxIdx = chosenYear['Acceptance rate'].idxmax()
 #TODO: prompt to enter output file name,
 #save the plot in the given output file.
 </pre>
+<!--Note that you can use df.loc[df['Year'] == year] to 
+substitute for df.groupby('Year').get_group(year)-->
 
 <!--problem 32-->
 <!--
