@@ -1094,6 +1094,82 @@ maxIdx = chosenYear['Acceptance rate'].idxmax()
 <!--Note that you can use df.loc[df['Year'] == year] to 
 substitute for df.groupby('Year').get_group(year)-->
 
+<!-- problem 32-->
+<li > <b>Due Date: March 28</b>  
+<b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a></b><br>
+
+<p> Refer to the program from <a href="lab7.html">Lab 7</a>. Read <a href="../files/workforce.csv">workforce.csv</a> downloaded from <a href="https://data.cityofnewyork.us/Social-Services/Workforce-1-for-NYCHA-Residents-by-Borough-Local-L/v7hc-c85a">NYC Open Data</a> with slight modifications.
+
+Your program will do the following,
+<ul>
+    <li> find out print out the average of <b>Applied for the program</b> in each <b>Borough</b>, pay attention to the corresponding column name, need to be strictly case to case, letter to letter.
+    <li> Choose a borough. You may print <i>grouped_data.groups.keys()</i> to display all possible boroughs, where variable <tt>grouped_data</tt> holds the return of groupby method of data frame object read from csv file.
+    <li> For the chosen borough, find out and print the maximum applicants for the program among all years and the number of (available) year records in the borough.
+	<li> ask the user to specify the output file.
+    <li> make a bar plot of the <b>Applied for the program</b> of every available year in the chosen borough, and
+	<li> store the plot in the output file the user specified.
+</ul>
+ 
+You may use the following statements.
+<pre style="background-color:lavender;width=700px">
+grouped_data.get_group(chosen_borough).plot.bar(...)
+    #the first parameter of bar method is the column name representing year, the second parameter is the number of applicants for the program
+
+plt.gcf().subplots_adjust(bottom=0.25)
+    #so that the year label is displayed in full
+
+plt.xlabel(...)
+    #The parameter in xlabel should be "Year".
+plt.ylabel("Applicants for the program")
+</pre>
+
+		<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Borough
+Bronx            3216.4
+Brooklyn         4398.6
+Manhattan        3213.8
+Queens           1378.6
+Staten Island     751.2
+Unknown           395.5
+Name: Applied for the program, dtype: float64
+possible boroughs are:
+dict_keys(['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island', 'Unknown'])
+choose a borough: Bronx
+max number of applicants: 3675
+min number of applicants: 2566
+number of years record in the borough: 5
+Enter output file: bronx_applicants.png
+</pre>
+		<p> which produces an output:
+
+		<p><img src="../images/p32_s23_bronx_applicants.png" height = 300>
+
+Another sample run of the code is as follows. There is a value for borough as "Unknown" when borough information is not available.
+
+<pre style ="background-color:lavender;width:500px">
+Borough
+Bronx            3216.4
+Brooklyn         4398.6
+Manhattan        3213.8
+Queens           1378.6
+Staten Island     751.2
+Unknown           395.5
+Name: Applied for the program, dtype: float64
+possible boroughs are:
+dict_keys(['Bronx', 'Brooklyn', 'Manhattan', 'Queens', 'Staten Island', 'Unknown'])
+choose a borough: Unknown
+max number of applicants: 634
+min number of applicants: 157
+number of years record in the borough: 2
+Enter output file: unknown_applicants.png
+</pre>
+
+		<p> which produces an output:
+
+		<p><img src="../images/p32_s23_unknown_applicants.png" height = 300>
+
+
 <!--problem 32-->
 <!--
 	<li > <b>Due Date: 30 March</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a></b><br>
