@@ -1274,103 +1274,49 @@ website name: af
 other
 </pre>
 
-
-<!--
-  <li > <b>Due Date: 1 April</b>  <b style="float:right">Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a></b><br>
-
-      		<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first names first followed by the last names.
-
-      		<p>A sample run of your program should look like:
-      		<pre style ="background-color:lavender">
-Please enter your list of names:  Epstein, Susan; St. John, Katherine; Vazquez-Abad, Felisa; Xu, Jia; Zamfirescu, Christina
-
-You entered:
-
-Susan Epstein
-Katherine St. John
-Felisa Vazquez-Abad
-Jia Xu
-Christina Zamfirescu
-
-Thank you for using my name organizer!
-      </pre>
-
-      <p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).</i>
-
-<!--problem 35-->
-<!--
-	<li > <b>Due Date: 4 April</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
-    <p> Write a program that asks the user for the hour of the day (in 24 hour time), and prints
-    <ul>
-    <li>"Good Morning" if it is strictly before 12,
-    <li> "Good Afternoon" if it is 12 or greater, but strictly before 17, and
-    <li> "Good Evening" otherwise.
-    </ul>
-
-    <p>A sample run:
-    <pre style ="background-color:lavender;width:400px">
-Enter hour (in 24 hour time):  11
-Good Morning
-</pre>
-    <p>Another sample run:
-<pre style ="background-color:lavender;width:400px">
-Enter hour (in 24 hour time):  20
-Good Evening
-</pre>
-    <p>And another run:
-<pre style ="background-color:lavender;width:400px">
-Enter hour (in 24 hour time):  15
-Good Afternoon
-</pre>
-
 <a id="set8"></a>
 <hr>
 
 <!--problem 36-->
-<!--
-	<li > <b>Due Date: 5 April</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+	<li > <b>Due Date: April 3</b>  
+    <p> Write a function, <tt>rentPrice()</tt>, that takes two parameters: borough <tt>(string)</tt> and room type <tt>(string)</tt>. The function should return an <tt>integer</tt> for the average rent of a given room type in a given borough.
+ 
+The following data are from <a href="https://gbsnresearch.com/insights/data-processing/new-york-city-rent-prices-by-borough-and-neighborhood/">average rent for boroughs in NYC</a>. For simplicity, we only concentrate on studio, 1-bedroom and 2-bedroom. Also, I modified the rent of studio in Brooklyn in the original website since it is higher than that of 1-bedroom.
 
-		<p> Modify the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
-		<ul>
-			<li> Ask the user for the name of the input file.
-			<li> Ask the user for the attribute (column header) to search by.
-		</ul>
+<table border="1px">
+<tr>
+<th colspan=3>Borough</th><th colspan=4>studio</th><th colspan=4>1-bedroom</th><th colspan=4>2-bedroom</th>
+</tr>
+<tr>
+<td>Manhattan</td><td>2795</td><td>3500</td> <td>3900</td>
+</tr>
+<tr>
+<td>Brooklyn</td><td>2273</td><td>2450</td> <td>2750</td>
+</tr>
+<tr>
+<td>Queens</td><td>1695</td><td>1900</td> <td>2350</td>
+</tr>
+<tr>
+<td>Bronx</td><td>1500</td><td>1700</td> <td>2200</td>
+</tr>
+<tr>
+<td>Staten Island</td><td>1200</td><td>1425</td> <td>2000</td>
+</tr>
+</table>
 
-		<p>A sample run:
-		<pre style ="background-color:lavender;width:450px">
-Enter file name:  Parking_Violations_Jan_2016.csv
-Enter attribute:  Vehicle Color
-The 10 worst offenders are:
-WHITE    2801
-WH       2695
-GY       1420
-BK       1153
-BLACK    1054
-BROWN     727
-BL        656
-GREY      574
-SILVE     450
-BLUE      412
-Name: Vehicle Color, dtype: int64
+	The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it).
+
+<p>A sample run:
+<pre style = "background-color:lavender;width:450px">
+rentPrice("Brooklyn", "1-bedroom") returns 2450
 </pre>
 
-		<p>And another run:
-<pre style ="background-color:lavender;width:450px">
-Enter file name:  Parking_Violations_Jan_2016.csv
-Enter attribute:  Vehicle Year
-The 10 worst offenders are:
-0       3927
-2015    1265
-2014    1143
-2013    1105
-2012     772
-2011     666
-2007     643
-2008     559
-2010     509
-2006     499
-Name: Vehicle Year, dtype: int64
+<p> And another:
+<pre style = "background-color:lavender;width:450px">
+rentPrice("Queens", "5-bedroom") returns 0
 </pre>
+
+	<p><i><b>Hint:</b>  See <a href="lab8.html">Lab 8</a>.</i>
 
 <!--problem 37-->
 <!--
