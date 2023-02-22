@@ -1285,7 +1285,7 @@ The following data are from <a href="https://gbsnresearch.com/insights/data-proc
 
 <table border="1px">
 <tr>
-<th colspan=3>Borough</th><th colspan=4>studio</th><th colspan=4>1-bedroom</th><th colspan=4>2-bedroom</th>
+<th>Borough</th><th>studio</th><th>1-bedroom</th><th>2-bedroom</th>
 </tr>
 <tr>
 <td>Manhattan</td><td>2795</td><td>3500</td> <td>3900</td>
@@ -1319,51 +1319,33 @@ rentPrice("Queens", "5-bedroom") returns 0
 	<p><i><b>Hint:</b>  See <a href="lab8.html">Lab 8</a>.</i>
 
 <!--problem 37-->
-<!--
-<li > <b>Due Date: 6 April</b>  <b style="float:right">Reading: <a href="https://guides.github.com/activities/hello-world/">Github Guide</a></b><br>
+<li > <b>Due Date: April 4</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
+		
+        <p> Write function, <tt>hexagramRecursion()</tt>, in recursive function for the hexagram in Problem 2. Key idea: break the hexagram evenly into six parts. If the number of repetition is larger than zero, draw one part. Call hexagramRecursion to draw the hexagram with remaining parts.
+  
+  <p>Here is a pseudocode.
+  <pre>
+def hexagramRecursion(t, n):
+   if n > 0:
+      #draw one part 
+      move t forward 100 steps
+      turn t right 60 degrees
+      move t forward 100 steps
+      turn t left 120 degrees
 
-<p> Logical gates can be used to do arithmetic on binary numbers.  For example, we can write a logical circuit whose output is one more than the inputted number.  Our inputs are <tt>in1</tt> and <tt>in2</tt> and the outputs are stored in <tt>out1</tt>, <tt>out2</tt>, and <tt>out3</tt>.
+      call hexagramRecursion with t and n-1. 
 
-<p><a href="http://www.neuroproductions.be/logic-lab/index.php?id=80507">
-<img src="../images/incrementCircuit.png" height=200 ><br>
-(click to launch new window with circuit)</a>
+def main():
+    #call hexagramRecursion function to draw a hexagram
 
-<p>Here is a table of the inputs and outputs:
-
-<table border="1px">
-<tr>
-<th colspan=3>Inputs</th><th colspan=4>Outputs</th>
-</tr>
-<tr>
-<th>Decimal<br>Number</th><th>in1</th><th>in2</th><th>Decimal<br>Number</th><th>out1</th><th>out2</th><th>out3</th>
-</tr>
-<tr>
-<td>0</td><td>0</td><td>0</td> <td>1</td><td>0</td><td>0</td><td>1</td>
-</tr>
-<tr>
-<td>1</td><td>0</td><td>1</td> <td>2</td><td>0</td><td>1</td><td>0</td>
-</tr>
-<tr>
-<td>2</td><td>1</td><td>0</td> <td>3</td><td>0</td><td>1</td><td>1</td>
-</tr>
-<tr>
-<td>3</td><td>1</td><td>1</td> <td>4</td><td>1</td><td>0</td><td>0</td>
-</tr>
-</table>
-
-<p>Submit a text file with each of the outputs on a separate line:
-<pre style = "background-color:lavender;width:500px">
-#Name:  YourNameHere
-#Date:  November 2017
-#Logical expressions for a 4-bit incrementer
-
-out1 = ...
-out2 = ...
-out3 = ...
+if __name__ == '__main__':
+   main()
 </pre>
-Where "..." is replaced by your logical expression (see <a href="lab5.html">Lab 5</a>).
 
-<p>Note:  here's a quick <a href="https://www.mathsisfun.com/binary-number-system.html">review</a> of binary numbers.
+  <p>
+  <img src="../images/hexagram_boundary.png" height=250>
+
+
 
 <!--problem 38-->
 <!--TODO
