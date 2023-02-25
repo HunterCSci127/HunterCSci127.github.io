@@ -1348,17 +1348,84 @@ if __name__ == '__main__':
 
 
 <!--problem 38-->
-<!--TODO
-	<li > <b>Due Date: 7 April</b>
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b><br>
+<li > <b>Due Date: April 14</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
 
-		<p>Fill in the missing function, <tt>monthString()</tt>, in the program, <tt>months.py</tt> (available at:  <a href="https://github.com/stjohn/csci127">
-	https://github.com/stjohn/csci127</a>).  The function should take number between 1 and 12 as a parameter and returns the corresponding month as a string.  For example, if the parameter is 1, your function should return <tt>"January"</tt>.  If the parameter is 2, your function should return out <tt>"February"</tt>, etc.
+		<p> Write three functions, <tt>hexagon_recursion</tt>, <tt>corner_hexagon</tt> and <tt>nested_hexagon</tt>.  Function <tt>hexagon_recursion</tt> takes three parameters: a turtle, an edge length, and number of edges. Functions <tt>corner_hexagon</tt> and <tt>nested_hexagon</tt> take two parameters: a turtle and an edge length. The pseudocode for <tt>hexagon_recursion</tt> isas follows:
 
-		<p>Note:  The grading scripts are expecting that your function is called <tt>monthString()</tt>.  You need to use that name, since instead of running the entire program, the scripts are "unit testing" the function-- that is, calling that function, in isolation, with differrent inputs to verify that it performs correctly.
+<pre>
+#recursive function to draw a hexagon,
+#where n represents number of edges
+def hexagon_recursion(t, length, n):
+    if n > 0:
+       move the turtle object, t, forward length steps
+       t turn left 60 degrees, where 60 is calculated by 360/6
+       call hexagon_recursion with t, length, and n-1
+</pre>
+
+pseudocode of corner_hexagon, which draws hexagon nested in left corner.
+<pre>
+def corner_hexagon(t, length):
+    if length >= 9:
+       1. call hexagon_recursion with t, length and 6
+       2. call corner_hexagon with t and one third of length (use <b>integer division</b>)
+</pre>
+
+<pre>
+def nested_hexagon(t, length, n):
+    if length >= 27:
+       if n > 0:
+          1. move t forward length steps
+          2. turn t left 60 degrees
+          3. call nested_hexagon with t, one third of length (use <b>integer division</b>), and 6.
+          4. call nested_hexagon with t, length, and n-1.
+</pre>
+
+Here is how to call the above functions in main function. You can uncomment (remove # before the corresponding line)
+
+<pre>
+def main():
+    t = turtle.Turtle()
+    #the following three statements are optional,
+    #but with them, the whole figure is shown.
+    #t.penup()
+    #t.goto(-150, -150)
+    #t.pendown()
+
+    nested_hexagon(t, 243, 6) 
+    #length 243 = 3^4 is perfect power of 3, 
+    #We would like length divided by 3 each time.
+    #hexagon_recursion(t, 243, 6) #uncomment to test
+    #corner_hexagon(t, 243) #uncomment to test
+    turtle.done()
+
+if __name__ == '__main__':
+    main()
+</pre>
+
+    The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). 
+
+		<p>A sample run with corner_hexagon with length 243 and 6 would produce:
+
+<p><img height=200 src="../images/corner_hexagon.png"> 
+
+		<p>A sample run with edge length 243 and stop with 27 (included) on nested_hexagon would produce:
+
+<p><img height=50 src="../images/nested_hexagon_243_27.png">
+
+		<p>A sample run with edge length 243 and stop with 9 (included) on nested_hexagon would produce by changing <tt>if length >= 27</tt> to <tt>if length >= 9</tt> in function nested_hexagon:
+
+<p><img height=200 src="../images/nested_hexagon_243_9.png">
+
+<p>A sample run with edge length 243 and stop with 81 (included) on nested_hexagon would produce by changing <tt>if length >= 27</tt> to <tt>if length >= 81</tt> in function nested_hexagon:
+
+<p><img height=200 src="../images/nested_hexagon_243_81.png">
 
 
-		<p><i>Hint:  See notes from Lecture 7 and <a href="lab8.html">Lab 8</a>.</i>
+<p>Related: this program is related with fractalTriangle and nestedTriangle in <a href="https://huntercsci127.github.io/files/csci127F22Lecture8.pdf">Lecture 8 note</a>. 
+
+<p>We rewrite all repetition statements (like for-statement) in fractalTriangle and nestedTriangle by recursion. It is proved that all recursive statements can be rewritten as repetition ones, and vice versa. A proof is beyond the scope of this course and is omitted.
+
+<p>Since we draw hexagons in our program, the length of smaller hexagon is one third of the previous one. If we use a half of the original figure, the hexagons will overlap -- you can verify this by modify the value of <tt>length</tt> when you call recursive function.
 
 <!--problem 39-->
 <!--
