@@ -1350,7 +1350,9 @@ if __name__ == '__main__':
 <!--problem 38-->
 <li > <b>Due Date: April 14</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
 
-		<p> Write three functions, <tt>hexagon_recursion</tt>, <tt>corner_hexagon</tt> and <tt>nested_hexagon</tt>.  Function <tt>hexagon_recursion</tt> takes three parameters: a turtle, an edge length, and number of edges. Functions <tt>corner_hexagon</tt> and <tt>nested_hexagon</tt> take two parameters: a turtle and an edge length. The pseudocode for <tt>hexagon_recursion</tt> isas follows:
+		<p> Write three functions, <tt>hexagon_recursion</tt>, <tt>corner_hexagon</tt> and <tt>nested_hexagon</tt>.  Function <tt>hexagon_recursion</tt> takes three parameters: a turtle, edge length, and number of edges. Function <tt>corner_hexagon</tt> takes two parameters: a turtle and edge length of outermost hexagon. Function <tt>nested_hexagon</tt> takes three parameters: a turtle, edge length of outermost hexagon, and number of edges.
+
+<p>The pseudocode for <tt>hexagon_recursion</tt> is as follows:
 
 <pre>
 #recursive function to draw a hexagon,
@@ -1362,7 +1364,7 @@ def hexagon_recursion(t, length, n):
        call hexagon_recursion with t, length, and n-1
 </pre>
 
-pseudocode of corner_hexagon, which draws hexagon nested in left corner.
+<p>pseudocode of corner_hexagon, which draws hexagon nested in bottom left corner.
 <pre>
 def corner_hexagon(t, length):
     if length >= 9:
@@ -1370,6 +1372,7 @@ def corner_hexagon(t, length):
        2. call corner_hexagon with t and one third of length (use <b>integer division</b>)
 </pre>
 
+<p>pseudocode of nested_hexagon, which draws hexagon nested in each corner.
 <pre>
 def nested_hexagon(t, length, n):
     if length >= 27:
@@ -1426,8 +1429,30 @@ if __name__ == '__main__':
 <p>Since we draw hexagons in our program, the length of smaller hexagon is one third of that of the next bigger one. If we use a half of the original figure, the hexagons will overlap -- you can verify this by modify the value of <tt>length</tt> when you call recursive function.
 
 <!--problem 39-->
+<li > <b>Due Date: April 15</b><b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
+
+		<p> Write function <tt>polygon</tt>, which takes four parameters: a turtle, number of edges, edge length, and color as a string. The functionality of <tt>polygon</tt> uses turtle object to draw a polygon with <tt>number of edges</tt>, each edge has <tt>edge length<tt>, the polygon is in <tt>color</tt>, where color can be specified in name like "red" or using a hexadecimal representation such as "#00ffff" (green + blue = cyan).
+
+<p>The code of function <tt>main</tt> to test <tt>polygon</tt> is as follows:
+
+<pre>
+def main():
+    t = turtle.Turtle()
+    polygon(t, 5, 100, "green")
+    polygon(t, 6, 60, "#ff00ff")
+    polygon(t, 7, 70, "#ff0000")
+    turtle.done()
+
+if __name__ == '__main__':
+   main()
+</pre>
+
+The above <tt>main</tt> function produces the following figure.
+
+<p><img height=200 src="../images/pentage_hexagon_heptagon.png">
+
 <!--
-	<li > <b>Due Date: 8 April</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+	<li > <b>Due Date: April 15</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
 		<p> Write a program that asks the user for a CSV of collision data (see note below about obtaining reported collisions from NYC OpenData).  Your program should then list the top three contributing factors for the primary vehichle of collisions ("CONTRIBUTING FACTOR VEHICLE 1") in the file.
 
