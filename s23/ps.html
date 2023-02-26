@@ -1452,6 +1452,81 @@ The above <tt>main</tt> function produces the following figure.
 
 <p><img height=200 src="../images/pentage_hexagon_heptagon.png">
 
+<!--problem 40-->
+	<li > <b>Due Date: April 18</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+		<p> Mimic the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
+		<ul>
+            <li> Read <a href="../files/restaurant_inspection.csv">restaurant_inspection.csv</a> which lists NYC restaurant inspection result. The original data is from <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">DOHMH New York City Restaurant Inspection Results</a>.
+			<li> Ask the user for the number of most common VIOLATION DESCRIPTION (need to match column name letter by letter, case by case).
+			<li> Ask the user for the number of most popular CUISINE DESCRIPTION (need to match column name letter by letter, case by case) in these restaurants.
+		</ul>
+
+		<p>A sample run:
+<pre style ="background-color:lavender;width:450px">
+order of most common violation: 3
+Non-food contact surface improperly constructed. Unacceptable material used. Non-food contact surface or equipment improperly maintained and/or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.    20642
+Facility not vermin proof. Harborage or conditions conducive to attracting vermin to the premises and/or allowing vermin to exist.                                                                                                                                                 15787
+Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.                                                                                                                                     14405
+Name: VIOLATION DESCRIPTION, dtype: int64
+
+order of most popular cuisine description: 6
+American          36576
+Chinese           20059
+Pizza             12883
+Coffee/Tea        11917
+Latin American     8675
+Mexican            8210
+Name: CUISINE DESCRIPTION, dtype: int64
+</pre>
+
+<!--problem 41-->
+<li > <b>Due Date: April 19 </b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/runestone/static/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://runestone.academy/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.10</a> & <a href="lab8.html">Lab 8</a></b><br>
+
+  <p>Using the template program, <tt> averageImage.py</tt>, available on the <a href="https://github.com/HunterCSci127/CSci127"> CSci 127 repo on GitHub</a>, fill in the missing functions:
+
+  <ul>
+    <li> <tt>average(region):</tt>  Takes a region of an image and
+      returns the average red, green, and blue values across the region.
+      <li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+    </ul>
+
+  <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+  (inspired by the elegant <a href="https://koalastothemax.com" target="_blank">koalas to the max</a>).
+
+  <p>For example, if you inputted our favorite image, you would see (left to right):
+
+  <p>
+  <img src="../images/refined1.png" width=150>
+    <img src="../images/refined2.png" width=150>
+    <img src="../images/refined3.png" width=150>
+    <img src="../images/refined4.png" width=150>
+    <img src="../images/refined5.png" width=150>
+    <img src="../images/refined6.png" width=150>
+    <img src="../images/refined7.png" width=150>
+    <img src="../images/refined8.png" width=150>
+
+
+  <p> and finally:
+
+    <p> <img src="../images/csBridge.png" width=400>
+
+  <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+  <p><b>IMPORTANT</b> Do not remove anything below <b>and including</b> the comment that says:
+<pre style ="background-color:lavender;width:600px">
+  ######################################################################
+  ### DO NOT CHANGE ANYTHING BELOW AND INCLUDING THIS LINE           ###
+  ######################################################################
+</pre>
+
+
+  <p><i>Hint:  See notes from Lecture 8.</i>
+
+<a id="cr9"></a>
+<a id="ps9"></a>
+<h2><u> Lecture / Lab 9</u></h2>
+<!--problem 42-->
+
 <!--
 	<li > <b>Due Date: April 15</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
 
