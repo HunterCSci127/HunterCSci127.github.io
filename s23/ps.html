@@ -1525,7 +1525,31 @@ Name: CUISINE DESCRIPTION, dtype: int64
 <a id="cr9"></a>
 <a id="ps9"></a>
 <h2><u> Lecture / Lab 9</u></h2>
+
 <!--problem 42-->
+<li> <b>Due Date: April 20</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/quickstart.html">Folium Tutorial</a> & <a href="lab9.html">Lab 9</a></b><br>
+
+          <p><iframe src="../images/ny_public_library.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+          <p> Write a program that uses folium to make a map centered in New York City (40.75, -74.125) and add a marker for New Public Library (warning: case sensitive) at coordinates 40.7531, -73.9823. The HTML file your program creates should be called: <tt>ny_public_library.html</tt>.
+
+          <p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+<p>If you want to display the generated html file in a web browser, you can do as follows.
+
+<pre>
+import folium
+import webbrowser #display html file
+import os #use to find directory
+
+#TODO: code to generate map
+
+filename = "ny_public_library.html"
+nycMap.save(filename)
+
+#display html using open method of webbrowser class
+webbrowser.open('file://' + os.path.realpath(filename))
+</pre>
 
 <!--
 	<li > <b>Due Date: April 15</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
