@@ -547,6 +547,7 @@ Wrong choice, please enter only a or b
 <p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
 
 <!--problem 20-->
+<!--TODO, when working on this problem, try not use decimal numbers like 128/255, which might be different when students uses 0.50196078431 but the system somehow uses 0.49...-->
 	<li > <b>Due Date: March 10</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a></b><br>
 
 		<p>Modify the program in the section Elevation Data & Flood Maps in <a href="lab4.html">Lab 4</a> to
@@ -555,8 +556,8 @@ color the region as follows.
 <li> If the elevation is less than or equal to zero, color blue.
 <li> For elevation larger than zero but less than or equal to the Sandy storm surge (6 feet), set color to be orange (red 255, green 128, and blue 0). You need to convert these number to be floating number by dividing them by 255.
 <li> For elevation just above the Sandy storm surge (6 feet) and less than or equal to 13 feet, set color to be light grey (25% red, 25% green, 25% blue).
-<li> For elevation just above 13 feet but less than equal to 20 feet, set color to be dark grey (75% red, 75% green, 75% blue). 
-<li> For elevation that is 20 or above, set color to be green.
+<li> For elevation just above 13 feet but less than or equal to 20 feet, set color to be dark grey (75% red, 75% green, 75% blue). 
+<li> For elevation that is above 20, set color to be green.
 </ol>
 Also, modify your program to not show any graphics windows (plt.show()) but instead just compute and save the map to floodMap.png. 
 <p>Generated floodMap.png looks as follows.
