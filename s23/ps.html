@@ -1596,6 +1596,108 @@ Enter Postcode: 10065
 
  <p><iframe src="../files/10065_hotspot.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+<!-- problem 44 -->
+<li > <b>Due Date: April 24</b> 
+Read <i>Top Down Design</i> in <a href="lab8.html">Lab 8</a>. Define functions to convert red, green, blue components, each is an integer between 0 and 255, to a hexadecmial string. For example, if input red as 35, green as 53, and blue as 0, then the return is "0X233500", where 0X means hexadecimal number, hexadecimal number 23 equals decimal number 35, hexadecimal number 35 equals decimal number 53, and hexadecimal number 00 equals decimal number 0.
+
+Here are the main steps.
+
+<ol>
+   <li> Define function <tt>in_range(start, end)</tt>, which <b>ensures</b> that input an integer in [start, end], both ends included. Return that integer.
+   <li> Define function <tt>enter_color()</tt>, which calls <tt>in_range</tt> function to enter red, green, and blue color component, return these three values. Note that in Python we can return multiple items directly, which is not true in C++. Also, red, green, and blue color component should be in [0, 255].
+   <li> Define function <tt>int_to_hexstring()</tt>, which calls <tt>enter_color</tt> to get red, green, and blue component, then return the corresponding color representation in hexadecimal string. 
+</ol>
+
+<p>Sample input/output:
+<pre style = "background-color:lavender;width:500px">
+Enter red component... 
+Enter an int in [0, 255]: -1
+Enter an int in [0, 255]: 275
+Enter an int in [0, 255]: 300
+Enter an int in [0, 255]: 35
+
+Enter green component... 
+Enter an int in [0, 255]: 55
+
+Enter blue component: 
+Enter an int in [0, 255]: -5
+Enter an int in [0, 255]: 0
+0X233700
+</pre>
+
+Here are the pseudocode of the program.
+<pre>
+def in_range(start, end):
+    #TODO: prompt to enter an integer in range [start, end],
+    #take input as an integer and 
+    #put the result in variable num.
+
+    while num is not in the range of [start, end],
+    that is, either num is smaller than start or
+    num is larger than end, do the following:
+        #TODO: prompt to enter an integer in 
+        #range [start, end],
+        #take input as an integer and 
+        #put the result in variable num.
+        #That is, re-enter value of num 
+        #if it is not in [start, end].
+
+    #TODO: return variable num
+
+def enter_color():
+    #TODO: prompt user to enter red component... 
+    #call in_range with proper parameters and
+    #put the return in variable r, representing red.
+
+    #Do similar things for variables
+    #g (for green) and b (for blue). 
+
+    return r, g, b
+
+def int_to_hexstring():
+    #TODO: call enter_color, put the return to r, g, b
+   
+    #TODO: call hex method to convert a decimal number
+    #to hexadecimal string. For example, 
+    #hex(0) returns "0x0", hex(10) returns "0xa", and
+    #hex(100) returns "0x64".
+    #call hex on r, put the return to variable r_hex.
+
+    #TODO: call hex on g, put the return to variable g_hex. 
+    
+    #TODO: call hex on b, put the return to variable b_hex. 
+  
+    #Create a hexadecimal string starting with "0x" or "0X",
+    #which means this is a hexadecimal string,
+    #followed by 6 digits.
+    #The first two digits represents values of r_hex
+    #without its first two letters "0x", ie,
+    #starting from the third letter of r_hex 
+    #(hint: use string slicing).
+    #The next two digits represents values of g_hex
+    #without its first two letters "0x".
+    #The last two digits represents values of b_hex
+    #without its first two letters "0x".
+
+    #Note that r_hex, g_hex, or b_hex might have only
+    #one digit after removing "0x",
+    #we need to use zfill(2) function of string
+    #on the sliced string, so that one zero
+    #will be padded to the left of a one-letter string.
+    #For example, "a".zfill(2) returns "0a",
+    #while "ab".zfill(2) returns "ab",
+    #since "ab" has two digits already, 
+    #there is no more zero to fill before it
+    #if we want to have a total length of 2.
+
+    #TODO: return the above string.
+
+def main():
+    print(int_to_hexstring())
+
+if __name__ == '__main__':
+   main()
+</pre>
 
 <!--
 	<li > <b>Due Date: April 15</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
