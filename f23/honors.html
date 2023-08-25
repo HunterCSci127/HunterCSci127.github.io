@@ -1,388 +1,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>Programming Problem List, Honors Section, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2021</title>
+  <title>CSci 127, Honors Section, Introduction to Computer Science, Hunter College, CUNY, Fall 2022</title>
     <link type="text/css" rel="stylesheet" href="../127.css" />
-  <style type="text/css">
-  	li {
-  		  padding-bottom:	7px ;
-  }
-  </style>
 </head>
 <body>
-<div id="header"><br>
-<!--<img id="bookImage" alt="mapping quake data" src="../images/mappingQuakeData5.png"
- width="120">-->
-<h2>Honors Project<br>
+
+<div id="header">
+<h2><br>Honors Section<br>
 CSci 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
 Fall 2023<br><br>
 </h2>
+
+</div>
+
+<div>
+<big><b>This page is for the HONORS section of CSci 127 (HC1).
+All other sections follow the <a href="../f22.html">general webpage</a>.</b></big>
+</div>
+
+
+<div>
+Augmenting the material covered in the regular course, the honors section introduce additional tools for acquiring, analyzing, and visualizing data from publicly available sources.  To focus the inquiry, students will use the NYC OpenData to explore a topic about the forces that shape the physical and social dynamics of New York City.    Students will present their analysis and visualization, employing multiple data sources and techniques, during a showcase at the end of the course.
+
+
+
+<p>
+<b>Lecture & Recitation Instructors:</b>
+
+<table  border="1" >
+	<tr>
+		<th>Class: </th><th>Time:</th><th>Instructor:</th><th>E-mail:</th>
+	</tr>
+
+	<tr>
+		<td>Lecture</td><td>Tuesdays, 10:00-11:15am, <a href="https://bbhosted.cuny.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_50541192_1&course_id=_1896306_1&content_id=_50638032_1" target="_blank">Click here to find a link for the Lecture</a></td><td>Dr. Tong Yi</td><td>ty680 AT hunter cuny edu</td>
+	</tr>
+	<tr>
+		<td>HC1</td><td>Fridays, 10:00-11:15am, 1001B HN</td><td>Dr. Tong Yi</td><td>ty680 AT hunter cuny edu </td>
+	</tr>
+
+</table>
+
+
+
 </div>
 
 
 
 <div>
-
-<h3>General Notes</h3>
-
+<h3>Useful Links:</h3>
 <ul>
-	<li> The assignments below are incremental steps for your term project, in addition to the <a href="ps.html">Programming Problem List</a>.  Students enrolled in the honors section are responsible for <b>both the standard programming problems as well as the assignments below</b>.
-</div>
+	<li> <a href = "sylHC.html">Honors Syllabus</a>
+	<li> <a href = "ps.html">Programming Assignments</a> and additional
+		<a href="psHC.html">Honors Assignments</a>.
 
+	<li> <a href = "../f23.html">Class Outline</a>
 
-<div>
-<hr>
-<p>Submit the following assignments via the honors section of <a href="http://gradescope.com">Gradescope:</a></p>
-<a id="set1"></a>
-<hr>
-
-
-<ul>
-
-	<li > <b>HC 1:  Team Contract and Dataset (NYC Clean Heat or another dataset of your choice)</b>  <b style="float:right">Due Date: 30 August</b>  <br>
-	
-	<p>
-	<img src="clean_heat.png" height = 200>
-	
-	<p>  Throughout the semester, we will analyze the <a href="https://data.cityofnewyork.us/City-Government/NYC-Clean-Heat-Dataset-Historical-/8isn-pgv3">NYC Clean Heat Dataset</a>.
-Provided by the Mayor's Office of Climate and Sustainability as part of the NYC Clean Heat program,  an initiative in New York City aimed at improving air quality and reducing greenhouse gas emissions by encouraging building owners to switch from using heavy heating oils, such as No. 4 and No. 6 oils, to cleaner and more efficient heating sources. 
-
-
-
-    <h4>Step 1 -- Project structure:</h4>
-    <p>You will work in teams. Each team will be assigned a borough to analyze and each  team member will choose a neighborhood within that borough.  
-    <br>Throughout the semester each team will provide different analyses of their assigned borough and chosen neighborhoods.
-    <br>These analyses will be broken down across different assignments and will be summarized at the end of the semester in a showcase project presentation.
-    <p>We propose that you use the <a href="https://data.cityofnewyork.us/City-Government/NYC-Clean-Heat-Dataset-Historical-/8isn-pgv3">NYC Clean Heat Dataset</a>. However, we give you the freedom to choose a different dataset if that would inspire you more. A great place to look for data is <a href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data.</a> If you choose a different dataset, it must have the following properties to guarantee that you will be able to fulfill all the assignments despite working with different data:
-      <ul>
-        <li> The data must have an attribute (column) corresponding to neighborhoods (preferably NYC)
-        <li> It must include some numerical data
-        <li> It must include some categorical data
-        <li> It must include geographical locations (latitude and longitude columns, or exact address column)
-      </ul>
-and <b>must be approved by the instructor</b>.
-
-<p>Discuss with your assigned team to decide on a dataset, then move on to Step 2. <br><i>Note: You don't need to identify the alternate dataset in this assignment, but if you are considering it you should indicate so in Step 2 and <b>must identify the dataset no later than our next meeting on September 2.</b></i>
-
-
-<h4>Step 2 -- Team Contract:</h4>
- <p>Work with your assigned team to complete the <a href="../files/hcTeamContract.pdf">Team Contract</a>.
-<p>Once your contract is complete and signed by all team members, <b>upload a .pdf</b> to the assignment <tt>HC1</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>. This will be a group submission (one submission per team). Unlike the Python code, it is not automatically graded.
-
-
-
-
-
-
-	<hr>
-
-  <li > <b>HC 2:  Borough Analysis
-	</b> <b style="float:right">Due Date: 6 September</b>  <br>
-
-  <p>To begin, discuss with your team to pick a neighborhood in your team's borough (a different neighborhood for each team member). Keep in mind that you want all the neighborhoods together to be representative of the borough. You also want to be sure your neighborhood is well represented <a href="../files/clean_heat_dataset.csv" target="_blank">in the dataset</a>.
-  <p>Create a single page summary of your neighborhood that includes <b>at least</b> the following:
-	<ul>
-		<li> Name of the neighborhood (include in the title),
-		<li> The zip code(s) of your neighborhood,
-		<li> A map of New York City with your neighborhood highlighted,
-		<li> A photo or image that captures your neighborhood and
-		<li> The demographics of your neighborhood.
-	</ul>
-Your summary should exceed these minimum requirements to receive full credit. Include in your summary any information you think will be relevant to the future analysis of your dataset related to housing.
-<br>A great resource for your analysis is <a href="https://www.socialexplorer.com/" target="_blank">Social Explorer</a>. <i>Note: you don't need to necessarily create an account. From the top menu, select <tt>Resources - Demographic Profiles</tt> and enter the zip code(s) of your neighborhood to find a wealth of information.</i>
-  <p>Submit a .pdf file containing your summary.
-  </p>
-
-
-
-
-	<hr>
-		<li > <b>HC 3:  NYC Clean Heat program
-	</b> <b style="float:right">Due Date: 13 September</b>  <br>
-
-  <p> Research the NYC Clean Heat program to answer the following questions about the data:
-
-  <ul>
-    <li> What is the NYC Clean Heat program?</li>
-    <li> What are No. 4 and No. 6 fuels?</li>
-    <li> What is the DEP Boiler Registration and what is it meant to monitor?</li>
-    <li> What is the Greaner Greater Buildings plan?</li>
-    <li> How can buildings convert to clean heating fuels?</li>
-
-  </ul>
-
-
-
-<p><b>Grading criteria:</b>
-<ul>
-  <li> Group gathers and reports on facts and data to answer the above questions.
-  <li> Group cites sources in support of their findings.
-  </ul>
-
-  <p> You can share a Google Doc or you can use a collaboration tool for this project like <a href="https://miro.com/" target=blank>Miro</a> or <a href="https://padlet.com/" target=blank>Padlet</a>. Both have a free plan option that should be enough for the purpose of this project.
-    <p> <b>Submission: </b> Submit a single .pdf summarizing your findings and cite your sources. Write a full report in essay form, not a disconnected list of answers to be above questions. 
- This will be a group submission (one submission per team).
-  </p>
-
-
-
-<hr>
-<li > <b>HC 4: NYC Emissions
-</b> <b style="float:right">Due Date: 20 September </b>  <br>
-
-  <p>
-    The vast majority of NYC’s greenhouse gas emissions come from our buildings. Many buildings rely on fossil fuels for heating, cooling, and cooking, and have energy inefficient appliances or windows that cause higher emissions.
-    <br>With your group, browse the web to gather data on this topic.
-
-
-    <p><b>Grading criteria:</b>
-    <ul>
-      <li> Group gathers and reports on facts and data about emissions in NYC as well as data specific to their borough.
-      <li> Group cites sources in support of their findings.
-      </ul>
-
-<p> You can share a Google Doc or you can use a collaboration tool for this project like Miro or Padlet. Both have a free plan option that should be enough for the purpose of this project.
-
-<p> <b>Submission: </b> Submit a single .pdf summarizing your findings and cite your sources. This is a group submission (one submission per team).
-
-
-
-
-	<hr>
-
-
-		<li > <b>HC 5: Discussion
-	</b> <b style="float:right">Due Date: 29 September IN LAB</b>  <br>
-
-<p>In this meeting we will discuss your findings from <tt>HC 2</tt>, <tt>HC 3</tt> and <tt>HC 4</tt>. Each team will summarize the overall discussion of the borough and how that relates to the individual neighborhoods.
-		<p>No submission necessary. This assignment will be graded based on your group's contribution to the discussion.
-    <p>
-      <br><b>Grading criteria:</b>
-      <ul>
-        <li> Group summarizes their findings from HC2.
-        <li> Group summarizes their findings from HC3.
-        <li> Group summarizes their findings from HC4.
-        <li> Group provides satisfactory summary in 5 minutes. Please coordinate with your group to do some preliminary planning for your presentation.
-      </ul>
-		</p>
-</p>
-
-
-
-  <hr>
-  <li > <b>HC 6:  Highlighted Map
-  </b> <b style="float:right">Due Date: 4 October</b>  <br>
-
-
-
-    <p><img src="../images/hunterSatMap.png" height = 300>
-    <img src="../images/hiLight.png" height = 300>
-    
-    <p>
-    For this program, we will create a highlighted map centered around your neighborhood, with a boxed region around a marker at the center of the neighborhood at full brightness, the region outside that box at 50% brightness.
-    
-    <p> To do this:
-    <ul>
-      <li> Create a .png file of a satellite map, centered on your neighborhood (Google maps works well for this, but you can use any mapping site to create your base map).
-      <li> Write a Python program that reads in an image and saves the image to another file.  Run your program to make sure the reading and saving of an image works.
-      <li> Set the upper region of the image to 50% brightness (hint:  uses slices and see example in Lecture 3 and 4).  Run your program to make sure it has dimmed up the upper region and adjust to get the correct dimenssions.
-      <li> Set the lower region of the image to 50% brightness (hint:  think about what negative numbers mean as indices).  Run your program and fix any bugs.
-      <li> Next, dim the side regions (hint:  think about what parts of the image have not been dimmed and change only those regions.)
-    </ul>
-    
-    <p> <b>Submission: </b> Submit your answer as a .pdf file (both code and image) to Gradescope.
-
-
-
-<hr>
-<p>
-  <li > <b>HC7:  Data Exploration
-  </b> <b style="float:right">Due Date: 13 October: IN LAB</b>  <br>
-
-  <p>For this assignment, we will analyze our dataset <a href="https://drive.google.com/file/d/1-S25sd7nDUn-HRjhALuC-ERPZsFQ3fFj/view?usp=sharing" target=blank>clean_heat_dataset.csv</a>. This assignment will span over the course of two weeks (two meetings).
-  <p> <b>During the first meeting</b>, on 13 October, look over <a href="https://colab.research.google.com/drive/1QW9EuMv7f8S62Hh0SLrOEmIiUtJeuxod?usp=sharing" target="_blank"><b>this data-exploration document</b></a>, it will illustrate how to explore, clean and visualize the data.
-  <br>This is an interactive computational environment (an Jupyter, a.k.a. ipython, notebook hosted in Google Colab). To execute each cell, one at a time, click on the play button or, with the cell highlighted, press Shift+Enter on your keyboard. The order in which you execute the cells matters. Start at the top, and work your way down the notebook, discuss it and make sure you understand it. Then make a plan together about what you will look for in the data and how.
-  <p><b>Come to our next meeting meeting</b>, on 20 October, with a clear plan, perhaps even a <i>working-in-progress program</i> (this is not a typo, it means a working program even if not final) and you will work as a team to refine your plan ( or your program) and produce the group analysis for the borough combining your ideas.
-  <p> You will discuss your plan during the next meeting.
-  <p> There are two parts to this analysis:
-    <ul>
-      <li>Group analysis of the borough and how it compares to others
-      <li>Add some analysis of your individual neighborhoods
-
-
-      </ul>
-
-
-    <p><b>Grading Criteria</b>:
-      <ul>
-        <li>Analyzes the data to provide statistics for the neighborhood/borough and discusses these observations in writing within the notebook. If you observe anything that seems anomalous don't hesitate to report so, data is never perfect! (meets: 2, exceeds:3)
-        <li>Makes observations that go further what may be simply observed by using the <tt>describe()</tt> function. (meets:2, exceeds: 3)
-        <li>Provides and discusses visualization for the data observed (at least 3 different kinds of plots and at least 6 plots total, more is better). These can be any type of plot, use what makes sense for your observations. Play and have fun with the data!!! Include the images and don't forget to discuss them!!! (meets:2, exceeds: 4)
-        <li><b>Extra Credit:</b> Makes a connection between data analysis and observations made in HC2/HC3/HC4, in a paragraph and visually supported with plot(s). (5 points)
-      </ul>
-
-
-    <hr>
-  <p>
-    <li > <b>HC8  Finalize Data Analysis
-    </b> <b style="float:right">Due Date: 25 October</b>  <br>
-    <p> During our meeting on October 20, discuss your analysis with your teammates, and decide on a plan for the group neighborhood analysis, keeping in mind the grading criteria below as a guide.
-      <br> Make a plan on how to split the work for the group analyisis and how you will consolidate it into a unique submission.
-      <br>
-
-
-      <p> There will be one submission for each group, including:
-        <ul>
-          <li>Group analysis of the borough and how it compares to others
-          <li>Some analysis of the individual neighborhoods
-          </ul>
-    
-          <p><b>Grading Criteria (same for both submissions)</b>:
-            <ul>
-              <li>Analyzes the data to provide statistics for the neighborhood/borough and discusses these observations in writing (something like what you saw in the <a href="../files/HC7-HC8.html" target="_blank">data-analysis document</a>) but you can simply report and discuss the stats, don't need to include the code. If you observe anything that seems anomalous don't hesitate to report so, data is never perfect! (meets: 2, exceeds:3)
-              <li>Makes observations that go further what may be simply observed by using the <tt>describe()</tt> function. (meets:2, exceeds: 3)
-              <li>Provides and discusses visualization for the data observed (at least 3 plots, more is better). These can be any type of plot, use what makes sense for your observations. Play and have fun with the data!!! Include the images and don't forget to discuss them!!! (meets:2, exceeds: 4)
-              <li><b>Extra Credit:</b> Makes a connection between data analysis and observations made in HC2/HC3, in a paragraph and visually supported with plot(s). (5 points)
-            </ul>
-    
-            <p><b>What to submit</b>:
-              <br>If you use Google Colab, you can print/save as pdf. and submit. Make sure every result (statistics and plots) is supported by a paragraph describing it. The paragraph should not only describe what you are doing (the code), but most importantly what you observe.
-              <br>If you write a python program (.py) submit two files:
-              <ul>
-                <li>A report of your analysis including statistics and images supported by a discussion of waht you observed. Submit as a <tt>.pdf</tt> file.
-                <li>A copy of your program as a <tt>.pdf</tt> file.
-              </ul>
-    
-    <hr>
-    
-    <p>
-      <li > <b>HC9  Class Discussion and Feedback for Data Analysis + Revisions
-      </b> <b style="float:right">Due Date: 3 November</b>  <br>
-
-
-      <p> <b>In class on October 29 each team will briefly present their data analysis</b> and other teams will provide feedback.
-        <br> Each team will then <b>resubmit a revised data analysis</b> that addresses the feedback.
-
-
-  <hr>
-  <li > <b>HC 10:  Neighborhood  Map</b> <b style="float:right">Due Date: 10 November</b>  <br>
-
-
-    <p> Using <tt>folium</tt>, generate an html map with markers for open restaurants applications in your neighborhood.
-      <p><iframe src="../files/manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
-    <p> To do so:
-    <ul>
-      <li> Create a neighborhood dataframe by selecting only the rows for your neighborhood
-      <li> Create a map object
-      <li> Loop for each row in the neighborhood dataframe to
-        <ul>
-          <li>create a marker for that latitude and longitude
-            <li> add the marker to the map
-        </ul>
-      <li>Save the map to an html file
-    </ul>
-    <p> <b>Hint:</b> You can mirror the program in Lab9 that creates a map with markers for CUNY campuses.
-    <p> <b>Note:</b> If your neighborhood has too many listings and the map is excessively crowded, you can select a random subset. Don't remove too many, however, so that the map remains representative of the data.
-    
-    <p> Submit a screenshot of your map and your code as a .pdf file.
-
-  <hr>
-
-
-  <li > <b>HC 11:  Webpage</b> <b style="float:right">Due Date: 17 November</b>  <br>
-
-  <br>
-
-    <p> We are going to use <a href="https://pages.github.com/" target="blank">github to make webpages</a> for your projects.  There will be only one site for each project, but we want everyone to set up their own neighborhood page the project webpage will link to.
-    
-    <p>Create a github page for your neighborhood.
-    <ol>
-      <li> If you haven't done so already, set up a repository for your neighborhood project (see the getting started tutorials from <a href="lab6.html">Lab 6</a> on how to set up a repository).
-      <li> Follow through the <a href="https://pages.github.com/" target="blank">options for setting up a page</a> for your project (right under the "Ready to get started?" choose 'Project site').
-      <li> Include on your neighborhood page:
-        <ul>
-          <li> the name of the neighborhood,
-          <li> the highlighted map from HC6 as an image
-          <li> the basic demographics & statistics from  HC 2
-          <li> one paragraph summarizing your observations from HC3
-          <li> a summary of your results from HC7 and HC8 along with plot images, and
-          <li> the map from HC9 (embedded as iframe -- see below)
-    </ol>
-    
-    <p>To embed an html as an <tt>iframe</tt> use the following html tag (assuming your map is called <tt>manhattan.html</tt> and it lives in the same directory as the page you want to embed it into)
-    <br>
-    <pre>
-&lt;iframe src="manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
-    </pre>
-    <br>If you are using markdown, you can insert html code by surrounding it with <tt>dl</tt> tags as in:
-    <pre>
-&lt;dl&gt;
-&lt;iframe src="manhattan.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/dl&gt;
-    </pre>
-    <p>  Submit a .pdf file that contains the URL of your project on github (web address) and a screenshot of your project.
- <p><b> Useful links:</b>
-   <ul>
-     <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" > Markdown Cheatsheet</a>
-     <li>If you prefer to watch a video tutorial instead of following the github tutorial page linked above, <a href="https://www.google.com/search?q=github+pages+official+video+tutorial&rlz=1C5CHFA_enUS824US824&sxsrf=ALeKk03v20_y574_y7P6Bg5t9ZAOiUTFqQ:1604521169616&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjpoeWS2-nsAhUyU98KHXCYCfQQ_AUoAXoECBcQAw&biw=1432&bih=672&dpr=2" target="blank">there are plenty, non-official, youtube videos</a> on how to set up your first Gihub webpage... choose the one you prefer to listen to.
-  </ul>
-
-  <hr>
-
-
-  <li > <b>HC 12: Draft Presentation and Project Webpage</b>
-    <b style="float:right">Due Date: 24 November</b>  <br>
-    <p> Generate a project webpage with a small introduction that includes the information in your slides, a brief summary of your borough overview (from HC2, HC3, HC8) and links to all neighborhood webpages.
-    <p> Submit the slides of your group presentation (<b>two slides</b>) as  a .pdf file.  Your slides should include who is on the team, the neighborhoods you looked at, a brief description/summary of the project and <b> a link to the project webpage</b> (your presentation must be 3-5 minutes).
-
-
-
-
-
-  <hr>
-
-  <li > <b>HC 13: Feedback Forms</b> <b style="float:right">Due Date: 8 December</b>  <br>
-
-
-    <p> During our meeting each team will share their project webpage and the rest of the class will provide constructive feedback for improvement.
-    <p> As per your Team Contract signed at the beginning of the semester, you will evaluate  each member of your team by filling out and submitting <a href = "../files/HCTeamPeerEvaluation.docx" target="blank">this form</a>. After you fill it out, submit the form as pdf.
-
-
-
-<hr>
-
-<li > <b>HC 14: Final Project Presentation</b> <b style="float:right">Due Date: 10 December -- IN LAB</b>  <br>
-
-  <p> Each team will present their project (5 minutes each, 2 slides), then we will break into groups and our visitors will join different groups where you will do a poster-like presentation using the project webpage to talk more about your project and individual contributions.
-
-
-
-<!--
-
-
-
-
-<p>
-<i>More to come...</i>
-
-
-
-
-
-
-
--->
 </ul>
 </div>
 
 
 
+	</tr>
+</table>
+
+
+</div>
 
 <div>
-<i style="float:right">(This file was last modified on 21 October 2021.)</i><br>
+<i style="float:right">(This file was last modified on 29 August 2022.)</i><br>
 </div>
-</body>
-</html>
