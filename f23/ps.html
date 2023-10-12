@@ -706,11 +706,11 @@ Maximum population:  2738175
 		<p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
 
 <!--problem 30-->
-      <li > <b>Due Date: October 25</b>  <b style="float:right">Reading:
-    	<a href="https://guides.github.com/activities/hello-world/">GitHub Guide</a></b><br>
+    <li > <b>Due Date: October 25</b>  <b style="float:right">Reading:
+    <a href="https://guides.github.com/activities/hello-world/">GitHub Guide</a></b><br>
 
 		<p>In <a href="lab6.html">Lab 6</a>, you created a GitHub account.  Submit a text file with the name of your account.	The grading script is expecting a file with the format:
-<pre style = "background-color:lavender;width:400px">#Name:  Your name
+		<pre style = "background-color:lavender;width:400px">#Name:  Your name
 #Date:  October 2023
 #Account name for my GitHub account
 
@@ -721,6 +721,32 @@ AccountNameGoesHere
 
 
 
+<a id="set7"></a>
+<hr>
+
+<!--problem 31-->
+	<li > <b>Due Date: October 26</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+
+    <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+		<ul>
+			<li> ask the user to specify the input file,
+			<li> ask the user to specify the output file,
+			<li> make a plot of the fraction of the total population that are children over time from the data in input file, and
+			<li> store the plot in the output file the user specified.
+		</ul>
+
+		<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Enter name of input file:  DHS_Daily_Report.csv
+Enter name of output file:  dhsPlot.png
+</pre>
+		<p> which produces an output:
+
+		<p><img src="../images/fraction_children_shelter.png" height = 300>
+
+
+		<p> <i>Note:  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Children".</i>
 
 </ol>
 </div>
