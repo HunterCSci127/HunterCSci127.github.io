@@ -68,25 +68,23 @@ Much of the data collected by city agencies is publicly available at
 </ul>
 
 <p>
-Click on the "View Data" button.  To keep the data set from being very large (and avoid some missing values in 2014), we are going filter the data to be all counts after January 1, 2017.  To do this:
+<b>Click on the "View Data" button.</b>  To keep the data set from being very large, we are going filter the data to be all counts after January 1, 2023.  To do this:
 <ul>
-	<li> Click on the "Filter" button.
-	<li> On the menu that pops us, click on "Add a New Filter Condition".
-	<li> Choose "Date of Census" but change the "is" to be "is after".
-	<li> Click in the box below and a calendar will pop up.  Highlight January 1, 2017.
-	<li> Click the check box to the left of the data.
-	<li> It will take a few seconds (it's a large file) but the rows on the left
-	will be filtered to be all counts after January 1, 2017.
+	<li> Go to the "Filters" section at the bottom of the screen
+	<li> In the "Select a column to filter" dropdown choose "Date of Census" but change the "is between" to be "is greater than"
+	<li> Click in the box to the right and a calendar will pop up.  Highlight January 1, 2023
+	<li> Press the "Apply" button at the bottom left of the screen.
+	<li> The rows in the data will be filtered to be all counts after January 1, 2023
 </ul>
 To download the file,
 <ul>
-	<li> Click on the "Export" button.
-	<li> Under "Download", choose "CSV".
-	<li> The download will begin automatically (files are usually stored in "Downloads" folder).
+	<li> Click on the "Export" button on the top right of the screen
+	<li> Select the "Download file" option and make sure the "Export Format" dropdown is set to CSV. Press the "Download" button
+	<li> The download will begin automatically (files are usually stored in "Downloads" folder)
 </ul>
 
 <p>
-Move your CSV file to the directory that you save your programs.  Open with Calc (the built-in spreadsheet program for Ubuntu Linux running on the lab machines), Excel, or your favorite spreadsheet program to make sure it downloaded correctly.  Look at the names of the columns since those will correspond to series we can plot.
+Move your CSV file to the directory that you save your programs.  Open with Calc (the built-in spreadsheet program for Ubuntu Linux running on the lab machines), Excel, or your favorite spreadsheet program to make sure it downloaded correctly. However, make sure you keep the file extension as <tt>.csv</tt> as we don't want any extra formatting in the file. Look at the names of the columns since those will correspond to series we can plot.
 
 <p> Now, we can write a (short) program to display daily counts:
 <pre style = "background-color:lavender;width:575px">
@@ -137,7 +135,7 @@ Note that everything indented below the <tt>def</tt> line is considered part of 
 
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name here
-#Date:  October 2017
+#Date:  October 2023
 #This program, uses functions, says hello to the world!
 
 def main():
