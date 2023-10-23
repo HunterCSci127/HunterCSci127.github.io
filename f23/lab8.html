@@ -156,26 +156,25 @@ print("The 10 worst offenders are:")
 print(tickets["Plate ID"].value_counts()[:10]) #Print out the dataframe
 </pre>
 
-<p>And run it on all tickets for the 20th precinct for January 2016 (14,000 tickets):
-<a href="../files/Parking_Violations_Jan_2016.csv">Parking_Violations_Jan_2016.csv</a>.
+<p>And run it on the <a href="../files/tickets.csv">tickets.csv</a> data
 
 <p>You should see output:
 <pre style = "background-color:lavender;width:750px">
-Enter CSV file name: Parking_Violations_Jan_2016.csv
+Enter CSV file name: tickets.csv
 The 10 worst offenders are:
-63044JM    52
-63277JM    46
-63540JM    42
-93503JT    36
-42816JM    35
-97223JE    35
-62150JM    35
-31420MG    32
-23246MA    31
-AP113R     30
-Name: Plate ID, dtype: int64
+Plate ID
+TOPHAT5    6
+GXP4564    4
+XBLD33     4
+T63FNW     4
+XANK43     3
+R12FGF     3
+TOPHAT9    3
+XP627S     3
+GN8063     3
+ZDH5639    3
+Name: count, dtype: int64
 </pre>
-<p>For just the month of January 2016, there were 9 cars that got more than a ticket a day.
 
 
 <h4>Binning Other Data</h4>
