@@ -927,6 +927,243 @@ Where "..." is replaced by your logical expression (see <a href="lab5.html">Lab 
 
 <p><i>Hint: See notes from Lecture 7 and <a href="lab8.html">Lab 8</a>.</i></p>
 
+
+
+<!--problem 39-->
+	<li > <b>Due Date: November 9</b>  <b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+		<p> Write a program that asks the user for a CSV of collision data (see note below about obtaining reported collisions from NYC OpenData).  Your program should then list the top three contributing factors for the primary vehichle of collisions ("CONTRIBUTING FACTOR VEHICLE 1") in the file.
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:500px">
+Enter CSV file name:  collisions.csv
+Top three contributing factors for collisions:
+CONTRIBUTING FACTOR VEHICLE 1
+Driver Inattention/Distraction    1127
+Unspecified                       1083
+Failure to Yield Right-of-Way      351
+Name: count, dtype: int64
+</pre>
+
+		<p> This assignment uses collision data collected and made publicly by
+		<a href="https://opendata.cityofnewyork.us/">New York City Open Data</a>, and can be found at:
+		<blockquote>
+			<a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95">https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95</a>.
+		</blockquote>
+		Since the files are quite large, use the "Filter" option and choose your birthday in 2022 and "Export" (in CSV format) all collisions for that day.  We will use this data set for future programs, so, instead of downloading the test files multiple times, save a copy for future use.
+
+		<p> <i>Hint: See <a href="lab8.html">Lab 8</a> for accessing and analyzing structured data.</a></i>
+
+<hr>
+
+<!--problem 40-->
+	<li > <b>Due Date: November 10</b>  <b style="float:right">Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b>
+
+		<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
+
+<pre>
+    triangle(t, length):
+    1.  If length > 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.     Call triangle with t and length/2.
+</pre>
+
+<p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
+<pre>
+    nestedTriangle(t, length):
+    1.  If length > 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.         Call nestedTriangle with t and length/2.
+</pre>
+
+		<p>A template program, <tt>nestingTrianges.py</tt>, is available
+		<a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/nestingTriangles.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the GitHub program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter edge length:  160
+</pre>
+		<p>which would produce:
+
+<p><img height=200 src="../images/nestedTriangles.png">
+
+<!--problem 41-->
+	<li > <b>Due Date: November 13</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> </b><br>
+
+
+		
+		<p> Write a function, <tt>computeFare()</tt>, that takes as two parameters: the zone and the ticket type, and returns the Long Island Railroad fare.
+		<ul>
+			<li> If the zone is 1 and the ticket type is "peak", the fare is 8.75.
+			<li> If the zone is 1 and the ticket type is "off-peak", the fare is 6.25.			
+			<li> If the zone is 2 or 3 and the ticket type is "peak", the fare is 10.25.
+			<li> If the zone is 2 or 3 and the ticket type is "off-peak", the fare is 7.50.			
+			<li> If the zone is 4 and the ticket type is "peak", the fare is 12.00.
+			<li> If the zone is 4 and the ticket type is "off-peak", the fare is 8.75.	
+			<li> If the zone is 5, 6, or 7 and the ticket type is "peak", the fare is 13.50.			
+			<li> If the zone is 5, 6, or 7 and the ticket type is "off-peak", the fare is 9.75.
+			<li> If the zone is greater than 8, return a negative number (since your calculator does not handle inputs that high).
+		</ul>
+		
+		<p>A template program, <tt>LIRRtransit.py</tt>, is available  
+		<a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/LIRRtransit.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the name of the function must match exactly (else, the scripts cannot find it). 
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter the number of zones: 4
+Enter the ticket type (peak/off-peak): off-peak
+The fare is 8.75
+</pre>
+		<p> And another:
+<pre style = "background-color:lavender;width:400px">
+Enter the number of zones: 6
+Enter the ticket type (peak/off-peak): peak
+The fare is 13.5
+</pre>		
+		
+		
+		<p><i>Hint:  See <a href="lab8.html">Lab 8</a>.</i>
+		
+<!--problem 42-->
+	<li > <b>Due Date: November 14</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/latest/getting_started.html">Folium Tutorial</a></b><br>
+
+		<p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for the main campus of Hunter College.  The HTML file your program creates should be called: <tt>nycMap.html</tt>
+
+		<p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+<!--problem 43-->
+	 <li > <b>Due Date: November 15</b>  
+	 <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/latest/getting_started.html">Folium Tutorial</a></b><br>
+
+		<p>
+		Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file. You can use the same dataset from Problem 39.
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter CSV file name:  collisions.csv
+Enter output file:  myMap.html
+</pre>
+		<p>which would produce the HTML file:
+
+		<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+		<p>(The demo above is for March 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
+		<tt>tiles="Cartodb Positron"</tt> when creating the map. Not necessary for full credit on Gradescope.)
+
+		<p> When running your program locally, you need to check that the "LATITUDE" and "LONGITUDE" values are non-empty. To do this, first we fill the empty values with zeros using the <tt>fillna(0)</tt> function. Then in our loop, we should only add markers to the map when the values are not zero. You can use <a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/mapcrash.py">this file</a> to get started.
+
+		<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
+
+
+<!--problem 44-->
+	<li > <b>Due Date: November 16</b>  
+	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Debugging/toctree.html">Chapter 3</a></b><br>
+
+		<p>The program,
+		<a href="https://github.com/stjohn/csci127/blob/master/errorsHex.py">errorsHex.py</a>, has lots of errors.  Fix the errors and submit the modified program.
+		<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
+	
+<!--problem 45-->
+	<li > <b>Due Date: November 17</b> 	
+	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://python-visualization.github.io/folium/latest/getting_started.html">Folium Tutorial</a></b><br>
+
+		<p> Fill in the following functions in a program that maps GIS data from NYC OpenData CSV files and marks the current location and closest point:
+		<ul>
+			<li> <tt>getData()</tt> that asks the user for the name of the CSV and returns a dataframe of the contents.
+			<li> <tt>getColumnNames()</tt> that asks the user for the exact name of the columns that contains the latitude and longitude and returns those values as a tuple.  Since the NYC OpenData files use different names for the columns in different datasets (such as "Lat", "Latitude", "LATITUDE" for latitude), the program asks for the name of the column as well as the name of the data file.
+			<li> <tt>getLocale()</tt> asks the user for latitude and longitude of the user's current location and returns those floating points numbers.
+			<li> <tt>computeDist()</tt> that computes the squared distance
+			between two points <tt>(x1,y1)</tt> and <tt>(x2,y2)</tt>:
+				<blockquote>
+					<tt>(x1-x2)<sup>2</sup> + (y1-y2)<sup>2</sup></tt>
+				</blockquote>
+		</ul>
+
+		<p> A sample run to find the closest CUNY campus to the Brooklyn Navy Yard:
+<pre style ="background-color:lavender;width:400px">
+Enter CSV file name: cunyLocations.csv
+Enter column name for latitude: Latitude
+Enter column name for longitude: Longitude
+Enter current latitude: 40.7021
+Enter current longitude: -73.9708
+Enter output file: closestCUNY.html
+</pre>
+		<p>which would produce the html file:
+
+		<p><iframe src="../images/closestCUNY.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+		<p>A template program, <tt>closestPoint.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127/blob/master/closestPoint.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+		<p><i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+<!--problem 46-->
+	<li > <b>Due Date: November 20</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b> <br>
+
+		<p>Fill in the missing functions:
+
+		<ul>
+			<li> <tt>average(region):</tt>  Takes a region of an image and
+     		returns the average red, green, and blue values across the region.
+     		<li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+     	</ul>
+
+ 		<p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+ 		(inspired by <a href="http://koalastothemax.com">koalas to the max</a>).
+
+ 		<p>For example, if you inputted our favorite image, you would see (left to right):
+
+ 		<p>
+ 		<img src="../images/refined1.png" width=150>
+  		<img src="../images/refined2.png" width=150>
+  		<img src="../images/refined3.png" width=150>
+  		<img src="../images/refined4.png" width=150>
+  		<img src="../images/refined5.png" width=150>
+  		<img src="../images/refined6.png" width=150>
+  		<img src="../images/refined7.png" width=150>
+  		<img src="../images/refined8.png" width=150>
+
+  		<p> and finally:
+
+  		<p> <img src="../images/csBridge.png" width=400>
+
+		<p>A template program, <tt>averageImage.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127/blob/master/averageImage.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+		<p><i>Hint:  See notes from Lecture 8.</i>
+
+
+<!--problem 47-->
+	<li > <b>Due Date: November 21</b>  <b style="float:right">Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a></b><br>
+
+		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 100 times.  Each "walk" is 10 steps forward and the turtle can turn 0,1,2,...,359 degrees (chosen randomly) at the beginning of each walk.
+
+		<p> A sample run of your program:
+<p> <img src="../images/randomWalk.png" height=200>
+
+<!--problem 48-->
+	<li > <b>Due Date: November 27</b>  <b style="float:right">Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a></b><br>
+
+		<p> Write a program that asks the user to enter a string. If the user enters an empty string, your program should continue prompting the user for a new string until they enter a non-empty string. Your program should then print out the string entered.
+
+		<p> A sample run of your program:
+<pre style = "background-color:lavender;width:400px">
+Enter a non-empty string:
+That was empty.  Try again.
+Enter a non-empty string:
+That was empty.  Try again.
+Enter a non-empty string: Mihi cura futuri
+You entered: Mihi cura futuri
+</pre>
 </ol>
 </div>
 
