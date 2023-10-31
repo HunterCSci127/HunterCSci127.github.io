@@ -378,21 +378,30 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 	<tr>
 		<td rowspan=2><b>#9</b></td>
 		<td><b>Lecture:</b><br> October 31 </td>
-		<td>Lecture topics<br><br>
+		<td>Programming with Functions, Top-down Design; <br>
+		Mapping GIS Data (Folium); <br>
+		Random Number Generation; <br>
+		Indefinite Loops<br><br>
+		</td>
+	<td><a href="http://pythontutor.com/iframe-embed.html#code=%23Sisters%20Example%20from%20Spring%202015,%20%233%0A%0Adef%20prob4%28amy,%20beth%29%3A%0A%20%20%20%20if%20amy%20%3E%204%3A%0A%20%20%20%20%20%20%20%20print%28%22Easy%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20-1%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Complex%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20helper%28amy,beth%29%0A%20%20%20%20return%28kate%29%0A%0Adef%20helper%28meg,jo%29%3A%0A%20%20%20%20s%20%3D%20%22%22%0A%20%20%20%20for%20j%20in%20range%28meg%29%3A%0A%20%20%20%20%20%20%20%20print%28j,%20%22%3A%20%22,%20jo%5Bj%5D%29%0A%20%20%20%20%20%20%20%20if%20j%20%25%202%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20s%20%3D%20s%20%2B%20jo%5Bj%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Building%20s%3A%22,%20s%29%0A%20%20%20%20return%28s%29%0A%20%20%20%20%20%0Ar%20%3D%20prob4%284,%22city%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%0A%0Ar%20%3D%20prob4%282,%22university%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%09%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Sisters Example</a>, <br>
+
+		<a href="http://pythontutor.com/visualize.html#code=%23CSci%20127%20Teaching%20Staff%0A%23February%202019%0A%23A%20program%20that%20uses%20functions%20to%20print%20out%20months.%0A%23Modified%20by%3A%20%20ADD%20YOUR%20NAME%20HERE%0A%0Adef%20num2string%28num%29%3A%0A%20%20%20%20%20%22%22%22%0A%20%20%20%20%20Takes%20as%20input%20a%20number,%20num,%20and%0A%20%20%20%20%20returns%20the%20corresponding%20name%20as%20a%20string.%0A%20%20%20%20%20Examples%3A%20num2string%280%29%20returns%20%22zero%22,%20num2string%281%29%20returns%20%22one%22%0A%20%20%20%20%20Assumes%20that%20input%20is%20an%20integer%20ranging%20from%200%20to%209%0A%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%0A%20%20%20%20%20numString%20%3D%20%22%22%0A%0A%20%20%20%20%20%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%0A%20%20%20%20%20%23%23%23%20FILL%20IN%20YOUR%20CODE%20HERE%20%20%20%20%20%20%23%23%23%0A%20%20%20%20%20%23%23%23%20Other%20than%20your%20name%20above,%20%23%23%23%0A%20%20%20%20%20%23%23%23%20this%20is%20the%20only%20section%20%20%20%20%23%23%23%0A%20%20%20%20%20%23%23%23%20you%20change%20in%20this%20program.%20%23%23%23%0A%20%20%20%20%20%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%0A%0A%20%20%20%20%20return%28numString%29%0A%0A%0A%0Adef%20main%28%29%3A%0A%20%20%20%20%20nums%20%3D%20input%28'Enter%20a%20multi-digit%20number%3A%20'%29%0A%20%20%20%20%20newStr%20%3D%20%22%22%0A%20%20%20%20%20for%20n%20in%20nums%3A%0A%20%20%20%20%20%20%20%20%20word%20%3D%20num2string%28int%28n%29%29%0A%20%20%20%20%20%20%20%20%20newStr%20%3D%20newStr%20%2B%20%22%20%22%20%2B%20word%0A%20%20%20%20%20msg%20%3D%20'In%20words,%20your%20number%20is%3A'%20%2B%20newStr%20%2B%20%22.%22%0A%20%20%20%20%20print%28msg%29%20%20%20%0A%0A%0A%23Allow%20script%20to%20be%20run%20directly%3A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20%20main%28%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22111%22%5D&textReferences=false">num2string example</a>,<br>
+    
+			<a href="files/F23_Lecture09.pdf">Lecture Notes</a>
 		</td>
 		<td>
-			<a href="">Lecture Notes</a>
 		</td>
-		<td>
-		</td>
-		<td rowspan=2>Readings</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/toctree.html">Chapter 6</a>, <br>
+		<a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium tutorial</a></td>
 
 	</tr>
 	<tr>
 		<td><b>Lab, Quiz & Code Review:</b></td>
-		<td>Lab topics</td>
+		<td>Folium/leaflet.js (mapping CUNY locations);
+		Finding errors;<br>
+		Regular expressions (command line)</td>
 		<td><a href="f23/lab9.html" target="_blank"><p style="color:#FF0000";><b>Lab 9</b></p></a></td>
-		<td><a href="f23/quizzes.html">Quiz, code review topics</a>
+		<td><a href="f23/quizzes.html">Top-down design, value_counts</a>
 		</td>
 	</tr>
 	<tr>
