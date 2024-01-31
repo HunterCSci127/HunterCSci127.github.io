@@ -1,0 +1,566 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>CSCI 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2024</title>
+    <link type="text/css" rel="stylesheet" href="127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2><br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2024<br><br>
+</h2>
+</div>
+
+
+
+
+<div>
+
+This course presents an overview of computer science (CS) with an emphasis on problem-solving and computational thinking through 'coding': computer programming for beginners. Other topics include: organization of hardware, software, and how information is structured on contemporary computing devices. This course is pre-requisite to several introductory core courses in the CS Major. The course is also required for the CS minor. MATH 12500 or higher is strongly recommended as a co-req for intended Majors.
+<br>
+<br>
+<p>
+<b>Course Designers:</b>
+<ul>
+	<li> Dr. Katherine St. John
+	<li> Dr. William Sakas
+  <li> Prof. Eric Schweitzer
+</ul>
+
+<p>
+<b>Course Instructors:</b>
+<ul>
+	<li> Prof. Melissa Lynch</a> (Course Instructor and Coordinator)</li>
+</ul>
+<p>
+<p>
+  <p><b>COURSE STRUCTURE:</b>
+    <p> Each week we have:
+    <ul>
+    	<li> <b><u>In-person</u> Lecture:  Tuesday 10:00-11:15am </b> 118 Hunter North (Ground floor of the North Building)
+
+      <li> <b>Online Lab</b> (asynchronous, see weekly schedule below)
+
+      <li> <b><u>In-person</u> Quizzes</b> Lab 1001G Hunter North (10th floor of the North Building)-- <b><a href="https://hunter-cuny.campus.eab.com/pal/34ufgGQT4s">by appointment</a></b>
+
+      <li> <b><u>In-person</u> weekly oral assessment (Code Review)</b> Lab 1001G Hunter North (10th floor of the North Building)-- <b><a href="https://hunter-cuny.campus.eab.com/pal/heTKn65eu4">by appointment</a></b>
+      <li> <b> <a href = "s24/ps.html">Programming Assignments</a></b>
+    </ul>
+  <br><b>This is a HYBRID course </b> which means that, in place of a second weekly meeting, <b>you are responsible for independently reading the weekly Lab</b> found in the "Handouts" column in the Course Outline below.
+  <br>Starting on February 14, <b> there are programming assignments due at 6 PM every day</b>. <a href = "s24/ps.html">Programming Assignments</a> are directly related to Labs and Lectures. 
+
+  <br>Lecture notes will also be posted weekly in the "Handouts" column in Course Outline below.
+
+
+  <a id="tt"></a>
+  <p> <b>No late assignment will be accepted.</b>
+    Submission is open at least <b>2 weeks before the due date.</b>
+    <br>You should work on programming assignment well ahead of the due dates.
+    <br>Working on assignments the day they are due will increase the chance you will miss the deadline.
+<p>
+
+<b>Help: Peer-Mentor Tutoring.</b> Undergraduate Teaching Assistants (UTAs) are available to help:
+<h4><a href="https://hunter-cuny.campus.eab.com/pal/7s9Lfi1CH3">Click here to make a tutoring appointment!</a></h4>
+<ul>
+	<li> Tutoring: Monday-Friday, 11:30am to 5:30pm in <b>Lab 1001G, 10th floor of the North Building.</b>
+  <li> <a href="https://piazza.com/hunter.cuny/Spring2024/csci127/home">Piazza</a> Discussion Board
+</ul>
+</div>
+
+
+<div>
+<h3>Useful Links:</h3>
+<ul>
+	<li> <a href = "s24/syl.html">Syllabus</a>
+	<li> <a href = "s24/ps.html">Programming Assignments</a>
+	<li> <a href = "s24/quizzes.html">Quiz Topics and Deadlines</a>
+  <li> <a href = "files/ASCIITable.pdf">ASCII Table</a>
+
+  <a id="reading"></a>
+	<li> <b>Book & tutorial pages</b>:
+	<ul>
+		<li> Python: <a href="https://runestone.academy/ns/books/published/thinkcspy/index.html" target="_blank">How to Think Like a Computer Scientist</a> by Miller <em>et al</em>.
+		<li> Logical Circuits:  <a href="http://www.cburch.com/books/logic/index.html" target="_blank">Burch's Logic & Circuits</a>,
+		<a href="http://www.explainthatstuff.com/logicgates.html" target="_blank">Explain Logic Gates</a>
+    <li> Machine Language: <a href="https://inst.eecs.berkeley.edu/~cs61c/resources/MIPS_Green_Sheet.pdf" target="_blank">MIPS Green Sheet</a>,
+		<a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats" target="_blank">MIPS Wikibooks</a>
+		<li> C++:  <a href="http://www.cplusplus.com/files/tutorial.pdf" target="_blank">Cplusplus Tutorial</a>,
+		<a href="https://www.tutorialspoint.com/cplusplus/index.htm" target="_blank">C++ Tutorials Point</a>,
+		<a href="https://rooksguide.files.wordpress.com/2013/12/rooks-guide-isbn-version.pdf" target="_blank">The Rook's Guide to C++</a>
+	</ul>
+
+  <li> Installation guides:
+
+ 	<ul>
+ 		<li> <a href="https://okunhardt.github.io/documents/Installing_Python_on_Windows.pdf" target="_blank"> Installing Python on Windows</a>
+ 		<li> <a href="https://okunhardt.github.io/documents/Installing_Python_on_macOS.pdf" target="_blank"> Installing Python on macOS</a>
+ 		<li> <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf" target="_blank"> Installing the Windows Subsystem for Linux</a>
+ 	</ul>
+
+</ul>
+</div>
+
+<div>
+<h3>Course Outline: </h3>
+
+<table class="handouts" border="1">
+	<tr>
+		<th style="text-align: left">&nbsp;<b>Week:</b></th>
+		<th style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th style="text-align: left"><b>Topics:</b></th>
+		<th style="text-align: left"><b>Handouts:</b></th>
+		<th style="text-align: left"><b>Quiz & Code Review:</b></th>
+		<th style="text-align: left"><b>Reading:</b></th>
+
+	</tr>
+	<tr>
+		<td rowspan=2><b>#1</b></td>
+	    <!--lecture 1-->
+		<td><b>Lecture:</b><br>January 30</td>
+		<td>Syllabus & Class Policies, Introductions,<br>
+			Introduction to Python: definite loops, simple output, primitive data types, overview of objects & modules;<br>
+			What is an algorithm?<br><br>
+		</td>
+		<td><a href="s24/syl.html" target="_blank">Syllabus</a>,<br>
+		<a href="s24/ps.html" target="_blank">Programming Assignments</a>, <br>
+		<a href="http://www.pythontutor.com/visualize.html#code=%23Name%3A%20%20Thomas%20Hunter%0A%23Date%3A%20%20February%201,%202017%0A%23This%20program%20prints%3A%20%20Hello,%20World!%0A%0Aprint%28%22Hello,%20World!%22%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">Hello, World</a>, <br>
+		<a href="https://trinket.io/python/88a94dfc75" target="_blank">Hexagon example</a>, <br>
+		<a href="https://trinket.io/python/a3bede6db8" target="_blank">Fancier hexagon</a>, <br>
+	 <a href="files/S24_Lecture01.pdf" target="_blank">Lecture Notes</a></td>
+		<td></td>
+		<td rowspan=2>Think CS:  <a href= "https://runestone.academy/ns/books/published/thinkcspy/GeneralIntro/toctree.html" target="_blank">Chapter 1</a> &
+		<a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a></td>
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>Getting started with Python & IDLE; <br> Using modules and definite loops
+		<td><a href="s24/lab1.html" target="_blank"><p style="color:#FF0000";><b>Lab 1</b></p></a></td>
+		<td>
+		<a href="s24/quizzes.html" target="_blank">Quiz topics</a></td>
+		</td>
+	</tr>
+
+<!--lecture 2-->
+	<tr>
+		<td rowspan=2><b>#2</b></td>
+		<td><b>Lecture:</b><br> February 6 </td>
+		<td>Strings & Lists:  looping through strings, console I/O, ASCII representation<br><br>
+		</td>
+		<td>
+			<a href="http://pythontutor.com/visualize.html#code=%23Predict%20what%20will%20be%20printed%3A%0A%0Afor%20num%20in%20%5B2,4,6,8,10%5D%3A%0A%20%20%20%20print%28num%29%0A%20%20%20%20%0Asum%20%3D%200%0Afor%20x%20in%20range%280,12,2%29%3A%0A%20%20%20%20print%28x%29%0A%20%20%20%20sum%20%3D%20sum%20%2B%20x%0A%0Aprint%28sum%29%0A%0Afor%20c%20in%20%22ABCD%22%3A%0A%20%20%20%20print%28c%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">for-loop examples</a>,<br>
+			<a href="http://pythontutor.com/visualize.html#code=mess%20%3D%20input%28'Please%20enter%20a%20message%3A'%29%0Aprint%28%22You%20entered%22,%20mess%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">input() example</a>,<br>
+			<a href="files/F23_Lecture02.pdf" target="_blank">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> &
+		<a href="https://runestone.academy/ns/books/published//thinkcspy/Debugging/toctree.html">Chapter 3</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>String methods; Problem solving and the design process (simple parsing and translating)</td>
+		<td><a href="f23/lab2.html" target="_blank"><p style="color:#FF0000";><b>Lab 2</b></p></a></td>
+		<td><a href="f23/quizzes.html" target="_blank">Turtles & Loops</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+<!--lecture 3-->
+	<tr>
+		<td rowspan=2><b>#3</b></td>
+		<td><b>Lecture:</b><br> February 13 </td>
+		<td>Arithmetic; Indexing  & Slicing; Colors, Hexadecimal notation;<br><br>
+		</td>
+		<td>
+			<a href="http://www.pythontutor.com/visualize.html#code=for%20d%20in%20range%2810,%200,%20-1%29%3A%0A%20%20%20%20print%28d%29%0Aprint%28%22Blast%20off!%22%29%0A%0Afor%20num%20in%20range%285,8%29%3A%0A%20%20%20%20print%28num,%202*num%29%0A%20%20%20%20%0As%20%3D%20%22City%20University%20of%20New%20York%22%0Aprint%28s%5B3%5D,%20s%5B0%3A3%5D,%20s%5B%3A3%5D%29%0Aprint%28s%5B5%3A8%5D,%20s%5B-1%5D%29%0A%0Anames%20%3D%20%5B%22Eleanor%22,%20%22Anna%22,%20%22Alice%22,%20%22Edith%22%5D%0Afor%20n%20in%20names%3A%0A%20%20%20%20print%28n%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Slicing Challenges</a>, <br>
+			<a href="https://trinket.io/python/8e9edc0a1b?runMode=console">Color Challenges</a>, <br/>
+			<a href="files/F23_Lecture03.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.11</a> &
+		<a href="https://runestone.academy/ns/books/published//thinkcspy/Files/toctree.html">Chapter 11</a>, <br>
+		<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Numpy tutorial (DataCamp)</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>Arrays and images in <a href="http://www.numpy.org">numpy</a>, hexadecimal representation of colors (image processing)</td>
+		<td><a href="f23/lab3.html" target="_blank"><p style="color:#FF0000";><b>Lab 3</b></p></a></td>
+		<td><a href="f23/quizzes.html">Strings, Loops and Unix</a>
+		</td>
+	</tr>
+
+	<tr>
+    <td>Monday, February 19</td>
+    <td colspan = 5><span class="announcement">President's Day -- No Tutoring/Quizzes/Code Reviews available.</span></td>
+  </tr>
+<!--lecture 4-->
+	<tr>
+		<td rowspan=2><b>#4</b></td>
+		<td><b>Lecture:</b><br> February 20 </td>
+		<td>More on Lists & Arrays; Images; Decisions;<br><br>
+		</td>
+		<td>
+			<a href="files/F23_Lecture04.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Selection/toctree.html">Chapter 7</a> & <a href="https://runestone.academy/ns/books/published//thinkcspy/Files/toctree.html">Chapter 11</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>Programming with decisions & files (flood maps)</td>
+		<td><a href="f23/lab4.html" target="_blank"><p style="color:#FF0000";><b>Lab 4</b></p></a></td>
+		<td><a href="f23/quizzes.html">Colors, Hex, and Unix</a>
+		</td>
+	</tr>
+
+
+  <!--lecture 5-->
+	<tr>
+		<td rowspan=2><b>#5</b></td>
+		<td><b>Lecture:</b><br> February 27 </td>
+		<td>Logical Expressions, Circuits, Binary Numbers;<br><br>
+		</td>
+		<td>
+			    <a href="https://circuitverse.org/users/31314/projects/basic-gates-9c028c7d-6e35-43cf-b9a3-b66f499c38ce" target="_blank">Basic Gates</a>, <br>
+		<a href="https://circuitverse.org/users/31314/projects/circuit-challenge-1" target="_blank">Circuit Challenge1</a>,<br>
+    <a href="https://circuitverse.org/users/31314/projects/circuit-challenge-2" target="_blank">Circuit Challenge2</a>,<br>
+			<a href="files/F23_Lecture05.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Selection/toctree.html">Chapter 7</a>, <br>
+		<a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a>,
+		<a href="http://www.explainthatstuff.com/logicgates.html">Explain Logic Gates</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>More on Decisions (snow pack);<br>
+		Circuits & Logical Expressions</td>
+		<td><a href="f23/lab5.html" target="_blank"><p style="color:#FF0000";><b>Lab 5</b></p></a></td>
+		<td><a href="f23/quizzes.html">Images and Decisions</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+	<!--lecture 6-->
+	<tr>
+		<td rowspan=2><b>#6</b></td>
+		<td><b>Lecture:</b><br> March 5 </td>
+		<td>Cropping images; Accessing formatted data;<br><br>
+		</td>
+		<td>
+			<a href="https://replit.com/@MelissaLynch/starsCSCI127#main.py">Stars data example</a>,<br>
+			<a href="files/F23_Lecture06.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/toctree.html">Chapter 6</a>, <br>
+		<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-minutes to Pandas Tutorial</a>, <br>
+		<a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas Tutorial</a>, <br>
+		<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td> CSV files via <a href="https://pandas.pydata.org"/>pandas</a> (population change); <br>
+		Shell Scripts, GitHub </td>
+		<td><a href="f23/lab6.html" target="_blank"><p style="color:#FF0000";><b>Lab 6</b></p></a></td>
+		<td><a href="f23/quizzes.html">Circuits & Logical Expressions</a>
+		</td>
+	</tr>
+
+
+  <!--lecture 7-->
+	<tr>
+		<td rowspan=2><b>#7</b></td>
+		<td><b>Lecture:</b><br> March 12 </td>
+		<td>Functions; NYC OpenData;
+		</td>
+		<td>
+				<a href="http://pythontutor.com/iframe-embed.html#code=def+prob4()%3A%0A++++verse+%3D+%22jam+tomorrow+and+jam+yesterday,%22%0A++++print(%22The+rule+is,%22)%0A++++c+%3D+mystery(verse)%0A++++w+%3D+enigma(verse,c)%0A++++print(c,w)%0Adef+mystery(v)%3A%0A++++print(v)%0A++++c+%3D+v.count(%22jam%22)%0A++++return(c)%0Adef+enigma(v,c)%3A%0A++++print(%22but+never%22,+v%5B-1%5D)%0A++++for+i+in+range(c)%3A%0A++++++++print(%22jam%22)%0A++++return(%22day.%22)%0Aprob4()&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&rawInputLstJSON=%5B%5D&curInstr=0&codeDivWidth=350&codeDivHeight=400">Jam (Python Tutor),<br>
+			<a href="https://replit.com/@MelissaLynch/Lecture07CSCI127#main.py">Lecture slip examples</a>, <br>
+			<a href="files/F23_Lecture07.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2><a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/toctree.html">Chapter 6</a>, <br>
+		<a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-minutes to Pandas Tutorial</a>, <br>
+		<a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas Tutorial</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>OpenData NYC (shelter data);
+		Using <tt>main()</tt> functions; <br>
+		Python from the command line</td>
+		<td><a href="f23/lab7.html" target="_blank"><p style="color:#FF0000";><b>Lab 7</b></p></a></td>
+		<td><a href="f23/quizzes.html">Using the pandas library</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+  <!--lecture 8-->
+	<tr>
+		<td rowspan=2><b>#8</b></td>
+		<td><b>Lecture:</b><br> March 19 </td>
+		<td>More Functions & Parameters;<br><br>
+		</td>
+		<td>
+			<a href="https://github.com/mtlynch3/csci127/tree/main/lecture08">Lecture 8 programs</a>, <br>
+			<a href="http://www.pythontutor.com/iframe-embed.html#code=%23Spring+2013+Final+Exam,+5%0A%0Adef+kuwae(+inLst+)%3A%0A++++tot+%3D+1%0A++++for+item+in+inLst%3A%0A++++++++tot+%3D+tot+*+item%0A++++return+tot%0A%0Adef+foo(+inLst+)%3A%0A++++if+(+inLst%5B-1%5D+%3E+inLst%5B0%5D+)%3A%0A++++++++return+kuwae(+inLst+)%0A++++else%3A%0A++++++++return+-1%0A++++++++%0Afoo(+%5B2,+4,+6,+8%5D+)%0A%0Afoo(+%5B4002,+328,+457,+1%5D+)%0A&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&rawInputLstJSON=%5B%5D&curInstr=0&codeDivWidth=350&codeDivHeight=400">List Example 1 (Python Tutor) <br></a>
+			<a href = "https://pythontutor.com/render.html#code=def%20add2%28num%29%3A%0A%20%20%20%20%23modify%20num%3B%20data%20type%20is%20number%20%28int/float%29%0A%20%20%20%20num%20%3D%20num%20%2B%202%0A%20%20%20%20return%20num%0Adef%20swap%28inList%29%3A%0A%20%20%20%20%23modify%20inList%3B%20data%20type%20is%20list%0A%20%20%20%20inList%5B0%5D,%20inList%5B-1%5D%20%3D%20inList%5B-1%5D,%20inList%5B0%5D%0A%20%20%20%20return%20inList%0A%0AinList1%20%3D%20%5B1,2,3,4%5D%0AinList2%20%3D%20swap%28inList1%29%0Aprint%28inList1,%20inList2%29%0A%0Ax%20%3D%205%0Ay%20%3D%20add2%28x%29%0Aprint%28x,y%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">List Example 2 (Python Tutor)</a>, <br>
+			<a href="files/F23_Lecture08.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/toctree.html">Chapter 6</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>Binning data (parking tickets);
+		Top-down design (herd of turtles);
+		<br></td>
+		<td><a href="f23/lab8.html" target="_blank"><p style="color:#FF0000";><b>Lab 8</b></p></a></td>
+		<td><a href="f23/quizzes.html">Review of Labs 1-7</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+  <!--lecture 9-->
+	<tr>
+		<td rowspan=2><b>#9</b></td>
+		<td><b>Lecture:</b><br> March 26 </td>
+		<td>Programming with Functions, Top-down Design; <br>
+		Mapping GIS Data (Folium); <br>
+		Random Number Generation; <br>
+		Indefinite Loops<br><br>
+		</td>
+	<td><a href="http://pythontutor.com/iframe-embed.html#code=%23Sisters%20Example%20from%20Spring%202015,%20%233%0A%0Adef%20prob4%28amy,%20beth%29%3A%0A%20%20%20%20if%20amy%20%3E%204%3A%0A%20%20%20%20%20%20%20%20print%28%22Easy%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20-1%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Complex%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20helper%28amy,beth%29%0A%20%20%20%20return%28kate%29%0A%0Adef%20helper%28meg,jo%29%3A%0A%20%20%20%20s%20%3D%20%22%22%0A%20%20%20%20for%20j%20in%20range%28meg%29%3A%0A%20%20%20%20%20%20%20%20print%28j,%20%22%3A%20%22,%20jo%5Bj%5D%29%0A%20%20%20%20%20%20%20%20if%20j%20%25%202%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20s%20%3D%20s%20%2B%20jo%5Bj%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Building%20s%3A%22,%20s%29%0A%20%20%20%20return%28s%29%0A%20%20%20%20%20%0Ar%20%3D%20prob4%284,%22city%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%0A%0Ar%20%3D%20prob4%282,%22university%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%09%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Sisters Example</a>, <br>
+
+		<a href="http://pythontutor.com/visualize.html#code=%23CSci%20127%20Teaching%20Staff%0A%23February%202019%0A%23A%20program%20that%20uses%20functions%20to%20print%20out%20months.%0A%23Modified%20by%3A%20%20ADD%20YOUR%20NAME%20HERE%0A%0Adef%20num2string%28num%29%3A%0A%20%20%20%20%20%22%22%22%0A%20%20%20%20%20Takes%20as%20input%20a%20number,%20num,%20and%0A%20%20%20%20%20returns%20the%20corresponding%20name%20as%20a%20string.%0A%20%20%20%20%20Examples%3A%20num2string%280%29%20returns%20%22zero%22,%20num2string%281%29%20returns%20%22one%22%0A%20%20%20%20%20Assumes%20that%20input%20is%20an%20integer%20ranging%20from%200%20to%209%0A%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%0A%20%20%20%20%20numString%20%3D%20%22%22%0A%0A%20%20%20%20%20%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%0A%20%20%20%20%20%23%23%23%20FILL%20IN%20YOUR%20CODE%20HERE%20%20%20%20%20%20%23%23%23%0A%20%20%20%20%20%23%23%23%20Other%20than%20your%20name%20above,%20%23%23%23%0A%20%20%20%20%20%23%23%23%20this%20is%20the%20only%20section%20%20%20%20%23%23%23%0A%20%20%20%20%20%23%23%23%20you%20change%20in%20this%20program.%20%23%23%23%0A%20%20%20%20%20%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%0A%0A%20%20%20%20%20return%28numString%29%0A%0A%0A%0Adef%20main%28%29%3A%0A%20%20%20%20%20nums%20%3D%20input%28'Enter%20a%20multi-digit%20number%3A%20'%29%0A%20%20%20%20%20newStr%20%3D%20%22%22%0A%20%20%20%20%20for%20n%20in%20nums%3A%0A%20%20%20%20%20%20%20%20%20word%20%3D%20num2string%28int%28n%29%29%0A%20%20%20%20%20%20%20%20%20newStr%20%3D%20newStr%20%2B%20%22%20%22%20%2B%20word%0A%20%20%20%20%20msg%20%3D%20'In%20words,%20your%20number%20is%3A'%20%2B%20newStr%20%2B%20%22.%22%0A%20%20%20%20%20print%28msg%29%20%20%20%0A%0A%0A%23Allow%20script%20to%20be%20run%20directly%3A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20%20main%28%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22111%22%5D&textReferences=false">num2string example</a>,<br>
+    
+			<a href="files/F23_Lecture09.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/toctree.html">Chapter 6</a>, <br>
+		<a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium tutorial</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>Folium/leaflet.js (mapping CUNY locations);
+		Finding errors;<br>
+		Regular expressions (command line)</td>
+		<td><a href="f23/lab9.html" target="_blank"><p style="color:#FF0000";><b>Lab 9</b></p></a></td>
+		<td><a href="f23/quizzes.html">Top-down design, value_counts</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+	<tr>
+    <td>Friday, March 29</td>
+    <td colspan = 5><span class="announcement">Good Friday -- No Tutoring/Quizzes/Code Reviews available.</span></td>
+  </tr>	
+
+	<!--lecture 10-->
+	<tr>
+		<td rowspan=2><b>#10</b></td>
+		<td><b>Lecture:</b><br> April 2 </td>
+		<td>Indefinite Loops; Simulations; <br>
+		Design Patterns:  Max;
+		</td>
+		<td>
+      <a href="files/cunyLocations.csv">cunyLocations.csv</a>,<br>
+      <a href="files/cunyLocations.html">CUNY Campuses Map</a>, <br>
+      <a href="https://pythontutor.com/render.html#code=nums%20%3D%20%5B1,%204,%200,%206,%205,%202%5D%0Aprint%28nums%29%0Ai%20%3D%200%0Awhile%20i%20%3C%20len%28nums%29-1%3A%0A%20%20%20%20if%20nums%5Bi%5D%20%3C%20nums%5Bi%2B1%5D%3A%0A%20%20%20%20%20%20%20nums%5Bi%5D,%20nums%5Bi%2B1%5D%20%3D%20nums%5Bi%2B1%5D,%20nums%5Bi%5D%0A%20%20%20%20i%20%3D%20i%2B1%0Aprint%28nums%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false">Swap if smaller (Python Tutor)</a>,<br>
+			<a href="https://trinket.io/python/afb4c6b75f">Random Search (turtles)</a>,
+			<a href="files/F23_Lecture10.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>Indefinite loops; random; <br>More on command line scripts;</td>
+		<td><a href="f23/lab10.html" target="_blank"><p style="color:#FF0000";><b>Lab 10</b></p></a></td>
+		<td><a href="f23/quizzes.html">Folium & regular expressions</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+	<!--lecture 11-->
+	<tr>
+		<td rowspan=2><b>#11</b></td>
+		<td><b>Lecture:</b><br> April 9 </td>
+		<td>		Python Recap;<br>
+		Simplified Machine Language;<br>
+		Design Patterns:  Searching;<br><br>
+		</td>
+		<td>
+			<a href="http://rivoire.cs.sonoma.edu/cs351/wemips/">WeMIPS Emulator</a>,<br>
+
+			<a href="https://github.com/mtlynch3/csci127/blob/main/lecture11/increment.py">Lecture slip example</a>,<br>
+			<a href="files/F23_Lecture11.pdf">Lecture Notes</a>		</td>
+		<td>
+		</td>
+		<td rowspan=2>		<a href="http://web.archive.org/web/20180209142041/http:/www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html">U Idaho reference sheet</a>,
+		<a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a></td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>WeMIPS</td>
+		<td><a href="f23/lab11.html" target="_blank"><p style="color:#FF0000";><b>Lab 11</b></p></a></td>
+		<td><a href="f23/quizzes.html">Random numbers & while-loops</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+		<!--lecture 12-->
+	<tr>
+		<td rowspan=2><b>#12</b></td>
+		<td><b>Lecture:</b><br> April 16 </td>
+		<td>Introduction to C++:  program structure, data representation and I/O.<br><br>
+		Final Exam Overview<br><br>
+		</td>
+		<td>
+			<a href="https://onlinegdb.com/ByzFa5TkG">cin/cout example</a>, <br>
+			<a href="https://onlinegdb.com/BkT2_jT1z">kg/lbs example</a>, <br>
+			<a href="https://onlinegdb.com/HktpcoT1f">loops example</a>, <br>
+			<a href="https://onlinegdb.com/Sy13ToTyG">nested loops</a>, <br>
+			<a href="files/F23_Lecture12.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>
+			<a href="http://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a>, <br>
+			<a href="https://www.tutorialspoint.com/cplusplus/index.htm">C++ Tutorials Point</a>,<br>
+			<a href="https://rooksguide.files.wordpress.com/2013/12/rooks-guide-isbn-version.pdf">The Rook's Guide to C++</a>
+		</td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>C++ Intro</td>
+		<td><a href="f23/lab12.html" target="_blank"><p style="color:#FF0000";><b>Lab 12</b></p></a></td>
+		<td><a href="f23/quizzes.html">WeMIPS (Machine Language)</a>
+		</td>
+	</tr>
+		<tr>
+    <td>  Monday, April 22 to Tuesday, April 30</td>
+    <td colspan = 5><span class="announcement">Spring Break -- No Tutoring/Quizzes/Code Reviews available.</span></td>
+  </tr>	
+
+	<!--lecture 13-->
+	<tr>
+		<td rowspan=2><b>#13</b></td>
+		<td><b>Lecture:</b><br> May 7 </td>
+		<td>C++<br><br>
+		</td>
+		<td>
+			<a href="https://github.com/mtlynch3/csci127/tree/main/lecture13">Lecture 13 programs</a>, <br>
+			<a href="files/F23_Lecture13.pdf">Lecture Notes</a>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2>		
+			<a href="http://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a>, <br>
+			<a href="https://www.tutorialspoint.com/cplusplus/index.htm">C++ Tutorials Point</a>,<br>
+			<a href="https://rooksguide.files.wordpress.com/2013/12/rooks-guide-isbn-version.pdf">The Rook's Guide to C++</a>
+		</td>
+
+	</tr>
+	<tr>
+		<td><b>Lab, Quiz & Code Review:</b></td>
+		<td>C++</td>
+		<td><a href="f23/lab13.html" target="_blank"><p style="color:#FF0000";><b>Lab 13</b></p></a></td>
+		<td><a href="f23/quizzes.html">C++</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="39px"></td>
+		<td colspan=5 height="39px"></td>
+	</tr>
+
+	<!--lecture 14-->
+	<tr>
+		<td rowspan=2><b>#14</b></td>
+		<td><b>Lecture:</b><br> May 14 </td>
+		<td>MOCK EXAM<br><br>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2></td>
+
+	</tr>
+	<tr>
+		<td><b>LAST DAY OF CLASS</b></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td rowspan=2><b>MONDAY MAY 20</b></td>
+		<td><b>9 AM TO 11 AM</b> </td>
+		<td>FINAL EXAM<br><br>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td rowspan=2></td>
+
+	</tr>
+	<tr>
+		<td><b>Assembly Hall (118 HN)</b></td>
+		<td><a href="f23/final/final.html">FINAL EXAM INFORMATION</a></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+</table>
+
+
+</div>
+
+<div>
+<i style="float:right">(This file was last modified on 31 January 2024.)</i><br>
+</div>
