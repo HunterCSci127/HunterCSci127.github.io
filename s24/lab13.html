@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 13, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2024</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 13<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2024<br><br>
+</h2>
+</div>
+
+<div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Students will <b>explore more data types in C++</b>
+      <li> Students will write programs with <b>Decisions (<tt>if / else</tt> statements) in C++</b>
+      <li> Students will write programs with <b>Indefinite Loops (<tt>while</tt> Loops) in C++</b>
+      <li> Students will use <b>Unix commands for finding what is installed and help pages</b>
+    </ul>
+<p>
+Today's lab will continue our introduction to C++, covering more data types and control structures.
+
+<p>Software tools needed:  web browser and the C++ compiler, <tt>gcc</tt> and a graphical editor, such as <tt>gEdit</tt>.
+
+  <p><b><a href="../files/Lab13Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+  <br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
+
+
+
+</div>
+
+<div>
+<h3>Quizzes</h3>
+
+At the end of this lab, <b>don't forget to take Lab Quiz 13!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
+
+</div>
+
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+</div>
+
+<div>
+<h3>Variables in C++</h3>
+
+In C++ (and C, Java and many other languages), you must first state (or 'declare') a variable's name and its type before using.  For example,
+
+<pre style = "background-color:lavender;width:450px">
+int num;
+</pre>
+
+declares a variable, called <tt>num</tt> of type <tt>int</tt> (integer or whole number).  If you do not request the space in advance in C++, you will get an error.  This requirement (as well as the `typing' of variables) is to avoid errors where misspellings access the wrong variable and are never caught.  It also makes the underlying design of the compiler (the program that converts your program to an executable file) simpler.
+
+<p>There are many types of variables availabe in C++.  Here are a few that we will use:
+
+<ul>
+	<li> <b>int</b>:  The most common type used for storing whole numbers.
+	<li> <b>float</b>:  Similar to float in Python, this type holds real numbers.
+	<li> <b>bool</b>:  Stands for 'Boolean' and holds a value of either true or false.
+	<li> <b>char</b>:	To hold a single character value.  Note:  we won't discuss strings in C++, but see the reading if you're interested (will be covered in detail in CSci 135)
+</ul>
+(here is a <a href="https://www.tutorialspoint.com/cplusplus/cpp_variable_types.htm">chart</a> with a few more common types).
+
+</div>
+
+<div>
+<h3>Decisions in C++</h3>
+
+<p>As with Python, we can make decisions that take different branches through the code.  The basic structure is:
+
+<pre style = "background-color:lavender;width:450px">
+if (condition)
+{
+  ...
+}
+else
+{
+  ...
+}
+</pre>
+
+The syntax of Python and C++ are very similar, but there's a few differences to keep in mind when translating from Python to C++.
+<ul>
+	<li>  The test or condition must be in parenthesis (this was optional in Python).
+	<li>  There is no colon (':') at the end of the lines with the <tt>if</tt> and the <tt>else</tt>.
+	<li> Instead of indenting, C++ uses the curly brackets ('{' and '}') to indicate blocks of code.  If you only have a single command, you can leave off the brackets.
+	<li> Similarly, most commands need to end with a semi-colon (';').  This is a bit of annoyance, but on the plus side, we can put multiple commands on a single line (instead of worrying about spacing and indenting).
+	<li> There is no <tt>elif</tt> in C++, instead you would write <tt>else if</tt>.
+</ul>
+
+<p>Here's a sample program.  Read through it first, and guess what it does:
+
+<pre style = "background-color:lavender;width:450px">
+//Name:  CSci 127 Teaching Staff
+//Date:  November 2017
+//A program demonstrating if-else statements in C++
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+  int num;
+  cout << "Hello!" << endl;
+  cout << "Enter a number: ";
+  cin >> num;
+  if (num % 2 == 0)
+  {
+    cout << "Even number!\n";
+  }
+  else
+  {
+    cout << "Odd number\n";
+  }
+  return 0;
+}
+</pre>
+
+Let's look in more depth at the code:
+<ul>
+	<li> We start by greeting the user and reading in a number:
+<pre style = "background-color:lavender;width:450px">
+  int num;
+  cout << "Hello!" << endl;
+  cout << "Enter a number: ";
+  cin >> num;
+</pre>
+	<p> Since we declared the type to be <tt>int</tt>, when we read in the number, we do not have to cast it to an integer.  Instead, it is converted automatically to be a whole number.
+
+	<li> Much of the arithmetic carries over from Python.  The code above uses the modulo, or remainder, operator to test if the number entered is even or odd and prints a message accordingly.
+<pre style = "background-color:lavender;width:450px">
+  if (num % 2 == 0)
+  {
+    cout << "Even number!\n";
+  }
+  else
+  {
+    cout << "Odd number\n";
+  }
+</pre>
+
+	<li> Note that C++ uses the curly brackets for blocks of code, but that it is 'good programming style' to indent your code to make it readable.  As a rule of thumb, if you would be required to indent in Python, you should indent in C++ (not required for the code to run but considered 'good style').
+
+</ul>
+<p> How would you modify this program to print out a different message based on the month?  For example, if the user entered the month (as a number), you should print out "Happy Winter" if it is smaller than 3 or larger than 11, "Happy Spring" for 3 through 6, "Happy Summer" for 7 and 8, and "Happy Fall" otherwise.  See <a href="ps.html#ps13">Programming Problem List</a>.
+
+</div>
+
+<div>
+<h3>Indefinite Loops in C++</h3>
+
+<p> Now that we have discussed conditionals and definite loops, we can introduce
+indefinite loops.  They follow a similar format to those in Python:
+
+<pre style = "background-color:lavender;width:450px">
+while (...condition...)
+{
+  command1;
+  command2;
+  ...
+}
+</pre>
+
+Again, we do not have the colon (':') at the end of the line with <tt>while</tt>, but we do end individual commands with a (';').
+
+<p>Take the Python code from <a href="lab10.html">Lab 10</a> that asks the user to enter their age (and continues checking until they enter a non-negative number):
+
+<p><iframe width="800" height="400" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false"> </iframe>
+<br>and translate it into C++.  An easy way to approach this is to start with the C++ program above that demonstrates if statements and modify it to handle the indefinite loop for checking ages. See <a href="ps.html#ps13">Programming Problem List</a>.
+</div>
+
+
+
+<div>
+<h3>More Useful Unix Commands</h3>
+
+<p> Here are a few more commands, especially useful when you're using a public machine, and trying to figure out where things are and what is installed:
+
+<ul>
+	<li> <b>which</b>:  Will tell which version of the program it's using by default (introduced last lab).  For example,
+<pre style = "background-color:lavender;width:450px">
+which g++
+</pre>
+	will show the location of the <tt>g++</tt> program.
+
+	<li> <b>man</b>:  This gives the built-in help pages for the current system.  It can be quite useful if you don't remember all the options for a Unix command.  For example,
+<pre style = "background-color:lavender;width:450px">
+man sort
+</pre>
+	will print out information about the command line <tt>sort</tt>.
+
+	<li> <b>w</b>:  This command was designed for multi-user machines and tells you who is logged in and what they are doing.  While you are the only one on your laptop, this command is still useful in that summarizes all the activity on the machine in a short table as well as how long the system has been running ('uptime').  So, if the machine seems sluggish or you're wondering how much else is going on, it will give a concise summary.
+
+	<li> <b>more</b>:  Allow you to look at output or a file, one screenful at a time.  This is incredibly useful when you are trying to read information that scrolls off the screen.
+	Here's a sample of looking at all programs (from <tt>/usr/bin</tt>-- a common place to keep them) :
+<pre style = "background-color:lavender;width:450px">
+ls /usr/bin | more
+</pre>
+	The pipe ('|') is explained in <a href="lab12.html">Lab 12</a>.
+	<p>
+	Say we're trying to figure out what GNU C/C++ compilers are on the machine, and as a start want to see all the possible programs that contain "cc" (anywhere in their name):
+	<pre style = "background-color:lavender;width:450px">
+ls /usr/bin | grep cc | sort | more
+</pre>
+	We don't see <tt>g++</tt> in the list, so, let's also look for all that start with
+	 <tt>g</tt>:
+<pre style = "background-color:lavender;width:450px">
+ls /usr/bin | grep ^g | sort | more
+</pre>
+	The <tt>grep ^g</tt> asks for all names that start with "g".  <tt>grep</tt> is the pattern matching command mentioned briefly in <a href="lab9.html">Lab 9</a> (for an overview see
+the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>).
+
+</ul>
+
+<!--
+sort -r
+
+cat
+
+
+date
+
+cal
+
+
+
+<p>  Write a script that takes a name as input and compiles and runs program
+
+<p>  Exercise on built-in variables, like USER and printenv
+-->
+
+</div>
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+
+<p>You can start working on this week's programming assignments. The <a href="ps.html#ps13">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
+
+</div>
+
+
+
+</html>

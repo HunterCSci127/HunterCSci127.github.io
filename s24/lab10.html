@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 10, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2024</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 10<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2024<br><br>
+</h2>
+</div>
+
+<div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Students will write programs that <b>generate random numbers (<tt>randrange()</tt>)</b>
+      <li> Students will write programs that <b>use Indefinite Loops (<tt>while</tt> Loops)</b>
+      <li> Students will use Unix commands to <b>write more <tt>Bash</tt>  scripts and use the <tt>vi</tt> editor</b>
+    </ul>
+
+<p>Software tools needed:  web browser and Python  programming
+environment with the pandas, numpy, and folium package installed.
+
+<p><b><a href="../files/Lab10Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
+
+
+</div>
+
+<div>
+<h3>Quizzes</h3>
+
+At the end of this lab, <b>don't forget to take Lab Quiz 10!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
+
+</div>
+
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+</div>
+
+
+<div>
+<h3>Random Range</h3>
+
+Python has a built-in library for generating random numbers.  To use it, you include at the top of your file:
+<pre style = "background-color:lavender;width:450px">
+import random
+</pre>
+
+The <tt>random</tt> library includes a function that's similar to <tt>range</tt>, called <tt>randrange</tt>.  As with <tt>range</tt>, you can specify the starting, stopping, and step values, and the function <tt>randrange</tt> chooses a number at random in that range.  Some examples:
+<ul>
+	<li> <tt>random.randrange(5)</tt> returns one of 0,1,2,3,4
+	<li> <tt>random.randrange(1,10,2)</tt> returns one of 1,3,5,7,9
+	<li> <tt>random.randrange(360)</tt> returns one of 0,1,2,...,359
+</ul>
+
+Let's use that last example to have our turtle make a random walk:
+<iframe src="https://trinket.io/embed/python/ab6cddc880" width="80%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>
+Notice that our turtle turns <tt>a</tt> degrees, where <tt>a</tt> is chosen at random between 0 and 359 degrees.  What if your turtle was in a city and had to stay on a grid of streets (and not ramble through buildings)?  How can you change the <tt>randrange()</tt> to choose only from the numbers:  <tt>0,90,180,270</tt> (submit your answer as Problem #10).
+
+</div>
+
+
+<div>
+<h3>Indefinite Loops</h3>
+
+<p> We have been using <tt>for</tt>-loops to repeat tasks a fixed number of times (often called a <i>definite loop</i>).  There is another type of loop that repeats while a condition holds (called a <i>indefinite loop</i>).  The most common is a <tt>while</tt>-loop.
+<pre style = "background-color:lavender;width:450px">
+while condition:
+   command1
+   command2
+   ...
+   commandN
+</pre>
+While the <tt>condition</tt> is true, the block of commands nested under the while statement are repeated.
+
+<p>For example, let's have a turtles continue their random walk as long as their x and y values are within 50 of the starting point (to keep them from wandering off the screen):
+
+<p>
+<iframe src="https://trinket.io/embed/python/6738c47304" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p> Indefinite loops are useful for simulations (like our simple random walk above) and for validating input.  For example, the following code fragment:
+
+
+
+<pre style = "background-color:lavender;width:450px">
+age = int(input('Please enter age: '))
+while age < 0:
+    print('Entered a negative number.')
+    age = int(input('Please enter age: '))
+print('You entered your age as:', age)
+</pre>
+will ask the user for their age, and continue asking until the number they entered is non-negative (<a href="http://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">example in pythonTutor</a>).
+</div>
+
+
+
+<div>
+<h3>More on Command Line Scripts</h3>
+
+<p>
+In <a href="lab3.html">Lab 3</a>, we introduced the shell, or command line, commands to create new directories (folders) and how to list the contents of those folders (and expanded on this with relative paths in <a href="lab4.html">Lab 4</a> and absolute paths in <a href="lab5.html">Lab 5</a>).
+In <a href="lab6.html">Lab 6</a>, we wrote a simple script that prints: <tt>Hello, World</tt>.  We can write scripts that take the shell commands we have learned and store them in a file to be used later.
+
+
+
+<p>
+It's a bit archaic, but we can create the file with the <tt>vi</tt> editor.   It
+dates back to the early days of the Unix operating system.  It has the advantage that it's integrated into the Unix operating system and guaranteed to be there.  It is worth trying at least once (so if you're in a bind and need to edit Unix files remotely, you can), but if you hate it (which is likely), after you've tried it this once you can go back to an editor with graphical interface.
+
+<p>
+Let's create a simple shell script with <tt>vi</tt>:
+<ol>
+	<li> Open a terminal window.
+	<li> Type in the terminal window:  <tt>vi setupProject</tt>
+	<li> To add text to the file, begin by typing <tt>i</tt> (the letter i)
+	which stands for "insert"
+	<li> Type the lines:
+	<pre style = "background-color:lavender;width:450px">
+#Your name here
+#October 2017
+#Shell script:  creates directories for project
+mkdir projectFiles
+cd projectFiles
+mkdir source
+mkdir data
+mkdir results
+</pre>
+	<li> Click on the ESC (escape key-- usually on the upper row of keys) which escapes from insert mode.
+	<li> Type:  <tt>:wq</tt> which stands for "write my file" and "quit" (the ":" is necessary-- it tells vi that you want to use the menu commands).
+	<li> This brings us back to the terminal window.
+	Type <tt>ls</tt> to see a listing of the directory, which should include the file,
+	<tt>setupProject</tt>, you just created.
+	<li> Next, we'll change the permissions on the file, so that we can run it directly, by just typing its name:
+	<pre style = "background-color:lavender;width:450px">
+chmod +x setupProject
+</pre>
+	(changes the "mode" to be executable).
+
+	<li> To run your shell script, you can now type its name at the terminal:
+	<pre style = "background-color:lavender;width:450px">
+./setupProject
+</pre>
+	<li> Check to see that your script works, type <tt>ls</tt> to see the new directories your script you created.
+
+</ol>
+
+<p> <b>Troubles with vi?</b>  It's not intuitive-- here's more on vi:
+<ul>
+	<li> <a href="https://www.ibm.com/developerworks/linux/tutorials/l-vi/index.html">IBM tutorial for vi</a>
+	<li> <a href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Editors/ViIntro.html">UC Davis 5-minute Tutorial</a>
+	<li> <a href="https://ryanstutorials.net/linuxtutorial/cheatsheetvi.php">Ryan's Tutorial vi cheat sheet</a>
+
+</ul>
+If you hate <tt>vi</tt>, just edit using <tt>gEdit</tt> in Linux, <tt>TextEdit</tt> in MacOs, notepad in Windows or IDLE.
+
+<p>When done, see the <a href="ps.html">Programming Problem List</a>.
+
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+<p>You can start working on this week's programming assignments. The <a href="ps.html#ps7">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
+
+</div>
+
+
+
+</html>

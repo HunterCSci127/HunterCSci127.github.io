@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 5, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Spring 2024</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 5<br>CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2024<br><br>
+</h2>
+</div>
+
+<div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ul>
+      <li> Students will <b>understand Logical Expressions and Truth Tables</b>
+      <li> Students will <b>use logical operators in conditional expressions (if statements)</b>
+      <li> Students will <b>understand Logical Gates and Circuits</b>
+      <li> Students will <b>translate Logical Circuits to Logical Expressions</b>
+      <li> Students will <b>understand Binary Numbers</b>
+      <li> Students will use <b>Unix commands that specify absolute paths</b>
+    </ul>
+<p>
+Today's lab will focus on logical expressions and circuits and absolute paths in the Unix operating system.
+
+<p>Software tools needed:  web browser and Python programming
+environment with numpy and matplotlib packages installed.
+
+<p><b><a href="../files/Lab5Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
+<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
+
+</div>
+
+
+<div>
+<h3>Quizzes</h3>
+
+At the end of this lab, <b>don't forget to take Lab Quiz 5!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
+
+</div>
+
+<div>
+<h3>Using Python, Gradescope, and Blackboard</h3>
+
+<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+</p>
+</div>
+
+
+<div>
+<h3>Logical Expressions</h3>
+
+<p> Last week, we introduced decisions (if-statements).  These relied on the "test" which was an expression that evaluated to true or false.
+
+<p> We can build up more complicated logical expressions using built-in operators, <tt>and</tt>, <tt>or</tt>, and </tt>not</tt>.  A standard way to summaries these operators is with <b>truth tables</b>.  A truth table lists all the possible inputs and gives the output for each combination.
+
+<p>For example, here is the truth table for
+the <tt>and</tt> operator:
+
+<p>
+<table border="1px">
+	<tr>
+		<th><tt>in1</tt></th> <th><tt>in2</tt></th> <th><tt>in1 and in2</tt></th>
+	</tr>
+	<tr>
+		<td>True</td><td>True</td><td>True</td>
+	</tr>
+	<tr>
+		<td>False</td><td>True</td><td>False</td>
+	</tr>
+	<tr>
+		<td>True</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+		<td>False</td><td>False</td><td>False</td>
+	</tr>
+</table>
+
+<p>It lists all the possible combinations of values for the inputs, <tt>in1</tt> and <tt>in2</tt> and what <tt>and</tt> would give as output.  For example, if <tt>in1</tt> is <tt>True</tt> and <tt>in2</tt> is <tt>False</tt>, the value of
+<tt>in1 and in2</tt> can be read off the last column of the third line of the truth table as <tt>False</tt>.
+
+<p>Similarly here is the truth table for <tt>or</tt>:
+<table border="1px">
+	<tr>
+		<th><tt>in1</tt></th> <th><tt>in2</tt></th> <th><tt>in1 or in2</tt></th>
+	</tr>
+	<tr>
+		<td>True</td><td>True</td><td>True</td>
+	</tr>
+	<tr>
+		<td>False</td><td>True</td><td>True</td>
+	</tr>
+	<tr>
+		<td>True</td><td>False</td><td>True</td>
+	</tr>
+	<tr>
+		<td>False</td><td>False</td><td>False</td>
+	</tr>
+</table>
+
+<p>For example, if <tt>in1</tt> is <tt>True</tt> and <tt>in2</tt> is <tt>False</tt>, the value of
+<tt>in1 or in2</tt> can be read off the last column of the third line of the truth table as <tt>True</tt>.
+
+<p> The <tt>not</tt> operator changes the input from false to true, or true to false.  That is, <tt>not True</tt> is false and <tt>not False</tt> is true.  We can write this in the table format above:
+
+<p>
+<table border="1px">
+	<tr>
+		<th><tt>in1</tt></th> <th><tt>not in1</tt></th>
+	</tr>
+	<tr>
+		<td>True</td><td>False</td>
+	</tr>
+	<tr>
+		<td>False</td><td>True</td>
+	</tr>
+</table>
+
+<p>
+These logical operators are useful building complex tests for our <tt>if</tt>-statements (as well as other control structures that will be introduced later).
+
+</div>
+
+<div>
+<h4>Snow Pack in California</h4>
+
+<p>
+As an example of logical expressions, we will use them to estimate the snow pack level in California over the last drought using satellite imagery.
+
+<p>
+Landsat Satellite Program is a joint program of USGS and NASA that has provided continuous images of the earth since 1972. The data is publicly available through the USGS-EROS site and has been invaluable in mapping changes in the earth. Today, we will use data images from the USGS remote sensing gallery:
+<blockquote>
+<a href="http://remotesensing.usgs.gov/gallery/">http://remotesensing.usgs.gov/gallery/</a>
+</blockquote>
+
+<p> The <a href="https://earthobservatory.nasa.gov/IOTD/view.php?id=89738">snow pack in the Sierra Nevada mountains</a> provide almost a third of the water used by California.  As a first estimate of snow pack, the number of pixels that are (nearly) white are counted.
+How much change has their been in the Sierra Nevada snowpack during the past drought in California?  Here are images from before and during the worst years of the drought:
+<table>
+	<tr>
+		<td><img src="../images/CaliforniaDrought_02232011_md.png" width=300></td>
+		<td><img src="../images/CaliforniaDrought_02122013_md.jpg" width=300></td>
+		<td><img src="../images/CaliforniaDrought_02232014_md.jpg" width=300></td>
+	</tr>
+	<tr>
+		<td><a href="../images/CaliforniaDrought_02232011_md.png">February 2011</a></td>
+		<td><a href="../images/CaliforniaDrought_02122013_md.jpg">February 2013</a></td>
+		<td><a href="../images/CaliforniaDrought_02232014_md.jpg">February 2014</a></td>
+	</tr>
+</table>
+
+<p>How much snow is there?  We will use the number of pixels that are nearly white as an estimate of the snow.  We can add in a new variable, <tt>countSnow</tt> to keep track of each time a pixel is nearly white.
+Here's an outline of our program:
+<ol>
+	<li> Import the libraries to manipulate and display arrays.
+	<li> Read in the California image and store in the variable, <tt>ca</tt>.
+	<li> Create a new variable, <tt>countSnow</tt>, to keep track of the number of pixels that are nearly white.
+	<li> For each element in elevations,
+	<li> &nbsp; &nbsp; &nbsp; &nbsp; If the pixel is nearly white
+	<li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			<tt>countSnow = countSnow + 1</tt>
+	<li> Print out <tt>countSnow</tt>.
+</ol>
+
+<p>When is a pixel white?  It's when the red, green, and blue values are close to 100%.  In code, we would have:
+<pre style = "background-color:lavender;width:675px">
+t = 0.75    #Threshold for almost white-- can adjust between 0.0 and 1.0
+
+...
+for i in range(ca.shape[0]):
+    for j in range(ca.shape[1]):
+        if (ca[i,j,0] > t) and (ca[i,j,1] > t) and (ca[i,j,2] > t):
+             countSnow = countSnow + 1
+</pre>
+
+Let's translate that into Python.  Open up a new IDLE window and copy over the outline.  Using the image programs from <a href="lab4.html">last lab</a> as a template, fill in as much as possible before looking at the program below:
+
+<pre style = "background-color:lavender;width:675px">
+#Name:  CSci 127 Teaching Staff
+#Email: hunterCSci127help@gmail.com
+#Date:  Fall 2017
+#This program loads an image, counts the number of pixels that are
+#    nearly white as an estimate for snow pack.
+
+#Import the packages for images and arrays:
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+ca = plt.imread('CaliforniaDrought_02232011_md.png')   #Read in image
+countSnow = 0            #Number of pixels that are almost white
+t = 0.75                 #Threshold for almost white-- can adjust between 0.0 and 1.0
+
+#For every pixel:
+for i in range(ca.shape[0]):
+     for j in range(ca.shape[1]):
+          #Check if red, green, and blue are > t:
+          if (ca[i,j,0] > t) and (ca[i,j,1] > t) and (ca[i,j,2] > t):
+               countSnow = countSnow + 1
+
+print("Snow count is", countSnow)
+</pre>
+
+<p>This program assumes that you have downloaded and saved <a href="../images/CaliforniaDrought_02232011_md.png">CaliforniaDrought_02232011_md.png</a>
+to the same directory as your program.
+
+<p>How can you modify your program to let the user specify the input file?
+See
+<a href="ps.html#ps5">Programming Problem List</a>.
+
+</div>
+
+
+<div>
+<h3>Logical Circuits</h3>
+
+<p>The logical expressions above are useful not only in designing decisions and selecting data in Python, but the same concept underlies much of the hardware of computers.  The <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> can all be simulated in hardware via <a href="https://en.wikipedia.org/wiki/Logic_gate">logic gates</a>.  These gates take inputs (usually 0 or 1) and output a value (0 or 1), based on the logical operator it is simulating.
+<p>These are standard symbols used to represent logic gates (with input on the left and output on the right; notice that <tt>NOT</tt> takes 1 input, <tt>AND</tt> and <tt>OR</tt> take 2):
+<br><img src="../images/logicGatesSymbols.png" height=150><br>
+
+
+<p>Here is a simulator for circuits.  Let's see an <tt>AND</tt> gate in action:
+<p>
+  <iframe width="600px" height="400px" src="https://circuitverse.org/simulator/embed/andgate-1c6ea066-7dec-4e97-8f16-7e4eb994fe5c" id="projectPreview" scrolling="no" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
+<!--<a href="https://circuitverse.org/simulator/edit/andgate-1c6ea066-7dec-4e97-8f16-7e4eb994fe5c" target="_blank">
+<img src="../images/andGate.png" height=200><br>
+(click to launch new window with CircuitVerse)</a>-->
+
+<!--
+<iframe width="800" height="600" frameborder="0" src="http://www.neuroproductions.be/logic-lab/index.php?id=78962"> </iframe>
+-->
+
+<ul>
+	<li> Try toggling (clicking on) the input on the left of the gate.  What happens?
+	<li> When does the light turn red?
+	<li> When does the light turn off?
+</ul>
+
+<p>
+Try making a circuit with an <tt>OR</tt> gate:
+  <li> Visit the <a href="https://circuitverse.org/" target = "blank"> CircuitVerse website</a> and create an account if you don't have one
+  <li> Launch the simulator (green button center-left of the CircuitVerse home page)
+  <li> From the left hand menu under the <i>Input</i> pull-down, pull over two input sources (the square with the 1 inside) to the canvas. Note that once you pull it over it will contain a 0 (off).
+	<li> Scroll down to the <i>Gates</i> menu, and choose the <tt>OR</tt> gate (if you don't remember which symbol that corresponds to you can hover with the mouse) and
+	drag it over to canvas.
+	<li> Connect the inputs to the gate by clicking and dragging the green dot of the input to that of the gate.
+	<li> Repeat with the other input to connect it to the other input of the gate.
+	<li> From the left menu under the <i>Output</i> drop-down, drag a <i>Digital Led</i> (the third light bulb on the top row) to the canvas.
+	<li> Connect the output of the <tt>OR</tt> gate to the green dot on the Led.
+	<li> Toggle (click on) the input.  What happens to the red output light?
+</ul>
+
+<p> What is different between the behavior of the <tt>OR</tt> and <tt>AND</tt> gates?
+
+</div>
+
+<div>
+<h4>Majority of 3 Inputs</h4>
+
+<p>
+Now, let's build a circuit, or collection of gates, that takes
+majority of 3 inputs, called <tt>in1</tt>, <tt>in2</tt>, <tt>in3</tt>:
+<ul>
+	<li> If two or more of the inputs are <tt>True</tt>, then your expression should evaluate to  <tt>True</tt>.
+	<li> Otherwise (two or more of the inputs are <tt>False</tt>), then your expression should evaluate to <tt>False</tt>.
+</ul>
+
+<p>
+Log into the <a href="https://circuitverse.org/" target = "blank"> CircuitVerse website</a> and launch the simulator (green button center-left of the CircuitVerse home page).<br>Directions (with images) are below:
+<!--
+<p> <iframe width="800" height="600" frameborder="0" src="https://www.neuroproductions.be/logic-lab/"> </iframe>
+-->
+<p>Build your circuit as you read the instructions below:
+<ol>
+	<li>  The question asks for 3 inputs-- let's use switches since those are easy to test out whether it works.
+	<li>  We are going to need to check if any pair of inputs is True.  An easy way to do this is to check that:
+	<ul>
+		<li> <tt>in1</tt> <b>and</b> <tt>in2</tt> are both true, <b>or</b>
+		<li> <tt>in1</tt> <b>and</b> <tt>in3</tt> are both true, <b>or</b>
+		<li> <tt>in2</tt> <b>and</b> <tt>in3</tt> are both true
+	</ul>
+	We can direct the signal of each input to multiple gates by dragging the green dot multiple times in different directions.
+	<br>
+	Let's start by dragging from the <i>Input</i> drop-down menu 3 input switches (the square with 1 inside -- the 1 will change to 0 once you drag it to the canvas as shown below):<br>
+	<img src="../images/maj1.png" height=200>.
+	<li> We'll build up our circuits in stages:
+	<ul>
+		<li> To check that <tt>in1</tt> and <tt>in2</tt> are both true, hook both of them up to an <tt>AND</tt> gate (in the <i>Gates</i> drop-down menu).
+		<li> To check that <tt>in1</tt> and <tt>in3</tt> are both true, hook both of them up to another <tt>AND</tt> gate (in the <i>Gates</i> drop-down menu).
+		<li> To check that <tt>in2</tt> and <tt>in3</tt> are both true, hook both of them up to another <tt>AND</tt> gate (in the <i>Gates</i> drop-down menu).
+	</ul>
+	<img src="../images/maj2.png" height=200> <img src="../images/maj3.png" height=200>
+	<img src="../images/maj4.png" height=200><br>
+	You can check the wiring by toggling any two switches-- when you toggle the first and the second, the wires going to the first <tt>AND</tt> gate should be highlighted in bright green.  Check the first and the third, and second and third as well, to make sure all is connected right.
+
+	<li> We have built each of the three bullets in our to-do list in step 2. above.  The list is connected by "or", so, we need to do the same with our outputs:<br>
+	<img src="../images/maj5.png" height=200> <img src="../images/maj6.png" height=200>.
+
+	<li> And lastly, let's add an output light that will glow when true:<br>
+	<img src="../images/maj7.png" height=200>
+</ol>
+
+Test the circuit you just built:
+<ul>
+	<li> if two or more switches are on, is the output light on?
+	<li> if two or more switches are off, is the output light off?
+</ul>
+Adjust your circuit until it only lights up when two switches are on.
+
+<h4>Translating Logical Circuits to Logical Expressions</h4>
+
+How do
+we represent this as a logical expression?  Let's work backwards from the output light:  <br>
+<img src="../images/maj7.png" height=200>
+
+<p>
+Our last gate is an or, so we will write down an <tt>or</tt>
+<pre style = "background-color:lavender;width:650px">
+	(lotsOfStuff1) or (lotsOfStuff2)
+</pre>
+We'll use parenthesis to keep things neat.  Now,  let's look at the left hand side <tt>(lotsOfStuff1)</tt>.  It also has an <tt>or</tt>, so we can write it down:
+<pre style = "background-color:lavender;width:650px">
+	((lotsOfStuff3) or (lotsOfStuff4)) or (lotsOfStuff2)
+</pre>
+Let's keep refining our expressions <tt>(lotsOfStuff3)</tt> has an <tt>AND</tt>
+at the top, so, we will replace it with:
+<pre style = "background-color:lavender;width:650px">
+	(((lotsOfStuff5) and (lotsOfStuff6)) or (lotsOfStuff4)) or (lotsOfStuff2)
+</pre>
+<tt><tt>(lotsOfStuff5)</tt> is just a wire back to the first input, so, we can
+write that instead:
+<pre style = "background-color:lavender;width:650px">
+	((in1 and (lotsOfStuff6)) or (lotsOfStuff4)) or (lotsOfStuff2)
+</pre>
+and similarly, (lotsOfStuff6)</tt> is just a wire back to the second input, so, we can write that instead:
+<pre style = "background-color:lavender;width:650px">
+	((in1 and in2) or (lotsOfStuff4)) or (lotsOfStuff2)
+</pre>
+That looks better!  If look at <tt>lotsOfStuff4</tt>, we see an <tt>AND</tt> gate with wires back to the first and third inputs:
+<pre style = "background-color:lavender;width:650px">
+	((in1 and in2) or (in1 and in3)) or (lotsOfStuff2)
+</pre>
+Similarly, we can replace <tt>lotsOfStuff2</tt> with:
+<pre style = "background-color:lavender;width:650px">
+	((in1 and in2) or (in1 and in3)) or (in2 and in3)
+</pre>
+Double-check your parentheses to make sure they are balanced (every parenthesis that is opened is also closed and every internal operator is included in a set of parentheses).
+<br>Save this line to a text file (you can use any text editor, just make sure to save it as plain text, with no formatting):
+<pre style = "background-color:lavender;width:650px">
+#Name: Your name here
+#Email: Your email here
+#Date: 16 October 2017
+#Program #23:  Computes the majority of 3 inputs
+
+out = ((in1 and in2) or (in1 and in3)) or (in2 and in3)
+</pre>
+(your expression, preceded by <tt>out = </tt>).
+For the logical expressions homework, you submit just a text file with the logical expressions.  The grading script evaluates the expression, testing it with different inputs.  See the <a href="ps.html#ps5">Programming Problem List</a>.
+
+</div>
+
+<div>
+<h4>More Exotic Gates</h4>
+
+<p>In addition the <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates, there are several other standard gates.  For each, we can build a circuit using just <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates that gives the same output.
+
+<p>What does a <tt>NAND</tt> gate do?
+<p><iframe width="600px" height="400px" src="https://circuitverse.org/simulator/embed/nand-c54392de-9ea3-477f-a49e-e0e38d0e5622" id="projectPreview" scrolling="no" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
+
+<p>
+Toggle the inputs</a> to figure out what the gate does.
+
+<!--<p> <iframe width="800" height="600" frameborder="0" src="https://www.neuroproductions.be/logic-lab/index.php?id=78961"> </iframe>-->
+<p>Now, build a circuit that has the same behavior as a <tt>nand</tt> gate (i.e. for the same inputs, both give identical output) using only <tt>AND</tt>, <tt>OR</tt>, and <tt>NOT</tt> gates.
+
+<p>
+When you have the answer, label your inputs in1 and in2, save the answer in a file:
+<pre style = "background-color:lavender;width:650px">
+#Name: Your name here
+#Email:  Your email here
+#Program:  Computes NAND of two inputs, using only AND, OR, and NOT gates
+
+out = ...
+</pre>
+(where <tt>...</tt> is replaced by your answer).  See the <a href="ps.html#ps5">Programming Problem List</a>.
+
+</div>
+
+
+<div>
+<h4>Binary Numbers</h4>
+
+<p>In <a href="lab3.html">Lab 3</a> we looked at Hexadecimal numbers to represent colors.
+<p> Another important number system in Computer Science is the <b> Binary Number System</b>. The digital logic design discussed above allows two voltage levels or states: <i>false &#8801; off &#8801; 0</i> and  <i>true &#8801; on &#8801; 1</i>, translating naturally into binary numbers.
+<p>Each digit in a number has a "position". In the decimal (base 10) system to us so familiar, we know that the possible digits are 0 - 9 and each position is a power of 10. So if we see a 7 in the "ones" position we know it is 7 ones. If we see a 7 in the "tens" position we know  it is 7 tens and so on. Thus, the number 77 in base 10 is 7 tens + 7 ones.
+<p>In binary (base 2) we have two digits, 0 and 1, and each position is a power of two. In each position we can have either a 0 or a 1, so in the "ones" position we either have a 1 or not. In the "twos" position we either have a 2 or not, in the "fours" position we either have a 4 or not, and so on.
+<p>For example, the binary number 11001 has five positions: "ones", "twos", "fours", "eights" and "sixteens" (consecutive powers of two). We have 1 only in the "ones", "eights" and "sixteens" positions, so 11001<sub>base2</sub> = 1+8+16 = 25<sub>base10</sub>.
+<p><figure>
+  <img src="../images/binary.png" width = "500">
+  <figcaption>Image credits: mathisfun.com</figcaption>
+</figure>
+<p>Logic gates can thus perform logical operations on binary numbers. We can combine logic gates to do arithmetic on binary numbers: see
+<a href="ps.html#p37"> programming problem 37</a>.
+
+
+</div>
+
+
+<div>
+<h3> More on the Command Line Interface:  Absolute Paths</h3>
+
+<p><a href="lab4.html">Last lab</a>, we introduced relative paths for navigating the directories via the shell.  Relative paths (e.g. <tt>cd ../</tt>) used the current location when executing.  We can also use <i>absolute paths</i> that are independent of your location.  For example,
+<pre style = "background-color:lavender;width:400px">
+$ cd /usr/bin
+$ pwd
+$ ls
+</pre>
+will change your working directory to one of the machine's standard <tt>bin</tt> directories which is filled with programs, or binaries.  The next two commands show the path to the working directory and list its contents.  These binaries are in a central location to make them easier to find and use.
+
+<p>Since it is nice to be able to return to your default, or home directory, there is a built-in short-cut for home (<tt>~</tt>).  Try
+<pre style = "background-color:lavender;width:400px">
+$ cd ~
+$ pwd
+$ ls
+</pre>
+The first command will return you to your home directory, no matter where you started.
+
+<p>Next lab, we will introduce scripts, or files of shell commands, that we can execute at the command line.
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+
+<p>You can start working on this week's programming assignments. The <a href="ps.html#ps5">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
+Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
+
+</div>
+
+
+
+</html>
