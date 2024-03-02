@@ -502,6 +502,227 @@ Hours: 4
 
 		<p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
 
+
+<!--problem 19-->
+	<li > <b>Due Date: March 14</b>  <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a></b><br>
+
+		<p> Write a program that converts kilometers to miles.  Your program should prompt the user for the number of kilometers and then print out the number of miles.
+
+		<p> A useful formula:  <i> miles = 0.621371* kilometers</i>.
+
+		<i><p>Hint: See <a href="lab4.html">Lab 4</a>.</p></i>
+<a id="set5"></a>
+<hr>
+<!--problem 20-->
+	<li > <b>Due Date: March 15</b> <b style="float:right">Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html">Chapter 7</a> &
+    <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html"> Section 8.11</a></b><br>
+
+		<p>Following  <a href="lab5.html">Lab 5</a>, write a program that asks the user for the name of a png file and print the number of pixels that are nearly white (the fraction of red, the fraction of green, and the fraction of blue are all above 0.75).
+
+		<p>For example, if your file was of the snow pack in the Sierra Nevada mountains in California in September 2014:
+
+		<p>
+		<img src="../images/CaliforniaDrought_02232014_md.jpg" width=300>
+
+		<p> then a sample run would be:
+		<pre style ="background-color:lavender;width:400px">
+Enter file name:  caDrought2014.png
+Snow count is 38010</pre>
+
+		<p> Note:  for this program, you only need to compute the snow count.  Showing the image will confuse the grading script, since it's only expecting the snow count.
+
+<!--problem 21-->
+	<li > <b>Due Date: March 18</b>  <b style="float:right"><a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a></b><br>
+
+		<p>Write a logical epxression that is equivalent to the circuit that computes the majority of 3 inputs, called <tt>in1</tt>, <tt>in2</tt>, <tt>in3</tt>:
+		<ul>
+			<li> If two or more of the inputs are <tt>True</tt>, then your expression should evaluate to  <tt>True</tt>.
+			<li> Otherwise (two or more of the inputs are <tt>False</tt>), then your expression should evaluate to <tt>False</tt>.
+		</ul>
+
+		<p> <img src="../images/maj7.png" width=300>
+
+		<p>Save your expression to a text file.
+		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
+
+<!--problem 22-->
+	<li > <b>Due Date: March 19</b>  <b style="float:right"><a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a></b><br>
+
+		Build a circuit that has the same behavior as a <tt>nand</tt> gate (i.e. for the same inputs, gives identical output) using only <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> gates.
+		<p>
+		<img src="../images/nandGate.png" width=300>
+
+		<p>Save your expression to a text file.
+		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
+
+<!--problem 23-->
+	<li > <b>Due Date: March 20</b>  <b style="float:right">Think CS:
+	<a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a></b><br>
+
+  		<p> Write a program that asks the user for a list of nouns (separated by spaces) and approximates the fraction that are plural by counting the fraction that end in "s".  Your program should output the total number of words and the fraction that end in "s".  Assume that words are separated by spaces (and ignore the possibility of tabs and punctuation between words.)
+
+  <p> A sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Enter nouns: apple bananas cantalopes durian
+Number of words:  4
+Fraction of your list that is plural is 0.5
+</pre>
+
+  		<p> And another sample run of the program:
+<pre style ="background-color:lavender;width:400px">
+Enter nouns: hats gloves coats glasses scarves
+Number of words:  5
+Fraction of your list that is plural is 1.0
+</pre>
+
+
+  		<p><i>Hint:  Break this problem into pieces:</i>
+  		<ol>
+  			<li> First, count the number of words in the string the user entered (hint:  count the number of spaces).  Print out the number of words.  Make sure this works before going onto the next part.
+  			<li> Next, ignoring the last word (which is a special case and can be dealt with separately), count the number of words ending in 's' (hint:  count the number of "s "). Test that this part works before going on to the next step.
+  			<li> Last, check the last word to see if it ends in "s"-- since it's the last word, the "s" will always occur at the same index in the string.
+  		</ol>
+
+  		Implement (and test!) each part and then go on to the next.  See notes from Lecture 3.
+  		<br> <br>
+
+
+<!--problem 24-->
+      <li > <b>Due Date: March 21</b>  <b style="float:right"> Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">Chapter 4</a> & <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
+
+        <p>The program <a href="../files/turtleString.py">turtleString.py</a> takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
+        <ul>
+          <li> 'F':  moves the turtle forward 50 steps
+          <li> 'L':  turns the turtle 90 degrees to the left
+          <li> 'R':  turns the turtle 90 degrees to the right
+          <li> '^':  lifts the pen
+          <li> 'v':  lowers the pen
+        </ul>
+        For example, if the user enters the string "FLFLFLFL^FFFvFLFLFLFL", the turtle would move forward and then turn left.  It repeats this 4 times, drawing a square.  Next, it lifts the pen and move forward 3, puts the pen back down and draw another square.
+
+        <p>
+        Modify this program to allow the user also to specify with the following symbols:
+        <ul>
+          <li> 'B':  moves the turtle backwards 50 steps
+          <li> 'S':  makes the turtle stamp
+          <li> 'l':  turns the turle 45 degrees to the left
+          <li> 'r':  turns the turtle 45 degrees to the right
+          <li> 'p':  change the pen color to purple
+        </ul>
+
+        <p><i>Hint:  See Lecture 4 notes.</i>
+
+
+<!--problem 25-->
+	<li > <b>Due Date: March 22</b>  <b style="float:right"><a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a></b><br>
+
+		<p>
+		Build a circuit that has the same behavior as a <tt>nor</tt> gate (i.e. for the same inputs, gives identical output) using only <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> gates.
+		<p>
+		<img src="../images/norGate.png" width=300>
+
+		<p>Save your expression to a text file.
+		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
+<a id="set6"></a>
+<hr>
+<!--problem 26-->
+	<li > <b>Due Date: March 25</b>  <b style="float:right"><a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+
+		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the borough, an name for the output file, and then display the fraction of the population that has lived in that borough, over time.
+
+		<p> A sample run of the program:
+<pre style ="background-color:lavender;width:450px">
+Enter borough name:  Queens
+Enter output file name:  qFraction.png
+</pre>
+		<p> The file <tt>qFraction.png</tt>:
+
+		<p><img src="../images/qFraction.png" width=300>
+
+
+<p> <b>Important!! Before submitting your program for grading, remove commands that show the image; any <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error!</b> The program is graded on a server on the cloud and does not have a graphics window.
+
+<!--problem 27-->
+	<li > <b>Due Date: March 26</b>  <b style="float:right"><a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+		<p> Write a program that computes the average and maximum population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.
+
+		<p>A sample run of your program:
+<pre style ="background-color:lavender;width:450px">
+Enter borough: Staten Island
+Average population:  139814.23076923078
+Maximum population:  474558
+</pre>
+		<p>and another run:
+<pre style ="background-color:lavender;width:450px">
+Enter borough: Brooklyn
+Average population:  1252437.5384615385
+Maximum population:  2738175
+</pre>
+
+		<p> <i>Hint: See <a href="lab6.html">Lab 6</a>
+			<br> If you are getting errors, check the following:
+				<ul>
+					<li> Use <tt>skiprows=5</tt> when reading in the data
+					<li> Print out the labels when printing the average and maximum values (follow the sample output exactly) 
+					<br>
+					Example: <tt>print("Average population:", average)</tt>
+				</ul>
+		 </i>
+
+
+<!--problem 28-->
+	<li > <b>Due Date: March 27</b>  <b style="float:right">
+	<a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></b><br>
+
+		<p>Write an Unix shell script that prints <tt>Hello, World</tt> to the screen.
+
+		<p>Submit a single text file containing your shell commands.  See <a href="lab6.html">Lab 6</a> for details.
+
+<!--problem 29-->
+    <li > <b>Due Date: March 28</b>  <b style="float:right">
+    <a href="https://guides.github.com/activities/hello-world/">GitHub Guide</a></b><br>
+
+		<p>In <a href="lab6.html">Lab 6</a>, you created a GitHub account.  Submit a text file with the name of your account.	The grading script is expecting a file with the format:
+		<pre style = "background-color:lavender;width:400px">#Name:  Your name
+#Date:  October 2023
+#Account name for my GitHub account
+
+AccountNameGoesHere
+</pre>
+
+		<p>Note:  it takes a few minutes for a newly created GitHub account to be visible.  If you submit to Gradescope and get a message that the account doesn't exist, wait a few minutes and try again. </p>
+
+<!--problem 30-->
+	<li > <b>Due Date: March 29</b>  <b style="float:right"><a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+
+    <p> Modify the program from <a href="lab7.html">Lab 7</a> that displays shelter population over time to:
+		<ul>
+			<li> ask the user to specify the input file,
+			<li> ask the user to specify the output file,
+			<li> make a plot of the fraction of the total population that are children over time from the data in input file, and
+			<li> store the plot in the output file the user specified.
+		</ul>
+
+		<p>A sample run of the program:
+<pre style ="background-color:lavender;width:500px">
+Enter name of input file:  DHS_Daily_Report.csv
+Enter name of output file:  dhsPlot.png
+</pre>
+		<p> which produces an output:
+
+		<p><img src="../images/fraction_children_shelter.png" height = 300>
+
+
+		<p> <i>Note:  The grading script is expecting that the label (i.e. name of your new column) is "Fraction Children".</i>
+
+		<p> <b>Important!! Before submitting your program for grading, remove commands that show the image; any <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error!</b> The program is graded on a server on the cloud and does not have a graphics window.
+
+<a id="set7"></a>
+<hr>
+
 		
 </ol>
 
