@@ -749,6 +749,105 @@ Enter output file: logoLL.png
 
  <p> <b>Important!! Before submitting your program for grading, remove commands that show the image; any <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error!</b> The program is graded on a server on the cloud and does not have a graphics window. Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
+<!--problem 33-->
+  <li > <b>Due Date: April 3</b>  <b style="float:right"> <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a></b><br>
+
+      		<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first names first followed by the last names.
+
+      		<p>A sample run of your program should look like:
+      		<pre style ="background-color:lavender">
+Please enter your list of names:  Epstein, Susan; St. John, Katherine; Vazquez-Abad, Felisa; Xu, Jia; Zamfirescu, Christina
+
+You entered:
+
+Susan Epstein
+Katherine St. John
+Felisa Vazquez-Abad
+Jia Xu
+Christina Zamfirescu
+
+Thank you for using my name organizer!
+      </pre>
+
+      <p><i>Hint: See <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/StringsandLists.html">Section 10.25</a> for a quick overview of <tt>split()</tt>.  Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).</i>
+
+<!--problem 34-->
+	<li > <b>Due Date: April 4</b>  <b style="float:right"> Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a></b>
+    <p> Write a program that asks the user for the hour of the day (in 24 hour time), and prints
+    <ul>
+    <li>"Good Morning" if it is strictly before 12,
+    <li> "Good Afternoon" if it is 12 or greater, but strictly before 17, and
+    <li> "Good Evening" otherwise.
+    </ul>
+
+    <p>A sample run:
+    <pre style ="background-color:lavender;width:400px">
+Enter hour (in 24 hour time):  11
+Good Morning
+</pre>
+    <p>Another sample run:
+<pre style ="background-color:lavender;width:400px">
+Enter hour (in 24 hour time):  20
+Good Evening
+</pre>
+    <p>And another run:
+<pre style ="background-color:lavender;width:400px">
+Enter hour (in 24 hour time):  15
+Good Afternoon
+</pre>
+
+
+<!--problem 35-->
+	<li > <b>Due Date: April 5</b>  <b style="float:right"> <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a></b><br>
+
+		<p> Modify the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
+		<ul>
+			<li> Ask the user for the name of the input file.
+			<li> Ask the user for the attribute (column header) to search by.
+		</ul>
+
+		<p>A sample run:
+		<pre style ="background-color:lavender;width:450px">
+Enter file name:  tickets.csv
+Enter attribute: Vehicle Color
+The 10 worst offenders are:
+Vehicle Color
+WHITE    156
+GY       112
+BK       104
+BLACK    103
+WH        91
+GREY      55
+BLUE      53
+SILVE     49
+RED       43
+BL        40
+Name: count, dtype: int64
+</pre>
+
+		<p>And another run:
+<pre style ="background-color:lavender;width:450px">
+Enter file name:  tickets.csv
+Enter attribute: Vehicle Year
+The 10 worst offenders are:
+Vehicle Year
+0       466
+2015     97
+2013     85
+2014     78
+2012     32
+2011     31
+2010     29
+2008     24
+2005     22
+2004     19
+Name: count, dtype: int64
+
+</pre>
+
+<a id="set8"></a>
+<hr>
+
 		
 </ol>
 
