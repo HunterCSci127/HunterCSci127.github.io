@@ -966,6 +966,8 @@ Enter edge length:  160
 
 <p><img height=200 src="../images/nestedTriangles.png">
 
+<a id="set9"></a>
+<hr>
 <!--problem 40-->
 	<li > <b>Due Date: April 12</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> </b><br>
 
@@ -1010,6 +1012,31 @@ The fare is 13.5
 		<p> Write a program that uses folium to make a map of New York City.  Your map should be centered at (40.75, -74.125) and include a marker for the main campus of Hunter College.  The HTML file your program creates should be called: <tt>nycMap.html</tt>
 
 		<p> <i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+	<!--problem 42-->
+	 <li > <b>Due Date: April 16</b>  
+	 <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/latest/getting_started.html">Folium Tutorial</a></b><br>
+
+		<p>
+		Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file. You can use the same dataset from Problem 38.
+
+		<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter CSV file name:  collisions.csv
+Enter output file:  myMap.html
+</pre>
+		<p>which would produce the HTML file:
+
+		<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+		<p>(The demo above is for March 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
+		<tt>tiles="Cartodb Positron"</tt> when creating the map. When submitting to Gradescope, only specify the location of the marker; do not add any labels.)
+
+		<p> When running your program locally, you need to check that the "LATITUDE" and "LONGITUDE" values are non-empty. To do this, first we fill the empty values with zeros using the <tt>fillna(0)</tt> function. Then in our loop, we should only add markers to the map when the values are not zero. You can use <a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/mapcrash.py">this file</a> to get started.
+
+		<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
+
+
 		
 </ol>
 
