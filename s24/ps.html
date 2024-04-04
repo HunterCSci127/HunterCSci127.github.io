@@ -966,8 +966,7 @@ Enter edge length:  160
 
 <p><img height=200 src="../images/nestedTriangles.png">
 
-<a id="set9"></a>
-<hr>
+
 <!--problem 40-->
 	<li > <b>Due Date: April 12</b>  <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> </b><br>
 
@@ -1005,7 +1004,8 @@ The fare is 13.5
 		
 		
 		<p><i>Hint:  See <a href="lab8.html">Lab 8</a>.</i>
-
+<a id="set9"></a>
+<hr>
 <!--problem 41-->
 	<li > <b>Due Date: April 15</b>  <b style="float:right">Reading: <a href="https://python-visualization.github.io/folium/latest/getting_started.html">Folium Tutorial</a></b><br>
 
@@ -1043,6 +1043,80 @@ Enter output file:  myMap.html
 		<p>The program,
 		<a href="https://github.com/stjohn/csci127/blob/master/errorsHex.py">errorsHex.py</a>, has lots of errors.  Fix the errors and submit the modified program.
 		<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
-		
+
+<!--problem 44-->
+	<li > <b>Due Date: April 18</b> 	
+	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://python-visualization.github.io/folium/latest/getting_started.html">Folium Tutorial</a></b><br>
+
+		<p> Fill in the following functions in a program that maps GIS data from NYC OpenData CSV files and marks the current location and closest point:
+		<ul>
+			<li> <tt>getData()</tt> that asks the user for the name of the CSV and returns a dataframe of the contents.
+			<li> <tt>getColumnNames()</tt> that asks the user for the exact name of the columns that contains the latitude and longitude and returns those values as a tuple.  Since the NYC OpenData files use different names for the columns in different datasets (such as "Lat", "Latitude", "LATITUDE" for latitude), the program asks for the name of the column as well as the name of the data file.
+			<li> <tt>getLocale()</tt> asks the user for latitude and longitude of the user's current location and returns those floating points numbers.
+			<li> <tt>computeDist()</tt> that computes the squared distance
+			between two points <tt>(x1,y1)</tt> and <tt>(x2,y2)</tt>:
+				<blockquote>
+					<tt>(x1-x2)<sup>2</sup> + (y1-y2)<sup>2</sup></tt>
+				</blockquote>
+		</ul>
+
+		<p> A sample run to find the closest CUNY campus to the Brooklyn Navy Yard:
+<pre style ="background-color:lavender;width:400px">
+Enter CSV file name: cunyLocations.csv
+Enter column name for latitude: Latitude
+Enter column name for longitude: Longitude
+Enter current latitude: 40.7021
+Enter current longitude: -73.9708
+Enter output file: closestCUNY.html
+</pre>
+		<p>which would produce the html file:
+
+		<p><iframe src="../images/closestCUNY.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+		<p>A template program, <tt>closestPoint.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127/blob/master/closestPoint.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+		<p><i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+
+<!--problem 45-->
+	<li > <b>Due Date: April 19</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b> <br>
+
+		<p>Fill in the missing functions:
+
+		<ul>
+			<li> <tt>average(region):</tt>  Takes a region of an image and
+     		returns the average red, green, and blue values across the region.
+     		<li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+     	</ul>
+
+ 		<p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+ 		(inspired by <a href="http://koalastothemax.com">koalas to the max</a>).
+
+ 		<p>For example, if you inputted our favorite image, you would see (left to right):
+
+ 		<p>
+ 		<img src="../images/refined1.png" width=150>
+  		<img src="../images/refined2.png" width=150>
+  		<img src="../images/refined3.png" width=150>
+  		<img src="../images/refined4.png" width=150>
+  		<img src="../images/refined5.png" width=150>
+  		<img src="../images/refined6.png" width=150>
+  		<img src="../images/refined7.png" width=150>
+  		<img src="../images/refined8.png" width=150>
+
+  		<p> and finally:
+
+  		<p> <img src="../images/csBridge.png" width=400>
+
+		<p>A template program, <tt>averageImage.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127/blob/master/averageImage.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+		<p><i>Hint:  See notes from Lecture 8.</i>
+
+
+	
 </ol>
 
