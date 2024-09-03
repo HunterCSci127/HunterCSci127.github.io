@@ -8,7 +8,7 @@
 
 <div id="header">
 
-<h2>Lab 1<br>CSci 127: Introduction to Computer Science<br>
+<h2>Lab 1<br>CSCI 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
 Fall 2024<br><br>
 </h2>
@@ -20,40 +20,14 @@ Fall 2024<br><br>
 <h3> Learning Objectives:</h3>
   <ul>
     <li> Students will install and run Python on their Computer
-    <li> Students will <b>write and run a simple Python "Hello" program</b>
+    <li> Students will <b>write and run a "Hello, World" program using Python</b>
     <li> Students will <b>submit a program</b> to Gradescope
-    <li> Students will write programs that <b>use the Turtle module to draw simple graphics</b>
+    <li> Students will write programs that <b>use the Turtle library to draw simple graphics</b>
     <li> Students will <b>explore several Turtle commands</b>
   </ul>
 
-<p>Software tools needed:  web browser and Python programming environment.
+<p><i>Software tools needed:  web browser and Python programming environment.</i></p>
 
-<p><b><a href="../files/Lab1Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
-<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
-
-
-
-
-</div>
-
-
-
-<div>
-<h3>Using Blackboard</h3>
-
-<p>This course will use the on-line Blackboard system for course announcements, lecture previews, and posting grades.  Blackboard should be accessible
-through your CUNY First account (see Hunter <a href="http://www.hunter.cuny.edu/it/blackboard/blackboard-information-page">ICIT Blackboard page</a> for directions on using the system and how to get help).
-The lecture previews can be found under the <tt>Content</tt>
-menu (left hand side of <tt>Home</tt> screen).
-
-</div>
-
-<div>
-<h3>Quizzes & Code Review</h3>
-
-Each week in the 1001G lab, there is a <a href="quizzes.html">quiz</a>.  This week, we will have a quiz on the academic integrity policy of City University of New York. Make sure to write <b>legibly</b> and include your name and EmpID, so that you get credit for the quiz.
-You must also visit the 1001G lab to take a code review (oral walkthrough of a program you wrote) every two weeks. Links to schedule appointments for quizzes and code reviews will be available on Blackboard.
-See the <a href="quizzes.html">topics and deadlines</a> for information about future quizzes and code reviews.
 </div>
 
 <div>
@@ -126,15 +100,13 @@ You can install the Python packages used in this course with the following instr
 
 <p> These installation instructions were written by Owen Kunhardt. You can find the full guides at the following links: <a href="https://okunhardt.github.io/documents/Installing_Python_on_Windows.pdf">Windows</a> <a href="https://okunhardt.github.io/documents/Installing_Python_on_macOS.pdf">macOS</a>
 <p>
-If you are <b>unable to successfully install python on your computer or need to work on a tablet</b>, there are many free on-line versions that you could use via a browser, such as <a href="https://replit.com/" target="_blank">replit</a>.
-There are many others you are welcome to experiment with; repl.it will support all packages used in this course.
 
 </div>
 
 <div>
 <h3>Using Python</h3>
 
-<p>We will be using the <tt>IDLE</tt> programming environment for Python, since it is very simple and comes with all distributions of Python.
+<p>We will be using the <tt>IDLE</tt> programming environment for Python, since it is very simple and comes with all distributions of Python. However, feel free to use any text editor or development environment that you prefer. 
 
 <p><b>To launch <tt>IDLE</tt></b>:
 
@@ -163,16 +135,16 @@ print("Hello, World!")
 Instead of using the shell window (where we can try things immediately), let's use a text window, where we can save our program for later and submit it to Gradescope (this is the basis of the first program).
 
 <ol>
-	<li> First, open up a text window:  on the menu bar, choose "File" and from that menu, choose "New File"<!-- (you can also type "&#8984;N")-->.
+	<li> First, open up a text window:  on the menu bar, choose "File" and from that menu, choose "New File".
 	<li> In that window, type:
 <pre style = "background-color:lavender;width:400px">
 #Name:  ...your name here...
 #Email:  ...your email here...
-#Date: August 27, 2018
+#Date: Septmeber 3, 2024
 #This program prints: Hello, World!
 
 print("Hello, World!")</pre>
-	<li> Save the program (using the "Save" under the "File" menu). When you save it, name it something that you will be remember for the future and end it in <tt>.py</tt>.  For example, <tt>ps1.py</tt>.
+	<li> Save the program (using the "Save" under the "File" menu). When you save it, name it something that you will be remember for the future and end it in <tt>.py</tt>.  For example, <tt>program1.py</tt>.
 	<li> Run your program (using the "Run Module" from the "Run" menu).
 	<li> If it prints "Hello, World!" to the screen, then log into Gradescope (see notes below):
 	<ul>
@@ -187,7 +159,7 @@ print("Hello, World!")</pre>
 <div>
 <h3>Using Gradescope</h3>
 
-<p>This course will use the on-line <a href="http://www.gradescope.com">Gradescope</a> system for submitting
+<p>This course will use the online <a href="http://www.gradescope.com">Gradescope</a> system for submitting
 work electronically. 
 
 <ul>
@@ -249,7 +221,7 @@ A quick overview of the above program:
    </pre>
 	<li> Save your program ("File > Save"). <br>
 	<i><b>IMPORTANT</b>:  Choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
-		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".</i>
+		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the Turtle library and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".</i>
 	<li> Run your program (using the "Run Module" from the "Run" menu).
 	<li> <b>Modify your program so that it draws an octagon.</b>
   <br><img id="octagon" alt="program 2" src="../images/s22program2.png" width="200">
@@ -257,7 +229,7 @@ A quick overview of the above program:
 <pre style = "background-color:lavender;width:400px">
 #Name:  ...your name here...
 #Email: ...your email here...
-#Date: February 2, 2021
+#Date: September 3, 2024
 #This program draws an octagon.
 	</pre>
 	Run your program after editing to make sure you do not have any typos.
@@ -278,13 +250,9 @@ A quick overview of the above program:
 	<li> <tt>left()</tt>
 	<li> <tt>right()</tt>
 </ul>
-as well as importing the turtle package (<tt>import turtle</tt>) and creating ("instantiating") a turtle (<tt>thomasH = turtle.Turtle()</tt>).
+as well as importing the turtle package (<tt>import turtle</tt>) and creating ("instantiating") a turtle: <tt>thomasH = turtle.Turtle()</tt>.
 
-<p>There are many more turtles commands.  Over the next couple of classes, we will use those in the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">turtle chapter</a> from the textbook.  In addition to the ones that control movement, you can also change the color of the turtle, change the size of the drawing pen, and change the backbround color (by making a window or screen object, and changing it's color):
-
-<p>
-<iframe src="https://runestone.academy/runestone/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html" width="80%" height="400" frameborder="0" marginwidth="0" marginheight="0"></iframe>
-
+<p>There are many more turtles commands.  Over the next couple of classes, we will use those in the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">turtle chapter</a> from the textbook.  In addition to the ones that control movement, you can also change the color of the turtle, change the size of the drawing pen, and change the background color (by making a window or screen object, and changing its color):
 
 <p>
 A <a href="https://docs.python.org/3/library/turtle.html">complete list of turtle commands</a> is part of the Python 3 documentation.
@@ -302,8 +270,6 @@ A <a href="https://docs.python.org/3/library/turtle.html">complete list of turtl
 
 
 <p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
-<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
-Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
 
 </div>
 
