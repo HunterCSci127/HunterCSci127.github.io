@@ -2,15 +2,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>Lab 4, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2023</title>
+  <title>Lab 4, CSCI 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2024</title>
     <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
 <div id="header">
 
-<h2>Lab 4<br>CSci 127: Introduction to Computer Science<br>
+<h2>Lab 4<br>CSCI 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
-Fall 2023<br><br>
+Fall 2024<br><br>
 </h2>
 </div>
 
@@ -29,25 +29,8 @@ Fall 2023<br><br>
 
 <p>Software tools needed:  terminal (command line), web browser and Python programming
 environment with numpy and matplotlib packages installed.
-<p><b><a href="../files/Lab4Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
-<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
-</div>
-
-<div>
-<h3>Quizzes</h3>
-
-<b>Don't forget to take Lab Quiz 4!</b> See the <a href="quizzes.html">quiz page</a> for details.
 
 </div>
-
-<div>
-<h3>Using Python, Gradescope, and Blackboard</h3>
-
-<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
-</p>
-</div>
-
-
 
 
 
@@ -60,16 +43,18 @@ The simplest way to get input for our programs is via the console.  In <a href="
 <p>Since Python doesn't know what you will be entering (number, words, etc.), it stores everything as a string, and leaves it to the user to convert it to what they want.  For example, if we wanted a number, we need to convert the letters the user used into a number.  The basic conversion functions are:
 <ul>
 	<li> <tt>int()</tt>:  converts a string (series of characters) into the corresponding integer (whole number).
-	<li> <tt>float()</tt>: converts a string (series of characters) into the corresponding floating point number (real number).
+	<li> <tt>float()</tt>: converts a string (series of characters) into the corresponding <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic"> floating point number</a> (real number). 
 	<li> <tt>str()</tt>: converts a number into the corresponding sequence of characters.
 </ul>
 
 <p>
-Work through the examples in <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/Typeconversionfunctions.html">2.3 Type conversion functions</a> and
-<a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/Variables.html">2.4 Variables</a>.  Try the quizzes at the end of the section to test your understanding.
+<b> Work through the examples</b> in <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/Typeconversionfunctions.html">2.3 Type conversion functions</a> and
+<a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/Variables.html">2.4 Variables</a>.  <b>Try the quizzes at the end of the sections</b> to test your understanding.
+</div>
 
+<div>
 <p>
-<h4>Converter Program</h4>
+<h3>Converter Program</h3>
 
 Let's work through a problem that takes numerical input from the user, does a calculation, and prints out the result.
 Here is the
@@ -77,10 +62,10 @@ problem:
 <blockquote>
 	Daniel has started to train for triathalons.  Unfortunately, his bike computer only reads out distances in kilometers.  Write a conversion program for him that 	takes as input kilometers and outputs the corresponding distance in miles.
 </blockquote>
-Our first step is to <b>design the algorithm</b>.  It follows a standard pattern:  <i>Input, Process, Output (IPO)</i>.
+Our first step is to <b>design the algorithm</b>.  It follows a standard pattern:  <b>Input, Process, Output (IPO)</b>.
 
 <p>
-In a text window in your python environment, write out what the input is, what the process is, and what the output is.
+Open a Python file in your text editor. In a comment at the top of the file, write out what the input is, what the process is, and what the output is for the problem mentioned above.
 
 <p>
 Here is one possible design:
@@ -91,8 +76,8 @@ Here is one possible design:
 </pre>
 
 
-<p>Above, we are missing an important part-- the formula to calculate miles from kilometers.  By typing <tt>1 km = miles</tt> into google, we find that 1 km = 0.621371 miles.  So, we can add
-that to our file:
+<p>Above, we are missing an important part -- the formula to calculate miles from kilometers. The conversion formula is <b>1 km = 0.621371 miles.</b>  
+</p>
 <pre style = "background-color:lavender;width:450px">
 #1. Input the distance in kilometers (call it km)
 #2. Calculate the distance in miles as 0.621371*km
@@ -108,9 +93,8 @@ Now, we are ready to <b>convert our outline of the algorithm to Python</b>.  Beg
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name
 #Email: your email
-#Date:  September 2019
+#Date:  September 2024
 #Converter example program from Lab 4
-
 
 #1. Input the distance in kilometers (call it km)
 #2. Calculate the distance in miles as 0.621371*km
@@ -120,101 +104,102 @@ Next, let's print a welcome message:
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name
 #Email: your email
-#Date:  September 2019
+#Date:  September 2024
 #Converter example program from Lab 4
 
-
 print("Welcome to Daniel's calculator!")
+
 #1. Input the distance in kilometers (call it km)
 #2. Calculate the distance in miles as 0.621371*km
 #3. Output miles
 </pre>
-Make sure that there are no typos by saving and running your program.
 
 <p>Next, fill in the program line by line.  First, ask the user for their input:
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name
 #Email: your email
-#Date:  September 2019
+#Date:  September 2024
 #Converter example program from Lab 4
 
-
 print("Welcome to Daniel's calculator!")
+
 #1. Input the distance in kilometers (call it km)
-km = float(input('Enter distance in kilometers: '))
+km = float(input("Enter distance in kilometers: ""))
+
 #2. Calculate the distance in miles as 0.621371*km
 #3. Output miles
 
 </pre>
-Test to make sure that the program runs.  Note that it will ask for the input but since no messages after that (we still need to fill those in).
+Test to make sure that the program runs. The program will ask for input but not print anything out after a value is entered. 
 
-<p>Python cares about spacing and distinguishes between spaces and tabs.  If you get an error above, check that each of the lines beneath the definition is indented using a TAB.
-
-<p>Now, process the input (i.e. do the conversion):
+<p>Now, process the input (apply the conversion formula):
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name
 #Email: your email
-#Date:  September 2019
+#Date:  September 2024
 #Converter example program from Lab 4
 
-
 print("Welcome to Daniel's calculator!")
+
 #1. Input the distance in kilometers (call it km)
-km = float(input('Enter distance in kilometers: '))
+km = float(input("Enter distance in kilometers: "))
+
 #2. Calculate the distance in miles as 0.621371*km
 miles = 0.621371*km
+
 #3. Output miles
 </pre>
-Save and run your program again.  It will ask for input but does not yet produce output.
 
 <p>Finally, add the print statement that shows the output:
 <pre style = "background-color:lavender;width:450px">
 #Name:  your name
 #Email: your email
-#Date:  September 2019
+#Date:  September 2024
 #Converter example program from Lab 4
 
-
 print("Welcome to Daniel's calculator!")
+
 #1. Input the distance in kilometers (call it km)
-km = float(input('Enter distance in kilometers: '))
+km = float(input("Enter distance in kilometers: "))
+
 #2. Calculate the distance in miles as 0.621371*km
 miles = 0.621371*km
+
 #3. Output miles
-print("The miles are", miles)
+print(km, "km is equal to ", miles, "miles.")
+
 </pre>
 Save and run your program again.  This time, it will produce output.  Try it with some simple values
 to make sure that it gets the right answer.  For example, if you input 0 km, the output should also
 be 0.  If you input 1 km, you should output 0.621371 miles.
 
 <p>
-In addition to multiplication ('*'), Python has addition ('+'), subtraction ('-'), exponentation ('**'), division ('/'), integer-division ('//') and modulus/remainder ('%') built-in.  See <a href="https://runestone.academy/runestone/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> in the textbook:  there are some short quiz examples to test yourself at the bottom of textbook page.
+In addition to multiplication ('*'), Python has addition ('+'), subtraction ('-'), exponentation ('**'), division ('/'), integer-division ('//') and modulus/remainder ('%') built-in.</p>  
+
+<p><b>See <a href="https://runestone.academy/runestone/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a> in the textbook. Test yourself using the examples at the bottom of the page.</b>
 </div>
 
 
 <div>
 <h3>Decisions</h3>
-
-<p>Python has a built-in control structure for making decisions.  Its basic form is:
-
-	if <i>test or conditional</i>:
-	    if true do this block
-	elif <i>another test or conditional</i>:
-	    if this next test is true, do this block
-	elif <i>yet another test or conditional</i>:
-	    if this yet another test is true, do this block
-	....
-	else:
-	     only do this block, if all the previous tests failed.
+<p>Suppose you want to run one command if a certain condition is true and another command if the condition is false.</p>
+<p>Python has a built-in control structure for making decisions.  Its basic form is:</p>
+<pre style = "background-color:lavender;width:500px">
+if <i>condition1</i>:
+  if true do this block
+elif <i>condition2</i>:
+  if this next test is true, do this block
+elif <i>condition3</i>:
+  if this yet another test is true, do this block
+else:
+  only do this block, if all the previous conditions were false.
 </pre>
-The tests are expressions that evaluate to either true or false.  The blocks of code can be as long as you would like-- the only caveat is the block be indented, since that indicates what's part of the block and what is not.
+
+<p>The conditions are expressions that evaluate to either true or false.  You can write as many conditions as you would need. Note that each block needs to be indented, since that indicates what's part of the block and what is not.</p>
 
 <h4>Complementary DNA Strands</h4>
 
-<!--
-<tt>Compute the complement of DNA strand- include images from wiki.  Use if-statements.</tt>-->
-
-<p>Let's do an example to illustrate a decision, or <tt>if</tt>-statement in Python.  In <a href="lab2.html">Lab 2</a>, we examined the initial segment of a DNA strand for insulin in humans.  DNA is double-stranded molecule.  Given one strand of the molecule, we can figure out the complementary strand by the following rules:
+<p>Let's do an example to illustrate a decision, or <tt>if</tt>-statement in Python.  DNA is double-stranded molecule.  Given one strand of the molecule, we can figure out the complementary strand by the following rules:
 <ul>
 	<li> If the nucleotide is an A, its complement is a T.
 	<li> If the nucleotide is an C, its complement is a G.
@@ -239,7 +224,7 @@ Since if the nucleotide is an A, we don't need to check if it's also a C, G, or 
 <p>Here is a demonstration of our code:
 
 <p>
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=nucleotide%20%3D%20input%28'Enter%20a%20nucleotide%3A%20'%29%0A%0Aif%20nucleotide%20%3D%3D%20%22A%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22T%22%0Aelif%20nucleotide%20%3D%3D%20%22C%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22G%22%0Aelif%20nucleotide%20%3D%3D%20%22G%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22C%22%0Aelif%20nucleotide%20%3D%3D%20%22T%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22A%22%20%20%20%20%0Aelse%3A%0A%20%20%20%20print%28%22Error%3A%20%20not%20a%20valid%20value!%22%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22T%22%5D&textReferences=false"> </iframe>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=nucleotide%20%3D%20input%28%22Enter%20a%20nucleotide%3A%20%22%29%0A%0Aif%20nucleotide%20%3D%3D%20%22A%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22T%22%0Aelif%20nucleotide%20%3D%3D%20%22C%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22G%22%0Aelif%20nucleotide%20%3D%3D%20%22G%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22C%22%0Aelif%20nucleotide%20%3D%3D%20%22T%22%3A%0A%20%20%20%20newNucleotide%20%3D%20%22A%22%20%20%20%20%0Aelse%3A%0A%20%20%20%20print%28%22Error%3A%20%20not%20a%20valid%20value!%22%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22T%22%5D&textReferences=false"> </iframe>
 
 </div>
 
@@ -268,7 +253,7 @@ For the last part of the lab, let's combine what we have learned about images an
 	<pre style = "background-color:lavender;width:600px">
 # Name:  ... your name here ...
 # Email: ... your email here ...
-# Date:  September 2019
+# Date:  September 2024
 # Takes elevation data of NYC and displays using the default color map
 
 #Import the libraries for arrays and displaying images:
@@ -330,7 +315,7 @@ We can use this data to make a flood map of New York City.  When Hurricane Sandy
 <pre style = "background-color:lavender;width:600px">
 # Name:  ... your name here ...
 # Email: ... your email here ...
-# Date:  September 2019
+# Date:  September 2024
 # Takes elevation data of NYC and displays using the default color map
 
 
@@ -415,16 +400,6 @@ will show the current working directory.  Using <tt>cd ../</tt> and <tt>pwd</tt>
 
 
 
-<div>
-
-<h3>What's Next?</h3>
-
-<p><b>Don't forget to take <a href="https://www.gradescope.com/" target="_blank">Quiz 4</a>!</b> It is directly based on Lecture and Lab 4.
-<br>After that, you can continue working on the programming assignments. The <a href="ps.html#ps4">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
-<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
-Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
-
-</div>
 
 
 
