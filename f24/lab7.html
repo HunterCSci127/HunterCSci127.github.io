@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>Lab 7, CSCI 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2023</title>
+  <title>Lab 7, CSCI 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2024</title>
     <link type="text/css" rel="stylesheet" href="../127.css" />
 </head>
 <body>
@@ -10,7 +10,7 @@
 
 <h2>Lab 7<br>CSCI 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
-Fall 2023<br><br>
+Fall 2024<br><br>
 </h2>
 </div>
 
@@ -27,20 +27,9 @@ Fall 2023<br><br>
 <p>Software tools needed:  web browser and Python  programming
 environment with the pandas and matplotlib packages installed.
 
-<p><b><a href="../files/Lab7Notes.docx">Download the Skeletal Notes and Focus Questions</a></b> to guide you while studying this lab.
-<br>These are a useful tool for note taking and you can keep these handy to study for and refer to during the final exam.
-
 
 </div>
 
-
-
-<div>
-<h3>Quizzes</h3>
-
-<b>Don't forget to take Lab Quiz 7!</b> See the <a href="quizzes.html">quiz page</a> for details of the work due this week.
-
-</div>
 
 
 <div>
@@ -56,56 +45,48 @@ environment with the pandas and matplotlib packages installed.
 
 <p>
 Much of the data collected by city agencies is publicly available at
-<a href="http://opendata.cityofnewyork.us">NYC Open Data</a>.  Let's use pandas to plot some data from NYC OpenData.  Below is a graph of the total number of individuals in New York City's shelter system from 2010 to 2016:
+<a href="http://opendata.cityofnewyork.us">NYC Open Data</a>.  Let's use pandas to plot some data from NYC OpenData.  Below is a graph of the water consumption in NYC since 1979:
 
 <p>
-<img src="../images/shelterTotal.png" height=400>
+<img src="../images/waterNYC.png" height=400>
 <br>
 
-<p> We'll start by downloading data that has the daily number of families and individuals residing in the Department of Homeless Services (DHS) shelter system:
+<p> We'll start by downloading the data which can be found here
 <ul>
-	<li> <a href="https://data.cityofnewyork.us/Social-Services/DHS-Daily-Report/k46n-sa2m">https://data.cityofnewyork.us/Social-Services/DHS-Daily-Report/k46n-sa2m</a>
+	<li> <a href="https://data.cityofnewyork.us/Environment/Water-Consumption-in-the-City-of-New-York/ia2d-e54m/data_preview">Water Consumption in the City of New York</a>
 </ul>
 
 <p>
-<b>Click on the "View Data" button.</b>  To keep the data set from being very large, we are going filter the data to be all counts after January 1, 2023.  To do this:
+<b>Click on the EXPORT button on the top right of your screen. </b>  
 <ul>
-	<li> Go to the "Filters" section at the bottom of the screen
-	<li> In the "Select a column to filter" dropdown choose "Date of Census" but change the "is between" to be "is greater than"
-	<li> Click in the box to the right and a calendar will pop up.  Highlight January 1, 2023
-	<li> Press the "Apply" button at the bottom left of the screen.
-	<li> The rows in the data will be filtered to be all counts after January 1, 2023
-</ul>
-To download the file,
-<ul>
-	<li> Click on the "Export" button on the top right of the screen
 	<li> Select the "Download file" option and make sure the "Export Format" dropdown is set to CSV. Press the "Download" button
 	<li> The download will begin automatically (files are usually stored in "Downloads" folder)
+	<li> Your file will be downloaded with a default filename, feel free to rename the file so it is easier to reference in your program.
 </ul>
 
 <p>
-Move your CSV file to the directory that you save your programs.  Open with Calc (the built-in spreadsheet program for Ubuntu Linux running on the lab machines), Excel, or your favorite spreadsheet program to make sure it downloaded correctly. However, make sure you keep the file extension as <tt>.csv</tt> as we don't want any extra formatting in the file. Look at the names of the columns since those will correspond to series we can plot.
+Move your CSV file to the directory that you save your programs.  Open with a plain text editor if you would like to see the raw data. Make sure you keep the file extension as <tt>.csv</tt> as we don't want any extra formatting in the file. Look at the names of the columns since those will correspond to series we can plot.
 
 <p> Now, we can write a (short) program to display daily counts:
-<pre style = "background-color:lavender;width:575px">
-import pandas as pd
-import matplotlib.pyplot as plt
+<pre style = "background-color:lavender;width:675px">
+import pandas as pd  
+import matplotlib.pyplot as plt 
 
-homeless = pd.read_csv("DHS_Daily_Report.csv")
-homeless.plot(x = "Date of Census", y = "Total Individuals in Shelter")
+df = pd.read_csv("water_consumption.csv")
+
+df.plot(x = "Year", y = "NYC Consumption(Million gallons per day)")
 plt.show()
 </pre>
 
-The program above assumes that you saved you data as <tt>DHS_Daily_Report.csv</tt>.  If you saved the data under a different name, alter the program above to use that file.
+The program above assumes that you saved you data as <tt>water_consumption.csv</tt>.  If you saved the data under a different name, alter the program above to use that file.
 Save your program and try on your dataset.
 
 
 <h4>Challenges</h4>
 
 <ul>
-	<li> What happens if you leave off the <tt>y = "Total Individuals in Shelter"</tt>?
-	<li> Display a plot that shows the fraction of the total population that is familes, over time.  Is it increasing or decreasing?
-	<li> How can you save your plot to file?  (Hint:  See <a href="lab6.html">Lab 6</a>.)
+	<li> What happens if you leave off the <tt>y = "NYC Consumption(Million gallons per day)"</tt>?
+	<li> How can you save your plot as an image file?  (Hint:  See <a href="lab6.html">Lab 6</a>.)
 </ul>
 
 <p>
@@ -182,23 +163,6 @@ Notice that the output goes directly to the terminal window.  Try running other 
 
 
 </div>
-
-
-
-
-
-
-<div>
-
-<h3>What's Next?</h3>
-
-
-<p>You can start working on this week's programming assignments. The <a href="ps.html#ps7">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
-<br>Keep in mind that the due dates are one week late for flexibility (if one week there is a setback and you can't submit your programs, you will have time catch up).
-Still, each week you should work on the programming assignments for that week, even if they are due a week later. If you are on a roll, you are welcome to work ahead!!!
-
-</div>
-
 
 
 </html>
