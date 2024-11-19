@@ -653,14 +653,104 @@ For i = 90, 88, 86, 84, 82, ... ,0:
 <!-- problem 30 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
+	<p> Write a program that computes the minimum, average, and maximum population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.</p>
+
+	<p>A sample run of your program: </p>
+<pre style="background-color:lavender;width:400px">
+Enter borough: Staten Island
+Minimum population:  727
+Average population:  139814.23076923078
+Maximum population:  474558
+</pre>
+		<p>and another run:</p>
+<pre style="background-color:lavender;width:400px">
+Enter borough: Brooklyn
+Minimum population:  2017
+Average population:  1252437.5384615385
+Maximum population:  2738175
+</pre>
+
+		<p> 
+			<i>Hint: See <a href="lab6.html">Lab 6</a></i>.
+		</p>
+
+
 </li>
 
 <!-- problem 31 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
+	<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first initial of the first name, followed by ".", and  followed by the last name.</p>
+	<p>A sample run of your program should look like:</p>
+
+<pre style="background-color:lavender">
+Please enter your list of names:  Cohn, Mildred; Dolciani, Mary P.; Rees, Mina; Teitelbaum, Ruth; Yalow, Rosalyn
+
+You entered:
+
+M. Cohn
+M. Dolciani
+M. Rees
+R. Teitelbaum
+R. Yalow
+
+Thank you for using my name organizer!
+</pre>
+
+    <p><i>Hint: Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, what is <tt>s = str[0] + "."</tt>?</i></p>
+
+
 </li>
 
 <!-- problem 32 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p> Modify the map-mapking program from <a href="lab4.html">Lab 4</a> to create a topographic map (highlighting the points that have elevations that are multiples of 10).  Your program should ask the user for the amount of blue (a floating point number between 0.0 and 1.0), the name of the output imagee, create a new image with thaht name and with the pixels colored as follows:
+		</p><ul>
+			<li> If the elevation is less than or equal to 0, color the pixel the amount blue the user specified (and 0% red and 0% green).
+			</li><li> If the elevation is divisible by 10, color the pixel black (0% red, 0% green, and 0% blue).
+			</li><li> Otherwise, the pixel should be colored white (100% red, 100% green, and 100% blue).
+		</li></ul>
+
+
+      	<p>A sample run of your program should look like:
+      		</p><pre style="background-color:lavender">How blue is the ocean:  0.5
+What is the output file:  medBlue.png
+Thank you for using my program!
+Your map is stored medBlue.png.</pre>
+		<p> Your resulting map should look like:
+		</p><p> <img src="../images/topo.png" width="300">
+		</p><p> and be saved to a file called <tt>medBlue.png</tt>.
+
+
+	</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+
+</li>
+
+
+<!-- problem 33 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the borough, an name for the output file, and then display the fraction of the population that has lived in that borough, over time.
+
+		</p><p> A sample run of the program:
+</p><pre style="background-color:lavender;width:400px">Enter borough name:  Queens
+Enter output file name:  qFraction.png
+</pre>
+		<p> The file <tt>qFraction.png</tt>:
+
+		</p><p><img src="../images/qFraction.png" width="300">
+
+
+		</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+	</p>
+
+
+</li>
+
+<!-- problem 34 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
 </li>
