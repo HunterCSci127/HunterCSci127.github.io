@@ -880,21 +880,110 @@ Your number in decimal is 15
 <!-- problem 38 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
+
+		<p>Fill in the missing functions:
+
+		</p><ul>
+			<li> <tt>average(region):</tt>  Takes a region of an image and
+     		returns the average red, green, and blue values across the region.
+     		</li><li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+     	</li></ul>
+
+ 		<p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+ 		(inspired by the elegant <a href="http://koalastothemax.com">koalas to the max</a>).
+
+ 		</p><p>For example, if you inputted our favorite image, you would see (left to right):
+
+ 		</p><p>
+ 		<img src="../images/refined1.png" width="150">
+  		<img src="../images/refined2.png" width="150">
+  		<img src="../images/refined3.png" width="150">
+  		<img src="../images/refined4.png" width="150">
+  		<img src="../images/refined5.png" width="150">
+  		<img src="../images/refined6.png" width="150">
+  		<img src="../images/refined7.png" width="150">
+  		<img src="../images/refined8.png" width="150">
+
+
+  		</p><p> and finally:
+
+  		</p><p> <img src="../images/csBridge.png" width="400">
+
+		</p><p>A template program, <tt>averageImage.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127">here</a>. You should use this file to get started with your program.</p>
+		<p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).</p>
 </li>
 
 <!-- problem 39 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
+
+	 <p><img src="../images/irmaScreenshot.png" width="400">
+
+	 </p><p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html">Nifty Hurricane Program</a> by Phil Ventura).  Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
+	 </p><ul>
+	 	<li> <tt>t</tt>: a turtle,
+	 	</li><li> <tt>lat</tt>: an integer storing the current latitude,
+	 	</li><li> <tt>lon</tt>: an integer storing the current longitude, and
+	 	</li><li> <tt>wind</tt>: the current wind speed in miles per hour.
+	 </li></ul>
+
+	 <p>
+	 Your function should move to the turtle to the current location (longitude, latitude), and then based on the
+<a href="https://www.nhc.noaa.gov/aboutsshws.php">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
+	 </p><ul>
+	 	<li> red and pen size 5 for Category 5 (windspeed &gt; 157 mph)
+    	</li><li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
+    	</li><li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
+    	</li><li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
+    	</li><li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
+    	</li><li> white and pen size 1 if not hurricane strength
+	 </li></ul>
+
+	 <p>Download the template program, <tt>hurricane.py</tt> using <a href="https://github.com/stjohn/csci127/blob/master/hurricane.py">this link</a>. You will also need to download the background image, <tt>mapNASA.gif</tt> (<a href="https://github.com/stjohn/csci127/blob/master/mapNASA.gif">link here</a>), and put it in the same directory as <tt>hurricane.py</tt>.</p>
+	 <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+	 </p><p>Two test files (<a href="../files/irma.csv">irma.csv</a> and <a href="../files/jose.csv">jose.csv</a>) are from the <a href="https://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html">Nifty site</a>.  Additional CSV files are available there.
+
+	 </p><p>
+	 <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
+
+	 </p></li>
+
+
 </li>
 
 <!-- problem 40 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
+
+		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 100 times.  Each "walk" is 30 steps forward and the turtle can turn left 0,10,20,...,350 degrees (chosen randomly) at the beginning of each walk.
+
+		</p><p> A sample run of your program:
+</p><p> <img src="../images/randomWalk.png" height="200">
+
+
+
+
+
+	</p></li>
+
+
 </li>
 
 <!-- problem 41 -->
 <li> <b>Due Date: December 18</b>
 	<b style="float:right">Reading:</b><br>	
+
+	<p>	Write a <b>C++ program</b> that prints "Hello, World!" to the screen.
+
+	</p><p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
+
+
+
+	</p></li>
+
+
 </li>
 
 <!-- problem 42 -->
