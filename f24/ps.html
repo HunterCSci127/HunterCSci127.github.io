@@ -42,8 +42,6 @@ print("Hello, World!")</pre>
 		last date on which each assignment will be accepted.
 		Assignments must be
 		<b>submitted before 5PM</b> on the date due.
-  <li> For flexibility (to allow you to catch up should you be unable to submit work on a particular day/week), due dates are staggered with one assignment due each day starting the second week of classes. <b>To succeed in this course you should work on assignments the week of the corresponding lab, don't work on an assignment the day it is due!</b>
-     You don't know how long it will take you to debug a program and you will likely miss deadlines.
 	<li> <b>No late assignments will be accepted. </b>
 	<li> Before submitting an assignment you are free to ask for help at in-person tutoring. Please take advantage of this, we offer a lot of support but you must be proactive about it.
   <li><b>You must always test your code locally (on your computer) before submitting to Gradescope.</b> When you run your program on your computer, if there is an error you will get compiler messages that will help you debug your code. You will not get that kind of feedback from Gradescope. When your program runs correctly on your computer, then you can submit.
@@ -52,7 +50,8 @@ print("Hello, World!")</pre>
 	<li> While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.
 	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (30% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the Office of Student Affairs.
 
-	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the week's Lecture Notes and the Lab, then set aside a block of time to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
+	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the week's Lecture Notes and the Lab, then set aside a block of time to work on programming.
+
   <li> If Gradescope gives you a "Test Failed: list index out of range" error or "The autograder failed to execute..." it means your program does not run. <b>Please check that your program runs correctly on your local machine before submitting to Gradescope.</b>
 <ul>
 </div>
@@ -988,9 +987,131 @@ Your number in decimal is 15
 
 <!-- problem 42 -->
 <li> <b>Due Date: December 18</b>
-	<b style="float:right">Reading:</b><br>	
+	<b style="float:right">Reading:  <a href="lab11.html">Lab 11</a></b><br>	
+
+	<p> Using the weMIPS assembly language, write a program that loops through the numbers 2, 4, 6, 8, ..., 20. </p>
+
 </li>
 
+<!-- problem 43 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab11.html">Lab 11</a></b><br>	
+
+		<p> Using the weMIPS assembly language, write a program that prints the string <tt>"Hello, World!"</tt> to the screen.</p>
+</li>
+
+<!-- problem 44 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab6.html">Lab 6</a></b><br>	
+
+	<p>Write a Bash script that makes a new directory called <tt> projectFiles </tt>, enters the directory, then creates three more subdirectories titled <tt>source</tt>, <tt>data</tt>, and <tt>results</tt>.
+</li>
+
+
+<!-- problem 45 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading: <a href="lab9.html">Lab 9</a></b><br>	
+
+	<p> Fix all of the errors in the file <tt><a href="https://github.com/stjohn/csci127/blob/master/errorsHex.py">errorsHex.py</a></tt> and then upload the file to Gradescope.</p>
+</li>
+
+<!-- problem 46 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
+
+</p><pre>    triangle(t, length):
+    1.  If length &gt; 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.     Call triangle with t and length/2.
+</pre>
+
+<p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
+</p><pre>    nestedTriangle(t, length):
+    1.  If length &gt; 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.         Call nestedTriangle with t and length/2.
+</pre>
+
+		<p>A template program, <tt>nestingTrianges.py</tt>, is available
+		<a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/nestingTriangles.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the GitHub program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
+
+		</p><p>A sample run:
+</p><pre style="background-color:lavender;width:400px">Enter edge length:  160
+</pre>
+		<p>which would produce:
+
+</p><p><img height="200" src="../images/nestedTriangles.png">
+
+</li>
+
+<!-- problem 47 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	<p> Validate the user's input such that they are required to enter a non-negative integer.</p>
+</li>
+
+<!-- problem 48 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab12.html">Lab 12</a></b><br>	
+
+    <p> Write a <b>C++ program</b> that asks the user for a year, and continue asking until the number entered that is 2018 or earlier.
+
+		</p><p>A sample run:
+</p><pre style="background-color:lavender;width:400px">Enter year: 2023
+Year must be 2018 or earlier
+Enter year: 2025
+Year must be 2018 or earlier
+Enter year: 2000
+You entered:  2000
+</pre>
+
+		<p> <i>Hint: See <a href="lab10.html">Lab 10</a> for similar programs in Python.  Rewrite in C++.</i>
+
+
+
+
+
+
+
+</li>
+
+<!-- problem 49 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	<p> Write a complete C++ program that prints the string <tt>"I love C++"</tt> 14 times. Each copy of the string should be on a new line. </p>
+</li>
+
+<!-- problem 50 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab13.html">Lab 13</a></b><br>	
+		<p> Write a <b>C++ program</b>  that asks the user for the month of the year (as a number), and prints
+		</p><ul>
+			<li>"Happy Winter" if it is strictly before 3 or strictly larger than 11,
+			</li><li> "Happy Spring" if it is 3 or greater, but strictly before 7, and
+			</li><li> "Happy Summer" if it is 7 or greater, but strictly before 9, and
+			</li><li> "Happy Fall" otherwise.
+		</li></ul>
+
+		<p>A sample run:
+</p><pre style="background-color:lavender;width:400px">Enter month (as a number):  12
+Happy Winter
+</pre>
+		<p>Another sample run:
+</p><pre style="background-color:lavender;width:400px">Enter month (as a number):  8
+Happy Summer
+</pre>
+		<p>And another run:
+</p><pre style="background-color:lavender;width:400px">Enter month (as a number):  11
+Happy Fall
+</pre>
+</li>
 
 
 </ol>
