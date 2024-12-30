@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Lab 1, CSCI 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2024</title>
+    <link type="text/css" rel="stylesheet" href="../127.css" />
+</head>
+<body>
+
+<div id="header">
+
+<h2>Lab 1<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2025<br><br>
+</h2>
+</div>
+
+<div>
+
+<p>
+<h3> Learning Objectives:</h3>
+  <ul>
+    <li> Students will install and run Python on their Computer
+    <li> Students will <b>write and run a "Hello, World" program using Python</b>
+    <li> Students will <b>submit a program</b> to Gradescope
+    <li> Students will write programs that <b>use the Turtle library to draw simple graphics</b>
+    <li> Students will <b>explore several Turtle commands</b>
+  </ul>
+
+<p><i>Software tools needed:  web browser and Python programming environment.</i></p>
+
+</div>
+
+<div>
+<h3>Installing Python on Your Computer</h3>
+<a id="install"></a>
+
+The Python programming language and IDLE environment are freely available
+for many platforms from <a href="http://www.python.org">python.org</a>.
+For this class, we are using <b>Python 3</b>.
+<br> Many features of the language
+(including the syntax of <tt>print</tt> statements) changed between the second and third
+version, so, you must use the Python 3 for submitting programs.
+
+<h4>Linux:</h4>
+<p>
+If you have a Linux machine (Ubuntu or Debian based), at a terminal window type the following commands:
+<pre style = "background-color:lavender;width:450px"> sudo apt update
+ sudo apt -y upgrade
+ sudo apt install python3 python3-pip idle3
+ pip3 install numpy pandas matplotlib scipy folium image
+ sudo apt install spyder3
+</pre>
+
+<h4>Windows:</h4>
+<p>
+If you have a Windows computer, you can install python3 with the following instructions:
+
+<ol>
+	<li> Go to the following <a href="https://www.python.org/downloads/windows/">link</a>.</li>
+	<li> Click latest Python 3 release.</li>
+	<li> Scroll down to the files section.</li>
+	<li> Click Windows x86-64 executable installer and save the file.</li>
+	<li> Once it is finished downloading, run the installer.</li>
+	<li> Make sure you click Add Python to PATH (This makes it a lot easier to install Python packages).</li>
+	<img width=300 src="../images/PythonPATH.png">
+	<li> Click install now.</li>
+	<li> If asked do you want to allow this app to make changes to your device, click yes.</li>
+	<li> Wait until you see the setup was successful screen and then you can hit close.</li>
+</ol>
+You have successfully installed Python on your computer. To open IDLE, search IDLE in the Windows search bar.
+
+<h4>macOS:</h4>
+<p>
+	If you have a Mac computer, you can install python3 with the following instructions:
+
+	<ol>
+		<li> Go to the following <a href="https://www.python.org/downloads/mac-osx/"> link</a>.</li>
+		<li> Click latest Python 3 release.</li>
+		<li> Scroll down to the files section.</li>
+		<li> Click macOS 64-bit installer and save the file.</li>
+		<li> Once it is finished downloading, run the installer.</li>
+		<li> Hit continue, continue again, continue again, and then agree.</li>
+		<li> Click install.</li>
+		<li> Enter your password or use TouchID if prompted.</li>
+		<li> Wait until you see the installation was completed successfully screen and then you can hit close.</li>
+		<li> You can keep the install or move it to the trash.</li>
+	</ol>
+
+	You have successfully installed Python on your computer. To open IDLE, search IDLE in Spotlight search or find it in Launchpad. To open IDLE from terminal, type idle3.
+
+<h4>Python Packages:</h4>
+<p>
+You can install the Python packages used in this course with the following instructions:
+<ol>
+	<li> If on Windows, search cmd in the Windows search bar and open it. If on macOS, search terminal in Spotlight search and open it.</li>
+	<li> Install the Python packages by typing the following command:
+		<pre style = "background-color:lavender;width:450px"> pip3 install numpy pandas folium image matplotlib scipy </pre>
+	</li>
+</ol>
+
+<p> These installation instructions were written by Owen Kunhardt. You can find the full guides at the following links: <a href="https://okunhardt.github.io/documents/Installing_Python_on_Windows.pdf">Windows</a> <a href="https://okunhardt.github.io/documents/Installing_Python_on_macOS.pdf">macOS</a>
+<p>
+
+</div>
+
+<div>
+<h3>Using Python</h3>
+
+<p>We will be using the <tt>IDLE</tt> programming environment for Python, since it is very simple and comes with all distributions of Python. However, feel free to use any text editor or development environment that you prefer. 
+
+<p><b>To launch <tt>IDLE</tt></b>:
+
+  <li> If you are running Windows, search IDLE in the Windows search bar.</li>
+
+  <li> If you are running a Unix-like operating system such as a Linux distribution or MacOS, locate the <b>terminal</b> on your machine (you can search Spotlight for 'terminal' on a mac).</li>
+
+	<li> In the terminal window, type:
+
+<pre style = "background-color:lavender;width:400px">idle</pre>
+	(followed by an enter/return).</li>
+
+	<li> A new window will launch for <tt>IDLE</tt>. </li>
+
+
+	<li> To see that it works, type at the <tt>IDLE</tt> prompt:
+
+<pre style = "background-color:lavender;width:400px">
+print("Hello, World!")
+</pre>
+
+</ul>
+
+<p><b>Write and submit your first program.</b>:
+<p>
+Instead of using the shell window (where we can try things immediately), let's use a text window, where we can save our program for later and submit it to Gradescope (this is the basis of the first program).
+
+<ol>
+	<li> First, open up a text window:  on the menu bar, choose "File" and from that menu, choose "New File".
+	<li> In that window, type:
+<pre style = "background-color:lavender;width:400px">
+#Name:  ...your name here...
+#Email:  ...your email here...
+#Date: Septmeber 3, 2024
+#This program prints: Hello, World!
+
+print("Hello, World!")</pre>
+	<li> Save the program (using the "Save" under the "File" menu). When you save it, name it something that you will be remember for the future and end it in <tt>.py</tt>.  For example, <tt>program1.py</tt>.
+	<li> Run your program (using the "Run Module" from the "Run" menu).
+	<li> If it prints "Hello, World!" to the screen, then log into Gradescope (see notes below):
+	<ul>
+		<li> On the left hand menu, choose "Assignments".
+		<li> From the list, choose "1. Hello, World!".
+		<lik> In the file upload, drag over the <tt>.py</tt> file you just created and ran, and
+		<li> click "Submit".
+	</ul>
+</ol>
+</div>
+
+<div>
+<h3>Using Gradescope</h3>
+
+<p>This course will use the online <a href="http://www.gradescope.com">Gradescope</a> system for submitting
+work electronically. 
+
+<ul>
+	<li> Open your email and click the links to set up your account.
+	<li> Once you have your account, click on the "Assignments" menu (left hand side of window), and then choose the assignment "1.  Hello, World."
+	<li> Drag and drop your program onto the submit box.
+	<li> Click on confirmation button to submit your program.  You will see a pop-up box confirming that the program was uploaded.
+	<li> In 30 to 60 seconds, the Gradescope page will have your results (remember to put your name on the top of the file for full credit!).
+	<li> Each program can be submitted multiple times up to the deadline.
+</ul>
+
+
+</div>
+
+
+<div>
+<h3>More Python:  Turtles</h3>
+
+<p> Now that you have just submitted your first program, let's try some other Python commands.  Here's a quick demo (click the triangle to run the program):
+<p>
+<iframe src="https://trinket.io/embed/python/22709f8349" width="80%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>
+A quick overview of the above program:
+<ul>
+	<li> Lines that begin with <tt>#</tt> are ignored by Python-- they are comments for you to remember what you did and others to follow what's going on.
+	<li> The line <tt>import turtle</tt> loads in the built-in turtle graphics drawing package.  It's part of all versions of Python but, to keep programs small, is not included unless you explicitly import it.  In addition to built-in packages, there are many others that have been written to make Python more useful.  We will use both kinds as the semester progresses.
+	<li>  The line <tt>thomasH = turtle.Turtle()</tt> creates a turtle object called <tt>thomasH</tt> (you can call your turtles almost any combination of letters (and underscores and numbers)-- we used a name starting with "t" since turtle starts with "t").
+	<li> The next line:  <tt>for i in range(4):</tt> is the first part of a for-loop that will repeat the commands indented beneath it 4 times.
+	<li> The turtle class has many functions that you can use for your turtle.  The next two lines demonstrate two of them:
+	<ul>
+	    <li> <tt>thomasH.forward(150)</tt> moves <tt>thomasH</tt> forward 150 steps.
+    	<li> <tt>thomasH.right(90)</tt> turns <tt>thomasH</tt> to the right 90 degrees.
+    </ul>
+</ul>
+
+<p><b> Let's write the same program in <tt>IDLE</tt>:</b>
+<ol>
+	<li>  Open up a new file window in <tt>IDLE</tt> ("File > New File").
+	<li> Type (or copy) into your window:
+<pre style = "background-color:lavender;width:400px">
+ import turtle
+ thomasH = turtle.Turtle()
+ for i in range(4):
+     thomasH.forward(150)
+     thomasH.left(90)
+</pre>
+ <li> Note: if you are working with IDLE, you may want to setup the screen to exit on click, so the graphics window does not stall:
+<pre style = "background-color:lavender;width:400px">
+ import turtle
+ wn = turtle.Screen()
+
+ thomasH = turtle.Turtle()
+ for i in range(4):
+     thomasH.forward(150)
+     thomasH.left(90)
+
+ wn.exitonclick()
+   </pre>
+	<li> Save your program ("File > Save"). <br>
+	<i><b>IMPORTANT</b>:  Choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
+		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the Turtle library and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".</i>
+	<li> Run your program (using the "Run Module" from the "Run" menu).
+	<li> <b>Modify your program so that it draws an octagon.</b>
+  <br><img id="octagon" alt="program 2" src="../images/s22program2.png" width="200">
+	<li> Test your program and modify until you have a octagon (<i><b>Hint:</b></i> you need to modify the number of repetitions --number in parenthesis after <tt>range</tt>-- and the angle --number in parenthesis after <tt>left</tt>--). Play around with these numbers, run your modified program, observe and adjust  until it draws a octagon. When it does, add comments at the top of your program:
+<pre style = "background-color:lavender;width:400px">
+#Name:  ...your name here...
+#Email: ...your email here...
+#Date: September 3, 2024
+#This program draws an octagon.
+	</pre>
+	Run your program after editing to make sure you do not have any typos.
+	<li> Log into Gradescope (see notes above).  On the left hand menu, choose "Assignments".  From the list, choose "2. Octogon".
+	In the file upload, drag the <tt>.py</tt> file you just created and ran, and click "Submit".
+
+</ol>
+
+
+</div>
+
+<div>
+<h3>More Turtle Commands</h3>
+
+<p>To review, we introduced the turtle commands:
+<ul>
+	<li> <tt>forward()</tt>
+	<li> <tt>left()</tt>
+	<li> <tt>right()</tt>
+</ul>
+as well as importing the turtle package (<tt>import turtle</tt>) and creating ("instantiating") a turtle: <tt>thomasH = turtle.Turtle()</tt>.
+
+<p>There are many more turtle commands.  Over the next couple of classes, we will learn more.  In addition to the ones that control movement, you can also change the color of the turtle, change the size of the drawing pen, and change the background color (by making a window or screen object, and changing its color).
+
+
+</div>
+
+
+
+
+
+<div>
+
+<h3>What's Next?</h3>
+
+
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+
+</div>
+
+
+</html>
