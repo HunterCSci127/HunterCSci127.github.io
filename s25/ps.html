@@ -1,59 +1,92 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
 <html>
 <head>
-  <title>Programming Problem List, CSCI 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2024</title>
-    <link type="text/css" rel="stylesheet" href="../127.css" />
-  <style type="text/css">
-  	li {
-  		  padding-bottom:	7px ;
-  }
-  </style>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Programs, CSci 127, Hunter College</title>
 </head>
-
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; border: 1px solid black}
+table { border: 1px solid black; border-collapse: collapse}
+code {
+  background-color: #eeeeee;
+}
+.inline {
+  padding: 1px;
+}
+.blockcode {
+  border: 1px solid #999999;
+  display: block;
+  padding-left: 10px;
+  padding-top : 2px;
+  padding-bottom : 2px;
+  margin: 5px;
+}
+.datablock {
+  border: 1px solid #eeeeee;
+  display: block;
+  padding: 7px;
+  padding-top : 0px;
+  margin: 5px;
+}
+</STYLE>
 <body>
 
-<div id="header"><br>
+
+<div style="margin: 15px;">
+    <span style= "float: left;font-size:larger"><a href="../s25.html">CSci 127</a></span>
+    <span style= "float: right">
+      <a href="s25/resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+      <a href="s25/cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+	  <a href="s25/ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="s25/faq.html">FAQ</a>
+    </span>
+</div>
+
+<br>
+<br>
+<hr>
+
+
+<div style="margin:50px">
 
 <h2>Programming Problem List<br>
 CSCI 127: Introduction to Computer Science<br>
 Hunter College, City University of New York<br>
 Spring 2025<br><br>
 </h2>
-</div>
-
-
-<div>
-
+<hr>
 <h3>General Notes</h3>
 
 
 <ul>
-	<li> Every program should begin with a comment that includes your name, email and a brief description.
+	<li> Every program should begin with a comment that includes your name, email and a brief description.  For example:
 
-	<pre style ="background-color:lavender;width:560px">
-#Name: Thomas Hunter
-#Email: thomas.hunter1870@myhunter.cuny.edu
-#Date: February 1, 2024
-#This program prints: Hello, World!
+<pre><code class="blockcode">""""
+Name: Thomas Hunter
+Email: thomas.hunter1870@myhunter.cuny.edu
+Date: February 1, 2025
+This program prints: Hello, Thomas Hunter
+"""
 
-print("Hello, World!")</pre>
+print("Hello, Thomas Hunter")</code></pre>
 
-  	<li> You may submit your assignments up to two weeks before the due date. To receive credit, assignments must be <b>submitted before 5PM</b> on the date due.  No late assignments are accepted.  Instead, the lowest 5 scores are dropped.  </li>
-  	<li><b>You must always test your code locally (on your computer) before submitting to Gradescope.</b> When you run your program on your computer, if there is an error you will get compiler messages that will help you debug your code. You will not get that kind of feedback from Gradescope. When your program runs correctly on your computer, then you can submit.
-	<li> If Gradescope gives you a "Test Failed: list index out of range" error or "The autograder failed to execute..." it means your program does not run. <b>Please check that your program runs correctly on your local machine before submitting to Gradescope.</b>		
-	<li>For more information on using <a href="https://www.gradescope.com">Gradescope</a>, see <a href="https://huntercsci127.github.io/f24/lab1.html">Lab 1
-</a>.
+	Your name ....
+</li>
+
+    
+
+  	<li> You may submit your assignments up to two weeks before the due date.   If you complete the programs for the week, you are encouraged to work ahead on next week's batch.
+	<li> To receive credit, assignments must be <b>submitted before 5PM</b> on the date due to <a href="https://gradescope.com">Gradescope.</a>
+	For more information on using <a href="https://www.gradescope.com">Gradescope</a>, see <a href="https://huntercsci127.github.io/s25/lab1.html">Lab 1</a>.
+  	<li> Since Gradescope gives limited feedback, run your program first locally (on your computer or a lab computer) where the compiler messages will pinpoint errors and help debug your code.  For example, if Gradescope gives you a <tt>"The autograder failed to execute..."</tt> error, it means your program has an error (in this case, it's usually the file contains non-Python commands.). The local Python compiler will give the line of your file with the error.  For more information on installing Python on your computer, see the <a href="resources.html#install">installation guides</a>.
 	<li> While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.
-	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (30% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the Office of Student Affairs.
-	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the week's Lecture Notes and the Lab, then set aside a block of time to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
+	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (20% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the <a href="https://hunter.cuny.edu/students/student-affairs/office-of-student-conduct/">Office of Student Affairs</a>.
+	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you set aside a block of time most days to work on programming and the course.  </li>
+</ul>
 
-<ul>
-</div>
 
-<div>
-	<hr>
-<p>Submit the following programs via <a href="https://gradescope.com">Gradescope:</a></p>
-
+<br>
 <hr>
 
 
@@ -64,8 +97,11 @@ print("Hello, World!")</pre>
 <!--problem 1-->
 	<li > <b>Due Date: February 3</b>  <b style="float:right">Reading: <a href="https://huntercsci127.github.io/f24/lab1.html">Lab 1</a></b><br>
 
-	<p>	Write a program that prints "Hello, World!" to the screen.
+	<p>	Write a program that prints "Hello" followed by your name to the screen.  For example, if your name is "Thomas Hunter", when your program is run, it would print:
+<pre style ="background-color:lavender;width:560px">
+Hello, Thomas Hunter</pre>		
 
+	<p> The name expected is your registered name in CUNYFirst/Brightspace.</p>
 <!--problem 2-->
 	<li> <b>Due Date: February 4</b>  <b style="float:right">Reading: <a href="https://huntercsci127.github.io/f24/lab1.html">Lab 1</a></b><br>
 
@@ -268,5 +304,6 @@ Enter a hex string:  #A922A9
 
 
 </ol>
-</div>
+
+</html>
 
