@@ -81,18 +81,19 @@ This lab is a quick preview of the course and has a checklist of things to do no
 </p>
 
 <p>
-<em>Audience:</em>  This continuation of CSci 127 is aimed at computer science minors and others interested in strengthening their programming skills and knowledge of canonical data structures and algorithms.  This course can be counted towards a <a href="https://hunter-undergraduate.catalog.cuny.edu/programs/COMPSC-MIN">computer science minor</a>.   While computer science majors are welcome, this course does not count towards the computer science major.  
+<em>Audience:</em>  This introductory course is for any Hunter student interested in computer science and counts for Pathways credit.  If you know the material for this course (see outline and past final exams), the department offers credit by passing the test-out exam.  For more details, including the upcoming test-out dates in January, see the <a href="https://hunter.cuny.edu/artsci/computer-science/student-support/course-advising/#credit-by-exam">credit by exam</a> on the department website.
 </p>
 <p>
-<em>Focus:</em>  This course surveys core topics in data structures and algorithms.  The emphasis is on solving problems and less time on the theory (for more on both, see the programming sequence for majors:  CSci 135/235/335).  With this emphasis, we will use two industry standards, <a href="https://leetcode.com">LeetCode</a> and <a href="http://hackerrank.com">HackerRank</a>, as sources for problems in classwork and for coding reviews.  The course goal is mastery of the material so that students can successfully complete technical challenges at the summer internship skills level.
+<em>Focus:</em>  This course surveys core topics in computer science, ranging from basic programming to computer architecture.  The emphasis is on solving problems and communicating technical ideas.  The course is structured with many exercises to build analytic reasoning and problem solving skills, as well as explaining ideas, via written quizzes and oral code reviews.  
 </p>
 
 <p>
-<em>Course Organization:</em>  Like CSCI 127, this is a hybrid course.  Each week, there are in person and on-line components to the course:  
+<em>Course Organization:</em>  CSCI 127 is a hybrid course.  Each week, there are in person and asynchronous components to the course:  
   <ul>
-    <li>Lecture:  in-person on Wednesdays, 10-11:15am in 1001E HN.</li>
-    <li>Lab:  on-line activity available after lecture.  It includes reading, programming exercises and challenges.  Each lab includes an outline and focus questions to guide your study.</li>
-    <li>Code Review & Quizzes:  in-person oral and written assessments in the 10th floor Python Lab.  Appointments available M-F, 11:30-5:30pm beginning 31 January.</li>
+    <li>Lecture:  in-person on Tuesdays, 10-11:15am in 118 HN.</li>
+    <li>Lab:  can be done in the 1001G lab or at home.  Each lab includes reading, programming exercises and challenges as well as an outline and focus questions to guide your study.</li>
+    <li>Programs:  programming exercises are due most days and are assessed via Gradescope, as well as code reviews, quizzes, and the finals.</li>
+    <li>Code Review & Quizzes:  in-person oral and written assessments in the 1001G Lab.  The lab opens for the semester on Thursday, 30 January.  No appointments are needed the first week.  Self-scheduled appointments are available via Navigate available M-F, 11:30-5pm.  Drop-in tutoring is available (priority given to those with scheduled appointments).</li>
   </ul>  
 </p>
 
@@ -103,7 +104,7 @@ This lab is a quick preview of the course and has a checklist of things to do no
 Before the first lecture, here's some things to do to prepare for the upcoming semester.  More details in the subsections below:
 
 <ol>
-    <li>Read the syllabus and complete Quiz 0 on Brightspace (available 24 January).</li>
+    <li>Read the syllabus and complete Quiz 0 on Brightspace (available 21 January).</li>
     <li>Set up your Python programming environment.</li>
     <li>Set up accounts for the software platforms that we will use this term 
         (Blackboard, Gradescope, LeetCode, HackerRank, and GitHub).
@@ -116,7 +117,7 @@ Before the first lecture, here's some things to do to prepare for the upcoming s
 
 
 <p>
-There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a quick on-line exercise, based on the <a href="syl.html">syllabus</a>.  It is available on Brightspace on  20 January.
+There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a quick on-line exercise, based on the <a href="syl.html">syllabus</a>.  It is available on Brightspace on  21 January.
 </p>
 
 <h4>2. Python Programming Environment</h4>
@@ -139,12 +140,12 @@ There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a
     <h4>Linux:</h4>
     <p>
     If you have a Linux machine (Ubuntu or Debian based), at a terminal window type the following commands:
-    <pre style = "background-color:lavender;width:450px"> sudo apt update
-     sudo apt -y upgrade
-     sudo apt install python3 python3-pip idle3
-     pip3 install numpy pandas matplotlib scipy folium image
-     sudo apt install spyder3
-    </pre>
+    <pre><code class="blockcode">sudo apt update
+sudo apt -y upgrade
+sudo apt install python3 python3-pip idle3
+pip3 install numpy pandas matplotlib scipy folium image
+sudo apt install spyder3
+    </code></pre>
     
     <h4>Windows:</h4>
     <p>
@@ -189,7 +190,7 @@ There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a
     <ol>
         <li> If on Windows, search cmd in the Windows search bar and open it. If on macOS, search terminal in Spotlight search and open it.</li>
         <li> Install the Python packages by typing the following command:
-            <pre style = "background-color:lavender;width:450px"> pip3 install numpy pandas folium image matplotlib scipy </pre>
+            <pre><code class="blockcode">pip3 install numpy pandas folium image matplotlib scipy</code></pre>
         </li>
     </ol>
     
@@ -203,7 +204,7 @@ There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a
 <li>Set up accounts for the software platforms we will use this term:
     <ul>
         <li><b>Brightspace:</b>  this is set up automatically about 24 hours after registration.  If this course does not appear on your Brightspace list of courses, double check your CUNYFirst account to make sure that you are registered for the course registration. For issues with Brightspace, see the <a href="https://www.cuny.edu/about/administration/offices/cis/core-functions/cuny-blackboard/">CUNY Brightspace Page</a>.</li>
-        <li><b>Gradescope:</b>  this will be set up automatically for all students  registered on 24 January.  If you registered after that date, this course is not appearing in your Gradescope course list or you would like to use a different email address (we use the one in Blackboard), send email to <code class="inline">csci227@hunter.cuny.edu</code> with your full name, EmplID, and preferred email and access will be added manually.</li>
+        <li><b>Gradescope:</b>  this will be set up automatically for all students  registered on 24 January.  If you registered after that date, this course is not appearing in your Gradescope course list or you would like to use a different email address (we use the one in Blackboard), send email to <code class="inline">stjohn@hunter.cuny.edu</code> with your full name, EmplID, and preferred email and access will be added manually.</li>
     </ul>
 
 
@@ -213,13 +214,13 @@ There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a
 <h2>What's Next</h2>
 
 <p>
-<em>That's it for now!  See on 10am, Tuesday, 28 January in 118 HN!</em>
+<em>That's it for now!  See on 10am, Tuesday, 28 January in Assembly Hall (118 HN)!</em>
 </p>
 
 <p>But, if you want to look ahead, here's some links:
   <ul>
-    <li><a href="lab1.html">Lab 1</a> works through submitting programs and using pylint (a automated checker for programming style).</li>
-    <li><a href="ps.html">Programming assignments</a> can be submitted up to 2 weeks early on Gradescope.  For all programs, there's upto a 10% bonus for submitting early-- see the programming assignments page for details.</li>
+    <li><a href="lab1.html">Lab 1</a> works through submitting programs the first couple of programming exercises.</li>
+    <li><a href="ps.html">Programming assignments</a> can be submitted up to 2 weeks early on Gradescope. </li>
   </ul>
 
 </p>
