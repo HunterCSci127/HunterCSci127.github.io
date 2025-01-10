@@ -79,7 +79,7 @@ While you are encouraged to work with others, <b>all work submitted must be your
 <h4>Autograder Notes</h4>
 
 <p> The majority of the programs this semester are written in Python (see <a href="lab1.html">Lab 1</a> for getting started with Python); it is noted below when other formats or languages are used. For Python programs, the autograder expects a <code class="inline">.py</code> file, using only the specified libraries, and does not accept iPython notebooks.  Since all assignments are designed to be uploaded as a single file, the autograder is set up for direct file upload instead of Github.  If submitting directly (drop-and-drag onto the webpage), the file name is flexible but must have the extension <code class="inline">.py</code>.
-Also, to receive full credit, the code should be compatible with Python 3.6 (the default for the Gradescope autograders).
+Also, to receive full credit, the code should be compatible with Python 3.10 (the default for the Gradescope autograders).
 	
 <p>	To get full credit for a program, the file must include in the opening comment:
 	<ul>
@@ -121,9 +121,9 @@ Since Gradescope gives limited feedback, run your program first locally (on your
 	<b>Available Libraries:  Core Python 3.10+</b></p>
   <p><b>Hello</b></p>
 
-	<p>	Write a program that prints "Hello" followed by your name to the screen.  For example, if your name is "Thomas Hunter", when your program is run, it would print:
-<pre style ="background-color:lavender;width:560px">
-Hello, Thomas Hunter</pre>		
+	<p>	Write a program that prints <code class="inline">Hello</code> followed by your name to the screen.  For example, if your name is <code class="inline">Thomas Hunter</code>, when your program is run, it would print:
+<pre><code class="datablock">
+Hello, Thomas Hunter</code></pre>		
 
 <!--problem 2-->
 <li>
@@ -132,7 +132,7 @@ Hello, Thomas Hunter</pre>
 	<b>Available Libraries: turtle, Core 3.10+</b></p>
   <p><b>Triangle</b></p>
 
-	<p>Write a program that draws a triangle using the <tt>turtle</tt> library.
+	<p>Write a program that draws a triangle using the <code class="inline">turtle</code> library.
     <br><img id="triangle" alt="program 2" src="../images/p2_triangle.png" width="250">
 	<br><br>
 	<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
@@ -144,65 +144,51 @@ Hello, Thomas Hunter</pre>
 		<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, 6 February</b><br>
 			<b>Reading: Think CS:  <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab1.html">Lab 1</a></b><br>
 			<b>Available Libraries:  turtle, Core 3.10+</b></p>
-		<p><b>UPDATE</b></p>	
+		<p><b>Flower</b></p>	
 	
     <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
 
-    <pre><code class="blockcode">Repeat 36 times: 
-  Walk forward 100 steps
-  Turn left 145 degrees 
-  Walk forward 10 steps 
-  Turn right 90 degrees 
-  Walk forward 10 steps 
-  Turn left 135 degrees 
+    <pre><code class="blockcode">Repeat 50 times: 
+  Change color to blue
+  Walk forward 100 steps 
+  Turn left 155 degrees 
+  Change color to blue  
   Walk forward 100 steps </code></pre>
 
      The result should look as follows:
   <p>
-  <img src="../images/s22program3_flower.png" height=250>
+  <img src="../images/p03_flower_s25.png" height=250>
 
 <!--problem 4-->
-	<li > <b>Due Date: February 7</b>  <b style="float:right">Reading: <a href="https://huntercsci127.github.io/f24/lab1.html">Lab 1</a></b><br>
+<li>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, 7 February</b><br>
+	<b>Reading: Think CS:  <a href= "https://runestone.academy/ns/books/published/thinkcspy/GeneralIntro/toctree.html" target="_blank">Chapter 1</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries:  Core Python 3.10+</b></p>
+  <p><b>Multiple Greetings</b></p>
+		
+	<p>Write a program that will print <code class="inline">Hi & Bye</code> multiple times.  
+	The number of times depends on your EmplID number.  Take the last digit of your EmplID number and add 10.  For example, if your EmplID ends in 3, the number of times you repeat the message is 3+10 = 13.
 
+	<p>For example, with an EmplID ending in 7, you would repeat the message 17 times:
+<pre><code class="datablock">
 
-		<p>Write a program that will print "I love Python!" 25 times.
-
-		<p>The output of your program should be:
-<pre style ="background-color:lavender;width:400px">I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
-I love Python!
+</code>
 </pre>
 
 <!--problem 5-->
-	<li > <b>Due Date: February 10</b> <b style="float:right">Reading: <a href="https://huntercsci127.github.io/f24/lab1.html">Lab 1</a></b><br>
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, 10 February</b><br>
+	<b>Reading: Think CS:  <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries: turtle, Core 3.10+</b></p>
+	<p><b>Green Star</b></p>		
+		
 
-		<p>Write a program that uses the <tt>turtle</tt> library to draw a 5-pointed star.
+	<p>Write a program that uses the <tt>turtle</tt> library to draw a 
+	<span style="color:green">green</span> 5-pointed star.
 
 		<p>Your output should look like this:
 		<br>
-		<img height = 150 src="../images/star.png">
+		<img height = 150 src="../images/star_green.png">
 
 		<p><i>Hint: To draw the 5-pointed star, the turtle must turn a total of 720 degrees.  How many degrees does the turtle need to turn at each point?</i>
 
