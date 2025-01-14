@@ -1,0 +1,615 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 2, CSci 127: Intro to CS, Hunter College</title>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  background-color: #eeeeee;
+}
+.inline {
+  padding: 1px;
+}
+.blockcode {
+  border: 1px solid #999999;
+  display: block;
+  padding-left: 10px;
+  padding-top : 2px;
+  padding-bottom : 2px;
+  margin: 5px;
+}
+.datablock {
+  border: 1px solid #eeeeee;
+  display: block;
+  padding: 7px;
+  padding-top : 0px;
+  margin: 5px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+    <span style= "float: left;font-size:larger"><a href="../s25.html">CSci 127</a></span>
+    <span style= "float: right">
+        <a href="s25/resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+        <a href="s25/cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+        <a href="s25/ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="s25/faq.html">FAQ</a>
+    </span>
+</div>
+
+<br>
+<br>
+<hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Coursework<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2025<br><br>
+</h1>
+
+
+  
+    <h3>Quizzes</h3>
+    <h4>
+      <a href="https://hunter-cuny.campus.eab.com/pal/34ufgGQT4s"> Click here to schedule a quiz appointment on Navigate! </a>
+    </h4>
+    <p>
+    Each week, there will be a paper quiz on the lecture notes, reading, submitted programs, and online lab exercises.
+    <ul>
+      <li> Quiz questions will cover the topics from lectures, labs, and homeworks.
+      <li> Quizzes are offered on weekdays, 11:30 am to 5 pm in lab 1001G HN.  You must make an appointment to take the quiz. 
+      <li> <b>There are no make-up quizzes.</b>  Instead, your score on the final exam will replace missing quiz grades (the final exam will also replace a quiz grade when you take the quiz but do better on the final exam).
+      <li> The quizzes are on paper, and you may not use any notes, books, or any computer device (laptop, phone, calculator, smart watch, etc.).
+    </ul>
+  
+    <h3>Code Reviews</h3>
+    <h4>
+      <a href="https://hunter-cuny.campus.eab.com/pal/heTKn65eu4"> Click here to schedule a code review appointment on Navigate! </a>
+    </h4>
+    <p>
+    There will also be weekly walk-throughs ("code reviews") where you explain one of the programs you wrote for homework to a teaching assistant.  Code reviews are integral to software design and development: explaining your coding decisions and convincing another it works correctly leads to improvements in the design and lessens unexpected behaviors and errors.
+  
+    <ul>
+      <li> Code reviews are offered on weekdays, 11:30 am to 5 pm in lab 1001G HN.  You must make an appointment to do your code review.
+      <li> Each week focuses on several programs (see below). You can choose which program you would like to explain.
+      <li> After you choose a program, the teaching assistant will guide you through the code review.
+      <li> If something is unclear or you are stuck, ask questions!  Having a two-way conversation about the concepts, the code, and the design are highly encouraged.
+      <li> <b>There are no make-up code reviews.</b>  Instead, your score on the final exam will replace missing code review grades (the final exam will also replace the grade when you take it but do better on the final exam).
+    </ul>
+    </div>
+  
+  </ul>
+  
+  
+  <div>
+  <h3 id="calendar">Calendar</h3>
+  
+  <p>
+  <table border=1px>
+    <tr>
+      <th style="text-align: left; padding: 4px">#&nbsp;&nbsp;</th>
+      <th style="text-align: left; padding: 4px">Start Date:</th>
+      <th style="text-align: left; padding: 4px">End Date:</th>
+      <th style="text-align: left; padding: 4px">Quiz Topics:</th>
+      <th style="text-align: left; padding: 4px">Code Review Topics:</th>
+    </tr>
+  
+  
+    <tr>
+    <a id="Q1"></a>
+      <td>#1</td>
+      <td style="padding: 8px">Tuesday, September 10</td>
+      <td style="padding: 8px">Tuesday, September 17</td>
+      <td style="padding: 8px"><i><b>Quiz 1:</b></i>
+      Turtles and Loops: Focuses on turtle commands and <tt>for</tt>-loops. Use <a href="lab1.html">Lab 1</a> to study.
+      </td>
+      <td style="padding: 8px"><i><b> Code Review 1:</b></i> Program 2 or Program 4</td>
+    </tr>
+  
+    <tr>
+    <a id="Q2"></a>
+      <td>#2</td>
+      <td style="padding: 8px">Wednesday, September 18</td>
+      <td style="padding: 8px">Tuesday, September 24</td>
+      <td style="padding: 8px"><i><b>Quiz 2:</b></i> Looping through strings and printing ASCII values; getting user input; see <a href="lab2.html">Lab 2</a></td>
+      <td style="padding: 8px"><i><b> Code Review 2:</b></i> Program 6 or Program 7</td>
+    </tr>
+  
+    <tr>
+    <a id="Q3"></a>
+      <td>#3</td>
+      <td style="padding: 8px">Wednesday, September 25</td>
+      <td style="padding: 8px">Tuesday, October 01</td>
+      <td style="padding: 8px"><i><b>Quiz 3:</b></i> Setting turtle colors using hexadecimal notation and 255-mode; looping through lists using indicies; see <a href="lab2.html">Lab 2</a> and <a href="lab3.html">Lab 3</a></td>
+      <td style="padding: 8px"><i><b> Code Review 3:</b></i> Program 9 or Program 10</td>
+    </tr>
+  
+    <tr>
+    <a id="Q4"></a>
+      <td>#4</td>
+      <td style="padding: 8px">Monday, October 7</td>
+      <td style="padding: 8px">Tuesday, October 15</td>
+      <td style="padding: 8px"><i><b>Quiz 4:</b></i> Asking for user input, the <tt>int()</tt> function, reading in image files with <tt>imread()</tt>, modifying the color channels of an image, displaying images to the screen. Use the example program from the end of <a href="lab3.html">Lab 3</a> to study. See <a href="lab4.html">Lab 4</a> for converting strings to integers. Will also test your knowledge of the terminal commands <tt>mkdir, cd,</tt> and <tt>pwd</tt>.</td>
+      <td style="padding: 8px"><i><b> Code Review 4:</b></i> Program 11 or Program 14</td>
+    </tr>
+  
+    <tr>
+    <a id="Q5"></a>
+      <td>#5</td>
+      <td style="padding: 8px">Wednesday, October 16</td>
+      <td style="padding: 8px">Tuesday, October 22</td>
+      <td style="padding: 8px"><i><b>Quiz 5:</b></i> Review programming assignments numbers 9 to 14. </td>
+      <td style="padding: 8px"><i><b> Code Review 5: </b></i> Program 15</td>
+    </tr>
+  
+    <tr>
+    <a id="Q6"></a>
+      <td>#6</td>
+      <td style="padding: 8px">Wednesday, October 23</td>
+      <td style="padding: 8px">Tuesday, October 29</td>
+      <td style="padding: 8px"><i><b>Quiz 6:</b></i> Evaluating logical expressions given input values, writing logical expressions based on a given circuit, and drawing circuits based on a given logical expression. See <a href="lab5.html">Lab 5</a>. </td>
+      <td style="padding: 8px"><i><b> Code Review 6:</b></i> Program 18</td>
+    </tr>
+  
+    <tr>
+    <a id="Q7"></a>
+      <td>#7</td>
+      <td style="padding: 8px">Wednesday, October 30</td>
+      <td style="padding: 8px">Tuesday, November 05</td>
+      <td style="padding: 8px"><i><b>Quiz 7:</b></i> Based directly on the <tt>pandas</tt> examples from <a href="lab6.html">Lab 6</a>. Make a tutoring appointment if you need help reviewing those programs.</td>
+      <td style="padding: 8px"><i><b> Code Review 7:</b></i> Program 22 or Program 23</td>
+    </tr>
+  
+    <tr>
+    <a id="Q8"></a>
+      <td>#8</td>
+      <td style="padding: 8px">Wednesday, November 06</td>
+      <td style="padding: 8px">Tuesday, November 12</td>
+      <td style="padding: 8px"><i><b>Quiz 8:</b></i> </td>
+      <td style="padding: 8px"><i><b> Code Review 8:</b></i> </td>
+    </tr>
+  
+    <tr>
+    <a id="Q9"></a>
+      <td>#9</td>
+      <td style="padding: 8px">Wednesday, November 13</td>
+      <td style="padding: 8px">Tuesday, November 19</td>
+      <td style="padding: 8px"><i><b>Quiz 9:</b></i> </td>
+      <td style="padding: 8px"><i><b> Code Review 9:</b></i> </td>
+    </tr>
+  
+    <tr>
+    <a id="Q10"></a>
+      <td>#10</td>
+      <td style="padding: 8px">Wednesday, November 20</td>
+      <td style="padding: 8px">Tuesday, November 26</td>
+      <td style="padding: 8px"><i><b>Quiz 10:</b></i> </td>
+      <td style="padding: 8px"><i><b> Code Review 10:</b></i> </td>
+    </tr>
+  
+    <tr>
+    <a id="Q11"></a>
+      <td>#11</td>
+      <td style="padding: 8px">Monday, December 02</td>
+      <td style="padding: 8px">Tuesday, December 10</td>
+      <td style="padding: 8px"><i><b>Quiz 11:</b></i> </td>
+      <td style="padding: 8px"><i><b> Code Review 11:</b></i> </td>
+    </tr>
+  
+  </table>
+  
+  </div>
+  
+  </html>
+  
+  <!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Coursework, CSci 227: Programming Methods, Hunter College</title>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; border: 1px solid black}
+table { border: 1px solid black; border-collapse: collapse}
+code {
+  background-color: #eeeeee;
+}
+.inline {
+  padding: 1px;
+}
+.blockcode {
+  border: 1px solid #999999;
+  display: block;
+  padding-left: 10px;
+  padding-top : 2px;
+  padding-bottom : 2px;
+  margin: 5px;
+}
+.datablock {
+  border: 1px solid #eeeeee;
+  display: block;
+  padding: 7px;
+  padding-top : 0px;
+  margin: 5px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+    <span style= "float: left;font-size:larger"><a href="../spr24.html">CSci 227</a></span>
+    <span style= "float: right">
+      <a href="syl.html">Syllabus</a>&nbsp;&nbsp;&nbsp;
+      <a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+      <a href="work.html">Coursework</a>
+    </span>
+</div>
+
+<br>
+<br>
+<hr>
+
+<div style="margin:50px">
+
+
+<h2>Coursework
+  <br>CSci 227: Programming Methods<br>
+<a href="http://www.hunter.cuny.edu/csci">Department of Computer Science</a><br>
+<a href="https://hunter.cuny.edu">Hunter College</a>, <a href="https://www.cuny.edu">City University of New York</a><br>
+Spring 2024<br><br>
+</h2>
+
+
+<hr>
+<a href="work.html#hw">Programming Assignments</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="work.html#labslab">Labs</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="work.html#cw">Classwork</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="work.html#cr">Code Review</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="work.html#quizzes">Written Quizzes</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="work.html#final">Final Exam</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<hr>
+
+<p>All students registered by Wednesday, 24 January are sent a Gradescope registration invitation to the email on record on their Blackboard account.  If you did not receive the email or would like to use a different account, write to <code class="inline">csci227@hunter.cuny.edu</code>.  Include in your email that you not receive a Gradescope invitation, your preferred email, and your EmpID.  We will manually generate an invitation.  As a default, we use your name as it appears in Blackboard/CUNYFirst (to update CUNYFirst, see <a href="https://hunter.cuny.edu/students/registration/records-and-transcripts/changing-your-personal-information/">changing your personal information</a>).  If you prefer a different name for Gradescope, include it, and we will update the Gradescope registration.</p>
+
+<br>
+<hr>
+
+
+<a name="hw">
+<h2>Programming Assignments</h2>
+</a>
+
+<p>
+See <a href="ps.html">Programming Assignments</a> page for a list of the coding exercises for the class.
+</p>
+
+
+
+<br><br>
+<hr>
+
+<a name="cr"><a name="quizzes"></a>
+  <h2>Code Reviews & Written Quizzes</h2>
+  </a>
+  
+  <h4>Quizzes:</h4>
+    Every week, there will be a quiz to be taken in 1001G HN, on the lecture notes, reading, submitted programs, and programming assignments.
+    <ul>
+      <li>As the semester progresses, quizzes will include review questions as well as short programming exercises based on the homework.
+      </li>
+      <li>Quizzes are on paper (echoing the style of the final exam and the first pass of many programming job interviews).</li>
+      <li>For the quizzes, you may not use any notes, books, or any computer device (laptop, phone, calculator, smart watch, etc.).</li>
+      <li><b>There are no make-up quizzes.</b> Instead, the 10 highest quiz scores  are used when computing the final grade.</li>
+    </ul>
+    </p>
+    
+    <h4>Code Reviews:</h4>
+      Every week, there will be an in-person code review on the recently submitted programs.
+      <ul>
+        <li>For each code review, you choose one of the listed programs to explain on the whiteboard.</li>
+        <li>Code reviews are on the whiteboard (echoing the style of many programming job interviews).</li>
+        <li>All code reviews must be taken by the deadline.</li>
+        <li><b>There are no make-up code reviews.</b> Instead, the 10 highest code review scores are used when computing the final grade.</li>
+      </ul>
+  
+  <h4>Calendar:</h4>
+
+  <p>Unless otherwise noted, all quizzes and code reviews are in-person in 1001G HN.</p>
+
+  <table>
+    <tr>
+      <th style="text-align: left" rowspan="2">Week:</th>
+      <th style="text-align: left" colspan="2"><b>Quizzes</b></th>
+      <th style="text-align: left" colspan="2"><b>Code Reviews</b></th>
+    </tr>
+    <tr>
+      <th style="text-align: left"><b>Topics</b></th>
+      <th style="text-align: left"><b>Deadline</b></th>
+      <th style="text-align: left"><b>Topics</b></th>
+      <th style="text-align: left"><b>Deadline</b></th>
+    </tr>    
+  
+    </tr>
+    <tr>
+      <a name="q0"> 
+      <td><b>0:</b></td>
+      <td>Syllabus<br>
+        (On Gradescope)</td>
+      <td>1/31
+      </td>
+      <td>None      
+      <td></td>
+    </tr>
+
+    <tr>
+      <a name="q1">
+      <a name="cr1">  
+      <td><b>1:</b></td>
+      <td>Academic Integrity</td>
+      <td>2/8</td>
+      <td><a href="https://www.hackerrank.com/challenges/python-loops">HR:  Python Loops</a></td>     
+      <td>2/8</td>
+    </tr>
+
+    <tr>
+      <a name="q2">
+      <a name="cr2">        
+      <td><b>2:</b></td>
+      <td>Control Structures & Data Types</td>
+      <td>2/15</td>
+      <td><a href="https://www.hackerrank.com/challenges/write-a-function">HR:  Leap Year</a></td>     
+      <td>2/15</td>
+    </tr>
+
+    <tr>
+      <a name="q3">
+      <a name="cr3">       
+      <td><b>3:</b></td>
+      <td>Python Collection Data Types</td>
+      <td>2/22</td>
+      <td><a href="https://leetcode.com/problems/two-sum/description/">LC 1 (Two Sum)</a></td>     
+      <td>2/22</td>
+    </tr>
+
+
+    <tr>
+      <a name="q4">
+      <a name="cr4">       
+      <td><b>4:</b></td>
+      <td>Running Times & Using Standard Libraries (String Methods)</td>
+      <td>2/29</td>
+      <td><a href="https://leetcode.com/problems/reverse-string/description/">LC 344 (Reverse String)</a></td>     
+      <td>2/29</td>
+    </tr>   
+
+
+    <tr>
+      <a name="q5">
+      <a name="cr5"> 
+      <td><b>5:</b></td>
+      <td>Functions & Recursion</td>
+      <td>3/14</td>
+      <td><a href="https://leetcode.com/problems/sqrtx/">LC 69 (Sqrt(x))</a></td>     
+      <td>3/14</td>
+    </tr> 
+
+    
+   
+    <tr>
+      <a name="q6">
+      <a name="cr6"> 
+      <td><b>6:</b></td>
+      <td>Linear Data Structures: Array Implementations & Linked Lists</td>
+      <td>3/21</td>
+      <td><a href="https://leetcode.com/problems/add-two-numbers/">LC 2 (Add Two Numbers)</a></td>     
+      <td>3/21</td>
+    </tr>   
+
+  
+    <tr>
+      <a name="q7">
+      <a name="cr7"> 
+      <td><b>7:</b></td>
+      <td>Stacks, Queues, Deques</td>
+      <td>3/28</td>
+      <td><a href="https://leetcode.com/problems/time-needed-to-buy-tickets/">LC 2073 (Time Needed to Buy Tickets)</a></td>     
+      <td>3/28</td>
+    </tr>   
+
+
+    <tr>
+      <a name="q8">
+      <a name="cr8"> 
+      <td><b>8:</b></td>
+      <td>Maps ADT's</td>
+      <td>4/4</td>
+      <td><a href="https://leetcode.com/problems/3sum/">LC 15 (3Sum)</a></td>     
+      <td>4/4</td>
+    </tr>   
+
+    <tr>
+      <a name="q9">
+      <a name="cr9"> 
+      <td><b>9:</b></td>
+      <td>Searching</td>
+      <td>4/11</td>
+      <td><a href="https://leetcode.com/problems/guess-number-higher-or-lower/description/">LC 374 (Guess Number Higher or Lower)</a></td>     
+      <td>4/11</td>
+    </tr>    
+
+
+    <tr>
+      <a name="q10">
+      <a name="cr10"> 
+      <td><b>10:</b></td>
+      <td>Sorting</td>
+      <td>4/18</td>
+      <td><a href="https://leetcode.com/problems/sort-the-people/description/">LC 2418 (Sort the People)</a></td>     
+      <td>4/18</td>
+    </tr> 
+
+    <tr>
+      <a name="q11">
+      <a name="cr11"> 
+      <td><b>11:</b></td>
+      <td>Trees & Heaps</td>
+      <td><b>5/3</b></td>
+      <td><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/description/">LC 215 (Kth Largest Element in an Array)</a></td>     
+      <td><b>5/3</b></td>
+    </tr> 
+
+    <tr>
+      <a name="q12">
+      <a name="cr12"> 
+      <td><b>12:</b></td>
+      <td>Binary Search Trees</td>
+      <td>5/9</td>
+      <td><a href="https://leetcode.com/problems/insert-into-a-binary-search-tree/description/">LC 701 (Insert Into a Binary Search Tree)</a></td>     
+      <td>5/9</td>
+    </tr> 
+
+    <tr>
+      <a name="q13">
+      <a name="cr13"> 
+      <td><b>13:</b></td>
+      <td>Graph ADT's</td>
+      <td><b>5/15</b></td>
+      <td><a href="https://leetcode.com/problems/find-the-town-judge/description/">LC 997 (Find the Town Judge)</a></td>     
+      <td><b>5/15</b></td>
+    </tr>                        
+         
+  </table>
+
+<p>Note:  Some of the deadlines in May (marked in boldface font) are adjusted for lab closures in the CUNY Academic Calendar.</p>
+<br>
+<hr>
+
+<a name="labs">
+<h2>Labs</h2>
+</a>
+
+<p>Each week, you are expected to work through the associated Online Lab. Target dates for completing these are included. There is no deadline for completing these, but the programming assignments, quizzes and coding reviews are based on the information in the lab.  </p>
+
+
+<p><a name="lab0"><b><a href="lab0.html">Lab 0: Set Up & Python Basics.</a></b>
+  &emsp; <i>Target date:  Wednesday, 31 January.</i>
+  <br>Learning Objective: to set up accounts and IDEs for the semester and to refresh students' knowledge of Python basics learned in CSci 127.</p>
+
+<p><a name="lab1"><b><a href="lab1.html">Lab 1: Submitting Programs & Collection Data Types.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 7 February.</i>
+  <br>Learning Objective: to use a linter to submit programs in good style and to understand the built-in collection data types.</p>
+
+<p><a name="lab2"><b><a href="lab2.html">Lab 2: Dictionary & String Methods.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 13 February.</i>
+  <br>Learning Objective: to introduce dictionaries and container classes in core Python and recap I/O.</p> 
+
+<p><a name="lab3"><b><a href="lab3.html">Lab 3:  File I/O & Algorithm Analysis.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 20 February.</i>
+  <br>Learning Objective: to recap file I/O techniques and to benchmark and describe execution time of simple programs.</p> 
+
+<p><a name="lab4"><b><a href="lab4.html">Lab 4:  Functions & Recursion.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 6 March.</i>
+  <br>Learning Objective: To use recursion, exception handling, and parameters (including keyword arguments) in designing functions.</p> 
+
+<p><a name="lab5"><b><a href="lab5.html">Lab 5:  Classes & Objects.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 13 March.</i>
+  <br>Learning Objective: to understand and implement classes, and to be familiar with standard Python modules.</p> 
+
+<p><a name="lab6"><b><a href="lab6.html">Lab 6:  Linear Data Types.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 20 March.</i>
+  <br>Learning Objective: to understand the abstract data types stack and list and to be able to implement using linked lists.</p> 
+
+<p><a name="lab7"><b><a href="lab7.html">Lab 7:  Queues & Deques.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 27 March.</i>
+  <br>Learning Objective: to understand the abstract data types queues & deques and to be able to use them in solving problems.</p> 
+
+<p><a name="lab8"><b><a href="lab8.html">Lab 8:  Map ADT's.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 3 April.</i>
+  <br>Learning Objective: to understand the map abstract data types and to 
+be able to use it in solving problems.</p> 
+
+<p><a name="lab9"><b><a href="lab9.html">Lab 9:  Searching.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 10 April.</i>
+  <br>Learning Objective: to understand canonical searching algorithms and their running times.</p> 
+
+<p><a name="lab10"><b><a href="lab10.html">Lab 10:  Sorting.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 17 April.</i>
+  <br>Learning Objective: to understand canonical sorting algorithms and their running times.</p> 
+
+<p><a name="lab11"><b><a href="lab11.html">Lab 11:  Trees & Heaps.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 22 April.</i>
+  <br>Learning Objective: to understand the tree ADT and the concept of heaps to store data.</p> 
+
+<p><a name="lab12"><b><a href="lab12.html">Lab 12:  Binary Search Trees & Graphs.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 8 May.</i>
+  <br>Learning Objective: to use binary search trees to efficiently store information and to understand the graph ADT.</p> 
+  
+<p><a name="lab12"><b><a href="lab13.html">Lab 13:  More on Graphs.</a></b></b> 
+  &emsp; <i>Target date:  Wednesday, 15 May.</i>
+  <br>Learning Objective: to be familiar with some canonical graph algorithms.</p> 
+  
+
+<hr>
+
+
+
+
+
+<a name="final">
+<h2>Final Examination</h2>
+</a>
+
+<p>The final exam is required. It is comprehensive, covering all the material of the course.  </p>
+
+<ul>
+  <li>You must take and pass the final (60 points or more) to pass the course.</li>
+  <li>The final exam will be during the registrar's assigned time slot:  <b>Wednesday, 22 May, 9-11am in 1001E, Hunter North.</b></li>
+</ul>
+  
+<br>
+<h4>Exam Rules:</h4>
+
+<p>During the exam, you should have with you:</p>
+<ul>
+  <li>Your Hunter ID</li>
+  <li>One 8.5"x11" 2-sided page of notes (no origami, no additional pages)</li>
+  <li>Pencils or pens</li>
+  
+</ul>
+
+<p>During the exam:</p>
+<ul>
+  <li>All phones must be face down on the table in front of you.  </li>
+  <li>All ear pods and ear phones must be removed.</li>
+  <li>No phones, computers, tablets, calculators, or other electronic devices may be used.</li>
+  <li>All notes and books must be put away in your backpack.</li>
+</ul>
+
+<br>
+<h4>Exam Format:</h4>
+
+<p>On the day of the exam, there will be two parts to fill out:</p>
+
+<ul>
+  <li><b>Seat Slip:</b> has your name printed on slip. Fill out the remaining information and sign the seat slip. </li>
+  <li><b>Final Exam:</b> make sure to fill out the front page information.</li>
+</ul>
+
+<p>Both the seat slip and the final exam must be submitted.</p>
+
+<br>
+<p>The final exam has 10 questions, each worth 10 points.  The best way to study is to work through the problems we have done throughout the semester.  The questions are very similar to the classwork, programming assignments, quizzes, examples from lecture and the reading.  </p>
+
+<p>On the last lecture, Wednesday, 15 May, we will have a mock final exam.  It will be similar to the actual final exam, except that the time will be shorter, since lecture is 1 and 15 minutes while the final exam is 2 hours.  An answer key will be available later that afternoon on Blackboard.</p>
+
+</div>
+</body>
+</html>
