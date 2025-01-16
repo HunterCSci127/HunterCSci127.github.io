@@ -42,8 +42,6 @@ print("Hello, World!")</pre>
 		last date on which each assignment will be accepted.
 		Assignments must be
 		<b>submitted before 5PM</b> on the date due.
-  <li> For flexibility (to allow you to catch up should you be unable to submit work on a particular day/week), due dates are staggered with one assignment due each day starting the second week of classes. <b>To succeed in this course you should work on assignments the week of the corresponding lab, don't work on an assignment the day it is due!</b>
-     You don't know how long it will take you to debug a program and you will likely miss deadlines.
 	<li> <b>No late assignments will be accepted. </b>
 	<li> Before submitting an assignment you are free to ask for help at in-person tutoring. Please take advantage of this, we offer a lot of support but you must be proactive about it.
   <li><b>You must always test your code locally (on your computer) before submitting to Gradescope.</b> When you run your program on your computer, if there is an error you will get compiler messages that will help you debug your code. You will not get that kind of feedback from Gradescope. When your program runs correctly on your computer, then you can submit.
@@ -52,7 +50,8 @@ print("Hello, World!")</pre>
 	<li> While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.
 	For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (30% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the Office of Student Affairs.
 
-	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the week's Lecture Notes and the Lab, then set aside a block of time to work on programming.  If you complete the programs for the week you are encouraged to work ahead on next week's batch.
+	<li> Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you study the week's Lecture Notes and the Lab, then set aside a block of time to work on programming.
+
   <li> If Gradescope gives you a "Test Failed: list index out of range" error or "The autograder failed to execute..." it means your program does not run. <b>Please check that your program runs correctly on your local machine before submitting to Gradescope.</b>
 <ul>
 </div>
@@ -563,6 +562,557 @@ AccountNameGoesHere
 </pre>
 
 		<p>Note:  it takes a few minutes for a newly created GitHub account to be visible.  If you submit to Gradescope and get a message that the account doesn't exist, wait a few minutes and try again. </p>
+
+<!--problem 26-->
+ <li > <b>Due Date: November 14</b>  <b style="float:right">
+    <a href="lab3.html">Lab 3</a></b><br>
+
+<p> Write a program that asks the user for a name of an image <tt>.png</tt> file and the name of an output file. Your program should create a new image that has only the blue channel of the original image (that is, no green channel).</p>
+
+<p>A sample run of your program should look like:</p>
+
+<pre style = "background-color:lavender;width:400px">
+Enter name of the input file:  csBridge.png
+Enter name of the output file:  blueH.png
+</pre>
+
+<p>Sample input and resulting output files:</p>
+
+<p>
+<img src="../files/csBridge.png" width="300">
+<img src="../files/blueH.png" width="300">
+</p>
+
+<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+
+<!-- problem 27 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>
+	<p>Write a program that implements the pseudocode below:</p>
+
+<pre>
+For i = 90, 88, 86, 84, 82, ... ,0:
+	Walk forward 25 steps
+	Turn left i degrees
+</pre>
+		
+	<p>Your output should look similar to:</p>
+	<br>
+	<img src="../files/spiral.png" height="300">
+</li>
+
+<!-- problem 28 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>
+
+	<p>Write a program that creates a 'C' logo for CUNY on a 30x30 grid.
+
+	</p><p>
+	<img src="../files/blueC.png" style="padding:5px" height="200">
+
+	</p><p> The grading script is expecting:
+	</p><ul>
+		<li> The file to be saved as:  <tt>logo.png</tt>.
+		</li><li> The grid to be 30 x 30.
+		</li><li> The 'C' to be 0% red, 0% green, and 100% blue.  The upper part of the 'C' should be the top third of the image; the left part of the 'C' should be the left third of the image; and the lower part of the 'C' should be the the bottom third of the image.
+		</li><li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
+	</li></ul>
+
+	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+
+
+	</p></li>
+
+</li>
+
+<!-- problem 29 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	
+	<p>Modify the flood map of NYC from <a href="lab4.html">Lab 4</a> to color the region of the map with elevation greater than 6 feet and less than or equal 20 feet above sea level the color grey (50% red, 50% green, and 50% blue).
+
+		</p><p> Your resulting map should look like:
+		</p><p> <img src="../files/floodMap2.png" width="300">
+		</p><p> and be saved to a file called <tt>floodMap.png</tt>.
+
+		</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.show()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+
+
+
+
+
+	</p></li>
+
+</li>
+
+
+<!-- problem 30 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	<p> Write a program that computes the minimum, average, and maximum population over time for a borough (entered by the user).  Your program should assume that the NYC historical population data file, <a href="../files/nycHistPop.csv">nycHistPop.csv</a> is in the same directory.</p>
+
+	<p>A sample run of your program: </p>
+<pre style="background-color:lavender;width:400px">
+Enter borough: Staten Island
+Minimum population:  727
+Average population:  139814.23076923078
+Maximum population:  474558
+</pre>
+		<p>and another run:</p>
+<pre style="background-color:lavender;width:400px">
+Enter borough: Brooklyn
+Minimum population:  2017
+Average population:  1252437.5384615385
+Maximum population:  2738175
+</pre>
+
+		<p> 
+			<i>Hint: See <a href="lab6.html">Lab 6</a></i>.
+		</p>
+
+
+</li>
+
+<!-- problem 31 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	<p>Write a program that prompts the user to enter a list of names. Each person's name is separated from the next by a semi-colon and a space ('; ') and the names are entered <tt>lastName, firstName</tt> (i.e. separated by ', '). Your program should then print out the names, one per line, with the first initial of the first name, followed by ".", and  followed by the last name.</p>
+	<p>A sample run of your program should look like:</p>
+
+<pre style="background-color:lavender">
+Please enter your list of names:  Cohn, Mildred; Dolciani, Mary P.; Rees, Mina; Teitelbaum, Ruth; Yalow, Rosalyn
+
+You entered:
+
+M. Cohn
+M. Dolciani
+M. Rees
+R. Teitelbaum
+R. Yalow
+
+Thank you for using my name organizer!
+</pre>
+
+    <p><i>Hint: Do this problem in parts: first, split the list by person (what should the delimiter be?). Then, split each of person's name into first and last name (what should the delimiter be here?).  If you have a string <tt>str</tt>, what is <tt>s = str[0] + "."</tt>?</i></p>
+
+
+</li>
+
+<!-- problem 32 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p> Modify the map-mapking program from <a href="lab4.html">Lab 4</a> to create a topographic map (highlighting the points that have elevations that are multiples of 10).  Your program should ask the user for the amount of blue (a floating point number between 0.0 and 1.0), the name of the output imagee, create a new image with thaht name and with the pixels colored as follows:
+		</p><ul>
+			<li> If the elevation is less than or equal to 0, color the pixel the amount blue the user specified (and 0% red and 0% green).
+			</li><li> If the elevation is divisible by 10, color the pixel black (0% red, 0% green, and 0% blue).
+			</li><li> Otherwise, the pixel should be colored white (100% red, 100% green, and 100% blue).
+		</li></ul>
+
+
+      	<p>A sample run of your program should look like:
+      		</p><pre style="background-color:lavender">How blue is the ocean:  0.5
+What is the output file:  medBlue.png
+Thank you for using my program!
+Your map is stored medBlue.png.</pre>
+		<p> Your resulting map should look like:
+		</p><p> <img src="../images/topo.png" width="300">
+		</p><p> and be saved to a file called <tt>medBlue.png</tt>.
+
+
+	</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+
+</li>
+
+
+<!-- problem 33 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+		<p> Modify the program from <a href="lab6.html">Lab 6</a> that displays the <a href="../files/nycHistPop.csv">NYC historical population data</a>.  Your program should ask the user for the borough, an name for the output file, and then display the fraction of the population that has lived in that borough, over time.
+
+		</p><p> A sample run of the program:
+</p><pre style="background-color:lavender;width:400px">Enter borough name:  Queens
+Enter output file name:  qFraction.png
+</pre>
+		<p> The file <tt>qFraction.png</tt>:
+
+		</p><p><img src="../images/qFraction.png" width="300">
+
+
+		</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+
+	</p>
+
+
+</li>
+
+<!-- problem 34 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+		<p>Write a program that implements the pseudocode below:
+</p>
+<pre>
+1.  Ask the user for the number of seconds until lecture starts.
+2.  Print out the hours until lecture (hours = seconds //3600).
+3.  Compute the remaining seconds (rem = seconds % 3600).
+4.  Print out the minutes until lecture (minutes = rem // 60).
+5.  Print out the remaining seconds (remSec = rem % 60).
+</pre>
+
+<p>A sample run of your program should look like:
+</p>
+<pre style="background-color:lavender;width:400px">Enter number of seconds:  62
+Hours: 0
+Minutes: 1
+Seconds: 2
+</pre>
+
+<p>and another sample run:
+</p>
+<pre style="background-color:lavender;width:400px">
+Enter number of seconds:  4000
+Hours: 1
+Minutes: 6
+Seconds: 40
+</pre>
+</p>
+</li>
+
+
+</li>
+
+<!-- problem 35 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+	<p>Write a Bash script that prints <tt>Hello, World</tt> to the screen.</p>
+
+	<p>Submit a single text file containing your Unix shell commands.  See <a href="lab6.html">Lab 6</a> for details.</p>
+
+</li>
+
+
+</li>
+
+<!-- problem 36 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+		<p> Modify the parking ticket program from <a href="lab8.html">Lab 8</a> to do the following:
+		</p><ul>
+			<li> Ask the user for the name of the input file.
+			</li><li> Ask the user for the attribute (column header) to search by.
+		</li></ul>
+
+		<p>A sample run:
+		</p><pre style="background-color:lavender;width:400px">Enter file name:  Parking_Violations_Jan_2016.csv
+Enter attribute:  Vehicle Color
+The 10 worst offenders are:
+WHITE    2801
+WH       2695
+GY       1420
+BK       1153
+BLACK    1054
+BROWN     727
+BL        656
+GREY      574
+SILVE     450
+BLUE      412
+Name: Vehicle Color, dtype: int64
+</pre>
+
+		<p>And another run:
+</p><pre style="background-color:lavender;width:400px">Enter file name:  Parking_Violations_Jan_2016.csv
+Enter attribute:  Vehicle Year
+The 10 worst offenders are:
+0       3927
+2015    1265
+2014    1143
+2013    1105
+2012     772
+2011     666
+2007     643
+2008     559
+2010     509
+2006     499
+Name: Vehicle Year, dtype: int64
+</pre>
+
+
+
+  		</li>
+
+</li>
+
+<!-- problem 37 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p> Write a program that implements the pseudcode below.  Your program should ask the user for a binary number and print out the corresponding decimal number.
+
+		</p><pre>    Ask user for input, and store in the string, binString.
+    Set decNum = 0.
+    For each c in binString,
+        decNum = decNum * 2
+        if c is 1, then
+            decNum = decNum + 1
+    Print decNum
+		</pre>
+
+<p> A sample run of the program:
+</p><pre style="background-color:lavender;width:400px">Enter binary number: 10
+Your number in decimal is 2
+</pre>
+
+		<p> And another sample run of the program:
+</p><pre style="background-color:lavender;width:400px">Enter binary number: 1111
+Your number in decimal is 15
+</pre>
+
+	</li>
+
+
+
+</li>
+
+<!-- problem 38 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p>Fill in the missing functions:
+
+		</p><ul>
+			<li> <tt>average(region):</tt>  Takes a region of an image and
+     		returns the average red, green, and blue values across the region.
+     		</li><li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+     	</li></ul>
+
+ 		<p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+ 		(inspired by the elegant <a href="http://koalastothemax.com">koalas to the max</a>).
+
+ 		</p><p>For example, if you inputted our favorite image, you would see (left to right):
+
+ 		</p><p>
+ 		<img src="../images/refined1.png" width="150">
+  		<img src="../images/refined2.png" width="150">
+  		<img src="../images/refined3.png" width="150">
+  		<img src="../images/refined4.png" width="150">
+  		<img src="../images/refined5.png" width="150">
+  		<img src="../images/refined6.png" width="150">
+  		<img src="../images/refined7.png" width="150">
+  		<img src="../images/refined8.png" width="150">
+
+
+  		</p><p> and finally:
+
+  		</p><p> <img src="../images/csBridge.png" width="400">
+
+		</p><p>A template program, <tt>averageImage.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127">here</a>. You should use this file to get started with your program.</p>
+		<p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).</p>
+</li>
+
+<!-- problem 39 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+	 <p><img src="../images/irmaScreenshot.png" width="400">
+
+	 </p><p>Fill in the missing function to animate hurricane data (inspired by the 2018 <a href="http://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html">Nifty Hurricane Program</a> by Phil Ventura).  Your function, <tt>animate(t,lat,lon,wind)</tt> takes as input:
+	 </p><ul>
+	 	<li> <tt>t</tt>: a turtle,
+	 	</li><li> <tt>lat</tt>: an integer storing the current latitude,
+	 	</li><li> <tt>lon</tt>: an integer storing the current longitude, and
+	 	</li><li> <tt>wind</tt>: the current wind speed in miles per hour.
+	 </li></ul>
+
+	 <p>
+	 Your function should move to the turtle to the current location (longitude, latitude), and then based on the
+<a href="https://www.nhc.noaa.gov/aboutsshws.php">Saffir-Simpson Hurricane Wind Scale</a>, change the turtle to be:
+	 </p><ul>
+	 	<li> red and pen size 5 for Category 5 (windspeed &gt; 157 mph)
+    	</li><li> orange and pen size 4 for Category 4  (windspeed in 130-156 mph)
+    	</li><li> yellow and pen size 3 for Category 3   (windspeed in 111-129 mph)
+    	</li><li> green and pen size 2 for Category 2   (windspeed in 96-110 mph)
+    	</li><li> blue and pen size 1 for Category 1   (windspeed in 74-95 mph)
+    	</li><li> white and pen size 1 if not hurricane strength
+	 </li></ul>
+
+	 <p>Download the template program, <tt>hurricane.py</tt> using <a href="https://github.com/stjohn/csci127/blob/master/hurricane.py">this link</a>. You will also need to download the background image, <tt>mapNASA.gif</tt> (<a href="https://github.com/stjohn/csci127/blob/master/mapNASA.gif">link here</a>), and put it in the same directory as <tt>hurricane.py</tt>.</p>
+	 <p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
+
+	 </p><p>Two test files (<a href="../files/irma.csv">irma.csv</a> and <a href="../files/jose.csv">jose.csv</a>) are from the <a href="https://nifty.stanford.edu/2018/ventura-hurricane-tracker/nifty-hurricanes.html">Nifty site</a>.  Additional CSV files are available there.
+
+	 </p><p>
+	 <i>Hint:  You may find the following turtle commands useful:  <tt>color()</tt>, <tt>goto()</tt>, and <tt>pensize()</tt>.</i>
+
+	 </p></li>
+
+
+</li>
+
+<!-- problem 40 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 100 times.  Each "walk" is 30 steps forward and the turtle can turn left 0,10,20,...,350 degrees (chosen randomly) at the beginning of each walk.
+
+		</p><p> A sample run of your program:
+</p><p> <img src="../images/randomWalk.png" height="200">
+
+
+
+
+
+	</p></li>
+
+
+</li>
+
+<!-- problem 41 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+	<p>	Write a <b>C++ program</b> that prints "Hello, World!" to the screen.
+
+	</p><p> <i>Hint:  See <a href="lab12.html">Lab 12</a> for getting started with C++.</i>
+
+
+
+	</p></li>
+
+
+</li>
+
+<!-- problem 42 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab11.html">Lab 11</a></b><br>	
+
+	<p> Using the weMIPS assembly language, write a program that loops through the numbers 2, 4, 6, 8, ..., 20. </p>
+
+</li>
+
+<!-- problem 43 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab11.html">Lab 11</a></b><br>	
+
+		<p> Using the weMIPS assembly language, write a program that prints the string <tt>"Hello, World!"</tt> to the screen.</p>
+</li>
+
+<!-- problem 44 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab6.html">Lab 6</a></b><br>	
+
+	<p>Write a Bash script that makes a new directory called <tt> projectFiles </tt>, enters the directory, then creates three more subdirectories titled <tt>source</tt>, <tt>data</tt>, and <tt>results</tt>.
+</li>
+
+
+<!-- problem 45 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading: <a href="lab9.html">Lab 9</a></b><br>	
+
+	<p> Fix all of the errors in the file <tt><a href="https://github.com/stjohn/csci127/blob/master/errorsHex.py">errorsHex.py</a></tt> and then upload the file to Gradescope.</p>
+</li>
+
+<!-- problem 46 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+
+		<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
+
+</p><pre>    triangle(t, length):
+    1.  If length &gt; 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.     Call triangle with t and length/2.
+</pre>
+
+<p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
+</p><pre>    nestedTriangle(t, length):
+    1.  If length &gt; 10:
+    2.     Repeat 3 times:
+    3.         Move t, the turtle, forward length steps.
+    4.         Turn t left 120 degrees.
+    5.         Call nestedTriangle with t and length/2.
+</pre>
+
+		<p>A template program, <tt>nestingTrianges.py</tt>, is available
+		<a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/nestingTriangles.py">here</a> on GitHub.
+		The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the GitHub program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
+
+		</p><p>A sample run:
+</p><pre style="background-color:lavender;width:400px">Enter edge length:  160
+</pre>
+		<p>which would produce:
+
+</p><p><img height="200" src="../images/nestedTriangles.png">
+
+</li>
+
+<!-- problem 47 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	<p> Validate the user's input such that they are required to enter a non-negative integer.</p>
+</li>
+
+<!-- problem 48 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab12.html">Lab 12</a></b><br>	
+
+    <p> Write a <b>C++ program</b> that asks the user for a year, and continue asking until the number entered that is 2018 or earlier.
+
+		</p><p>A sample run:
+</p><pre style="background-color:lavender;width:400px">Enter year: 2023
+Year must be 2018 or earlier
+Enter year: 2025
+Year must be 2018 or earlier
+Enter year: 2000
+You entered:  2000
+</pre>
+
+		<p> <i>Hint: See <a href="lab10.html">Lab 10</a> for similar programs in Python.  Rewrite in C++.</i>
+
+
+
+
+
+
+
+</li>
+
+<!-- problem 49 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:</b><br>	
+	<p> Write a complete C++ program that prints the string <tt>"I love C++"</tt> 14 times. Each copy of the string should be on a new line. </p>
+</li>
+
+<!-- problem 50 -->
+<li> <b>Due Date: December 18</b>
+	<b style="float:right">Reading:  <a href="lab13.html">Lab 13</a></b><br>	
+		<p> Write a <b>C++ program</b>  that asks the user for the month of the year (as a number), and prints
+		</p><ul>
+			<li>"Happy Winter" if it is strictly before 3 or strictly larger than 11,
+			</li><li> "Happy Spring" if it is 3 or greater, but strictly before 7, and
+			</li><li> "Happy Summer" if it is 7 or greater, but strictly before 9, and
+			</li><li> "Happy Fall" otherwise.
+		</li></ul>
+
+		<p>A sample run:
+</p><pre style="background-color:lavender;width:400px">Enter month (as a number):  12
+Happy Winter
+</pre>
+		<p>Another sample run:
+</p><pre style="background-color:lavender;width:400px">Enter month (as a number):  8
+Happy Summer
+</pre>
+		<p>And another run:
+</p><pre style="background-color:lavender;width:400px">Enter month (as a number):  11
+Happy Fall
+</pre>
+</li>
+
 
 </ol>
 </div>
