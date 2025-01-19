@@ -1,0 +1,448 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 3, CSci 127: Intro to CS, Hunter College</title>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  background-color: #dddddd;
+}
+.inline {
+  padding: 1px;
+}
+.blockcode {
+  border: 1px solid #999999;
+  display: block;
+  padding-left: 10px;
+  padding-top : 2px;
+  padding-bottom : 2px;
+  margin: 5px;
+}
+.datablock {
+  border: 1px solid #eeeeee;
+  display: block;
+  padding: 7px;
+  padding-top : 0px;
+  margin: 5px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../s25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+<br>
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 3<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2025<br><br>
+</h1>
+
+<div>
+
+  <h3> Learning Objectives:</h3>
+
+          <ol>
+            <li> Students will specify <b>colors with turtles by name</b>
+            <li> Students will specify <b>colors with turtles by Decimal</b> (RGB amounts)
+            <li> Students will understand <b>Hexadecimal Numbers</b>
+            <li> Students will specify <b>colors with turtles by Hexadecimal</b>
+            <li> Students will write programs that <b>manipulate images</b> (png)
+            <li> Students will write programs that use <b>NumPy arrays</b>
+            <li> Students will write programs that read and write files with <b>pyplot</b>
+            <li> Students will use <b>Unix commands</b> to view and move files.
+          </ol>
+
+
+
+<p><b>Software tools needed:</b>  web browser, Python IDLE programming environment and Unix shell.</p>
+
+<br><hr>
+
+
+  
+  
+
+  
+  </div>
+  
+  <div>
+  <h3>Using Python, Gradescope, and Blackboard</h3>
+  
+  <p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
+  </p>
+  </div>
+  
+  <div>
+  <h3>Colors</h3>
+  
+  <p>
+  There are several different ways to specify colors.  We will use colors:
+  <ul>
+      <li> by name,
+      <li> by percentage,
+      <li> by absolute amount of color ('255' mode), and
+      <li> by absolute amount of color (hexadecimal format).
+  </ul>
+  </p>
+  
+  </div>
+  
+  <div>
+  <h4>Names for Colors</h4>
+  
+  <p>
+  For common colors, you can give the name of the color, as a string.  For example, run the program (click the triangle) to see two turtles, drawing in different colors:
+  
+  <p>
+  <iframe src="https://trinket.io/embed/python/b594e53e4a" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+  </p>
+  
+  <br>
+  <p> There are more than 100 colors that we can use by name.  Here are the ones available in most web browsers and Python turtle packages:
+  
+  <p>
+  <iframe src="https://en.wikipedia.org/wiki/Web_colors#X11_color_names" width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+  </p>
+  <br>
+  <p>Some are obvious, like ("red" or "blue"), others are a bit more obscure (like
+  "mediumorchid" or "chartreuse").  What color is "mediumorchid"?  Change the color of one of the turtles in the coding window above to find out.  Add in a new turtle and make it your favorite color.  Draw a few lines to demonstrate its color.
+  </p>
+  
+  </div>
+  
+  <div>
+  <h4>Colors by Decimals</h4>
+  
+  <p>
+  As we saw above, the turtle package recognizes many common colors by name.  If your favorite color is not on that list, you can make a new color by specifying how much of the <span style="color:red">red</span>, <span style="color:green">green</span>, and <span style="color:blue">blue</span> ('<span style="color:red">R</span><span style="color:green">G</span><span style="color:blue">B</span>') light intensity you would like. The range for each is from 0 (no light) to 255 (100% light).  For example, if all the light intensities are 255 (100% of the possible), then the color is white.
+  </p>
+  
+  <p> Read the code below and guess what color each turtle is.  Check your guess by running the program:
+  <br><br>
+  </p>
+  
+  <p>
+  <iframe src="https://trinket.io/embed/python/11f1644654" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+  </p>
+  
+  <p>Let's look at some of the shades of red that are available.  Here's our plan (or <a href="http://en.wikipedia.org/wiki/Pseudocode">pseudocode</a>):
+  <ol>
+      <li> Create a turtle, <tt>tess</tt>.
+      <li> For 0, 10, 20, 30, ..., 250,
+      <li> &nbsp;&nbsp; Move forward 10 steps
+      <li> &nbsp;&nbsp; Make the turtle a bit larger each time
+      <li> &nbsp;&nbsp; Make the turtle a bit more red each time
+  </ol>
+  
+  Let's change each piece of our "To Do" list into Python code:
+  <ol>
+      <li> Create a turtle, <tt>tess</tt>.
+  
+          <p> We've done this before.  We import the turtle module and set up the turtle.  One new thing we need to do, is to tell the turtle library that we would like to represent colors as decimal numbers:
+  <pre style = "background-color:lavender;width:650px">
+  #A program that demonstrates the shades of red
+  #Fall 2017
+  
+  import turtle			#Import the turtle drawing package
+  
+  turtle.colormode(255)		#Allows colors to be given as 0...255
+  tess = turtle.Turtle()		#Create a turtle
+  </pre>
+  
+          <p> To keep our drawing from running off the screen, we'll move <tt>tess</tt> backwards before we start our loop:
+  
+  <pre style = "background-color:lavender;width:650px">
+  tess.backward(100)		#Move her backwards, to give more space to draw
+  </pre>
+  
+      <li> For 0, 10, 20, 30, ..., 250,
+  
+          <p>This can be done with a <tt>for</tt>-loop and a <tt>range</tt> that starts at 0, stops at 250, and steps up by 10 each time:
+  
+  <pre style = "background-color:lavender;width:650px">
+  for i in range(0,255,10):
+  </pre>
+      <li> &nbsp;&nbsp; Move forward 10 steps
+  <pre style = "background-color:lavender;width:650px">
+       tess.forward(10)		#Move forward
+  </pre>
+      <li> &nbsp;&nbsp; Make the turtle a bit larger each time
+  <pre style = "background-color:lavender;width:650px">
+       tess.pensize(i)		#Set the drawing size to be i (larger each time)
+  </pre>
+      <li> &nbsp;&nbsp; Make the turtle a bit more red each time
+  <pre style = "background-color:lavender;width:650px">
+       tess.color(i,0,0)		#Set the red channel to be i (brighter each time)
+  </pre>
+  </ol>
+  
+  <p>Here's the whole program altogether.  Copy it over to an idle file window and try running it:
+  
+  <pre style = "background-color:lavender;width:700px">
+  #A program that demonstrates the shades of red
+  #Fall 2017
+  
+  import turtle				#Import the turtle drawing package
+  
+  turtle.colormode(255)		#Allows colors to be given as 0...255
+  tess = turtle.Turtle()		#Create a turtle
+  tess.shape("turtle")		#Make it turtle shaped
+  tess.backward(100)			#Move her backwards, to give more space to draw
+  
+  #For 0,10,20,...,250
+  for i in range(0,255,10):
+       tess.forward(10)		#Move forward
+       tess.pensize(i)		#Set the drawing size to be i (larger each time)
+       tess.color(i,0,0)		#Set the red channel to be i (brighter each time)
+  </pre>
+  
+  <p>
+  The resulting graphics window is:
+  <p>
+  <img height=400 src="../images/shadesOfRed.png">
+  
+  <p>
+  How would you show shades of blue?
+  When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
+  
+  </div>
+  
+  <div>
+  <h4>Colors by Hexadecimal</h4>
+  
+  <p>
+  A common way to represent colors is using hexadecimal numbers.  Our traditional decimal, or base-10 numbers, use 10 symbols for each digit:  0, 1, 2, 3, ..., 9.  Hexadecimal, or base-16 numbers, use 16 symbols.  In addition to 0, 1, 2, ..., 9, the letters A, B, C, D, E, and F are also used.
+  
+  <p> A good way to think about it is to think about what the world would be like if everyone had 8 fingers on each hand, instead of 5.  When we count, on 10 fingers, we can use the symbols 0, 1, 2, ..., 9 to label each finger:
+  
+  <p>
+  <img src="../images/hands10.png" style="padding:25px">
+  <br>
+  (from <a href ="http://www.i-programmer.info/babbages-bag/478-hexadecimal.html">i-programmer.info</a>)
+  
+  <p>
+  Doing the same for 16 fingers, we use 0, 1, 2, ..., 9, and then A, B, ..., F when we run out of the normal symbols for numbers:
+  
+  <p>
+  <img src="../images/hands16.png" style="padding:25px">
+  <br>
+  (from <a href ="http://www.i-programmer.info/babbages-bag/478-hexadecimal.html">i-programmer.info</a>)
+  
+  <p>
+  The first 9 numbers are the same in both decimal and hexadecimal, but larger numbers are different.  For example, counting to 10 on our 8-fingered hands gives the symbol A.  So, the decimal number 10 is the single digit hexadecimal number, A.
+  
+  <p> Going in the other direction, the hexadecimal number 11, is counting through all the (8-fingered hands) fingers (16) plus one more, yielding 17.
+  
+  <p>  Why does this matter?  Our color values range in decimal from 0 to 255.  If we write these in hexadecimal, the range is 0 to FF.  FF is the largest two-digit hexadecimal number, so, this range of values fits perfectly in two-digit hexadecimal numbers.  Triples of these hexadecimal values are an extremely common way to represent colors.
+  
+  <p>For example, here are some shades of blue, given with their name and hexadecimal value:
+  <p>
+  <a href="http://www.w3schools.com/colors/colors_hex.asp"><img src="../images/blues.png" ></a>
+  </p>
+  
+  <p>
+  The leading hash sign ('#') is used to indicate that this is a hexadecimal number:
+  <ul>
+      <li> The next two digits are for the amount of red.
+      <li> The middle two digits are for the amount of green.
+      <li> The last two digits are for the amount of blue.
+  </ul>
+  <p>
+  The first color on the list has <tt>00</tt> or 0% red, <tt>00</tt> or 0% green, and <tt>00</tt> or 0% red, and represents the color black.  These shades of blue all have no red (first two digits are <tt>00</tt>) and no green (middle two digits are <tt>00</tt>).  By varying the values of the last two digits, we have a dark, navy blue (<tt>80</tt> in the last two digits) to a bright blue (<tt>FF</tt> in the last two digits).
+  
+  <p>
+  We can set the color of turtles using hexcodes.  For example, to create a turtle, named <tt>thea</tt>, and set her color to the medium blue (using the hex code from the above list), we can:
+  <pre style = "background-color:lavender;width:400px">
+  import turtle
+  
+  thea = turtle.Turtle()
+  thea.shape("turtle")
+  thea.color("#0000CD")
+  </pre>
+  
+  <p>
+  producing a graphics window with:
+  <p>
+  <img src="../images/medBlueTurtle.png" style="padding:25px">
+  
+  <p>
+  The code above always produces a medium blue turtle.  How would you modify the program to let the user specify a hex code for the color of the turtle?
+  When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
+  
+  </div>
+  
+  
+  
+  <div>
+  <h3>Images</h3>
+  
+  
+  There are many different formats to store images.  Some store the information about the color of every <i>pixel</i> ("picture element" or dot on the screen).  Others store end points of lines or boundaries of regions and the colors of each.  We focus on the former, and in particular, use the <tt>png</tt> (portable network graphics) file format, which is popular for storing images captured from cameras and is `lossless' (every pixel captured is stored, so, can also be quite large).
+  
+  <p>
+  
+  The <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">textbook</a> has a lovely visualization and explanation:
+  
+  <p>
+  <img src="../images/thinkGrid.png">
+  
+  <p> To specify a given pixel, you give its row, <tt>r</tt>, and column, <tt>c</tt>, in the grid.  Counting from the upper left hand corner which has index 0,0.  This is unlike standard Cartesian (math) coordinates but echos how
+  matrices are often accessed.
+  
+  <p><img src="../images/sic-imageplanes.png" height= 300 align="right">
+  Each pixel is represented by its the percentage of red, green, and blue ("RGB") values. Images are stored as a grid of red values, a grid of green values, and a grid of blue
+  values.
+  
+  <p>
+  For example, if we stored our image in the variable, <tt>img</tt>, we could access the red
+  value by:
+  <pre style = "background-color:lavender;width:400px">
+  print("Upper left has red:", img[0,0,0])
+  </pre>
+  and the amount of green:
+  <pre style = "background-color:lavender;width:400px">
+  print("Upper left has green:", img[0,0,1])
+  </pre>
+  and the amount of blue:
+  <pre style = "background-color:lavender;width:400px">
+  print("Upper left has blue:", img[0,0,2])
+  </pre>
+  Any point can be accessed via its coordinates <tt>(i,j)</tt> and the color channel (0 for red, 1 for green, and 2 for blue).  In our example above,
+  with the picture stored in the variable, <tt>img</tt>:
+  <pre style = "background-color:lavender;width:400px">
+  img[r,c,chan]
+  </pre>
+  where the <tt>r</tt> is the row and <tt>c</tt> is the column of the pixel and <tt>chan</tt> is the color channel (0 for red, 1 for green, and 2 for blue). Note that when we are accessing parts of our images, we use the square brackets ('[' and ']'), just as we did for lists.  The round parenthesis ('(' and ')') are used for functions (like <tt>print()</tt> and <tt>right()</tt>).
+  
+  
+  <p>
+  Let's write a program that manipulates an image.<br>
+  To do so we will use a new package used for visualization and plotting called <tt>matplotlib.pyplot</tt> (abbreviated by convention as <tt>plt</tt>)
+  When we use <tt>pyplot</tt> to read the image, the data is stored in a <b>grid-like structure as described above, called a <i>numpy array</i></b> (thus the second package, <tt>numpy</tt> abbreviated <tt>np</tt>)
+  This program does not use any of the <tt>numpy</tt> functions (we will next week), but that is what <tt>img</tt> and <tt>img2</tt> are.
+  Read through the code first, and then try it on your computer.  What does it do?  Note:  this program assumes that you have a file called <a href="../images/csBridge.png">csBridge.png</a> in the same directory.  You can use that file, or substitute one of your own.
+  <br><pre style = "background-color:lavender;width:650px">
+  #Name:  CSci 127 Teaching Staff
+  #Date:  Fall 2017
+  #This program loads an image, displays it, and then creates, displays,
+  #    and saves a new image that has only the red channel displayed.
+  
+  #Import the packages for images and arrays:
+  import matplotlib.pyplot as plt
+  import numpy as np
+  
+  
+  img = plt.imread('csBridge.png')   #Read in image from csBridge.png
+  plt.imshow(img)		                 #Load image into pyplot
+  plt.show()                         #Show the image (waits until closed to continue)
+  
+  img2 = img.copy()        #make a copy of our image
+  img2[:,:,1] = 0          #Set the green channel to 0
+  img2[:,:,2] = 0          #Set the blue channel to 0
+  
+  plt.imshow(img2)         #Load our new image into pyplot
+  plt.show()               #Show the image (waits until closed to continue)
+  
+  plt.imsave('reds.png', img2)  #Save the image we created to the file: reds.png
+  </pre>
+  
+  <p>
+  The code above always produces an image with only the red channel displayed. What happens if you display only the red and blue channels?
+  When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
+  
+  
+  
+  </div>
+  
+  
+  
+  <div>
+  <h3> More on Files & Command Line Interface</h3>
+  
+  <p>
+  <p><a href="lab2.html">Last lab</a>, we introduced the Unix shell commands:
+  <ul>
+      <li> <tt>cd</tt>: change directories (or folders),
+      <li> <tt>mkdir</tt>: make a directory,
+      <li> <tt>ls</tt>: list the contents of a directory, and
+      <li> <tt>pwd</tt>: show the path (location) of the current working directory.
+  </ul>
+  
+  <p>The <tt>ls</tt> command has many options to give more information about what is in a folder.  For example,
+  <pre style = "background-color:lavender;width:500px">
+  $ ls -l
+  </pre>
+  is the "long" format of <tt>ls</tt> and gives additional information such as permissions (who is allowed to <b>r</b>ead, <b>w</b>rite, or e<b>x</b>ecute the file), the owner and owner's group, the size, and the date of creation. For example, if our folder had a single directory, <tt>thomasH</tt> (like we created in <a href="lab2.html">Lab 2</a>), when you type the command, you will see output similar to:
+  <pre style = "background-color:lavender;width:500px">
+  $ ls -l
+  drwxr-xr-x  2 stjohn  wheel  68 Jan  7 21:00 thomasH/
+  </pre>
+  
+  <p>
+  Two useful commands are <tt>cp</tt> and <tt>mv</tt> which copy and rename (move) files.  If we have a folder with:
+  <pre style = "background-color:lavender;width:500px">
+  $ ls
+  p1.py     p2.py     programs/
+  </pre>
+  We can make a copy of a file by using the <tt>cp</tt> and the name of the old file and the new file:
+  <pre style = "background-color:lavender;width:500px">
+  $ cp p2.py p3.py
+  </pre>
+  The result would be:
+  <pre style = "background-color:lavender;width:500px">
+  $ ls
+  p1.py     p2.py     p3.py     programs/
+  </pre>
+  Renaming a file follows the same format:
+  <pre style = "background-color:lavender;width:500px">
+  $ mv p1.py prog1.py
+  </pre>
+  The result would be:
+  <pre style = "background-color:lavender;width:500px">
+  $ ls
+  p2.py     p3.py     prog1.py  programs/
+  </pre>
+  You can also move programs into a folder by giving the directory's name as the last input to the <tt>mv</tt> command:
+  <pre style = "background-color:lavender;width:500px">
+  $ mv prog1.py programs
+  </pre>
+  The result would be:
+  <pre style = "background-color:lavender;width:500px">
+  $ ls
+  p2.py     p3.py     programs/
+  </pre>
+  If we look inside the <tt>programs</tt> folder, we see:
+  <pre style = "background-color:lavender;width:500px">
+  $ ls programs
+  prog1.py
+  </pre>
+  
+
+
+<br><hr>  
+<h2>What's Next?</h2>
+  
+  
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+  
+</div>
+</body>  
+</html>
+  
