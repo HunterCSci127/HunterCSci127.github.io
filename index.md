@@ -1,6 +1,8 @@
 
 # <span style="color:purple">  Hunter College CSci 127 - Introduction to Computer Science </span>
 
+* ## [Spring 2025](https://huntercsci127.github.io/s25.html)
+
 * ## [Fall 2024](https://huntercsci127.github.io/f24.html)
 
 * ## [Spring 2024](https://huntercsci127.github.io/s24.html)
