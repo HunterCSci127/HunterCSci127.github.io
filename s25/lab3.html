@@ -61,9 +61,7 @@ Spring 2025<br><br>
           <ol>
             <li> Students will specify <b>colors by name, by decimal representation (RGB amounts), and by hexadecimal values.</b>
             <li> Students will understand <b>Hexadecimal Numbers</b>.
-            <li> Students will write programs that <b>manipulate (PNG) images</b>.
-            <li> Students will write programs that use <b>NumPy arrays</b>.
-            <li> Students will write programs that read and write files with <b>pyplot</b>.
+            <li> Students will write programs that use <b>NumPy arrays</b> and <b>pyplot</b> to <b>manipulate (PNG) images</b>.
             <li> Students will use <b>Unix commands</b> to view and move files.
           </ol>
 
@@ -74,21 +72,13 @@ Spring 2025<br><br>
 <br><hr>
 
 
+<h3>Using Python, Gradescope, and Brightspace</h3>
   
+<p>See <a href="lab0.html">Lab 0</a> and <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Brightspace.
+</p>
   
-
-  
-  </div>
-  
-  <div>
-  <h3>Using Python, Gradescope, and Blackboard</h3>
-  
-  <p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
-  </p>
-  </div>
-  
-  <div>
-  <h3>Colors</h3>
+<hr>
+<h2>1.  Colors</h2>
   
   <p>
   There are several different ways to specify colors.  We will use colors:
@@ -100,10 +90,8 @@ Spring 2025<br><br>
   </ul>
   </p>
   
-  </div>
-  
-  <div>
-  <h4>Names for Colors</h4>
+
+<h3>Names for Colors</h3>
   
   <p>
   For common colors, you can give the name of the color, as a string.  For example, run the program (click the triangle) to see two turtles, drawing in different colors:
@@ -123,10 +111,8 @@ Spring 2025<br><br>
   "mediumorchid" or "chartreuse").  What color is "mediumorchid"?  Change the color of one of the turtles in the coding window above to find out.  Add in a new turtle and make it your favorite color.  Draw a few lines to demonstrate its color.
   </p>
   
-  </div>
-  
-  <div>
-  <h4>Colors by Decimals</h4>
+
+<h3>Colors by Decimals</h3>
   
   <p>
   As we saw above, the turtle package recognizes many common colors by name.  If your favorite color is not on that list, you can make a new color by specifying how much of the <span style="color:red">red</span>, <span style="color:green">green</span>, and <span style="color:blue">blue</span> ('<span style="color:red">R</span><span style="color:green">G</span><span style="color:blue">B</span>') light intensity you would like. The range for each is from 0 (no light) to 255 (100% light).  For example, if all the light intensities are 255 (100% of the possible), then the color is white.
@@ -154,62 +140,46 @@ Spring 2025<br><br>
       <li> Create a turtle, <tt>tess</tt>.
   
           <p> We've done this before.  We import the turtle module and set up the turtle.  One new thing we need to do, is to tell the turtle library that we would like to represent colors as decimal numbers:
-  <pre style = "background-color:lavender;width:650px">
-  #A program that demonstrates the shades of red
-  #Fall 2017
+<pre><code class="blockcode">#A program that demonstrates the shades of red
   
-  import turtle			#Import the turtle drawing package
+import turtle			#Import the turtle drawing package
   
-  turtle.colormode(255)		#Allows colors to be given as 0...255
-  tess = turtle.Turtle()		#Create a turtle
-  </pre>
+turtle.colormode(255)		#Allows colors to be given as 0...255
+tess = turtle.Turtle()		#Create a turtle</code></pre>
   
           <p> To keep our drawing from running off the screen, we'll move <tt>tess</tt> backwards before we start our loop:
   
-  <pre style = "background-color:lavender;width:650px">
-  tess.backward(100)		#Move her backwards, to give more space to draw
-  </pre>
+<pre><code class="blockcode">tess.backward(100)		#Move her backwards, to give more space to draw</code></pre>
   
       <li> For 0, 10, 20, 30, ..., 250,
   
           <p>This can be done with a <tt>for</tt>-loop and a <tt>range</tt> that starts at 0, stops at 250, and steps up by 10 each time:
   
-  <pre style = "background-color:lavender;width:650px">
-  for i in range(0,255,10):
-  </pre>
+            <pre><code class="blockcode">for i in range(0,255,10):</code></pre>
       <li> &nbsp;&nbsp; Move forward 10 steps
-  <pre style = "background-color:lavender;width:650px">
-       tess.forward(10)		#Move forward
-  </pre>
+        <pre><code class="blockcode">    tess.forward(10)		#Move forward</code></pre>
       <li> &nbsp;&nbsp; Make the turtle a bit larger each time
-  <pre style = "background-color:lavender;width:650px">
-       tess.pensize(i)		#Set the drawing size to be i (larger each time)
-  </pre>
+        <pre><code class="blockcode">    tess.pensize(i)		#Set the drawing size to be i (larger each time)</code></pre>
       <li> &nbsp;&nbsp; Make the turtle a bit more red each time
-  <pre style = "background-color:lavender;width:650px">
-       tess.color(i,0,0)		#Set the red channel to be i (brighter each time)
-  </pre>
+        <pre><code class="blockcode">   tess.color(i,0,0)		#Set the red channel to be i (brighter each time)</code></pre>
   </ol>
   
   <p>Here's the whole program altogether.  Copy it over to an idle file window and try running it:
   
-  <pre style = "background-color:lavender;width:700px">
-  #A program that demonstrates the shades of red
-  #Fall 2017
-  
-  import turtle				#Import the turtle drawing package
-  
-  turtle.colormode(255)		#Allows colors to be given as 0...255
-  tess = turtle.Turtle()		#Create a turtle
-  tess.shape("turtle")		#Make it turtle shaped
-  tess.backward(100)			#Move her backwards, to give more space to draw
-  
-  #For 0,10,20,...,250
-  for i in range(0,255,10):
-       tess.forward(10)		#Move forward
-       tess.pensize(i)		#Set the drawing size to be i (larger each time)
-       tess.color(i,0,0)		#Set the red channel to be i (brighter each time)
-  </pre>
+    <pre><code class="blockcode">#A program that demonstrates the shades of red
+
+import turtle		        #Import the turtle drawing package
+
+turtle.colormode(255)		#Allows colors to be given as 0...255
+tess = turtle.Turtle()		#Create a turtle
+tess.shape("turtle")		#Make it turtle shaped
+tess.backward(100)              #Move her backwards, to give more space to draw
+
+#For 0,10,20,...,250
+for i in range(0,255,10):
+    tess.forward(10)		#Move forward
+    tess.pensize(i)		#Set the drawing size to be i (larger each time)
+    tess.color(i,0,0)		#Set the red channel to be i (brighter each time)</code></pre>
   
   <p>
   The resulting graphics window is:
@@ -218,12 +188,9 @@ Spring 2025<br><br>
   
   <p>
   How would you show shades of blue?
-  When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
+  When you have figured out the answer, see the <a href="ps.html#set3">Programming Problem List</a>.
   
-  </div>
-  
-  <div>
-  <h4>Colors by Hexadecimal</h4>
+<h3>Colors by Hexadecimal</h3>
   
   <p>
   A common way to represent colors is using hexadecimal numbers.  Our traditional decimal, or base-10 numbers, use 10 symbols for each digit:  0, 1, 2, 3, ..., 9.  Hexadecimal, or base-16 numbers, use 16 symbols.  In addition to 0, 1, 2, ..., 9, the letters A, B, C, D, E, and F are also used.
@@ -267,13 +234,11 @@ Spring 2025<br><br>
   
   <p>
   We can set the color of turtles using hexcodes.  For example, to create a turtle, named <tt>thea</tt>, and set her color to the medium blue (using the hex code from the above list), we can:
-  <pre style = "background-color:lavender;width:400px">
-  import turtle
+  <pre><code class="blockcode">import turtle
   
   thea = turtle.Turtle()
   thea.shape("turtle")
-  thea.color("#0000CD")
-  </pre>
+  thea.color("#0000CD")</code></pre>
   
   <p>
   producing a graphics window with:
@@ -283,13 +248,10 @@ Spring 2025<br><br>
   <p>
   The code above always produces a medium blue turtle.  How would you modify the program to let the user specify a hex code for the color of the turtle?
   When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
-  
-  </div>
-  
-  
-  
-  <div>
-  <h3>Images</h3>
+ 
+ <br> 
+<hr>
+<h2>2.  Images</h2>
   
   
   There are many different formats to store images.  Some store the information about the color of every <i>pixel</i> ("picture element" or dot on the screen).  Others store end points of lines or boundaries of regions and the colors of each.  We focus on the former, and in particular, use the <tt>png</tt> (portable network graphics) file format, which is popular for storing images captured from cameras and is `lossless' (every pixel captured is stored, so, can also be quite large).
@@ -336,43 +298,35 @@ Spring 2025<br><br>
   When we use <tt>pyplot</tt> to read the image, the data is stored in a <b>grid-like structure as described above, called a <i>numpy array</i></b> (thus the second package, <tt>numpy</tt> abbreviated <tt>np</tt>)
   This program does not use any of the <tt>numpy</tt> functions (we will next week), but that is what <tt>img</tt> and <tt>img2</tt> are.
   Read through the code first, and then try it on your computer.  What does it do?  Note:  this program assumes that you have a file called <a href="../images/csBridge.png">csBridge.png</a> in the same directory.  You can use that file, or substitute one of your own.
-  <br><pre style = "background-color:lavender;width:650px">
-  #Name:  CSci 127 Teaching Staff
-  #Date:  Fall 2017
-  #This program loads an image, displays it, and then creates, displays,
-  #    and saves a new image that has only the red channel displayed.
-  
-  #Import the packages for images and arrays:
-  import matplotlib.pyplot as plt
-  import numpy as np
-  
-  
-  img = plt.imread('csBridge.png')   #Read in image from csBridge.png
-  plt.imshow(img)		                 #Load image into pyplot
-  plt.show()                         #Show the image (waits until closed to continue)
-  
-  img2 = img.copy()        #make a copy of our image
-  img2[:,:,1] = 0          #Set the green channel to 0
-  img2[:,:,2] = 0          #Set the blue channel to 0
-  
-  plt.imshow(img2)         #Load our new image into pyplot
-  plt.show()               #Show the image (waits until closed to continue)
-  
-  plt.imsave('reds.png', img2)  #Save the image we created to the file: reds.png
-  </pre>
+  <br>
+  <pre><code class="blockcode">#This program loads an image, displays it, and then creates, displays,
+#    and saves a new image that has only the red channel displayed.
+
+#Import the packages for images and arrays:
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+img = plt.imread('csBridge.png')   #Read in image from csBridge.png
+plt.imshow(img)		                 #Load image into pyplot
+plt.show()                         #Show the image (waits until closed to continue)
+
+img2 = img.copy()        #make a copy of our image
+img2[:,:,1] = 0          #Set the green channel to 0
+img2[:,:,2] = 0          #Set the blue channel to 0
+
+plt.imshow(img2)         #Load our new image into pyplot
+plt.show()               #Show the image (waits until closed to continue)
+
+plt.imsave('reds.png', img2)  #Save the image we created to the file: reds.png</code></pre>
   
   <p>
   The code above always produces an image with only the red channel displayed. What happens if you display only the red and blue channels?
   When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
   
-  
-  
-  </div>
-  
-  
-  
-  <div>
-  <h3> More on Files & Command Line Interface</h3>
+<br>  
+<hr> 
+<h2>3.  More on Files & Command Line Interface</h2>
   
   <p>
   <p><a href="lab2.html">Last lab</a>, we introduced the Unix shell commands:
@@ -384,53 +338,33 @@ Spring 2025<br><br>
   </ul>
   
   <p>The <tt>ls</tt> command has many options to give more information about what is in a folder.  For example,
-  <pre style = "background-color:lavender;width:500px">
-  $ ls -l
-  </pre>
+    <pre><code class="blockcode">$ ls -l</code></pre>
   is the "long" format of <tt>ls</tt> and gives additional information such as permissions (who is allowed to <b>r</b>ead, <b>w</b>rite, or e<b>x</b>ecute the file), the owner and owner's group, the size, and the date of creation. For example, if our folder had a single directory, <tt>thomasH</tt> (like we created in <a href="lab2.html">Lab 2</a>), when you type the command, you will see output similar to:
-  <pre style = "background-color:lavender;width:500px">
-  $ ls -l
-  drwxr-xr-x  2 stjohn  wheel  68 Jan  7 21:00 thomasH/
-  </pre>
+  <pre><code class="blockcode">$ ls -l
+  drwxr-xr-x  2 stjohn  wheel  68 Jan  7 21:00 thomasH/</code></pre>
   
   <p>
   Two useful commands are <tt>cp</tt> and <tt>mv</tt> which copy and rename (move) files.  If we have a folder with:
-  <pre style = "background-color:lavender;width:500px">
-  $ ls
-  p1.py     p2.py     programs/
-  </pre>
+  <pre><code class="blockcode">$ ls
+  p1.py     p2.py     programs/</code></pre>
   We can make a copy of a file by using the <tt>cp</tt> and the name of the old file and the new file:
-  <pre style = "background-color:lavender;width:500px">
-  $ cp p2.py p3.py
-  </pre>
+  <pre><code class="blockcode">$ cp p2.py p3.py</code></pre>
   The result would be:
-  <pre style = "background-color:lavender;width:500px">
-  $ ls
-  p1.py     p2.py     p3.py     programs/
-  </pre>
+  <pre><code class="blockcode">$ ls
+  p1.py     p2.py     p3.py     programs/</code></pre>
   Renaming a file follows the same format:
-  <pre style = "background-color:lavender;width:500px">
-  $ mv p1.py prog1.py
-  </pre>
+  <pre><code class="blockcode">$ mv p1.py prog1.py</code></pre>
   The result would be:
-  <pre style = "background-color:lavender;width:500px">
-  $ ls
-  p2.py     p3.py     prog1.py  programs/
-  </pre>
+  <pre><code class="blockcode">$ ls
+  p2.py     p3.py     prog1.py  programs/</code></pre>
   You can also move programs into a folder by giving the directory's name as the last input to the <tt>mv</tt> command:
-  <pre style = "background-color:lavender;width:500px">
-  $ mv prog1.py programs
-  </pre>
+  <pre><code class="blockcode">$ mv prog1.py programs</code></pre>
   The result would be:
-  <pre style = "background-color:lavender;width:500px">
-  $ ls
-  p2.py     p3.py     programs/
-  </pre>
+  <pre><code class="blockcode">$ ls
+  p2.py     p3.py     programs/</code></pre>
   If we look inside the <tt>programs</tt> folder, we see:
-  <pre style = "background-color:lavender;width:500px">
-  $ ls programs
-  prog1.py
-  </pre>
+  <pre><code class="blockcode">$ ls programs
+  prog1.py</code></pre>
   
 
 
