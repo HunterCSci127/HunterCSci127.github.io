@@ -481,10 +481,8 @@ Enter color (as hex): #000011</code></pre>
 
 <li > 
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, March 4</b><br>
-
-
 	<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b><br>
-	<b>Available Libraries: matplotlib, numpy, Python 3.10+</b></p>
+	<b>Available Libraries: matplotlib, numpy</b></p>
 	<p><b>Blue Channel</b></p>	
 
 	<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  Your program should create a new image that has only the blue channel of the original image.
@@ -511,14 +509,170 @@ Enter name of the output file:  blueH.png</code></pre>
 
 
 
-<!--
+
 <a id="set4"></a>
 <hr>
--->
+
+
+
+<!--program 17-->
+<li >
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, March 5</b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/Input.html#input" target="_blank">Section 2.8</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab3.html">Lab 3</a></b><br>
+		<b>Available Libraries: turtle, Python 3.10+</b></p>
+		<p><b>Turning Turtle</b></p>
+
+	<p>
+		Write a program that asks the user for 5 whole (integer) numbers.  For each number, turn the turtle left the degrees entered and then the turtle should move forward 100.
+
+		<p>A sample run of your program should look like:
+			<pre><code class="datablock">Enter a number: 270
+Enter a number: 100
+Enter a number: 190
+Enter a number: 200
+Enter a number: 80</code></pre>
+
+		<p>and the output should look similar to:
+		<br>
+		<img src="../images/5turns.png" style="padding:25px" height=200>
+
+
+
+</li>
+
+<!--program 17-->
+
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 6</b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/OperatorsandOperands.html" target="_blank">Section 2.7</a> & <a href="lab4.html">Lab 4</a></b><br>
+		<b>Available Libraries: Python 3.10+</b></p>
+		<p><b>Making Change</b></p>
+
+
+
+
+		<p>Write a program that implements the pseudocode below:
+<pre>
+1.  Ask the user for the number of cents as an integer (e.g. 99 not 0.99).
+2.  Print out the number of quarters (quarters = cents // 25).
+3.  Compute the remaining change (rem = cents % 25).
+4.  Print out the number of dimes (dimes = rem // 10).
+5.  Compute the remaining change (rem = rem % 10).
+6.  Print out the number of nickels (nickels = rem // 5).
+7.  Print out the remaining cents (cents = rem % 5).
+</pre>
+
+<p>Be sure to print how many of each coin type in the given order (quarters, followed by dimes, followed by nickels, followed by cents) each on a new line.
+<p>A sample run of your program should look like:
+<pre><code class="datablock">Enter the number of cents: 99
+Quarters: 3
+Dimes: 2
+Nickels: 0
+Cents: 4</code></pre>
+
+<p>and another sample run:
+<pre><code class="datablock">Enter the number of cents: 62
+Quarters: 2
+Dimes: 1
+Nickels: 0
+Cents: 2</code></pre>
+
+
+	<p><i>Hint: See <a href="http://runestone.academy/runestone/static/thinkcspy/SimplePythonData/OperatorsandOperands.html">Section 2.7</a>.</i>
+
+
+</li>
+
+
+<!--program 18-->
+<li >  
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, March 7</b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html" target="_blank">Chapter 7</a> & <a href="lab4.html">Lab 4</a></b><br>
+		<b>Available Libraries: Python 3.10+</b></p>
+		<p><b>DNA String Complement</b></p>
+
+
+		<p>We can store DNA sequences as strings. These strings are made up of the letters A, C, G, and T. For a given DNA string, the GC-content is the percent of the string that is C or G, written as a decimal.</p>
+	
+	<p> Write a program that prompts the user for a DNA string, and then prints the length and GC-content of that string.</p>
+
+	<p>A sample run of the program: </p>
+	<pre><code class="datablock">Enter a DNA string:  ACGCCCGGGATG
+Length is 12
+GC-content is 0.75</code></pre>
+
+	<p><i>Hint:</i> You can use a <tt>for</tt>-loop to go through each character in the string, and count each time you encounter a 'C' or 'G'. You can use an <tt>if</tt>-statment to check what kind of character the loop is currently on. Alternatively, you can use the <tt>count()</tt> method introduced in Lab 2 to get the total occurrences of 'C' and 'G' in the string.
+
+
+
+<!--program 19-->
+<li >
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, March 11</b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html" target="_blank">Section 8.11</a>  & <a href="lab4.html">Lab 4</a></b><br>
+		<b>Available Libraries: matplotlib, numpy</b></p>
+		<p><b>Topo Map</b></p>
+		
+
+	<p> Modify the map-mapking program from <a href="lab4.html">Lab 4</a> to create a topographic map (highlighting the points that have elevations that are multiples of 10) and the coastline.  Your program should ask the user for the amount of intensity (a floating point number between 0.0 and 1.0), the name of the output image, and create a new image with that name and with the pixels colored as follows:
+	</p><ul>
+		<li> If the elevation is less than or equal to 0, the pixel should be colored blue (0% red, 0% green, and 100% blue).</li>
+		<li>If the elevation is not 0 but divisible by 10, color the pixel gray (<tt>amt</tt> red, <tt>amt</tt> green, and <tt>amt</tt> blue) where <tt>amt</tt> is the amount of intensity entered by the user.</li>
+		</li> Otherwise, the pixel should be colored white (100% red, 100% green, and 100% blue).</li>
+	</ul>
+
+
+	  <p>A sample run of your program should look like:
+		  <<pre><code class="datablock">What intensity for the topo lines:  0.5
+What is the output file:  med_topo.png
+Thank you for using my program!
+Your map is stored med_gray_topo.png.</code></pre>
+	<p> Your resulting map should look like:
+	</p><p> <img src="../images/med_gray_topo.png" width="300">
+	</p><p> and be saved to a file called <tt>med_gray_topo.png</tt>.
+
+		<p>Another run with darker lines:
+	<pre><code class="datablock">What intensity for the topo lines:  0.0
+What is the output file:  dark_lines_topo.png
+Thank you for using my program!
+Your map is stored dark_lines_topo.png.</code></pre>
+	  <p> Your resulting map should look like:
+	  </p><p> <img src="../images/dark_lines_topo.png" width="300">
+	  </p><p> and be saved to a file called <tt>dark_lines_topo.png</tt>.
+  
+
+
+
+</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+
+
+
+</li>
+
+<!--program 20-->
+
+<li >
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, March 12</b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/ListComprehensions.html#list-comprehensions" target="_blank">Section 10.23</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab4.html">Lab 4</a></b><br>
+		<b>Available Libraries: Python 3.10+</b></p>
+		<p><b>Names with Spaces</b></p>
+	
+	<p>Write a program that identifies names that will may cause issue with formatting for subsequent programs.  Your program should ask the user for a list of last names and prints out a list with all the names in the list that contain spaces.</p>
+
+	<p>For example, if you ran your program and the user entered:</p>
+
+	<pre><code class="datablock">Enter list of names: ["Smith", "Wong", "St. John", "Von Trapp"]
+The names with spaces:  ["St. John", "Von Trapp"]</code></pre>
+	
+	<p>Hint:  See Section 4 in <a href="lab4.html">Lab 4</a>.</p>
+</li>
 
 
 
 <!--
+<a id="set5"></a>
+<hr>
+
+
 	<p>This program draws a figure using the <code class="inline">turtle</code> library.  Write a program that asks the user for names of colors, separated by spaces.  For each color they enter, change your turtle to that color, move forward 100 steps and turn left 77 degrees.</p>
 
 
