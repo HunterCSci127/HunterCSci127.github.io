@@ -4,29 +4,18 @@
   <meta http-equiv="Content-Type"
  content="text/html; charset=iso-8859-1">
   <title>Lab 4, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <STYLE>A {text-decoration: none;}
 th, td { padding: 5px; }
 code {
-  background-color: #dddddd;
+  border: 2px solid #999999;
 }
 .inline {
   padding: 1px;
-}
-.blockcode {
-  border: 1px solid #999999;
-  display: block;
-  padding-left: 10px;
-  padding-top : 2px;
-  padding-bottom : 2px;
-  margin: 5px;
-}
-.datablock {
-  border: 1px solid #eeeeee;
-  display: block;
-  padding: 7px;
-  padding-top : 0px;
-  margin: 5px;
 }
 </STYLE>
 <body>
@@ -69,7 +58,7 @@ Spring 2025<br><br>
       
     </ol>
 
-<p>Software tools needed:  terminal (command line), web browser and Python programming
+<p><b>Software tools needed:</b>  terminal (command line), web browser and Python programming
 environment with numpy and matplotlib packages installed.</p>
 
 
@@ -109,42 +98,40 @@ Open a Python file in your text editor. In a comment at the top of the file, wri
 
 <p>
 Here is one possible design:
-<pre><code class="blockcode">1. Input the distance in kilometers (call it km)
-2. Calculate the distance in miles as ?
-3. Output miles</code></pre>
+<pre><code class="python">#1. Input the distance in kilometers (call it km)
+#2. Calculate the distance in miles as ?
+#3. Output miles</code></pre>
+Note that we're preceding the items in our outline by '#', so they can be used as comments for our final program.
 
 
 <p>Above, we are missing an important part -- the formula to calculate miles from kilometers. The conversion formula is <b>1 km = 0.621371 miles.</b>  
 </p>
-<pre><code class="blockcode">#1. Input the distance in kilometers (call it km)
+<pre><code class="python">#1. Input the distance in kilometers (call it km)
 #2. Calculate the distance in miles as 0.621371*km
 #3. Output miles</code></pre>
-Note that we're preceding the items in our outline by '#', so they can be used as comments for our final program.
 
 <p>If you have not done so already, now would be a good time to save your work as the file,
 <tt>km2miles.py</tt>.
 
 <p>
 Now, we are ready to <b>convert our outline of the algorithm to Python</b>.  Begin by adding a comment to the beginning of the file:
-<pre><code class="blockcode">
-"""
+<pre><code class="python">"""
 Name:  your name
 Email: your email
 Date:  February 2025
 Converter example program from Lab 4
-""""
+"""
 
 #1. Input the distance in kilometers (call it km)
 #2. Calculate the distance in miles as 0.621371*km
 #3. Output miles</code></pre>
 Next, let's print a welcome message:
-<pre><code class="blockcode">
-"""
+<pre><code class="python">"""
 Name:  your name
 Email: your email
 Date:  February 2025
 Converter example program from Lab 4
-""""
+"""
 
 print("Welcome to Daniel's calculator!")
 
@@ -153,36 +140,36 @@ print("Welcome to Daniel's calculator!")
 #3. Output miles</code></pre>
 
 <p>Next, fill in the program line by line.  First, ask the user for their input:
-<pre><code class="blockcode">"""
+<pre><code class="python">"""
 Name:  your name
 Email: your email
 Date:  February 2025
 Converter example program from Lab 4
-""""
+"""
 
 print("Welcome to Daniel's calculator!")
         
 
 #1. Input the distance in kilometers (call it km)
-km = float(input("Enter distance in kilometers: ""))
+km = float(input("Enter distance in kilometers: "))
 
 #2. Calculate the distance in miles as 0.621371*km
 #3. Output miles</code></pre>
 Test to make sure that the program runs. The program will ask for input but not print anything out after a value is entered. 
 
 <p>Now, process the input (apply the conversion formula):
-<pre><code class="blockcode">"""
+<pre><code class="python">"""
 Name:  your name
 Email: your email
 Date:  February 2025
 Converter example program from Lab 4
-""""
+"""
 
 print("Welcome to Daniel's calculator!")
         
 
 #1. Input the distance in kilometers (call it km)
-km = float(input("Enter distance in kilometers: ""))
+km = float(input("Enter distance in kilometers: "))
         
 #2. Calculate the distance in miles as 0.621371*km
 miles = 0.621371*km
@@ -190,18 +177,18 @@ miles = 0.621371*km
 #3. Output miles</code></pre>
 
 <p>Finally, add the print statement that shows the output:
-<pre><code class="blockcode">"""
+<pre><code class="python">"""
 Name:  your name
 Email: your email
 Date:  February 2025
 Converter example program from Lab 4
-""""
+"""
 
 print("Welcome to Daniel's calculator!")
         
 
 #1. Input the distance in kilometers (call it km)
-km = float(input("Enter distance in kilometers: ""))
+km = float(input("Enter distance in kilometers: "))
         
 #2. Calculate the distance in miles as 0.621371*km
 miles = 0.621371*km
@@ -222,7 +209,7 @@ In addition to multiplication ('*'), Python has addition ('+'), subtraction ('-'
 
 <p>Suppose you want to run one command if a certain condition is true and another command if the condition is false.</p>
 <p>Python has a built-in control structure for making decisions.  Its basic form is:</p>
-<pre><code class="blockcode">
+<pre><code class="python">
 if <i>condition1</i>:
   if true do this block
 elif <i>condition2</i>:
@@ -245,7 +232,7 @@ else:
 </ul>
 
 Since if the nucleotide is an A, we don't need to check if it's also a C, G, or T (and similarly for the other possible values), we can rewrite this as:
-<pre><code class="blockcode">  if nucleotide == "A":
+<pre><code class="python">  if nucleotide == "A":
       newNucleotide = "T"
   elif nucleotide == "C":
       newNucleotide = "G"
@@ -279,7 +266,7 @@ For the last part of the lab, let's combine what we have learned about images an
 	<li> Create a folder to hold your work (see <a href="lab2.html">Lab 2</a> for directions for doing so from the command line).
 	<li> Download <a href="../files/elevationsNYC.txt">elevationsNYC.txt</a> and save to your folder (you may need to move it from your <tt>Downloads</tt> folder).
 	<li> In your Python environment, create the following short program:
-<pre><code class="blockcode">"""
+<pre><code class="python">"""
 Name:  ... your name here ...
 Email: ... your email here ...
 Date:  February 2025
@@ -310,7 +297,7 @@ plt.show()</code></pre>
 <p>
 We can use this data to make a flood map of New York City.  When Hurricane Sandy hit New York City in 2012, sea level rose 6 feet above normal, causing extensive flooding in low lying areas  (<a href="http://www.nytimes.com/newsgraphics/2012/1120-sandy/survey-of-the-flooding-in-new-york-after-the-hurricane.html?mcubz=1">NYT map</a>).  For our flood map, we can incorporate the storm surge into our coloring scheme:
 
-<pre><code class="blockcode">	if elevation <= 0:
+<pre><code class="python">	if elevation <= 0:
 	    #Below sea level
 	    Color the pixel blue
 	elif elevation <= 6:
@@ -339,7 +326,7 @@ We can use this data to make a flood map of New York City.  When Hurricane Sandy
 
 
 <p>Here's the code, implementing our outline below.  Copy it into an IDLE window and run it.  It expects that the file <a href="../files/elevationsNYC.txt">elevationsNYC.txt</a> is in the same directory as your program.
-<pre><code class="blockcode">"""
+<pre><code class="python">"""
 Name:  ... your name here ...
 Email: ... your email here ...
 Date:  February 2025
@@ -405,13 +392,13 @@ For example, say you want to print out the first 10 squares:  1,4,9,16,25,...,10
 
 <p>You can also combine decisions with list comprensions to select some elements from the list.  The general format is:</p>
 
-<pre><code class="blockcode">[an_expression for item in a_sequence if condition]</code></pre>
+<pre><code class="python">[an_expression for item in a_sequence if condition]</code></pre>
 
 <p>See <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/ListComprehensions.html">Section 10.23</a> of the textbook for more details.</p>  
     
 <p>For example, say you have a list of EmplIDs.  All should be strings of length 8, but some seem to be too short or too long.  To find the ones that are the wrong length, we can have a test that selects strings that are of length 8: </p>
 
-<pre><code class="blockcode">[emplid for emplid in list_of_ids if len(emplid) != 8]</code></pre>
+<pre><code class="python">[emplid for emplid in list_of_ids if len(emplid) != 8]</code></pre>
 
 
 
@@ -419,15 +406,15 @@ For example, say you want to print out the first 10 squares:  1,4,9,16,25,...,10
 <h2>6.  More on the Command Line Interface:  Relative Paths</h2>
 
 <p>Today, we will explore more about how to navigate the file system from the command line.  Recall in <a href="lab2.html">Lab 2</a>, at a terminal window, we had typed:
-    <pre><code class="blockcode">$ mkdir thomasH
+    <pre><code class="shell">$ mkdir thomasH
 $ cd thomasH
 $ pwd</code></pre>
 which created a new directory, changed the current directory to it, and shows us what directory we were in.
 
 <p>In addition to changing to a directory, we can also change back to its "parent" directory by typing:
-    <pre><code class="blockcode">$ cd ../</code></pre>
+    <pre><code class="shell">$ cd ../</code></pre>
 which says go to the parent of my current location.  It's often called a <i>relative path</i> since your destination is relative to your current location.  Typing
-<pre><code class="blockcode">$ pwd</code></pre>
+<pre><code class="shell">$ pwd</code></pre>
 will show the current working directory.  Using <tt>cd ../</tt> and <tt>pwd</tt>, answer the following:
 <ul>
 	<li> What is the parent of your current directory?

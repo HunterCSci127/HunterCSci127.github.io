@@ -4,29 +4,18 @@
   <meta http-equiv="Content-Type"
  content="text/html; charset=iso-8859-1">
   <title>Lab 2, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <STYLE>A {text-decoration: none;}
 th, td { padding: 5px; }
 code {
-  background-color: #dddddd;
+border: 2px solid #999999;
 }
 .inline {
-  padding: 1px;
-}
-.blockcode {
-  border: 1px solid #999999;
-  display: block;
-  padding-left: 10px;
-  padding-top : 2px;
-  padding-bottom : 2px;
-  margin: 5px;
-}
-.datablock {
-  border: 1px solid #eeeeee;
-  display: block;
-  padding: 7px;
-  padding-top : 0px;
-  margin: 5px;
+padding: 1px;
 }
 </STYLE>
 <body>
@@ -71,17 +60,17 @@ Spring 2025<br><br>
 <h2>1. Strings & String Methods</h2>
 
 <p>A sequence of characters (i.e. letters, numbers, symbols) is called a <tt>string</tt>.  To indicate a string, we use quotes (either single or double, just as long as they match up) to indicate the start and end (a fancier way to say that is:  <i>quotes deliminate the string</i>).  For example, for our first program, we wrote:
-<pre><code class="blockcode">print("Hello, World!")</code></pre>
+<pre><code class="python">print("Hello, World!")</code></pre>
 <p>
 The string, or sequence of characters, <tt>Hello, World!</tt>, was printed to the screen.  We can also store strings to be used again in the program.  For example,
-<pre><code class="blockcode">greeting = "Hello, World!"
+<pre><code class="python">greeting = "Hello, World!"
 print(greeting)</code></pre>
 <p>
 creates a location in memory that can be accessed by typing the name (or identifier) that we chose:  <tt>greeting</tt>.  <tt>greeting</tt> stores the string <tt>Hello, World!</tt>.  While the quotes are not stored, we will often write <tt>"Hello, World!"</tt> to make it more clear where the string begins and ends.  When we execute the code above, the first line will create the <b>variable</b>, <tt>greeting</tt> and store the string <tt>"Hello, World!"</tt> in it. The second line will print out the message:
-<pre><code class="datablock">Hello, World!</code></pre>
+<pre><code class="python">Hello, World!</code></pre>
 
 <p>We can use the variable any number of times.  For example, if we wanted to print the message twice, we could use:
-<pre><code class="blockcode">greeting = "Hello, World!"
+<pre><code class="python">greeting = "Hello, World!"
 print(greeting)
 print(greeting)</code></pre>
 
@@ -100,7 +89,7 @@ print(greeting)</code></pre>
 	</tr>
 </table>
 
-<p>The first character of a string is always at index 0. If a string has <tt>X</tt> number of characters, the last character in the string is always at index <tt>X-1</tt>.  There is a useful method <tt>len()</tt> that returns the length.  For example, <code class="inline">len("Hello, World!")</code> returns 13.  It can also be used on variables.</p>
+<p>The first character of a string is always at index 0. If a string has <tt>X</tt> number of characters, the last character in the string is always at index <tt>X-1</tt>.  There is a useful method <tt>len()</tt> that returns the length.  For example, <tt>len("Hello, World!")</tt> returns 13.  It can also be used on variables.</p>
 
 </div>
 
@@ -123,7 +112,7 @@ NOTE: The <tt>find()</tt> command gives the location of <tt>"ll"</tt> which is 2
 <h2>2. Getting Input</h2>
 
 <p>Last week, we used the <tt>print()</tt> function to write messages to the user of our program.  This week, we introduce, <tt>input()</tt>, to get information from the user.  Here's the basic format:
-<pre><code class="blockcode">aString = input("Put a message here to show user: ")</code>
+<pre><code class="python">aString = input("Put a message here to show user: ")</code>
 </pre>
 where the string <tt>"Put a message..."</tt> is replaced by the prompt you would like the user to see and <tt>aString</tt> with the name of the string you are using in your program.
 
@@ -179,23 +168,23 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
   	<li> print each character, its Unicode number + 1 and the character corresponding to that number.
   </ul>
   For example, for character 'a' with Unicode number 97, it prints:
-  <pre><code class="datablock">a 98 b</code></pre>
+  <pre><code class="python">a 98 b</code></pre>
 
 <br><hr>
 <h2>4.  Looping through Lists</h2>  
 
-<p> You can loop through a lists and strings in similar ways.  The first way we saw: <code class="inline">for elt in my_items:</code> takes each element in turn from the <code class="inline">my_items</code> and works similarly if <code class="inline">my_items</code> is a list or a string.  In this section, we introduce indexing and two useful methods, <pre class="inline">range()</pre> and 
-<pre class="inline">split()</pre> for manipulating lists and strings.
+<p> You can loop through a lists and strings in similar ways.  The first way we saw: <tt>for elt in my_items:</tt> takes each element in turn from the <tt>my_items</tt> and works similarly if <tt>my_items</tt> is a list or a string.  In this section, we introduce indexing and two useful methods, <tt>range()</tt> and 
+<tt>split()</tt> for manipulating lists and strings.
 	
 
 <h3>Indexing: looping Through Strings, Revisited</h3>
 
 	<p>There's another way we can loop through strings, using the index of each character.  Let's assume that we have:
-	<pre><code class="blockcode">greeting = "Hello, World!"</code></pre>
+	<pre><code class="python">greeting = "Hello, World!"</code></pre>
 	Before, we printed out the whole string with:
-	<pre><code class="blockcode">print(greeting)</code></pre>
+	<pre><code class="python">print(greeting)</code></pre>
 	If we wanted to print out only the first letter, we could write:
-	<pre><code class="blockcode">print(greeting[0])</code></pre>
+	<pre><code class="python">print(greeting[0])</code></pre>
 	where the number between the <b>square brackets</b> is the <b>index</b> of the character, in this case, 0, or the very first character of the string.
 	
 	<p>Try guessing what the following code does and then running it by pressing the <tt>Next</tt> button to execute each instruction:
@@ -204,9 +193,9 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
 	<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0Aprint%28greeting%5B0%5D%29%0Aprint%28greeting%5B1%5D%29%0Aprint%28greeting%5B2%5D%29%0Aprint%28greeting%5B-1%5D%29%0A%0Afor%20j%20in%20range%285%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%0A%20%20%20%20%0Afor%20j%20in%20range%28len%28greeting%29%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%280,10,2%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%2810,0,-1%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 		
 
-<h4>More on <code class="inline">range()</code></h4>
+<h4>More on <tt>range()</tt></h4>
 
-<p> We have used the <code class="inline">range()</code> statement</b> in our loops with a single parameter.  There are several different options:
+<p> We have used the <tt>range()</tt> statement</b> in our loops with a single parameter.  There are several different options:
 <ul>
 	<li> <tt>range(stop)</tt>:  if you have only a single number in the 		parenthesis, it will generate all the numbers from 0 to <tt>stop-1</tt>.  For example, <tt>range(5)</tt> generates the numbers <tt>0, 1, 2, 3, 4</tt>.
 
@@ -215,10 +204,10 @@ To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines 
 	<li> <tt>range(start, stop, step)</tt>:  if you have three numbers in the parenthesis, it will generate all the numbers from start to <tt>stop-1</tt>, increasing by <tt>step</tt> each time.  For example, <tt>range(100,200,10)</tt> generates the numbers <tt>100, 110, 120, 130, 140, 150, 160, 170, 180, 190</tt>.
 </ul>
 
-<h4>Converting strings to lists with <code class="inline">split()</code></h4>
+<h4>Converting strings to lists with <tt>split()</tt></h4>
 
-<p> The <code>split()</code> function breaks up a string into substrings, throwing away the character or delimiter on which the function splits.  Then, you can loop through the list just like you loop through a string to access the individual substrings.
-<p> For example, given the string <code>"FridaysSaturdaysSundays"</code>, <code>split('s')</code> will break up the string into a list of days: <code>["Friday","Saturday","Sunday",""]</code> throwing away the 's' characters on which it splits.
+<p> The <tt>split()</tt> function breaks up a string into substrings, throwing away the character or delimiter on which the function splits.  Then, you can loop through the list just like you loop through a string to access the individual substrings.
+<p> For example, given the string <tt>"FridaysSaturdaysSundays"</tt>, <tt>split('s')</tt> will break up the string into a list of days: <tt>["Friday","Saturday","Sunday",""]</tt> throwing away the 's' characters on which it splits.
 Notice that it will produce an empty string at the end because of the 's' character at the end of "Sundays".
 
 <p>Try running the code below by clicking the <tt>Next</tt> button to execute each instruction:
@@ -234,7 +223,7 @@ Notice that it will produce an empty string at the end because of the 's' charac
 
 <p>Next, think about how you would write a program that: prompts the use for a phrase and creates an acronym, consisting of the first letters of each word, in uppercase.  A sample run of the program:</p>
 
-<pre><code class="datablock">Enter a phrase:  City University New York
+<pre><code class="python">Enter a phrase:  City University New York
 Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
 Acronym:  CUNY</code></pre>
 	
@@ -254,11 +243,11 @@ It is often quite useful to break a string into pieces, and work with those piec
 
 <p>
 To <b>concatenate</b> strings you can use the + operator. For example:</p>
-<pre><code class="blockcode">print('hi'+'bye')</code>
+<pre><code class="python">print('hi'+'bye')</code>
 </pre>
 
 will output:
-<pre><code class="datablock">hibye</code></pre>
+<pre><code class="python">hibye</code></pre>
 
 
 
@@ -281,7 +270,7 @@ The <b>terminal</b> is a program that allows users to type commands (separate fr
 
 <p>
 We have already used the shell in the previous lab.  When you typed:
-<pre><code class="blockcode">$  idle</code></pre>
+<pre><code class="shell">$  idle</code></pre>
 you were asking the operating system to launch the program <tt>idle3</tt>.
 
 <p>
@@ -289,22 +278,22 @@ Let's create a new <b>directory</b>, or folder, to hold your images (using the s
 <ul>
 	<li>  Open a new terminal window.
 	<li>  In the terminal window, type:
-		<pre><code class="blockcode">$ pwd</code></pre>
+		<pre><code class="shell">$ pwd</code></pre>
 	(The <tt>$</tt> represents the prompt at the command line-- no need to type it.)
 
 	<p>This tells you the <b>path</b>, or location, of your current working directory.
     <li>To see what is in the folder, you request a 'listing':
-	<pre><code class="blockcode">$ ls</code></pre>
+	<pre><code class="shell">$ ls</code></pre>
 	<li> To add a new directory, we type:
-	<pre><code class="blockcode">$ mkdir thomasH</code></pre>
+	<pre><code class="shell">$ mkdir thomasH</code></pre>
 	(replace <tt>thomasH</tt> with your name to create a directory for you!).
 
 	<p>
 	Now, when we list the current directory, we should see the new item (namely the  directory with your name):
-	<pre><code class="blockcode">$ ls</code></pre>
+	<pre><code class="shell">$ ls</code></pre>
 
 	<li> Let's change directories:
-	<pre><code class="blockcode">$ cd thomasH</code></pre>
+	<pre><code class="shell">$ cd thomasH</code></pre>
 	If we ask for a listing (<tt>ls</tt>), we will now see the contents of your directory, which is initially empty.
 </ul>
 The graphical interface and shell are operating on the same underlying system, so, changes you make with one can be seen by the other.
@@ -326,7 +315,7 @@ If you use your OS' graphical user interface to open the folder (directory) you 
 	<li> Click on Ubuntu, hit get, and wait for it to install (You can use any version, the one without a version number will give you the latest version of Ubuntu).
 	<li> Launch the Ubuntu application and allow first time setup.
 	<li> Create a username and password (When entering a password, no characters will appear, but you are typing your password).
-	<li> Update Ubuntu with the command: <pre><code class="blockcode">sudo apt update && sudo apt upgrade</code></pre>
+	<li> Update Ubuntu with the command: <pre><code class="python">sudo apt update && sudo apt upgrade</code></pre>
 	(You will have to enter the password you set) You should run this command periodically as Ubuntu will not update on its own.
 </ol>
 </p>

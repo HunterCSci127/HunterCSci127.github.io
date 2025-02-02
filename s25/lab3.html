@@ -4,29 +4,18 @@
   <meta http-equiv="Content-Type"
  content="text/html; charset=iso-8859-1">
   <title>Lab 3, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <STYLE>A {text-decoration: none;}
 th, td { padding: 5px; }
 code {
-  background-color: #dddddd;
+border: 2px solid #999999;
 }
 .inline {
-  padding: 1px;
-}
-.blockcode {
-  border: 1px solid #999999;
-  display: block;
-  padding-left: 10px;
-  padding-top : 2px;
-  padding-bottom : 2px;
-  margin: 5px;
-}
-.datablock {
-  border: 1px solid #eeeeee;
-  display: block;
-  padding: 7px;
-  padding-top : 0px;
-  margin: 5px;
+padding: 1px;
 }
 </STYLE>
 <body>
@@ -57,12 +46,12 @@ Spring 2025<br><br>
 
   <h3> Learning Objectives:</h3>
 
-          <ol>
-            <li> Students will specify <b>colors by name, by decimal representation (RGB amounts), and by hexadecimal values.</b>
-            <li> Students will understand <b>Hexadecimal Numbers</b>.
-            <li> Students will write programs that use <b>NumPy arrays</b> and <b>pyplot</b> to <b>manipulate (PNG) images</b>.
-            <li> Students will use <b>Unix commands</b> to view and move files.
-          </ol>
+    <ol>
+      <li> Students will specify <b>colors by name, by decimal representation (RGB amounts), and by hexadecimal values.</b>
+      <li> Students will understand <b>Hexadecimal Numbers</b>.
+      <li> Students will write programs that use <b>NumPy arrays</b> and <b>pyplot</b> to <b>manipulate (PNG) images</b>.
+      <li> Students will use <b>Unix commands</b> to view and move files.
+    </ol>
 
 
 
@@ -273,22 +262,14 @@ for i in range(0,255,10):
   <p>
   For example, if we stored our image in the variable, <tt>img</tt>, we could access the red
   value by:
-  <pre style = "background-color:lavender;width:400px">
-  print("Upper left has red:", img[0,0,0])
-  </pre>
+  <pre><code class="blockcode">print("Upper left has red:", img[0,0,0])</code></pre>
   and the amount of green:
-  <pre style = "background-color:lavender;width:400px">
-  print("Upper left has green:", img[0,0,1])
-  </pre>
+  <pre><code class="blockcode">print("Upper left has green:", img[0,0,1])</code></pre>
   and the amount of blue:
-  <pre style = "background-color:lavender;width:400px">
-  print("Upper left has blue:", img[0,0,2])
-  </pre>
+  <pre><code class="blockcode">print("Upper left has blue:", img[0,0,2])</code></pre>
   Any point can be accessed via its coordinates <tt>(i,j)</tt> and the color channel (0 for red, 1 for green, and 2 for blue).  In our example above,
   with the picture stored in the variable, <tt>img</tt>:
-  <pre style = "background-color:lavender;width:400px">
-  img[r,c,chan]
-  </pre>
+  <pre><code class="blockcode">img[r,c,chan]</code></pre>
   where the <tt>r</tt> is the row and <tt>c</tt> is the column of the pixel and <tt>chan</tt> is the color channel (0 for red, 1 for green, and 2 for blue). Note that when we are accessing parts of our images, we use the square brackets ('[' and ']'), just as we did for lists.  The round parenthesis ('(' and ')') are used for functions (like <tt>print()</tt> and <tt>right()</tt>).
   
   
@@ -322,7 +303,7 @@ plt.imsave('reds.png', img2)  #Save the image we created to the file: reds.png</
   
   <p>
   The code above always produces an image with only the red channel displayed. What happens if you display only the red and blue channels?
-  When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.
+  When you have figured out the answer, see the <a href="ps.html#ps3">Programming Problem List</a>.</p>
   
 <br>  
 <hr> 
@@ -340,32 +321,32 @@ plt.imsave('reds.png', img2)  #Save the image we created to the file: reds.png</
   <p>The <tt>ls</tt> command has many options to give more information about what is in a folder.  For example,
     <pre><code class="blockcode">$ ls -l</code></pre>
   is the "long" format of <tt>ls</tt> and gives additional information such as permissions (who is allowed to <b>r</b>ead, <b>w</b>rite, or e<b>x</b>ecute the file), the owner and owner's group, the size, and the date of creation. For example, if our folder had a single directory, <tt>thomasH</tt> (like we created in <a href="lab2.html">Lab 2</a>), when you type the command, you will see output similar to:
-  <pre><code class="blockcode">$ ls -l
+  <pre><code class="shell">$ ls -l
   drwxr-xr-x  2 stjohn  wheel  68 Jan  7 21:00 thomasH/</code></pre>
   
   <p>
   Two useful commands are <tt>cp</tt> and <tt>mv</tt> which copy and rename (move) files.  If we have a folder with:
-  <pre><code class="blockcode">$ ls
+  <pre><code class="shell">$ ls
   p1.py     p2.py     programs/</code></pre>
   We can make a copy of a file by using the <tt>cp</tt> and the name of the old file and the new file:
-  <pre><code class="blockcode">$ cp p2.py p3.py</code></pre>
+  <pre><code class="shell">$ cp p2.py p3.py</code></pre>
   The result would be:
-  <pre><code class="blockcode">$ ls
+  <pre><code class="shell">$ ls
   p1.py     p2.py     p3.py     programs/</code></pre>
   Renaming a file follows the same format:
-  <pre><code class="blockcode">$ mv p1.py prog1.py</code></pre>
+  <pre><code class="shell">$ mv p1.py prog1.py</code></pre>
   The result would be:
-  <pre><code class="blockcode">$ ls
+  <pre><code class="shell">$ ls
   p2.py     p3.py     prog1.py  programs/</code></pre>
   You can also move programs into a folder by giving the directory's name as the last input to the <tt>mv</tt> command:
-  <pre><code class="blockcode">$ mv prog1.py programs</code></pre>
+  <pre><code class="shell">$ mv prog1.py programs</code></pre>
   The result would be:
-  <pre><code class="blockcode">$ ls
+  <pre><code class="shell">$ ls
   p2.py     p3.py     programs/</code></pre>
   If we look inside the <tt>programs</tt> folder, we see:
-  <pre><code class="blockcode">$ ls programs
+  <pre><code class="shell">$ ls programs
   prog1.py</code></pre>
-  
+  </p>
 
 
 <br><hr>  
