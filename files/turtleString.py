@@ -1,8 +1,7 @@
-#Author:    Katherine St. John
-#Date:      August 2014
-#A program that uses command strings to control turtle drawing
-#Modified by:  !YourNameHere!
-#Date:      !DateYouModifiedTheProgram!
+"""
+    Inspired by code.org's graph paper programming
+    A program that uses command strings to control turtle drawing
+"""
 
 import turtle
 
@@ -23,11 +22,7 @@ for ch in commands:
     elif ch == 'v':          #lower pen
         tess.pendown()
     else:                   #for any other character, print an error message 
-        print("Error: do not know the command:", ch) #typo, was c before
+        print("Error: do not know the command:", ch)
 
 print("See graphics window for your image")
 myWin.exitonclick()         #Close the window when clicked
-
-
-
-
