@@ -819,22 +819,215 @@ out3 = ...
 	</li>
 
 
-<!--
+
 <a id="set6"></a>
 <hr>
+
+<!--program26-->
+<li>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 20</b><br>
+	<b>Reading: Lecture 4, <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
+	<b>Available Libraries: numpy, image, matplotlib</b></p>
+	<p><b>Stripes</b></p>	
+
+	<p>Create a program that creates a image of purple and yellow stripes.  Your program should ask the user for the size of your image, the name of the output file, and create a <tt>.png</tt> file of stripes.  For example, if the user enters 50, your program should create a 50x50 image, alternating between purple and yellow stripes.
+
+
+		<p>Your output should look similar to this:
+<pre style ="background-color:lavender;width:400px">
+Enter the size: 50
+Enter output file: stripes50.png
+</pre>
+		<br>
+		<img src="../images/s23_purple_yellow_stripes_50.png" style="padding:5px" height=200>
+
+
+
+	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+
+	<p><i>Hint:  See notes from Lecture 4.</i></p>	
+</li>
+
+<!--program27-->
+<li>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, March 25</b><br>
+	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab6.html">Lab 6</a></b><br>
+	<b>Available Libraries: pandas</b></p>
+	<p><b>Average Temperatures</b></p>
+
+	<p>In <a href="lab6.html">Lab 6</a>, we wrote a program that computed the average rainfall from Australian weather data.  Modify the program to ask the user for the name of a CSV file and then to print out, using the data from the CSV file:</p>
+	<ul>
+		<li>The lowest temperature recorded across all locations and dates.</li>
+		<li>The lowest temperature for each location across all dates.</li>
+	</ul>
+
+	<p></p>
+</li>
+
+<!--program28-->
+<li>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, March 26</b><br>
+	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>,<a href="lab6.html">Lab 6</a> </b><br>
+	<b>Available Libraries: pandas, 3.10+</b></p>
+	<p><b>Double Recipe</b></p>
+
+
+	<p>
+	Using <tt>pandas</tt>, write a program that asks the user for a recipe (in comma separated value (CSV) format), reads in the corresponding CSV file and prints out quantities and ingredients needed to make a double batch.  Assume that the CSV files have the columns:  <tt>"Amount"</tt>, <tt>"Measurement"</tt>, and <tt>"Ingredient"</tt>.
+
+ <p>
+ For example if the CSV file, <a href="meringues.csv">meringues.csv</a>, contained:
+
+<p>
+<table border=1>
+<tr>
+ <th>Amount</th><th>Measurement</th><th>Ingredient</th>
+</tr>
+<tr>
+ <td>150</td><td>grams</td><td>chocolate chips</td>
+</tr>
+<tr>
+ <td>4</td><td>whites of</td><td>eggs</td>
+</tr>
+<tr>
+ <td>.25</td><td>teaspoon</td><td>vanilla</td>
+</tr>
+<tr>
+ <td>.25</td><td>teaspoon</td><td>cream of tartar</td>
+</tr>
+<table>
+
+<p>A sample run of your program would be:
+ <pre style ="background-color:lavender;width:400px">
+Enter recipe name: meringues.csv
+Double your recipe is:
+Amount Measurement       Ingredient
+0   300.0       grams  chocolate chips
+1     8.0   whites of             eggs
+2     0.5    teaspoon          vanilla
+3     0.5    teaspoon  cream of tartar
+</pre>
+</li>
+
+<!--program29-->
+<li>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 27</b><br>
+	<b>Reading: <a href="lab6.html">Lab 6</a>, <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></b><br>
+	<b>Available Libraries: N/A</b></p>
+	<p><b>Shell Script</b></p>
+
+
+	<p>Write a shell script that prints <tt>Hello, World</tt> to the screen.</p>
+
+	<p>Submit a single text file containing your Unix shell commands.  See <a href="lab6.html">Lab 6</a> for details.</p>
+
+</li>
+
+<!--program30-->
+<li>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, March 28</b><br>
+	<b>Reading: <a href="https://guides.github.com/activities/hello-world/">GitHub Guide</a>, <a href="lab6.html">Lab 6</a> </b><br>
+	<b>Available Libraries: N/A</b></p>
+	<p><b>GitHub</b></p>
+
+
+	<p>In <a href="lab6.html">Lab 6</a>, you created a GitHub account.  Submit a text file with the name of your account.	The grading script is expecting a file with the format:
+<pre style = "background-color:lavender;width:400px">
+"""
+Name:  Your_name
+Email: Your_eamil
+Account name for my GitHub account
+""""
+
+AccountNameGoesHere
+</pre>
+
+		<p>Note:  it takes a few minutes for a newly created GitHub account to be visible.  If you submit to Gradescope and get a message that the account doesn't exist, wait a few minutes and try again. </p>
+</li>
+
+<!--
 <a id="set7"></a>
+
+p31: Tuesday, April 1	
+f24, p37: binary2decimal: 
+
+p32: Wednesday, April 2
+s24, p34:  greetings by time of day
+
+p33: Thursday, April 3
+s24, p32:  lecture 6 example, lower left of image
+
+p34: Friday, April 4
+s24, p31:  hello with main()
+
+p35: Tuesday, April 8
+s24, p35:  tickets by vehicle color
+
 <hr>
 <a id="set8"></a>
+
+p36: Wednesday, April 9
+circuits question (half adder?) 
+
+p37: Thursday, April 10
+dictionary question: find the repeated items in list
+
+p38: Tuesday, April 22
+dictionary counting: count words in a string?  Introduce read()?
+
+p39: Wednesday, April 23
+HTML:  set up webpage
+
+p40: Thursdap, April 24
+HTML:  count number of headings in a document?
+
 <hr>
 <a id="set9"></a>
+
+p41: s24, p43: find the errors, update to also use pylint?
+
 <hr>
 <a id="set10"></a>
+
+p46: s24, p46: random walk
+
+p47: s24, p47: error checking input
+
+p48: s24, p50: shell script to create folders
+
+p49: 
+
+p50: 
+
 <hr>
 <a id="set11"></a>
+
+p51: s24, p51:  count # of py files in current working directory
+
+p52: s24, p52:  C++ hello world
+
+p53: s24, p53:  repeat motto 10 times
+
+p54: s24, p54:  km2mi
+
+p55: s24, p55:  character graphics triangle
+
 <hr>
 <a id="set12"></a>
+
+p56:
+
+p57: s24, p56:  greetings by season in C++
+
+p58: s24, p57:  error checking input
+
+p59: s24, p58:  population growth
+
+p60: s24, p59:  two's complement
+
 <hr>
 -->
+
 
 </ol>
 <br>
