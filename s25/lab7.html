@@ -48,7 +48,11 @@ Spring 2025<br><br>
 <hr>
 <h3> Learning Objectives:</h3>
   <ol>
-
+    <li> Students will <b>obtain and analyze NYC OpenData</b>.</li>
+    <li> Students will <b>use Python's zips</b> to combine data.</li>
+    <li> Students will <b>write Python functions.</b></li>
+    <li> Students will <b>explore stand-alone program vs. modules.</b></li>
+    <li> Students will <b>execute Python from the Command Line Interface.</b></li>
   </ol>
 
   <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
@@ -56,36 +60,7 @@ Spring 2025<br><br>
 <hr>
 
 <br>
-<h2>1. </h2>
-
-<div>
-  <p>
-  <h3> Learning Objectives:</h3>
-    <ul>
-      <li> Students will </b>use NYC OpenData</b>
-      <li> Students will <b>write python functions</b>
-      <li> Students will <b>explore stand-alone program v.s. modules</b>
-      <li> Students will <b>execute Python from the Command Line Interface</b>
-    </ul>
-
-<p>Software tools needed:  web browser and Python  programming
-environment with the pandas and matplotlib packages installed.
-
-
-</div>
-
-
-
-<div>
-<h3>Using Python, Gradescope, and Blackboard</h3>
-
-<p>See <a href="lab1.html">Lab 1</a> for details on using Python, Gradescope, and Blackboard.
-</p>
-</div>
-
-
-<div>
-<h3>Using NYC OpenData</h3>
+<h2>1. Using NYC OpenData</h2>
 
 <p>
 Much of the data collected by city agencies is publicly available at
@@ -112,15 +87,13 @@ Much of the data collected by city agencies is publicly available at
 Move your CSV file to the directory that you save your programs.  Open with a plain text editor if you would like to see the raw data. Make sure you keep the file extension as <tt>.csv</tt> as we don't want any extra formatting in the file. Look at the names of the columns since those will correspond to series we can plot.
 
 <p> Now, we can write a (short) program to display daily counts:
-<pre style = "background-color:lavender;width:675px">
-import pandas as pd  
+<pre><code class="python">import pandas as pd  
 import matplotlib.pyplot as plt 
 
 df = pd.read_csv("water_consumption.csv")
 
 df.plot(x = "Year", y = "NYC Consumption(Million gallons per day)")
-plt.show()
-</pre>
+plt.show()</code></pre>
 
 The program above assumes that you saved you data as <tt>water_consumption.csv</tt>.  If you saved the data under a different name, alter the program above to use that file.
 Save your program and try on your dataset.
@@ -133,80 +106,120 @@ Save your program and try on your dataset.
 	<li> How can you save your plot as an image file?  (Hint:  See <a href="lab6.html">Lab 6</a>.)
 </ul>
 
-<p>
-Once you have completed the above, see the <a href="ps.html#ps7">Programming Problem List</a>.
+<br>
+<hr>
+<h2>2. Python's zips </h2>
 
-</div>
+<p>At the operating system level, there are several apps that will pack or "zip" all of your files into a single files.  In Python, there's a similar function, <tt>zip()</tt> that takes lists and pairs or "zips" them together.  For example:</p>
+
+<pre><code class="python">firsts = ["Thomas", "Jennifer", "Anne", "Nancy"]
+lasts = ["Hunter", "Raab", "Kirshner", "Cantor"]
+
+names = zip(firsts,lasts)
+print(names)
+for f,l in names:
+    print(f,l)
+</code></pre>
+
+<p>The code will create a lists of names, paired together.  When you try to print a zip object, it will give you the address, which isn't very useful.  Instead, you can use the zip object to loop through the two lists paired together.  </p>
+
+<p>Step through the examples below, trying to guess what each line does, before you execute the line:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23Example%20of%20zip%3A%0Afirsts%20%3D%20%5B%22Thomas%22,%20%22Jennifer%22,%20%22Anne%22,%20%22Nancy%22%5D%0Alasts%20%3D%20%5B%22Hunter%22,%20%22Raab%22,%20%22Kirshner%22,%20%22Cantor%22%5D%0Aprint%28firsts%29%0Aprint%28lasts%29%0A%0Anames%20%3D%20zip%28firsts,lasts%29%0Aprint%28names%29%20%20%20%20%23Prints%20address%20of%20object%0A%23Useful%20for%20looping%20through%20the%20two%20lists%20together%3A%0Afor%20f,l%20in%20names%3A%0A%20%20%20%20print%28f,l%29%0A%0A%23Another%20example,%20using%20list%20comprehensions%20%28see%20lab%204%29%3A%0Atitles%20%3D%20%5B%22President%20%22%2Bf%20for%20f%20in%20firsts%5D%0Afor%20t,l%20in%20zip%28titles,lasts%29%3A%0A%20%20%20%20print%28t,%20l.upper%28%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe></p>
 
 
+<p>More examples can be found in the <a href="https://docs.python.org/3/library/functions.html#zip">Python documentation</a>.</p>
 
-<div>
-<h3><tt>main()</tt></h3>
+<br>
+<hr>
+<h2>3. Functions in Python</h2>
+
 
 <p>Python allows you to write programs as scripts: basically, a list of commands that are executed one after the other.  You can also organize the programs in functions, which groups commands together that can be reused.  Many programming languages (like C++ or Java) require that your programs be organized in functions.
 
 
 <p>To define function in Python, we use the <tt>def</tt> command, which has the basic form:
 
-<pre style = "background-color:lavender;width:450px">
-def myFunction(input1, input2, ...):
+<pre><code class="python">def myFunction(input1, input2, ...):
     command1
     command2
-    ...
-</pre>
-Note that everything indented below the <tt>def</tt> line is considered part of the function.  When you type the function name (followed by parenthesis), it calls (or "invokes") the function, which means it executes all the commands, one after another, that are part of the function.
+    ...</code></pre>
+<p>
+Note that everything indented below the <tt>def</tt> line is considered part of the function.  When you type the function name (followed by parenthesis), it calls (or "invokes") the function, which means it executes all the commands, one after another, that are part of the function.</p>
+
+<p>Work through <a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/functions.html">Section 6.1: Functions</a> of the textbook, including the check-your-understanding questions at the end:</p>
+
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Functions/functions.html"></iframe></p>
+
+
+
+
+<br>
+<hr>
+<h2>4. Stand-Alone Programs vs. Modules</h2>
+
+<p>
+In Python, we have the option of running our programs as a standalone program, or included as module as part of another program.  Since it's common to do either, we can write that into our programs.  
 
 <p>Let's rewrite our first program, using functions.  By tradition (and since it matches the naming protoccol of C & C++), we will call our function <tt>main()</tt> (see <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8:  Using a Main Function</a>):
 
-<pre style = "background-color:lavender;width:450px">
-#Name:  your name here
-#Date:  October 2023
-#This program, uses functions, says hello to the world!
+<pre><code class="python">"""
+Name:  your name here
+Email: your email here
+This program, uses functions, says hello to the world!
+"""
 
 def main():
     print("Hello, World!")
 
 if __name__ == "__main__":
-    main()
-</pre>
+    main()</code></pre>
 
-In Python, we have the option of running our programs as a standalone program, or included as module as part of another program.  Since it's common to do either, we include the last two lines of the file, which say if the program is being run directly (which we can test to see if the variable <tt>__name__</tt> that is set by Python is <tt>__main__</tt>), then we call <tt>main()</tt>.  If it's not, then the file is being included in something else, and leaves it to that program to call it.
+include the last two lines of the file, which say if the program is being run directly (which we can test to see if the variable <tt>__name__</tt> that is set by Python is <tt>__main__</tt>), then we call <tt>main()</tt>.  If it's not, then the file is being included in something else, and leaves it to that program to call it.</p>
 
-<p> Save your program and try running it in IDLE.
+<p> Save your program and try running it in IDLE.</p>
 
 <p> Now, at the prompt (the window with the lines beginning with <tt>&gt;&gt;&gt;</tt>), type <tt>main()</tt>.  This calls the function directly.  Note that calling the function either way results in the same actions:  the commands inside <tt>main()</tt> are executed.
 
 <p>
-When you have a running version, see the <a href="ps.html#ps7">Programming Problem List</a>.
-</div>
+When you have a running version, see the <a href="ps.html#set7">Programming Problem List</a>.
 
 
 
 
-<div>
-<h3>Using Python from the Command Line Interface</h3>
+<br>
+<hr>
+<h2>5. Using Python from the Command Line Interface</h2>
 
-<p> In addition to IDLE (and other development environments with graphical interfaces), Python can also be used directly from the command line.  In fact, this is what the grading scripts do to evaluate your programs, since Gradescope uses a remote cloud server and does not have a graphics window.
+<p> In addition to IDLE (and other development environments with graphical interfaces), Python can also be used directly from the command line.  In fact, this is what the grading scripts do to evaluate your programs, since Gradescope uses a remote cloud server and does not have a graphics window.</p>
 
-<p> To start, we need a command line interface (aka a terminal window).  To launch the terminal, click on the terminal window icon in the left menu, or go to search option in the upper left corner and type and then open <tt>terminal</tt>.
+<p> To start, we need a command line interface (aka a terminal window).  To launch the terminal, click on the terminal window icon in the left menu, or go to search option in the upper left corner and type and then open <tt>terminal</tt>.</p>
 
 <p> In <a href="lab1.html">Lab 1</a>, we launched IDLE from the terminal by
 typing:
-<pre style = "background-color:lavender;width:450px">
-$ idle3
-</pre>
+<pre><code class="shell">$ idle3</code></pre>
 
-<p> We can use Python in a similar fashion.  In a terminal window, change directories to where you stored your hello program above (see <a href="lab4.html">Lab 4</a> for changing directories at the command line).
+<p> We can use Python in a similar fashion.  In a terminal window, change directories to where you stored your hello program above (see <a href="lab4.html">Lab 4</a> for changing directories at the command line).</p>
 
 <p> Let's run your hello program from the command line.  If your program is
 called <tt>hello.py</tt>, you would type at the command line:
-<pre style = "background-color:lavender;width:450px">
-$ python3 hello.py
-</pre>
-Notice that the output goes directly to the terminal window.  Try running other programs you have written from the command line.
+<pre><code class="shell">$ python3 hello.py</code></pre>
+Notice that the output goes directly to the terminal window.  Try running other programs you have written from the command line.</p>
+
+
+  
+<br><hr>  
+<h2>What's Next?</h2>
+    
+    
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+    
 
 
 </div>
+
+
 
 
 </html>
