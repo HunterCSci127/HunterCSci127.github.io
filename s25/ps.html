@@ -998,14 +998,14 @@ Double your recipe is:
 
 		<p> Write a program that implements the pseudcode below.  Your program should ask the user for a binary number and print out the corresponding decimal number.
 
-		</p><pre>    Ask user for input, and store in the string, binString.
-    Set decNum = 0.
-    For each c in binString,
-        decNum = decNum * 2
-        if c is 1, then
-            decNum = decNum + 1
-    Print decNum
-		</pre>
+	</p><pre>Ask user for input, and store in the string, bin_string.
+Set dec_num = 0.
+For each c in bin_string,
+	dec_num = dec_num * 2
+	if c is 1, then
+		dec_num = dec_num + 1
+Print dec_num
+	</pre>
 
 <p> A sample run of the program:
 </p><pre style="background-color:lavender;width:400px">Enter binary number: 10
@@ -1016,6 +1016,8 @@ Your number in decimal is 2
 </p><pre style="background-color:lavender;width:400px">Enter binary number: 1111
 Your number in decimal is 15
 </pre>
+
+<p>Hint:  Remember that c is the index variable that's looping through a string, and is a character, not an int.  To check that it holds the value 1, you need to compare it as strings (e.g. c == '1') or cast to an integer (e.g.  int(c) == 1).</p>
 
 	</li>
 
