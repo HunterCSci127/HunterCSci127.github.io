@@ -62,9 +62,13 @@ Spring 2025<br><br>
 <br>
 <h2>1. Using NYC OpenData</h2>
 
+<a href="https://data.cityofnewyork.us"><img height=200 src="../images/openDataLogo.png"></a>
+    
+    
+    
 <p>
-Much of the data collected by city agencies is publicly available at
-<a href="http://opendata.cityofnewyork.us">NYC Open Data</a>.  Let's use pandas to plot some data from NYC OpenData.  Below is a graph of the water consumption in NYC since 1979:
+Via the <a href="https://data.cityofnewyork.us">NYC Open Data</a> project, you can access data from almost every city agency. 
+Let's use pandas (introduced in lecture and <a href="lab6.html">Lab 6</a>) to plot some data from NYC OpenData.  Below is a graph of the water consumption in NYC since 1979:
 
 <p>
 <img src="../images/waterNYC.png" height=400>
@@ -105,6 +109,121 @@ Save your program and try on your dataset.
 	<li> What happens if you leave off the <tt>y = "NYC Consumption(Million gallons per day)"</tt>?
 	<li> How can you save your plot as an image file?  (Hint:  See <a href="lab6.html">Lab 6</a>.)
 </ul>
+
+
+    <h3>Binning Data:  Parking Tickets</h3>
+    
+    <p>we will look at the parking tickets issues by New York City.  We will use a small version (1000 lines) for today's lab (see below).  But you are welcome to use any neighborhood in the city.  To download data for a given neighborhood (and restricted to just fiscal year 2018, since the data sets can be quite large):
+    <ul>
+        <li> Instead of neighborhood name or zipcode, parking tickets are classified by the police precinct that issued the ticket.  First, figure out the precinct (here's a <a href="http://www1.nyc.gov/site/nypd/bureaus/patrol/find-your-precinct.page">useful tool</a>).
+        <li>
+        <a href= "https://data.cityofnewyork.us/City-Government/Parking-Violations-Issued-Fiscal-Year-2018/pvqr-7yc4/data">Fiscal year 2018 (FY2018) parking tickets</a> for your precinct:  download the data set as a CSV, filtering by "Violation Precinct".  For example, Hunter College is located in the 19th Precinct, so, you would enter <tt>19</tt> on the filter.
+    
+    </ul>
+    
+
+    <p>The data file you downloaded is in CSV format which stores tabular information in readable text files.  The files have information separated by commas (using tabs as delimiters is also common).  Here is a sample line:</p>
+<pre><code class="python">1335632335,L040HZ,FL,PAS,06/09/2015,46,SUBN,NISSA,X,35430,14510,15710,0,0020,20,74,921167,E074,0000,1213P,1207P,NY,O,4,WEST 83 ST,,0,408,C,,BBBBBBB,ALL,ALL,RED,0,0,-,0,,,,,</code></pre>
+    <p>
+    All lines are formatted similarly: they start with the
+    summons number, then the license plate, registration state, plate Type, date, and continue with the information about the location and type of violation, and sometimes additional information such as the who issued the ticket and the color of the car. The first line of the file gives the entries in the order they occur in the rows.
+    </p>
+
+    <p>
+    The sample entry above gives details for a ticket issues on June 9, 2015 to a passenger car with Florida plates, L040HZ.  The red Nissan SUV received the ticket on West 83rd Street.  Each entry also begins with a unique identifier that can be used to look up the parking ticket.
+    
+    <p>Since there were over 196,000 tickets for the FY 2016 for the 20th precinct, here is truncated version of that data, containing just the first 1000 lines:  <a href="../files/tickets.csv">tickets.csv</a>.</p>
+    
+    
+    <p>
+    Here are some questions we can ask about the data:</p>
+    <ul>
+        <li> Which car got the most tickets?
+        <li> What color of car is most likely to get a ticket?
+        <li> What type of license gets the most tickets?
+        <li> Which location yields the most tickets?
+    </ul>
+    
+    <p>For each of these questions, we can traverse the file and count the occurrences as we go.</p>
+    
+
+    <h3>Counting Tickets per Car</h3>
+
+    <p>A simple, but very powerful, technique is "binning data"-- that is grouping data into the number of occurrences for each categories that we saw in <a href="lab6.html">Lab 6</a>.  The category values can often show patterns that individual data points do not.  For example, binning population by zipcode can show patterns in density that's difficult to see with individual data points.  Below, we will bin parking tickets by different attributes.</p>    
+
+    <p> How can tell which car got the most tickets?  First, we need to figure out a unique way to identify different cars.  Luckily, cars almost always have license plates-- with each state having a unique number.  (For this simple exercise, we'll assume that each license plate is unique on its own-- not an unreasonable assumption since every state has a different schema for assigning numbers, but to be more accurate we should keep track of license plate number and issuing state.)
+    
+    <p>Open up the CSV file and look at the columns.  Which column contains the license plate number?  Here's all the column names (first line of <a href="../files/tickets.csv">tickets.csv</a>):
+<pre><code class="python">Summons Number,Plate ID,Registration State,Plate Type,Issue Date,Violation Code,Vehicle Body Type,Vehicle Make,Issuing Agency,Street Code1,Street Code2,Street Code3,Vehicle Expiration Date,Violation Location,Violation Precinct,Issuer Precinct,Issuer Code,Issuer Command,Issuer Squad,Violation Time,Time First Observed,Violation County,Violation In Front Of Or Opposite,House Number,Street Name,Intersecting Street,Date First Observed,Law Section,Sub Division,Violation Legal Code,Days Parking In Effect    ,From Hours In Effect,To Hours In Effect,Vehicle Color,Unregistered Vehicle?,Vehicle Year,Meter Number,Feet From Curb,Violation Post Code,Violation Description,No Standing or Stopping Violation,Hydrant Violation,Double Parking Violation</code></pre>
+    
+    It's the second column:  <tt>Plate ID</tt>.  Scanning the CSV file, it looks like most cars got one or two tickets.  How can we get the worst offenders (i.e. those cars that got the most parking tickets)?
+    
+    <p> Let's use Pandas to read in the CSV file, following the same pattern as last lab:
+<pre><code class="python">"""
+Count which cars got the most parking tickets
+"""
+#Import pandas for reading and analyzing CSV data:
+import pandas as pd
+
+csvFile = "tickets.csv"			#Name of the CSV file
+tickets = pd.read_csv(csvFile)		#Read in the file to a dataframe
+print(tickets) 				#Print out the dataframe</code></pre>
+    
+    <p>
+    Try running your program.  It should print out all the information about all the tickets issued.  Let's focus in on just licence plates.  Change the last line of your program to be:
+    <pre><code class="python">print(tickets["Plate ID"])	#Print out licence plates</code></pre>
+    <p>When you run the program again, you should just see the row number and licence plate recorded for each row.
+    
+    <p> We want to refine this further to print how many tickets each car got.  Pandas has a function just for counting occurrences, called <tt>value_counts()</tt>.  Let's modify our last line again to use it:
+    <pre><code class="python">print(tickets["Plate ID"].value_counts())	#Print out plates & number of tickets each got</code></pre>
+    <p>Rerunning the program, there are a lot of cars that got only a single ticket.  If you scroll back up the Python shell, you will see the cars with the most tickets are listed first.  Let's just print out the 10 cars that got the most tickets.  We can do this by slicing to <tt>[:10]</tt>:
+    <pre><code class="python">print(tickets["Plate ID"].value_counts()[:10])	#Print 10 worst & number of tickets</code></pre>
+    <p>
+    Even with only 1000 lines of ticket information, there is a car (with plate <tt>TOPHAT5</tt>) that got more than 5 tickets.
+    <p>Let's make our program a bit more general, to allow the user to enter their own file name:
+    <pre><code class="python">"""
+Count which cars got the most parking tickets
+"""
+#Import pandas for reading and analyzing CSV data:
+import pandas as pd
+
+csvFile = input('Enter CSV file name: ')        #Name of the CSV file
+tickets = pd.read_csv(csvFile)                  #Read in the file to a dataframe
+print("The 10 worst offenders are:")
+print(tickets["Plate ID"].value_counts()[:10])  #Print 10 worst & number of tickets</code></pre>
+    
+    <p>When you run it on the <a href="../files/tickets.csv">tickets.csv</a>, you should see output:</p>
+        <pre><code class="python">Enter CSV file name: tickets.csv
+The 10 worst offenders are:
+Plate ID
+TOPHAT5    6
+GXP4564    4
+XBLD33     4
+T63FNW     4
+XANK43     3
+R12FGF     3
+TOPHAT9    3
+XP627S     3
+GN8063     3
+ZDH5639    3
+Name: count, dtype: int64</code></pre>
+    
+    
+    <h4>Binning Other Data</h4>
+    
+    <p>Now that you have a program to use as a basic template, answer the following questions:
+    <ul>
+        <li> What color of car is most likely to get a ticket?
+        <li> What type of license gets the most tickets?
+        <li> Which location yields the most tickets?
+    </ul>
+    (Remember to check the CSV file for the name used for the columns and use that as the index.)
+    
+    </div>
+    
+    
+
+
 
 <br>
 <hr>
