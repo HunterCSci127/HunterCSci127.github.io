@@ -48,9 +48,9 @@ Spring 2025<br><br>
 <hr>
 <h3> Learning Objectives:</h3>
   <ol>
-    <li> Student will <b>explore Top-Down Design</b>    
+    <li> Students will <b>explore Top-Down Design</b>    
     <li> Students will <b>use Python dictionaries</b> to store data.</li>
-    <li> Student will <b>clone a Github repo from the command line</b>
+    <li> Students will use <b>Unix commands for regular expressions (wildcard).</b></li>
   </ol>
 
   <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
@@ -334,9 +334,92 @@ make a circle each time?
 <br><hr>  
 <h2>2.  Dictionaries</h2>
 
+<p>Python has various built-in data types.  We have used the atomic (also called primitive) data types since the first lecture.  As their name suggests, these data types are for holding one small piece of information.  The main atomic types for numeric data are <tt>int</tt> and <tt>float</tt>.  And we have also used the boolean data type <tt>bool</tt> for True/False data. </p>
+
+<p>There are also data types to hold collections of information.  We have used <tt>lists</tt> and <tt>strings</tt> to hold sequential data.  There is also a data type, <tt>tuple</tt>, for a fixed amount of sequential data (e.g. coordinates of a point can be held in a tuble.</p>
+
+<p>In this lab, we will explore a different type of collections data type called a <b>dictionaries</b>.  Dictionaries, also referred to as lookup tables, maps, hashmaps, or associative arrays, are incredibly useful for efficient storage and retrieval.  They are a <b>mapping type</b> which means, roughly, that they link together a key and a value, much like a paper dictionary.</p>
+
+<p>To get started, work through the first section on dictionaries (Section 12.1) in our textbook:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/intro-Dictionaries.html"> </iframe></p>
+
+<p>Once you have completed the "Check Your Underdstanding" section, move on to the next section, Section 12.2 on dictionary operations:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/Dictionaryoperations.html"> </iframe></p>
+
+<p>Once you have completed the "Check Your Underdstanding" section of !2.2 move on to the next section, Section 12.3 on dictionary methods:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/Dictionarymethods.html"> </iframe></p>
+
+<br>
+<p>The textbook delves deeper into using dictionaries (feel free to read the rest of the chapter if interested), but for this course we will only use the material on dictionaries in Sections 12.1-12.3.</p>
+
+<p>Let's use a dictionary to approach the design challenge from lecture:</p>
+
+<tt>
+<p style="margin-left: 20pt;">
+  Are there two students with the same first name?
+  <ul>
+    <li>Devise an algorithm to find duplicate names.</li>
+    <li>Include your input and output for your algorithm.</li>
+    <li>Outline the process for finding duplicates.</li>
+  </ul>
+</p>
+</tt>
+
+<p>Let's use a dictionary to store how many times we have seen a name.  For example, if we have a list of names, <code class="inline">names</code>, we can loop through the name list.  If it's the first time the name has occurred, we can add it to our dictionary.  If it has already occurred, we can up the count.  Let's first write the pseudocode:
+</p>
+<tt>
+  <ol>
+    <li>Initialize the dictionary: seen = {}.</li>
+    <li>For each name in names:</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;if name is in the seen dictionary:</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seen[name] += 1</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seen[name] = 1</li>    
+  </ol>
+</tt>
+
+<p>When this loop finishes, the dictionary, <code class="inline">seen</code>, will contain all the names and the number of times they have occurred. </p>
+
+<p>Next, think about the following:
+  <ul>
+    <li>How do you rewrite the pseudocode in Python?</li>
+    <li>Using only the dictionary, how can you tell a name is a duplicate?  How can you extract the duplicates?</li>
+  </ul>
+</p>
 
 <br><hr>  
-<h2>3.  Python from the Command Line</h2>
+<h2> More on the Command Line Interface:  Regular Expressions</h2>
+
+<p>Often it's useful to find strings that match a pattern instead of spelling out the exact names of things.  For example, if you wanted to know all the Python programs in your directory that are <tt>.py</tt> files, you could list out all the files and then look through visually to find them:
+<pre><code class="shell">$ ls</code></pre>
+But an easier way would be to specify that only the files that end in <tt>.py</tt> be printed.  To do that, you can use the "wildcard" or * operator that:
+<pre><code class="shell">$ ls *.py</code></pre>
+
+The <tt>*.py</tt> says match any file that starts with any number (including 0) of characters and ends with <tt>.py</tt>.
+
+<p>You can use the wildcard operator in multiple places.  For example, if your directory contained:
+<pre><code class="shell">$ ls -l
+-rw-r--r--@ 1 stjohn  staff      5308 Mar 21 14:38 quizzes.html
+-rw-r--r--  1 stjohn  staff     54013 Apr 20 18:57 zoneDist.csv
+-rw-r--r--@ 1 stjohn  staff      1519 Apr 22 15:14 zoneMap.py
+-rw-r--r--  1 stjohn  staff  16455174 Mar 20 19:02 zoning2.html
+-rw-r--r--  1 stjohn  staff  17343896 Mar 20 18:58 zoningIDS.json</code></pre>
+Then the following command:
+<pre><code class="shell">$ ls z*</code></pre>
+prints all files that start with  <tt>z</tt> and are followed by any number of characters.
+
+<p>Similarly,
+<pre><code class="shell">$ ls *zz*</code></pre>
+would all files that start with any number of characters, followed by <tt>zz</tt>, and end with any number of characters.  The only file that contains this "pattern" of <tt>zz</tt> is <tt>quizzes.html</tt>.
+
+<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see
+the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
+
+
+
 
 <br><hr>  
 <h2>What's Next?</h2>
