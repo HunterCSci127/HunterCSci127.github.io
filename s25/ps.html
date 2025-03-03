@@ -1193,6 +1193,46 @@ Name: Vehicle Year, dtype: int64
 <!--program36-->
 <li>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, April 3</b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab8.html">Lab 8</a></b><br>
+		<b>Available Libraries: matplotlib, numpy</b></p>
+		<p><b>Averaging Images</b></p>	
+	
+		<p>Fill in the missing functions:
+	
+		</p><ul>
+			<li> <tt>average(region):</tt>  Takes a region of an image and
+			 returns the average red, green, and blue values across the region.
+			 </li><li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
+		 </li></ul>
+	
+		 <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
+		 (inspired by the elegant <a href="http://koalastothemax.com">koalas to the max</a>).
+	
+		 </p><p>For example, if you inputted our favorite image, you would see (left to right):
+	
+		 </p><p>
+		 <img src="../images/refined1.png" width="150">
+		  <img src="../images/refined2.png" width="150">
+		  <img src="../images/refined3.png" width="150">
+		  <img src="../images/refined4.png" width="150">
+		  <img src="../images/refined5.png" width="150">
+		  <img src="../images/refined6.png" width="150">
+		  <img src="../images/refined7.png" width="150">
+		  <img src="../images/refined8.png" width="150">
+	
+	
+		  </p><p> and finally:
+	
+		  </p><p> <img src="../images/csBridge.png" width="400">
+	
+		</p><p>A template program, <tt>averageImage.py</tt>, is available
+		<a href="https://github.com/stjohn/csci127">here</a>. You should use this file to get started with your program.</p>
+		<p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).</p>
+</li>
+
+<!--program37-->
+<li>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, April 4</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DataCamp Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
 	<b>Available Libraries: pandas, 3.10+</b></p>
 	<p><b>School Enrollment</b></p>
@@ -1226,70 +1266,13 @@ borough_data = df.query("Borough == '" + borough + "'")
 
 <p>Then <tt>borough_data</tt> has data for the specific borough. Plot fraction using this data.
 
-<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
-</li>
+<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.	
 
-<!--program37-->
-<li>
-<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, April 4</b><br>
-	<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab8.html">Lab 8</a></b><br>
-	<b>Available Libraries: matplotlib, numpy</b></p>
-	<p><b>Averaging Images</b></p>	
-
-	<p>Fill in the missing functions:
-
-	</p><ul>
-		<li> <tt>average(region):</tt>  Takes a region of an image and
-		 returns the average red, green, and blue values across the region.
-		 </li><li> <tt>setRegion(region,r,g,b):</tt> Takes a region of an image and red, green, and blue values, r, g, b.  Sets the region so that all points have red values of r, green values of g, and blue values of b.
-	 </li></ul>
-
-	 <p> The functions are part of a program that averages smaller and smaller regions of an image until the underlying scene is visible
-	 (inspired by the elegant <a href="http://koalastothemax.com">koalas to the max</a>).
-
-	 </p><p>For example, if you inputted our favorite image, you would see (left to right):
-
-	 </p><p>
-	 <img src="../images/refined1.png" width="150">
-	  <img src="../images/refined2.png" width="150">
-	  <img src="../images/refined3.png" width="150">
-	  <img src="../images/refined4.png" width="150">
-	  <img src="../images/refined5.png" width="150">
-	  <img src="../images/refined6.png" width="150">
-	  <img src="../images/refined7.png" width="150">
-	  <img src="../images/refined8.png" width="150">
-
-
-	  </p><p> and finally:
-
-	  </p><p> <img src="../images/csBridge.png" width="400">
-
-	</p><p>A template program, <tt>averageImage.py</tt>, is available
-	<a href="https://github.com/stjohn/csci127">here</a>. You should use this file to get started with your program.</p>
-	<p>The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).</p>
 </li>
 
 <!--program38-->
 <li>
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, April 7</b><br>
-	<b>Reading:  <a href=https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/toctree.html">Chapter 12</a> & <a href="lab8.html">Lab 8</a></b><br>
-	<b>Available Libraries: 3.10+</b></p>
-	<p><b>Unique Names</b></p>	
-
-	<p>
-	Write a function <tt>count_unique()</tt> that takes a list of names and returns the number of names that occurred, with copies of names only counting once. </p>
-
-For example:
-<pre style="background-color:lavender;width:400px">names = ['Daniel','Dorothy','Bethany','Beth','Daniel','Georgi']
-	print(duplicates[names])</pre>
-would print 5 since all names occur once, except Daniel.
-
-<p><i>Hint: Use a dictionary to keep track of the names you see and then return the length of the dictionary.</i></p>
-
-
-<!--program39-->
-<li>
-	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 8</b><br>
 	<b>Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="lab8.html">Lab 8</a></b><br>
 	<b>Available Libraries: turtle</b></p>
 	<p><b>Polygons</b></p>
@@ -1315,6 +1298,26 @@ if __name__ == '__main__':
 		<p><img height=200 src="../images/pentagon_hexagon_heptagon.png">
 
 	<p><i>Hint:  See Lecture 1 for the general recipe for drawing polygons.</i></p>
+</li>
+
+
+<!--program39-->
+<li>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 8</b><br>
+		<b>Reading:  <a href=https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/toctree.html">Chapter 12</a> & <a href="lab8.html">Lab 8</a></b><br>
+		<b>Available Libraries: 3.10+</b></p>
+		<p><b>Unique Names</b></p>	
+	
+		<p>
+		Write a function <tt>count_unique()</tt> that takes a list of names and returns the number of names that occurred, with copies of names only counting once. </p>
+	
+	For example:
+	<pre style="background-color:lavender;width:400px">names = ['Daniel','Dorothy','Bethany','Beth','Daniel','Georgi']
+		print(duplicates[names])</pre>
+	would print 5 since all names occur once, except Daniel.
+	
+	<p><i>Hint: Use a dictionary to keep track of the names you see and then return the length of the dictionary.</i></p>
+
 </li>
 
 <!--program40-->
