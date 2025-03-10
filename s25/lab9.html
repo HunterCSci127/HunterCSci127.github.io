@@ -49,10 +49,10 @@ Spring 2025<br><br>
 <h3> Learning Objectives:</h3>
   <ol>
     <li> Students will write programs that <b>map GIS data using Turtles</b>.
-    <li> Students will write programs that <b>map GIS data using Plotly</b>.
+    <li> Students will write programs that <b>map GIS data using Plotly Express</b>.
     <li> Students will <b>incorporate data files</b> into their maps and plots.</li>
     <li> Students will <b>explore finding errors (i.e. debugging)</b>.
-    <li> Students will <b>assess code quality</b> using standard tools (pylint at the commant line).</li>
+    <li> Students will <b>assess code quality</b> using standard tools (pylint at the command line).</li>
   </ol>
 
   <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
@@ -77,88 +77,114 @@ We will use those ranges to be our coordinates:  (-180, -90) to (180,90).  Let's
 	<li> Los Angeles (longitude: -118, latitude: 34),
 	<li> Paris, France (longitude: 2, latitude:49),
 	<li> Tokyo, Japan (longitude: 140, latitude: 35), and
-	<li> Rio de Janeiro, Brazil (longitude: -43, latitude: -23) .
+	<li> Rio de Janeiro, Brazil (longitude: -43, latitude: -23).
 </ul>
 <p>
 <iframe src="https://trinket.io/embed/python/7705126110?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
+</p>
 
 <br>
-<h2>2. Using Plotly</h2>
+<br>
+<hr>
+<h2>2. Using Plotly Express</h2>
 
-<p>UPDATE TO PLOTLY</p>
-<p>
-<a href="https://pypi.python.org/pypi/folium">Folium</a> is a Python package that uses the javascript <a href="http://leafletjs.com">Leaflet.js</a> library to make interactive maps. Instead of popping up a <tt>matplotlib</tt> window, folium creates an <b>.html</b> file that you can open (and view interactively) with a browser.  After the program runs, open the corresponding <tt>.html</tt> file in a web browser to see your map.
+<p>To create interactive maps, we will use the open source Python package, <a href="https://plotly.com/python/plotly-express/">Plotly Express</a> (often called:  "px").  It is a package for creating images from charts to geographic maps quickly, often with just one line of code.  It is part of the  <a href="https://plotly.com/python">Plotly.py</a> package, which allows more customization, but takes many more lines of code. </p>
 
 <p>
-(Folium is installed on the lab machines,  To check to see if your home machine has it, type at the Python prompt:
-<tt>
-import folium
-</tt>
+(Plotly Express is installed on the lab machines,  To check to see if your home machine has it, type at the Python prompt:
+<pre><code class="python">import plotly.express as px</code></pre>
 <br>
 If you get an error, go to the terminal, and download it:
-<pre><code class="shell">pip install folium</code></pre>
-and the package will download and install.)
+<pre><code class="shell">$ pip install plotly</code></pre>
+and the package will download and install.
 
-<h4>Our First Map</h4>
+<h3>Our First Map</h3>
+
+<p>Our first interactive map will be centered on New York Center.  If the navigation bar is not visible, click on the map below for it to appear.  Our new map will let you zoom in, scroll left or right, as well as hover to get more information:</p>
+
+<iframe src="../files/first_px_map.html" width="600" height="400" frameborder="1" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>To build the map, we are going to use markers which are part of the graphics objects inside plotly.  Here's the code:  
+
+<pre><code class="python">import plotly.graph_objects as go   #Including for markers
+#Add a marker for NYC:
+fig = go.Figure(go.Scattermap(lat=[40.7128], lon=[-74.0060],
+                              mode='markers',
+                              marker=go.scattermap.Marker(size=14),
+                              text=['New York City']))
+#Zoom and center the map on NYC:
+fig.update_layout(hovermode='closest',
+                  map=dict(center=go.layout.map.Center(lat=40.7,lon=-74),
+                           zoom=8))
+fig.show()
+fig.write_html('first_map.html')
+</code></pre>
+
+Copy this code to IDLE and try running it. Here's a breakdown of the code:
+<ul>
+  <li>To build the map, we used markers which are part of the graphics objects inside plotly. The first line are to import the graphic objects (abbreviated <tt>go</tt>). </li>
+  <li>Our next line sets up a marker for New York City on our figure.  Note that includes the latitude and longitude, as well as the size and text to be displayed when the user hovers over the map.</li>
+  <li>Maps are centered at the origin (lon=0, lat=0), so, the next line adjusts the map center to be on New York City and zooms in the initial focus to 8.</li>
+  <li>The <tt>fig.show()</tt> works similarly to our displaying of images, but instead of a matplotlib window, the map will appear in the browser.</li>
+  <li>The final line saves the HTML code to a file called <tt>first_map.html</tt>.</li>
+</ul>
+</p>
+
+<p>This first map is an example of <a href="https://plotly.com/python/tile-map-layers/">tile web map</a> in Plotly which loads in smaller regions (tiles) which are dynamically loaded when the user changes the zoom or focus.  There are many different  <a href="https://plotly.com/python/tile-map-layers/">tile maps</a> available and we can specify which we would like by modifying using the <tt>layout()</tt> function.</p>
+
+<p>For example, if we add the line:</p>
+
+<pre><code class="python">fig.update_layout(map_style="satellite")</code></pre>
+
+<p>the resulting HTML map is:</p>
+<iframe src="../files/first_map_sat.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<h3>World Map</h3>
+<p></p>
+
+<p>In addition to tile maps, Plotly also has outline maps.  Let's draw the world map that we drew with turtles above.  If the navigation bar is not visible, click on the map below for it to appear.  Our new map will let you zoom in, scroll left or right, as well as hover to get more information:
+
+<iframe src="../files/world_map_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>The information for the map is stored in a dataframe (the one we created as an example in <a href="lab8.html">Lab 8</a>).
+Once we have the data nicely organized in the dataframe, we can use to make the map:
+
+<pre><code class="python">import plotly.express as px #Import the plotly express package for making maps
+import pandas as pd         #We're using Pandas to organize the data
+  
+data = {
+    'city': ['New York', 'Los Angeles', 'Paris', 'Tokyo', 'Rio de Janeiro'],
+    'latitude': [40.7128, 34.0549, 48.8575,33.8688, -22.9068],
+    'longitude': [-74.0060,-118.2426, 2.3514,139.6500, -43.1729],
+    'population': [8_258_000, 3_821_000, 2_103_000, 14_180_000,6_211_000]
+}
+df = pd.DataFrame(data)
+
+# Create the scatter plot on a map
+fig = px.scatter_geo(df, 
+                     lat="latitude", 
+                     lon="longitude",
+                     size="population",  # Size of the markers based on population
+                     hover_name="city",  # Display city name on hover
+                     projection="natural earth", # Map projection
+                     title="City Populations")
+
+fig.show()  #Shows the map in a browswer
+fig.write_html('world_map_px.html') #
+</code></pre>
 
 <p>
-
-<iframe src="../files/world.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
-
-<p>To make a map in folium, the process is:
-<ol>
-	<li> Write a program in Python, using folium.
-	<li> Run the program, which outputs an <tt>.html</tt> file.
-	<li> Open the <tt>.html</tt> file in a browser.
-</ol>
-
-<p> Here's our first program:
-<pre><code class="python">#Import the folium package for making maps
-import folium
-
-#Create a map, centered (0,0), and zoomed out a bit:
-mapWorld = folium.Map(location=[0, 0],zoom_start=3)
-
-#Save the map:
-mapWorld.save(outfile='tempMap.html')</code></pre>
-
-<p>
-Save this file and run it.  It will create a file called <tt>tempMap.html</tt>.
-Open your favorite browser (Chrome, Firefox, IE, etc.) and choose "Open File" and then choose the file <tt>tempMap.html</tt>.  You should see a map of the world.
-
-<h4>Map of New York City</h4>
-
-<!--<p>
-<img src="hunterMap.png" height=400>
-
-<p>
-<b>UPDATE!!</b>-->
-
-<p>
-Let's make another map, focused on New York City.  To do that, when we set up the map object, we need to reset the location to New York City and the increase the zoom level:
-<pre><code class="python">import folium
-
-mapCUNY = folium.Map(location=[40.75, -74.125], zoom_start=10)</code></pre>
-
-<p> Let's add in a marker for Hunter College:
-<pre><code class="python">folium.Marker(location = [40.768731, -73.964915], popup = "Hunter College").add_to(mapCUNY)</code>
-</pre>
-
-<p>and create the .html file:
-<pre><code class="python">mapCUNY.save(outfile='nycMap.html')</code></pre>
-
-Save your commands to a file and run via IDLE.  Your program will create an HTML file called, <tt>nycMap.html</tt>.  Open it in your favorite browser to make sure it creates a map of NYC with a marker for Hunter College.  When you have a running program, see the <a href="ps.html#ps9">Programming Problem List</a>.
+Save this file and run it.  It will open the map in a browswer as well as 
+create a file called <tt>world_map_px.html</tt>.
 
 
 
+<br>
 <br>
 <hr>
 <h2>3.  Plotting from Files</h2>
 
-We can combine the mapping of folium with the tools we have used for CSV files.
+<p>We can combine the mapping of Plotly with the tools we have used for CSV files.</p>
 
 <p>
 <iframe width="600" height="400" frameborder="0" src="../files/cunyLocations.html"></iframe>
@@ -170,37 +196,38 @@ We can combine the mapping of folium with the tools we have used for CSV files.
 (Export as a <b>.csv</b> file and save in the same directory as your programs.) Open the file to make sure you have all the lines (should be 23) and to check if the column headings occur in the first row (they do, so no need to skip rows when reading in the file).
 
 <p>
-Let's use Pandas to read in the file.  We will need to import pandas and folium:
-<pre style = "background-color:lavender;width:450px">import folium
-import pandas as pd
-</pre>
+Let's use Pandas to read in the file.  We will need to import pandas and Plotly Express:
+<pre><code class="python">import plotly.express as px 
+import pandas as pd         
+</code></pre>  
 
-<p>To read in the CSV file, we'll use pandas' CSV reader.  We'll print out the campus locations to make sure that all were read in:
-    <pre><code class="python">cuny = pd.read_csv('cunyLocations.csv')
-print(cuny["Campus"])</code></pre>
-Note:  we saved our CSV file to <tt>cunyLocations.csv</tt>.  If you saved it to a different name, change the input parameters for <tt>read_csv()</tt> to the name of your file.
+<p>To read in the CSV file, we'll use pandas' CSV reader.  We'll print out the column names to find which columns has the location information:
+<pre><code class="python">cuny = pd.read_csv('cunyLocations.csv')
+print(cuny.columns)</code></pre>
+
+which prints:
+<pre><code class="python">Index(['College or Institution Type', 'Campus', 'Campus Website', 'Address',
+  'City', 'State', 'Zip', 'Latitude', 'Longitude', 'Location'],
+ dtype='object')</code></pre>
+
+<p>We need to know the exact names of the columns, so, we can use it for adding our markers to the map.  Note that for this CSV file, all the column names are capitalized, so, we need to capitalize them in the Python code.</p>
+
+<p>Note:  we saved our CSV file to <tt>cunyLocations.csv</tt>.  If you saved it to a different name, change the input parameters for <tt>read_csv()</tt> to the name of your file.</p>
 
 
-<p>Next, let's set up a map, centered on Hunter College:
-<pre><code class="python">mapCUNY = folium.Map(location=[40.768731, -73.964915])</code></pre>
+<p>Next, let's set up our markers, specifying which columns have the latitude and longitude:
+<pre><code class="python">fig = px.scatter_map(cuny_df, lat="Latitude", lon="Longitude" hover_name="Campus", title="CUNY Campuses", zoom=9)
+</code></pre>
+
+<p>and next centering the map on Hunter and adjusting the zoom:</p>
+<p>
+
+<p>Lastly, let's show our map and save our map:
+  <pre><code class="python">fig.show()
+fig.write_html('cunyLocations.html')</code></pre>
 
 <p>
-We need to add markers for each campus.  We're going to iterate through the rows of dataframe to create the markers:
-<pre><code class="python">for index,row in cuny.iterrows():
-    lat = row["Latitude"]
-    lon = row["Longitude"]
-    name = row["Campus"]
-    newMarker = folium.Marker([lat, lon], popup=name)
-    newMarker.add_to(mapCUNY)</code></pre>
-For each row in the file, we find the latitude, longitude, and name of the campus, and use those to create a new marker which we add to our map.  We repeat for each row, until we have made markers for all 23 campuses in the file.
-<!--(Note:  we're using an older way to add markers (since it's simpler), and  some versions of folium will give a warning to use the newer version).
-(Note:  this isn't the most efficient way to plot points.  We'll discuss a better way-- creating a geoJSON layer-- next week.)-->
-
-<p>Lastly, let's save our map:
-    <pre><code class="python">mapCUNY.save(outfile='cunyLocations.html')</code></pre>
-
-<p>
-To view your map, open a browser.  From the browser, open the file:  <tt>cunyLocations.html</tt>.
+Your map should load in a browser and is also saved to the file:  <tt>cunyLocations.html</tt>.</p>
 
 <br>
 <hr>
@@ -336,6 +363,42 @@ The date is 7/4/1976 or July 4,1976.</code></pre>
 <br><hr>  
 <h2>4.  Pylint from the Command Line</h2>
     
+<p>While the Python interpreter checks for syntactic errors in the code, it does not check for good programming style.  There are programs that can checking for good style, called static code analyzers (often likened to checking for lint and also called "linters").  Many companies have required style and associated style guides.  A popular one for Python is the standard <a href="https://peps.python.org/pep-0008/"target="_blank">PEP 8</a> style guide.</p>
+
+<p>A popular linter for PEP 8 is <a href="https://pylint.pycqa.org/" target="_blank">Pylint</a> which reports warnings and errors, including message codes, and then scores the code on a scale from 0 to 10.  
+<a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8</a> specifies that variable names should be at least 3 characters long, but it is long standing convention that DataFrames are named <code class=inline>df</code>.  In later courses that lint code, the autograders have included <code class=inline>df</code> in the "good-names" that are accepted.  This can be done locally with <code class=inline>.pylintrc</code> files or using the command-line option <code class=inline>pylint --good-names=df</code>.</p>
+
+<p>Below we show how to run pylint from the command line, but most IDE's have linting available:  for example, see <a href="https://plugins.jetbrains.com/plugin/11084-pylint" target="_blank">pylint in PyCharm</a> and <a href="https://code.visualstudio.com/docs/python/linting" target="_blank">Linting Python in VSCode</a>.</li>
+  </ul>
+
+<p>
+Let's write the first program (see <a href="ps.html#set1">Program 1</a>) which had you print your name.  Let's create a file with just the line:
+<pre><code class="python">print('Hello, Thomas Hunter!')</code></pre> </p>  
+
+<p>Run your program to make sure it produces the correct output.</p>
+
+<p>Next, let's check how the program does for style by running <code class="inline">pylint</code>:</p>
+
+<p><img src="../files/pylint_1.png" width="600"></p>
+
+<p>We ran the <code class="inline">pylint</code> program from the command line, but you can also invoke it inside most IDE's.  The message says we are missing the documentation string (e.g. the introductory comment) from the start of the file.  </p>
+
+<p>Add a multi-line string comment that includes the information required by the autograder: your name, email, and resources used.  For example, for the student, Thomas Hunter, the opening comment of his first program might be:
+  <pre><code class="python">
+  """
+  Name:  Thomas Hunter
+  Email: thomas.hunter1870@hunter.cuny.edu
+  Resources:  Used python.org as a reminder of Python 3 print statements.
+  """
+  </pre></code>
+</p>
+
+<p>When we run <code class="shell">pylint</code> again,  the message says the code is rated a perfect score (10.0/10).</p>
+
+<p><img src="../files/pylint_2.png" width="600"></p>
+
+
+
 <br><hr>  
 <h2>What's Next?</h2>
     

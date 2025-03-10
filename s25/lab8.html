@@ -390,6 +390,38 @@ make a circle each time?
   </ul>
 </p>
 
+
+<h3>Dictionaries & DataFrames</h3>
+
+<p>Dictionaries provide a useful way to set up Pandas dataframes.  The keys of the dictionary are the column names and the values provide the column values.</p>
+
+<p>For example, let's set up a dataframe that contains cities, their location coordinates, and their populations (we will use this dataframe for creating an interactive map in <a href="lab9.html">Lab 9</a>).  To indicate a dictionary, we use the curly brackets: '{' and '}'.  Our columns are named: <tt>city</tt>, <tt>latitutde</tt>, <tt>longitude</tt>, and <tt>population</tt>.  We use quotes around the names since we want the actual string value and not for python to interpret them as variables:</p>
+
+<pre><code class="pandas">
+data = {
+    'city': ['New York', 'Los Angeles', 'Paris', 'Tokyo', 'Rio de Janeiro'],
+    'latitude': [40.7128, 34.0549, 48.8575,33.8688, -22.9068],
+    'longitude': [-74.0060,-118.2426, 2.3514,139.6500, -43.1729],
+    'population': [8_258_000, 3_821_000, 2_103_000, 14_180_000,6_211_000]
+}
+df = pd.DataFrame(data)
+print(df)    
+</code></pre>
+<p>For really large number (e.g. 8,258,000), we often write them with commas between the thousands and millions, and millions and billions places, but that will confuse Python since it will think they are separate number.  Instead, you can write underscores ('_') in place of the commas as we did for population numbers and Python will interpret as a number.</p>
+
+<p>The dataframe is named <tt>df</tt> and when we print it, we see:</p>
+
+<pre><code class="pandas">
+             city  latitude  longitude  population
+0        New York   40.7128   -74.0060     8258000
+1     Los Angeles   34.0549  -118.2426     3821000
+2           Paris   48.8575     2.3514     2103000
+3           Tokyo   33.8688   139.6500    14180000
+4  Rio de Janeiro  -22.9068   -43.1729     6211000    
+</code></pre>
+
+<p>The first column contains the index that is automatically generated, and the remaining columns are created from the values in our dictionary.  </p>
+
 <br><hr>  
 <h2> More on the Command Line Interface:  Regular Expressions</h2>
 
