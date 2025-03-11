@@ -1,0 +1,216 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 10, CSci 127: Intro to CS, Hunter College</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  border: 2px solid #999999;
+}
+.inline {
+  padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../s25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 10<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2025<br><br>
+</h1>
+
+
+
+<br>
+<hr>
+<h3> Learning Objectives:</h3>
+  <ol>
+    <li> Students will write programs that <b>generate random numbers (<tt>randrange()</tt>)</b>.</li>
+    <li> Students will write programs that <b>use Indefinite Loops (<tt>while</tt> Loops)</b>.</li>
+    <li> Student will <b>clone a Github repo from the command line</b>.</li>
+    <li> Students will use Unix commands to <b>write more <tt>Bash</tt>  scripts and use the <tt>vi</tt> editor</b>.</li>
+  </ol>
+
+  <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
+
+<hr>
+
+<br>
+<h2>1. Random Range</h2>
+
+
+
+Python has a built-in library for generating random numbers.  To use it, you include at the top of your file:
+<pre><code class="python">import random
+</code></pre>
+
+The <tt>random</tt> library includes a function that's similar to <tt>range</tt>, called <tt>randrange</tt>.  As with <tt>range</tt>, you can specify the starting, stopping, and step values, and the function <tt>randrange</tt> chooses a number at random in that range.  Some examples:
+<ul>
+	<li> <tt>random.randrange(5)</tt> returns one of 0,1,2,3,4
+	<li> <tt>random.randrange(1,10,2)</tt> returns one of 1,3,5,7,9
+	<li> <tt>random.randrange(360)</tt> returns one of 0,1,2,...,359
+</ul>
+
+Let's use that last example to have our turtle make a random walk:
+<iframe src="https://trinket.io/embed/python/ab6cddc880" width="80%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>
+Notice that our turtle turns <tt>a</tt> degrees, where <tt>a</tt> is chosen at random between 0 and 359 degrees.  What if your turtle was in a city and had to stay on a grid of streets (and not ramble through buildings)?  How can you change the <tt>randrange()</tt> to choose only from the numbers:  <tt>0,90,180,270</tt> (submit your answer as Problem #10).
+
+<br>
+<hr>
+<h2>2. Indefinite Loops</h2>
+
+<p> We have been using <tt>for</tt>-loops to repeat tasks a fixed number of times (often called a <i>definite loop</i>).  There is another type of loop that repeats while a condition holds (called a <i>indefinite loop</i>).  The most common is a <tt>while</tt>-loop.
+<pre><code class="python">while condition:
+   command1
+   command2
+   ...
+   commandN
+</code></pre>
+<p>While the <tt>condition</tt> is true, the block of commands nested under the while statement are repeated.</p>
+
+<p>Work through the textbook's examples of while loops:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/ThewhileStatement.html"> </iframe></p>
+
+
+<p>For example, let's have a turtles continue their random walk as long as their x and y values are within 50 of the starting point (to keep them from wandering off the screen):
+
+<p>
+<iframe src="https://trinket.io/embed/python/6738c47304" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p> Indefinite loops are useful for simulations (like our simple random walk above) and for validating input.  For example, the following code fragment:
+
+
+
+<pre><code class="python">age = int(input('Please enter age: '))
+while age < 0:
+    print('Entered a negative number.')
+    age = int(input('Please enter age: '))
+print('You entered your age as:', age)
+</code></pre>
+will ask the user for their age, and continue asking until the number they entered is non-negative (<a href="http://pythontutor.com/visualize.html#code=age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Awhile%20age%20%3C%200%3A%0A%20%20%20%20print%28'Entered%20a%20negative%20number.'%29%0A%20%20%20%20age%20%3D%20int%28input%28'Please%20enter%20age%3A%20'%29%29%0Aprint%28'You%20entered%20your%20age%20as%3A',%20age%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22-3%22,%223%22%5D&textReferences=false">example in pythonTutor</a>).
+
+<p>Another common use of <tt>while</tt> loops is with <b>sentinel values</b> and validating input.  A sentinel value is a flag that indicates a change, usually stopping the loop.  Work through the textbook's page:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/SentinelValuesAndValidation.html"> </iframe></p>
+
+
+<br>
+<hr>
+<h2>3.  Cloning Repos</h2>
+
+<h3>Command Line <tt>git</tt></h3>
+
+<a href="https://github.com"><img height=150 src="../images/Octocat.png"></a>
+
+<p> In <a href="lab6.html">Lab 6</a>, we introduced github which can be used to share and store code, websites, etc. (roughly, a "Google Docs" for programs).  The website for this course as well as all the programs are stored in repositories (or "repos") at github.  For this course, we will only retrieve code from existing repos (in future courses, they will introduce how to share your code and merge your changes with others).
+
+<p> The github site has both a web browser interface (which we used in <a href="lab6.html">Lab 6</a>), and the option to use the command line interface to interact with the site.
+
+<p> From Program #35 onward, all sample programs are available at the class
+repository (repo):
+<blockquote>
+	<a href="https://github.com/HunterCSci127/CSci127">
+    https://github.com/HunterCSci127/CSci127</a>
+</blockquote>
+You can access programs by going to the website, or, using the following git command at the command line:
+
+<pre><code class="shell">$ git clone https://github.com/HunterCSci127/CSci127</code>
+</pre>
+
+This command will make a copy of all the programs in the class repo in directory called, <tt>csci127</tt>, in your current working directory.
+
+<p> If you have that directory already and would like to update it with new files that have been (we periodically update the repo), you can 'fetch' the changes:
+<pre><code class="shell">$ git fetch https://github.com/HunterCSci127/CSci127</code>
+</pre>
+
+
+<br>
+<hr>
+<h2>4.  More on Command Line Scripts</h2>
+
+<p>
+In <a href="lab3.html">Lab 3</a>, we introduced the shell, or command line, commands to create new directories (folders) and how to list the contents of those folders (and expanded on this with relative paths in <a href="lab4.html">Lab 4</a> and absolute paths in <a href="lab5.html">Lab 5</a>).
+In <a href="lab6.html">Lab 6</a>, we wrote a simple script that prints: <tt>Hello, World</tt>.  We can write scripts that take the shell commands we have learned and store them in a file to be used later.
+
+
+<p>
+It's a bit archaic, but we can create the file with the <tt>vi</tt> editor.   It
+dates back to the early days of the Unix operating system.  It has the advantage that it's integrated into the Unix operating system and guaranteed to be there.  It is worth trying at least once (so if you're in a bind and need to edit Unix files remotely, you can), but if you hate it (which is likely), after you've tried it this once you can go back to an editor with graphical interface.
+
+<p>
+Let's create a simple shell script with <tt>vi</tt>:
+<ol>
+	<li> Open a terminal window.
+	<li> Type in the terminal window:  <tt>vi setupProject</tt>
+	<li> To add text to the file, begin by typing <tt>i</tt> (the letter i)
+	which stands for "insert"
+	<li> Type the lines:
+        <pre><code class="shell">
+#Your name here
+#October 2024
+#Shell script:  creates directories for project
+mkdir projectFiles
+cd projectFiles
+mkdir source
+mkdir data
+mkdir results</code></pre>
+	<li> Click on the ESC (escape key-- usually on the upper row of keys) which escapes from insert mode.
+	<li> Type:  <tt>:wq</tt> which stands for "write my file" and "quit" (the ":" is necessary-- it tells vi that you want to use the menu commands).
+	<li> This brings us back to the terminal window.
+	Type <tt>ls</tt> to see a listing of the directory, which should include the file,
+	<tt>setupProject</tt>, you just created.
+	<li> Next, we'll change the permissions on the file, so that we can run it directly, by just typing its name:
+        <pre><code class="shell">chmod +x setupProject</code></pre>
+	(changes the "mode" to be executable).
+
+	<li> To run your shell script, you can now type its name at the terminal:
+        <pre><code class="shell">./setupProject</code></pre>
+	<li> Check to see that your script works, type <tt>ls</tt> to see the new directories your script you created.
+
+</ol>
+
+<p> <b>Troubles with vi?</b>  It's not intuitive-- here's more on vi:
+<ul>
+	<li> <a href="https://www.ibm.com/developerworks/linux/tutorials/l-vi/index.html">IBM tutorial for vi</a>
+	<li> <a href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Editors/ViIntro.html">UC Davis 5-minute Tutorial</a>
+	<li> <a href="https://ryanstutorials.net/linuxtutorial/cheatsheetvi.php">Ryan's Tutorial vi cheat sheet</a>
+
+</ul>
+If you hate <tt>vi</tt>, just edit using <tt>gEdit</tt> in Linux, <tt>TextEdit</tt> in OSX, notepad in Windows or IDLE.
+
+<br><hr>  
+<h2>What's Next?</h2>
+    
+    
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+    
+</div>
+
+
+</html>
