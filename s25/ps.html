@@ -1306,17 +1306,23 @@ if __name__ == '__main__':
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 8</b><br>
 		<b>Reading:  <a href="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/toctree.html">Chapter 12</a> & <a href="lab8.html">Lab 8</a></b><br>
 		<b>Available Libraries: 3.10+</b></p>
-		<p><b>Unique Names</b></p>	
+
+		<p><b>Unique Visitors </b></p>	
+
+		<p>When students visit the lab, their EmpID is stored as an 8-digit string. Many students visit multiple times, but we are interested in the total number of unique visitors to the lab. Write a function <tt>unique_visitors()</tt> that takes a list of 8-digit strings and returns the number of unique strings that occur.</p>
 	
-		<p>
-		Write a function <tt>count_unique()</tt> that takes a list of names and returns the number of names that occurred, with copies of names only counting once. </p>
+		<p>For example:</p>
+		<pre style="background-color:lavender;width:600px">
+ids = ['12345678','11223344','12312323','12345678']
+print("The number of unique visitors is ", unique_visitors(ids))
+</pre>
+	would print:
+	<pre style="background-color:lavender;width:400px">The number of unique visitors is 3</pre>
 	
-	For example:
-	<pre style="background-color:lavender;width:600px">names = ['Daniel','Dorothy','Bethany','Beth','Daniel','Georgi']
-print(count_unique(names))</pre>
-	would print 5 since all names occur once, except Daniel.
+	since there are 4 entries but the first and fourth entries are duplicates of each other.
 	
-	<p><i>Hint: Use a dictionary to keep track of the names you see and then return the length of the dictionary.</i></p>
+	
+		<p><i>Hint:  Use a dictionary to store the IDs and return the length of the dictionary.</i></p>
 
 </li>
 
@@ -1325,22 +1331,21 @@ print(count_unique(names))</pre>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, April 9</b><br>
 	<b>Reading:  <a href="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/toctree.html">Chapter 12</a> & <a href="lab8.html">Lab 8</a></b><br>
 	<b>Available Libraries: 3.10+</b></p>
-	<p><b>Unique Visitors </b></p>	
-
-	<p>When students visit the lab, their EmpID is stored as an 8-digit string. Many students visit multiple times, but we are interested in the total number of unique visitors to the lab. Write a function <tt>unique_visitors()</tt> that takes a list of 8-digit strings and returns the number of unique strings that occur.</p>
-
-	<p>For example:</p>
-	<pre style="background-color:lavender;width:600px">
-ids = ['12345678','11223344','12312323','12345678']
-print("The number of unique visitors is ", unique_visitors(ids))
-</pre>
-would print:
-<pre style="background-color:lavender;width:400px">The number of unique visitors is 3</pre>
-
-since there are 4 entries but the first and fourth entries are duplicates of each other.
 
 
-	<p><i>Hint:  Use a dictionary to store the IDs.</i></p>
+	<p><b>Duplicate Names</b></p>	
+	
+	<p>
+	Write a function <tt>duplicates()</tt> that takes a list of names and returns a list with the names that occurred more than once. </p>
+
+For example:
+<pre style="background-color:lavender;width:600px">names = ['Daniel','Dorothy','Bethany','Beth','Daniel','Georgi']
+print(duplicates(names))</pre>
+would return the list <tt>['Daniel']</tt> since it's the only name that occurred twice.
+
+<p><i>Hint: Use a dictionary to count how many times you see each name.  When adding a name to the dictionary a second time, append to a list of duplicated names.</i></p>
+
+
 </li>
 
 
