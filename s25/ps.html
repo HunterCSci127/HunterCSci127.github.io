@@ -975,11 +975,11 @@ AccountNameGoesHere
 	
 		<p>Note:  for comments, shell scripts use # in front of lines (instead of the block comments surrounded by """ """) and the first line is the "shebang" line.  For a proper shell script, your file should start: </p>
 	
-	<pre style = "background-color:lavender;width:400px">
-	#!/bin/bash
-	#Name:  YourNameHere
-	#Email; YourEmailHere
-	</pre>
+<pre style = "background-color:lavender;width:400px">
+#!/bin/bash
+#Name:  YourNameHere
+#Email; YourEmailHere
+</pre>
 	
 
 
@@ -1364,39 +1364,49 @@ would return the list <tt>['Daniel']</tt> since it's the only name that occurred
 	<b>Available Libraries: turtle</b></p>
 	<p><b>Nested Triangles</b></p>	
 
-	<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take two parameters: a turtle and an edge length.  The pseudocode for <tt>triangle()</tt> is:
+	<p> Write two functions, <tt>triangle()</tt> and <tt>nestedTriangle()</tt>.  Both functions take three parameters: a turtle, an edge length, and a scale.  The pseudocode for <tt>triangle()</tt> is:
 
 <pre>
-triangle(t, length):
-1.  If length > 10:
+triangle(t, length, scale):
+1.  If length > scale:
 2.     Repeat 3 times:
 3.         Move t, the turtle, forward length steps.
 4.         Turn t left 120 degrees.
-5.     Call triangle with t and length/2.
+5.     Call triangle with t, length/2, and scale.
 </pre>
 
 <p>The pseudocode for <tt>nestedTriangle()</tt> is very similar:
 <pre>
-nestedTriangle(t, length):
-1.  If length > 10:
+nestedTriangle(t, length, scale):
+1.  If length > scale:
 2.     Repeat 3 times:
 3.         Move t, the turtle, forward length steps.
 4.         Turn t left 120 degrees.
-5.         Call nestedTriangle with t and length/2.
+5.         Call nestedTriangle with t, length/2, and scale.
 </pre>
 
 	<p>A template program,
-	<a href="https://github.com/mtlynch3/csci127/blob/main/hw_files/nestingTriangles.py">nestingTrianges.py</a>, is available on GitHub.
+	<a href="https://raw.githubusercontent.com/stjohn/csci127/refs/heads/master/nested.py">nested.py</a>, is available on GitHub or on our website:  <a href="../files/nested.py">nested.py</a>.
 	The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function names must match exactly (else, the scripts cannot find it). Make sure to use the function names from the GitHub program (it is expecting <tt>triangle()</tt> and <tt>nestedTriangle()</tt>).
 
 	<p>A sample run:
 <pre style = "background-color:lavender;width:400px">
 Enter edge length:  160
+Enter scale: 10
 </pre>
 	<p>which would produce:
 
 <p><img height=200 src="../images/nestedTriangles.png">
   
+	<p>If we change the scale, we change the amount of nesting
+		<pre style = "background-color:lavender;width:400px">
+Enter edge length:  160
+Enter scale: 5
+</pre>
+			<p>which would produce:
+		
+		<p><img height=200 src="../images/nestedTriangles2.png">
+			  
 </li>
 
 <!--program42-->
@@ -1470,7 +1480,7 @@ Enter edge length:  160
 	<p><b>Collisions Map</b></p>	
 
 	<p>
-	Using Plotly.express (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.  When the user hovers over the marker, the time of the accident should appear in the pop-up box.
+	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.  When the user hovers over the marker, the time of the accident should appear in the pop-up box.
 
 	<p>A sample run:
 <pre style = "background-color:lavender;width:400px">
@@ -1545,7 +1555,7 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 	<b>Available Libraries: 3.10+</b></p>
 	<p><b>Random Walk</b></p>	
 
-		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 100 times.  Each "walk" is 10 steps forward and the turtle can turn 0,1,2,...,359 degrees (chosen randomly) at the beginning of each walk.
+		<p> Modify the program from <a href="lab10.html">Lab 10</a> that makes a turtle walk 250 times.  Each "walk" is 5 steps forward and the turtle can turn 0,10,20,30,...,340,350 degrees (chosen randomly) at the beginning of each walk.
 
 		<p> A sample run of your program:
 <p> <img src="../images/randomWalk.png" height=200>
