@@ -107,11 +107,13 @@ and the package will download and install.
 <p>To build the map, we are going to use markers which are part of the graphics objects inside plotly.  Here's the code:  
 
 <pre><code class="python">import plotly.graph_objects as go   #Including for markers
+
 #Add a marker for NYC:
 fig = go.Figure(go.Scattermap(lat=[40.7128], lon=[-74.0060],
                               mode='markers',
                               marker=go.scattermap.Marker(size=14),
                               text=['New York City']))
+
 #Zoom and center the map on NYC:
 fig.update_layout(hovermode='closest',
                   map=dict(center=go.layout.map.Center(lat=40.7,lon=-74),
@@ -143,11 +145,12 @@ Copy this code to IDLE and try running it. Here's a breakdown of the code:
 <p></p>
 
 <p>In addition to tile maps, Plotly also has outline maps.  Let's draw the world map that we drew with turtles above.  If the navigation bar is not visible, click on the map below for it to appear.  Our new map will let you zoom in, scroll left or right, as well as hover to get more information:
+</p>
 
 <iframe src="../files/world_map_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-<p>The information for the map is stored in a dataframe (the one we created as an example in <a href="lab8.html">Lab 8</a>).
-Once we have the data nicely organized in the dataframe, we can use to make the map:
+<p>The information for the map is stored in a DataFrame (the one we created as an example in <a href="lab8.html">Lab 8</a>).
+Once we have the data nicely organized in the DataFrame, we can use to make the map:
 
 <pre><code class="python">import plotly.express as px #Import the plotly express package for making maps
 import pandas as pd         #We're using Pandas to organize the data
@@ -202,7 +205,7 @@ import pandas as pd
 </code></pre>  
 
 <p>To read in the CSV file, we'll use pandas' CSV reader.  We'll print out the column names to find which columns has the location information:
-<pre><code class="python">cuny = pd.read_csv('cunyLocations.csv')
+<pre><code class="python">cuny_df = pd.read_csv('CUNYcampuses.csv')
 print(cuny.columns)</code></pre>
 
 which prints:
@@ -212,11 +215,11 @@ which prints:
 
 <p>We need to know the exact names of the columns, so, we can use it for adding our markers to the map.  Note that for this CSV file, all the column names are capitalized, so, we need to capitalize them in the Python code.</p>
 
-<p>Note:  we saved our CSV file to <tt>cunyLocations.csv</tt>.  If you saved it to a different name, change the input parameters for <tt>read_csv()</tt> to the name of your file.</p>
+<p>Note:  we saved our CSV file to <tt>CUNYcampuses.csv</tt>.  If you saved it to a different name, change the input parameters for <tt>read_csv()</tt> to the name of your file.</p>
 
 
 <p>Next, let's set up our markers, specifying which columns have the latitude and longitude:
-<pre><code class="python">fig = px.scatter_map(cuny_df, lat="Latitude", lon="Longitude" hover_name="Campus", title="CUNY Campuses", zoom=9)
+<pre><code class="python">fig = px.scatter_map(cuny_df, lat="Latitude", lon="Longitude", hover_name="Campus", title="CUNY Campuses", zoom=9)
 </code></pre>
 
 <p>and next centering the map on Hunter and adjusting the zoom:</p>
