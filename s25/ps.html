@@ -1586,22 +1586,49 @@ You entered: Mihi cura futuri
 
 <!--
 <li>
-p48: Tuesday, April 29
-maps w plotly
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 29</b><br>
+	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
+	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
+	<b>Available Libraries: pandas, plotly</b></p>
+	<p><b>Housing Map</b></p>	
 
-closest point? 
+	<p>
+	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, choice of housing units, and name of the output file, and creates a map with scaled markers for all the housing type from the input file.  When the user hovers over the marker, the ??? should appear in the pop-up box.  The overall title for the map should be ???
+
+	<p>A sample run:
+<pre style = "background-color:lavender;width:400px">
+Enter CSV file name:  housing.csv
+Enter ??:
+Enter output file:  myMap.html
+</pre>
+	<p>which would produce the HTML file:
+
+	<p><iframe src="../files/th_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+	<p>This assignment uses collision data collected and made publicly by New York City Open Data. A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterBday.csv</a> from 18 October 2016 was downloaded and can be used to test your program.</p>
+
+	<p> When running your program locally, you need to check that the "LATITUDE" and "LONGITUDE" values are non-empty.  You can drop any row where there's empty values with:
+		
+		<pre style = "background-color:lavender;width:400px">df_cleaned = df.dropna()</pre>
+
+	<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
+
 </li>
 
 <li>
-p49: Wednesday, April 30 
-s24, p50: shell script to create folders
+
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, April 30</b><br>
 		<b>Reading: <a href="lab10.html">Lab 10</a>, <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></b><br>
 		<b>Available Libraries: N/A</b></p>
-		<p><b>Hello (Shell Script)</b></p>
+		<p><b>Organizing Files Script</b></p>
+
+		p49: Wednesday, April 30 
+s24, p50: shell script to create folders
 	
-	
-		<p>Write a shell script that prints <tt>Hello, World</tt> to the screen.</p>
+		<p>
+		Write a Bash script that makes a new directory called <tt> project_files </tt>, enters the directory, then creates three more subdirectories titled <tt>source</tt>, <tt>data</tt>, and <tt>out_files</tt>.
+		Your script should then return the starting directory (e.g. use relative paths to move up a level) and move all files ending with <tt>.py</tt> to <tt>project_files/source</tt>.
+		</p>
 	
 		<p>Submit a single text file containing your Unix shell commands.  See <a href="lab6.html">Lab 6</a> for details.</p>
 	
@@ -1635,9 +1662,26 @@ HTML:  count number of headings in an html document?  Introduce read()  Add to l
 
 p51: Friday, May 2
 s24, p51:  count # of py files in current working directory, introduces pipe in lab 11
+<li>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, May 2</b><br>
+		<b>Reading: <a href="lab10.html">Lab 10</a>, <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference Sheet</a></b><br>
+		<b>Available Libraries: N/A</b></p>
+		<p><b>Organizing Files Script</b></p>
+</li>
 
-p52: Monday, May 5
+
+
+<li>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, May 5</b><br>
+	<b>Reading: <a href="lab12.html">Lab 12</a> </b><br>
+	<b>Available Libraries: C++</b></p>
+	<p><b>C++ Hello</b></p>
+
+	p52: Monday, May 5
+	
 s24, p52:  C++ hello world
+
+</li>
 
 p53: Tuesday, May 6
 s24, p53:  repeat motto 10 times
