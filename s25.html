@@ -328,7 +328,8 @@ Spring 2025<br><br>
 		<td>3/25-3/31</td>
 		<td>
 			Programming with Functions, Top-down Design; <br>
-			Dictionaries; Design Pattern:  Finding Duplicates;<br>
+			Dictionaries;<br> 
+			Design Pattern:  Finding Duplicates;<br>
 			Regular expressions (command line)
 		</td>
 		<td>
@@ -366,13 +367,13 @@ Spring 2025<br><br>
 		<td>
 			Mapping GIS Data with Plotly Express; <br>
 			Indefinite Loops;<br>
+			Design Pattern:  Max;<br>
 			Finding Errors, Checking Style & Code Quality (pylint)
 		</td>
-		<td><!--
-			<a href="http://pythontutor.com/iframe-embed.html#code=%23Sisters%20Example%20from%20Spring%202015,%20%233%0A%0Adef%20prob4%28amy,%20beth%29%3A%0A%20%20%20%20if%20amy%20%3E%204%3A%0A%20%20%20%20%20%20%20%20print%28%22Easy%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20-1%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Complex%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20helper%28amy,beth%29%0A%20%20%20%20return%28kate%29%0A%0Adef%20helper%28meg,jo%29%3A%0A%20%20%20%20s%20%3D%20%22%22%0A%20%20%20%20for%20j%20in%20range%28meg%29%3A%0A%20%20%20%20%20%20%20%20print%28j,%20%22%3A%20%22,%20jo%5Bj%5D%29%0A%20%20%20%20%20%20%20%20if%20j%20%25%202%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20s%20%3D%20s%20%2B%20jo%5Bj%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Building%20s%3A%22,%20s%29%0A%20%20%20%20return%28s%29%0A%20%20%20%20%20%0Ar%20%3D%20prob4%284,%22city%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%0A%0Ar%20%3D%20prob4%282,%22university%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%09%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Sisters Example</a>, <br>
-
-			<a href="http://pythontutor.com/visualize.html#code=%23CSci%20127%20Teaching%20Staff%0A%23February%202019%0A%23A%20program%20that%20uses%20functions%20to%20print%20out%20months.%0A%23Modified%20by%3A%20%20ADD%20YOUR%20NAME%20HERE%0A%0Adef%20num2string%28num%29%3A%0A%20%20%20%20%20%22%22%22%0A%20%20%20%20%20Takes%20as%20input%20a%20number,%20num,%20and%0A%20%20%20%20%20returns%20the%20corresponding%20name%20as%20a%20string.%0A%20%20%20%20%20Examples%3A%20num2string%280%29%20returns%20%22zero%22,%20num2string%281%29%20returns%20%22one%22%0A%20%20%20%20%20Assumes%20that%20input%20is%20an%20integer%20ranging%20from%200%20to%209%0A%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%0A%20%20%20%20%20numString%20%3D%20%22%22%0A%0A%20%20%20%20%20%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%0A%20%20%20%20%20%23%23%23%20FILL%20IN%20YOUR%20CODE%20HERE%20%20%20%20%20%20%23%23%23%0A%20%20%20%20%20%23%23%23%20Other%20than%20your%20name%20above,%20%23%23%23%0A%20%20%20%20%20%23%23%23%20this%20is%20the%20only%20section%20%20%20%20%23%23%23%0A%20%20%20%20%20%23%23%23%20you%20change%20in%20this%20program.%20%23%23%23%0A%20%20%20%20%20%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%23%0A%0A%20%20%20%20%20return%28numString%29%0A%0A%0A%0Adef%20main%28%29%3A%0A%20%20%20%20%20nums%20%3D%20input%28'Enter%20a%20multi-digit%20number%3A%20'%29%0A%20%20%20%20%20newStr%20%3D%20%22%22%0A%20%20%20%20%20for%20n%20in%20nums%3A%0A%20%20%20%20%20%20%20%20%20word%20%3D%20num2string%28int%28n%29%29%0A%20%20%20%20%20%20%20%20%20newStr%20%3D%20newStr%20%2B%20%22%20%22%20%2B%20word%0A%20%20%20%20%20msg%20%3D%20'In%20words,%20your%20number%20is%3A'%20%2B%20newStr%20%2B%20%22.%22%0A%20%20%20%20%20print%28msg%29%20%20%20%0A%0A%0A%23Allow%20script%20to%20be%20run%20directly%3A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20%20main%28%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22111%22%5D&textReferences=false">num2string example</a>
-		-->
+		<td><a href="http://pythontutor.com/iframe-embed.html#code=%23Sisters%20Example%20from%20Spring%202015,%20%233%0A%0Adef%20prob4%28amy,%20beth%29%3A%0A%20%20%20%20if%20amy%20%3E%204%3A%0A%20%20%20%20%20%20%20%20print%28%22Easy%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20-1%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Complex%20case%22%29%0A%20%20%20%20%20%20%20%20kate%20%3D%20helper%28amy,beth%29%0A%20%20%20%20return%28kate%29%0A%0Adef%20helper%28meg,jo%29%3A%0A%20%20%20%20s%20%3D%20%22%22%0A%20%20%20%20for%20j%20in%20range%28meg%29%3A%0A%20%20%20%20%20%20%20%20print%28j,%20%22%3A%20%22,%20jo%5Bj%5D%29%0A%20%20%20%20%20%20%20%20if%20j%20%25%202%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20s%20%3D%20s%20%2B%20jo%5Bj%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28%22Building%20s%3A%22,%20s%29%0A%20%20%20%20return%28s%29%0A%20%20%20%20%20%0Ar%20%3D%20prob4%284,%22city%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%0A%0Ar%20%3D%20prob4%282,%22university%22%29%0Aprint%28%22Return%3A%20%20%22,%20r%29%09%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Sisters Example</a>, <br>
+			<a href="http://pythontutor.com/visualize.html#code=nums%20%3D%20%5B1,4,10,6,5,42,9,8,12%5D%20%0A%0AmaxNum%20%3D%200%0Afor%20n%20in%20nums%3A%0A%20%20%20%20if%20n%20%3E%20maxNum%3A%0A%20%20%20%20%20%20%20%20maxNum%20%3D%20n%0Aprint%28'The%20max%20is',%20maxNum%29&cumulative=false&curInstr=26&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Max Num</a>,<br>	
+			<a href="https://pythontutor.com/render.html#code=nums%20%3D%20%5B1,%204,%200,%206,%205,%202%5D%0Aprint%28nums%29%0Ai%20%3D%200%0Awhile%20i%20%3C%20len%28nums%29-1%3A%0A%20%20%20%20if%20nums%5Bi%5D%20%3C%20nums%5Bi%2B1%5D%3A%0A%20%20%20%20%20%20%20nums%5Bi%5D,%20nums%5Bi%2B1%5D%20%3D%20nums%5Bi%2B1%5D,%20nums%5Bi%5D%0A%20%20%20%20i%20%3D%20i%2B1%0Aprint%28nums%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false">Swapping Example</a>
+			
 		</td>
 		<td>			
 			<a href="s25/lab9.html">Lab 9</a>,<br>
@@ -397,10 +398,9 @@ Spring 2025<br><br>
 			More on command line scripts;
 		</td>
 		<td>
-			<!--
-      		<a href="files/cunyLocations.csv">cunyLocations.csv</a>,<br>
-      		<a href="https://pythontutor.com/render.html#code=nums%20%3D%20%5B1,%204,%200,%206,%205,%202%5D%0Aprint%28nums%29%0Ai%20%3D%200%0Awhile%20i%20%3C%20len%28nums%29-1%3A%0A%20%20%20%20if%20nums%5Bi%5D%20%3C%20nums%5Bi%2B1%5D%3A%0A%20%20%20%20%20%20%20nums%5Bi%5D,%20nums%5Bi%2B1%5D%20%3D%20nums%5Bi%2B1%5D,%20nums%5Bi%5D%0A%20%20%20%20i%20%3D%20i%2B1%0Aprint%28nums%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false">Swap if smaller (Python Tutor)</a>
-		-->
+			<a href="https://trinket.io/python/ab6cddc880">Random Walk</a>,<br>
+			<a href="https://trinket.io/python/afb4c6b75f">Search for Center</a>
+
 		</td>
 		<td>
 			<a href="s25/lab10.html">Lab 10</a>,<br>
@@ -429,13 +429,19 @@ Spring 2025<br><br>
 			Design Pattern:  Searching;<br>
 			WeMIPS<br>
 		</td>
-		<td><!--
+		<td>
+			<a href="http://pythontutor.com/visualize.html#code=def%20search%28nums,%20locate%29%3A%0A%20%20%20%20found%20%3D%20False%0A%20%20%20%20i%20%3D%200%0A%20%20%20%20while%20not%20found%20and%20i%20%3C%20len%28nums%29%3A%0A%20%20%20%20%20%20%20%20print%28nums%5Bi%5D%29%0A%20%20%20%20%20%20%20%20if%20locate%20%3D%3D%20nums%5Bi%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20found%20%3D%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20i%20%3D%20i%2B1%0A%20%20%20%20return%28found%29%0A%20%20%20%20%0Anums%3D%20%5B1,4,10,6,5,42,9,8,12%5D%0Aif%20search%28nums,6%29%3A%0A%20%20%20%20print%28'Found%20it!%206%20is%20in%20the%20list!'%29%0Aelse%3A%0A%20%20%20%20print%28'Did%20not%20find%206%20in%20the%20list.'%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Search</a>, <br>
+			<!--
 			<a href="http://rivoire.cs.sonoma.edu/cs351/wemips/">WeMIPS Emulator</a>,<br>
 			<a href="https://github.com/mtlynch3/csci127/blob/main/lecture11/increment.py">Lecture slip example</a>	-->	
 		</td>
 		<td><!--
 			<a href="s25/lab11.html">Lab 11</a>,<br>
-			<a href="s25/quizzes.html">WeMips (Machine Language)</a>-->
+		-->
+		
+			<a href="s25/cw.html#calendar">Quiz 11</a>,<br>
+			<a href="s25/cw.html#calendar">Code Review 11</a>,<br>
+			<a href="s25/ps.html#set11">Programs 46-50</a>
 		</td>
 		<td rowspan=1>		
 			<a href="http://web.archive.org/web/20180209142041/http:/www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html">U Idaho reference sheet</a>,
@@ -449,16 +455,18 @@ Spring 2025<br><br>
 		<td>4/29-5/5</td>
 		<td>Introduction to C++:  program structure, data representation and I/O.
 		</td>
-		<td>
-			<!--
-			<a href="https://onlinegdb.com/ByzFa5TkG">cin/cout example</a>, <br>
-			<a href="https://onlinegdb.com/BkT2_jT1z">kg/lbs example</a>, <br>
-			<a href="https://onlinegdb.com/HktpcoT1f">loops example</a>, <br>
-			<a href="https://onlinegdb.com/Sy13ToTyG">nested loops</a>-->
+		<td><a href="https://onlinegdb.com/ByzFa5TkG">cin/cout example (C++)</a>, <br>
+			<a href="https://onlinegdb.com/BkT2_jT1z">Kg/Lbs example (C++)</a>, <br>
+			<a href="https://onlinegdb.com/HktpcoT1f">Loops example (C++)</a>, <br>
+			<a href="https://onlinegdb.com/Byx-niaJz">Growth example (C++)</a>, <br>
+			<a href="https://onlinegdb.com/Sy13ToTyG">Nested loops example (C++)</a>, <br>
 		</td>
 		<td><!--
 			<a href="s25/lab12.html">Lab 12</a>,<br>
 			<a href="s25/quizzes.html">C++</a>-->
+			<a href="s25/cw.html#calendar">Quiz 12</a>,<br>
+			<a href="s25/cw.html#calendar">Code Review 12</a>,<br>
+			<a href="s25/ps.html#set11">Programs 51-55</a>
 		</td>
 		<td rowspan=1>
 			<a href="http://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a>, <br>
@@ -476,12 +484,19 @@ Spring 2025<br><br>
 		<td>5/6-5/12</td>
 		<td>C++:  loops, conditionals & logical expressions<br><br>
 		</td>
-		<td><!--
-			<a href="https://github.com/mtlynch3/csci127/tree/main/lecture13">Lecture 13 programs</a>,-->
+		<td>
+			<a href="https://onlinegdb.com/Hk_q0V8xf">Decision example (C++)</a>, <br>
+			<a href="https://onlinegdb.com/H1ewPmSUlz">Logical Expressions (C++)</a>, <br>
+			<a href="https://onlinegdb.com/rJttLSLgG">Input Checking (C++)</a>, <br>
+			<a href="https://onlinegdb.com/Bkn8DB8eG">Input Checking, II (C++)</a>, <br>
+			<a href="https://onlinegdb.com/rk86urUlf">Growth Example (C++)</a>, <br>
 		</td>
 		<td><!--
 			<a href="s25/lab13.html">Lab 13</a>,<br>
 			<a href="s25/quizzes.html">Review quizzes for Final exam</a>-->
+			<a href="s25/cw.html#calendar">Quiz 13</a>,<br>
+			<a href="s25/cw.html#calendar">Code Review 13</a>,<br>
+			<a href="s25/ps.html#set12">Programs 56-60</a>
 		</td>
 		<td rowspan=1>		
 			<a href="http://www.cplusplus.com/files/tutorial.pdf">Cplusplus Tutorial</a>, <br>
@@ -532,5 +547,5 @@ Spring 2025<br><br>
 </div>
 
 <div>
-<i style="float:right">(This file was last modified on March 23, 2025.)</i><br>
+<i style="float:right">(This file was last modified on March 31, 2025.)</i><br>
 </div>
