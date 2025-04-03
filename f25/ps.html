@@ -1,0 +1,215 @@
+
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Programs, CSci 127, Hunter College</title>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; border: 1px solid black}
+table { border: 1px solid black; border-collapse: collapse}
+code {
+  background-color: #dddddd;
+}
+.inline {
+  padding: 1px;
+}
+.blockcode {
+  border: 1px solid #999999;
+  display: block;
+  padding-left: 10px;
+  padding-top : 2px;
+  padding-bottom : 2px;
+  margin: 5px;
+}
+.datablock {
+  border: 1px solid #eeeeee;
+  display: block;
+  padding: 7px;
+  padding-top : 0px;
+  margin: 5px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+    <span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+    <span style= "float: right">
+      <a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+      <a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+	  <a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;
+	  <a href="faq.html">FAQ</a>
+    </span>
+</div>
+
+<br>
+<br>
+<hr>
+
+
+<div style="margin:50px">
+
+<h1>Programming Problem List<br>
+CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2025<br><br>
+</h1>
+<hr>
+
+<p>All students registered by Friday, August 22, are sent a Gradescope registration invitation to the email on record on their Brightspace account.  If you did not receive the email or would like to use a different account, fill in the form on Brightspace.  Include that you not receive a Gradescope invitation, your preferred email, and your EmpID.  We will manually generate an invitation.  As a default, we use your name as it appears in Brightspace/CUNYFirst (to update CUNYFirst, see <a href="https://hunter.cuny.edu/students/registration/records-and-transcripts/changing-your-personal-information/">changing your personal information</a>).  If you prefer a different name for Gradescope, include it, and we will update the Gradescope registration.</p>
+
+
+<h3>General Notes</h3>
+
+<p>Learning programming is like learning a foreign language:  you will learn more (with less work) if you practice every day.  Some of the programs below are easy; some will take more time. We suggest you set aside a block of time most days to work on programming and the course.  </p>
+
+<p>The programs build on the concepts and code developed during lecture, lab, and through the reading.  Mastery of material is assessed via
+	<ul>
+	  <li> Autograding of the programs submitted to Gradescope, </li>
+	  <li> <a href="cw.html#quizzes">Written quizzes</a> based on the programs and labs, </li>
+	  <li> <a href="cw.html#cr">Code Reviews</a> based on the programs, and </li>
+	  <li> Final exam on the material.  
+	</ul>
+
+While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.  For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (20% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the <a href="https://hunter.cuny.edu/students/student-affairs/office-of-student-conduct/">Office of Student Affairs</a>.
+
+
+
+<h4>Autograder Notes</h4>
+
+<p> The majority of the programs this semester are written in Python (see <a href="lab1.html">Lab 1</a> for getting started with Python); it is noted below when other formats or languages are used. For Python programs, the autograder expects a <code class="inline">.py</code> file, using only the specified libraries, and does not accept iPython notebooks.  Since all assignments are designed to be uploaded as a single file, the autograder is set up for direct file upload instead of Github.  If submitting directly (drop-and-drag onto the webpage), the file name is flexible but must have the extension <code class="inline">.py</code>.
+Also, to receive full credit, the code should be compatible with Python 3.10 (the default for the Gradescope autograders).
+	
+<p>	To get full credit for a program, the file must include in the opening comment:
+	<ul>
+		<li> Your name, as it appears in your Gradescope registration.
+		<li> The email you are using for Gradescope.
+	</ul>
+	
+For example, for the student, Thomas Hunter, his first program might be:
+<pre><code class="blockcode">"""
+Name:  Thomas Hunter
+Email: thomas.hunter1870@hunter.cuny.edu
+Date: September 1, 2025
+This program prints: Hello, Thomas Hunter
+"""
+
+print("Hello, Thomas Hunter")
+</pre></code>
+
+<p>
+You may submit your assignments up to three weeks before the due date and are encouraged to work ahead.  To receive credit, assignments must be submitted by the deadline to <a href="https://gradescope.com">Gradescope.</a>  For more information on using <a href="https://www.gradescope.com">Gradescope</a>, see <a href="https://huntercsci127.github.io/s25/lab1.html">Lab 1</a>.
+Since Gradescope gives limited feedback, run your program first locally (on your computer or a lab computer) where the compiler messages will pinpoint errors and help debug your code.  For example, if Gradescope gives you a <tt>"The autograder failed to execute..."</tt> error, it means your program has an error (in this case, it's usually the file contains non-Python commands.). The local Python compiler will give the line of your file with the error, where Gradescope will only say that there's a general problem.  For more information on installing Python on your computer, see the <a href="resources.html#install">installation guides</a>.
+
+
+
+<br>
+<br>
+<br>
+<hr>
+
+
+<h2>Programming Exercises</h2>
+<a id="set1"></a>
+<hr>
+<ol>
+<!--program1-->
+<li>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, September 3</b><br>
+	<b>Reading: <a href= "https://runestone.academy/ns/books/published/thinkcspy/GeneralIntro/toctree.html" target="_blank">Chapter 1</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries:  Python 3.10+</b></p>
+  	<p><b>Hello</b></p>
+
+	<p>	Write a program that prints <code class="inline">Hello</code> followed by your name to the screen.  For example, if your name is <code class="inline">Thomas Hunter</code>, when your program is run, it would print:
+<pre><code class="datablock">
+Hello, Thomas Hunter</code></pre>		
+
+<!--program2-->
+<li>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, September 2</b><br>
+	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries: turtle, Python 3.10+</b></p>
+  	<p><b>Triangle</b></p>
+
+	<p>Write a program that draws a triangle using the <code class="inline">turtle</code> library.
+    <br><img id="triangle" alt="program 2" src="../images/p2_triangle.png" width="250">
+	<br><br>
+	<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
+	When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".
+	</i></p></li>
+
+<!--program3-->
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, September 4</b><br>
+	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries:  turtle, Python 3.10+</b></p>
+	<p><b>Flower</b></p>	
+	
+	<b><p>REPLACE:  Match a figure, like the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/OurFirstTurtleProgram.html">textbook section</a> but a bit harder</p></b>
+
+    <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
+
+    <pre><code class="blockcode">Repeat 50 times: 
+  Change color to blue
+  Walk forward 100 steps 
+  Turn left 155 degrees 
+  Change color to red  
+  Walk forward 100 steps </code></pre>
+
+     <p>The result should look as follows:</p>
+  	<p>
+  	<img src="../images/p03_flower_s25.png" height=250></p></li>
+
+<!--program4-->
+<li >
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, September 5</b><br>
+	<b>Reading:   <a href= "https://runestone.academy/ns/books/published/thinkcspy/GeneralIntro/toctree.html" target="_blank">Chapter 1</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries:  Python 3.10+</b></p>
+  	<p><b>Multiple Greetings</b></p>
+		
+	<p>Write a program that will print <code class="inline">Welcome!</code> multiple times.  
+	The number of times depends on your EmplID number.  Take the last 2 digits of your EmplID number and add 10.  For example, if your EmplID ends in 13, the number of times you repeat the message is 13+10 = 23.
+
+	<p>For example, with an EmplID ending in 02, you would repeat the message 12 times:
+<pre><code class="datablock">Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!
+Welcome!</code></pre>
+
+<!--program5-->
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, February 11</b><br>
+	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab1.html">Lab 1</a></b><br>
+	<b>Available Libraries: turtle, Python 3.10+</b></p>
+	<p><b>Green Star</b></p>		
+		
+	<p><b>REPLACE:  Give pseudocode for a figure drawn with loop...</b></p>
+
+	<p>Write a program that uses the <tt>turtle</tt> library to draw a <span style="color:green">green</span> 5-pointed star.
+
+	<p>Your output should look like this:
+	<br>
+	<img height = 150 src="../images/star_green.png">
+	</p>
+
+	<p><i>Hint: To draw the 5-pointed star, the turtle must turn a total of 720 degrees.  How many degrees does the turtle need to turn at each point?</i></p></li>
+
+
+</ol>
+<br>
+<br>
+<hr>
+<i>More to come...</i>
+<br>
+<hr>
+</html>
+
