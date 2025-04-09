@@ -14,7 +14,8 @@
 th, td { padding: 5px; border: 1px solid black}
 table { border: 1px solid black; border-collapse: collapse}
 code {
-  background-color: #dddddd;
+  background-color: #eeeeee;
+  border: 1px solid #bbbbbb;
 }
 .inline {
   padding: 1px;
@@ -93,7 +94,7 @@ Also, to receive full credit, the code should be compatible with Python 3.10 (th
 	</ul>
 	
 For example, for the student, Thomas Hunter, his first program might be:
-<pre><code class="blockcode">"""
+<pre><code class="python">"""
 Name:  Thomas Hunter
 Email: thomas.hunter1870@hunter.cuny.edu
 Date: September 1, 2025
@@ -127,8 +128,7 @@ Since Gradescope gives limited feedback, run your program first locally (on your
   	<p><b>Hello</b></p>
 
 	<p>	Write a program that prints <code class="inline">Hello</code> followed by your name to the screen.  For example, if your name is <code class="inline">Thomas Hunter</code>, when your program is run, it would print:
-<pre><code class="datablock">
-Hello, Thomas Hunter</code></pre>		
+<pre><code class="shell">Hello, Thomas Hunter</code></pre>		
 
 <!--program2-->
 <li>
@@ -140,8 +140,8 @@ Hello, Thomas Hunter</code></pre>
 	<p>Write a program that draws a triangle using the <code class="inline">turtle</code> library.
     <br><img id="triangle" alt="program 2" src="../images/p2_triangle.png" width="250">
 	<br><br>
-	<i>Note:  Whenever submitting a turtle program, choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
-	When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".
+	<i>Note:  Whenever submitting a turtle program, <b>choose a name for your file that is not <tt>turtle.py</tt></b>.
+	When executing the <code class="inline">import turtle</code> statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  If you name your file <tt>turtle.py</tt>, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like <tt>myTurtle.py</tt> or <tt>program2.py</tt>.
 	</i></p></li>
 
 <!--program3-->
@@ -151,11 +151,11 @@ Hello, Thomas Hunter</code></pre>
 	<b>Available Libraries:  turtle, Python 3.10+</b></p>
 	<p><b>Turtle Drawing</b></p>	
 	
-	<b><p>REPLACE:  Match a figure, like the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/OurFirstTurtleProgram.html">textbook section</a> but a bit harder</p></b>
+	<b><p style="color:red">REPLACE:  Match a figure, like the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/OurFirstTurtleProgram.html">textbook section</a> but a bit harder</p></b>
 
     <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
 
-    <pre><code class="blockcode">Repeat 50 times: 
+    <pre><code class="shell">Repeat 50 times: 
   Change color to blue
   Walk forward 100 steps 
   Turn left 155 degrees 
@@ -173,11 +173,11 @@ Hello, Thomas Hunter</code></pre>
 	<b>Available Libraries:  Python 3.10+</b></p>
   	<p><b>Multiple Greetings</b></p>
 		
-	<p>Write a program that will print <code class="inline">Welcome!</code> multiple times.  
+	<p>Write a program that will print <tt>Welcome!</tt> multiple times.  
 	The number of times depends on your EmplID number.  Take the last 2 digits of your EmplID number and add 10.  For example, if your EmplID ends in 13, the number of times you repeat the message is 13+10 = 23.
 
 	<p>For example, with an EmplID ending in 02, you would repeat the message 12 times:
-<pre><code class="datablock">Welcome!
+<pre><code class="shell">Welcome!
 Welcome!
 Welcome!
 Welcome!
@@ -198,18 +198,178 @@ Welcome!</code></pre>
 		
     <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
 
-		<pre><code class="blockcode">Change the pen to blue.
+		<pre><code class="shell">Change the pen to blue.
 Repeat 50 times: 
-	Repeat 5 times: 
-		Walk forward 100 steps.  
-		Turn right 72 degrees. 
-	Turn right 70 degrees.</code></pre>		
+  Repeat 5 times: 
+    Walk forward 100 steps.  
+    Turn right 72 degrees. 
+  Turn right 70 degrees.</code></pre>		
 
 	<p>Your output should look like this:
 	<br>
 	<img height = 150 src="../images/flower_f25.png">
 	</p>
 </li>
+
+<a id="set2"></a>
+<hr>
+
+<!--program6-->
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, September 10</b><br>
+	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a> & <a href="lab2.html">Lab 2</a></b><br>
+	<b>Available Libraries: Python 3.10+</b></p>
+	<p><b>Upper & Lower</b></p>	
+
+	<p>Using the string commands introduced in <a href="lab2.html">Lab 2</a>, write a Python program that prompts the user for a message, and then prints the message, the message in upper case letters, and the message in lower case letters.</p>
+
+	<p>A sample run of your program should look like:</p>
+<pre><code class="shell">Enter a message:  Mihi cura futuri
+Mihi cura futuri
+MIHI CURA FUTURI
+mihi cura futuri</code></pre>
+
+	<p>Another run:</p>
+<pre><code class="shell">Enter a message:  I love Python!
+I love Python!
+I LOVE PYTHON!
+i love python!</code></pre>
+
+	<p><i>Hint:  Your program should be able to take any phrase the user enters and prints it, prints it in upper case letters, and prints it in lower case letters.  To do that, you need to store the phrase in a variable and print variations of the stored variable.  See Sections 2 and 3 of <a href="lab2.html">Lab 2</a>. 
+	</i>
+
+<!--program7-->
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, September 11</b><br>
+	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a> & <a href="lab2.html">Lab 2</a></b><br>
+	<b>Available Libraries: Python 3.10+</b></p>
+	<p><b>Lowercase ASCII</b></p>	
+
+	<p>Write a program that prompts the user to enter a phrase, converts the phrase to uppercase, and then prints out each lowercase character and its corresponding ASCII code.</p>
+
+	<p>A sample run of your program should look like:</p>
+<pre><code class="shell">Enter a phrase: abc
+a 97
+b 98
+c 99</code></pre>
+
+	<p>And another sample run:</p>
+<pre><code class="shell">Enter a phrase: ABC
+a 97
+b 98
+c 99</code></pre>
+
+
+	<p>Another run, with a longer phrase:</p>
+<pre><code class="shell">Enter a phrase:  I love Python!
+i 105
+  32
+l 108
+o 111
+v 118
+e 101
+  32
+p 112
+y 121
+t 116
+h 104
+o 111
+n 110
+! 33
+</code></pre>
+		
+	<p><i>Hint:  The first step is to ask the user for input (see Section 2 of <a href="lab2.html">Lab 2</a>).  If <tt>c</tt> is a character, <code class="inline">ord(c)</code> returns its ASCII code.  For example, if <tt>c</tt> is 'i', then <code class="inline">ord(c)</code> returns 105.  See <a href="lab2.html">Lab 2</a> for more on ASCII and characters.</i>
+	</p>
+</li>
+
+<!--program8-->
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, September 12</b><br>
+	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a> & <a href="lab2.html">Lab 2</a></b><br>
+	<b>Available Libraries: Python 3.10+</b></p>
+	<p><b>Counting by 17's</b></p>	
+		
+	<p>Write a program that prints out the numbers from 850 to 1700, counting by seventeens.</p>
+
+	<p>The output of your program should be:
+<pre><code class="shell">850
+867
+884
+901
+918
+935
+952
+969
+986
+1003
+1020
+1037
+1054
+1071
+1088
+1105
+1122
+1139
+1156
+1173
+1190
+1207
+1224
+1241
+1258
+1275
+1292
+1309
+1326
+1343
+1360
+1377
+1394
+1411
+1428
+1445
+1462
+1479
+1496
+1513
+1530
+1547
+1564
+1581
+1598
+1615
+1632
+1649
+1666
+1683
+1700</code></pre>			
+
+<!--program09-->
+<li > 
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday,  September 16</b><br>
+	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab2.html">Lab 2</a></b><br>
+	<b>Available Libraries: turtle, Python 3.10+</b></p>
+	<p><b>Expanding Hexadecagon</b></p>	
+
+	<p>Write a program, using the turtle library, that implements the pseudocode below:</p>
+
+	<pre><code class="shell">For i = 60, 62, 64, 26, ... ,110:
+  Turn pen red.
+  Walk forward i steps.
+  Turn left 45 degrees.
+  Turn pen blue.		
+  Walk forward i steps
+  Turn right 90 degrees</code></pre>
+
+		
+	<p>Your output should look similar to:</p>
+				<br>
+				<img src="../images/expanding_hexadecagon.png" height=250>
+		
+		
+	<p> <i>Hint:  See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
+		
+	
 
 </ol>
 <br>
