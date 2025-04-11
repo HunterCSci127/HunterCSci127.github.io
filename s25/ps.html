@@ -1628,24 +1628,25 @@ Enter output file:  myMap.html
 
 <!--program49-->
 <li>
-<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, April 30</b><br>
-		<b>Reading: <a href="lab10.html">Lab 10</a>, <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference</a></b><br>
-		<b>Available Libraries: N/A</b></p>
-		<p><b>Organizing Files Script</b></p>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, April 30</b><br>
+	<b>Reading: <a href="lab10.html">Lab 10</a>, <a href="https://help.ubuntu.com/community/UsingTheTerminal">Ubuntu Terminal Reference</a></b><br>
+	<b>Available Libraries: N/A</b></p>
+	<p><b>Organizing Files Script</b></p>
 
-	<!--
-		
-		p49: Wednesday, April 30 
-s24, p50: shell script to create folders
+	<p>Write an Unix shell script that does the following:
+		<ul>
+			<li> Creates a directory, <tt>projectFiles</tt>.
+			<li> Creates 3 additional directories (as subdirectories of
+				<tt>projectFiles</tt>):  <tt>source</tt>, <tt>data</tt>, and <tt>results</tt>.
+			<li>Your script should then return the starting directory (e.g. use relative paths to move up a level) and move all files ending with <tt>.py</tt> to <tt>project_files/source</tt>.</li>
+			</ul>
+	</p>		
 	
-		<p>
-		Write a Bash script that makes a new directory called <tt> project_files </tt>, enters the directory, then creates three more subdirectories titled <tt>source</tt>, <tt>data</tt>, and <tt>out_files</tt>.
-		Your script should then return the starting directory (e.g. use relative paths to move up a level) and move all files ending with <tt>.py</tt> to <tt>project_files/source</tt>.
-		</p>
+	Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
 	
-		<p>Submit a single text file containing your Unix shell commands.  See <a href="lab6.html">Lab 6</a> for details.</p>
-	
-		<p>Note:  for comments, shell scripts use # in front of lines (instead of the block comments surrounded by """ """) and the first line is the "shebang" line.  For a proper shell script, your file should start: </p>
+
+
+	<p>Note:  for comments, shell scripts use # in front of lines (instead of the block comments surrounded by """ """) and the first line is the "shebang" line.  For a proper shell script, your file should start: </p>
 	
 	<pre style = "background-color:lavender;width:400px">
 #!/bin/bash
@@ -1653,41 +1654,41 @@ s24, p50: shell script to create folders
 #Email: YourEmailHere
 </pre>
 	
-	p44: Wednesday, April 23
-	regex from command line? S24, #44:  Bash script that creates folders
-
-
-	<p>Write a Bash script that makes a new directory called <tt> projectFiles </tt>, enters the directory, then creates three more subdirectories titled <tt>source</tt>, <tt>data</tt>, and <tt>results</tt>.
-
-<!--
-		p51: Friday, May 2
-		s24, p51:  count # of py files in current working directory, introduces pipe in lab 11
-	-->		
-
-
-<p>TBA</p>
 
 </li>
-<br><br><br>
+
 
 <!--program50-->
 <li>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, May 1</b><br>
-		<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="lab8.html">Lab 8</a></b><br>
+	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="lab8.html">Lab 8</a></b><br>
 		<b>Available Libraries: N/A</b></p>
-		<p><b>Number Strings</b></p>
+		<p><b>String to Number</b></p>
 
-	<!--
-		Write the function <tt>num2string()</tt>...
+	<p>Write the function <tt>string2num()</tt> which takes a integer and returns the corresponding number as a string.</p>  
+	<ol>
+		<li>If user gives a negative number or a number larger than 99, your function should return an empty string: "".</li>
+		<li>Numbers larger than 20 are separated by space.  For example, "twenty one" or "ninety nine".</li>
+	</ol>
+	</p>
 
-Using functions in a program...
-From Lecture 11-- multiple functions:  changing words to numbers
-, incrementing, and then changing numbers to words
--->
-<p>TBA</p>
+	<p>A sample call of the function:
+		<pre style ="background-color:lavender;width:600px">print("Converting fourteen to", string2num("fourteen")) 
+Converting fourteen to 14
+</pre>	
+	
+<p>And another example call of the function:
+	<pre style ="background-color:lavender;width:600px">num_str = "sixty six"
+print("Converting, num_str, "to", string2num(num_str)) 
+Converting sixty six to 66
+</pre>	
 
+	
+	<p><i>Hint:  See Lectures 8 and 11 for related programs.</i></p>
+
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 </li>
-<br><br><br>
+
 
 <hr>
 <a id="set11"></a>
@@ -1699,15 +1700,24 @@ From Lecture 11-- multiple functions:  changing words to numbers
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, May 2</b><br>
 		<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="lab8.html">Lab 8</a></b><br>
 		<b>Available Libraries: N/A</b></p>
-		<p><b>Linear Search</b></p>
-<!--	
-	Search Function:  from design patterns in Lecture 11
+		<p><b>Search</b></p>
+
+		<!--
+		<p>When students visit the lab, their EmpID is stored as an 8-digit string. Many students visit multiple times, but we are interested in the total number of unique visitors to the lab. Write a function <tt>unique_visitors()</tt> that takes a list of 8-digit strings and returns the number of unique strings that occur.</p>
+	
+		<p>For example:</p>
+		<pre style="background-color:lavender;width:600px">
+ids = ['12345678','11223344','12312323','12345678']
+print("The number of unique visitors is ", unique_visitors(ids))
+</pre>
+	would print:
+	<pre style="background-color:lavender;width:400px">The number of unique visitors is 3</pre>
+	
+	since there are 4 entries but the first and fourth entries are duplicates of each other.
+	
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 -->
-
-<p>TBA</p>
-
 </li>
-<br><br><br>
 
 <!--program51-->
 <li>
