@@ -1661,14 +1661,14 @@ Enter output file:  myMap.html
 <!--program50-->
 <li>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, May 1</b><br>
-	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="lab8.html">Lab 8</a></b><br>
+	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published//thinkcspy/Strings/toctree.html">Chapter 9</a> and <a href="lab8.html">Lab 8</a></b><br>
 		<b>Available Libraries: N/A</b></p>
 		<p><b>String to Number</b></p>
 
 	<p>Write the function <tt>string2num()</tt> which takes a integer and returns the corresponding number as a string.</p>  
 	<ol>
 		<li>If user gives a negative number or a number larger than 99, your function should return an empty string: "".</li>
-		<li>Numbers larger than 20 are separated by space.  For example, "twenty one" or "ninety nine".</li>
+		<li>Numbers larger than 20 are separated by a space.  For example, "twenty one" or "ninety nine".</li>
 	</ol>
 	</p>
 
@@ -1702,22 +1702,65 @@ Converting sixty six to 66
 		<b>Available Libraries: N/A</b></p>
 		<p><b>Search</b></p>
 
-		<!--
-		<p>When students visit the lab, their EmpID is stored as an 8-digit string. Many students visit multiple times, but we are interested in the total number of unique visitors to the lab. Write a function <tt>unique_visitors()</tt> that takes a list of 8-digit strings and returns the number of unique strings that occur.</p>
+		<p>In Lecture 11, we worked on a search for unsorted data.  For this program, we are writing a function that searches an ordered list. Write a function that implements the pseudocode below:</p>
+
+		<pre style ="background-color:lavender;width:600px">Function bin_search(lst, low, high, target)
+
+1. Let mid be the average of low and high (e.g. (low+high)//2).
+2. Print mid, lst[mid], and target.
+3. If high < low,
+4.   Return -1.
+3. Else if target equals lst[mid],
+4.   Return mid.
+5. Else if target is less than lst[mid],
+6.   Return bin_search(lst, low, mid-1, target)
+7. Else 
+8.   Return bin_search(lst,mid+1, high, target)
+</pre>	
+
+
 	
 		<p>For example:</p>
 		<pre style="background-color:lavender;width:600px">
-ids = ['12345678','11223344','12312323','12345678']
-print("The number of unique visitors is ", unique_visitors(ids))
+names = ['AKM','Amy','Anany','Angelina','Anna','Calvin','Daphne','Zeeshan']
+print('Searching for Alvin:', bin_search(names,0, len(names)-1,'Alvin'))
 </pre>
 	would print:
-	<pre style="background-color:lavender;width:400px">The number of unique visitors is 3</pre>
+	<pre style="background-color:lavender;width:400px">mid: 3 lst[mid]: Angelina target: Alvin
+mid: 1 lst[mid]: Amy target: Alvin
+mid: 0 lst[mid]: AKM target: Alvin
+mid: 0 lst[mid]: AKM target: Alvin
+Searching for Alvin: -1</pre>
 	
-	since there are 4 entries but the first and fourth entries are duplicates of each other.
+<p>While searching for Zeeshan in the list:</p>
+<pre style="background-color:lavender;width:600px">
+names = ['AKM','Amy','Anany','Angelina','Anna','Calvin','Daphne','Zeeshan']
+print('Searching for Zeeshan:', bin_search(names,0, len(names)-1,'Zeeshan'))
+</pre>
+would print:
+<pre style="background-color:lavender;width:400px">mid: 3 lst[mid]: Angelina target: Zeeshan
+mid: 5 lst[mid]: Calvin target: Zeeshan
+mid: 6 lst[mid]: Daphne target: Zeeshan
+mid: 7 lst[mid]: Zeeshan target: Zeeshan
+Searching for Zeeshan: 7</pre>
+
+<p>Another example:</p>
+<pre style="background-color:lavender;width:800px">
+scores = [0,0,23,26,35,44,49,58,60,60,65,70,72,78,79,80,89,90,90,91,92,92,93,94,97,98,99,99,100]
+print('Searching for 94:', bin_search(scores,0, len(scores)-1,94))
+</pre>
+	would print:
+	<pre style="background-color:lavender;width:400px">mid: 14 lst[mid]: 79 target: 94
+mid: 21 lst[mid]: 92 target: 94
+mid: 25 lst[mid]: 98 target: 94
+mid: 23 lst[mid]: 94 target: 94
+Searching for 94: 23</pre>
+
 	
 	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
--->
+
 </li>
+
 
 <!--program51-->
 <li>
