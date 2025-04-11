@@ -1596,35 +1596,50 @@ You entered: Mihi cura futuri
 	<b>Available Libraries: pandas, plotly</b></p>
 	<p><b>Housing Map</b></p>	
 
-	<!--
-	<p>
-	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, choice of housing units, and name of the output file, and creates a map with scaled markers for all the housing type from the input file.  When the user hovers over the marker, the ??? should appear in the pop-up box.  The overall title for the map should be ???
 
-	https://data.cityofnewyork.us/Housing-Development/Affordable-Housing-Production-by-Building/hg8x-zxpr/about_data
+	<p>
+	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, choice of unit size, and name of the output file, and creates a map with scaled markers for all the housing of that size from the input file.  When the user hovers over the marker, the name of the property, the number of units of that size and the coordinates.  The overall title for the map should include the housing type.</p>
+
+	<p>The housing data is available from <a href="https://data.cityofnewyork.us/Housing-Development/Affordable-Housing-Production-by-Building/hg8x-zxpr/about_data">NYC Open Data</a> listing affordable and market rate housing by building location.  We created a smaller file, of just 2023 housing units, <a href="../files/Affordable_Housing_Production_by_Building_2023.csv">Affordable_Housing_Production_by_Building_2023.csv</a>. </p>
+
+	<p>If the user enters for size:</p>
+	<ul>
+		<li>0:  use the column: "Studio Units"</li>
+		<li>1:  use the column: "1-BR Units"</li>
+		<li>2:  use the column: "2-BR Units"</li>
+		<li>3:  use the column: "3-BR Units"</li>
+		<li>4:  use the column: "4-BR Units"</li>
+		<li>5:  use the column: "5-BR Units"</li>
+		<li>Otherwise use the column: "6-BR+ Units" </li>		
+	</ul>
+
 
 	<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter CSV file name:  housing.csv
-Enter ??:
-Enter output file:  myMap.html
+<pre style = "background-color:lavender;width:650px">
+Enter input file: Affordable_Housing_Production_by_Building_2023.csv
+Enter number of bedrooms (0 for studio, 1 for one bedroom,...): 2
+Enter output file name: two_bed_2023.html
 </pre>
 	<p>which would produce the HTML file:
 
-	<p><iframe src="../files/th_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+	<p><iframe src="../files/two_bed_2023.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-	<p>This assignment uses collision data collected and made publicly by New York City Open Data. A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterBday.csv</a> from 18 October 2016 was downloaded and can be used to test your program.</p>
 
-	<p> When running your program locally, you need to check that the "LATITUDE" and "LONGITUDE" values are non-empty.  You can drop any row where there's empty values with:
-		
-		<pre style = "background-color:lavender;width:400px">df_cleaned = df.dropna()</pre>
+	<p> Since the data includes all permits, the information for some private residences is not shared (marked 'Confidential' in the "Project Name" column).  Since those lack information, drop those rows before plotting:
 
-	<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
-	-->
+	<pre style = "background-color:lavender;width:550px">housing_df = housing_df[ housing_df['Project Name'] != 'Confidential']</pre>		
 
-	<p>TBA</p>
+	</p>
+	
+	Once the user has specified the housing type, you should make sure that you only plot rows that have information about that housing size (e.g. that are not null ).  For example, if they are interested in 1 bedroom apartments:
+	
+	
+	
+	<pre style = "background-color:lavender;width:550px">df = housing_df[ housing_df["1-BR Units"].notnull() ]</pre>
+
 
 </li>
-<br><br><br>
+
 
 <!--program49-->
 <li>
