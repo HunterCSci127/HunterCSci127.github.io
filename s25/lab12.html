@@ -1,0 +1,310 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 12, CSci 127: Intro to CS, Hunter College</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  border: 2px solid #999999;
+}
+.inline {
+  padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../s25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 12<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2025<br><br>
+</h1>
+
+
+
+<br>
+<hr>
+
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ol>
+      <li> Students will <b>use the gcc (c++ compiler)</b>.
+      <li> Students will write programs that <b>perform I/O and use variables in C++</b>.
+      <li> Students will write programs with <b>Definite Loops (<tt>for</tt> Loops) in C++</b>.
+      <li> Students will use <b>Unix commands to list file types and versions</b>.</li>
+    </ol>
+  </p>
+
+<p>Software tools needed:  web browser and the C++ compiler, <tt>g++</tt> and a graphical editor, such as <tt>gEdit</tt>.
+
+
+
+<br><hr>
+<h2>1. Getting gcc on Your Machine</h2>
+
+<p>
+We are using the <tt>gcc</tt> compiler for the C/C++ programming languages, which is freely available.  We include directions below for downloading on your machine:
+
+<ul>
+	<li> <b>Mac OSX</b>:  The compiler comes with the Mac's XCode tools package.  You can download XCode from the <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store</a>.
+		<li> <b>On-line</b>: The on-line version used in lecture is <a href="https://www.onlinegdb.com">OnlineGDB</a>.
+	<li> <b>Linux (Ubuntu or any other Debian based distribution)</b>:  To get the most up-to-date version, first type:
+		
+	<pre><code class="shell">sudo apt update</code></pre>
+	to update the package list, and then
+	<pre><code class="shell">sudo apt install g++</code></pre>
+	to install g++ and associated libraries and packages.
+
+
+	<li> <b>Windows</b>:  If you installed the Windows Subsystem for Linux (see bottom of <a href="lab3.html">Lab 3</a>), you can open Ubuntu terminal and follow the Linux (Ubuntu) instructions above. Accessing your C++ files in the Windows Subsystem for Linux can be a bit involved (see next section).
+		These Windows installation instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
+
+</ul>
+
+<h3>Accessing Your Files in the Windows Subsystem for Linux</h3>
+Accessing where your files are stored may be a little tricky. To access your files in Windows, you must first change into the directory /mnt, which you can do with the command:
+<pre><code class="shell">cd /mnt</code></pre>
+
+You can now use cd to access your files in Windows. If any file or folder contains a space in it, you must put it in quotation marks e.g. "CS Projects".
+
+For example, if your files are stored in your documents folder you can access them by typing the command:
+<pre><code class="shell">cd /mnt/c/Users/*enter your username here*/Documents</code></pre>
+
+You want to enter the username set for your account after Users. This is likely different than the username you created for Ubuntu.
+
+If you don't know your username, search cmd in the Windows search bar and open it. Then type the command:
+<pre><code class="shell">echo %username%</code></pre>
+
+This should be the username you want to put for *enter your username here*. If your username contains a space, you must put it in quotation marks e.g. "Alan Turing".
+<br /> <br />
+These instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.
+
+
+
+<h3>Using <tt>gcc</tt></h3>
+
+<p> We will be using the 'Gnu Compiler Collection' (aka 'Gnu C Compiler'), or <tt>gcc</tt>, for our C++ programs.  Originally designed for C programs, it was extended to include C++ programs and is one of the most common compilers for C/C++.  The command, <a href="https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html">g++</a> calls <tt>gcc</tt> and automatically specifies the C++ library and treats all files as C++ (instead of the default as C files).
+
+<p>For C/C++ programs, we will do the following steps, at the command line:
+<ul>
+	<li> At the terminal, type:  <pre><code class="shell">gedit hello.cpp</code></pre>  which opens the gEdit editor with the file <tt>hello.cpp</tt>
+	<li> Next, type:<pre><code class="shell">g++ hello.cpp -o hello</code></pre> which compiles <tt>hello.cpp</tt> and store the executable in the ouput file <tt>hello</tt>
+	<li> And to run your program:  <pre><code class="shell">./hello</code></pre> which runs the executable file, <tt>hello</tt>
+</ul></p>
+
+<br><hr>
+<h2>2. I/O and Variables in C++</h2>
+
+<p>Let's write our first program that will say "Hello, World!".  You can copy or type the program below into a text editor of your choice (<tt>gEdit</tt> in Linux, <tt>TextEdit</tt> in MacOs, notepad in Windows or any other editor that will allow you to save your file with <tt>.cpp</tt> extension).  Text after the '//' is a comment (just like the '#' in Python).  You should keep the first 3 lines of comments for gradescope:
+
+	<pre><code class="c++">//Name:  Your name here
+//Email:  Your email here
+//Date:  November 2019
+//My first program in C++
+
+#include &lt;iostream&gt;        //The built-in library for input/output
+using namespace std;       //The names of standard definitions
+
+int main()                 //C++ programs all have a main() function
+{
+  cout << "Hello, World!"; //Print "Hello, World!" to the terminal
+  return 0;                //Standard way to end function
+}</code></pre>
+
+<p>Let's go through line-by-line:
+
+<ul>
+	<li> These four lines are comments, containing information about the program:
+		<pre><code class="c++">//Name:  Your name here
+//Email:  Your email here
+//Date:  November 2019
+//My first program in C++
+</code></pre>
+	
+
+	<li> These two lines include commands that allow you to print to the screen and read input that the user has entered, using standard names and defintions.
+		The <tt>#include</tt> statement is similar in functionality to the <tt>import</tt> statements in Python.
+		<pre><code class="c++">#include &lt;iostream&gt;        //The built-in library for input/output
+using namespace std;       //The names of standard definitions
+</code></pre>
+	
+
+	<li> Code in C++ programs occurs in functions.  Each program is expected to have a <tt>main()</tt> function that is called (invoked) when the program is run.  
+		<pre><code class="c++">int main()                 //C++ programs all have a main() function</code></pre>		
+		The <tt>int</tt> before the function name is what type of data is returned when the function ends.  In this case, the function will return an <tt>int</tt> or integer value.
+
+	<li> C++ uses the curly brackets ('{' and '}') to indicate blocks of code, instead of indenting:
+		<pre><code class="c++">{</code></pre>
+	Indenting code is considered good style, but you have more freedom to decide how much to indent versus Python.  For function definitions and multiple lines of code in a block, the use of the brackets is required.
+	
+
+	<li> <tt>cout &lt;&lt;</tt> is used for printing to the terminal.
+		<pre><code class="c++">  cout << "Hello, World!"; //Print "Hello, World!" to the terminal</code></pre>
+
+	
+	Note that, as a general rule, commands in C++ end in a semi-colon.
+
+	<li> When this function ends, it returns the integer 0, a common value for a program ending normally.
+		<pre><code class="c++">  return 0;                //Standard way to end function
+</code></pre>
+
+	
+	<li> The closing bracket for the definition of the function, <tt>main()</tt>.  
+		
+		<pre><code class="c++">}</code></pre>
+
+	All opening brackets must have a matching closing bracket.
+
+</ul>
+
+
+<p>Once you have it typed in and saved as <tt>hello.cpp</tt>, try compiling the program. In a terminal window, travel to the directory where you saved your file and type:
+	<pre><code class="shell">g++ hello.cpp -o hello</code></pre>
+
+When it returns without an error, you can run it by typing:
+<pre><code class="c++">./hello</code></pre>
+
+<p>When it compiles, and runs correctly (i.e. printing "Hello, World!" to the screen), see the <a href="ps.html#ps12">Programming Problem List</a>.
+
+
+<h3>Simple I/O & Variables in C++</h3>
+
+Unlike Python, you must declare variables before using them.  For example, if you want a variable to hold the year, you would first declare it (i.e. request space for it):
+<pre><code class="c++">int year;</code></pre>
+
+<P> Once we declare the variable, we can use it in the subsequent lines of the program:
+
+
+	<pre><code class="c++">//Another C++ program, demonstrating variables
+#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+  int year;
+  cout << "Enter a number: ";
+  cin >> year;
+  cout << "Hello" << year << "!!\n\n";
+  return 0;
+}</code></pre>
+
+<p>For each variable, we need to specify what type of variable it is (whole number, real number, character, etc.) before we use it.  For real numbers, we can use <tt>float</tt>, as in Python.  We will introduce more data types next lab, but if you are curious, here is a <a href="https://www.tutorialspoint.com/cplusplus/cpp_variable_types.htm">chart</a> of some common types.  Our program above:
+<ul>
+	<li> Declares the variable <tt>year</tt> to be a whole number (integer).
+	<li> Asks the user for a number.
+	<li> Reads in the number the user entered and stores it in <tt>year</tt>.
+	<li> Prints out a messsage with that number.
+	<li> Ends the function (returning 0).
+</ul>
+
+<p>To summarize:  <tt>cin</tt> is for input to the program, and <tt>cout</tt> is output from the program.
+
+<p> How could you modify this program to ask the user for a real (floating-point number)?  Most arithmetic works the same in C++ as it does in Python.  With this in mind, modify the above program to convert kilometers to miles.  (Hint:  see the <a href="ps.html#ps12">Programming Problem List</a>.)</p>
+
+<br><hr>
+<h2>3.  Definite Loops in C++</h2>
+
+<p>C++ has for-loops that have are similar, but not identical to for-loops in Python.  The basic format is:
+	<pre><code class="c++">int i;
+
+for (i = 0; i < 10; i++)
+{
+   command1
+   command2
+   ...
+}</code></pre>
+<p> For the loop above,
+<ol>
+	<li> The variable <tt>i</tt> first takes on the value 0.
+	<li> Next, check if the variable <tt>i < 10</tt>?
+	<li> If no, leave the loop.
+	<li> If yes, do the commands in the body of the loop.
+	<li> Add one to the variable <tt>i</tt> (abbreviated:  <tt>i++</tt>).
+	<li> Go to #2.
+</ol>
+
+<p>Let's use a loop to write "Hello, World!" to the screen 10 times:
+
+<pre><code class="c++">//Name:  Your name here
+//Email:  Your email here
+//Date:  November 2019
+//Prints "Hello, World!" 10 times, using a loop
+
+#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+  int i;   //The index variable for the loop
+
+  //Loop will repeat 10 times:
+  for (i = 0; i < 10; i++)
+  {
+    cout << "Hello, World!\n";
+  }
+  return 0;
+}</code></pre>
+
+<p> Note that <tt>cout</tt> doesn't automatically put output on a newline, so, we need to include the new line character ("\n") at the end of the line.
+
+<p> Follow the steps above to compile and run your program.
+
+	<!--
+<p> Next, modify the program so that it will print 10 times: the Hunter College motto ("Mihi cura futuri" which translates to: "The care of the future is mine").
+When it compiles, and runs correctly, see the <a href="ps.html#set12">Programming Problem List</a>.</p>-->
+
+<br><hr>
+<h2>4.  More Useful Unix Commands</h2>
+
+<p>
+Now that we are creating executable programs, it's often useful to figure out what kind of file is in your directory.  For example, if you were not sure what type of file, <tt>hello</tt> is, you could type at the command line:
+<pre><code class="shell">file hello</code></pre>
+<tt>file</tt> is the name of the command, and <tt>hello</tt> is the input parameter to the command.  If you would like to find out the type of several
+files, you could type each separately:
+<pre><code class="shell">file hello hello.cpp hello.py
+</code></pre>
+(assuming all of those files are your working directory).
+
+<p>Or, you could use a "wildcard" that matches all files whose names match a pattern.  For example:
+	<pre><code class="shell">file hello*</code></pre>
+will tell you all type of every file that begins with the <tt>hello</tt> followed by 0 or more other characters.
+
+<p>
+Similarly,
+<pre><code class="shell">file *</code></pre>
+will tell you all type of every file in your current working directory.</p>
+
+
+
+<br><hr>  
+<h2>What's Next?</h2>
+    
+    
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+    
+</div>
+
+
+</html>
