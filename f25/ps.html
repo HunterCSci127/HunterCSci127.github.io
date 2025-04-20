@@ -35,6 +35,8 @@ code {
   padding-top : 0px;
   margin: 5px;
 }
+li { margin: 10 px 0;}
+
 </STYLE>
 <body>
 
@@ -72,28 +74,30 @@ Fall 2025<br><br>
 
 <p>The programs build on the concepts and code developed during lecture, lab, and through the reading.  Mastery of material is assessed via
 	<ul>
-	  <li> Autograding of the programs submitted to Gradescope, </li>
-	  <li> <a href="cw.html#quizzes">Written quizzes</a> based on the programs and labs, </li>
-	  <li> <a href="cw.html#cr">Code Reviews</a> based on the programs, and </li>
-	  <li> Final exam on the material.  
+	  <li> Autograding of the programs submitted to <a href="https://www.gradescope.com">Gradescope</a>, </li>
+	  <li> The weekly <a href="cw.html#quizzes">written quizzes</a> with questions about the programs you wrote and concepts from lecture and lab,</li>
+	  <li> The oral <a href="cw.html#cr">code reviews</a> where, each week, you code a program in 
+		<a href="https://en.wikipedia.org/wiki/IDLE">IDLE</a>, and</li>
+	  <li> The paper <a href="cw.html#final">final exam</a> which covers all material from the semester.  
 	</ul>
 
 While you are encouraged to work with others, <b>all work submitted must be your own.</b>  As a rule of thumb, <b>you must do your own typing</b>.  If it is not from the book or class webpage and you did not type it, it is plagiarism.  For the first incident, your grade will be a 0 for the assignment (even for cases where you typed the program but others submitted it as their own).  For the second incident of cheating or plagiarism, your grade will be a 0 for the homework component of the grade (20% of your overall grade).  For the third incident, you will fail the class.  We report all incidents to the <a href="https://hunter.cuny.edu/students/student-affairs/office-of-student-conduct/">Office of Student Affairs</a>.
-
+</p>
 
 
 <h4>Autograder Notes</h4>
 
-<p> The majority of the programs this semester are written in Python (see <a href="lab1.html">Lab 1</a> for getting started with Python); it is noted below when other formats or languages are used. For Python programs, the autograder expects a <code class="inline">.py</code> file, using only the specified libraries, and does not accept iPython notebooks.  Since all assignments are designed to be uploaded as a single file, the autograder is set up for direct file upload instead of Github.  If submitting directly (drop-and-drag onto the webpage), the file name is flexible but must have the extension <code class="inline">.py</code>.
-Also, to receive full credit, the code should be compatible with Python 3.10 (the default for the Gradescope autograders).
+<p> The majority of the programs this semester are written in Python (see <a href="lab1.html">Lab 1</a> for getting started with Python); it is noted below when other formats or languages are used. For Python programs, the autograder expects a <code class="inline">.py</code> file, using only the specified libraries, and does not accept iPython/Jupyter notebooks.  Since all assignments are designed to be uploaded as a single file, the autograder is set up for direct file upload instead of Github.  If submitting directly (drop-and-drag onto the webpage), the file name is flexible but must have the extension <code class="inline">.py</code>, unless otherwise noted.
+Also, to receive full credit, the code should be compatible with Python 3.10 (the default for the Gradescope autograders).</p>
 	
 <p>	To get full credit for a program, the file must include in the opening comment:
 	<ul>
 		<li> Your name, as it appears in your Gradescope registration.
 		<li> The email you are using for Gradescope.
 	</ul>
-	
-For example, for the student, Thomas Hunter, his first program might be:
+</p>
+<p>
+For example, for the student, Thomas Hunter, his first program might be:</p>	
 <pre><code class="python">"""
 Name:  Thomas Hunter
 Email: thomas.hunter1870@hunter.cuny.edu
@@ -106,7 +110,7 @@ print("Hello, Thomas Hunter")
 
 <p>
 You may submit your assignments up to three weeks before the due date and are encouraged to work ahead.  To receive credit, assignments must be submitted by the deadline to <a href="https://gradescope.com">Gradescope.</a>  For more information on using <a href="https://www.gradescope.com">Gradescope</a>, see <a href="https://huntercsci127.github.io/s25/lab1.html">Lab 1</a>.
-Since Gradescope gives limited feedback, run your program first locally (on your computer or a lab computer) where the compiler messages will pinpoint errors and help debug your code.  For example, if Gradescope gives you a <tt>"The autograder failed to execute..."</tt> error, it means your program has an error (in this case, it's usually the file contains non-Python commands.). The local Python compiler will give the line of your file with the error, where Gradescope will only say that there's a general problem.  For more information on installing Python on your computer, see the <a href="resources.html#install">installation guides</a>.
+Since Gradescope gives limited feedback, run your program first locally (on your computer or a lab computer) where the compiler messages will pinpoint errors and help debug your code.  For example, if Gradescope gives you a <tt>"The autograder failed to execute..."</tt> error, it means your program has an error (in this case, it's usually the file contains non-Python commands.). The local Python compiler will give the line of your file with the error, where Gradescope will only say that there's a general problem.  For more information on installing Python on your computer, see the <a href="resources.html#install">installation guides</a>.</p>
 
 
 
@@ -151,20 +155,27 @@ Since Gradescope gives limited feedback, run your program first locally (on your
 	<b>Available Libraries:  turtle, Python 3.10+</b></p>
 	<p><b>Turtle Drawing</b></p>	
 	
-	<b><p style="color:red">REPLACE:  Match a figure, like the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/OurFirstTurtleProgram.html">textbook section</a> but a bit harder</p></b>
+    <p>Write a program that implements the incomplete code (start right from the red spot and return to there). The initial part of the code is provided if you like. The colors are green, blue, cyan, and red, respectively.</p>
 
-    <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
+     <pre><code class="python">"""
+Your Name
+Your Email		
+"""
+import turtle
 
-    <pre><code class="shell">Repeat 50 times: 
-  Change color to blue
-  Walk forward 100 steps 
-  Turn left 155 degrees 
-  Change color to red  
-  Walk forward 100 steps </code></pre>
+t = turtle.Turtle()
+t.pensize(5)
+t.shape("circle")
 
-     <p>The result should look as follows:</p>
-  	<p>
-  	<img src="../images/p03_flower_s25.png" height=250></p></li>
+"""
+TODO: finish the rest of the program
+Hint:  The distance for a long line is 300.
+The distance for a short line is 100.
+"""</code></pre>
+
+  <p>The result should look as follows:</p>
+  <p>
+  <img src="../images/purina_logo.png" height=250></p></li>
 
 <!--program4-->
 <li >
@@ -998,7 +1009,7 @@ AccountNameGoesHere
 	
 		<pre><code class="shell">#!/bin/bash
 #Name:  YourNameHere
-#Email; YourEmailHere
+#Email: YourEmailHere
 </code></pre>
 	
 
@@ -1812,9 +1823,19 @@ Hello, Thomas Hunter</code></pre>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, December 4</b><br>
 		<b>Reading: <a href="lab4.html">Lab 4</a> & <a href="lab12.html">Lab 12</a> </b><br>
 		<b>Available Libraries: C++</b></p>
-		<p><b>Loop</b></p>
+		<p><b>Loop Practice</b></p>
 	
-		<br><br><br>
+	<p>Write a C++ program that asks for the number of repetition, print 
+		<code class="inline">Practice makes perfect.</code> that many times.
+
+		<p>A sample run of your code is as follows.
+<pre><code class="shell">Enter repetition time: 5
+Practice makes perfect.
+Practice makes perfect.
+Practice makes perfect.
+Practice makes perfect.
+Practice makes perfect.</code></pre>
+</p>
 	</li>
 
 
@@ -1951,6 +1972,7 @@ You entered:  2000
 
 </ol>
 
+</div>
 </html>
 
 
