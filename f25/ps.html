@@ -774,8 +774,6 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
 	<p><b>Turtle String</b></p>
 	</li>
 
-	<br><br><br>
-	<!--
 	<p>The program <a href="../files/turtleString.py">turtleString.py</a> takes a string as input and uses that string to control what the turtle draws on the screen (inspired by <a href="https://code.org/curriculum/course2/1/Teacher">code.org's graph paper programming</a>).  Currently, the program processes the following commands:
         <ul>
           <li> 'F':  moves the turtle forward 50 steps
@@ -794,8 +792,10 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
         <ul>
           <li> 'B':  moves the turtle backwards 50 steps</li>
           <li> 'S':  makes the turtle stamp</li>
+		  <li> 'b':  change the pen color to black</li>
+		  <li> 'g':  change the pen color to green</li>
+		  <li> 'p':  change the pen color to purple</li>
           <li> 'r':  change the pen color to red</li>
-          <li> 'b':  change the pen color to black</li>
           <li> 'T':  change the pen size to 10 (thick lines)</li>	
 		  <li> 't':  change the pen size to 1 (thin lines)</li>
         </ul>
@@ -803,7 +803,7 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
 		<p>An example with the new symbols and string <tt>SrFTFFFBBBbtFLFFF</tt> would create the image:</p>
 
 		<p><img height=200 src="../images/turtleString_example2.png"></p>
-	-->
+	
 <!--program25-->
 <li>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, October 21</b><br>
@@ -1305,7 +1305,7 @@ stand deviation of total enrollment for Bronx is 3407.191
 		<p><img src="../images/bronxFraction_s23.png" width=300>
 
 
-<p><i>Hint:</i> First create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data usig either groupby and get_group function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
+<p><i>Hint:</i> First create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data using either groupby and get_group function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
 
 <pre style ="background-color:lavender;width:450px">
 borough_data = df.query("Borough == '" + borough + "'")
@@ -1564,14 +1564,20 @@ Enter output file:  myMap.html
 
 	<br><br><br>
 <!--
-<p>Write a function, <tt>make_addr_df()</tt> that has 3 input parameters:
+<p>Write a function, <code class="inline">make_grades_df()</code> that has 6 input parameters:
 	<ul>
-		<li><tt>last_names</tt>: a string containing last names, separated by space,</li>
-		<li><tt>first_names</tt>: a string containing first names, separated by space,</li>
-		<li><tt>emails</tt>: a string containing emails, separated by space,</li>
+		<li><tt>last_names</tt>: a string containing last names, separated by spaces,</li>
+		<li><tt>first_names</tt>: a string containing first names, separated by spaces,</li>
+		<li><tt>quiz_ave</tt>: a string containing quiz averages, separated by spaces,</li>
+		<li><tt>program_ave</tt>: a string containing program averages, separated by spaces,</li>
+		<li><tt>cr_ave</tt>: a string containing code review averages, separated by spaces,</li>
+		<li><tt>ls_ave</tt>: a string containing lecture slip averages, separated by spaces,</li>
 	</ul>
-and returns a dataframe with columns labeled: <tt>Last</tt>, <tt>First</tt>, and <tt>Email</tt>
-and includes the information entered for each.  The data for each category is in a string, separated by spaces.</p>
+
+	<p>and returns a dataframe with columns labeled: <tt>Last</tt>, <tt>First</tt>, <tt>Quizzes</tt>, <tt>Programs</tt>, <tt>Code Reviews</tt>, <tt>Participation</tt> and <tt>Current Grade</tt>
+and includes the information entered for each.  The data for the first 6 categories is in a string, separated by spaces.  The last column, <tt>Current Grade</tt>, contains the current grade, before the final exam is taken and is computed with the following formula:</p>
+
+<pre><code class="python">df["Current Grade"] = 0.43*df["Quizzes"] + 0.29*df["Programs"] + 0.14*df["Code Review"] + 0.14*df["Participation"]</code></pre>
 
 For example:
 <pre style = "background-color:lavender;width:800px">
