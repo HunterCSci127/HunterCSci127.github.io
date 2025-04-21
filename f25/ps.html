@@ -1355,24 +1355,22 @@ if __name__ == '__main__':
 
 		<p><b>Unique Entries</b></p>	
 
-		<br><br><br>
-		<!--
+
 		<p>When students visit the lab, their EmpID is stored as an 8-digit string. Many students visit multiple times, but we are interested in the total number of unique visitors to the lab. Write a function <tt>unique_visitors()</tt> that takes a list of 8-digit strings and returns the number of unique strings that occur.</p>
 	
 		<p>For example:</p>
-		<pre style="background-color:lavender;width:600px">
-ids = ['12345678','11223344','12312323','12345678']
-print("The number of unique visitors is ", unique_visitors(ids))
+		<pre><code class="python">ids = ['12345678','11223344','12312323','12345678']
+print("The number of unique visitors is ", unique_visitors(ids))</code>
 </pre>
 	would print:
-	<pre style="background-color:lavender;width:400px">The number of unique visitors is 3</pre>
+	<pre><code class="text">The number of unique visitors is 3</code></pre>
 	
 	since there are 4 entries but the first and fourth entries are duplicates of each other.
 	
 	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 
 	<p><i>Hint:  Use a dictionary to store the IDs and return the length of the dictionary.</i></p>
--->
+
 </li>
 
 <!--program40-->
@@ -1380,23 +1378,35 @@ print("The number of unique visitors is ", unique_visitors(ids))
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, November 10</b><br>
 	<b>Reading:  <a href="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/toctree.html">Chapter 12</a> & <a href="lab8.html">Lab 8</a></b><br>
 	<b>Available Libraries: 3.10+</b></p>
-	<p><b>Duplicates</b></p>	
-	
-	<br><br><br>
-	<!--
-	<p>
-	Write a function <tt>duplicates()</tt> that takes a list of names and returns a list with the names that occurred more than once. </p>
+	<p><b>Most Common Word</b></p>	
 
-For example:
-<pre style="background-color:lavender;width:600px">names = ['Daniel','Dorothy','Bethany','Beth','Daniel','Georgi']
-print(duplicates(names))</pre>
-would return the list <tt>['Daniel']</tt> since it's the only name that occurred twice.
+	<p>Write a function <tt>most_common()</tt> that takes a string and returns the word that occurs most often.  You may assume that:</p>
+	<ul>
+		<li>There is exactly one work that occurs most often.</li>
+		<li>All punctuation has been removed and words are separated by spaces (' ') and all letters are lower-case.</li>
+	</ul>
+
+<p>For example:</p>	
+<pre><code class="python">phrase = "MORE:  The more that you read, the more things you will know. The more that you learn, the more places you'll go. --Dr. Seuss" 
+phrase = phrase.lower()
+punctuation_list = ['.',',','!','?',':',';','\n','\t','-','  ','  ']
+for pun in punctuation_list:
+	phrase = phrase.replace(pun,' ')
+print('Phrase unpunctuated:', phrase)
+print('Most common word:', most_common(phrase))</code></pre>
+would print:
+<pre><code class="text">
+Phrase unpunctuated: more the more that you read the more things you will know the more that you learn the more places you'll go dr seuss
+Most common word: more	
+</code></pre>
+
+<p>since 'more' occurs five times in the phrase, more than any other.
 
 <p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 
 
 <p><i>Hint: Use a dictionary to count how many times you see each name.  When adding a name to the dictionary a second time, append to a list of duplicated names.</i></p>
--->
+
 
 </li>
 
