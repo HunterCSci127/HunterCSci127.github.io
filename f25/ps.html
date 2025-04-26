@@ -714,7 +714,7 @@ Cents: 2</code></pre>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, October 8</b><br>
 		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html" target="_blank">Section 8.11</a>  & <a href="lab4.html">Lab 4</a></b><br>
 		<b>Available Libraries: matplotlib, numpy</b></p>
-		<p><b>Topo Map</b></p>
+		<p><b>Coastline Map</b></p>
 		
 		<br><br><br>
 		<!--
@@ -724,6 +724,19 @@ Cents: 2</code></pre>
 		<li>If the elevation is not 0 but divisible by 10, color the pixel gray (<tt>amt</tt> red, <tt>amt</tt> green, and <tt>amt</tt> blue) where <tt>amt</tt> is the amount of intensity entered by the user.</li>
 		</li> Otherwise, the pixel should be colored white (100% red, 100% green, and 100% blue).</li>
 	</ul>
+
+	Modify the map-mapking program from Lab 4 to create a map that outlines the coastline. Your program should create a new image, called coast.png with the pixels colored as follows:
+
+If the elevation is less than or equal to 0, color the pixel 50% blue (and 0% red and 0% green).
+If the elevation is exactly 1, color the pixel 75% red, 75% green, and 75% blue.
+Otherwise, the pixel should be colored 50% red, 50% green, and 50% blue.
+Your resulting map should look like:
+
+
+
+and be saved to a file called coast.png.
+
+Note: before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image). The program is graded on a server on the cloud and does not have a graphics window, so, the plt.show() commands will give an error. Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 
 	  <p>A sample run of your program should look like:

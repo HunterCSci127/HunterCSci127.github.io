@@ -1,0 +1,232 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 0, CSci 127: Intro to CS, Hunter College</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  border: 2px solid #999999;
+}
+.inline {
+  padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+    <span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+    <span style= "float: right">
+        <a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+        <a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+        <a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;
+        <a href="faq.html">FAQ</a>
+    </span>
+</div>
+
+<br>
+<br>
+<hr>
+
+<div style="margin:50px">
+
+
+<h1>Laboratory Exercise 0
+  <br>CSci 127: Introduction to Computer Science<br>
+<a href="http://www.hunter.cuny.edu/csci">Department of Computer Science</a><br>
+<a href="https://hunter.cuny.edu">Hunter College</a>, <a href="https://www.cuny.edu">City University of New York</a><br>
+Fall 2025<br><br>
+</h1>
+
+<hr>
+<p><b>Learning Objectives:</b>  Students will:
+  <ul>
+    <li>Set up the tools needed for the course (e.g. Python programming environment and software plaforms used).</li>
+    <li>Review syllabus and complete Brightspace quiz ("Quiz 0").</li>
+  </ul>
+</p>
+
+<p><b>Software Tools Needed:</b> Web browser to read syllabus and set up accounts.</p>
+
+<hr>
+
+
+<h2>Introduction</h2>
+
+<p>
+Welcome!  Our first lecture will be:  
+<blockquote>
+  <b>10-11:15am in Assembly Hall (118 North Building), Tuesday, 26 August 2025</b>
+</blockquote>
+This lab is a quick preview of the course and has a checklist of things to do now, before we meet in person.
+</p>
+
+<p>
+<b>Audience:</b>  This introductory course is for any Hunter student interested in computer science and counts towards <a href="https://hunter-undergraduate.catalog.cuny.edu/policies-and-requirements/academic-requirements/general-requirements/general-education-effective-fall-2019">Pathways</a> (STEM-Scientific World and Life & Physical Sciences).  If you know the material for this course (see outline and past final exams), the department offers credit by passing the test-out exam.  For more details, including the upcoming test-out dates in January, see the <a href="https://hunter.cuny.edu/artsci/computer-science/student-support/course-advising/#credit-by-exam">credit by exam</a> on the department website.
+</p>
+<p>
+<b>Focus:</b>  This course surveys core topics in computer science, ranging from basic programming to computer architecture.  The emphasis is on solving problems and communicating technical ideas.  The course is structured with many exercises to build analytic reasoning and problem solving skills, as well as explaining ideas, via written quizzes and oral code reviews.  
+</p>
+
+<p>
+<b>Course Organization:</b>  CSCI 127 is a hybrid course.  Each week, there are in person and asynchronous components to the course:  
+  <ul>
+    <li><b>Lecture: </b> in-person on Tuesdays, 10-11:15am in 118 HN.</li>
+    <li><b>Lab:</b> can be done in the 1001G lab or at home.  Each lab includes reading, programming exercises and challenges as well as an outline and focus questions to guide your study.</li>
+    <li><b>Programs:</b>  programming exercises are due most days and are assessed via Gradescope, as well as code reviews, quizzes, and the final exam.</li>
+    <li><b>Code Review & Quizzes:</b>  in-person oral and written assessments, based on programs and labs, in the 1001G Lab.  Extra credit is available for completing code reviews and quizzes early.  
+    
+  </ul>  
+</p>
+
+<p><b>1001G Lab:</b>  A dedicated lab for CSCI 127/227 is in 1001G, 10th floor of the North Building.  The lab opens for the semester on Thursday, 30 January.  No appointments are needed the first week.  Self-scheduled appointments are available via Navigate available M-F, 11:30-5pm.  Drop-in tutoring is available (priority given to those with scheduled appointments).</p>
+
+<p><b>Final Exam:</b> is given during finals week, following the <a href="https://hunter.cuny.edu/students/registration/academic-calendar/final-exam-schedule/">Registrar's schedule</a>.  It is comprehensive and similar to quizzes-- past exams are available on the course website.</li>
+
+</p>
+
+<hr>
+
+<h2>Things To Do Now</h2>
+
+Before the first lecture, here's some things to do to prepare for the upcoming semester.  More details in the subsections below:
+
+<ol>
+    <li>Read the syllabus and complete Quiz 0 on Brightspace (available 21 January).</li>
+    <li>Set up your Python programming environment.</li>
+    <li>Set up accounts for the software platforms that we will use this term 
+        (Brightspace and Gradescope).
+    </li>
+    
+
+</ol>
+
+<h4>1. Syllabus & Quiz 0</h4>
+
+
+<p>
+There are weekly written quizzes for the course.  The first quiz, "Quiz 0", is a quick on-line exercise, based on the <a href="syl.html">syllabus</a>.  It is available on Brightspace on  21 January.
+</p>
+
+<h4>2. Python Programming Environment</h4>
+
+<p>If you don't have a laptop or home machine, reach out the <a href="https://hunter.cuny.edu/students/health-wellness/emergency-support-resources/">Office of Student Affairs.</a>  Hunter College is committed to providing students the resources they need to succeed.</p>
+
+<p> While you can use online environments, if you have a machine, it's good practice for the future to use an integrated development environment (IDE). For this course, we will use IDLE, a simple editor that is built-in to all Python distributions.  When you set up Python (see below), IDLE will be installed automatically. </p>
+  
+<p>In addition to the programming assignments, we will use IDLE in the weekly code review, where you explain and code, from scratch, a program you wrote that week (see <a href="cw.html#calendar">calendar</a> for dates and topics).  We use IDLE since it best echos the editors you encounter for the coding section of technical interviews for internships and jobs.  If you choose to use a different editor, make sure that you turn off AI features, since they hinder you learning to code and all typing must be your own for submitted work.</p>
+
+<div>
+    <h3>Installing Python on Your Computer</h3>
+    <a id="install"></a>
+    
+    The Python programming language and IDLE environment are freely available
+    for many platforms from <a href="http://www.python.org">python.org</a>.
+    For this class, we are using <b>Python 3</b>.
+    <br> Many features of the language
+    (including the syntax of <tt>print</tt> statements) changed between the second and third
+    version, so, you must use the Python 3 for submitting programs.
+    
+    <h4>Linux:</h4>
+    <p>
+    If you have a Linux machine (Ubuntu or Debian based), at a terminal window type the following commands:
+    <pre><code class="shell">sudo apt update
+sudo apt -y upgrade
+sudo apt install python3 python3-pip idle3
+pip3 install numpy pandas matplotlib scipy plotly image
+sudo apt install spyder3
+</code></pre>
+    
+    <h4>Windows:</h4>
+    <p>
+    If you have a Windows computer, you can install python3 with the following instructions:
+    
+    <ol>
+        <li> Go to the following <a href="https://www.python.org/downloads/windows/">link</a>.</li>
+        <li> Click latest Python 3 release.</li>
+        <li> Scroll down to the files section.</li>
+        <li> Click Windows x86-64 executable installer and save the file.</li>
+        <li> Once it is finished downloading, run the installer.</li>
+        <li> Make sure you click Add Python to PATH (This makes it a lot easier to install Python packages).</li>
+        <img width=300 src="../images/PythonPATH.png">
+        <li> Click install now.</li>
+        <li> If asked do you want to allow this app to make changes to your device, click yes.</li>
+        <li> Wait until you see the setup was successful screen and then you can hit close.</li>
+    </ol>
+    You have successfully installed Python on your computer. To open IDLE, search IDLE in the Windows search bar.
+    
+    <h4>macOS:</h4>
+    <p>
+        If you have a Mac computer, you can install python3 with the following instructions:
+    
+        <ol>
+            <li> Go to the following <a href="https://www.python.org/downloads/mac-osx/"> link</a>.</li>
+            <li> Click latest Python 3 release.</li>
+            <li> Scroll down to the files section.</li>
+            <li> Click macOS 64-bit installer and save the file.</li>
+            <li> Once it is finished downloading, run the installer.</li>
+            <li> Hit continue, continue again, continue again, and then agree.</li>
+            <li> Click install.</li>
+            <li> Enter your password or use TouchID if prompted.</li>
+            <li> Wait until you see the installation was completed successfully screen and then you can hit close.</li>
+            <li> You can keep the install or move it to the trash.</li>
+        </ol>
+    
+        You have successfully installed Python on your computer. To open IDLE, search IDLE in Spotlight search or find it in Launchpad. To open IDLE from terminal, type idle3.
+    
+    <h4>Python Packages:</h4>
+    <p>
+    You can install the Python packages used in this course with the following instructions:
+    <ol>
+        <li> If on Windows, search cmd in the Windows search bar and open it. If on macOS, search terminal in Spotlight search and open it.</li>
+        <li> Install the Python packages by typing the following command:
+            <pre><code class="blockcode">pip3 install numpy pandas plotly image matplotlib scipy</code></pre>
+        </li>
+    </ol>
+    
+    <p> These installation instructions were written by Owen Kunhardt. You can find the full guides at the following links: <a href="https://okunhardt.github.io/documents/Installing_Python_on_Windows.pdf">Windows</a> <a href="https://okunhardt.github.io/documents/Installing_Python_on_macOS.pdf">macOS</a>
+    <p>
+    
+    </div>
+
+<h4>3. Access for Software Platforms</h4>
+
+<li>Set up accounts for the software platforms we will use this term:
+    <ul>
+        <li><b>Brightspace:</b>  this is set up automatically about 24 hours after registration.  If this course does not appear on your Brightspace list of courses, double check your CUNYFirst account to make sure that you are registered for the course registration. For issues with Brightspace, see the <a href="https://www.cuny.edu/about/administration/offices/cis/core-functions/cuny-blackboard/">CUNY Brightspace Page</a>.</li>
+        <li><b>Gradescope:</b>  this will be set up automatically for all students  registered on 24 January.  If you registered after that date, this course is not appearing in your Gradescope course list or you would like to use a different email address (we use the one in Brightspace), send email to <code class="inline">stjohn@hunter.cuny.edu</code> with your full name, EmplID, and preferred email and access will be added manually.</li>
+    </ul>
+
+
+<hr>
+
+
+<h2>What's Next</h2>
+
+<p>
+<em>That's it for now!  See on 10am, Tuesday, 28 January in Assembly Hall (118 HN)!</em>
+</p>
+
+<p>But, if you want to look ahead, here's some links:
+  <ul>
+    <li><a href="lab1.html">Lab 1</a> works through submitting programs the first couple of programming exercises.</li>
+    <li><a href="ps.html">Programming assignments</a> can be submitted up to 4 weeks early on Gradescope. </li>
+  </ul>
+
+</p>
+
+
+
+
+
+
+
+
+</html>
