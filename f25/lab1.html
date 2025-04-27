@@ -1,0 +1,219 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 1, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+border: 2px solid #999999;
+}
+.inline {
+padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+    <span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+    <span style= "float: right">
+        <a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+        <a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+        <a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;
+		<a href="faq.html">FAQ</a>
+    </span>
+</div>
+
+<br>
+<br>
+<hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 1<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2025<br><br>
+</h1>
+
+
+
+<hr>
+<h3> Learning Objectives:</h3>
+  <ol>
+    <li> Students will <b>write and run a "Hello, World" program using Python</b>.
+    <li> Students will <b>submit a program</b> to Gradescope.
+    <li> Students will write programs that <b>use the Turtle library to draw simple graphics</b>.
+    <li> Students will <b>explore several Turtle commands</b>.
+  </ol>
+
+<p><b>Software tools needed:</b>  web browser and Python programming environment.</i></p>
+<hr>
+
+<h2>1. Using Python</h2>
+
+<p>Our first programs will be using Python.  The laptops in 1001G have Python installed.  To install Python on your home machine, see <a href="lab0.html">Lab 0</a> for details.</p>
+
+<p>We will be using the <tt>IDLE</tt> programming environment for Python, since it is very simple and comes with all distributions of Python. However, feel free to use any text editor or development environment that you prefer. 
+
+<p><b>To launch <tt>IDLE</tt></b>:
+
+<ul>
+  <li> If you are running Windows, search IDLE in the Windows search bar.</li>
+
+  <li> If you are running a Unix-like operating system such as a Linux distribution or MacOS, locate the <b>terminal</b> on your machine (you can search Spotlight for 'terminal' on a mac).</li>
+
+	<li> In the terminal window, type:
+
+<pre><code class="blockcode">idle</code></pre>
+	(followed by an enter/return).</li>
+
+	<li> A new window will launch for <tt>IDLE</tt>. </li>
+
+
+	<li> To see that it works, type at the <tt>IDLE</tt> prompt:
+
+<pre><code class="blockcode">print("Hello, World!")
+</code></pre>
+You should see: <tt>Hello, World!</tt> echoed on the window.
+</ul>
+
+</ul>
+
+<h3>First Program</h3>
+<p>
+Instead of using the shell window (where we can try things immediately), let's use a text window, where we can save our program for later and submit it to Gradescope (this is the basis of the first program).
+</p>
+<ol>
+	<li> First, open up a text window:  on the menu bar, choose <tt>File</tt> and from that menu, choose <tt>New File</tt>.
+	<li> In that window, type:
+<pre><code class="blockcode">"""
+Name:  ...your name here...
+Email:  ...your email here...
+Date: February 3, 2025
+This program prints hello
+"""
+
+print("Hello, ...your name here...")
+</code>
+</pre>
+
+
+</pre>
+	<li> Save the program (using the <tt>Save</tt> under the <tt>File</tt> menu). When you save it, name it something that you will be remember for the future and end it in <tt>.py</tt>.  For example, <tt>program1.py</tt>.
+	<li> Run your program (using the <tt>Run Module</tt> from the <tt>Run</tt> menu).
+	<li> If it prints hello and your name to the screen, then your program is ready to submit!  go to the next section on submitting your first program.  
+    <li> If it gives an error message, read the message to figure out what to fix and repeat.  If it there is no output or the message doesn't make sense, talk to one of the tutors either in person or via Brightspace (lab is open M-F 11:30am-5pm).
+</ol>
+
+<hr>
+<h2>2. Using Gradescope</h2>
+
+<p>This course will use the online <a href="http://www.gradescope.com">Gradescope</a> system for submitting
+work electronically. 
+
+<ul>
+	<li> Open your email and click the links to set up your account.
+	<li> Once you have your account, click on the <tt>Assignments</tt> menu (left hand side of window), and then choose the assignment <code class="inline">Program 01:  Hello!</code>.
+	<li> Drag and drop your program onto the submit box.
+	<li> Click on confirmation button to submit your program.  You will see a pop-up box confirming that the program was uploaded.
+	<li> In 30 to 60 seconds, the Gradescope page will have your results (remember to put your name on the top of the file for full credit!).
+	<li> Each program can be submitted multiple times up to the deadline.
+</ul>
+
+<hr>
+<h2>3. Turtles in Python</h2>
+
+<p> Now that you have just submitted your first program, let's try some other Python commands.  Here's a quick demo (click the triangle to run the program):
+<p>
+<iframe src="https://trinket.io/embed/python/22709f8349" width="80%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>
+A quick overview of the above program:
+<ul>
+	<li> Lines that are between """ and """ or begin with <tt>#</tt> are ignored by Python-- they are comments for you to remember what you did and others to follow what's going on.
+	<li> The line <code class="inline">import turtle</code> loads in the built-in turtle graphics drawing package.  It's part of all versions of Python but, to keep programs small, is not included unless you explicitly import it.  In addition to built-in packages, there are many others that have been written to make Python more useful.  We will use both kinds as the semester progresses.
+	<li>  The line <code class="inline">thomasH = turtle.Turtle()</code> creates a turtle object called <code class="inline">thomasH</code> (you can call your turtles almost any combination of letters (and underscores and numbers)-- we used a name starting with "t" since turtle starts with "t").
+	<li> The next line:  <code class="inline">for i in range(4):</code> is the first part of a for-loop that will repeat the commands indented beneath it 4 times.
+	<li> The turtle class has many functions that you can use for your turtle.  The next two lines demonstrate two of them:
+	<ul>
+	    <li> <tt>thomasH.forward(150)</tt> moves <tt>thomasH</tt> forward 150 steps.
+    	<li> <tt>thomasH.right(90)</tt> turns <tt>thomasH</tt> to the right 90 degrees.
+    </ul>
+</ul>
+
+<p><b> Let's write the same program in <code class="inline">IDLE</code>:</b>
+<ol>
+	<li>  Open up a new file window in <tt>IDLE</tt> (<code class="inline">File > New File</code>).
+	<li> Type (or copy) into your window:
+<pre><code class="python">import turtle
+thomasH = turtle.Turtle()
+for i in range(4):
+    thomasH.forward(150)
+    thomasH.left(90)</code>
+</pre>
+ <li> Note: if you are working with IDLE, you may want to setup the screen to exit on click, so the graphics window does not stall:
+<pre><code class="python">import turtle
+wn = turtle.Screen()
+
+thomasH = turtle.Turtle()
+for i in range(4):
+    thomasH.forward(150)
+    thomasH.left(90)
+
+wn.exitonclick()</code></pre>
+
+	<li> Save your program (<code class="inline">File > Save</code>). <br>
+	<i><b>IMPORTANT</b>:  Choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
+		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the Turtle library and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".</i>
+	<li> Run your program (using the <code class="inline">Run > Run Module</code> from the <code class="inline">Run</code> menu).
+	<li> <b>Modify your program so that it draws an triangle.</b>
+  <br><img id="triangle" alt="program 2" src="../images/p2_triangle.png" width="200">
+	<li> Test your program and modify until you have a triangle (<i><b>Hint:</b></i> you need to modify the number of repetitions --number in parenthesis after <tt>range</tt>-- and the angle --number in parenthesis after <tt>left</tt>--). Play around with these numbers, run your modified program, observe and adjust  until it draws a triangle. When it does, add comments at the top of your program:
+<pre><code class="python">"""
+Name:  ...your name here...
+Email: ...your email here...
+Date: Feburary 3, 2025
+This program draws an triangle.
+"""
+</code></pre>
+	Run your program after editing to make sure you do not have any typos.
+	<li> Log into Gradescope (see notes above).  On the left hand menu, choose <code class="inline">Assignments</code>.  From the list, choose <code class="inline">Program 02: Triangle</code>.
+	In the file upload, drag the <tt>.py</tt> file you just created and ran, and click "Submit".
+
+</ol>
+
+<hr>
+
+<h2>4. More Turtle Commands</h2>
+
+<p>To review, we introduced the turtle commands:
+<ul>
+	<li> <tt>forward()</tt>
+	<li> <tt>left()</tt>
+	<li> <tt>right()</tt>
+</ul>
+as well as importing the turtle package (<tt>import turtle</tt>) and creating ("instantiating") a turtle: <tt>thomasH = turtle.Turtle()</tt>.
+
+<p>There are many more turtle commands.  Over the next couple of classes, we will learn more.  In addition to the ones that control movement, you can also change the color of the turtle, change the size of the drawing pen, and change the background color (by making a window or screen object, and changing its color).
+
+
+<hr>
+
+<h2>What's Next?</h2>
+
+
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.
+
+</div>
+
+
+</html>
