@@ -1,0 +1,339 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 2, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+border: 2px solid #999999;
+}
+.inline {
+padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 2<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2025<br><br>
+</h1>
+
+<div>
+  <p>
+  <h3> Learning Objectives:</h3>
+    <ol>
+        <li> Students will learn about Python <b>strings</b>, <b>string indexing</b> and useful <b>string methods</b>.
+        <li> Students will write programs that <b>get input from users</b>.
+        <li> Students will learn about  and use this knowledge to <b>loop through strings</b>.
+      <li> Students will further explore <tt>for</tt> loops and the <b><tt>range()</tt> and <tt>split()</tt> functions</b> to <b>loop through lists</b>.
+      <li> Students will access the <b>command line</b> and use <b>Unix commands</b> to list files, navigate directories and create directories.
+    </ol>
+
+<p><b>Software tools needed:</b>  web browser, Python IDLE programming environment and Unix shell.</p>
+
+<br><hr>
+<h2>1. Strings & String Methods</h2>
+
+<p>A sequence of characters (i.e. letters, numbers, symbols) is called a <tt>string</tt>.  To indicate a string, we use quotes (either single or double, just as long as they match up) to indicate the start and end (a fancier way to say that is:  <i>quotes deliminate the string</i>).  For example, for our first program, we wrote:
+<pre><code class="python">print("Hello, World!")</code></pre>
+<p>
+The string, or sequence of characters, <tt>Hello, World!</tt>, was printed to the screen.  We can also store strings to be used again in the program.  For example,
+<pre><code class="python">greeting = "Hello, World!"
+print(greeting)</code></pre>
+<p>
+creates a location in memory that can be accessed by typing the name (or identifier) that we chose:  <tt>greeting</tt>.  <tt>greeting</tt> stores the string <tt>Hello, World!</tt>.  While the quotes are not stored, we will often write <tt>"Hello, World!"</tt> to make it more clear where the string begins and ends.  When we execute the code above, the first line will create the <b>variable</b>, <tt>greeting</tt> and store the string <tt>"Hello, World!"</tt> in it. The second line will print out the message:
+<pre><code class="python">Hello, World!</code></pre>
+
+<p>We can use the variable any number of times.  For example, if we wanted to print the message twice, we could use:
+<pre><code class="python">greeting = "Hello, World!"
+print(greeting)
+print(greeting)</code></pre>
+
+
+<p>We defined a string as a sequence of characters. Each character in the string has a position or index. The first charcater is at index 0, the second character is at index 1, the third character is at index 2, etc. </p>
+
+<p>Take <tt>"Hello, World!"</tt>, for example. This string contains 13 characters. Because we start counting at 0, the last character is at index 12.</p>
+
+<p>
+<table border = 1>
+	<tr>
+		<td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+	</tr>
+	<tr>
+		<td>H</td><td>e</td></td><td>l</td><td>l</td><td>o</td><td>,</td><td> </td><td>W</td><td>o</td><td>r</td><td>l</td><td>d</td><td>!</td>
+	</tr>
+</table>
+
+<p>The first character of a string is always at index 0. If a string has <tt>X</tt> number of characters, the last character in the string is always at index <tt>X-1</tt>.  There is a useful method <tt>len()</tt> that returns the length.  For example, <tt>len("Hello, World!")</tt> returns 13.  It can also be used on variables.</p>
+
+</div>
+
+<div>
+<h3>More Useful String Methods</h3>
+
+<p> Strings are a common data type and there are many built-in functions for them.
+<ul>
+	<li> Guess which each does from its name, then
+	<li> Click the forward button in the code window below to see if you guess was correct.
+</ul>
+
+<iframe width="800" height="400" frameborder="10" margin="10" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0A%23%20Guess%20what%20the%20following%20string%20methods%20do%3A%0A%23%20Then%20click%20the%20forward%20button%20to%20see%20how%20you%20did%0A%0Aprint%28greeting.upper%28%29%29%0Aprint%28greeting.lower%28%29%29%0Aprint%28len%28greeting%29%29%0Aprint%28greeting.count%28'o'%29%29%0Aprint%28greeting.count%28'%20'%29%29%0Aprint%28greeting.find%28'll'%29%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p>
+NOTE: The <tt>find()</tt> command gives the location of <tt>"ll"</tt> which is 2 if you start by counting the first character as 0.
+
+<br><hr>
+
+<h2>2. Getting Input</h2>
+
+<p>Last week, we used the <tt>print()</tt> function to write messages to the user of our program.  This week, we introduce, <tt>input()</tt>, to get information from the user.  Here's the basic format:
+<pre><code class="python">aString = input("Put a message here to show user: ")</code>
+</pre>
+where the string <tt>"Put a message..."</tt> is replaced by the prompt you would like the user to see and <tt>aString</tt> with the name of the string you are using in your program.
+
+<p> <iframe width="800" height="300" frameborder="10" src="https://pythontutor.com/iframe-embed.html#code=mess%20%3D%20input%28'Please%20enter%20a%20message%3A%20'%29%0Aprint%28%22You%20entered%22,%20mess%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%22hi%20mom%22%5D&textReferences=false"> </iframe>
+
+<p>
+
+<p>Let's write a program that combines the asking the user for input with the string commands a the beginning of the lab.  The program will:
+<ol>
+	<li> Prompt the user for a message and store it in the variable, <tt>mess</tt>.
+	<li> Print the message to the screen.
+	<li> Print the message in all capital letters.
+	<li> Print the message in all lower case letters.
+</ol>
+
+<p>
+To start, open <tt>IDLE</tt> and start a new file window.  Put a comment (lines that begin with '#') that includes your name and a short description of what the program does.
+
+<ol>
+	<li> Next, fill in the code that prompt the user for a message and store it in the variable, <tt>mess</tt> (see the example above).
+	<li> Print the message to the screen (also done in the example above).
+	<li> To print in all capital letters, you can use the <tt>upper()</tt> command (see first example in the lab).
+	<li> Print the message in all lower case in a similar way.
+</ol>
+
+<p>Save your file as you go, and then run it.  Try different messages to make sure it works with different inputs.  When it works add your name in a comment with a short description of what it does and see the <a href="ps.html">Programming Problem List</a>.
+
+<br><hr>
+<h2>3.  Looping Through Strings</h2>
+
+
+<p> You can also loop through strings.  Try running the code below by clicking the <tt>Next</tt> button to execute each instruction:
+
+<p>
+<iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+<p> Each character has a number assigned to it.  When you write a character, it is converted to its number, and that is stored instead to save space.  Python uses the standard Unicode encoding (which extends the popular ASCII encoding to new symbols and alphabets).  For example, <tt>ord('a')</tt> give the Unicode number for the character, <tt>a</tt>, which is 97.
+<p>Let's look at the Unicode of the characters in our string:
+
+<p>
+<iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22I%20love%20Python!!%22%0A%0Aprint%28myString%29%0A%0Afor%20c%20in%20myString%3A%0A%20%20%20%20print%28c,%20ord%28c%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+<p>To go the other direction, there's a function <tt>chr()</tt> which takes numbers and returns the corresponding character.  For example, <tt>chr(97)</tt> returns <tt>'a'</tt>.  Let's look at the characters with unicode from 65 to 69:
+<p>
+<iframe width="800" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%0Afor%20i%20in%20range%2865,70%29%3A%0A%20%20%20%20print%28i,%20chr%28i%29%29%0A%20%20%20%20%0Aprint%28%22That's%20it%20for%20now!%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+  <p>Combining <tt>ord()</tt> and <tt>chr()</tt> demonstrated in the two programs above, modify the first of the two programs to:
+  <ul>
+  	<li> To prompt the user to enter a string and store it in <tt>myString</tt>, and
+  	<li> print each character, its Unicode number + 1 and the character corresponding to that number.
+  </ul>
+  For example, for character 'a' with Unicode number 97, it prints:
+  <pre><code class="python">a 98 b</code></pre>
+
+<br><hr>
+<h2>4.  Looping through Lists</h2>  
+
+<p> You can loop through a lists and strings in similar ways.  The first way we saw: <tt>for elt in my_items:</tt> takes each element in turn from the <tt>my_items</tt> and works similarly if <tt>my_items</tt> is a list or a string.  In this section, we introduce indexing and two useful methods, <tt>range()</tt> and 
+<tt>split()</tt> for manipulating lists and strings.
+	
+
+<h3>Indexing: looping Through Strings, Revisited</h3>
+
+	<p>There's another way we can loop through strings, using the index of each character.  Let's assume that we have:
+	<pre><code class="python">greeting = "Hello, World!"</code></pre>
+	Before, we printed out the whole string with:
+	<pre><code class="python">print(greeting)</code></pre>
+	If we wanted to print out only the first letter, we could write:
+	<pre><code class="python">print(greeting[0])</code></pre>
+	where the number between the <b>square brackets</b> is the <b>index</b> of the character, in this case, 0, or the very first character of the string.
+	
+	<p>Try guessing what the following code does and then running it by pressing the <tt>Next</tt> button to execute each instruction:
+	
+	<p>
+	<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=greeting%20%3D%20%22Hello,%20World!%22%0A%0Aprint%28greeting%5B0%5D%29%0Aprint%28greeting%5B1%5D%29%0Aprint%28greeting%5B2%5D%29%0Aprint%28greeting%5B-1%5D%29%0A%0Afor%20j%20in%20range%285%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%0A%20%20%20%20%0Afor%20j%20in%20range%28len%28greeting%29%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%280,10,2%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%0A%20%20%20%20%0Afor%20j%20in%20range%2810,0,-1%29%3A%0A%20%20%20%20print%28greeting%5Bj%5D%29%20%20%20%20%20&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+		
+<br>
+<h3>More on <tt>range()</tt></h3>
+
+<p> We have used the <tt>range()</tt> statement</b> in our loops with a single parameter.  There are several different options:
+<ul>
+	<li> <tt>range(stop)</tt>:  if you have only a single number in the 		parenthesis, it will generate all the numbers from 0 to <tt>stop-1</tt>.  For example, <tt>range(5)</tt> generates the numbers <tt>0, 1, 2, 3, 4</tt>.
+
+	<li> <tt>range(start, stop)</tt>:  if you have only two numbers in the parenthesis, it will generate all the numbers from start to <tt>stop-1</tt>.  For example, <tt>range(65,70)</tt> generates the numbers <tt>65, 66, 67, 68, 69</tt>.
+
+	<li> <tt>range(start, stop, step)</tt>:  if you have three numbers in the parenthesis, it will generate all the numbers from start to <tt>stop-1</tt>, increasing by <tt>step</tt> each time.  For example, <tt>range(100,200,10)</tt> generates the numbers <tt>100, 110, 120, 130, 140, 150, 160, 170, 180, 190</tt>.
+</ul>
+
+<br>
+<h3>Converting strings to lists with <tt>split()</tt></h3>
+
+<p> The <tt>split()</tt> function breaks up a string into substrings, throwing away the character or delimiter on which the function splits.  Then, you can loop through the list just like you loop through a string to access the individual substrings.
+<p> For example, given the string <tt>"FridaysSaturdaysSundays"</tt>, <tt>split('s')</tt> will break up the string into a list of days: <tt>["Friday","Saturday","Sunday",""]</tt> throwing away the 's' characters on which it splits.
+Notice that it will produce an empty string at the end because of the 's' character at the end of "Sundays".
+
+<p>Try running the code below by clicking the <tt>Next</tt> button to execute each instruction:
+
+<p>
+<iframe width="1100" height="300" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=myString%20%3D%20%22FridaysSaturdaysSundays%22%0A%20%20%20%20%0Adays%20%3D%20myString.split%28's'%29%0A%20%20%20%20%0Afor%20day%20in%20days%3A%0A%20%20%20%20print%28day%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p>Modify the code to remove the 's' at the end of 'Sundays', now run and inspect the list. What changed?
+
+
+
+<h3>Example:  Acronyms</h3>
+
+<p>Next, think about how you would write a program that: prompts the use for a phrase and creates an acronym, consisting of the first letters of each word, in uppercase.  A sample run of the program:</p>
+
+<pre><code class="python">Enter a phrase:  City University New York
+Your phrase in capital letters:  CITY UNIVERSITY NEW YORK
+Acronym:  CUNY</code></pre>
+	
+
+<p>
+It is often quite useful to break a string into pieces, and work with those pieces, instead of the whole string.  We can combine the approaches above (the use of <tt>split()</tt> and indexing (the use of square brackets to access individual characters in a string using the character's index)) to write a program that <i>takes a phrase and creates an acronym of the phrase:  that is, the first letter of each word</i>.
+
+<p>To approach a problem, it is useful to break it into steps:
+<ol>
+	<li> Prompt for a phrase & read it in.
+	<li> Make the phrase upper case.
+	<li> Split up the phrase into words.
+	<li> Take the first letter of each word (keep in mind that <tt>split()</tt> returns a list of the words ), concatenate and make an acronym of it
+</ol>
+
+<p>Now, translate the above <b>pseudocode</b> (informal but detailed description of the steps in a program) into Python and test that your program works.  Once done, see <a href="ps.html#set2">Programming Problem List</a>.</p>
+
+<p>
+To <b>concatenate</b> strings you can use the + operator. For example:</p>
+<pre><code class="python">print('hi'+'bye')</code>
+</pre>
+
+will output:
+<pre><code class="python">hibye</code></pre>
+
+
+
+
+<br><hr>
+<h2>5. Files & the Command Line Interface</h2>
+
+<p>
+The <b>terminal</b> is a program that allows users to type commands (separate from Python) that we can use to communicate with the operating system.  It's often called the <b>command line interface</b> or <b>shell</b>.  It predates the graphical interface that is now available and is incredibly useful for automating tasks and working on remote servers.  We will slowly introduce <b>shell commands</b> over the course of the semester and eventually incorporate them into some programming assignments.
+<p> To access a Unix shell environment on your computer to run shell commands:
+<ul>
+	<li> <b>Linux:</b> You can launch a terminal by clicking on the icon for a terminal (or using the search feature to find it).
+	<li> <b>Macintosh (OSX):</b>  The OSX operating system, run by modern mac computers, is based on Unix (albeit a slightly different one than Linux).  You can bring up a terminal window by using Spotlight or search for "terminal".
+	<li> <b>Windows:</b>  The underlying terminal uses commands that are different from Unix (they're based on the Microsoft Disk Operating System, or MS-DOS). You can get a Linux terminal on your Windows machine with the Windows Subsystem for Linux (WSL). You can find directions on how to install it in the next section. WSL is useful to have throughout this course and future computer science courses.
+    Alternatively, there are several on-line emulators of Unix that you can use via the browser, such as <a href= "https://cocalc.com/doc/terminal.html" target = "blank">cocalc.com</a> which provides a terminal in which you can type shell commands and the ability to create and upload files which will be useful later on. You can also use <a href="https://labex.io" target="blank">labex</a> and use the free option to access the terminal window.
+	<li> <b>Phones/Tablets: </b> Since most do not run Unix (or allow access to a terminal), it is best to use a web-based environment with terminal emulator like <a href= "https://cocalc.com/doc/terminal.html" target = "blank">cocalc.com</a> or <a href="https://labex.io" target="blank">labex</a>.
+</ul>
+
+
+
+<p>
+We have already used the shell in the previous lab.  When you typed:
+<pre><code class="shell">$  idle</code></pre>
+you were asking the operating system to launch the program <tt>idle3</tt>.
+
+<p>
+Let's create a new <b>directory</b>, or folder, to hold your images (using the shell or command line).  Where it says <tt>thomasH</tt> below, replace with your name.  It is easier if you avoid spaces in the names:
+<ul>
+	<li>  Open a new terminal window.
+	<li>  In the terminal window, type:
+		<pre><code class="shell">$ pwd</code></pre>
+	(The <tt>$</tt> represents the prompt at the command line-- no need to type it.)
+
+	<p>This tells you the <b>path</b>, or location, of your current working directory.
+    <li>To see what is in the folder, you request a 'listing':
+	<pre><code class="shell">$ ls</code></pre>
+	<li> To add a new directory, we type:
+	<pre><code class="shell">$ mkdir thomasH</code></pre>
+	(replace <tt>thomasH</tt> with your name to create a directory for you!).
+
+	<p>
+	Now, when we list the current directory, we should see the new item (namely the  directory with your name):
+	<pre><code class="shell">$ ls</code></pre>
+
+	<li> Let's change directories:
+	<pre><code class="shell">$ cd thomasH</code></pre>
+	If we ask for a listing (<tt>ls</tt>), we will now see the contents of your directory, which is initially empty.
+</ul>
+The graphical interface and shell are operating on the same underlying system, so, changes you make with one can be seen by the other.
+If you use your OS' graphical user interface to open the folder (directory) you started in when you typed <tt>pwd</tt>, you will see the folder you just created.
+
+<p> In the next lab, we will explain how to copy and move files between directories.
+
+</div>
+
+
+<div>
+<h3>Installing the Windows Subsystem for Linux</h3>
+<p><b>If you don't have a Windows machine, you can skip this section.</b>
+<p> If you are using Windows, here's directions on how to get the Linux terminal on your computer:
+<ol>
+	<li> Search "Turn Windows features on or off" in the Windows search bar and open it.
+	<li> Look for "Windows Subsystem for Linux", make sure the box is checked, and hit OK (You will have to restart your computer).
+	<li> Open Microsoft Store application and search Ubuntu.
+	<li> Click on Ubuntu, hit get, and wait for it to install (You can use any version, the one without a version number will give you the latest version of Ubuntu).
+	<li> Launch the Ubuntu application and allow first time setup.
+	<li> Create a username and password (When entering a password, no characters will appear, but you are typing your password).
+	<li> Update Ubuntu with the command: <pre><code class="python">sudo apt update && sudo apt upgrade</code></pre>
+	(You will have to enter the password you set) You should run this command periodically as Ubuntu will not update on its own.
+</ol>
+</p>
+
+<p> You have successfully installed and setup WSL and can now use the terminal as you would on Ubuntu. </p>
+
+<p> These installation instructions were written by Owen Kunhardt. You can find the full guide <a href="https://okunhardt.github.io/documents/Installing_WSL.pdf">here</a>.</p>
+
+
+<br><hr>
+
+<h2>What's Next?</h2>
+
+
+<p>You can start working on this week's programming assignments. The <a href="ps.html">Programming Problem List</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p>
+
+</div>
+
+
+</html>
