@@ -648,35 +648,33 @@ GC-content is 0.75</code></pre>
 	<b>Available Libraries: matplotlib, numpy</b></p>
 	<p><b>Grayscale Image</b></p>	
 
-	<br><br><br>
-	<!--
-	<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  Your program should then ask for the percentage red, percentage blue, and percentage green to be used for computing the color values:
+	<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  The program then converts the image to grayscale and saves the grayscale image to the specified output file.</p>
 	
-	<pre><code class="python">
+	<p>There are many ways to convert color images to grayscale (see <a href="https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html">Grayscale Algorithms</a> for a nice overview).</p>  For this program, we are setting each channel of a pixel to its green value.  That is, your program should then set the red channel values to the green channel values, as well as the blue channel values to the green channel values. For example, a single pixel at {\tt (i,j)} of the image {\tt img} would be changed to:
+	<pre><code class="python">img[i,j,0] = img[i,j,1]  #change value of red channel to value of green channel
+img[i,j,2] = img[i,j,1]  #change value of blue channel to value of green channel
+</code></pre>	
+	
 
-	</code></pre>	
-		
-		and create an image
-
-	https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html	
 
 		<p> A sample run of your program should look like:
 
-<pre><code class="datablock">Enter name of the input file:  csBridge.png
-Enter name of the output file:  blueH.png</code></pre>
+<pre><code class="shell">Enter name of the input file:  csBridge.png
+Enter name of the output file:  gray_bridge.png</code></pre>
 
-<p> Sample input and resulting output files:
+<p> The sample input file and the resulting grayscale image:
 
 <p>
 <img src="../images/csBridge.png" width = 300>
-<img src="../images/blueH.png" width = 300 >
+<img src="../images/gray_bridge.png" width = 300 >
+
 
 
 	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
-		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>.</i>
+		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>. Think about how you can uses numpy slices to change every pixel.</p></i>
 
--->
+
 </li>
 
 
