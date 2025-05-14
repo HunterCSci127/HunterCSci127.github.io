@@ -1332,16 +1332,12 @@ Name: Vehicle Year, dtype: int64
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, November 7</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
 	<b>Available Libraries: pandas, 3.10+</b></p>
-	<p><b>Pandas</b></p>
-
-	<br><br><br>
-	<!--
-
+	<p><b>School Enrollment</b></p>
 
 	<p> Download csv file from <a href="../files/demo_boro.csv">2013 to 2018 Demographic Snapshot Borough</a>. Your program should ask the user for the borough, an name for the output file, and then display the fraction of Grade K to 6 enrollment that has lived in that borough, over time. Then print out the minimum, maximum, median, mean, and stand deviation of total enrollment in that borough (round to 3 decimal numbers).
 
 	<p> A sample run of the program:
-<pre style ="background-color:lavender;width:450px">
+<pre><code class="text">
 Enter borough name:  Bronx
 Enter output file name:  bronxFraction.png
 minimum of total enrollment for Bronx is 233588
@@ -1349,23 +1345,21 @@ maximum of total enrollment for Bronx is 241986
 median of total enrollment for Bronx is 239955.0
 mean of total enrollment for Bronx is 239283.0
 stand deviation of total enrollment for Bronx is 3407.191
-</pre>
+</code></pre>
 		
 	<p> The file <tt>bronxFraction.png</tt>:
 
 		<p><img src="../images/bronxFraction_s23.png" width=300>
 
 
-<p><i>Hint:</i> First create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data using either groupby and get_group function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
+<p><i>Hint:</i> First create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data usig either groupby and get_group function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
 
-<pre style ="background-color:lavender;width:450px">
-borough_data = df.query("Borough == '" + borough + "'")
-</pre>
+<pre><code class="python">borough_data = df.query("Borough == '" + borough + "'")</code></pre>
 
 <p>Then <tt>borough_data</tt> has data for the specific borough. Plot fraction using this data.
 
 <p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.	
--->
+
 </li>
 
 <!--program38-->
