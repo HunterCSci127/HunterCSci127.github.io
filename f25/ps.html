@@ -1122,50 +1122,24 @@ AccountNameGoesHere
 	<p><b>Image Shrinking</b></p>
 
 		<br><br><br>
+
+		<!-- Tie this in to lecture:  do stripes, & give a grid and average values-->
 <!--
 
-	Replace with bounding box?  Or simple compression:  take every other pixel-- make a function called shrink that take as input an numpy array containing an image and then returns one a quarter of the size.
+	<p>
+	Write a function <tt>shrink()</tt> that takes a numpy array that contains an image and returns an image that is half the width and half the length.  The returned image should have every other pixel of the inputted image, starting from the upper left corner.
+	</p>
 
-	Do a more complicated one as a lecture slip:  average instead of just taking one, or give a grid and have them work through code to shrink.
-	
-  	<p>Write a program that asks the user for a choice:
-  	<ul>
-     <li>If the choice is 'l' or 'L', then ask for the name of an input and output file. Your program should then save the left half of the input file image to the output file specified by the user.
-     <li>If the choice is 'r' or 'R', then ask for the name of an input and output file. Your program should then save the right half of the input file image to the output file specified by the user.
-  </ul>  
+  	<p>For example, using the file <href="../images/csBridge.png">csBridge.png</href> as the input file, the following code, using your function:
+	<pre><code class="python">
 
-  <p>For example, using the file <href="../images/csBridge.png">csBridge.png</href> as the input file, a run of your program should look like:
-  <pre style ="background-color:lavender;width:500px">
-Would you like the left or right half (L/R):  L
-Enter input file name: csBridge.png
-Enter output file name: leftBridge.png
-</pre>
+	</code></pre>
 
-  <p>which would have as <a href="../images/csBridge.png">input</a> and output:
+  <p>which would have as <a href="../images/Octocat.png">input</a> and output:
   <p>
-	<img src="../images/csBridge.png" height = 200>
-	<img src="../images/leftBridge.png" height = 200>	
-
-<p>Another sample run of your program should look like:
-<pre style ="background-color:lavender;width:500px">
-Would you like the left or right half (L/R):  r
-Enter input file name: Octocat.png
-Enter output file name: right_cat.png
-</pre>
-
-<p>which would have as <a href="../images/Octocat.png">input</a> and output:
-<p>
 	<img src="../images/Octocat.png" height = 200>
-	<img src="../images/right_cat.png" height = 200>	
-</p>
+	<img src="../images/Octocat_shrunk.png" height = 200>	
 
-<p>When entering any other string, here is an output:
- <pre style ="background-color:lavender;width:500px">
-Would you like the left or right half (L/R):  yes
-Error: not a valid choice</pre>
-
-
-<p> <i>Hint:  See sample programs from Lectures 4 and 6.  When the input is other than 'L', 'l', 'R' or 'r', print "Error" and exit the program. Otherwise, enter the input file name and output file name, then depending on the choice (either top or bottom), cut the image and save the portion to the output file. </i></p>
 
 <p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
 
@@ -1177,38 +1151,34 @@ Error: not a valid choice</pre>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, November 3</b><br>
 	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a>, <a href="lab4.html">Lab 4</a> and <a href="lab7.html">Lab 7</a></b><br>
 	<b>Available Libraries: 3.10+</b></p>
-	<p><b>Decimal to Binary Converter</b></p>
+	<p><b>Number to String</b></p>
 
-	<br><br><br>
-	<!--
+	<p>Write the function <tt>string2num()</tt> which takes a string and returns the corresponding number as an integer.</p>  
+	<ol>
+		<li>If user gives a string that does not correspond to a number between 1 and 99, your function should return: -1.</li>
+		<li>Numbers larger than 20 are separated by a space.  For example, "twenty one" or "ninety nine".</li>
+	</ol>
+	</p>
 
-	Write a function that takes as input a positive integer and returns a string containing the corresponding binary number.
+	<p>A sample call of the function:
+		<pre><code class="python">print("Converting fourteen to", string2num("fourteen"))</code></pre>	
+	<p>would print:</p>
+	<pre><code class="text">Converting fourteen to 14</code></pre>
+	
+<p>And another example call of the function:
+	<pre><code class="python">num_str = "sixty six"
+print("Converting", num_str, "to", string2num(num_str))</code></pre>	
+	<p>would print:</p>
+	<pre><code class="text">Converting sixty six to 66</code></pre>
+	
+	
 
-	Write pseudocode as a while-loop.  Move to P50, new program here
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 
-	<p> Write a program that implements the pseudcode below.  Your program should ask the user for a decimal number and print out the corresponding binary number.
+	<p><i>Hint:  See Lecture 8 for related programs.</i></p>
 
-	</p><pre>Ask user for input, and store in as a number, dec_num.
-Set bin_str = "".
-For each c in bin_string,
-	dec_num = dec_num * 2
-	if c is 1, then
-		dec_num = dec_num + 1
-Print dec_num
-	</pre>
 
-<p> A sample run of the program:
-</p><pre style="background-color:lavender;width:400px">Enter binary number: 10
-Your number in decimal is 2
-</pre>
 
-		<p> And another sample run of the program:
-</p><pre style="background-color:lavender;width:400px">Enter binary number: 1111
-Your number in decimal is 15
-</pre>
-
-<p><i>Hint:  Remember that c is the index variable that's looping through a string, and is a character, not an int.  To check that it holds the value 1, you need to compare it as strings (e.g. c == '1') or cast to an integer (e.g.  int(c) == 1).</i></p>
--->
 </li>
 
 <!--program34-->
@@ -1800,35 +1770,37 @@ Enter output file name: two_bed_2023.html
 <!--program50-->
 <li>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, November 26</b><br>
-	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published//thinkcspy/Strings/toctree.html">Chapter 9</a> and <a href="lab8.html">Lab 8</a></b><br>
-		<b>Available Libraries: N/A</b></p>
-		<p><b>Number to String</b></p>
+	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published//thinkcspy/Strings/toctree.html">Chapter 9</a> and <a href="lab9.html">Lab 9</a></b><br>
+	<b>Available Libraries: Python 3.10+</b></p>
+	<p><b>Decimal to Binary Converter</b></p>
+
+	<p>
+	Write a function <tt>dec2bin()</tt>
+	that takes as input a positive integer and returns a string containing the corresponding binary number.  Your function should implement the pseudocode:
+	</p>
+	
+<pre><code class="text">dec2bin( dec_num ):
+1. Set bin_str = "".
+2. 
+	Return bin_str.
+</code></pre>
+	
+<!--
+	<p> A sample run of the program:
+	</p><pre style="background-color:lavender;width:400px">Enter binary number: 10
+	Your number in decimal is 2
+	</pre>
+	
+			<p> And another sample run of the program:
+	</p><pre style="background-color:lavender;width:400px">Enter binary number: 1111
+	Your number in decimal is 15
+	</pre>
+	
+	<p><i>Hint:  Remember that c is the index variable that's looping through a string, and is a character, not an int.  To check that it holds the value 1, you need to compare it as strings (e.g. c == '1') or cast to an integer (e.g.  int(c) == 1).</i></p>
+	-->
 
 	<br><br><br>
-	<!--
-	<p>Write the function <tt>string2num()</tt> which takes a string and returns the corresponding number as an integer.</p>  
-	<ol>
-		<li>If user gives a string that does not correspond to a number between 1 and 99, your function should return: -1.</li>
-		<li>Numbers larger than 20 are separated by a space.  For example, "twenty one" or "ninety nine".</li>
-	</ol>
-	</p>
 
-	<p>A sample call of the function:
-		<pre style ="background-color:lavender;width:600px">print("Converting fourteen to", string2num("fourteen"))</pre>	
-	<p>would print:</p>
-	<pre style ="background-color:lavender;width:600px">Converting fourteen to 14</pre>
-	
-<p>And another example call of the function:
-	<pre style ="background-color:lavender;width:600px">num_str = "sixty six"
-print("Converting", num_str, "to", string2num(num_str)) 
-</pre>	
-	<p>would print:</p>
-	<pre style ="background-color:lavender;width:600px">Converting sixty six to 66</pre>
-	
-	<p><i>Hint:  See Lectures 8 and 11 for related programs.</i></p>
-
-	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
--->
 </li>
 
 
