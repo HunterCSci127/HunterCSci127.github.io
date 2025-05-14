@@ -1582,18 +1582,14 @@ draw_tree(tess,100,"indigo","black")
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <br><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: pandas, plotly</b></p>
-	<p><b>Map</b></p>	
+	<p><b>Collisions Map</b></p>	
 
-	<br><br><br>
-	<!--
 	<p>
 	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.  When the user hovers over the marker, the time of the accident should appear in the pop-up box.
 
 	<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter CSV file name:  collisions.csv
-Enter output file:  myMap.html
-</pre>
+<pre><code class="text">Enter CSV file name:  collisions.csv
+Enter output file:  myMap.html</code></pre>
 	<p>which would produce the HTML file:
 
 	<p><iframe src="../files/th_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
@@ -1602,11 +1598,9 @@ Enter output file:  myMap.html
 
 	<p> When running your program locally, you need to check that the "LATITUDE" and "LONGITUDE" values are non-empty.  You can drop any row where there's empty values with:
 		
-		<pre style = "background-color:lavender;width:400px">df_cleaned = df.dropna()</pre>
+		<pre><code class="python">df_cleaned = df.dropna()</code></pre>
 
-	<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
-
-	-->
+	<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous maps from the lab, where the data was stored with "Latitude" and "Longitude"). </i>
 
 </li>
 
@@ -1699,10 +1693,8 @@ You entered: Hunter
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <br>
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: pandas, plotly</b></p>
-	<p><b>Map</b></p>	
+	<p><b>Housing Map</b></p>	
 
-	<br><br><br>
-	<!--
 	<p>
 	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, choice of unit size, and name of the output file, and creates a map with scaled markers for all the housing of that size from the input file.  When the user hovers over the marker, the name of the property, the number of units of that size and the coordinates.  The overall title for the map should include the housing type.</p>
 
@@ -1743,7 +1735,7 @@ Enter output file name: two_bed_2023.html
 	
 	<pre style = "background-color:lavender;width:550px">df = housing_df[ housing_df["1-BR Units"].notnull() ]</pre>
 
--->
+
 </li>
 
 
