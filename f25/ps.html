@@ -806,26 +806,30 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
 	<b>Available Libraries: numpy, matplotlib, image</b></p>
 	<p><b>Logo</b></p>
 
-	<br><br><br>
-	<!--
-	<p>Write a program that creates a 'C' logo for CUNY on a 30x30 grid.
 
-	</p><p>
-	<img src="../files/blueC.png" style="padding:5px" height="200">
+	<p>Write a program that creates a 'U' logo for university on a 30x30 grid.  Your program should ask the user for the red, green, and blue for the color of their logo, and the file to save the image.</p>
+
+<!--Hunter Purple:  PMS 267, #5F259f, RGB: (95, 37, 159) = (0.373,0.145,0.624)-->
+
+	<p>A sample run using <a href="https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/about/administration/offices/communications-marketing/services/marketing/campus-identity/HC-Visual-Identity-Standards_2016.pdf">Hunter College Purple (Pantone 267)</a>:</p>
+	<pre><code class="text">Enter amount of red:  0.373
+Enter amount of green:  0.145
+Enter amount of blue:  0.624
+Enter file name:  hunterPurple_U.png
+</code></pre>
+	</p>The resulting file is:<p>
+	<img src="../images/hunterPurple_U.png" style="padding:5px" height="200">
 
 	</p><p> The grading script is expecting:
 	</p><ul>
-		<li> The file to be saved as:  <tt>logo.png</tt>.
-		</li><li> The grid to be 30 x 30.
-		</li><li> The 'C' to be 0% red, 0% green, and 100% blue.  The upper part of the 'C' should be the top third of the image; the left part of the 'C' should be the left third of the image; and the lower part of the 'C' should be the the bottom third of the image.
+		<li>The grid to be 30 x 30.</li>
+		<li> The 'U' to be the amount red, blue, and green specified.  </li>
+		<li> The left side of the 'U' should be the left third of the image; the bottom part of the 'U' should be the bottom third of the image; and the right part of the 'U' should be the the right third of the image.
 		</li><li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
 	</li></ul>
 
 	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
-
-
-
-	</p>-->
+	</p>
 </li>
 
 <!--program22-->
@@ -835,8 +839,7 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
 	<b>Available Libraries: N/A</b></p>
 	<p><b>NOR Gate</b></p>
 
-	<br><br><br>
-	<!--
+
 	<p>Build a circuit that has the same behavior as a <tt>nand</tt> gate (i.e. for the same inputs, gives identical output) using only <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> gates.</p>
 	
 	<p>
@@ -846,7 +849,7 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
 	<p>Save your expression to a text file.
 	See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.	
 	</p>
--->
+
 
 <!--program23-->
 <li>
@@ -867,7 +870,7 @@ A list of names with spaces:  ["St. John", "Von Trapp"]</code></pre>
 		See <a href="lab5.html">Lab 5</a> for the format for submitting logical expressions to Gradescope.
 		</p>
 
-		<b><i>Hint:  See <a href="lab5.html">Lab 5</a>.</i></it></b>
+	<p><i>Hint:  See <a href="lab5.html">Lab 5</a>.</i></it></p>
 
 <!--program24-->
 <li>
@@ -1746,19 +1749,17 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 		<b>Available Libraries: 3.10+</b></p>
 		<p><b>Validating Input</b></p>	
 
-		<br><br><br>
-		<!--
-		<p> Write a program that asks the user to enter a string. If the user enters an empty string, your program should continue prompting the user for a new string until they enter a non-empty string. Your program should then print out the string entered.
+		<p> Write a program that asks the user to enter a string. If the user enters an empty string, your program should continue prompting the user for a new string until they enter a non-empty string with 10 characters or less. Your program should then print out the string entered.
 
 		<p> A sample run of your program:
-<pre style = "background-color:lavender;width:400px">
-Enter a non-empty string:
-That was empty.  Try again.
-Enter a non-empty string:
-That was empty.  Try again.
-Enter a non-empty string: Mihi cura futuri
-You entered: Mihi cura futuri
-</pre>-->
+<pre><code class="text">Enter a string with 1 to 10 characters:
+That string is the wrong length.  Try again.
+Enter a string with 1 to 10 characters: Mihi cura futuri
+That string is the wrong length.  Try again.
+Enter a string with 1 to 10 characters: Hunter
+You entered: Hunter
+</code>
+</pre>
 </li>
 
 
@@ -2038,7 +2039,7 @@ senior
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, December 10</b><br>	
 	<b>Reading: <a href="lab12.html">Lab 12</a> & <a href="lab13.html">Lab 13</a></b><br>
 	<b>Available Libraries: C++</b></p>
-	<p><b>Validating Input</b></p>
+	<p><b>Validating Input (C++)</b></p>
 
     <p> Write a <b>C++ program</b> that asks the user for a year, and continue asking until the number entered that is 2025 or later.  Once an appropriate year has been entered, your program should then print the year entered.
 
