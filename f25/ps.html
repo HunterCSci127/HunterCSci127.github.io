@@ -1621,24 +1621,17 @@ Enter output file:  myMap.html
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, November 19</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab6.html">Lab 6</a> & <a href="lab8.html">8</a></b><br>
 	<b>Available Libraries: pandas</b></p>
-	<p><b>DataFrame</b></p>	
+	<p><b>Address DataFrame</b></p>	
 
-	<br><br><br>
-<!--
-<p>Write a function, <code class="inline">make_grades_df()</code> that has 6 input parameters:
+
+<p>Write a function, <tt>make_addr_df()</tt> that has 3 input parameters:
 	<ul>
 		<li><tt>last_names</tt>: a string containing last names, separated by spaces,</li>
 		<li><tt>first_names</tt>: a string containing first names, separated by spaces,</li>
-		<li><tt>quiz_ave</tt>: a string containing quiz averages, separated by spaces,</li>
-		<li><tt>program_ave</tt>: a string containing program averages, separated by spaces,</li>
-		<li><tt>cr_ave</tt>: a string containing code review averages, separated by spaces,</li>
-		<li><tt>ls_ave</tt>: a string containing lecture slip averages, separated by spaces,</li>
+		<li><tt>emails</tt>: a string containing emails, separated by spaces,</li>
 	</ul>
-
-	<p>and returns a dataframe with columns labeled: <tt>Last</tt>, <tt>First</tt>, <tt>Quizzes</tt>, <tt>Programs</tt>, <tt>Code Reviews</tt>, <tt>Participation</tt> and <tt>Current Grade</tt>
-and includes the information entered for each.  The data for the first 6 categories is in a string, separated by spaces.  The last column, <tt>Current Grade</tt>, contains the current grade, before the final exam is taken and is computed with the following formula:</p>
-
-<pre><code class="python">df["Current Grade"] = 0.43*df["Quizzes"] + 0.29*df["Programs"] + 0.14*df["Code Review"] + 0.14*df["Participation"]</code></pre>
+and returns a dataframe with columns labeled: <tt>Last</tt>, <tt>First</tt>, and <tt>Email</tt>
+and includes the information entered for each.  The data for each category is in a string, separated by spaces.</p>
 
 For example:
 <pre style = "background-color:lavender;width:800px">
@@ -1661,8 +1654,9 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 	<p>The grading script does not run the whole program, but instead runs your function separately ('unit tests') to determine correctness.  As such, the name of the functions must match exactly the one listed above (else, the scripts cannot find it).</p>
 
 	<p><i>Hint:  Use <tt>split()</tt> to create lists of each category entered.  See <a href="lab8.html">Lab 8</a> for creating dataframes with dictionaries.  </i></p>
--->
 </li>
+	
+	
 
 
 <hr>
