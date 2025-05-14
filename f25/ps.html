@@ -2064,7 +2064,30 @@ You entered:  2030
 	<b>Available Libraries: C++</b></p>
 	<p><b>Population Growth</b></p>
 
-	<br><br><br>
+    <p> Write a complete <b>C++ program</b> that prints the change in population of the the United States:
+		<pre><code class = "text">p = p + Bp - Dp</code></pre>
+	where p is the population, B is the birth rate of 12.4 births for every 1000 people (12.4/1000) each
+	year, and D is the death rate of 8.4 for every 1000 people (8.4/1000). In 2017, the population
+	of United States was 325.7 million. Your program should ask the user for the number of years and print expected population over those years starting from 2017. Each line should have: the year and the population (in millions).
+		
+				<p> A sample run:
+<pre><code class="text">Please enter the number of years: 10
+Year 2017  325.70
+Year 2018  327.00
+Year 2019  328.31
+Year 2020  329.62
+Year 2021  330.94
+Year 2022  332.27
+Year 2023  333.60
+Year 2024  334.93
+Year 2025  336.27
+Year 2026  337.61</code></pre>
+		
+		<p>
+		<i> Note:  if you would like to make the output a bit prettier, you can include a command to limit the number of places after the decimal point printed to 2 before you print:</i>
+		
+		<p>
+		<pre><code class="c++"">cout << setprecision(2) << fixed;</code></pre>
 </li>
 
 
