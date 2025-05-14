@@ -1121,29 +1121,53 @@ AccountNameGoesHere
 	<b>Available Libraries: matplotlib, image, numpy</b></p>
 	<p><b>Image Shrinking</b></p>
 
-		<br><br><br>
 
-		<!-- Tie this in to lecture:  do stripes, & give a grid and average values-->
-<!--
+	<!-- Tie this in to lecture:  do stripes, & give a grid and average values-->
 
 	<p>
 	Write a function <tt>shrink()</tt> that takes a numpy array that contains an image and returns an image that is half the width and half the length.  The returned image should have every other pixel of the inputted image, starting from the upper left corner.
 	</p>
 
   	<p>For example, using the file <href="../images/csBridge.png">csBridge.png</href> as the input file, the following code, using your function:
-	<pre><code class="python">
+	<pre><code class="python">bridge_img = plt.imread('csBridge.png')
+small_bridge = shrink(bridge_img)
+plt.imsave('small_bridge.png',small_bridge)
+</code></pre>
 
-	</code></pre>
+	<p>The resulting image is:</p>
 
-  <p>which would have as <a href="../images/Octocat.png">input</a> and output:
+	<p><img src="../images/small_bridge.png"></p>
+
+	<p>Another example, this time, repeatedly applying our function to the <href="../images/Octocat.png">Octocat.png</href></p>
+<pre><code class="python">#Vanishing cat...
+cat_img = plt.imread('Octocat.png')
+for i in range(5):
+    cat_img = shrink(cat_img)
+    file_name = 'cat'+str(i)+'.png'
+    plt.imsave(file_name,cat_img)
+</code></pre>
+
+  <p>which would have as <a href="../images/Octocat.png">input</a> and outputs, preserving relative size:
   <p>
 	<img src="../images/Octocat.png" height = 200>
-	<img src="../images/Octocat_shrunk.png" height = 200>	
+	<img src="../images/cat0.png" height = 100>	
+	<img src="../images/cat1.png" height = 50>
+	<img src="../images/cat2.png" height = 25>
+	<img src="../images/cat3.png" height = 12>
+	<img src="../images/cat4.png" height = 6>
 
+  <p>If we look at them all at the same scale, we can see the taking every other pixel (repeatedly) loses definition:</p>
+
+  <p>
+	<img src="../images/Octocat.png" height = 100>
+	<img src="../images/cat0.png" height = 100>	
+	<img src="../images/cat1.png" height = 100>
+	<img src="../images/cat2.png" height = 100>
+	<img src="../images/cat3.png" height = 100>
+	<img src="../images/cat4.png" height = 100>
 
 <p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
 
- -->
 </li>
 
 <!--program33-->
@@ -1774,8 +1798,6 @@ Enter output file name: two_bed_2023.html
 	<b>Available Libraries: Python 3.10+</b></p>
 	<p><b>Decimal to Binary Converter</b></p>
 
-	<br><br><br>
-	<!--
 	<p>
 	Write a function <tt>dec2bin()</tt>
 	that takes as input a positive integer and returns a string containing the corresponding binary number.  Your function should implement the pseudocode:
@@ -1783,25 +1805,34 @@ Enter output file name: two_bed_2023.html
 	
 <pre><code class="text">dec2bin( dec_num ):
 1. Set bin_str = "".
-2. While dec_num > 
-	Return bin_str.
+2. While dec_num != 0:
+3.   Let rem be the remainder of dividing dec_num by 2.
+4.   Add rem to the beginning of bin_str.
+5.   Let dec_num be dec_num divided by 2 (integer division).
+6. Return bin_str.
 </code></pre>
 	
 
-	<p> A sample run of the program:
-	</p><pre style="background-color:lavender;width:400px">Enter binary number: 10
-	Your number in decimal is 2
+	<p> For example, calling your function:
+	</p><pre><code class="python">print("5 in binary is", dec2bin(5))</code>
 	</pre>
-	
-			<p> And another sample run of the program:
+	would print:
+	<pre><code class="text">5 in binary is 101</code></pre>
+
+	<p> And another example:
+	</p><pre><code class="python">num = 15
+print(num, "in binary is", dec2bin(num))</code>
+	</pre>
+	would print:
+	<pre><code class="text">15 in binary is 1111</code></pre>	
+
+	<p> And another sample run of the program:
 	</p><pre style="background-color:lavender;width:400px">Enter binary number: 1111
 	Your number in decimal is 15
 	</pre>
 	
-	<p><i>Hint:  Remember that c is the index variable that's looping through a string, and is a character, not an int.  To check that it holds the value 1, you need to compare it as strings (e.g. c == '1') or cast to an integer (e.g.  int(c) == 1).</i></p>
-	-->
+	<p><i>Hint:  Remember to add a number to a string, you need to cast the number to be a string first:  e.g. <tt>bin_str = str(rem) + bin_str</tt>.</i></p>
 
-	<br><br><br>
 
 </li>
 
