@@ -1,0 +1,341 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 7, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+border: 2px solid #999999;
+}
+.inline {
+padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Homework</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+<h1>Laboratory Exercise 7<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2025<br><br>
+</h1>
+
+<div>
+
+<br>
+<hr>
+<h3> Learning Objectives:</h3>
+  <ol>
+    <li> Students will <b>obtain and analyze NYC OpenData</b>.</li>
+    <li> Students will <b>use Python's zips</b> to combine data.</li>
+    <li> Students will <b>write Python functions.</b></li>
+    <li> Students will <b>explore stand-alone program vs. modules.</b></li>
+    <li> Students will <b>execute Python from the Command Line Interface.</b></li>
+  </ol>
+
+  <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
+
+<hr>
+
+<br>
+<h2>1. Using NYC OpenData</h2>
+
+<a href="https://data.cityofnewyork.us"><img height=200 src="../images/openDataLogo.png"></a>
+    
+    
+    
+<p>
+Via the <a href="https://data.cityofnewyork.us">NYC Open Data</a> project, you can access data from almost every city agency. 
+Let's use pandas (introduced in lecture and <a href="lab6.html">Lab 6</a>) to plot some data from NYC OpenData.  Below is a graph of the water consumption in NYC since 1979:
+
+<p>
+<img src="../images/waterNYC.png" height=400>
+<br>
+
+<p> We'll start by downloading the data which can be found here
+<ul>
+	<li> <a href="https://data.cityofnewyork.us/Environment/Water-Consumption-in-the-City-of-New-York/ia2d-e54m/data_preview">Water Consumption in the City of New York</a>
+</ul>
+
+<p>
+<b>Click on the EXPORT button on the top right of your screen. </b>  
+<ul>
+	<li> Select the "Download file" option and make sure the "Export Format" dropdown is set to CSV. Press the "Download" button
+	<li> The download will begin automatically (files are usually stored in "Downloads" folder)
+	<li> Your file will be downloaded with a default filename, feel free to rename the file so it is easier to reference in your program.
+</ul>
+
+<p>
+Move your CSV file to the directory that you save your programs.  Open with a plain text editor if you would like to see the raw data. Make sure you keep the file extension as <tt>.csv</tt> as we don't want any extra formatting in the file. Look at the names of the columns since those will correspond to series we can plot.
+
+<p> Now, we can write a (short) program to display daily counts:
+<pre><code class="python">import pandas as pd  
+import matplotlib.pyplot as plt 
+
+df = pd.read_csv("water_consumption.csv")
+
+df.plot(x = "Year", y = "NYC Consumption(Million gallons per day)")
+plt.show()</code></pre>
+
+The program above assumes that you saved you data as <tt>water_consumption.csv</tt>.  If you saved the data under a different name, alter the program above to use that file.
+Save your program and try on your dataset.
+
+
+<h4>Challenges</h4>
+
+<ul>
+	<li> What happens if you leave off the <tt>y = "NYC Consumption(Million gallons per day)"</tt>?
+	<li> How can you save your plot as an image file?  (Hint:  See <a href="lab6.html">Lab 6</a>.)
+</ul>
+
+
+    <h3>Binning Data:  Parking Tickets</h3>
+    
+    <p>we will look at the parking tickets issues by New York City.  We will use a small version (1000 lines) for today's lab (see below).  But you are welcome to use any neighborhood in the city.  To download data for a given neighborhood (and restricted to just fiscal year 2018, since the data sets can be quite large):
+    <ul>
+        <li> Instead of neighborhood name or zipcode, parking tickets are classified by the police precinct that issued the ticket.  First, figure out the precinct (here's a <a href="http://www1.nyc.gov/site/nypd/bureaus/patrol/find-your-precinct.page">useful tool</a>).
+        <li>
+        <a href= "https://data.cityofnewyork.us/City-Government/Parking-Violations-Issued-Fiscal-Year-2018/pvqr-7yc4/data">Fiscal year 2018 (FY2018) parking tickets</a> for your precinct:  download the data set as a CSV, filtering by "Violation Precinct".  For example, Hunter College is located in the 19th Precinct, so, you would enter <tt>19</tt> on the filter.
+    
+    </ul>
+    
+
+    <p>The data file you downloaded is in CSV format which stores tabular information in readable text files.  The files have information separated by commas (using tabs as delimiters is also common).  Here is a sample line:</p>
+<pre><code class="python">1335632335,L040HZ,FL,PAS,06/09/2015,46,SUBN,NISSA,X,35430,14510,15710,0,0020,20,74,921167,E074,0000,1213P,1207P,NY,O,4,WEST 83 ST,,0,408,C,,BBBBBBB,ALL,ALL,RED,0,0,-,0,,,,,</code></pre>
+    <p>
+    All lines are formatted similarly: they start with the
+    summons number, then the license plate, registration state, plate Type, date, and continue with the information about the location and type of violation, and sometimes additional information such as the who issued the ticket and the color of the car. The first line of the file gives the entries in the order they occur in the rows.
+    </p>
+
+    <p>
+    The sample entry above gives details for a ticket issues on June 9, 2015 to a passenger car with Florida plates, L040HZ.  The red Nissan SUV received the ticket on West 83rd Street.  Each entry also begins with a unique identifier that can be used to look up the parking ticket.
+    
+    <p>Since there were over 196,000 tickets for the FY 2016 for the 20th precinct, here is truncated version of that data, containing just the first 1000 lines:  <a href="../files/tickets.csv">tickets.csv</a>.</p>
+    
+    
+    <p>
+    Here are some questions we can ask about the data:</p>
+    <ul>
+        <li> Which car got the most tickets?
+        <li> What color of car is most likely to get a ticket?
+        <li> What type of license gets the most tickets?
+        <li> Which location yields the most tickets?
+    </ul>
+    
+    <p>For each of these questions, we can traverse the file and count the occurrences as we go.</p>
+    
+
+    <h3>Counting Tickets per Car</h3>
+
+    <p>A simple, but very powerful, technique is "binning data"-- that is grouping data into the number of occurrences for each categories that we saw in <a href="lab6.html">Lab 6</a>.  The category values can often show patterns that individual data points do not.  For example, binning population by zipcode can show patterns in density that's difficult to see with individual data points.  Below, we will bin parking tickets by different attributes.</p>    
+
+    <p> How can tell which car got the most tickets?  First, we need to figure out a unique way to identify different cars.  Luckily, cars almost always have license plates-- with each state having a unique number.  (For this simple exercise, we'll assume that each license plate is unique on its own-- not an unreasonable assumption since every state has a different schema for assigning numbers, but to be more accurate we should keep track of license plate number and issuing state.)
+    
+    <p>Open up the CSV file and look at the columns.  Which column contains the license plate number?  Here's all the column names (first line of <a href="../files/tickets.csv">tickets.csv</a>):
+<pre><code class="python">Summons Number,Plate ID,Registration State,Plate Type,Issue Date,Violation Code,Vehicle Body Type,Vehicle Make,Issuing Agency,Street Code1,Street Code2,Street Code3,Vehicle Expiration Date,Violation Location,Violation Precinct,Issuer Precinct,Issuer Code,Issuer Command,Issuer Squad,Violation Time,Time First Observed,Violation County,Violation In Front Of Or Opposite,House Number,Street Name,Intersecting Street,Date First Observed,Law Section,Sub Division,Violation Legal Code,Days Parking In Effect    ,From Hours In Effect,To Hours In Effect,Vehicle Color,Unregistered Vehicle?,Vehicle Year,Meter Number,Feet From Curb,Violation Post Code,Violation Description,No Standing or Stopping Violation,Hydrant Violation,Double Parking Violation</code></pre>
+    
+    It's the second column:  <tt>Plate ID</tt>.  Scanning the CSV file, it looks like most cars got one or two tickets.  How can we get the worst offenders (i.e. those cars that got the most parking tickets)?
+    
+    <p> Let's use Pandas to read in the CSV file, following the same pattern as last lab:
+<pre><code class="python">"""
+Count which cars got the most parking tickets
+"""
+#Import pandas for reading and analyzing CSV data:
+import pandas as pd
+
+csvFile = "tickets.csv"			#Name of the CSV file
+tickets = pd.read_csv(csvFile)		#Read in the file to a dataframe
+print(tickets) 				#Print out the dataframe</code></pre>
+    
+    <p>
+    Try running your program.  It should print out all the information about all the tickets issued.  Let's focus in on just licence plates.  Change the last line of your program to be:
+    <pre><code class="python">print(tickets["Plate ID"])	#Print out licence plates</code></pre>
+    <p>When you run the program again, you should just see the row number and licence plate recorded for each row.
+    
+    <p> We want to refine this further to print how many tickets each car got.  Pandas has a function just for counting occurrences, called <tt>value_counts()</tt>.  Let's modify our last line again to use it:
+    <pre><code class="python">print(tickets["Plate ID"].value_counts())	#Print out plates & number of tickets each got</code></pre>
+    <p>Rerunning the program, there are a lot of cars that got only a single ticket.  If you scroll back up the Python shell, you will see the cars with the most tickets are listed first.  Let's just print out the 10 cars that got the most tickets.  We can do this by slicing to <tt>[:10]</tt>:
+    <pre><code class="python">print(tickets["Plate ID"].value_counts()[:10])	#Print 10 worst & number of tickets</code></pre>
+    <p>
+    Even with only 1000 lines of ticket information, there is a car (with plate <tt>TOPHAT5</tt>) that got more than 5 tickets.
+    <p>Let's make our program a bit more general, to allow the user to enter their own file name:
+    <pre><code class="python">"""
+Count which cars got the most parking tickets
+"""
+#Import pandas for reading and analyzing CSV data:
+import pandas as pd
+
+csvFile = input('Enter CSV file name: ')        #Name of the CSV file
+tickets = pd.read_csv(csvFile)                  #Read in the file to a dataframe
+print("The 10 worst offenders are:")
+print(tickets["Plate ID"].value_counts()[:10])  #Print 10 worst & number of tickets</code></pre>
+    
+    <p>When you run it on the <a href="../files/tickets.csv">tickets.csv</a>, you should see output:</p>
+        <pre><code class="python">Enter CSV file name: tickets.csv
+The 10 worst offenders are:
+Plate ID
+TOPHAT5    6
+GXP4564    4
+XBLD33     4
+T63FNW     4
+XANK43     3
+R12FGF     3
+TOPHAT9    3
+XP627S     3
+GN8063     3
+ZDH5639    3
+Name: count, dtype: int64</code></pre>
+    
+    
+    <h4>Binning Other Data</h4>
+    
+    <p>Now that you have a program to use as a basic template, answer the following questions:
+    <ul>
+        <li> What color of car is most likely to get a ticket?
+        <li> What type of license gets the most tickets?
+        <li> Which location yields the most tickets?
+    </ul>
+    (Remember to check the CSV file for the name used for the columns and use that as the index.)
+    
+    </div>
+    
+    
+
+
+
+<br>
+<hr>
+<h2>2. Python's zips </h2>
+
+<p>At the operating system level, there are several apps that will pack or "zip" all of your files into a single files.  In Python, there's a similar function, <tt>zip()</tt> that takes lists and pairs or "zips" them together.  For example:</p>
+
+<pre><code class="python">firsts = ["Thomas", "Jennifer", "Anne", "Nancy"]
+lasts = ["Hunter", "Raab", "Kirshner", "Cantor"]
+
+names = zip(firsts,lasts)
+print(names)
+for f,l in names:
+    print(f,l)
+</code></pre>
+
+<p>The code will create a lists of names, paired together.  When you try to print a zip object, it will give you the address, which isn't very useful.  Instead, you can use the zip object to loop through the two lists paired together.  </p>
+
+<p>Step through the examples below, trying to guess what each line does, before you execute the line:</p>
+
+<p><iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23Example%20of%20zip%3A%0Afirsts%20%3D%20%5B%22Thomas%22,%20%22Jennifer%22,%20%22Anne%22,%20%22Nancy%22%5D%0Alasts%20%3D%20%5B%22Hunter%22,%20%22Raab%22,%20%22Kirshner%22,%20%22Cantor%22%5D%0Aprint%28firsts%29%0Aprint%28lasts%29%0A%0Anames%20%3D%20zip%28firsts,lasts%29%0Aprint%28names%29%20%20%20%20%23Prints%20address%20of%20object%0A%23Useful%20for%20looping%20through%20the%20two%20lists%20together%3A%0Afor%20f,l%20in%20names%3A%0A%20%20%20%20print%28f,l%29%0A%0A%23Another%20example,%20using%20list%20comprehensions%20%28see%20lab%204%29%3A%0Atitles%20%3D%20%5B%22President%20%22%2Bf%20for%20f%20in%20firsts%5D%0Afor%20t,l%20in%20zip%28titles,lasts%29%3A%0A%20%20%20%20print%28t,%20l.upper%28%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe></p>
+
+
+<p>More examples can be found in the <a href="https://docs.python.org/3/library/functions.html#zip">Python documentation</a>.</p>
+
+<br>
+<hr>
+<h2>3. Functions in Python</h2>
+
+
+<p>Python allows you to write programs as scripts: basically, a list of commands that are executed one after the other.  You can also organize the programs in functions, which groups commands together that can be reused.  Many programming languages (like C++ or Java) require that your programs be organized in functions.
+
+
+<p>To define function in Python, we use the <tt>def</tt> command, which has the basic form:
+
+<pre><code class="python">def myFunction(input1, input2, ...):
+    command1
+    command2
+    ...</code></pre>
+<p>
+Note that everything indented below the <tt>def</tt> line is considered part of the function.  When you type the function name (followed by parenthesis), it calls (or "invokes") the function, which means it executes all the commands, one after another, that are part of the function.</p>
+
+<p>Work through <a href="https://runestone.academy/ns/books/published//thinkcspy/Functions/functions.html">Section 6.1: Functions</a> of the textbook, including the check-your-understanding questions at the end:</p>
+
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Functions/functions.html"></iframe></p>
+
+
+
+
+<br>
+<hr>
+<h2>4. Stand-Alone Programs vs. Modules</h2>
+
+<p>
+In Python, we have the option of running our programs as a standalone program, or included as module as part of another program.  Since it's common to do either, we can write that into our programs.  
+
+<p>Let's rewrite our first program, using functions.  By tradition (and since it matches the naming protoccol of C & C++), we will call our function <tt>main()</tt> (see <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8:  Using a Main Function</a>):
+
+<pre><code class="python">"""
+Name:  your name here
+Email: your email here
+This program, uses functions, says hello to the world!
+"""
+
+def main():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+include the last two lines of the file, which say if the program is being run directly (which we can test to see if the variable <tt>__name__</tt> that is set by Python is <tt>__main__</tt>), then we call <tt>main()</tt>.  If it's not, then the file is being included in something else, and leaves it to that program to call it.</p>
+
+<p> Save your program and try running it in IDLE.</p>
+
+<p> Now, at the prompt (the window with the lines beginning with <tt>&gt;&gt;&gt;</tt>), type <tt>main()</tt>.  This calls the function directly.  Note that calling the function either way results in the same actions:  the commands inside <tt>main()</tt> are executed.
+
+<p>
+When you have a running version, see the <a href="ps.html#set7">Programming Problem List</a>.
+
+
+
+
+<br>
+<hr>
+<h2>5. Using Python from the Command Line Interface</h2>
+
+<p> In addition to IDLE (and other development environments with graphical interfaces), Python can also be used directly from the command line.  In fact, this is what the grading scripts do to evaluate your programs, since Gradescope uses a remote cloud server and does not have a graphics window.</p>
+
+<p> To start, we need a command line interface (aka a terminal window).  To launch the terminal, click on the terminal window icon in the left menu, or go to search option in the upper left corner and type and then open <tt>terminal</tt>.</p>
+
+<p> In <a href="lab1.html">Lab 1</a>, we launched IDLE from the terminal by
+typing:
+<pre><code class="shell">$ idle3</code></pre>
+
+<p> We can use Python in a similar fashion.  In a terminal window, change directories to where you stored your hello program above (see <a href="lab4.html">Lab 4</a> for changing directories at the command line).</p>
+
+<p> Let's run your hello program from the command line.  If your program is
+called <tt>hello.py</tt>, you would type at the command line:
+<pre><code class="shell">$ python3 hello.py</code></pre>
+Notice that the output goes directly to the terminal window.  Try running other programs you have written from the command line.</p>
+
+
+  
+
+
+<br><hr>  
+<h2>What's Next?</h2>
+	
+	
+<p>You can start working on this week's programming assignments. The <a href="ps.html">homework page</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+	
+</div>
+
+
+</div>
