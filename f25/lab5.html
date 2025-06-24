@@ -80,7 +80,7 @@ environment with numpy and matplotlib packages installed.</p>
 	</ul>
 Then, if we can consider when the following are true about a given phone:
 	<ul>
-		<li><b><tt>P and S</tt></b>:  With <code class="inline">and</code>, we need both parts to be true for the combined statement, <code class="inline">P and Q</code> to be true.  If either is false (that is the phone is not purple or the phone is not small), then the combined statement is false.  We can write this in a table:
+		<li><b><tt>P and S</tt></b>:  With <code class="inline">and</code>, we need both parts to be true for the combined statement, <code class="inline">P and S</code> to be true.  If either is false (that is the phone is not purple or the phone is not small), then the combined statement is false.  We can write this in a table:
     <p>
         <table border="1px">
             <tr>
@@ -99,8 +99,8 @@ Then, if we can consider when the following are true about a given phone:
                 <td>False</td><td>False</td><td>False</td>
             </tr>
         </table>
-        <p>This <b>truth table</b> lists all the possible combinations of values for the inputs, <code class="inline">in1</code> and <code class="inline">in2</code>, and what <code class="inline">and</code> would give as output.  
-        For example, if <code class="inline">in1</code> is <code class="inline">True</code> and <code class="inline">in2</code> is <code class="inline">False</code>, the value of <code class="inline">in1 and in2</code>, can be read off the last column of the third line of the truth table as <code class="inline">False</code>.</li>
+        <p>This <b>truth table</b> lists all the possible combinations of values for the inputs, <code class="inline">P</code> and <code class="inline">S</code>, and what <code class="inline">and</code> would give as output.  
+        For example, if <code class="inline">P</code> is <code class="inline">True</code> and <code class="inline">S</code> is <code class="inline">False</code>, the value of <code class="inline">P and S</code>, can be read off the last column of the third line of the truth table as <code class="inline">False</code>.</li>
 
 		<li><b><tt>P or S</tt></b>:  For this statement to be true, one part of it needs to be true.  Either "the phone is purple" or "the phone is small" will make the combined statement true.  The only way the combined statement is false is if the phone is not purple and not small.  We can write out these conditions in truth table, as we did for <code class="inline">and</code>:
 		
@@ -413,7 +413,7 @@ translating naturally into binary numbers.</p>
 
 <p>Each digit in a number has a "position". In the decimal (base 10) system to us so familiar, we know that the possible digits are 0 - 9 and each position is a power of 10. So if we see a 7 in the "ones" position we know it is 7 ones. If we see a 7 in the "tens" position we know  it is 7 tens and so on. Thus, the number 77 in base 10 is 7 tens + 7 ones.
 <p>In binary (base 2) we have two digits, 0 and 1, and each position is a power of two. In each position we can have either a 0 or a 1, so in the "ones" position we either have a 1 or not. In the "twos" position we either have a 2 or not, in the "fours" position we either have a 4 or not, and so on.
-<p>For example, the binary number 11001 has five positions: "ones", "twos", "fours", "eights" and "sixteens" (consecutive powers of two). We have 1 only in the "ones", "eights" and "sixteens" positions, so 11001<sub>base2</sub> = 1+8+16 = 25<sub>base10</sub>.  As with hexadecimal, we can also write the numbers with a prefix indicating the base:  0b11001 = 0d25.
+<p>For example, the binary number 11001 has five positions: "ones", "twos", "fours", "eights" and "sixteens" (consecutive powers of two). We have 1 only in the "ones", "eights" and "sixteens" positions, so 11001<sub>base2</sub> = 1+8+16 = 25<sub>base10</sub>.  As with hexadecimal and decimal, we can also write the numbers with a prefix indicating the base:  0b11001 = 0d25.
 <p><figure>
 	<img src="../images/binary.png" width = "500">
 	<figcaption><i>Image credits: mathisfun.com</i></figcaption>
