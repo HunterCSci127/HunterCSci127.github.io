@@ -653,7 +653,7 @@ GC-content is 0.75</code></pre>
 
 	<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  The program then converts the image to grayscale and saves the grayscale image to the specified output file.</p>
 	
-	<p>There are many ways to convert color images to grayscale (see <a href="https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html">Grayscale Algorithms</a> for a nice overview).</p>  For this program, we are setting each channel of a pixel to its green value.  That is, your program should then set the red channel values to the green channel values, as well as the blue channel values to the green channel values. For example, a single pixel at {\tt (i,j)} of the image {\tt img} would be changed to:
+	<p>There are many ways to convert color images to grayscale (see <a href="https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html">Grayscale Algorithms</a> for a nice overview).</p>  For this program, we are setting each channel of a pixel to its green value.  That is, your program should then set the red channel values to the green channel values, as well as the blue channel values to the green channel values. For example, a single pixel at <code>(i,j)</code> of the image <code>img</code> would be changed to:
 	<pre><code class="python">img[i,j,0] = img[i,j,1]  #change value of red channel to value of green channel
 img[i,j,2] = img[i,j,1]  #change value of blue channel to value of green channel
 </code></pre>	
@@ -673,7 +673,7 @@ Enter name of the output file:  gray_bridge.png</code></pre>
 
 
 
-	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 
 		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>. Think about how you can uses numpy slices to change every pixel.</p></i>
 
@@ -752,7 +752,7 @@ Your map is stored dark_lines_topo.png.</code></pre>
 	
 	
 	
-	</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+	</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
 	
 	
 </li>
@@ -811,7 +811,7 @@ Enter file name:  hunterPurple_U.png
 		</li><li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
 	</li></ul>
 
-	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
+	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
 	</p>
 </li>
 
@@ -1169,7 +1169,7 @@ for i in range(5):
 	<img src="../images/cat3.png" height = 100>
 	<img src="../images/cat4.png" height = 100>
 
-<p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
+<p> Note:  before submitting your program for grading, remove any commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
 
 </li>
 
@@ -1361,7 +1361,7 @@ stand deviation of total enrollment for Bronx is 3407.191
 
 <p>Then <tt>borough_data</tt> has data for the specific borough. Plot fraction using this data.
 
-<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <tt>plt.show()</tt> and <tt>plt.imshow()</tt> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.	
+<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.	
 
 </li>
 
