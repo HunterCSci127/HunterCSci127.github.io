@@ -962,8 +962,8 @@ out3 = ...
 
 	<p>Write a program that will ask for the time in 24 hour format (e.g. <tt>2034</tt> is 8:34pm) and, prints out:
 	<ul>
-		<li><tt>"Peak Fare (Morning Rush)"</tt> if the time is between 6am (e.g. <tt>600</tt>) and 10am (e.g. <tt>1000</tt>),</li>
-		<li><tt>"Peak Fare (Evening Rush)"</tt> if the time is between 4pm (e.g. <tt>1600</tt>) and 8pm (e.g. <tt>2000</tt>), and</li>
+		<li><tt>"Peak Fare (Morning Rush)"</tt> if the time is between 6am (e.g. <tt>600</tt>) and 10am (e.g. <tt>1000</tt>), inclusive,</li>
+		<li><tt>"Peak Fare (Evening Rush)"</tt> if the time is between 4pm (e.g. <tt>1600</tt>) and 8pm (e.g. <tt>2000</tt>), inclusive, and</li>
 		<li><tt>"Non-Peak Fare"</tt> otherwise.</li>
 	</ul>
 		
@@ -971,7 +971,7 @@ out3 = ...
 	<pre><code class="text">Enter time:  1750
 Peak Fare (Evening Rush)</code></pre>
 
-		
+	<p>Note:  "Inclusive" for a range of numbers means that it includes the endpoints.  For example, "between 4 and 8, inclusive" means all values that are greater than or equal to 4 and are also less than or equal to 8.</p>
 
 </li>
 
