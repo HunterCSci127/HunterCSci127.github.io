@@ -1440,21 +1440,20 @@ print("The number of unique visitors is ", unique_visitors(ids))</code>
 
 	<p>Write a function <tt>most_common()</tt> that takes a string and returns the word that occurs most often.  You may assume that:</p>
 	<ul>
-		<li>There is exactly one work that occurs most often.</li>
+		<li>There is exactly one word that occurs most often.</li>
 		<li>All punctuation has been removed and words are separated by spaces (' ') and all letters are lower-case.</li>
 	</ul>
 
 <p>For example:</p>	
 <pre><code class="python">phrase = "MORE:  The more that you read, the more things you will know. The more that you learn, the more places you'll go. --Dr. Seuss" 
 phrase = phrase.lower()
-punctuation_list = ['.',',','!','?',':',';','\n','\t','-','  ','  ']
+punctuation_list = ['.',',','!','?',':',';','\n','\t','-','  ']
 for pun in punctuation_list:
 	phrase = phrase.replace(pun,' ')
 print('Phrase unpunctuated:', phrase)
 print('Most common word:', most_common(phrase))</code></pre>
 would print:
-<pre><code class="text">
-Phrase unpunctuated: more the more that you read the more things you will know the more that you learn the more places you'll go dr seuss
+<pre><code class="text">Phrase unpunctuated: more the more that you read the more things you will know the more that you learn the more places you'll go dr seuss
 Most common word: more	
 </code></pre>
 
@@ -1463,7 +1462,7 @@ Most common word: more
 <p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 
 
-<p><i>Hint: Use a dictionary to count how many times you see each name.  When adding a name to the dictionary a second time, append to a list of duplicated names.</i></p>
+<p><i>Hint: Use a dictionary to count how many times you see each name.  When you add a name to the dictionary a second time, also append the name to a list of duplicated names.</i></p>
 
 
 </li>
