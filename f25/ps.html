@@ -1801,22 +1801,17 @@ Enter output file name: two_bed_2023.html
 	
 
 	<p> For example, calling your function:
-	</p><pre><code class="python">print("5 in binary is", dec2bin(5))</code>
-	</pre>
-	would print:
+	</p><pre><code class="python">print("5 in binary is", dec2bin(5))</code></pre>
+	<p>would print:
 	<pre><code class="text">5 in binary is 101</code></pre>
 
 	<p> And another example:
 	</p><pre><code class="python">num = 15
-print(num, "in binary is", dec2bin(num))</code>
-	</pre>
-	would print:
+print(num, "in binary is", dec2bin(num))</code></pre>
+	<p>would print:</p>
 	<pre><code class="text">15 in binary is 1111</code></pre>	
 
-	<p> And another sample run of the program:
-	</p><pre style="background-color:lavender;width:400px">Enter binary number: 1111
-	Your number in decimal is 15
-	</pre>
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
 	
 	<p><i>Hint:  Remember to add a number to a string, you need to cast the number to be a string first:  e.g. <tt>bin_str = str(rem) + bin_str</tt>.</i></p>
 
