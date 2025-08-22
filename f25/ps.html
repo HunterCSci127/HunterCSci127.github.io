@@ -1344,10 +1344,10 @@ Name: Vehicle Year, dtype: int64
 <li>
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, November 7</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
-	<b>Available Libraries: pandas</b></p>
+	<b>Available Libraries: pandas, matplotlib</b></p>
 	<p><b>School Enrollment</b></p>
 
-	<p> Download csv file from <a href="../files/demo_boro.csv">2013 to 2018 Demographic Snapshot Borough</a>. Your program should ask the user for the borough, an name for the output file, and then display the fraction of Grade K to 6 enrollment that has lived in that borough, over time. Then print out the minimum, maximum, median, mean, and stand deviation of total enrollment in that borough (round to 3 decimal numbers).
+	<p> Download csv file from <a href="../files/demo_boro.csv">2013 to 2018 Demographic Snapshot Borough</a>. Your program should ask the user for the borough, an name for the output file, and then display the fraction of Grade K to 6 enrollment that has lived in that borough, over time. Then print out the minimum, maximum, median, mean, and standard deviation of total enrollment in that borough (round to 3 decimal numbers).
 
 	<p> A sample run of the program:
 <pre><code class="text">
@@ -1365,7 +1365,7 @@ stand deviation of total enrollment for Bronx is 3407.191
 		<p><img src="../images/bronxFraction_s23.png" width=300>
 
 
-<p><i>Hint:</i> First create a column that calculate the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data usig either groupby and get_group function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
+<p><i>Hint:</i> First create a column that calculates the fraction of Grade K to 6 vs. Total Enrollment. Then get borough data using either <code>groupby</code> and <code>get_group</code> function or query method. You can test both approaches. Suppose the original data frame is saved in variable <tt>df</tt> and the input borough name is put in variable <tt>borough</tt>.
 
 <pre><code class="python">borough_data = df.query("Borough == '" + borough + "'")</code></pre>
 
