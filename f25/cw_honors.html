@@ -79,12 +79,12 @@ Fall 2025<br><br>
 
 <ul>
 	<br>
-	<li > <b>HC 1:  Subway Terminus</b>  <b style="float:right">Due Date: September 2</b>  <br>
+	<li > <b>HC 1:  Subway Terminus</b>  <b style="float:right">Due Date: September 4</b>  <br>
 
 	<p>
 	<a href="https://circularsquare.github.io/projects/">
 		<img src="https://circularsquare.github.io/assets/nycvoronoi.png" height = 600></a><br>
-	<small>Anita Xin Chen, <a href="https://circularsquare.github.io/projects/">circularsquare.github.io</a></small>
+	<small>Anita Xin Chen, <a href="https://circularsquare.github.io/projects/">circularsquare.github.io</a></small></p>
 
 	<p>Throughout the semester, we will focus on transit-oriented development in New York City.  In particular, we will analyze and visualize data for the neighborhoods adjacent to subway stations. The above image shows the number of people who live in the catchment area of each subway stop.  The catchment areas are colored by the subway line (e.g. the IND 8th Avenue Express lines (A/C/E) are colored blue) and the size of the dot reflects the number of residents for whom that stop is the closest.</p>
 
@@ -102,10 +102,53 @@ Fall 2025<br><br>
 
 	<p>Upload a .pdf to the assignment <tt>HC 1</tt> in the honors section of <a href="http://gradescope.com">Gradescope</a>.  </p>
 	<p><i>Note:  Unlike the Python code, it is not automatically graded. </i></p>
+</li>
 
 	<br>
 	<hr>
 	<br>
+
+
+
+	<li > <b>HC 2:  Walking in NYC Neighborhoods
+	</b> <b style="float:right">Due Date: 11 September</b>  <br>
+
+		<br>
+		<p><iframe frameborder="0" src="https://www.walkscore.com" width="80%" height="400" ></iframe>
+
+
+		<p>  Urban planner, Jeff Speck, argues that if a city succeeds at
+		being walkable (and by extension, bikeable), it excels at having a high quality of life (see his
+		<a href="https://www.ted.com/talks/jeff_speck_the_walkable_city">TED talk</a>).</p>
+
+		<p>What fraction of the neighborhoods along your subway line are walkable?</p>
+
+		<ul>
+			<li>Make a list of the stations on your subway line.  For each, include:
+				<ul>
+					<li>Name of Station</li>
+					<li>Zipcode</li>
+					<li>Walkability Score</li>
+				</ul>
+				We will use this list in future assignments, augmenting it with additional features, in a DataFrame (introduced in Week 6).
+			</li>
+			<li>Working in pairs or triples, choose 3 neighborhoods from each group member's list.  Include in your list, the terminus neighborhoods of each member in the group focused on last week, the lowest scoring neighborhoods in terms of walkability and the highest scoring neighborhoods in terms of walkability. 
+			
+			<p>For each of the chosen neighborhoods:</p>
+			
+		<ul>
+			<li> As a group, choose a ranking schema from <a href="https://www.niche.com/places-to-live/search/best-neighborhoods/m/new-york-city-metro-area/">Niche's 2025 Best Neighborhoods</a> (e.g. "Best places to live", "Best for families", "Most diverse", etc or make a customized schema using left sidebar menu). Score the neighborhoods by this schema.  Explain which ranking you schema you used.  You may find the search by zip code at the top of the page useful (scroll down to find rankings).
+			<li> Include how did the neighborhoods do in terms of walkability (order the neighborhoods by their <a href= "https://www.walkscore.com">walk scores</a>) versus the Niche schema.
+
+		</ul></li>
+		</ul>
+
+		<p> 
+
+		<p> Does your ranking concur with ranking the neighborhoods by walkability?  Justify your answer.
+
+		<p>Submit a .pdf file analyzing the your rankings and walkability of five neighborhoods chosen for the class.  You should use complete sentences and justify your answers with data.
+		</p>
 
 <!--
 	HC 2  Loops/Strings, background info?, September 9	
@@ -115,59 +158,54 @@ Fall 2025<br><br>
 	HC 6  CSV & Pandas-- can select/combine df?, 21 October
 -->
 
-<!--
-  <li > <b>HC 2:  Neighborhood Rankings
-	</b> <b style="float:right">Due Date: 9 September</b>  <br>
+	<hr>
+	<li > <b>HC 3:  Computing Costs
+	</b> <b style="float:right">Due Date: 18 September</b>  <br>
 
-		<p> Working in pairs or triples, design a ranking for most desirable features of a neighborhood.
+			<br>
+		<p><iframe frameborder="0" scrolling ="no" src="https://project.wnyc.org/transit-time/index.html#40.76700,-73.96361,14,961" width="80%" height="600" ></iframe>
 
-		<p>There are multiple rankings of New York City Neighborhoods.  For example,
+		<p> FiveThirtyEight analyzed the <a href="https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/">cost of commuting</a> in terms of the extra New Yorkers were willing to pay to lessen their commute.  <a href="https://streeteasy.com/blog/subway-commute-time-impact/">StreetEasy</a> did a similar analysis, measuring from given subway stops.
+
+		<p> How does distance affect housing prices?  To narrow down the analysis, we will focus on the distance to two landmarks:  Empire State Building (as a proxy for midtown) and Federal Hall (for the financial district) and 3 locations.  You may find <a href="https://project.wnyc.org/transit-time/">WNYC Transit Time</a> or <a href="https://www.google.com/maps">Google Maps</a> useful, as well as
+		<a href="https://citymapper.com/nyc?lang=en">CityMapper</a>.
+
+    	Pick, at random, a <a href="https://streeteasy.com/rentals">rentals</a> in each of your terminal neighborhood, your least walkable neighborhood, and your most walkable neighborhood (if those coincide, choose another neighborhood, so you have a total of three neighborhoods).  Make sure that your three rentals are comparable.  That is, all have same number of bedrooms, same number of bathrooms, and similar features:
+
 		<ul>
-			<li> <a href="https://www.niche.com/places-to-live/search/best-neighborhoods/m/new-york-city-metro-area/">Niche</a>,
-
-			<li> <a href="https://www.dnainfo.com/new-york/crime-safety-report/ranking">DNA Info's rankings</a>,
-			<li><a href="https://ny.curbed.com/2017/9/19/16329796/nyc-best-neighborhood-transit-walk-bike-score">Curbed's Walkable Neighborhoods</a>,
-	
-			<li> <a href="https://www.streetadvisor.com/search/cities-in-new-york-city-new-york">Street Advisor</a>
+			<li> Compute the <b>shortest commute driving</b> to the Empire State Building or Federal Hall for those locations.  Assume that you are arriving at 8:30am on a weekday.
+			<li> Compute the <b>shortest commute by public transit</b> to the Empire State Building or Federal Hall for those locations.  Assume that you are arriving at 8:30am on a weekday and that you walk to the nearest station.
+      		<li> Compute the <b>shortest commute by public transit, <u>assuming you walk between the apartment and station</u>,</b> to the Empire State Building or Federal Hall for those locations.  Assume that you are arriving at 8:30am on a weekday.
 		</ul>
 
+		<p> Using the analysis from FiveThirtyEight, analyze what the difference in rental prices should be. 
+		Is that difference reflected in the data you collected?  Justify your answer.
 
-		With your group:
-		<ul>
-			<li> Assess what these rankings have in common and how they differ.
-			<li> Which ranking do you favor and why?
-			<li> What qualities make a neighborhood desirable place to live?
-			<li> Collate a list of the three most important.
-		</ul>
-
-		<p>Submit a .pdf file containing your assessment of the rankings and the three most desirable qualities.  You should use complete sentences, compare and contrast the rankings above, and justify the three qualities that your group thought most important.
+		<p>Submit a .pdf file analyzing the time and cost of commuting of your neighborhoods.  You should use complete sentences and justify your answers with data.
 		</p>
+
+
 
 
 
 	<hr>
-		<li > <b>HC 3:  Walking in NYC Neighborhoods
-	</b> <b style="float:right">Due Date: 16 September</b>  <br>
+		<li > <b>HC 4:  Subway Logo
+	</b> <b style="float:right">Due Date: 25 September</b>  <br>
 
-		<br>
-		<p><iframe frameborder="0" src="https://www.walkscore.com" width="80%" height="400" ></iframe>
+	<p>
+	<a href="https://en.wikipedia.org/wiki/List_of_New_York_City_Subway_lines">
+		<img src="../images/wiki_subway_hexcodes.png" height = 400></a><br>
+	<small><a href="https://en.wikipedia.org/wiki/List_of_New_York_City_Subway_lines">wiki subway lines</a></small></p>
 
+	<p>
+	In Lectures 3 and 4, we introduced colors, specified by hex codes.  Use <tt>matplotlib</tt> and <tt>numpy</tt> and hexcodes above, create a logo for your subway line.  
+	
+	<p>Submit your Python code and .pdf file including your image to Gradescope.
+		</p>	
+	
 
-		<p>  Urban planner, Jeff Speck, argues that if a city succeeds at
-		being walkable (and by extension, bikeable), it excels at having a high quality of life (see his
-		<a href="https://www.ted.com/talks/jeff_speck_the_walkable_city">TED talk</a>).
-
-		<p> Working in pairs or triples, analyze his argument in terms of five subway terminus neighborhoods in New York City and the ranking you determined in HC 2.  For five of the neighborhoods chosen by class (1-page summaries from HC 1 are available on Blackboard), determine the following:
-		<ul>
-			<li> Rank the five neighborhoods by your ranking from HC 2.  Explain how you determined the neighborhoods ranked (you can have ties, but you need to justify the rankings, even in the case of ties).
-			<li> How did the 5 neighborhoods do in terms of walkability (order the neighborhoods by their <a href= "https://www.walkscore.com">walk scores</a>).
-
-		</ul>
-
-		<p> Does your ranking concur with ranking the neighborhoods by walkability?  Justify your answer.
-
-		<p>Submit a .pdf file analyzing the your rankings and walkability of five neighborhoods chosen for the class.  You should use complete sentences and justify your answers with data.
-		</p>
+<hr>
+<!--
 
 	<hr>
 		<li > <b>HC 4:  Cost of Commuting
@@ -538,7 +576,7 @@ Submit a .pdf that contains a screenshot of your map on the first page and the P
 
 
 <div>
-<i style="float:right">(This file was last modified on August 22, 2025.)</i><br>
+<i style="float:right">(This file was last modified on September 4, 2025.)</i><br>
 </div>
 </body>
 </html>
