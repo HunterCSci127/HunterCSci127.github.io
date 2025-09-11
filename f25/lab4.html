@@ -240,16 +240,16 @@ else:
 </ul>
 
 Since if the nucleotide is an A, we don't need to check if it's also a C, G, or T (and similarly for the other possible values), we can rewrite this as:
-<pre><code class="python">  if nucleotide == "A":
-        newNucleotide = "T"
-    elif nucleotide == "C":
-        newNucleotide = "G"
-    elif nucleotide == "G":
-        newNucleotide = "C"
-    elif nucleotide == "T":
-        newNucleotide = "A"
-    else:
-        print("Error:  not a valid value!")</code></pre>
+<pre><code class="python">if nucleotide == "A":
+    newNucleotide = "T"
+elif nucleotide == "C":
+    newNucleotide = "G"
+elif nucleotide == "G":
+    newNucleotide = "C"
+elif nucleotide == "T":
+    newNucleotide = "A"
+else:
+    print("Error:  not a valid value!")</code></pre>
 
 <p>Here is a demonstration of our code:
 
