@@ -1770,6 +1770,14 @@ Enter output file name: two_bed_2023.html
 	<p>Submit a single text file containing your shell commands.  See <a href="lab10.html">Lab 10</a>.
 	</p>
 
+	<p>For example, if your script is called, <code class="inline">countScript.sh</code>, then a sample run on a directory with 4 .py files would give:</p>
+
+	<pre><code class="shell">$ ls
+docs hw10.py hw11.py python_libs practice.py tmp.py
+$ chmod +x countScript.sh
+$ ./countScript.sh
+4</code></pre>
+
 
 	<p>Note:  for comments, shell scripts use # in front of lines (instead of the block comments surrounded by """ """) and the first line is the "shebang" line.  For a proper shell script, your file should start: </p>
 	
