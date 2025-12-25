@@ -213,10 +213,19 @@ Welcome!</code></pre>
 
     <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
 
-		<pre><code class="shell">Set the speed to 0.
-Set the pen size to 2.
-Hide the turtle.
+	<pre><code class="python">"""
+Your Name
+Your Email		
+"""
+import turtle
 
+t = turtle.Turtle()
+t.speed(0)     # Set the turtle's speed to 0 (fastest)
+t.pensize(2)   # Set the turtle's pen size to 2
+t.hideturtle() # Hide the turtle
+
+"""
+TODO: implement the following pseudocode:
 Repeat 36 times: 
   Repeat 3 times: 
     Change the color to pink.
@@ -225,7 +234,9 @@ Repeat 36 times:
     Change the color to red.
     Walk forward 80 steps.  
     Turn right 60 degrees.
-  Turn right 10 degrees.</code></pre>		
+  Turn right 10 degrees.
+"""</code></pre>
+		
 
 	<p>Your output should look like this:
 	<br>
@@ -445,7 +456,8 @@ Acronym:  HC</code></pre>
 	<p><b>Shades of Pink</b></p>	
 
 
-	<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of pink. <b>Hint:</b> think about which combined pair in (red, blue, green) might give you the color pink.</p>
+	<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of pink. 
+		<br> <b>Hint:</b> think about which combined pair in (red, blue, green) might give you the color pink.</p>
 
 	<p>Your output should look similar to:</p>
 
@@ -1581,7 +1593,7 @@ draw_tree(tess,100,"indigo","black")
 
 <!--program43-->
 <li>
-	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 21</b><br>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 22</b><br>
 	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: turtle, pandas</b></p>
 	<p><b>Hurricane Tracker</b></p>	
