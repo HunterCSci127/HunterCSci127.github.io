@@ -213,10 +213,19 @@ Welcome!</code></pre>
 
     <p>Write a program that implements the pseudocode ("informal high-level description of the operating principle of a computer program or other algorithm") below:</p>
 
-		<pre><code class="shell">Set the speed to 0.
-Set the pen size to 2.
-Hide the turtle.
+	<pre><code class="python">"""
+Your Name
+Your Email		
+"""
+import turtle
 
+t = turtle.Turtle()
+t.speed(0)     # Set the turtle's speed to 0 (fastest)
+t.pensize(2)   # Set the turtle's pen size to 2
+t.hideturtle() # Hide the turtle
+
+"""
+TODO: implement the following pseudocode:
 Repeat 36 times: 
   Repeat 3 times: 
     Change the color to pink.
@@ -225,11 +234,13 @@ Repeat 36 times:
     Change the color to red.
     Walk forward 80 steps.  
     Turn right 60 degrees.
-  Turn right 10 degrees.</code></pre>		
+  Turn right 10 degrees.
+"""</code></pre>
+		
 
 	<p>Your output should look like this:
 	<br>
-	<img height = 150 src="../images/flower_s26.png">
+	<img height = 200 src="../images/flower_s26.png">
 	</p>
 </li>
 
@@ -445,7 +456,8 @@ Acronym:  HC</code></pre>
 	<p><b>Shades of Pink</b></p>	
 
 
-	<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of pink. <b>Hint:</b> think about which combined pair in (red, blue, green) might give you the color pink.</p>
+	<p>Modify the program from <a href="lab3.html">Lab 3</a> to show the shades of pink. 
+		<br> <b>Hint:</b> think about which combined pair in (red, blue, green) might give you the color pink.</p>
 
 	<p>Your output should look similar to:</p>
 
@@ -1249,31 +1261,44 @@ print("Converting", num_str, "to", string2num(num_str))</code></pre>
 <!--program34-->
 <li > 
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, March 27</b><br>
-	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a> & <a href="lab7.html">Lab 7</a></b><br>
-	<b>Available Libraries:  <i>none</i></b></p>
-	<p><b>URL Domains</b></p>
+	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a> & <a href="lab7.html">Lab 7</a></b><br>
+	<b>Available Libraries:  <i>turtle</i></b></p>
+	<p><b>Rainbow Star</b></p>
 
-	<p><b>!!!! UPDATE !!!!</b></p>
+    <p> Write a program, using function <tt>main()</tt> that implements the following pseudocode. <br> <i>Note:</i> the pseudocode refers to the body of the function and does not illustrate the function definition. 
 
-    <p> Write a program, using function <tt>main()</tt> that input a website URL like <tt>www.apple.com</tt> or <tt>hunter.edu</tt>. Find out the website name and its top level domain type. If top level domain is <tt>com</tt>, print "commercial", otherwise, if top level domain is <tt>edu</tt>, print "education", otherwise, if top level domain is <tt>org</tt>, print "organization", otherwise, if top level domain is <tt>gov</tt>, print "government", otherwise, print "other". See <a href="lab7.html">Lab 7</a>.
 
-<p>A sample input/output is as follows.
-<pre><code class="text">Enter a website URL: chat.openai.com
-website name: openai
-commercial</code></pre>
+	<pre><code class="python">"""
+TODO: implement the following pseudocode inside a main() function:
+Create a turtle
+Set the turtle's speed to 0
+Set the turtle's pen size to 2
+Hide the turtle
 
-<p>Another sample input/output is as follows.
-<pre><code class="text">Enter a website URL: hunter.edu
-website name: hunter
-education</code></pre>
+Create a list with ["red", "cyan", "blue", "orange"] repeated 12 times
+Create a list with the numbers 20, 22, 24, ..., 114
 
-<p>Yet another sample input/output using the air force website as an example.
-<pre><code class="text">Enter a website URL: www.af.mil
-website name: af
-other</code></pre>
+Zip the two lists
 
-<p><i>Hint:</i> You may need to consider a website can be in either form:  <tt>www.websiteName.com</tt> or <tt>websiteName.com</tt>, so use the negative index (e.g. count from the end, instead of the beginning) to extract website or domain after split by '.'.
+For each color and distance in the zipped lists:
+    Set the turtle's color to the current color
+    Move forward by the current distance
+    Turn left 120 degrees
+    Move forward by the current distance again
+    Turn right 65 degrees
+"""
+</code></pre>
 
+<p><i>Hint: You can repeat a list using *</i> 
+<br> Example: <code>[1, 2] * 3</code> creates <code>[1, 2, 1, 2, 1, 2]</code>
+<p><i>Hint: Use <code>list(range(start, stop, step))</code> to create a list of numbers </i> 
+<br> Example: <code>list(range(10, 30, 5))</code> creates <code>[10, 15, 20, 25]</code>
+<p><i>Hint: Use zip() to pair elements from two lists together. See <a href="lab7.html">Lab 7</a> Section 2 </i>  
+
+		<p>Your output should look like this:
+	<br>
+	<img height = 200 src="../images/rainbowstar_s26.png">
+	</p>
 </li>
 
 <!--program35-->
@@ -1581,7 +1606,7 @@ draw_tree(tess,100,"indigo","black")
 
 <!--program43-->
 <li>
-	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 21</b><br>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, April 22</b><br>
 	<b>Reading:  Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> & <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: turtle, pandas</b></p>
 	<p><b>Hurricane Tracker</b></p>	
