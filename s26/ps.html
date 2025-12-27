@@ -645,41 +645,35 @@ GC-content is 0.75</code></pre>
 <!--program 18-->
 <li >  
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, March 4</b><br>
-	<b>Reading:  <a href="lab4.html">Lab 4</a> & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
-	<b>Available Libraries: matplotlib, numpy</b></p>
-	<p><b>Grayscale Image</b></p>	
-
-	<p><b>!!!! UPDATE !!!!  Move after logo program.</b></p>
-
-	<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  The program then converts the image to grayscale and saves the grayscale image to the specified output file.</p>
-	
-	<p>There are many ways to convert color images to grayscale (see <a href="https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html">Grayscale Algorithms</a> for a nice overview).</p>  For this program, we are setting each channel of a pixel to its green value.  That is, your program should then set the red channel values to the green channel values, as well as the blue channel values to the green channel values. For example, a single pixel at <code>(i,j)</code> of the image <code>img</code> would be changed to:
-	<pre><code class="python">img[i,j,0] = img[i,j,1]  #change value of red channel to value of green channel
-img[i,j,2] = img[i,j,1]  #change value of blue channel to value of green channel
-</code></pre>	
-	
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html" target="_blank">Section 8.11</a>, <a href="lab4.html">Lab 4</a> & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
+	<b>Available Libraries: numpy, matplotlib</b></p>
+	<p><b>Logo</b></p>
 
 
-		<p> A sample run of your program should look like:
+	<p>Write a program that creates a 'U' logo for university on a 30x30 grid.  Your program should ask the user for the red, green, and blue for the color of their logo, and the file to save the image.</p>
 
-<pre><code class="shell">Enter name of the input file:  csBridge.png
-Enter name of the output file:  gray_bridge.png</code></pre>
+<!--Hunter Purple:  PMS 267, #5F259f, RGB: (95, 37, 159) = (0.373,0.145,0.624)-->
 
-<p> The sample input file and the resulting grayscale image:
+	<p>A sample run using <a href="https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/about/administration/offices/communications-marketing/services/marketing/campus-identity/HC-Visual-Identity-Standards_2016.pdf">Hunter College Purple (Pantone 267)</a>:</p>
+	<pre><code class="text">Enter amount of red:  0.373
+Enter amount of green:  0.145
+Enter amount of blue:  0.624
+Enter file name:  hunterPurple_U.png
+</code></pre>
+	</p>The resulting file is:<p>
+	<img src="../images/hunterPurple_U.png" style="padding:5px" height="200">
 
-<p>
-<img src="../images/csBridge.png" width = 300>
-<img src="../images/gray_bridge.png" width = 300 >
-
-
+	</p><p> The grading script is expecting:
+	</p><ul>
+		<li>The grid to be 30 x 30.</li>
+		<li> The color of the 'U' is the amount of red, blue, and green specified, as a value between 0 and 1.0.  </li>
+		<li> The left side of the 'U' should be the left third of the image; the bottom part of the 'U' should be the bottom third of the image; and the right part of the 'U' should be the the right third of the image.
+		</li><li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
+	</li></ul>
 
 	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
-
-		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>. Think about how you can uses numpy slices to change every pixel.</p></i>
-
-
+	</p>
 </li>
-
 
 		<!--
 		<p>Write a program that implements the pseudocode below:
@@ -787,36 +781,43 @@ A list of the two-part numbers:  ["thirty-one", "sixty-six"]</code></pre>
 <!--program21-->
 <li >
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, March 9</b><br>
-	<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html" target="_blank">Section 8.11</a>, <a href="lab4.html">Lab 4</a> & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
-	<b>Available Libraries: numpy, matplotlib</b></p>
-	<p><b>Logo</b></p>
+	
+	<b>Reading:  <a href="lab4.html">Lab 4</a> & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
+	<b>Available Libraries: matplotlib, numpy</b></p>
+	<p><b>Grayscale Image</b></p>	
+		
+
+	<p>Write a program that asks the user for a name of an image .png file and the name of an output file.  The program then converts the image to grayscale and saves the grayscale image to the specified output file.</p>
+	
+	<p>There are many ways to convert color images to grayscale (see <a href="https://tannerhelland.com/2011/10/01/grayscale-image-algorithm-vb6.html">Grayscale Algorithms</a> for a nice overview).</p>  For this program, we are setting each channel of a pixel to its green value.  That is, your program should then set the red channel values to the green channel values, as well as the blue channel values to the green channel values. For example, a single pixel at <code>(i,j)</code> of the image <code>img</code> would be changed to:
+	<pre><code class="python">img[i,j,0] = img[i,j,1]  #change value of red channel to value of green channel
+img[i,j,2] = img[i,j,1]  #change value of blue channel to value of green channel
+</code></pre>	
+	
 
 
-	<p><b>Move before other image hw.</b></p>
-	<p>Write a program that creates a 'U' logo for university on a 30x30 grid.  Your program should ask the user for the red, green, and blue for the color of their logo, and the file to save the image.</p>
+		<p> A sample run of your program should look like:
 
-<!--Hunter Purple:  PMS 267, #5F259f, RGB: (95, 37, 159) = (0.373,0.145,0.624)-->
+<pre><code class="shell">Enter name of the input file:  csBridge.png
+Enter name of the output file:  gray_bridge.png</code></pre>
 
-	<p>A sample run using <a href="https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/about/administration/offices/communications-marketing/services/marketing/campus-identity/HC-Visual-Identity-Standards_2016.pdf">Hunter College Purple (Pantone 267)</a>:</p>
-	<pre><code class="text">Enter amount of red:  0.373
-Enter amount of green:  0.145
-Enter amount of blue:  0.624
-Enter file name:  hunterPurple_U.png
-</code></pre>
-	</p>The resulting file is:<p>
-	<img src="../images/hunterPurple_U.png" style="padding:5px" height="200">
+<p> The sample input file and the resulting grayscale image:
 
-	</p><p> The grading script is expecting:
-	</p><ul>
-		<li>The grid to be 30 x 30.</li>
-		<li> The color of the 'U' is the amount of red, blue, and green specified, as a value between 0 and 1.0.  </li>
-		<li> The left side of the 'U' should be the left third of the image; the bottom part of the 'U' should be the bottom third of the image; and the right part of the 'U' should be the the right third of the image.
-		</li><li> The remaining pixels in the image should be white (100% red, 100% green, and 100% blue).
-	</li></ul>
+<p>
+<img src="../images/csBridge.png" width = 300>
+<img src="../images/gray_bridge.png" width = 300 >
+
+
 
 	<p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.
-	</p>
+
+		<p> <i>Hint:  See <a href="lab3.html">Lab 3</a>. Think about how you can uses numpy slices to change every pixel.</p></i>
+
+
 </li>
+
+
+
 
 <!--program22-->
 <li >
