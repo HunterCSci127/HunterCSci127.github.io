@@ -962,22 +962,22 @@ out3 = ...
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, March 16</b><br>
 	<b>Reading: Lecture 4, <a href="lab4.html">Lab 4</a></b><br>
 	<b>Available Libraries:  <i>none</i> </b></p>
-	<p><b>Fares by Time</b></p>	
+	<p><b>Air Quality Index Alert</b></p>	
 
-	<p><b>!!!! UPDATE !!!!</b></p>
-
-	<p>Write a program that will ask for the time in 24 hour format (e.g. <tt>2034</tt> is 8:34pm) and, prints out:
+	<p>Write a program that asks for the Air Quality Index (AQI) value and prints out:
 	<ul>
-		<li><tt>"Peak Fare (Morning Rush)"</tt> if the time is between 6am (e.g. <tt>600</tt>) and 10am (e.g. <tt>1000</tt>), inclusive,</li>
-		<li><tt>"Peak Fare (Evening Rush)"</tt> if the time is between 4pm (e.g. <tt>1600</tt>) and 8pm (e.g. <tt>2000</tt>), inclusive, and</li>
-		<li><tt>"Non-Peak Fare"</tt> otherwise.</li>
+		<li><tt>"Good Air Quality"</tt> if the AQI is between 0 and 50 (inclusive),</li>
+		<li><tt>"Moderate Air Quality"</tt> if the AQI is between 51 and 100 (inclusive),</li>
+		<li><tt>"Unhealthy for Sensitive Groups" </tt> if the AQI is between 101 and 150 (inclusive),</li>
+		<li><tt>"Unhealthy Air Quality"</tt> if the AQI is between 151 and 200 (inclusive) and</li>
+		<li><tt>"Very Unhealthy Air Quality"</tt>  if the AQI is above 200.</li>
 	</ul>
 		
 	<p>A sample run:
-	<pre><code class="text">Enter time:  1750
-Peak Fare (Evening Rush)</code></pre>
+	<pre><code class="text">Enter AQI value: 125
+Unhealthy for Sensitive Groups</code></pre>
 
-	<p>Note:  "Inclusive" for a range of numbers means that it includes the endpoints.  For example, "between 4 and 8, inclusive" means all values that are greater than or equal to 4 and are also less than or equal to 8.</p>
+	<p>Note:  "inclusive" for a range of numbers means that it includes the endpoints.  For example, "between 4 and 8, inclusive" means all values that are greater than or equal to 4 and are also less than or equal to 8.</p>
 
 </li>
 
