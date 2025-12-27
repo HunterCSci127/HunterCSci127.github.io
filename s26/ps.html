@@ -322,64 +322,27 @@ n 110
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, February 13</b><br>
 	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a> & <a href="lab2.html">Lab 2</a></b><br>
 	<b>Available Libraries:   <i>none</i></b></p>
-	<p><b>Counting by 17's</b></p>	
+	<p><b>Every 3rd Word Challenge</b></p>	
 
-	<p><b>!!!! UPDATE !!!!</b></p>	
 
-	<p>Write a program that prints out the numbers from 850 to 1700, counting by seventeens.</p>
+	<p>Write a program that:
+	<ul>
+		<li>Prompts the user to enter a sentence </li>
+		<li>Splits the input into individual words</li>
+		<li>Prints every 3rd word from the input, starting with the first word (at index 0)</li>
+		<li>Each selected word should be printed on its own line</li>
+	</ul>
+	</p>
 
-	<p>The output of your program should be:
-<pre><code class="shell">850
-867
-884
-901
-918
-935
-952
-969
-986
-1003
-1020
-1037
-1054
-1071
-1088
-1105
-1122
-1139
-1156
-1173
-1190
-1207
-1224
-1241
-1258
-1275
-1292
-1309
-1326
-1343
-1360
-1377
-1394
-1411
-1428
-1445
-1462
-1479
-1496
-1513
-1530
-1547
-1564
-1581
-1598
-1615
-1632
-1649
-1666
-1683
-1700</code></pre>			
+	<p>A sample run of your program should be:
+<pre><code class="shell">Enter a sentence: The crafty clever Python slithers through code hunting for bugs hiding in nested loops
+The
+Python
+code
+bugs
+nested</code></pre>		
+
+<p><i>Hint: Use <code>split()</code> to break the string into a list of words, then use <code>range()</code> with a step parameter to access every 3rd element and the length of the list as stop parameter. See examples of <code class="inline">range(start,stop,step)</code>  in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
 
 <!--program09-->
 <li > 
@@ -409,7 +372,7 @@ For i = 20, 22, ..., 114:
 				<img src="../images/expanding_starburst.png" height=250>
 		
 		
-	<p> <i>Hint:  See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
+	<p> <i>Hint: Use <code>range()</code> with a step parameter to generate every other number. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
 		
 <!-- program10 -->
 <li > 
@@ -442,7 +405,7 @@ Acronym:  CUNY</code></pre>
 Your phrase in capital letters:  HUNTER COLLEGE
 Acronym:  HC</code></pre>
 
-	<p> <i>Hint:  See examples of looping throught strings in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
+	<p> <i>Hint:  See examples of looping through strings in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
 
 
 
