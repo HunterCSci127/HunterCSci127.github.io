@@ -1048,40 +1048,39 @@ AliceSprings   -5.2
 	<b>Available Libraries: pandas</b></p>
 	<p><b>Triple Recipe</b></p>
 
-	<p><b>!!!! UPDATE !!!!</b></p>
 	<p>
-	Using <tt>pandas</tt>, write a program that asks the user for a recipe (in comma separated value (CSV) format), reads in the corresponding CSV file and prints out quantities and ingredients needed to make a triple batch.  Assume that the CSV files have the columns:  <tt>"Amount"</tt>, <tt>"Measurement"</tt>, and <tt>"Ingredient"</tt>.
+	Using <tt>pandas</tt>, write a program that asks the user for a store inventory file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates a 20% discount on all prices, and prints out the inventory with a new column named <tt>Discounted-Price</tt> showing the discounted prices. Assume that the CSV files have the columns: <tt>"Item"</tt>, <tt>"Price"</tt>, and <tt>"Quantity"</tt>.
 
  <p>
- For example if the CSV file, <a href="../files/meringues.csv">meringues.csv</a>, contained:
+ For example if the CSV file, <a href="../files/inventory.csv">inventory.csv</a>, contained:
 
 <p>
 <table border=1>
 <tr>
- <th>Amount</th><th>Measurement</th><th>Ingredient</th>
+ <th>Item</th><th>Price</th><th>Quantity</th>
 </tr>
 <tr>
- <td>150</td><td>grams</td><td>chocolate chips</td>
+ <td>Laptop</td><td>1000.00</td><td>5</td>
 </tr>
 <tr>
- <td>4</td><td>whites of</td><td>eggs</td>
+ <td>Mouse</td><td>25.00</td><td>20</td>
 </tr>
 <tr>
- <td>.25</td><td>teaspoon</td><td>vanilla</td>
+ <td>Keyboard</td><td>75.00</td><td>15</td>
 </tr>
 <tr>
- <td>.25</td><td>teaspoon</td><td>cream of tartar</td>
+ <td>Monitor5</td><td>300.00</td><td>8</td>
 </tr>
 <table>
 
 <p>A sample run of your program would be:
-	<pre><code class="shell">Enter recipe name: meringues.csv
-Double your recipe is:
-   Amount Measurement       Ingredient
-0   450.0       grams  chocolate chips
-1    12.0   whites of             eggs
-2    0.75    teaspoon          vanilla
-3    0.75    teaspoon  cream of tartar
+	<pre><code class="shell">Enter inventory file name: inventory.csv
+Discounted inventory:
+       Item   Price  Quantity  Discounted_Price
+0    Laptop  1000.0         5             800.0
+1     Mouse    25.0        20              20.0
+2  Keyboard    75.0        15              60.0
+3   Monitor   300.0         8             240.0
 </code></pre>
 </li>
 
