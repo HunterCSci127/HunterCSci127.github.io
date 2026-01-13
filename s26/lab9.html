@@ -1,0 +1,413 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 9, CSci 127: Intro to CS, Hunter College</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  border: 2px solid #999999;
+}
+.inline {
+  padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 9<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2026<br><br>
+</h1>
+
+
+
+<br>
+<hr>
+<h3> Learning Objectives:</h3>
+  <ol>
+    <li> Students will write programs that <b>map GIS data using Turtles</b>.
+    <li> Students will write programs that <b>map GIS data using Plotly Express</b>.
+    <li> Students will <b>incorporate data files</b> into their maps and plots.</li>
+    <li> Students will <b>explore finding errors (i.e. debugging)</b>.
+    <li> Students will <b>assess code quality</b> using standard tools (pylint at the command line).</li>
+  </ol>
+
+  <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
+
+<hr>
+
+<br>
+<h2>1. World Maps with Turtles</h2>
+
+<p>We are going to use Python to make maps.  Let's start by mapping cities of the world.
+Locations in the world are usually indicated by their longitude and latitude.
+<ul>
+    <li> <b>Longitude</b> measures the number of degrees east or west of the prime meridian.  When written as a number, it ranges from -180 to +180.
+	<li> <b>Latitude</b> measures the number of degrees north or south of the equator.  When written as a number, it ranges from -90 (the south pole) to +90 (the north pole).
+</ul>
+
+We will use those ranges to be our coordinates:  (-180, -90) to (180,90).  Let's map some cities:
+
+<p> In the trinket below, map the following cities (GIS coordinates are rounded to the nearest whole number):
+<ul>
+	<li> New York City (longitude: -74, latitude: 41),
+	<li> Los Angeles (longitude: -118, latitude: 34),
+	<li> Paris, France (longitude: 2, latitude:49),
+	<li> Tokyo, Japan (longitude: 140, latitude: 35), and
+	<li> Rio de Janeiro, Brazil (longitude: -43, latitude: -23).
+</ul>
+<p>
+<iframe src="https://trinket.io/embed/python/7705126110?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</p>
+
+<br>
+<br>
+<hr>
+<h2>2. Using Plotly Express</h2>
+
+<p>To create interactive maps, we will use the open source Python package, <a href="https://plotly.com/python/plotly-express/">Plotly Express</a> (often called:  "px").  It is a package for creating images from charts to geographic maps quickly, often with just one line of code.  It is part of the  <a href="https://plotly.com/python">Plotly.py</a> package, which allows more customization, but takes many more lines of code. </p>
+
+<p>
+(Plotly Express is installed on the lab machines,  To check to see if your home machine has it, type at the Python prompt:
+<pre><code class="python">import plotly.express as px</code></pre>
+<br>
+If you get an error, go to the terminal, and download it:
+<pre><code class="shell">$ pip install plotly</code></pre>
+and the package will download and install.
+
+<h3>Our First Map</h3>
+
+<p>Our first interactive map will be centered on New York Center.  If the navigation bar is not visible, click on the map below for it to appear.  Our new map will let you zoom in, scroll left or right, as well as hover to get more information:</p>
+
+<iframe src="../files/first_px_map.html" width="600" height="400" frameborder="1" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>To build the map, we are going to use markers which are part of the graphics objects inside plotly.  Here's the code:  
+
+<pre><code class="python">import plotly.graph_objects as go   #Including for markers
+
+#Add a marker for NYC:
+fig = go.Figure(go.Scattermap(lat=[40.7128], lon=[-74.0060],
+                              mode='markers',
+                              marker=go.scattermap.Marker(size=14),
+                              text=['New York City']))
+
+#Zoom and center the map on NYC:
+fig.update_layout(hovermode='closest',
+                  map=dict(center=go.layout.map.Center(lat=40.7,lon=-74),
+                           zoom=8))
+fig.show()
+fig.write_html('first_map.html')
+</code></pre>
+
+Copy this code to IDLE and try running it. Here's a breakdown of the code:
+<ul>
+  <li>To build the map, we used markers which are part of the graphics objects inside plotly. The first line are to import the graphic objects (abbreviated <tt>go</tt>). </li>
+  <li>Our next line sets up a marker for New York City on our figure.  Note that includes the latitude and longitude, as well as the size and text to be displayed when the user hovers over the map.</li>
+  <li>Maps are centered at the origin (lon=0, lat=0), so, the next line adjusts the map center to be on New York City and zooms in the initial focus to 8.</li>
+  <li>The <tt>fig.show()</tt> works similarly to our displaying of images, but instead of a matplotlib window, the map will appear in the browser.</li>
+  <li>The final line saves the HTML code to a file called <tt>first_map.html</tt>.</li>
+</ul>
+</p>
+
+<p>This first map is an example of <a href="https://plotly.com/python/tile-map-layers/">tile web map</a> in Plotly which loads in smaller regions (tiles) which are dynamically loaded when the user changes the zoom or focus.  There are many different  <a href="https://plotly.com/python/tile-map-layers/">tile maps</a> available and we can specify which we would like by modifying using the <tt>layout()</tt> function.</p>
+
+<p>For example, if we add the line:</p>
+
+<pre><code class="python">fig.update_layout(map_style="satellite")</code></pre>
+
+<p>the resulting HTML map is:</p>
+<iframe src="../files/first_map_sat.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<h3>World Map</h3>
+<p></p>
+
+<p>In addition to tile maps, Plotly also has outline maps.  Let's draw the world map that we drew with turtles above.  If the navigation bar is not visible, click on the map below for it to appear.  Our new map will let you zoom in, scroll left or right, as well as hover to get more information:
+</p>
+
+<iframe src="../files/world_map_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>The information for the map is stored in a DataFrame (the one we created as an example in <a href="lab8.html">Lab 8</a>).
+Once we have the data nicely organized in the DataFrame, we can use to make the map:
+
+<pre><code class="python">import plotly.express as px #Import the plotly express package for making maps
+import pandas as pd         #We're using Pandas to organize the data
+  
+data = {
+    'city': ['New York', 'Los Angeles', 'Paris', 'Tokyo', 'Rio de Janeiro'],
+    'latitude': [40.7128, 34.0549, 48.8575,33.8688, -22.9068],
+    'longitude': [-74.0060,-118.2426, 2.3514,139.6500, -43.1729],
+    'population': [8_258_000, 3_821_000, 2_103_000, 14_180_000,6_211_000]
+}
+df = pd.DataFrame(data)
+
+# Create the scatter plot on a map
+fig = px.scatter_geo(df, 
+                     lat="latitude", 
+                     lon="longitude",
+                     size="population",  # Size of the markers based on population
+                     hover_name="city",  # Display city name on hover
+                     projection="natural earth", # Map projection
+                     title="City Populations")
+
+fig.show()  #Shows the map in a browswer
+fig.write_html('world_map_px.html') #
+</code></pre>
+
+<p>
+Save this file and run it.  It will open the map in a browswer as well as 
+create a file called <tt>world_map_px.html</tt>.
+
+
+
+<br>
+<br>
+<hr>
+<h2>3.  Plotting from Files</h2>
+
+<p>We can combine the mapping of Plotly with the tools we have used for CSV files.</p>
+
+<p>
+<iframe width="600" height="400" frameborder="0" src="../files/cunyLocations.html"></iframe>
+
+<p>Let's make an interactive map of the CUNY campuses.  We can download a CSV file from <a href="https://data.ny.gov/Education/City-University-of-New-York-CUNY-University-Campus/i5b5-imzn/data">data.ny.gov</a>:
+<ul>
+	<li> <a href="../files/CUNYcampuses.csv">CUNY Campuses</a>
+</ul>
+(Export as a <b>.csv</b> file and save in the same directory as your programs.) Open the file to make sure you have all the lines (should be 23) and to check if the column headings occur in the first row (they do, so no need to skip rows when reading in the file).
+
+<p>
+Let's use Pandas to read in the file.  We will need to import pandas and Plotly Express:
+<pre><code class="python">import plotly.express as px 
+import pandas as pd         
+</code></pre>  
+
+<p>To read in the CSV file, we'll use pandas' CSV reader.  We'll print out the column names to find which columns has the location information:
+<pre><code class="python">cuny_df = pd.read_csv('CUNYcampuses.csv')
+print(cuny.columns)</code></pre>
+
+which prints:
+<pre><code class="python">Index(['College or Institution Type', 'Campus', 'Campus Website', 'Address',
+  'City', 'State', 'Zip', 'Latitude', 'Longitude', 'Location'],
+ dtype='object')</code></pre>
+
+<p>We need to know the exact names of the columns, so, we can use it for adding our markers to the map.  Note that for this CSV file, all the column names are capitalized, so, we need to capitalize them in the Python code.</p>
+
+<p>Note:  we saved our CSV file to <tt>CUNYcampuses.csv</tt>.  If you saved it to a different name, change the input parameters for <tt>read_csv()</tt> to the name of your file.</p>
+
+
+<p>Next, let's set up our markers, specifying which columns have the latitude and longitude:
+<pre><code class="python">fig = px.scatter_map(cuny_df, lat="Latitude", lon="Longitude", hover_name="Campus", title="CUNY Campuses", zoom=9)
+</code></pre>
+
+<p>and next centering the map on Hunter and adjusting the zoom:</p>
+<p>
+
+<p>Lastly, let's show our map and save our map:
+  <pre><code class="python">fig.show()
+fig.write_html('cunyLocations.html')</code></pre>
+
+<p>
+Your map should load in a browser and is also saved to the file:  <tt>cunyLocations.html</tt>.</p>
+
+<br>
+<hr>
+<h2>4.  Finding Errors</h2>
+
+Finding, and fixing errors, in your programs is a very useful skill.  Let's look at a program with lots of errors and work through how to identify the issues and fix them.  If you cloned the repo above, you will have a copy of <a href="https://github.com/stjohn/csci127/blob/master/errors.py">errors.py</a> on your computer (you can also download from the webpage).  When loaded into IDLE, it does not run:
+<pre><code class="python"># errors.py is based on dateconvert2.py from Chapter 5 of the Zelle textbook
+#     Converts day month and year numbers into two date formats
+
+def main()
+    # get the day month and year
+    day, month year = eval(input("Please enter day, month, and year numbers: ")
+
+    date1 = str(month)"/"+str(day)+"/"+str(year)
+
+    months = ["January", "February", "March", "April",
+              "May", "June", "July", "August",
+              "September", "October", "November", "December"]
+    monthStr = months[-1]
+    date2 = monthStr+" " + str(day) + ",  + str(year)
+
+    print("The date is" date1, "or", date2+".")
+
+main()</code></pre>
+Instead, a dialog box pops up and says "invalid syntax":<br>
+<br>
+<img src="../images/errorWindow1.jpg">
+<br>
+
+<p>The red line indicates where the intepreter has found an error.  Can you tell what it is?  Syntax is another word for grammar, so, it most likely missing `punctuation' or a misspelling of some sort.  We have spelled <tt>def</tt> correctly and have the right number of parenthesis, so, what else is missing?
+
+<p>The answer is after the parenthesis on a function definition, a colon is required.  Add that in:
+<pre><code class="python">    def main():</code></pre>
+and try to run the program again.
+
+<p>Again, we get a dialog box:<br><br>
+<img src="../images/errorWindow2.jpg"><br>
+<br>Instead of the whole line being highlighted, only the word <tt>year</tt> is.  The Python intepreter was not expecting <tt>year</tt> and says there is a grammatical mistake.  Since <tt>year</tt> does not include any grammatical constructs, we need to look <i>before</i> the message to see where the error is.
+Do you see it?
+
+<p>The answer is lists of variables need commas in between them to distinguish one from the next.  Add the comma in:
+<pre><code class="python">    day, month, year = ...</code></pre>
+and try to run the program again.
+
+<p>
+Once more we get a dialog box:<br><br>
+<img src="../images/errorWindow3.jpg"><br>
+
+<p>It has highlighted the first item, <tt>date1</tt> on the line.  That is a name and looks fine.  So, as above, let's look before the highlighted error to see if there's a problem.  The line above it is:
+<pre><code class="python">    day, month, year = eval(input("Please enter day, month, and year numbers: ")</code></pre>
+It did not highlight this line, so, the problem must be at the end.  Do you see it?
+
+<p>The answer is we are missing a closing parenthesis.  The line has two left parenthesis but only one right parenthesis.  Add the right parenthesis in:
+<pre><code class="python">    ... and year numbers: "))</code></pre>
+and try to run the program again.
+
+<p>
+Again, we get a dialog box:<br><br>
+<img src="../images/errorWindow4.jpg"><br>
+
+<p>The intepreter does not understand the second " on the line.  Why?  What is this line doing?  It's constructing a string and storing it in the variable <tt>date1</tt>.  How do you build a string out of smaller strings?
+
+<p>The answer is to put smaller strings together (called concatenation) we need to use the plus sign (+).  The line is missing a plus sign right before the quotes.  Add the plus sign in:
+<pre><code class="python">    date1 = str(month) + "/" ...</code></pre>
+and try to run the program again.
+
+<p>
+Again, we get a dialog box, but this one has a different message:<br><br>
+<img src="../images/errorWindow5.jpg"><br>
+
+<p><tt>EOL</tt> means "End of the line", so, the message says that the end of the line was reached before you finished defining the string.  How can you fix this?
+
+<p>The answer is to end the string, using quotation marks.  The line is missing a quotation mark at the very end.  Add the quotation mark :
+<pre><code class="python">    ...+ ",  + str(year)"</code></pre>
+and try to run the program again.
+
+<p>
+Our familiar dialog box returns:<br><br>
+<img src="../images/errorWindow6.jpg"><br>
+
+<p>We have seen this type of error before.  How do you fix it?
+
+<p>The answer is lists of arguments need commas in between them to distinguish one from the next.  Add the comma in:
+<pre><code class="python">    ... date is", date1 ...</code></pre>
+and try to run the program again.
+
+<p>It runs!  Now let's make sure it works.  Type in at the prompt:
+<pre><code class="python">Please enter day, month, and year numbers: 31, 12, 2014</code></pre>
+Uh oh, instead of output, we get the following messages:
+<pre style = "color: red">
+Traceback (most recent call last):
+  File "/Users/stjohn/public_html/teaching/cmp/cmp230/f14/errors.py", line 18, in <module>
+    main()
+  File "/Users/stjohn/public_html/teaching/cmp/cmp230/f14/errors.py", line 13, in main
+    monthStr = months[month+1]
+IndexError: list index out of range
+</pre>
+<p>When you see messages like this, go to the very last line:
+<pre style = "color: red">
+IndexError: list index out of range
+</pre>
+It says that the index for our list is out of range.  An index is the item of the list that we're accessing.  For example, <tt>months[1]</tt> has index <tt>1</tt> and will give us <tt>February</tt>.  The range of the index for a list is <tt>0</tt> to one less than the length of the list.  In the case of <tt>months</tt>, the range is <tt>[0,1,2,...,11]</tt>.  What went wrong when we entered <tt>12</tt> for our month?
+
+
+<p>The answer is we used <tt>month+1 = 12 + 1 = 13</tt> as the index:
+<pre><code class="python">    monthStr = months[month+1]</code></pre>
+which is out of range.  What do we want instead?  Instead of adding <tt>1</tt>, we should subtract <tt>1</tt>.  Change it in the program:
+<pre><code class="python">    monthStr = months[month-1]</code></pre>
+and try to run the program again.
+
+<p>It still runs, but does it work?  Let's try the same input again:
+<pre><code class="python">Please enter day, month, and year numbers: 31, 12, 2014
+The date is 12/31/14 or December 31,  + str(year).</code></pre>
+
+<p>Something odd is happening at the end-- <tt>str(year)</tt> does not look right.  Let's look at the print statement:
+<pre><code class="python">date2 = monthStr+" " + str(day) + ",  + str(year)"</code></pre>
+The intepreter is treating <tt>",  + str(year)"</tt> as a string (instead of evaluating <tt>str(year)</tt>), so, we must have put the quotation mark in the wrong place before.  Let's move it:
+<pre><code class="python">date2 = monthStr+" " + str(day) + ","  + str(year)</code></pre>
+and try to run the program again.
+
+<p>Success!  But try a few other inputs, just to make sure.  It is always good to try cases that are near the `boundary' of what's allowed, since those are the places we are most likely to make mistakes:
+<pre><code class="python">Please enter day, month, and year numbers: 1,1,2015
+The date is 1/1/2015 or January 1,2015.
+
+Please enter day, month, and year numbers: 1, 2, 2003
+The date is 2/1/03 or February 1,2003.
+
+Please enter day, month, and year numbers: 4, 7, 1976
+The date is 7/4/1976 or July 4,1976.</code></pre>
+
+<p>We have removed all the errors, and the program now runs correctly!
+
+<br><hr>  
+<h2>4.  Pylint from the Command Line</h2>
+    
+<p>While the Python interpreter checks for syntactic errors in the code, it does not check for good programming style.  There are programs that can checking for good style, called static code analyzers (often likened to checking for lint and also called "linters").  Many companies have required style and associated style guides.  A popular one for Python is the standard <a href="https://peps.python.org/pep-0008/"target="_blank">PEP 8</a> style guide.</p>
+
+<p>A popular linter for PEP 8 is <a href="https://pylint.pycqa.org/" target="_blank">Pylint</a> which reports warnings and errors, including message codes, and then scores the code on a scale from 0 to 10.  
+<a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8</a> specifies that variable names should be at least 3 characters long, but it is long standing convention that DataFrames are named <code class=inline>df</code>.  In later courses that lint code, the autograders have included <code class=inline>df</code> in the "good-names" that are accepted.  This can be done locally with <code class=inline>.pylintrc</code> files or using the command-line option <code class=inline>pylint --good-names=df</code>.</p>
+
+<p>Below we show how to run pylint from the command line, but many IDE's have linting available.
+<!--:  for example, see <a href="https://plugins.jetbrains.com/plugin/11084-pylint" target="_blank">pylint in PyCharm</a> and <a href="https://code.visualstudio.com/docs/python/linting" target="_blank">Linting Python in VSCode</a>.--></li>
+  </ul>
+
+<p>
+Let's write the first program (see <a href="ps.html#set1">Program 1</a>) which had you print your name.  Let's create a file with just the line:
+<pre><code class="python">print('Hello, Thomas Hunter!')</code></pre> </p>  
+
+<p>Run your program to make sure it produces the correct output.</p>
+
+<p>Next, let's check how the program does for style by running <code class="inline">pylint</code>:</p>
+
+<p><img src="../files/pylint_1.png" width="600"></p>
+
+<p>We ran the <code class="inline">pylint</code> program from the command line, but you can also invoke it inside most IDE's.  The message says we are missing the documentation string (e.g. the introductory comment) from the start of the file.  </p>
+
+<p>Add a multi-line string comment that includes the information required by the autograder: your name, email, and resources used.  For example, for the student, Thomas Hunter, the opening comment of his first program might be:
+  <pre><code class="python">"""
+Name:  Thomas Hunter
+Email: thomas.hunter1870@hunter.cuny.edu
+Program prints hello to me!
+"""</pre></code>
+</p>
+
+<p>When we run <code class="shell">pylint</code> again,  the message says the code is rated a perfect score (10.0/10).</p>
+
+<p><img src="../files/pylint_2.png" width="600"></p>
+
+
+
+<br><hr>  
+<h2>What's Next?</h2>
+	
+	
+<p>You can start working on this week's programming assignments. The <a href="ps.html">homework page</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+	
+</div>
+</body>
+</html>
+
