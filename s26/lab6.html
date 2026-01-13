@@ -1,0 +1,399 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 6, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+border: 2px solid #999999;
+}
+.inline {
+padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Homework</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 6<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2026<br><br>
+</h1>
+
+<div>
+
+
+<br>
+<hr>
+<h3> Learning Objectives:</h3>
+    <ol>
+    <li> Students will write programs that read and display semi-structured data with <b>pandas</b> and <b>pyplot</b>.
+    <li> Students will write programs that <b>access and generate dataframe series</b> (i.e. columns).
+    <li> Students will write programs that <b>aggregate recurring values with <tt>groupby()</tt></b>.
+    <li> Students will use Unix commands to <b>write shell scripts</b>.
+    <li> Students will <b>create a Github account and access the course repo</b>.
+    </ol>
+
+    <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
+
+<hr>
+
+<br>
+<h2>1. Pandas & Reading Data</h2>
+    
+    <img src="../images/pandas_logo.png" width="50%">
+    
+    <p>
+    To make reading files easier, we will use the Pandas library that lets you read in structured data files very efficiently.  <a href="http://pandas.pydata.org">Pandas</a>, Python Data Analysis Library, is an elegant, open-source package for extracting, manipulating, and analyzing data, especially those stored in 2D arrays (like spreadsheets).  It incorporates most of the Python constructs and libraries that we have seen thus far.
+    
+    <p>(Pandas is installed on all the lab machines.  If you are using your own machine, see the directions at the end of <a href="lab1.html">Lab 1</a> for installing packages for Python.)
+
+    <p>To use pandas in a program, you need to import the library, just as we did when using turtles.  For our first program, we will import both pandas as well as library that's useful for visualizing data, pyplot.  Open up a new file, and add the lines:</p>
+
+<pre><code class="python">import matplotlib.pyplot as plt
+import pandas as pd</code></pre>
+
+    <p>  We used <tt>matplotlib</tt> in the <a href="lab3.html">Lab 3</a> and <a href="lab4.html">Lab 4</a> for plotting.  The <tt>as plt</tt> allows us to use the plotting commands without having to write <tt>matplotlib.pyplot</tt> everytime, instead we just write <tt>plt</tt>.  Similarly, The <tt>as pd</tt> allows us to use pandas commands without writing out <tt>pandas</tt> everytime-- we just write <tt>pd</tt>.</p>
+
+
+
+    <p>
+    Next, save the <a href="../files/nycHistPop.csv">NYC historical population data</a> to the same directory as your program.
+    This is a "<i>comma separated values</i>" file-- which is a plain text file containing spreadsheet data, with commas separating the different columns (thus, the name).
+    Here's the first 10 lines of the file:
+<pre><code class="text">Source:  https://en.wikipedia.org/wiki/Demographics_of_New_York_City,,,,,,
+* All population figures are consistent with present-day boundaries.,,,,,,
+First census after the consolidation of the five boroughs,,,,,,
+,,,,,,
+,,,,,,
+Year,Manhattan,Brooklyn,Queens,Bronx,Staten Island,Total
+1698,4937,2017,,,727,7681
+1771,21863,3623,,,2847,28423
+1790,33131,4549,6159,1781,3827,49447
+1800,60515,5740,6642,1755,4563,79215</code></pre>
+    Note that it has 5 extra lines at the top before the column names occur.  The pandas function for reading in CSV files is <tt>read_csv()</tt>.  It has an option to skip rows which we will use here:
+    
+    <pre><code class="python">pop = pd.read_csv('nycHistPop.csv',skiprows=5)</code></pre>
+
+    <p>
+    In Pandas, the basic structure is a <tt>DataFrame</tt>
+    which stored data in rectangular grids.
+    Let's use this to visualize the change in New York City's population.    
+
+    <p>
+    Before going on, let's print out the variable <tt>pop</tt>.  It is a dataframe, described in the reading above:
+    <pre><code class="python">print(pop)</code></pre>
+    
+    The last line of our first pandas program is:
+    <pre><code class="python">pop.plot(x="Year")</code></pre>
+    
+    which makes a graphical display of all of the data series in the variable <tt>pop</tt> with the series corresponding to the column "Year" as the x-axis.  Your output should look something like:
+    <p>
+    <img src="../images/nycHist.png" height = 400>
+    
+    <p>
+    To recap:  our program is:
+    <pre><code class="python">import matplotlib.pyplot as plt
+
+import pandas as pd
+pop = pd.read_csv('nycHistPop.csv',skiprows=5)
+pop.plot(x="Year")
+
+plt.show()</code></pre>
+    
+    
+    which did the following:
+    <ul>
+    <li> Imported the pandas library that contains structures and functions for organizing and visualizing data.  We also imported the pyplot library which pandas uses to create figures.
+    <li> It read in a CSV file, containing NYC population historical data.
+    <li> It displayed the data as a visual plot of years versus borough populations.
+    <li> The last line shows the figure you created in a separate graphics window.
+    </ul>
+    
+    <p>There are useful built-in statistics functions for the dataframes in pandas.  For example, if you would like to know the maximum value for the series "Bronx", you apply the <tt>max()</tt> function to that series:</p>
+    
+    <pre><code class="python">print("The largest number living in the Bronx is", pop["Bronx"].max())</code></pre>
+    
+    <p>Similarly the average (mean) population for Queens can be computed:</p>
+    <pre><code class="python">print("The average number living in the Queens is", pop["Queens"].mean())</code></pre>
+    
+    
+    <h3>Challenges</h3>
+    
+    <ul>
+    <li> What happens if you leave off the <tt>x = "Year"</tt>?  Why?
+    <li> What happens if you add in <tt>x = "Year", y = "Bronx"</tt>?
+    <li> What do the series functions:  <tt>min()</tt>, <tt>median()</tt>, <tt>std()</tt>, and
+    <tt>count()</tt> do?
+    </ul>
+    
+<br>
+<hr>
+    <h2>2.  Accessing & Manipulating Columns</h2>
+    
+    <p>
+    Each column in the original spreadsheet is a column, or <tt>series</tt>.  We can look at the column for the Bronx with:
+    
+    <pre><code class="python">print(pop['Bronx'])</code></pre>
+    
+    How would you look at the one for Brooklyn?
+    
+    <p>
+    A nice thing about series is that you can do basic arithmetic with them.  For example,
+    <pre><code class="python">print(pop['Bronx']*2)</code></pre>
+    prints out double the values in the column.
+    
+    <p>You can also use multiple columns in a calculation:
+    <pre><code class="python">print(pop['Bronx']/pop['Total'])</code></pre>
+    prints out the fraction of the total population that lives in the Bronx.
+    <p>
+    We can save that series by creating a new column for it:
+    <pre><code class="python">pop['Fraction'] = pop['Bronx']/pop['Total']</code></pre>
+    and then can use it to create a new graph:
+    <pre><code class="python">pop.plot(x = 'Year', y = 'Fraction')</code></pre>
+    We can save it to a file, by storing the current figure (via "get current figure" or <tt>gcf()</tt> function and then saving it:
+    <pre><code class="python">fig = plt.gcf()
+fig.savefig('fractionBX.png')</code></pre>
+    
+    shown in the following plot:
+    <p>
+    <img src="../images/bronxFraction.png" height = 400>
+    
+    <p>
+    Putting this altogether, we have a program:
+    
+<pre><code class="python">#Libraries for plotting and data processing:
+import matplotlib.pyplot as plt
+import pandas as pd
+
+#Open the CSV file and store in pop
+pop = pd.read_csv('nycHistPop.csv',skiprows=5)
+
+#Compute the fraction of the population in the Bronx, and save as new column:
+pop['Fraction'] = pop['Bronx']/pop['Total']
+
+#Create a plot of year versus fraction of pop. in Bronx (with labels):
+pop.plot(x = 'Year', y = 'Fraction')
+
+#Save to the file:  fractionBX.png
+fig = plt.gcf()
+fig.savefig('fractionBX.png')
+</code></pre>
+    
+    <p>
+    How can you modify the program to let the user specify the borough to compute the fraction of the population?</p>
+
+<hr>
+<h2>3. Aggregating Columns</h2>
+    
+    <p> Sometimes you have <b> recurring values in a column</b> and you want to examine the data for a particular value. For example, given the dataset containing weather observation in Australia, <b> find the average rainfall at each location. </b>
+    <p> <img src="../images/Rain.png" height = 250>
+    <p> You may <a href="../files/AustraliaRain.csv" target="blank">download the dataset</a> to test this program locally.
+    
+    
+    <p>The pandas function <b>groupby()</b> does exactly that: groups the rows by values in a given column and then aggregates the corresponding values for the other columns via some specified function (e.g. min, max, avg, ..)
+    <br>Thus, to find the average rainfall at each location, we want to group 'Location', look at 'Rainfall' and take the average:
+<pre><code class="python">#Import libraries.
+import pandas as pd
+
+#Read in the csv file.
+rain = pd.read_csv('AustraliaRain.csv')
+
+#Group the data by location
+groupedData = rain.groupby('Location')
+
+#Print the average rainfall
+print(groupedData['Rainfall'].mean())</code></pre>
+    
+    <p> This will print a list of average rainfall measurements at each location:
+    <p> <img src="../images/RainOutput.png" height = 175>
+    <p> <b>Note:</b> you could achieve the above in a single line as follows (it is equivalent to the above):
+<pre><code class="python">#Group the data by location and print the average rainfall at each location.
+print(rain.groupby('Location')['Rainfall'].mean())</code></pre>
+    
+    <p> Finally, to retrieve the data for a particular location, for example "Albury", we can use groupby() along with <b>get_group()</b>.
+<pre><code class="python">#Group the data by location but look specifically at group 'Albury' (one of the repeated values in the 'Location' column).
+albury = rain.groupby('Location').get_group('Albury')
+
+#Print the average rainfall for Albury.
+print(albury['Rainfall'].mean())</code></pre>
+    <p>This will output a single number: the average rainfall in 'Albury'
+    <p><img src="../images/singleAvgOutput.png" height = 35>
+    </div>
+    
+    <div>
+    <h3>Steps on using groupby and get_group in pandas</h3>
+    <p>Illustrate with <a href="../files/student_info.csv" target="blank">student_info.csv</a>, which stores information for students. Columns (attributes to describe a student) are Name, Age, Gender, Grade Level (freshmen, sophomore, junior, and senior), and Score. 
+    <ol>
+    <li> Use read_csv method of pandas to read a csv file, put the result in a data frame. 
+        <pre><code class="python">students = pd.read_csv('student_info.csv')</code></pre>
+    
+    <li> Examine file structure of csv file to be analysized, choose a column to be grouped using groupby method of data frame of pandas. Suppose you choose to group by Grade Level, then we have four groups: freshmen, sophomore, junior, and senior.
+    
+    <p>Note that python is a case-sensitive language. Since the column name is Grade Level, you cannot write it as grade level.</p>
+    
+    <pre><code class="python">groupedData = students.groupby('Grade Level')</code></pre>
+    
+    <li> You may calculate aggregate functions, say, max, min, mean (average), standard deviation, median of a numerical attribute -- for example, age, score -- of the grouped data. In the above example, you may choose to calcuate the average of scores in each group.
+    
+    <pre><code class="python">print(groupedData['Score'].mean())</code></pre>
+    
+    <li> You can also pick up a specific group using get_group method on grouped data, and apply aggregate functions on corresponding column (attribute) of that group. 
+<pre><code class="python">#pick up the group of senior students
+seniorStudents = groupedData.get_group('Senior')
+
+#find out the maximum score of senior students 
+max = seniorStudents['Score'].max()</code></pre>
+    </ol>
+
+    <p>To check your understanding, modify the program above to group by age and by gender.</p>
+
+<hr>
+<h2>4. More on the Command Line Interface</h2>
+    
+    <p>You can write programs in the Unix shell scripting language.  Often called <i>scripts</i>, they are typically used for tying together input and output from different programs.
+    
+    <p> Let's look at a sample script (from <a href="https://www.panix.com/~elflord/unix/bash-tute.html">elf lord's tutorials on linux</a>):
+
+<pre><code class="shell">#!/bin/bash
+echo "hello, $USER. I wish to list some files of yours"
+echo "listing files in the current directory, $PWD"
+ls  #list files</code></pre>
+    
+    Looking at this script line-by-line:
+    <ul>
+    <li> It's standard to include as the first line of your scripts that specifies the program that's running (this is often called the "shebang" line).  
+        
+    <pre><code class="shell">#!/bin/bash</code></pre>
+        
+    There's different variants of shell scripts.  We're using the default login shell for Ubuntu (the type of Unix running on the lab laptops) called <tt>bash</tt>, so, we start our script by specifying that we want to use the <tt>bash</tt> shell to evaluate it.  Side note:  In Ubuntu 6.10, dash replaced bash as the default system shell, but bash remained the default login shell and is one of the most popular options.</p> 
+        
+    
+    <li> The command <tt>echo</tt> is similar to <tt>print()</tt> in Python.  It
+        writes a message to the terminal:
+<pre><code class="shell">echo "hello, $USER. I wish to list some files of yours"
+echo "listing files in the current directory, $PWD"</code></pre>
+    
+        <p> <tt>$USER</tt> is a built-in variable that store the name of the current user.  Similarly, the built-in variable, <tt>$PWD</tt>, stores the current directory (folder) that you are in.
+    
+    <li> Lastly, our scripts can include any of the Unix commands that you have already learned.  The last line of this file lists the files in the current directory using the <tt>ls</tt> command, followed by a comment:
+    
+        <pre><code class="shell">ls  #list files</code></pre>
+    </ul>
+    
+    <p>
+    In the shell, the different types of quotes have similar, but different, <a href="https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html">meanings</a>.  We'll use the double quotes since strings in double quotes will have special characters (like <tt>\n</tt> for newline) interpreted as in Python and C++.
+    
+<h4>Running Shell Commands on Your Computer</h4>
+
+    <p>You can run our shell scripts directly in terminal windows on computers that run Unix.Both the computers in the lab and modern Apple computers run versions of the Unix operating system and have a terminal interface. </p>
+
+    <p>To launch a terminal interface:</p>
+    <ul>
+    <li><b>Lab Computers:</b> Click the icon in the menu bar that looks like a small computer.</li>
+    <li><b>Apple Computers:</b> If there is not a computer icon in your menu bar, click LaunchPad (usually the second icon in the menu bar).  At the top of the screen, a magnifier icon and grayed search word box will appear.  Enter: <tt>Terminal</tt> in the box. Click the Terminal icon when it pops up.</li>
+    </ul>
+
+    This is how you run bash commands in Mac.
+    
+
+    
+    You now can enter bash commands as follows. Note that <tt>$</tt> is the prompt.  The prompt is longer on some computers, including the name of computer or user, or other information, for example <tt>csguest $</tt>.  After every command, you need to also type return/enter, and you will get feedback after commands. For example, 
+    after bash prompt, enter
+    
+    <pre><code class="shell">$ echo "hello, $USER. I wish to list some files of yours"</code></pre>
+    
+    Since my user name is <tt>laptopuser</tt>, the feedback is
+    <pre><code class="shell">hello, laptopuser. I wish to list some files of yours</code></pre>
+    
+    When you finish running bash commands, enter exit with return key.
+    
+    The following is a complete example of running bash.
+    
+<pre><code class="shell">$ echo "hello, $USER. I wish to list some files of yours"
+hello, laptopuser. I wish to list some files of yours
+$ echo "listing files in the current directory, $PWD"
+listing files in the current directory, /Users/laptopuser/Downloads
+$ exit
+exit</code></pre>
+    
+    <p>To run bash scripts, which may have several bash commands, you need to edit a bash script file in plain text editor like notepad or gEdit. Save the file. Then make this file runnable by using <b>chmod +x <tt>script_file_name</tt></b>, then run <tt>script_file_name</tt> in command line. See more details in the following example.
+    
+    <p> Use any text editor that will allow you to save a file with any or no extension such as <tt>gEdit</tt> (included with some Linux distributions), <tt>textEdit</tt>  (included with MacOS) or <tt>notepad</tt> (included with Windows) to modify the above script to say "Hello, World".  Note that we're leaving off the "!" since it is a bit confusing to print due to its special meaning in the shell (it lists the history, or previous commands, you have typed; for example: <tt>!!</tt> gives all commands in the history, <tt>!cd</tt> will repeat the most recent command you gave that starts with <tt>cd</tt>).  Include in the second and third lines your name and email for the grading scripts (the first line should be the <tt>#!/bin/bash</tt>. Save your file as <tt>helloScript</tt>
+    
+    <p>Next, we'll change the permissions on the file, so that we can run it directly, by just typing its name. In the terminal, move to the directory where you saved your script and type:
+    <pre><code class="shell">$ chmod +x helloScript</code></pre>
+    (changes the "mode" of the file <tt>helloScript</tt> to be executable-- if you name it something else, replace the name in <tt>chmod</tt> command above).
+    
+    <li> To run your first shell script, you can now type its name at the terminal:
+        <pre><code class="shell">$ ./helloScript</code></pre>
+    
+    
+    <p>Make sure to include a comment on the <b>second line</b> with your name (the first line has the <tt>#!</tt> line).  Comments in shell are, like Python, preceded by a <tt>#</tt>.
+    
+    
+<hr> 
+<h2>5. GitHub</h2>
+    
+<p>
+    <a href="https://github.com"><img height=150 src="../images/Octocat.png"></a>
+</p>
+
+    <p>
+    <a href="https://github.com">github</a> is the standard way to share and collaborate on code.  It functions much as Google docs does for documents.
+    We will use it as a place (<b>repository</b> or "repo") for programs and lab exercises.
+    
+    <ol>
+    <li> If you do not already have an account, create an account on <a href="https://github.com">github</a>.  <tt>github</tt> will be used in future classes (and by employers), so, choose an account name that you can use for years to come.
+    <li> Work through the <a href="http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1">github for beginners</a> tutorial.
+    <li> Work through the
+        <a href="https://guides.github.com/activities/hello-world/">github Hello World</a> tutorial.
+    </ol>
+    
+    <p> Sample programs are available at the class
+    repository (repo):
+    <blockquote>
+    <a href="https://github.com/HunterCSci127/CSci127">
+    https://github.com/HunterCSci127/CSci127</a>
+    </blockquote>
+
+    
+    
+      
+
+
+
+
+<br><hr>  
+<h2>What's Next?</h2>
+	
+	
+<p>You can start working on this week's programming assignments. The <a href="ps.html">homework page</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+	
+</div>
+
+
+</div>
