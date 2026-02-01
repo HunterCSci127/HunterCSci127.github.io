@@ -1192,56 +1192,77 @@ print(red_count)
 
 	<p>will output<br><code>106</code></p>
 
- <p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
+ <p><b>Note:</b> The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see Lab 7).</p>
+<p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
 </li>
 
 <hr> 
 
 <!--program33-->
 <li>
-	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 26</b><br>
-	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a>, <a href="lab4.html">Lab 4</a> and <a href="lab7.html">Lab 7</a></b><br>
-	<b>Available Libraries:  <i>none</i></b></p>
-	<p><b>Letter to GPA</b></p>
+<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, March 26</b><br>
+	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
+	<b>Available Libraries: pandas</b></p>
 
-	<p>Write the function <tt>letter_to_gpa()</tt> which takes a string representing a letter grade and returns the corresponding GPA value as a float.</p>  
-	<ol>
-	<li>If the user provides a string that does not correspond to a valid letter grade, your function should return: -1.0</li>
-	<li>Valid letter grades are: A, A-, B+, B, B-, C+, C, C-, D+, D, F (case-insensitive).</li>
-	<li>Use the following GPA scale:
-		<pre>A: 4.0
-A-: 3.7
-B+: 3.3
-B: 3.0
-B-: 2.7
-C+: 2.3
-C: 2.0
-D: 1.0
-F: 0.0</pre>
-	</li>
-</ol>
+	<p><b>Library Checkout Analysis</b></p>
+
+	<p>The <a href="https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data">Seattle Public Library</a> provides data on item checkouts. Each row in the dataset represents checkout activity for a specific title during a given month. The dataset includes information about what was checked out (books, movies, music, etc.), how it was checked out (physical vs. digital), who published it, and when.</p>
+
+	<p>Adapt the parking ticket program from <a href="lab7.html">Lab 7</a> to analyze library checkout data. Your program should:
 	</p>
+	<ul>
+		<li>Ask the user for the name of the input CSV file.</li>
+		<li>Ask the user for the attribute (column name) to analyze.</li>
+		<li>Display the top 5 values for that attribute.</li>
+	</ul>
 
-	<p>A sample call of the function:
-		<pre><code class="python">print("Converting A- to", letter_to_gpa("A-"))</code></pre>	
-	<p>would print:</p>
-	<pre><code class="text">Converting A- to 3.7</code></pre>
+	<p><b>Valid attributes</b> the user may enter:</p>
+	<ul>
+		<li><code>usageclass</code> - Whether item is Physical or Digital</li>
+		<li><code>checkouttype</code> - The system/vendor used for checkout</li>
+		<li><code>materialtype</code> - Type of item (book, song, movie, etc.)</li>
+		<li><code>publisher</code> - Publisher of the item</li>
+		<li><code>checkoutyear</code> - Year of checkout</li>
+	</ul>
+	<p>Use this sample dataset for testing: <a href="../files/seattle_library.csv">seattle_library.csv</a></p>
+
+	<p>A sample run:</p>
+	<pre><code class="shell">Enter CSV file name: seattle_library.csv
+Enter attribute: materialtype
+The top 5 values for materialtype are:
+materialtype
+BOOK         427
+EBOOK        200
+SOUNDDISC     99
+VIDEODISC     88
+SONG          79
+Name: count, dtype: int64
+</code></pre>
+
+	<p>And another run:</p>
+	<pre><code class="shell">Enter CSV file name: seattle_library.csv
+Enter attribute: usageclass
+The top 5 values for usageclass are:
+usageclass
+Physical    621
+Digital     379
+Name: count, dtype: int64
+</code></pre>
+
+	<p>And one more run:</p>
+	<pre><code class="shell">Enter CSV file name: seattle_library.csv
+TEnter attribute: checkoutyear
+The top 5 values for checkoutyear are:
+checkoutyear
+2016    989
+2024     10
+2025      1
+Name: count, dtype: int64
+</code></pre>
+
 	
-<p>And another example call of the function:
-	<pre><code class="python">grade = "B+"
-print("Converting", grade, "to", letter_to_gpa(grade))</code></pre>	
-	<p>would print:</p>
-	<pre><code class="text">Converting B+ to 3.3</code></pre>
-	
-	
-
-	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
-
-	<p><i>Hint:  See Lecture 8 for related programs.</i></p>
-
-
-
 </li>
+
 
 <hr> 
 
@@ -1289,65 +1310,57 @@ For each color and distance in the zipped lists:
 </li>
 <hr> 
 
-More coming soon...
-
-<template>
 
 <!--program35-->
 <li>
-<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, March 30</b><br>
-	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
-	<b>Available Libraries: pandas</b></p>
-	<p><b>Ticket Binning</b></p>
+	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 30</b><br>
+	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a>, <a href="lab4.html">Lab 4</a>, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a></b><br>
+	<b>Available Libraries:  <i>none</i></b></p>
+	<p><b>Letter to GPA</b></p>
 
-		<p><b>!!!! UPDATE !!!!  Move earlier</b></p>
-	<p> Modify the parking ticket program from <a href="lab7.html">Lab 7</a> to do the following:
-	</p><ul>
-		<li> Ask the user for the name of the input file.
-		</li><li> Ask the user for the attribute (column header) to search by.
-	</li></ul>
+	<p>Write the function <tt>letter_to_gpa()</tt> which takes a string representing a letter grade and returns the corresponding GPA value as a float.</p>  
+	<ol>
+	<li>If the user provides a string that does not correspond to a valid letter grade, your function should return: -1.0</li>
+	<li>Valid letter grades are: A, A-, B+, B, B-, C+, C, C-, D+, D, F (<b>case-insensitive</b>).</li>
+	<li>Use the following GPA scale:
+		<pre>A: 4.0
+A-: 3.7
+B+: 3.3
+B: 3.0
+B-: 2.7
+C+: 2.3
+C: 2.0
+D: 1.0
+F: 0.0</pre>
+	</li>
+</ol>
+	</p>
 
-	<p>A sample run:
-	</p><pre><code class="shell">Enter file name:  Parking_Violations_Jan_2016.csv
-Enter attribute:  Vehicle Color
-The 10 worst offenders are:
-WHITE    2801
-WH       2695
-GY       1420
-BK       1153
-BLACK    1054
-BROWN     727
-BL        656
-GREY      574
-SILVE     450
-BLUE      412
-Name: Vehicle Color, dtype: int64
-</code></pre>
+	<p>A sample call of the function:
+		<pre><code class="python">print("Converting A- to", letter_to_gpa("A-"))</code></pre>	
+	<p>would print:</p>
+	<pre><code class="text">Converting A- to 3.7</code></pre>
+	
+<p>And another example call of the function:
+	<pre><code class="python">grade = "B+"
+print("Converting", grade, "to", letter_to_gpa(grade))</code></pre>	
+	<p>would print:</p>
+	<pre><code class="text">Converting B+ to 3.3</code></pre>
+	
+	
 
-	<p>And another run:
-</p><pre><code class="shell">Enter file name:  Parking_Violations_Jan_2016.csv
-Enter attribute:  Vehicle Year
-The 10 worst offenders are:
-0       3927
-2015    1265
-2014    1143
-2013    1105
-2012     772
-2011     666
-2007     643
-2008     559
-2010     509
-2006     499
-Name: Vehicle Year, dtype: int64
-</code></pre>
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
+
+	<p><i>Hint:  See Lecture 8 for related programs.</i></p>
+
+
+
 </li>
 
 
 
 <hr>
 <a id="set8"></a>
-
-<hr> 
 
 <!--program36-->
 <li>
@@ -1390,6 +1403,10 @@ Name: Vehicle Year, dtype: int64
 </li>
 
 <hr> 
+
+More coming soon...
+
+<template>
 
 <!--program37-->
 <li>
