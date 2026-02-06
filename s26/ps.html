@@ -1691,9 +1691,7 @@ draw_tree(tess,100,"indigo","black")
 
 <hr> 
 
-More coming soon...
 
-<template>
 
 <!--program44-->
 <li>
@@ -1701,30 +1699,32 @@ More coming soon...
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <br><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: pandas, plotly</b></p>
-	<p><b>Collisions Map</b></p>	
+	<p><b>Queens Library Branches Map</b></p>	
 
-	<p><b>!!!! UPDATE !!!!</b></p>
 
+	<p>New York City Open Data makes data for the <a href="https://data.cityofnewyork.us/Education/Queens-Library-Branches/kh3d-xhq7/about_data">Queens Library branches</a> publicly available. A sample file, <a href="../files/Queens_Library_Branches.csv"><tt>Queens_Library_Branches.csv</tt></a> was downloaded and can be used to test your program.</p>
 	<p>
-	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.  When the user hovers over the marker, the time of the accident should appear in the pop-up box.
+	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the Queens Library branches from the input file.  When the user hovers over the marker, the Neighborhood Tabulation Area (NTA) should appear in the pop-up box.
 
 	<p>A sample run:
-<pre><code class="text">Enter CSV file name:  collisions.csv
-Enter output file:  myMap.html</code></pre>
+<pre><code class="text">Enter CSV file name:  Queens_Library_Branches.csv
+Enter output file:  libraryMap.html</code></pre>
 	<p>which would produce the HTML file:
 
-	<p><iframe src="../files/th_px.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+	<p><iframe src="../files/libraryMap.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-	<p>This assignment uses collision data collected and made publicly by New York City Open Data. A sample file, <a href="../files/collisionsThHunterBday.csv">collisionsThHunterBday.csv</a> from 18 October 2016 was downloaded and can be used to test your program.</p>
 
-	<p> When running your program locally, you need to check that the "LATITUDE" and "LONGITUDE" values are non-empty.  You can drop any row where there's empty values with:
+	<p> When running your program locally, you need to check that the "Latitude" and "Longitude" values are non-empty.  You can drop any row where there's empty values with:
 		
 		<pre><code class="python">df_cleaned = df.dropna()</code></pre>
 
-	<p><i>Note:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous maps from the lab, where the data was stored with "Latitude" and "Longitude"). </i>
 
 </li>
 <hr> 
+
+More coming soon...
+
+<template>
 
 
 <!--program45-->
