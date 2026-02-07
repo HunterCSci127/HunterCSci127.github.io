@@ -1722,10 +1722,6 @@ Enter output file:  libraryMap.html</code></pre>
 </li>
 <hr> 
 
-More coming soon...
-
-<template>
-
 
 <!--program45-->
 <li>
@@ -1773,7 +1769,7 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 <hr>
 <a id="set10"></a>
 
-<hr> 
+
 
 <!--program46-->
 <li>
@@ -1800,19 +1796,40 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 		<b>Available Libraries:  <i>none</i></b></p>
 		<p><b>Validating Input</b></p>	
 
-	<p><b>!!!! UPDATE !!!!</b></p>
+<p>
+Write a program that repeatedly asks the user to enter a <b>valid username</b>.
+</p>
 
-		<p> Write a program that asks the user to enter a string. If the user enters an empty string, your program should continue prompting the user for a new string until they enter a non-empty string with 10 characters or less. Your program should then print out the string entered.
+<p>
+A username is considered invalid if:
+</p>
 
-		<p> A sample run of your program:
-<pre><code class="text">Enter a string with 1 to 10 characters:
-That string is the wrong length.  Try again.
-Enter a string with 1 to 10 characters: Mihi cura futuri
-That string is the wrong length.  Try again.
-Enter a string with 1 to 10 characters: Hunter
-You entered: Hunter
-</code>
+<ul>
+  <li>it has fewer than 4 characters, or</li>
+  <li>it exactly matches one of the following reserved words:
+    <tt>admin</tt>, <tt>root</tt>, or <tt>guest</tt></li>
+</ul>
+
+<p>
+If the user enters an invalid username, your program should display an error message
+and prompt the user again.
+<br>Once the user enters a valid username, your program should print the accepted username
+and end.
+</p>
+
+<h3>Sample Run</h3>
+
+<pre>
+Enter a username (at least 4 characters): bob
+Invalid username. Please try again.
+Enter a username (at least 4 characters): admin
+Invalid username. Please try again.
+Enter a username (at least 4 characters): guest
+Invalid username. Please try again.
+Enter a username (at least 4 characters): falco42
+Username accepted: falco42
 </pre>
+
 </li>
 <hr> 
 
