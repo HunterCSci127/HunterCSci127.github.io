@@ -424,16 +424,99 @@ which created a new directory, changed the current directory to it, and shows us
     <pre><code class="shell">$ cd ../</code></pre>
 which says go to the parent of my current location.  It's often called a <i>relative path</i> since your destination is relative to your current location.  Typing
 <pre><code class="shell">$ pwd</code></pre>
-will show the current working directory.  Using <tt>cd ../</tt> and <tt>pwd</tt>, answer the following:
+will show the current working directory.  Using <code class="inline">cd ../</code> and <code class="inline">pwd</code>, answer the following:
 <ul>
     <li> What is the parent of your current directory?
     <li> Change to the parent directory.  What is the parent of your current directory?
     <li> How many times can your repeat this?
-    <li> Which directory has no parent (i.e. "ancestor" to all the other directories?)?
+    <li> Which directory has no parent (i.e. "ancestor" to all the other directories)?
 </ul>
 
 
-<p>This simple <tt>cd ../</tt> gives a powerful way to navigate the directories (especially when we are working on a server without a graphical user interface or automating a process).  Next lab, we will introduce <i>absolute paths</i> that change directories to the same place each time (independent of your current working directory).
+<p>This simple <code class="inline">cd ../</code> gives a powerful way to navigate the directories (especially when we are working on a server without a graphical user interface or automating a process).  Next lab, we will introduce <i>absolute paths</i> that change directories to the same place each time (independent of your current working directory).
+
+<p>A useful shell command for creating files is:  <code class="inline">touch</code>.  The <code class="inline">touch</code> command updates the access and modification time of a file to the current time.  If the file doesn't exist, it makes an empty file with that name.  Once created, the file will appear in folders and can be edited like a normal file.  We will use it in a quick review of the shell commands we have learned so far:
+<ul>
+    <li><code class="inline">cd</code> (change directories),</li>
+    <li><code class="inline">cp</code> (copy),</li>
+    <li><code class="inline">ls</code> (list contents of directory), </li>
+    <li><code class="inline">ls -l</code> (long version of directory listing), </li>
+    <li><code class="inline">mkdir</code> (make directory),</li>
+    <li><code class="inline">mv</code> (move), and </li>
+    <li><code class="inline">pwd</code> (path to working directory). </li>
+</ul>
+
+As an example, say we have a directory (folder) called <tt>sandbox</tt> in the <tt>tmp</tt> folder and it's our current working directory (e.g. that's where we currently are in the file structure):
+
+<pre><code class="shell">$ pwd
+/tmp/sandbox
+</code></pre>
+
+We can look to see what's in <tt>sandbox</tt> using the <code class="inline">ls -l</code> that gives 
+
+<pre><code class="shell">$ ls -l
+total 8
+drwxr-xr-x  2 stjohn  wheel   64 Mar 15 17:35 code_reviews
+drwxr-xr-x  4 stjohn  wheel  128 Mar 15 17:45 hw
+-rw-r--r--  1 stjohn  wheel   16 Mar 15 17:44 notes
+</code></pre>
+The first line contains the total space being used by this directory, and the next three lines give us information about files in our directory.  Note that the lines for <tt>code_reviews</tt> and <tt>hw</tt> start with <code class="inline">d</code> which means they are also directories.  Since <tt>notes</tt> does not have a <code class="inline">d</code> at the beginning of its description, it is a regular file. 
+</p>
+<p>We can quickly create a new file using <code class="inline">touch</code>.  For example:</p>
+<pre><code class="shell">$ touch info.txt
+$ ls -l
+total 8
+drwxr-xr-x  2 stjohn  wheel   64 Mar 15 17:35 code_reviews
+drwxr-xr-x  4 stjohn  wheel  128 Mar 15 17:45 hw
+-rw-r--r--  1 stjohn  wheel    0 Mar 15 17:52 info.txt
+-rw-r--r--  1 stjohn  wheel   16 Mar 15 17:44 notes
+</code></pre>
+which creates a new file <code class="inline">info.txt</code> that has size 0 in our current working directory.  </p>
+
+<p><code class="inline">info.txt</code> is a regular file and we can use the shell commands we learned before with it:</p>
+<pre><code class="shell">$ mv info.txt hw
+$ ls -l
+total 8
+drwxr-xr-x  2 stjohn  wheel   64 Mar 15 17:35 code_reviews
+drwxr-xr-x  5 stjohn  wheel  160 Mar 15 17:55 hw
+-rw-r--r--  1 stjohn  wheel   16 Mar 15 17:44 notes
+</code></pre>
+which moves <code class="inline">info.txt</code> from our current directory to the <code class="inline">hw</code> directory:
+<pre><code class="shell">$ cd hw
+$ ls -l
+total 0
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 17:42 hw1.py
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 17:42 hw2.py
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 17:52 info.txt
+</code></pre>
+
+<p>Now that we're in the <code class="inline">hw</code> directory, we can use some of our other shell commands to make copies of files:</p>
+<pre><code class="shell">$ cp hw2.py hw3.py
+$ ls -l
+total 0
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 17:42 hw1.py
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 17:42 hw2.py
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 18:00 hw3.py
+-rw-r--r--  1 stjohn  wheel  0 Mar 15 17:52 info.txt
+</code></pre>
+and make a new directory:
+<pre><code class="shell">$ mkdir finished
+$ ls -l
+total 0
+drwxr-xr-x  2 stjohn  wheel  64 Mar 15 18:02 finished
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 17:42 hw1.py
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 17:42 hw2.py
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 18:00 hw3.py
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 17:52 info.txt
+$ mv hw1.py finished
+$ ls -l
+total 0
+drwxr-xr-x  3 stjohn  wheel  96 Mar 15 18:02 finished
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 17:42 hw2.py
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 18:00 hw3.py
+-rw-r--r--  1 stjohn  wheel   0 Mar 15 17:52 info.txt
+</code></pre>
+which moves <code class="inline">hw1.py</code> to the new directory we created.
 
 
 
