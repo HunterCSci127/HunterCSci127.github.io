@@ -1048,41 +1048,42 @@ AliceSprings   -5.2
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, March 18</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab6.html">Lab 6</a> </b><br>
 	<b>Available Libraries: pandas</b></p>
-	<p><b>Store Inventory</b></p>
+	<p><b>Fuel Cost Estimator</b></p>
 
 	<p>
-	Using <tt>pandas</tt>, write a program that asks the user for a store inventory file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates a 20% discount on all prices, and prints out the inventory with a new column named <tt>Discounted-Price</tt> showing the discounted prices. Assume that the CSV files have the columns: <tt>"Item"</tt>, <tt>"Price"</tt>, and <tt>"Quantity"</tt>.
+	Using <tt>pandas</tt>, write a program that asks the user for a trips file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates the fuel cost for each trip, and prints out the data with a new column named <tt>Fuel_Cost</tt> showing the cost in dollars. Assume that the CSV files have the columns: <tt>"Trip"</tt>, <tt>"Distance_miles"</tt>, <tt>"MPG"</tt>, and <tt>"Price_per_gallon"</tt>. MPG stands for miles per gallon, i.e. how many miles the car travels on one gallon of fuel. The fuel cost for a trip is calculated as:
+	<p><tt>Fuel_Cost = Distance_miles / MPG * Price_per_gallon</tt></p>
 
- <p>
- For example if the CSV file, <a href="../files/inventory.csv">inventory.csv</a>, contained:
+	<p>
+	For example if the CSV file, <a href="../files/trips.csv">trips.csv</a>, contained:
 
 <p>
 <table border=1>
 <tr>
- <th>Item</th><th>Price</th><th>Quantity</th>
+ <th>Trip</th><th>Distance_miles</th><th>MPG</th><th>Price_per_gallon</th>
 </tr>
 <tr>
- <td>Laptop</td><td>1000.00</td><td>5</td>
+ <td>NYC to Boston</td><td>215</td><td>30</td><td>3.50</td>
 </tr>
 <tr>
- <td>Mouse</td><td>25.00</td><td>20</td>
+ <td>NYC to Philadelphia</td><td>95</td><td>30</td><td>3.45</td>
 </tr>
 <tr>
- <td>Keyboard</td><td>75.00</td><td>15</td>
+ <td>NYC to Washington DC</td><td>225</td><td>28</td><td>3.55</td>
 </tr>
 <tr>
- <td>Monitor5</td><td>300.00</td><td>8</td>
+ <td>NYC to Albany</td><td>150</td><td>32</td><td>3.40</td>
 </tr>
-<table>
+</table>
 
 <p>A sample run of your program would be:
-	<pre><code class="shell">Enter inventory file name: inventory.csv
-Discounted inventory:
-       Item   Price  Quantity  Discounted_Price
-0    Laptop  1000.0         5             800.0
-1     Mouse    25.0        20              20.0
-2  Keyboard    75.0        15              60.0
-3   Monitor   300.0         8             240.0
+	<pre><code class="shell">Enter trips file name: trips.csv
+Fuel costs:
+                   Trip  Distance_miles  MPG  Price_per_gallon  Fuel_Cost
+0         NYC to Boston             215   30              3.50  25.083333
+1   NYC to Philadelphia              95   30              3.45  10.925000
+2  NYC to Washington DC             225   28              3.55  28.526786
+3          NYC to Albany            150   32              3.40  15.937500
 </code></pre>
 </li>
 
