@@ -1179,39 +1179,40 @@ AccountNameGoesHere
 	<b>Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html" target="_blank">Chapter 7</a>, 
 	<a href="lab5.html">Lab 5</a>, <a href="lab8.html">Lab 8</a>  & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
 	<b>Available Libraries: matplotlib, numpy</b></p>
-	<p><b>Counting Red Pixels</b></p>
-
-
+	<p><b>Counting Pixels Near a Color</b></p>
 
 	<p>
-	Write a function <tt>count_red_pixels()</tt> that takes the filename of an image and returns the number of pixels where the red channel is the dominant color. A pixel is considered "red-dominant" if its red value is greater than both its green value AND greater than its blue value.
-<br>For example, a pixel with RGB values (200, 150, 100) would be counted as red-dominant because 200 > 150 and 200 > 100. However, a pixel with RGB values (200, 250, 100) would not be counted because the green value (250) is greater than the red value (200).
+	Write a function <tt>count_pixels_near_color(filename, r, g, b, tolerance)</tt> that takes the filename of an image, a target color given as red, green, and blue values, and a tolerance value. The function returns the number of pixels where each channel is within <tt>tolerance</tt> of the corresponding target value. That is, a pixel at position <tt>(i,j)</tt> is counted if:
+	<ul>
+		<li>the absolute difference between the pixel's red channel and <tt>r</tt> is less than or equal to <tt>tolerance</tt>,</li>
+		<li>the absolute difference between the pixel's green channel and <tt>g</tt> is less than or equal to <tt>tolerance</tt>, and</li>
+		<li>the absolute difference between the pixel's blue channel and <tt>b</tt> is less than or equal to <tt>tolerance</tt>.</li>
+	</ul>
+	For example, a pixel with RGB values (220, 10, 30) and a target color of (255, 0, 0) with tolerance 50 would be counted because |220-255| = 35 &le; 50, |10-0| = 10 &le; 50, and |30-0| = 30 &le; 50. However, a pixel with RGB values (100, 200, 50) would not be counted because |100-255| = 155 > 50.
 	</p>
 
-  	<p>An example, using the file <a href="../images/red_forest.png">red_forest.png</a> as the input file
-	<p><img src="../images/red_forest.png"  height = 200></p>	
-	</p>
-		<p>the following code, using your function:
-	<pre><code class="python">red_count = count_red_pixels('red_forest.png')
-print(red_count)
+	<p><b>Note on image values:</b> When reading a PNG file with <tt>plt.imread()</tt>, pixel values are returned as floats between 0 and 1. To compare them to the target color values (which are between 0 and 255), you will need to multiply each channel by 255 first.</p>
+
+	<p>An example, using the file <a href="../images/pink_landscape.png">pink_landscape.png</a> as the input file:
+	<p><img src="../images/pink_landscape.png" height=200></p>
+	<i>image credits craiyon.com</i>
+	<p>the following code, using your function:
+	<pre><code class="python">count = count_pixels_near_color('pink_landscape.png', 200, 100, 100, 50)
+print(count)
 </code></pre></p>
+	<p>will output<br><code>72488</code></p>
 
-	<p>will output<br><code>207278</code></p>
-
-
-
-  	<p>In another example, using the file <a href="../images/green_forest.png">green_forest.png</a> as the input file
-	<p><img src="../images/green_forest.png"  height = 200></p>	
-	</p>
-		<p>the following code, using your function:
-	<pre><code class="python">red_count = count_red_pixels('green_forest.png')
-print(red_count)
+	<p>In another example, using the file <a href="../images/green_landscape.png">green_landscape.png</a> as the input file:
+	<p><img src="../images/green_landscape.png" height=200></p>
+	<i>image credits craiyon.com</i>
+	<p>the following code, using your function:
+	<pre><code class="python">count = count_pixels_near_color('green_landscape.png', 200, 100, 100, 50)
+print(count)
 </code></pre></p>
+	<p>will output<br><code>0</code></p>
 
-	<p>will output<br><code>106</code></p>
-
- <p><b>Note:</b> The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see Lab 7).</p>
-<p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
+	<p><b>Note:</b> The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see Lab 7).</p>
+	<p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
 </li>
 
 <hr> 
