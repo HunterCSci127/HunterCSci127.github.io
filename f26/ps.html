@@ -984,20 +984,28 @@ out3 = ...
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, March 16</b><br>
 	<b>Reading: Lecture 4, <a href="lab4.html">Lab 4</a></b><br>
 	<b>Available Libraries:  <i>none</i> </b></p>
-	<p><b>Air Quality Index Alert</b></p>	
+	<p><b>Noise Exposure Safety</b></p>
 
-	<p>Write a program that asks for the Air Quality Index (AQI) value and prints out:
+	<p>Write a program that asks the user for a noise level in decibels (dB) and the number of hours of exposure. Based on NIOSH/OSHA guidelines, the maximum safe exposure time decreases as noise level increases:
 	<ul>
-		<li><tt>"Good Air Quality"</tt> if the AQI is between 0 and 50 (inclusive),</li>
-		<li><tt>"Moderate Air Quality"</tt> if the AQI is between 51 and 100 (inclusive),</li>
-		<li><tt>"Unhealthy for Sensitive Groups" </tt> if the AQI is between 101 and 150 (inclusive),</li>
-		<li><tt>"Unhealthy Air Quality"</tt> if the AQI is between 151 and 200 (inclusive) and</li>
-		<li><tt>"Very Unhealthy Air Quality"</tt>  if the AQI is above 200.</li>
+		<li>Between 0 and 85 dB (inclusive), the limit is up to 8 hours.</li>
+		<li>Between 86 and 88 dB (inclusive), the limit is up to 4 hours.</li>
+		<li>Between 89 and 91 dB (inclusive), the limit is up to 2 hours.</li>
+		<li>Between 92 and 94 dB (inclusive), the limit is up to 1 hour.</li>
+		<li>Above 94 dB, no duration of exposure is considered safe.</li>
 	</ul>
-		
-	<p>A sample run:
-	<pre><code class="text">Enter AQI value: 125
-Unhealthy for Sensitive Groups</code></pre>
+	The program should print <tt>"Safe"</tt>, <tt>"Caution"</tt>, or <tt>"Unsafe"</tt> accordingly.</p>
+
+	<p>Sample runs:
+	<pre><code class="text">Enter noise level in decibels: 87
+Enter hours of exposure: 3
+Safe</code></pre>
+	<pre><code class="text">Enter noise level in decibels: 87
+Enter hours of exposure: 6
+Caution</code></pre>
+	<pre><code class="text">Enter noise level in decibels: 97
+Enter hours of exposure: 1
+Unsafe</code></pre>
 
 	<p>Note:  "inclusive" for a range of numbers means that it includes the endpoints.  For example, "between 4 and 8, inclusive" means all values that are greater than or equal to 4 and are also less than or equal to 8.</p>
 
