@@ -148,9 +148,14 @@ Since Gradescope gives limited feedback, run your program first locally (on your
 	<p>Write a program that draws a triangle using the <code class="inline">turtle</code> library.
     <br><img id="triangle" alt="program 2" src="../images/p2_triangle.png" width="250">
 	<br><br>
-	<i>Note:  Whenever submitting a turtle program, <b>choose a name for your file that is not <tt>turtle.py</tt></b>.
-	When executing the <code class="inline">import turtle</code> statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  If you name your file <tt>turtle.py</tt>, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like <tt>myTurtle.py</tt> or <tt>program2.py</tt>.
-	</i></p></li>
+	<b>Notes:</b>
+	<ul>
+		<li>Whenever submitting a turtle program, <b>choose a name for your file that is not <tt>turtle.py</tt></b>. When executing the <code class="inline">import turtle</code> statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path). If you name your file <tt>turtle.py</tt>, it thinks the module is itself, causing all kinds of errors. To avoid this, name your program something like <tt>myTurtle.py</tt> or <tt>program2.py</tt>.</li>
+		<li>For testing purposes we only support the following subset of turtle commands:
+		<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
+penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
+		Please use ONLY these commands in your programs.</li>
+	</ul></p></li>
 
 <hr> 
 
@@ -183,7 +188,7 @@ TODO: finish the rest of the program to draw your dream home
 Requirements:  Use at least 6 different colors and walk at least 2000 steps
 """</code></pre>
 
-<p> <b>Note:</b> For testing purposes we support the following subset of turtle commands <br>
+<p> <b>Note:</b> For testing purposes we only support the following subset of turtle commands <br>
 <pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
 penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
 Please use ONLY these commands in your programs.
@@ -258,6 +263,11 @@ Repeat 25 times:
 	<br>
 	<img height = 200 src="../images/flower_f26.png">
 	</p>
+
+	<p><b>Note:</b> For testing purposes we only support the following subset of turtle commands:
+	<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
+penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
+	Please use ONLY these commands in your programs.</p>
 </li>
 
 <a id="set2"></a>
@@ -365,7 +375,14 @@ For i = 20, 24, 28, ..., 200:
 				<img src="../images/sparkle_f26.png" height=250>
 		
 		
-	<p> <i>Hint: Use <code>range()</code> with a step parameter to generate every other number. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
+	<p><b>Notes:</b>
+	<ul>
+		<li>Use <code>range()</code> with a step parameter to generate every other number. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</li>
+		<li>For testing purposes, only a subset of turtle commands is supported (as noted in earlier programs):
+		<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
+penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
+		Please use ONLY these commands in all turtle programs. This reminder will not be repeated in future turtle programs, but it applies to all of them.</li>
+	</ul></p>
 	
 		
 <hr> 
@@ -1332,42 +1349,45 @@ For each color and distance in the zipped lists:
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 30</b><br>
 	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a>, <a href="lab4.html">Lab 4</a>, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a></b><br>
 	<b>Available Libraries:  <i>none</i></b></p>
-	<p><b>Letter to GPA</b></p>
+	<p><b>HTTP Status Code</b></p>
 
-	<p>Write the function <tt>letter_to_gpa()</tt> which takes a string representing a letter grade and returns the corresponding GPA value as a float.</p>  
+	<p>Write the function <tt>status_to_message(code)</tt> which takes an HTTP status code as an integer and returns the corresponding message as a string.</p>
 	<ol>
-	<li>If the user provides a string that does not correspond to a valid letter grade, your function should return: -1.0</li>
-	<li>Valid letter grades are: A, A-, B+, B, B-, C+, C, C-, D+, D, F (<b>case-insensitive</b>).</li>
-	<li>Use the following GPA scale:
-		<pre>A: 4.0
-A-: 3.7
-B+: 3.3
-B: 3.0
-B-: 2.7
-C+: 2.3
-C: 2.0
-D: 1.0
-F: 0.0</pre>
-	</li>
-</ol>
-	</p>
+		<li>If the code does not correspond to a known status code, your function should return <tt>"Unknown"</tt>.</li>
+		<li>Use the following status codes:
+			<pre>200: OK
+201: Created
+301: Moved Permanently
+302: Found
+400: Bad Request
+401: Unauthorized
+403: Forbidden
+404: Not Found
+418: I'm a Teapot
+500: Internal Server Error
+503: Service Unavailable</pre>
+		</li>
+	</ol>
 
 	<p>A sample call of the function:
-		<pre><code class="python">print("Converting A- to", letter_to_gpa("A-"))</code></pre>	
+	<pre><code class="python">print("Status 404:", status_to_message(404))</code></pre>
 	<p>would print:</p>
-	<pre><code class="text">Converting A- to 3.7</code></pre>
-	
-<p>And another example call of the function:
-	<pre><code class="python">grade = "B+"
-print("Converting", grade, "to", letter_to_gpa(grade))</code></pre>	
+	<pre><code class="text">Status 404: Not Found</code></pre>
+
+	<p>And another example call of the function:
+	<pre><code class="python">code = 201
+print("Status", code, ":", status_to_message(code))</code></pre>
 	<p>would print:</p>
-	<pre><code class="text">Converting B+ to 3.3</code></pre>
-	
-	
+	<pre><code class="text">Status 201 : Created</code></pre>
 
-	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
+	<p>And an invalid input example:
+	<pre><code class="python">print("Status 999:", status_to_message(999))</code></pre>
+	<p>would print:</p>
+	<pre><code class="text">Status 999: Unknown</code></pre>
 
-	<p><i>Hint:  See Lecture 8 for related programs.</i></p>
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
+
+	<p><i>Hint: See Lecture 8 for related programs.</i></p>
 
 
 
