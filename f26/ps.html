@@ -741,8 +741,6 @@ Cents: 2</code></pre>
 
 <hr> 
 
-<i>More coming soon...</i>
-<template>
 
 <!--program19-->
 <li >
@@ -750,12 +748,20 @@ Cents: 2</code></pre>
 		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html" target="_blank">Section 8.11</a>, <a href="lab4.html">Lab 4</a> & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
 		<b>Available Libraries: matplotlib, numpy</b></p>
 		<p><b>Topographic Map</b></p>
-		
-		<p> Modify the map-making program from <a href="lab4.html">Lab 4</a> to make the coastline outline (where elevation is equal to 0) black.</p>
-	
-	
+
+		<p> Modify the map-making program from <a href="lab4.html">Lab 4</a> to color the map based on elevation:</p>
+
+		<ol>
+			<li>If the elevation is less than or equal to zero, color blue.</li>
+			<li>For elevation larger than zero but less than or equal to the Sandy storm surge (6 feet), set color to be orange (100% red, 50% green, 0% blue). </li>
+			<li>For elevation just above the Sandy storm surge (6 feet) and less than or equal to 13 feet, set color to be light grey (25% red, 25% green, 25% blue).</li>
+			<li>For elevation just above 13 feet but less than or equal to 20 feet, set color to be dark grey (75% red, 75% green, 75% blue).</li>
+			<li>For elevation that is above 20, set color to be light green (0% red, 100% green, 50% blue).</li>
+		</ol>
+
+
 		<p> Your resulting map should look like:
-		</p><p> <img src="../images/black_outline_topo.png" width="300">
+		</p><p> <img src="../images/stratified_outline_topo.png" width="300">
 		</p><p> and be saved to a file called <tt>black_outline_topo.png</tt>.
 
 
@@ -837,12 +843,12 @@ Enter name of the output file:  gray_bridge.png</code></pre>
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Tuesday, March 10</b><br>
 	<b>Reading:  <a href="http://www.cburch.com/books/logic/index.html">Burch's Logic & Circuits</a> & <a href="lab5.html">Lab 5</a></b><br>
 	<b>Available Libraries: N/A</b></p>
-	<p><b>NOR Circuit</b></p>
+	<p><b>XOR Circuit</b></p>
 
-	<p>Build a circuit that has the same behavior as a <tt>nor</tt> gate (i.e. true only when all inputs are false) using only <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> gates.</p>
-	
+	<p>Build a circuit that has the same behavior as an <tt>xor</tt> gate (i.e. true only when exactly one input is true) using only <tt>and</tt>, <tt>or</tt>, and <tt>not</tt> gates.</p>
+
 	<p>
-	<img src="../images/norGate.png" width=300>
+	<img src="../images/XORgate.png" width=300>
 	</p>
 
 	<p>Save your expression to a text file.
@@ -899,18 +905,18 @@ Enter name of the output file:  gray_bridge.png</code></pre>
         <p>
         Modify this program to allow the user to also specify with the following symbols:
         <ul>
-          <li> 'T':  change the shape to triangle</li>
-		  <li> 'C':  change the shape to circle</li>
-		  <li> 'c':  change the pen color to cyan</li>
-		  <li> 'o':  change the pen color to orange</li>
-          <li> 'B':  change the pen size to 5 (Big pen)</li>	
-		  <li> 's':  change the pen size to 2 (small pen)</li>
-		  <li> 'S':  makes the turtle stamp</li>
+		  <li> 'a':  change the shape to arrow</li>
+		  <li> 'q':  change the shape to square</li>
+		  <li> 'r':  change the pen color to red</li>
+		  <li> 'b':  change the pen color to blue</li>
+          <li> 'B':  move the turtle backward 50 steps</li>
+		  <li> 'M':  change the pen size to 8 (Mega pen)</li>
+		  <li> 'm':  change the pen size to 1 (micro pen)</li>
         </ul>
 
-		<p>An example with the new symbols and string <tt>CcSLBTFSRsoFCSLFBcSTLFoS</tt> would create the image:</p>
+		<p>An example with the new symbols and string <tt>rMFLFLFLFL^FFFvbmFRFRFRFRaB^FFFvqFL</tt> would create the image:</p>
 
-		<p><img height=200 src="../images/turtleString_s26.png"></p>
+		<p><img height=200 src="../images/turtleString_f26.png"></p>
 	
 		<hr> 
 
@@ -2217,6 +2223,8 @@ Year 2026  337.61</code></pre>
 </li>
 
 </ol>
+<i>More coming soon...</i>
+<template>
 
 </template>
 
