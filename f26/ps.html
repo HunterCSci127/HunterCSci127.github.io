@@ -750,12 +750,20 @@ Cents: 2</code></pre>
 		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html" target="_blank">Section 8.11</a>, <a href="lab4.html">Lab 4</a> & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
 		<b>Available Libraries: matplotlib, numpy</b></p>
 		<p><b>Topographic Map</b></p>
-		
-		<p> Modify the map-making program from <a href="lab4.html">Lab 4</a> to make the coastline outline (where elevation is equal to 0) black.</p>
-	
-	
+
+		<p> Modify the map-making program from <a href="lab4.html">Lab 4</a> to color the map based on elevation:</p>
+
+		<ol>
+			<li>If the elevation is less than or equal to zero, color blue.</li>
+			<li>For elevation larger than zero but less than or equal to the Sandy storm surge (6 feet), set color to be orange (100% red, 50% green, 0% blue). </li>
+			<li>For elevation just above the Sandy storm surge (6 feet) and less than or equal to 13 feet, set color to be light grey (25% red, 25% green, 25% blue).</li>
+			<li>For elevation just above 13 feet but less than or equal to 20 feet, set color to be dark grey (75% red, 75% green, 75% blue).</li>
+			<li>For elevation that is above 20, set color to be light green (0% red, 100% green, 50% blue).</li>
+		</ol>
+
+
 		<p> Your resulting map should look like:
-		</p><p> <img src="../images/black_outline_topo.png" width="300">
+		</p><p> <img src="../images/stratified_outline_topo.png" width="300">
 		</p><p> and be saved to a file called <tt>black_outline_topo.png</tt>.
 
 
