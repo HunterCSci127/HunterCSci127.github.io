@@ -148,9 +148,14 @@ Since Gradescope gives limited feedback, run your program first locally (on your
 	<p>Write a program that draws a triangle using the <code class="inline">turtle</code> library.
     <br><img id="triangle" alt="program 2" src="../images/p2_triangle.png" width="250">
 	<br><br>
-	<i>Note:  Whenever submitting a turtle program, <b>choose a name for your file that is not <tt>turtle.py</tt></b>.
-	When executing the <code class="inline">import turtle</code> statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path).  If you name your file <tt>turtle.py</tt>, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like <tt>myTurtle.py</tt> or <tt>program2.py</tt>.
-	</i></p></li>
+	<b>Notes:</b>
+	<ul>
+		<li>Whenever submitting a turtle program, <b>choose a name for your file that is not <tt>turtle.py</tt></b>. When executing the <code class="inline">import turtle</code> statement, the computer first looks in the folder where the file is saved for the turtle module and then in the libraries (and other places on the path). If you name your file <tt>turtle.py</tt>, it thinks the module is itself, causing all kinds of errors. To avoid this, name your program something like <tt>myTurtle.py</tt> or <tt>program2.py</tt>.</li>
+		<li>For testing purposes we only support the following subset of turtle commands:
+		<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
+penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
+		Please use ONLY these commands in your programs.</li>
+	</ul></p></li>
 
 <hr> 
 
@@ -183,7 +188,7 @@ TODO: finish the rest of the program to draw your dream home
 Requirements:  Use at least 6 different colors and walk at least 2000 steps
 """</code></pre>
 
-<p> <b>Note:</b> For testing purposes we support the following subset of turtle commands <br>
+<p> <b>Note:</b> For testing purposes we only support the following subset of turtle commands <br>
 <pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
 penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
 Please use ONLY these commands in your programs.
@@ -258,6 +263,11 @@ Repeat 25 times:
 	<br>
 	<img height = 200 src="../images/flower_f26.png">
 	</p>
+
+	<p><b>Note:</b> For testing purposes we only support the following subset of turtle commands:
+	<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
+penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
+	Please use ONLY these commands in your programs.</p>
 </li>
 
 <a id="set2"></a>
@@ -365,7 +375,14 @@ For i = 20, 24, 28, ..., 200:
 				<img src="../images/sparkle_f26.png" height=250>
 		
 		
-	<p> <i>Hint: Use <code>range()</code> with a step parameter to generate every other number. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</i>
+	<p><b>Notes:</b>
+	<ul>
+		<li>Use <code>range()</code> with a step parameter to generate every other number. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</li>
+		<li>For testing purposes, only a subset of turtle commands is supported (as noted in earlier programs):
+		<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
+penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
+		Please use ONLY these commands in all turtle programs. This reminder will not be repeated in future turtle programs, but it applies to all of them.</li>
+	</ul></p>
 	
 		
 <hr> 
@@ -984,20 +1001,28 @@ out3 = ...
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, March 16</b><br>
 	<b>Reading: Lecture 4, <a href="lab4.html">Lab 4</a></b><br>
 	<b>Available Libraries:  <i>none</i> </b></p>
-	<p><b>Air Quality Index Alert</b></p>	
+	<p><b>Noise Exposure Safety</b></p>
 
-	<p>Write a program that asks for the Air Quality Index (AQI) value and prints out:
+	<p>Write a program that asks the user for a noise level in decibels (dB) and the number of hours of exposure. Based on NIOSH/OSHA guidelines, the maximum safe exposure time decreases as noise level increases:
 	<ul>
-		<li><tt>"Good Air Quality"</tt> if the AQI is between 0 and 50 (inclusive),</li>
-		<li><tt>"Moderate Air Quality"</tt> if the AQI is between 51 and 100 (inclusive),</li>
-		<li><tt>"Unhealthy for Sensitive Groups" </tt> if the AQI is between 101 and 150 (inclusive),</li>
-		<li><tt>"Unhealthy Air Quality"</tt> if the AQI is between 151 and 200 (inclusive) and</li>
-		<li><tt>"Very Unhealthy Air Quality"</tt>  if the AQI is above 200.</li>
+		<li>Between 0 and 85 dB (inclusive), the limit is up to 8 hours.</li>
+		<li>Between 86 and 88 dB (inclusive), the limit is up to 4 hours.</li>
+		<li>Between 89 and 91 dB (inclusive), the limit is up to 2 hours.</li>
+		<li>Between 92 and 94 dB (inclusive), the limit is up to 1 hour.</li>
+		<li>Above 94 dB, no duration of exposure is considered safe.</li>
 	</ul>
-		
-	<p>A sample run:
-	<pre><code class="text">Enter AQI value: 125
-Unhealthy for Sensitive Groups</code></pre>
+	The program should print <tt>"Safe"</tt>, <tt>"Caution"</tt>, or <tt>"Unsafe"</tt> accordingly.</p>
+
+	<p>Sample runs:
+	<pre><code class="text">Enter noise level in decibels: 87
+Enter hours of exposure: 3
+Safe</code></pre>
+	<pre><code class="text">Enter noise level in decibels: 87
+Enter hours of exposure: 6
+Caution</code></pre>
+	<pre><code class="text">Enter noise level in decibels: 97
+Enter hours of exposure: 1
+Unsafe</code></pre>
 
 	<p>Note:  "inclusive" for a range of numbers means that it includes the endpoints.  For example, "between 4 and 8, inclusive" means all values that are greater than or equal to 4 and are also less than or equal to 8.</p>
 
@@ -1040,41 +1065,42 @@ AliceSprings   -5.2
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Wednesday, March 18</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab6.html">Lab 6</a> </b><br>
 	<b>Available Libraries: pandas</b></p>
-	<p><b>Store Inventory</b></p>
+	<p><b>Fuel Cost Estimator</b></p>
 
 	<p>
-	Using <tt>pandas</tt>, write a program that asks the user for a store inventory file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates a 20% discount on all prices, and prints out the inventory with a new column named <tt>Discounted-Price</tt> showing the discounted prices. Assume that the CSV files have the columns: <tt>"Item"</tt>, <tt>"Price"</tt>, and <tt>"Quantity"</tt>.
+	Using <tt>pandas</tt>, write a program that asks the user for a trips file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates the fuel cost for each trip, and prints out the data with a new column named <tt>Fuel_Cost</tt> showing the cost in dollars. Assume that the CSV files have the columns: <tt>"Trip"</tt>, <tt>"Distance_miles"</tt>, <tt>"MPG"</tt>, and <tt>"Price_per_gallon"</tt>. MPG stands for miles per gallon, i.e. how many miles the car travels on one gallon of fuel. The fuel cost for a trip is calculated as:
+	<p><tt>Fuel_Cost = Distance_miles / MPG * Price_per_gallon</tt></p>
 
- <p>
- For example if the CSV file, <a href="../files/inventory.csv">inventory.csv</a>, contained:
+	<p>
+	For example if the CSV file, <a href="../files/trips.csv">trips.csv</a>, contained:
 
 <p>
 <table border=1>
 <tr>
- <th>Item</th><th>Price</th><th>Quantity</th>
+ <th>Trip</th><th>Distance_miles</th><th>MPG</th><th>Price_per_gallon</th>
 </tr>
 <tr>
- <td>Laptop</td><td>1000.00</td><td>5</td>
+ <td>NYC to Boston</td><td>215</td><td>30</td><td>3.50</td>
 </tr>
 <tr>
- <td>Mouse</td><td>25.00</td><td>20</td>
+ <td>NYC to Philadelphia</td><td>95</td><td>30</td><td>3.45</td>
 </tr>
 <tr>
- <td>Keyboard</td><td>75.00</td><td>15</td>
+ <td>NYC to Washington DC</td><td>225</td><td>28</td><td>3.55</td>
 </tr>
 <tr>
- <td>Monitor5</td><td>300.00</td><td>8</td>
+ <td>NYC to Albany</td><td>150</td><td>32</td><td>3.40</td>
 </tr>
-<table>
+</table>
 
 <p>A sample run of your program would be:
-	<pre><code class="shell">Enter inventory file name: inventory.csv
-Discounted inventory:
-       Item   Price  Quantity  Discounted_Price
-0    Laptop  1000.0         5             800.0
-1     Mouse    25.0        20              20.0
-2  Keyboard    75.0        15              60.0
-3   Monitor   300.0         8             240.0
+	<pre><code class="shell">Enter trips file name: trips.csv
+Fuel costs:
+                   Trip  Distance_miles  MPG  Price_per_gallon  Fuel_Cost
+0         NYC to Boston             215   30              3.50  25.083333
+1   NYC to Philadelphia              95   30              3.45  10.925000
+2  NYC to Washington DC             225   28              3.55  28.526786
+3          NYC to Albany            150   32              3.40  15.937500
 </code></pre>
 </li>
 
@@ -1170,39 +1196,40 @@ AccountNameGoesHere
 	<b>Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html" target="_blank">Chapter 7</a>, 
 	<a href="lab5.html">Lab 5</a>, <a href="lab8.html">Lab 8</a>  & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
 	<b>Available Libraries: matplotlib, numpy</b></p>
-	<p><b>Counting Red Pixels</b></p>
-
-
+	<p><b>Counting Pixels Near a Color</b></p>
 
 	<p>
-	Write a function <tt>count_red_pixels()</tt> that takes the filename of an image and returns the number of pixels where the red channel is the dominant color. A pixel is considered "red-dominant" if its red value is greater than both its green value AND greater than its blue value.
-<br>For example, a pixel with RGB values (200, 150, 100) would be counted as red-dominant because 200 > 150 and 200 > 100. However, a pixel with RGB values (200, 250, 100) would not be counted because the green value (250) is greater than the red value (200).
+	Write a function <tt>count_pixels_near_color(filename, r, g, b, tolerance)</tt> that takes the filename of an image, a target color given as red, green, and blue values, and a tolerance value. The function returns the number of pixels where each channel is within <tt>tolerance</tt> of the corresponding target value. That is, a pixel at position <tt>(i,j)</tt> is counted if:
+	<ul>
+		<li>the absolute difference between the pixel's red channel and <tt>r</tt> is less than or equal to <tt>tolerance</tt>,</li>
+		<li>the absolute difference between the pixel's green channel and <tt>g</tt> is less than or equal to <tt>tolerance</tt>, and</li>
+		<li>the absolute difference between the pixel's blue channel and <tt>b</tt> is less than or equal to <tt>tolerance</tt>.</li>
+	</ul>
+	For example, a pixel with RGB values (220, 10, 30) and a target color of (255, 0, 0) with tolerance 50 would be counted because |220-255| = 35 &le; 50, |10-0| = 10 &le; 50, and |30-0| = 30 &le; 50. However, a pixel with RGB values (100, 200, 50) would not be counted because |100-255| = 155 > 50.
 	</p>
 
-  	<p>An example, using the file <a href="../images/red_forest.png">red_forest.png</a> as the input file
-	<p><img src="../images/red_forest.png"  height = 200></p>	
-	</p>
-		<p>the following code, using your function:
-	<pre><code class="python">red_count = count_red_pixels('red_forest.png')
-print(red_count)
+	<p><b>Note on image values:</b> When reading a PNG file with <tt>plt.imread()</tt>, pixel values are returned as floats between 0 and 1. To compare them to the target color values (which are between 0 and 255), you will need to multiply each channel by 255 first.</p>
+
+	<p>An example, using the file <a href="../images/pink_landscape.png">pink_landscape.png</a> as the input file:
+	<p><img src="../images/pink_landscape.png" height=200></p>
+	<i>image credits craiyon.com</i>
+	<p>the following code, using your function:
+	<pre><code class="python">count = count_pixels_near_color('pink_landscape.png', 200, 100, 100, 50)
+print(count)
 </code></pre></p>
+	<p>will output<br><code>72488</code></p>
 
-	<p>will output<br><code>207278</code></p>
-
-
-
-  	<p>In another example, using the file <a href="../images/green_forest.png">green_forest.png</a> as the input file
-	<p><img src="../images/green_forest.png"  height = 200></p>	
-	</p>
-		<p>the following code, using your function:
-	<pre><code class="python">red_count = count_red_pixels('green_forest.png')
-print(red_count)
+	<p>In another example, using the file <a href="../images/green_landscape.png">green_landscape.png</a> as the input file:
+	<p><img src="../images/green_landscape.png" height=200></p>
+	<i>image credits craiyon.com</i>
+	<p>the following code, using your function:
+	<pre><code class="python">count = count_pixels_near_color('green_landscape.png', 200, 100, 100, 50)
+print(count)
 </code></pre></p>
+	<p>will output<br><code>0</code></p>
 
-	<p>will output<br><code>106</code></p>
-
- <p><b>Note:</b> The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see Lab 7).</p>
-<p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
+	<p><b>Note:</b> The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see Lab 7).</p>
+	<p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
 </li>
 
 <hr> 
@@ -1213,59 +1240,56 @@ print(red_count)
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
 	<b>Available Libraries: pandas</b></p>
 
-	<p><b>Library Checkout Analysis</b></p>
+	<p><b>Video Game Sales Analysis</b></p>
 
-	<p>The <a href="https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data">Seattle Public Library</a> provides data on item checkouts. Each row in the dataset represents checkout activity for a specific title during a given month. The dataset includes information about what was checked out (books, movies, music, etc.), how it was checked out (physical vs. digital), who published it, and when.</p>
+	<p>The file <a href="../files/vgsales.csv">vgsales.csv</a> contains data on video game sales. Each row represents a game and includes its title, platform, release year, genre, publisher, and sales figures across different regions.</p>
 
-	<p>Adapt the parking ticket program from <a href="lab7.html">Lab 7</a> to analyze library checkout data. Your program should:
+	<p>Adapt the parking ticket program from <a href="lab7.html">Lab 7</a> to analyze video game sales data. Your program should:
 	</p>
 	<ul>
 		<li>Ask the user for the name of the input CSV file.</li>
+		<li>Ask the user for a platform to filter by (e.g., <code>PS4</code>, <code>Wii</code>, <code>X360</code>).</li>
 		<li>Ask the user for the attribute (column name) to analyze.</li>
-		<li>Display the top 5 values for that attribute.</li>
+		<li>Display the top 5 values for that attribute among games on the chosen platform.</li>
 	</ul>
 
 	<p><b>Valid attributes</b> the user may enter:</p>
 	<ul>
-		<li><code>usageclass</code> - Whether item is Physical or Digital</li>
-		<li><code>checkouttype</code> - The system/vendor used for checkout</li>
-		<li><code>materialtype</code> - Type of item (book, song, movie, etc.)</li>
-		<li><code>publisher</code> - Publisher of the item</li>
-		<li><code>checkoutyear</code> - Year of checkout</li>
+		<li><code>Genre</code> - Genre of the game (Action, Sports, etc.)</li>
+		<li><code>Publisher</code> - Publisher of the game</li>
+		<li><code>Year</code> - Year the game was released</li>
 	</ul>
-	<p>Use this sample dataset for testing: <a href="../files/seattle_library.csv">seattle_library.csv</a></p>
+
+	<p><b>Hint:</b> To select only the rows where a column matches a specific value, you can use the following pattern:
+	<pre><code class="python">filtered = df[df['Platform'] == platform]
+</code></pre>
+	This creates a new dataframe <tt>filtered</tt> containing only the rows where the <tt>Platform</tt> column equals the value stored in <tt>platform</tt>.</p>
 
 	<p>A sample run:</p>
-	<pre><code class="shell">Enter CSV file name: seattle_library.csv
-Enter attribute: materialtype
-The top 5 values for materialtype are:
-materialtype
-BOOK         427
-EBOOK        200
-SOUNDDISC     99
-VIDEODISC     88
-SONG          79
+	<pre><code class="shell">Enter CSV file name: vgsales.csv
+Enter platform: PS4
+Enter attribute: Genre
+The top 5 values for Genre on PS4 are:
+Genre
+Action          122
+Role-Playing     47
+Sports           43
+Shooter          34
+Adventure        19
 Name: count, dtype: int64
 </code></pre>
 
 	<p>And another run:</p>
-	<pre><code class="shell">Enter CSV file name: seattle_library.csv
-Enter attribute: usageclass
-The top 5 values for usageclass are:
-usageclass
-Physical    621
-Digital     379
-Name: count, dtype: int64
-</code></pre>
-
-	<p>And one more run:</p>
-	<pre><code class="shell">Enter CSV file name: seattle_library.csv
-TEnter attribute: checkoutyear
-The top 5 values for checkoutyear are:
-checkoutyear
-2016    989
-2024     10
-2025      1
+	<pre><code class="shell">Enter CSV file name: vgsales.csv
+Enter platform: Wii
+Enter attribute: Publisher
+The top 5 values for Publisher on Wii are:
+Publisher
+Ubisoft            115
+Activision         111
+Electronic Arts     90
+Nintendo            84
+THQ                 76
 Name: count, dtype: int64
 </code></pre>
 
@@ -1280,9 +1304,9 @@ Name: count, dtype: int64
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Friday, March 27</b><br>
 	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a> & <a href="lab7.html">Lab 7</a></b><br>
 	<b>Available Libraries:  <i>turtle</i></b></p>
-	<p><b>Rainbow Star</b></p>
+	<p><b>Color Square Spiral</b></p>
 
-    <p> Write a program, using function <tt>main()</tt> that implements the following pseudocode. <br> <i>Note:</i> the pseudocode refers to the body of the function and does not illustrate the function definition. 
+    <p> Write a program, using function <tt>main()</tt> that implements the following pseudocode. <br> <i>Note:</i> the pseudocode refers to the body of the function and does not illustrate the function definition.
 
 
 	<pre><code class="python">"""
@@ -1292,29 +1316,29 @@ Set the turtle's speed to 0
 Set the turtle's pen size to 2
 Hide the turtle
 
-Create a list with ["red", "cyan", "blue", "orange"] repeated 12 times
-Create a list with the numbers 20, 22, 24, ..., 114
+Create a list with ["purple", "gold", "cyan", "lime"] repeated 25 times
+Create a list with the numbers 10, 15, 20, ..., 105, 110, followed by 110, 105, ..., 15
 
 Zip the two lists
 
 For each color and distance in the zipped lists:
     Set the turtle's color to the current color
     Move forward by the current distance
-    Turn left 120 degrees
-    Move forward by the current distance again
-    Turn right 65 degrees
+    Turn right 90 degrees
 """
 </code></pre>
 
-<p><i>Hint: You can repeat a list using *</i> 
-<br> Example: <code>[1, 2] * 3</code> creates <code>[1, 2, 1, 2, 1, 2]</code>
-<p><i>Hint: Use <code>list(range(start, stop, step))</code> to create a list of numbers </i> 
-<br> Example: <code>list(range(10, 30, 5))</code> creates <code>[10, 15, 20, 25]</code>
-<p><i>Hint: Use zip() to pair elements from two lists together. See <a href="lab7.html">Lab 7</a> Section 2 </i>  
+<p><b>Hints:</b>
+<ul>
+	<li>You can repeat a list using <code>*</code>. Example: <code>[1, 2] * 3</code> creates <code>[1, 2, 1, 2, 1, 2]</code></li>
+	<li>Use <code>list(range(start, stop, step))</code> to create a list of numbers. Example: <code>list(range(10, 30, 5))</code> creates <code>[10, 15, 20, 25]</code></li>
+	<li>Two lists can be combined using <code>+</code>. Example: <code>[1, 2, 3] + [3, 2, 1]</code> creates <code>[1, 2, 3, 3, 2, 1]</code></li>
+	<li>Use <code>zip()</code> to pair elements from two lists together. See <a href="lab7.html">Lab 7</a> Section 2</li>
+</ul>
 
 		<p>Your output should look like this:
 	<br>
-	<img height = 200 src="../images/rainbowstar_s26.png">
+	<img height = 200 src="../images/color_square_spiral_f26.png">
 	</p>
 </li>
 <hr> 
@@ -1325,42 +1349,45 @@ For each color and distance in the zipped lists:
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Thursday, March 30</b><br>
 	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a>, <a href="lab4.html">Lab 4</a>, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a></b><br>
 	<b>Available Libraries:  <i>none</i></b></p>
-	<p><b>Letter to GPA</b></p>
+	<p><b>HTTP Status Code</b></p>
 
-	<p>Write the function <tt>letter_to_gpa()</tt> which takes a string representing a letter grade and returns the corresponding GPA value as a float.</p>  
+	<p>Write the function <tt>status_to_message(code)</tt> which takes an HTTP status code as an integer and returns the corresponding message as a string.</p>
 	<ol>
-	<li>If the user provides a string that does not correspond to a valid letter grade, your function should return: -1.0</li>
-	<li>Valid letter grades are: A, A-, B+, B, B-, C+, C, C-, D+, D, F (<b>case-insensitive</b>).</li>
-	<li>Use the following GPA scale:
-		<pre>A: 4.0
-A-: 3.7
-B+: 3.3
-B: 3.0
-B-: 2.7
-C+: 2.3
-C: 2.0
-D: 1.0
-F: 0.0</pre>
-	</li>
-</ol>
-	</p>
+		<li>If the code does not correspond to a known status code, your function should return <tt>"Unknown"</tt>.</li>
+		<li>Use the following status codes:
+			<pre>200: OK
+201: Created
+301: Moved Permanently
+302: Found
+400: Bad Request
+401: Unauthorized
+403: Forbidden
+404: Not Found
+418: I'm a Teapot
+500: Internal Server Error
+503: Service Unavailable</pre>
+		</li>
+	</ol>
 
 	<p>A sample call of the function:
-		<pre><code class="python">print("Converting A- to", letter_to_gpa("A-"))</code></pre>	
+	<pre><code class="python">print("Status 404:", status_to_message(404))</code></pre>
 	<p>would print:</p>
-	<pre><code class="text">Converting A- to 3.7</code></pre>
-	
-<p>And another example call of the function:
-	<pre><code class="python">grade = "B+"
-print("Converting", grade, "to", letter_to_gpa(grade))</code></pre>	
+	<pre><code class="text">Status 404: Not Found</code></pre>
+
+	<p>And another example call of the function:
+	<pre><code class="python">code = 201
+print("Status", code, ":", status_to_message(code))</code></pre>
 	<p>would print:</p>
-	<pre><code class="text">Converting B+ to 3.3</code></pre>
-	
-	
+	<pre><code class="text">Status 201 : Created</code></pre>
 
-	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
+	<p>And an invalid input example:
+	<pre><code class="python">print("Status 999:", status_to_message(999))</code></pre>
+	<p>would print:</p>
+	<pre><code class="text">Status 999: Unknown</code></pre>
 
-	<p><i>Hint:  See Lecture 8 for related programs.</i></p>
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
+
+	<p><i>Hint: See Lecture 8 for related programs.</i></p>
 
 
 
@@ -1420,53 +1447,53 @@ print("Converting", grade, "to", letter_to_gpa(grade))</code></pre>
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, Monday, April 13</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab6.html">Lab 6</a>, <a href="lab7.html">Lab 7</a> </b><br>
 	<b>Available Libraries: pandas, matplotlib</b></p>
-	<p><b>Wondrous Stars</b></p>
+	<p><b>Ramen Ratings</b></p>
 
-
-<p> Write a program that, given the <a href="../files/stars.csv">'Stars' dataset</a> will do the following:
+<p>Write a program that, given the <a href="../files/ramenRatings.csv">'Ramen Ratings' dataset</a>, does the following:
 <ul>
-<li> Ask the user for the name of the input file.
-<li> Ask the user for the name of the column they wish to average (one of <tt>Temperature, Luminosity, Radius</tt> or <tt>Absolute Magnitude</tt>)
-<li> Print the average of that column for each star type.
+	<li>Ask the user for the name of the input file.</li>
+	<li>Ask the user which column to group by (either <tt>Country</tt> or <tt>Style</tt>).</li>
+	<li>Print the average <tt>Stars</tt> rating for each group.</li>
 </ul>
-  <p><b>Note:</b> To put the data in perspective, keep in mind that these measures are given as multiples of those of the Sun! (image credits: space.com)
-  <p><img src="../images/starSizes.jpg" height=150 ><br>
-  <p>A sample run:
-<pre style ="background-color:lavender;width:500px">
-Enter file name: stars.csv
-Enter the name of the column
-(Temperature, Luminosity, Radius or Absolute Magnitude)
-you would like to average: Luminosity
 
-The average Luminosity for each Star type is:
-Star type
-Brown Dwarf           0.000693
-Hypergiant       309246.525000
-Main Sequence     32067.386275
-Red Dwarf             0.005406
-Supergiant       301816.250000
-White Dwarf           0.002434
-Name: Luminosity, dtype: float64
+<p><img src="../images/ramen.png" height=240></p>
+
+<p>A sample run:
+<pre style="background-color:lavender;width:500px">
+Enter file name: ramenRatings.csv
+Group by (Country or Style): Style
+
+Average Stars rating by Style:
+Style
+Bar     5.000000
+Bowl    3.937165
+Box     4.291667
+Can     3.500000
+Cup     3.619075
+Pack    3.863330
+Tray    3.682203
+Name: Stars, dtype: float64
 </pre>
 
-  <p>Another sample run:
-<pre style ="background-color:lavender;width:500px">
-Enter file name: stars.csv
-Enter the name of the column
-(Temperature, Luminosity, Radius or Absolute Magnitude)
-you would like to average: Temperature
+<p>Another sample run:
+<pre style="background-color:lavender;width:500px">
+Enter file name: ramenRatings.csv
+Group by (Country or Style): Country
 
-The average Temperature for each Star type is:
-Star type
-Brown Dwarf       2997.950
-Hypergiant       11405.700
-Main Sequence    16018.000
-Red Dwarf         3283.825
-Supergiant       15347.850
-White Dwarf      13931.450
-Name: Temperature, dtype: float64
+Average Stars rating by Country:
+Country
+Australia        3.138636
+Bangladesh       3.714286
+Brazil           4.350000
+Cambodia         4.200000
+Canada           2.265152
+China            3.634259
+Colombia         3.291667
+...
+Name: Stars, dtype: float64
 </pre>
-<p><b>Note: </b>You may assume that input is correct (e.g. only expected columns are entered as input)
+
+<p><b>Note: </b>You may assume that input is correct (e.g. only expected column names are entered as input).
 <p><b>Hint: </b>You should use <tt>groupby()</tt> as described in <a href="lab6.html">Lab 6</a>.
 
 
@@ -1643,7 +1670,7 @@ draw_tree(tess,100,"indigo","black")
 	<br><br><br>
 
 
-	<p> <a href="lab9.html">Lab 9</a> works through finding and fixing errors in a Python program.  Fix all of the errors in the file <tt><a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsRoman.py">errorsRoman.py</a></tt> and then upload the file to Gradescope.</p>
+	<p> <a href="lab9.html">Lab 9</a> works through finding and fixing errors in a Python program.  Fix all of the errors in the file <tt><a href="https://github.com/HunterCSci127/CSci127/blob/master/errorsPassword.py">errorsPassword.py</a></tt> and then upload the file to Gradescope.</p>
 
 	<br><br>
 	<p></p>
@@ -1707,24 +1734,20 @@ draw_tree(tess,100,"indigo","black")
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <br><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: pandas, plotly</b></p>
-	<p><b>Queens Library Branches Map</b></p>	
+	<p><b>NYC Hospitals Map</b></p>
 
+	<p>New York City Open Data makes data for <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-patient-care-locations-2011/f7b6-v6v3">NYC hospitals and health facilities</a> publicly available. A sample file, <a href="../files/nyc_hospitals.csv"><tt>nyc_hospitals.csv</tt></a> was downloaded and can be used to test your program.</p>
 
-	<p>New York City Open Data makes data for the <a href="https://data.cityofnewyork.us/Education/Queens-Library-Branches/kh3d-xhq7/about_data">Queens Library branches</a> publicly available. A sample file, <a href="../files/Queens_Library_Branches.csv"><tt>Queens_Library_Branches.csv</tt></a> was downloaded and can be used to test your program.</p>
-	<p>
-	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the Queens Library branches from the input file.  When the user hovers over the marker, the Neighborhood Tabulation Area (NTA) should appear in the pop-up box.
+	<p>Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file and the name of the output file, and creates a map with markers for all NYC health facilities from the input file. The markers should be colored by <tt>Facility Type</tt>, and when the user hovers over a marker, the <tt>Facility Name</tt> should appear in the pop-up box.</p>
+
+	<p>To color markers by a column in plotly express, use the <tt>color</tt> parameter, e.g. <code>color="Column Name"</code>.</p>
 
 	<p>A sample run:
-<pre><code class="text">Enter CSV file name:  Queens_Library_Branches.csv
-Enter output file:  libraryMap.html</code></pre>
+<pre><code class="text">Enter CSV file name: nyc_hospitals.csv
+Enter output file: hospitalsMap.html</code></pre>
 	<p>which would produce the HTML file:
 
-	<p><iframe src="../files/libraryMap.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
-	<p> When running your program locally, you need to check that the "Latitude" and "Longitude" values are non-empty.  You can drop any row where there's empty values with:
-		
-		<pre><code class="python">df_cleaned = df.dropna()</code></pre>
+	<p><iframe src="../files/hospitalsMap.html" width="800" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
 </li>
@@ -1802,40 +1825,39 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 		<b>Reading:  Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>
 			& <a href="lab10.html">Lab 10</a></b><br>
 		<b>Available Libraries:  <i>none</i></b></p>
-		<p><b>Validating Input</b></p>	
+		<p><b>Account Registration</b></p>
 
-<p>
-Write a program that repeatedly asks the user to enter a <b>valid username</b>.
-</p>
+<p>Write a program that asks the user to register an account by entering a valid username and a valid password. The program should keep prompting for each field until both are valid, displaying a specific error message for each failed condition.</p>
 
-<p>
-A username is considered invalid if:
-</p>
-
+<p>A username is considered invalid if:</p>
 <ul>
   <li>it has fewer than 4 characters, or</li>
-  <li>it exactly matches one of the following reserved words:
-    <tt>admin</tt>, <tt>root</tt>, or <tt>guest</tt></li>
+  <li>it matches one of the following reserved words (case-insensitive): <tt>admin</tt>, <tt>root</tt>, or <tt>guest</tt> (so <tt>Admin</tt>, <tt>ADMIN</tt>, <tt>ADMin</tt>, etc. are all invalid).</li>
 </ul>
 
-<p>
-If the user enters an invalid username, your program should display an error message
-and prompt the user again.
-<br>Once the user enters a valid username, your program should print the accepted username
-and end.
-</p>
+<p>A password is considered invalid if:</p>
+<ul>
+  <li>it has fewer than 6 characters, or</li>
+  <li>it does not contain at least one digit.</li>
+</ul>
+
+<p>Once both are valid, the program should print a confirmation message.</p>
+
+<p><b>Note:</b> To check whether a single character is a digit, you can use the <tt>isdigit()</tt> method. For example, <code>"3".isdigit()</code> returns <tt>True</tt>, while <code>"a".isdigit()</code> returns <tt>False</tt>. </p>
 
 <h3>Sample Run</h3>
-
-<pre>
-Enter a username (at least 4 characters): bob
-Invalid username. Please try again.
-Enter a username (at least 4 characters): admin
-Invalid username. Please try again.
-Enter a username (at least 4 characters): guest
-Invalid username. Please try again.
-Enter a username (at least 4 characters): falco42
-Username accepted: falco42
+<pre style = "background-color:lavender;width:450px">
+Enter a username: bob
+Invalid username: must be at least 4 characters.
+Enter a username: ADMIN
+Invalid username: reserved word.
+Enter a username: falco42
+Enter a password: pass
+Invalid password: must be at least 6 characters.
+Enter a password: password
+Invalid password: must contain at least one digit.
+Enter a password: pass42
+Account created for falco42.
 </pre>
 
 </li>
