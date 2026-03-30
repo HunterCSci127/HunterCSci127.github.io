@@ -1734,24 +1734,20 @@ draw_tree(tess,100,"indigo","black")
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <br><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: pandas, plotly</b></p>
-	<p><b>Queens Library Branches Map</b></p>	
+	<p><b>NYC Hospitals Map</b></p>
 
+	<p>New York City Open Data makes data for <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-patient-care-locations-2011/f7b6-v6v3">NYC hospitals and health facilities</a> publicly available. A sample file, <a href="../files/nyc_hospitals.csv"><tt>nyc_hospitals.csv</tt></a> was downloaded and can be used to test your program.</p>
 
-	<p>New York City Open Data makes data for the <a href="https://data.cityofnewyork.us/Education/Queens-Library-Branches/kh3d-xhq7/about_data">Queens Library branches</a> publicly available. A sample file, <a href="../files/Queens_Library_Branches.csv"><tt>Queens_Library_Branches.csv</tt></a> was downloaded and can be used to test your program.</p>
-	<p>
-	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the Queens Library branches from the input file.  When the user hovers over the marker, the Neighborhood Tabulation Area (NTA) should appear in the pop-up box.
+	<p>Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file and the name of the output file, and creates a map with markers for all NYC health facilities from the input file. The markers should be colored by <tt>Facility Type</tt>, and when the user hovers over a marker, the <tt>Facility Name</tt> should appear in the pop-up box.</p>
+
+	<p>To color markers by a column in plotly express, use the <tt>color</tt> parameter, e.g. <code>color="Column Name"</code>.</p>
 
 	<p>A sample run:
-<pre><code class="text">Enter CSV file name:  Queens_Library_Branches.csv
-Enter output file:  libraryMap.html</code></pre>
+<pre><code class="text">Enter CSV file name: nyc_hospitals.csv
+Enter output file: hospitalsMap.html</code></pre>
 	<p>which would produce the HTML file:
 
-	<p><iframe src="../files/libraryMap.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
-	<p> When running your program locally, you need to check that the "Latitude" and "Longitude" values are non-empty.  You can drop any row where there's empty values with:
-		
-		<pre><code class="python">df_cleaned = df.dropna()</code></pre>
+	<p><iframe src="../files/hospitalsMap.html" width="800" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
 </li>
