@@ -1244,6 +1244,31 @@ print(count)
 
 	<p>The file <a href="../files/vgsales.csv">vgsales.csv</a> contains data on video game sales. Each row represents a game and includes its title, platform, release year, genre, publisher, and sales figures across different regions.</p>
 
+	<p><b>Step 1: Create Your Personalized Dataset (<tt>IDfiltered_vgsales.csv</tt>)</b></p>
+
+	<p>Before writing your program, you must filter <tt>vgsales.csv</tt> to create a dataset unique to you. Use the <b>last two digits</b> of your EmplID number to determine a 10-year window of data to keep:</p>
+
+	<ol>
+		<li>Take the last two digits of your EmplID number. Call this number <tt>NN</tt>.</li>
+		<li>Compute your start year: <code>start_year = 1980 + (NN % 30)</code></li>
+		<li>Your year window is <tt>start_year</tt> to <tt>start_year + 9</tt> (inclusive).</li>
+		<li>Filter <tt>vgsales.csv</tt> to keep only rows where the <tt>Year</tt> falls within your window.</li>
+		<li>Save the result as <tt>IDfiltered_vgsales.csv</tt>.</li>
+	</ol>
+
+	<p><b>Example:</b> If your EmplID number is <tt>54034766</tt>, the last two digits are <tt>66</tt>.<br>
+	<code>start_year = 1980 + (66 % 30) = 1980 + 6 = 1986</code><br>
+	You keep only rows where <tt>Year</tt> is between <tt>1986</tt> and <tt>1995</tt> (inclusive).<br>
+	Your output file would be named <tt>IDfiltered_vgsales.csv</tt>.</p>
+
+	<p>You can filter and save the CSV using pandas. Assuming the dataframe in which you read <tt>vgsales.csv</tt> is called <tt>df</tt>:</p>
+	<pre><code class="python">
+filtered = df[(df['Year'] >= start_year) & (df['Year'] <= start_year + 9)]
+filtered.to_csv('IDfiltered_vgsales.csv', index=False)
+</code></pre>
+
+<p><b>Step 2: Write Your Program (<tt>hw33.py</tt>)</b></p>
+
 	<p>Adapt the parking ticket program from <a href="lab7.html">Lab 7</a> to analyze video game sales data. Your program should:
 	</p>
 	<ul>
@@ -1271,11 +1296,11 @@ Enter platform: PS4
 Enter attribute: Genre
 The top 5 values for Genre on PS4 are:
 Genre
-Action          122
-Role-Playing     47
-Sports           43
-Shooter          34
-Adventure        19
+Action           31
+Role-Playing     28
+Sports           19
+Shooter          13
+Adventure        10
 Name: count, dtype: int64
 </code></pre>
 
@@ -1285,14 +1310,21 @@ Enter platform: Wii
 Enter attribute: Publisher
 The top 5 values for Publisher on Wii are:
 Publisher
-Ubisoft            115
-Activision         111
-Electronic Arts     90
-Nintendo            84
-THQ                 76
+Ubisoft             51
+Activision          12
+Electronic Arts     10
+Nintendo            9
+THQ                 8
 Name: count, dtype: int64
 </code></pre>
 
+<p><i>Note: The values shown above are for a particular EmplID and year range. Your output will differ since each student's filtered dataset is unique.</i></p>
+
+	<p><b>Submission:</b> Submit (upload) the following <b>two files</b> to Gradescope:</p>
+	<ol>
+		<li><tt>hw33.py</tt>: your Python program</li>
+		<li><tt>IDfiltered_vgsales.csv</tt>: your personalized filtered CSV file (where <tt>ID</tt> is your EmplID number)</li>
+	</ol>
 	
 </li>
 
