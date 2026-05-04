@@ -1005,13 +1005,14 @@ out3 = ...
 
 	<p>Write a program that asks the user for a noise level in decibels (dB) and the number of hours of exposure. Based on NIOSH/OSHA guidelines, the maximum safe exposure time decreases as noise level increases:
 	<ul>
-		<li>Between 0 and 85 dB (inclusive), the limit is up to 8 hours.</li>
-		<li>Between 86 and 88 dB (inclusive), the limit is up to 4 hours.</li>
-		<li>Between 89 and 91 dB (inclusive), the limit is up to 2 hours.</li>
-		<li>Between 92 and 94 dB (inclusive), the limit is up to 1 hour.</li>
+		<li>Between 0 and 85 dB (inclusive), the safe limit is up to 8 hours.</li>
+		<li>Between 86 and 88 dB (inclusive), the safe limit is up to 4 hours.</li>
+		<li>Between 89 and 91 dB (inclusive), the safe limit is up to 2 hours.</li>
+		<li>Between 92 and 94 dB (inclusive), the safe limit is up to 1 hour.</li>
 		<li>Above 94 dB, no duration of exposure is considered safe.</li>
 	</ul>
-	The program should print <tt>"Safe"</tt>, <tt>"Caution"</tt>, or <tt>"Unsafe"</tt> accordingly.</p>
+	<br>
+	The program should print <tt>"Safe"</tt> when the number of hours is within the limit for the noise level. It should print <tt>"Caution"</tt> when the number of hours is above the limit for the noise level. It should prrint <tt>"Unsafe"</tt> whenever the noise level is above 94dB.</p>
 
 	<p>Sample runs:
 	<pre><code class="text">Enter noise level in decibels: 87
@@ -1349,7 +1350,7 @@ Set the turtle's pen size to 2
 Hide the turtle
 
 Create a list with ["purple", "gold", "cyan", "lime"] repeated 25 times
-Create a list with the numbers 10, 15, 20, ..., 105, 110, followed by 110, 105, ..., 15
+Create a list with the numbers 10, 15, 20, ..., 105, followed by 110, 105, ..., 15
 
 Zip the two lists
 
