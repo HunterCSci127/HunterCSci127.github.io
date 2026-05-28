@@ -1,0 +1,472 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 8, CSci 127: Intro to CS, Hunter College</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+border: 2px solid #999999;
+}
+.inline {
+padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Homework</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+
+<br>
+<br><hr>
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 8<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2026<br><br>
+</h1>
+
+<div>
+
+
+<br><hr>
+<h3> Learning Objectives:</h3>
+  <ol>
+    <li> Students will <b>explore Top-Down Design</b>    
+    <li> Students will <b>use Python dictionaries</b> to store data.</li>
+    <li> Students will use <b>Unix commands for regular expressions (wildcard).</b></li>
+  </ol>
+
+  <p><b>Software tools needed:</b> terminal (command line), web browser and Python programming environment with numpy and matplotlib packages installed.</p>
+
+<hr>
+
+<br>
+<h2>1. Top-Down Design</h2>
+
+<p>
+Functions are used to design programs and provide an elegant
+way to divide work among several programmers.  A standard technique,
+called <b>top-down design</b>, consists of breaking a program into multiple
+function calls (covered in more detail in <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/mainfunction.html">Section 6.8</a>).
+Each function is written separately and then tested, before
+the next function is written.
+
+<p>
+<img src="../images/herd.png" height=300>
+
+<p>In today's lab, we will write a program to draw images using turtles.  We will focus on breaking down the problem into functions, and then implementing (and testing!) each function separately.  Here's a basic outline of our program:
+
+<pre><code class="python">#Intro Programming Lab:  A program with a herd of turtles
+
+import turtle
+
+def main():
+    welcomeMessage()            #Writes a welcome message to the shell
+    numTurtles = getInput()     #Ask for number of turles
+    w = setUpScreen()           #Set up a green turtle window
+    turtleList = setUpTurtles(numTurtles) #Make a list of turtles, different colors
+    for i in range(10):
+        moveForward(turtleList) #Move each turtle in the list forward
+        stamp(turtleList)       #Stamp where the turtle stopped
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+We will fill in each function, one-by-one, using the comments as guidance.
+If you run the program above, you will get errors saying that it does not recognize <tt>welcomeMessage()</tt>, since it is not pre-defined function, but instead a function that we are designing.  To avoid these errors and to allow testing of each part as we write it, we will add in empty functions (often called ``stubs'') that we will fill in as we go:
+
+<pre><code class="python">#Intro Programming Lab:  A program with a herd of turtles
+
+import turtle
+
+def welcomeMessage():
+    #Empty placeholder until function is defined
+    return()
+
+def getInput():
+    #Empty placeholder until function is defined
+    return()
+
+def setUpScreen():
+    #Empty placeholder until function is defined
+    return()
+
+def setUpTurtles(num):
+    #Empty placeholder until function is defined
+    return()
+
+def moveForward(tList):
+    #Empty placeholder until function is defined
+    return()
+
+def stamp(tList):
+    #Empty placeholder until function is defined
+    return()
+
+def main():
+    welcomeMessage()            #Writes a welcome message to the shell
+    numTurtles = getInput()     #Ask for number of turles
+    w = setUpScreen()           #Set up a green turtle window
+    turtleList = setUpTurtles(numTurtles) #Make a list of turtles, different colors
+    for i in range(10):
+        moveForward(turtleList) #Move each turtle in the list forward
+        stamp(turtleList)       #Stamp where the turtle stopped
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+
+<p>
+The first function should welcome the user to the program:
+<pre><code class="python">def welcomeMessage():
+    print()
+    print("Welcome to our herd of turtles demonstration!")
+    print()
+</code></pre>
+Add it to the program above (replace the empty function with this one) and run it to make sure there are no typos or
+errors.
+
+<p>Next, let's ask the user for the number of turtles.  Since the function call
+is on the right hand side of an equals sign, it returns a value (namely, the number
+of turtles) that we will use later in the program.  So, our function will ask
+the user for the number and then use a <tt>return</tt> statement to send that
+value back to the calling function:
+<pre><code class="python">def getInput():
+    n = eval(input("Please enter the number of turtles: "))
+    return(n)
+</code></pre>
+When we add these in, we now have the program:
+<pre><code class="python">#Intro Programming Lab:  A program with herd of turtles
+
+import turtle
+
+
+def welcomeMessage():
+    print()
+    print("Welcome to our herd of turtles demonstration!")
+    print()
+
+def getInput():
+    n = eval(input("Please enter the number of turtles: "))
+    return n
+
+def setUpScreen():
+    #Empty placeholder until function is defined
+    return()
+
+def setUpTurtles(num):
+    #Empty placeholder until function is defined
+    return()
+
+def moveForward(tList):
+    #Empty placeholder until function is defined
+    return()
+
+def stamp(tList):
+    #Empty placeholder until function is defined
+    return()
+
+
+def main():
+    welcomeMessage()            #Writes a welcome message to the shell
+    numTurtles = getInput()     #Ask for number of turles
+    w = setUpScreen()           #Set up a green turtle window
+    turtleList = setUpTurtles(numTurtles) #Make a list of turtles, different colors
+    for i in range(10):
+        moveForward(turtleList) #Move each turtle in the list forward
+        stamp(turtleList)       #Stamp where the turtle stopped
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+We still need to set up the turtle window and make it green.  The
+turtle command to change the background color is <tt>bgcolor</tt> and
+colors can be referred by their names or the percentage of red, green,
+and blue ('RGB') in the color.  Let's use the name to change the window
+color:
+<pre><code class="python">def setUpScreen():
+    w = turtle.Screen()
+    w.bgcolor("green")
+    return w
+</code></pre>
+Next, we need to set up a list of turtles.  From the function invocation in the
+<tt>main()</tt> we know it has the outline:
+<pre><code class="python">def setUpTurtles(n):
+    #Create a list of turtles
+    #Make each turtle appear turtle-shaped
+    #Change the color and default direction (so they don't run over each other)
+    return tList
+</code></pre>
+To set up our list, we will follow our outline from the strings and lists chapter:
+<ol>
+	<li> Create an empty list
+	<li> Make a new item
+
+</ol>
+For our turtles, this looks like:
+<pre><code class="python">def setUpTurtles(n):
+    tList = []
+    #Create turtles:
+    for i in range(n):
+        t = turtle.Turtle()
+        t.shape("turtle")       #Make the turtle appear turtle-shaped
+        tList.append(t)
+
+    return tList
+</code></pre>
+Lastly for this function, we need to change the color and direction.  We will use the `red-blue-green' (`RGB') values to give each turtle a different color.  To keep the turtle color from clashing with the green background, we will set the red and green parts of the color to 0, and just allow the blue to change from 50% to 100%.  To spread the turtles out, we'll divide the circle into even angles:
+<pre><code class="python">def setUpTurtles(n):
+    tList = []
+    #Create turtles:
+    for i in range(n):
+        t = turtle.Turtle()
+        t.shape("turtle")       #Make the turtle appear turtle-shaped
+        tList.append(t)
+
+    #Change their color from the blue default and default direction
+    for i in range(n):
+        tList[i].color(0,0,i/(2*n)+.5)
+        tList[i].right(i*360/n)
+
+    return tList
+</code></pre>
+If you run your program, you will see the turtles arranged pointing outwards from
+a center point, in different shapes of blue.
+
+<p>The next functions of the program are straightforward.  We will move each turtle forward using a for-loop.  We chose 30 by experimenting with window size.  If it does not fit well on your screen, change the forward distance to something that does.  To make a stamp of where the turtle has been, we use the Turtle graphics function, <tt>stamp()</tt>
+<pre><code class="python">def moveForward(tList):
+    for t in tList:
+        t.forward(30)
+
+def stamp(tList):
+    for t in tList:
+        t.stamp()
+</code></pre>
+
+Putting all the pieces together, we get:
+<pre><code class="python">#Intro Programming Lab:  A program with herd of turtles
+
+import turtle
+
+
+def welcomeMessage():
+    print()
+    print("Welcome to our herd of turtles demonstration!")
+    print()
+
+def getInput():
+    n = eval(input("Please enter the number of turtles: "))
+    return n
+
+
+def setUpScreen():
+    w = turtle.Screen()
+    w.bgcolor("green")
+    return w
+
+def setUpTurtles(n):
+    tList = []
+    #Create turtles:
+    for i in range(n):
+        t = turtle.Turtle()
+        t.shape("turtle")       #Make the turtle appear turtle-shaped
+        tList.append(t)
+
+    #Change their color from the blue default and default direction
+    for i in range(n):
+        tList[i].color(0,0,i/(2*n)+.5)
+        tList[i].right(i*360/n)
+
+    return tList
+
+def moveForward(tList):
+    for t in tList:
+        t.forward(30)
+
+def stamp(tList):
+    for t in tList:
+        t.stamp()
+
+def main():
+    welcomeMessage()            #Writes a welcome message to the shell
+    numTurtles = getInput()     #Ask for number of turles
+    w = setUpScreen()           #Set up a green turtle window
+    turtleList = setUpTurtles(numTurtles) #Make a list of turtles, different colors
+    for i in range(10):
+        moveForward(turtleList) #Move each turtle in the list forward
+        stamp(turtleList)       #Stamp where the turtle stopped
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+<h4>Challenges</h4>
+<p>
+Try running your program.  What happens?  How could you modify it to make green
+turtles on a blue background?  What would you need to modify to make the turtles
+make a circle each time?
+</p>
+
+
+<br><hr>  
+<h2>2.  Dictionaries</h2>
+
+<p>Python has various built-in data types.  We have used the atomic (also called primitive) data types since the first lecture.  As their name suggests, these data types are for holding one small piece of information.  The main atomic types for numeric data are <tt>int</tt> and <tt>float</tt>.  And we have also used the boolean data type <tt>bool</tt> for True/False data. </p>
+
+<p>There are also data types to hold collections of information.  We have used <tt>lists</tt> and <tt>strings</tt> to hold sequential data.  There is also a data type, <tt>tuple</tt>, for a fixed amount of sequential data (e.g. coordinates of a point can be held in a tuble.</p>
+
+<p>In this lab, we will explore a different type of collections data type called a <b>dictionaries</b>.  Dictionaries, also referred to as lookup tables, maps, hashmaps, or associative arrays, are incredibly useful for efficient storage and retrieval.  They are a <b>mapping type</b> which means, roughly, that they link together a key and a value, much like a paper dictionary.</p>
+
+<ul>
+<li>To get started, work through the first section on dictionaries (<a href="https://runestone.academy/ns/books/published/thinkcspy/Dictionaries/intro-Dictionaries.html">Section 12.1</a>) in our textbook:
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/intro-Dictionaries.html"> </iframe></p>
+</li>
+
+<li>Once you have completed the "Check Your Understanding" section, move on to the next section, Section 12.2 on dictionary operations:
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/Dictionaryoperations.html"> </iframe></p>
+</li>
+
+<li>Once you have completed the "Check Your Understanding" section of 12.2 move on to the next section, Section 12.3 on dictionary methods:
+
+<p><iframe width="800" height="500" frameborder="0" src="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/Dictionarymethods.html"> </iframe></p>
+</li>
+
+<br>
+<li>The textbook delves deeper into using dictionaries (feel free to read the rest of the chapter if interested), but for this course we will only use the material on dictionaries in Sections 12.1-12.3.</li>
+
+<p>Let's use a dictionary to approach the design challenge from lecture:</p>
+
+<tt>
+<p style="margin-left: 20pt;">
+  Are there two students with the same first name?
+  <ul>
+    <li>Devise an algorithm to find duplicate names.</li>
+    <li>Include your input and output for your algorithm.</li>
+    <li>Outline the process for finding duplicates.</li>
+  </ul>
+</p>
+</tt>
+
+<p>Let's use a dictionary to store how many times we have seen a name.  For example, if we have a list of names, <code class="inline">names</code>, we can loop through the name list.  If it's the first time the name has occurred, we can add it to our dictionary.  If it has already occurred, we can up the count.  Let's first write the pseudocode:
+</p>
+<tt>
+  <ol>
+    <li>Initialize the dictionary: seen = {}.</li>
+    <li>For each name in names:</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;if name is in the seen dictionary:</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seen[name] += 1</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seen[name] = 1</li>    
+  </ol>
+</tt>
+
+<p>When this loop finishes, the dictionary, <code class="inline">seen</code>, will contain all the names and the number of times they have occurred. </p>
+
+<p>Next, think about the following:
+  <ul>
+    <li>How do you rewrite the pseudocode in Python?</li>
+    <li>Using only the dictionary, how can you tell a name is a duplicate?  How can you extract the duplicates?</li>
+  </ul>
+</p>
+
+
+<h3>Dictionaries & DataFrames</h3>
+
+<p>Dictionaries provide a useful way to set up Pandas dataframes.  The keys of the dictionary are the column names and the values provide the column values.</p>
+
+<p>For example, let's set up a dataframe that contains cities, their location coordinates, and their populations (we will use this dataframe for creating an interactive map in <a href="lab9.html">Lab 9</a>).  To indicate a dictionary, we use the curly brackets: '{' and '}'.  Our columns are named: <tt>city</tt>, <tt>latitude</tt>, <tt>longitude</tt>, and <tt>population</tt>.  We use quotes around the names since we want the actual string value and not for python to interpret them as variables:</p>
+
+<pre><code class="pandas">
+data = {
+    'city': ['New York', 'Los Angeles', 'Paris', 'Tokyo', 'Rio de Janeiro'],
+    'latitude': [40.7128, 34.0549, 48.8575,33.8688, -22.9068],
+    'longitude': [-74.0060,-118.2426, 2.3514,139.6500, -43.1729],
+    'population': [8_258_000, 3_821_000, 2_103_000, 14_180_000,6_211_000]
+}
+df = pd.DataFrame(data)
+print(df)    
+</code></pre>
+<p>For really large number (e.g. 8,258,000), we often write them with commas between the thousands and millions, and millions and billions places, but that will confuse Python since it will think they are separate number.  Instead, you can write underscores ('_') in place of the commas as we did for population numbers and Python will interpret as a number.</p>
+
+<p>The dataframe is named <tt>df</tt> and when we print it, we see:</p>
+
+<pre><code class="pandas">
+             city  latitude  longitude  population
+0        New York   40.7128   -74.0060     8258000
+1     Los Angeles   34.0549  -118.2426     3821000
+2           Paris   48.8575     2.3514     2103000
+3           Tokyo   33.8688   139.6500    14180000
+4  Rio de Janeiro  -22.9068   -43.1729     6211000    
+</code></pre>
+
+<p>The first column contains the index that is automatically generated, and the remaining columns are created from the values in our dictionary.  </p>
+
+<br><hr>  
+<h2> More on the Command Line Interface:  Regular Expressions</h2>
+
+<p>Often it's useful to find strings that match a pattern instead of spelling out the exact names of things.  For example, if you wanted to know all the Python programs in your directory that are <tt>.py</tt> files, you could list out all the files and then look through visually to find them:
+<pre><code class="shell">$ ls</code></pre>
+But an easier way would be to specify that only the files that end in <tt>.py</tt> be printed.  To do that, you can use the "wildcard" or * operator that:
+<pre><code class="shell">$ ls *.py</code></pre>
+
+The <tt>*.py</tt> says match any file that starts with any number (including 0) of characters and ends with <tt>.py</tt>.
+
+<p>You can use the wildcard operator in multiple places.  For example, if your directory contained:
+<pre><code class="shell">$ ls -l
+-rw-r--r--@ 1 stjohn  staff      5308 Mar 21 14:38 quizzes.html
+-rw-r--r--  1 stjohn  staff     54013 Apr 20 18:57 zoneDist.csv
+-rw-r--r--@ 1 stjohn  staff      1519 Apr 22 15:14 zoneMap.py
+-rw-r--r--  1 stjohn  staff  16455174 Mar 20 19:02 zoning2.html
+-rw-r--r--  1 stjohn  staff  17343896 Mar 20 18:58 zoningIDS.json</code></pre>
+Then the following command:
+<pre><code class="shell">$ ls z*</code></pre>
+prints all files that start with  <tt>z</tt> and are followed by any number of characters.
+
+<p>Similarly,
+<pre><code class="shell">$ ls *zz*</code></pre>
+would all files that start with any number of characters, followed by <tt>zz</tt>, and end with any number of characters.  The only file that contains this "pattern" of <tt>zz</tt> is <tt>quizzes.html</tt>.
+
+<p>There are additional ways to write down patterns that fall into the category of "regular expressions".  If you're interested in finding more complex patterns, Unix has a built-in function for "global regular expression printing", called <tt>grep</tt>.  We will not cover it this term but for an overview see
+the <a href="https://en.wikipedia.org/wiki/Grep">grep wiki page</a>.
+
+
+
+
+
+<br><hr>  
+<h2>What's Next?</h2>
+	
+	
+<p>You can start working on this week's programming assignments. The <a href="ps.html">homework page</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+	
+</div>
+
+</div>
+</body>
+</html>

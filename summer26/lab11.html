@@ -1,0 +1,307 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Lab 11, CSci 127: Intro to CS, Hunter College</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<STYLE>A {text-decoration: none;}
+th, td { padding: 5px; }
+code {
+  border: 2px solid #999999;
+}
+.inline {
+  padding: 1px;
+}
+</STYLE>
+<body>
+
+
+<div style="margin: 15px;">
+		<span style= "float: left;font-size:larger"><a href="../f25.html">CSci 127</a></span>
+		<span style= "float: right">
+			<a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;
+			<a href="cw.html">Coursework</a>&nbsp;&nbsp;&nbsp;
+			<a href="ps.html">Programs</a>&nbsp;&nbsp;&nbsp;<a href="faq.html">FAQ</a>
+		</span>
+</div>
+
+<br>
+<br><hr>
+
+
+<div style="margin:50px">
+
+
+
+<h1>Laboratory Exercise 11<br>CSCI 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Spring 2026<br><br>
+</h1>
+
+
+
+<br>
+<hr>
+  <h3> Learning Objectives:</h3>
+    <ol>
+	  <li> Students will <b>understand the concepts of jumps and registers in machine language</b>.</li>
+      <li> Students will <b>write programs in Simplified Machine Language: WeMIPS</b>.</li>
+      <li> Students will write programs with <b>loops in WeMIPS</b>.</li>
+      <li> Students will use <b>Unix Pipe commands</b> to build more complex shell commands.</li>
+    </ol>
+<p>
+
+
+<p><b>Software tools needed:</b>  web browser and a graphical editor, such as <tt>gEdit</tt>.
+
+<hr>
+
+<p>References:
+<ul>
+	<li> <a href="https://tomorrowcorporation.com/human-resource-machine-hour-of-code-edition">Human Resource Machine (Education)</a></li>
+	<li> <a href="https://wemips.ralfgerlich.biz/WeMips.html">WeMIPS Emulator</a>
+	<li> <a href="https://phoenix.goucher.edu/~kelliher/f2009/cs220/mipsir.html">U Idaho MIPS reference sheet</a>
+	<li> <a href="https://cs.gmu.edu/~setia/cs365-S02/class3.pdf">Setia's MIPS slides</a>
+	<li> <a href="https://en.wikibooks.org/wiki/MIPS_Assembly/Instruction_Formats">MIPS Wikibooks</a>
+</ul>
+
+<hr>
+<br>
+<h2>1.  Developing Intuition via Human Resource Machine</h2>
+
+<p><img src="https://tomorrowcorporation.com/blog/wp-content/themes/tcTheme2/images/hrm/screenshots/hrm_01.png" height = 400></p>
+
+<p> In today's lab, we will explore a programming language that is very "low level" in that it maps very closely to the actual commands that are used by the computer's processor.  To gain intuition on some of the underlying fundamental concepts, we will start with a simple implementation that has only 11 basic commands (that <a href="https://tomorrowcorporation.com/humanresourcemachine">the developers</a> describe as following the <a href="https://en.wikipedia.org/wiki/Harvard_architecture">Harvard Architecture</a> with a single accumulator).</p>
+
+<p>To get started:</p>
+<ul>
+	<li>We have a license for the full version of <a href="https://tomorrowcorporation.com/humanresourcemachine">Human Resource Machine</a> for the lab computers.  Check out a computer while in the lab, and open "Human Resource Machine."  Turn down (or off) the volume since the music can be a bit much.</li>
+	<li>Download a <a href="https://tomorrowcorporation.com/human-resource-machine-hour-of-code-edition">limited version</a> (free but does not save progress) or <a href="https://tomorrowcorporation.com/humanresourcemachine">full version</a> (saves progress but need to purchase) to your machine.</li>
+</ul>
+
+<p>Open the program, choose your avatar, and proceed to the first level.</p>
+
+<h3>Years 1-6:  Jumps & Addition</h3>
+
+<p><img src="../images/human_resource_machine_toc_1_to_6.png" height=400></p>
+
+<p>Work through the first six levels:</p>
+
+<ul>
+	<li>Year 1:  Mail Room:  Introduces two commands:  <code class="inline">inbox</code> and <code class="inline">outbox</code> which picks up an item from the inbox and places an item on the outbox, respectively.  These are similar to our <code class="inline">input()</code> and <code class="inline">print()</code> functions in Python.</li>
+	<li>Year 2: Busy Mail Room:  This level introduces <code class="inline">jump</code> which allows you to repeat blocks of code or "loop."  </li>
+	<li>Year 3: Copy Floor:  Introduces the <code class="inline">copyfrom</code> command that allows you to pick up values from the floor (aka "the registers" or places you can store values you would like to use in your computation).</li>
+	<li>Year 4: Scrambler Handler:  The companion command <code class="inline">copyto</code> is introduced.  It allows you to place values on marked regions of the floor (e.g. place values in specific registers).</li>
+	<li>Year 5: Coffee Time: (video, no coding)</li>
+	<li>Year 6: Rainy Summer:  Introduces <code class="inline">add</code>.  It's a very limited version of addition in that you can only add something on the floor (in a register) to what you're holding, and the result replaces what you're holding.  While limited, it echos the restrictions that you find in most machine languages.</li>
+</ul>
+
+<p>The first 6 years introduced 6 commands (out of the 11 total in Human Resource Machine) that allow you to input, output, jump to other parts of your program, store and retrieve values, and perform a limited addition.  In Section 3, we will see the corresponding commands in the MIPS machine language.</p>
+
+
+<h3>Years 7, 9, 11, 13-14:  Conditional Branching & More Arithmetic</h3>
+
+<p><img src="../images/human_resource_machine_toc_7_to_14.png" height=350></p>
+
+<p>We're only doing the main branch of the program, but if you're interested your are welcome to do the optional years (such as 8, 10, and 12).</p>
+
+<ul>
+	<li>Year 7:  Zero Extermination: To be able to write more complex programs, we need to be able to make decisions about what to do next.  The simplest command for this is <code class="inline">jump if zero</code> that allows us to only jump, or branch, if what we're holding is 0.  </li>
+	<li>Year 9: Zero Preservation Initiative:  No new commands on this level, but an interesting programming challenge of doing the opposite of the previous level.</li>
+	<li>Year 11: Sub Hallway: Introduces <code class="inline">sub</code>.  It's a very limited version of subtraction, echoing the restricted version of addition.  But while limited, it also echos the restrictions that you find in most machine languages. </li>
+	<li>Year 13: Equalization Room:  Comments are introduced to make it easier to remember what's going on as the programs get larger.</li>
+	<li>Year 14: Maximization Room: Introduces another branching command: <code class="inline">jump if negative</code> to make it a bit easier to compare items. </li>
+</ul>
+
+<p>The goal of this part of the lab is to build up understanding of branching (e.g. the different types of jump commands) and the use of registers (the values stored on the floor).  We are only doing these challenges for the lab today, but you can keep working through Human Resource Machine if you're intested!</p>
+
+
+<hr>
+<br>
+<h2>2.  Simplified Machine Language</h2>
+
+
+
+<p> We will use an emulator, <a href="https://wemips.ralfgerlich.biz/WeMips.html">WeMIPS</a>, to emulate what a machine-level language would do for a popular class of computer processors, MIPS.  Processors with <a href="">MIPS</a> are a Reduced Instructor Set Computer (RISC), meaning they have fewer different types of instructions that the processor knows (and thus fewer that have to be implemented, leading to faster processors).
+
+<p>
+Let's start by looking at a program that will print "Hello World":
+
+<p> <img src = "../images/mipsHello.png" width = 95% border="1">
+
+
+<p> If you would like to follow along, using the
+<a href="https://wemips.ralfgerlich.biz/WeMips.html" target="_blank">emulator</a> (click on this link to open in a new tab or use inline below), toggle the "Show/Hide Demos" button and then click on the "Hello World" demo:</p> 
+
+<iframe src="https://wemips.ralfgerlich.biz/WeMips.html" width="80%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+<p> Just as we did with PythonTutor, we can "step" or go through the code line-by-line to see what it does:
+
+<ul>
+	<li> The first line is a comment.  Like in Python, everything after a '#' on a line is ignored by the simulator.
+	<li> The next line says to add -13 to <tt>$sp</tt>, which stands for the stack pointer.  The stack is a region of memory where we can store information (it is very common-- more details in future computer science courses). <br>
+	We are using 13, because to allow enough room to store the message "Hello World" (plus a null character to signal the end of the string).
+	<li> The next line, <tt>SB $t0, 0($sp)</tt> moves the number we stored to the register <tt>$t0</tt> to the stack pointer address (with 0 offset).  Since it is moving a byte of information, <tt>SB</tt> stands for "Store Byte".
+	<li> We repeat with each letter in our message, loading it to register <tt>$t0</tt> and then moving the contents of that register to the next empty memory location.  This contninues until the entire message is loaded.
+	<li> Next, we place 4 into the register <tt>$v0</tt>.  That register is used to tell the simulator what type of system call we would like to make.  4 is used for printing strings.
+	<li> Next, we place the location of the start of our message in <tt>$a0</tt> (that's where the system looks for the location of the string to print).
+	<li> Lastly, we call <tt>syscall</tt>.  Since we have loaded 4 into <tt>$v0</tt>, it will print whatever string starts at the memory location in <tt>$a0</tt>.
+	<li> If the messages are not displaying, toggle to the "Log".  You will see the message in green on the stack.
+</ul>
+
+<p>Try changing the program in the WeMIPS window to print out "Hello!!!".  Once it does, copy the program into a text window:
+
+<pre><code class="mips">
+#Name: YOUR NAME HERE
+#Email: YOUR EMAIL HERE
+#My first MIPS program that prints: Hello!!!
+
+... put your machine language program here ....
+
+</code></pre>
+
+and see the <a href="ps.html#set11">homework List</a>.</p>
+
+<br>
+<br><hr>  
+<h2>3.  Loops in Machine Language</h2>
+
+<p> To create loops in our machine language, we use two additional instructions:
+
+<ul>
+	<li> <tt>BEQ</tt> or "Branch When Equal" which, when two values are equal, lets you go to a different part of the program (which you specify), and
+	<li> <tt>J</tt> or "J" which always go to a different part of the program, and is incredibly useful for setting up loops.
+</ul>
+
+Here is a sample of setting up loops in the MIPS machine language (you can copy it into the emulator to step through the code):
+
+<pre><code style="mips">#Sample program that loops from 10 down to 0
+ADDI $s0, $zero, 10 #set s0 to 10
+ADDI $s1, $zero, 1  #use to decrement counter, $s0
+AGAIN: SUB $s0, $s0, $s1
+BEQ $s0, $zero, DONE
+J AGAIN
+DONE:  #To break out of the loop
+</code></pre>
+
+Here's a translation of the code into pseudocode:
+<ol>
+	<li> Set <tt>$s0</tt> to 10.
+	<li> Set <tt>$s1</tt> to 1.
+	<li> Subtract <tt>$s1</tt> from <tt>$s0</tt> and store result in <tt>$s0</tt> (i.e. <tt>$s0 = $s0 - $s1</tt>).
+	<li> If <tt>$s0</tt> equals 0, go to line 6.
+	<li> Else, go back to Line 3 and repeat.
+	<li> Program ends here.
+</ol>
+
+<p>
+This program counts down from 10 to 0.  How could you modify it to count from 1 to 10?  When you have it running, see the <a href="ps.html#ps11">homework page</a>.
+
+<p>(Hint:  store the value 10 in a register to use in the comparison)
+
+<h4>Challenge</h4>
+
+<p>As a final machine language challenge, modify the "Interactive" demo (the first lines are in the image above) to use the <i>current year</i> when computing the ages:</p>
+
+<p><img src="../images/mipsInteractive.png" height = 200 border="1"></p>
+
+<p>Click on "Show/Hide Demos" and then click on "Interactive:</p>
+
+<iframe src="https://wemips.ralfgerlich.biz/WeMips.html" width="80%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+
+<h3>A Note on Grading Simplified Machine Language</h3>
+
+
+
+<p>We're going to use just a few commands that move values into registers (physical memory locations), do simple arithmetic, and jump (or branch) to another part of our program.
+
+<!--
+<p> Explain stack pointer
+
+<p> To print out numbers from 10 to 0, loop with sub, plus print
+-->
+
+
+There are many commands that can be used in the full MIPS machine language.  We are working with only a few of them:
+
+<pre><code class="mips">ADD, ADDI, ADDIU, BEQ, J, SB, SUB, SUBU, syscall
+</code></pre>
+
+As such, the grading script only recognizes the commands above and the '#' style comments.  Anything else will confuse it greatly.
+
+
+<p>The general format for simplified machine language programs is:
+
+<pre><code class="mips">#Name: YOUR NAME HERE
+#Email: YOUR EMAIL HERE
+
+    ... Put your code goes here...
+</code></pre>
+
+<p>To submit your program for grading:
+<ul>
+	<li> Run and debug your program using <a href="https://wemips.ralfgerlich.biz/WeMips.html">WeMIPS</a>
+	<li> Once it works, copy the text into a text editor and save.  Make sure your file has a comment at the top with your name.
+	<li> Drag and drop the text file onto the <a href="http://gradescope.com">gradescope</a> page for the given program.
+</ul>
+
+
+<br><hr>  
+<h2>4.  More on Unix:  Using Pipes</h2>
+
+<p> In <a href="lab6.html">Lab 6</a>, we introduced making short programs, or scripts, of Unix commands.  In this lab, we introduce a very useful construct to let you glue together simple commands to perform more complex actions.
+
+<p> The command '|' is called a <b>pipe</b> since it takes the data flowing out of a command and directs it to flow into the next command, much like a pipe directing the flow of water.</p>
+
+<p> For example, if you type:
+<pre><code class="shell">ls -l</code>
+</pre>
+at the prompt, you will see the 'long' listing for every file in your current directory. (Note that it's the letter "L", not the number "1" that it looks like on some browsers).  For example, if I ran this command in my directory for Program 44, I get:</p>
+<p>
+<img src="../images/lsScreenshot.png" width=600>
+
+<p> showing 7 files, 6 of which were created in October.  Names with '/' after them are directories or folders.  '*' indicates files that can be executed (see <a href="lab6.html">Lab 6</a> for how to change the permissions of a file).
+
+<p> Let's use a pipe to count the number of files from October.  First, we need to take the output from <tt>ls</tt> and direct it into a program that can find patterns.  A popular one on Unix is called <tt>grep</tt> (it searches for patterns, which are also called regular expressions or 're'-- the name comes from global search for regular expressions program).  Let's have it look for 'Oct':</p>
+
+<pre><code class="shell">ls -l | grep "Oct"</code></pre>
+
+<p> Note that between the <tt>ls -l</tt> and the <tt>grep "Oct"</tt> is a pipe ('|') that directs the outflow from the <tt>ls</tt> command to the inflow of the <tt>grep</tt> command:</p>
+
+<p><img src="../images/lsGrep.png" width=600>
+
+<p>We can use the pipe to take the output of the <tt>grep</tt> command and send it to a program that counts the number of lines.  This program, <tt>wc</tt>, counts characters (option <tt>-m</tt>), words (option <tt>-w</tt>), and lines (option <tt>-l</tt>).  We'll use the <tt>-l</tt> option to count lines:</p>
+
+    <pre><code class="shell">ls -l | grep "Oct" | wc -l</code></pre>
+
+<p> which gives:
+<p><img src="../images/lsGrepWC.png" width=600>
+
+<p>the number of files in the directory that were last modified.</p>
+
+<p> How could you make a script that counted the number of <tt>.py</tt> files in the directory?</p>
+
+<p> When you have the answer, put the single line into a script.  Remember to use <tt>Unix</tt> end-of-lines, since gradescope will run what you submit as a Unix script and will be very confused if you have non-Unix (i.e. Windows-style) end-of-lines.  See <a href="ps.html#set11">homework</a>.
+
+
+
+
+
+  <br><hr>  
+  <h2>What's Next?</h2>
+    
+    
+  <p>You can start working on this week's programming assignments. The <a href="ps.html">homework page</a> has problem descriptions, suggested reading, and due dates next to each problem.  You should aim to finish the programs in the next week, although the deadlines are several weeks out, to give a buffer just in case.</p> 
+    
+  </div>
+  </body>
+  </html>
+  
