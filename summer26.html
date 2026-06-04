@@ -122,7 +122,7 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		<a href="http://www.pythontutor.com/visualize.html#code=%23Name%3A%20%20Thomas%20Hunter%0A%23Date%3A%20%20February%201,%202017%0A%23This%20program%20prints%3A%20%20Hello,%20World!%0A%0Aprint%28%22Hello,%20World!%22%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank">Hello, World</a>, <br>
 		<a href="https://trinket.io/python/88a94dfc75" target="_blank">Hexagon example</a>, <br>
 		<a href="https://trinket.io/python/a3bede6db8" target="_blank">Fancier hexagon</a>, <br>
-	    <a href="summer26/csci127_summer26_lec1.pdf" target="_blank">Lecture #1 Notes</a></td>
+	    <b><a href="summer26/csci127_summer26_lec1.pdf" target="_blank">Lecture #1 Notes</a></b></td>
      <!--TODO files/csci127summer24Lecture1.pdf-->
 		<td></td>
 		<td rowspan=2>Think CS:  <a href= "https://runestone.academy/ns/books/published/thinkcspy/GeneralIntro/toctree.html" target="_blank">Chapter 1</a> &
@@ -138,11 +138,12 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 	</tr>
 
 
-<!--lecture 2-->
+<!--lecture 2/3-->
 	<tr>
 		<td rowspan=2><b>#2</b></td>
 		<td><b>Lecture:</b><br>June 2</td>
 		<td>Strings & Lists:  looping through strings, console I/O, ASCII representation<br><br>
+			Arithmetic, Indexing  & Slicing, Colors, Hexadecimal notation
   <!--  CS Survey:  <a href="http://www.hunter.cuny.edu/cs/Faculty/Sakas/">Prof. William Sakas</a> (computational linguistics)-->
 		</td>
 		<td>
@@ -150,57 +151,35 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		<a href="http://pythontutor.com/visualize.html#code=%23Predict%20what%20will%20be%20printed%3A%0A%0Afor%20num%20in%20%5B2,4,6,8,10%5D%3A%0A%20%20%20%20print%28num%29%0A%20%20%20%20%0Asum%20%3D%200%0Afor%20x%20in%20range%280,12,2%29%3A%0A%20%20%20%20print%28x%29%0A%20%20%20%20sum%20%3D%20sum%20%2B%20x%0A%0Aprint%28sum%29%0A%0Afor%20c%20in%20%22ABCD%22%3A%0A%20%20%20%20print%28c%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Loop Puzzles 2</a>,<br>
 		<a href="http://pythontutor.com/visualize.html#code=%23Predict%20what%20will%20be%20printed%3A%0A%0Afor%20c%20in%20range%2865,90%29%3A%0A%20%20%20%20print%28chr%28c%29%29%0A%20%20%20%20%0Amessage%20%3D%20%22I%20love%20Python%22%0AnewMessage%20%3D%20%22%22%0Afor%20c%20in%20message%3A%0A%20%20%20%20print%28ord%28c%29%29%20%20%20%23Print%20the%20Unicode%20of%20each%20number%0A%20%20%20%20print%28chr%28ord%28c%29%2B1%29%29%20%20%20%20%23Print%20the%20next%20character%0A%20%20%20%20newMessage%20%3D%20newMessage%20%2B%20chr%28ord%28c%29%2B1%29%20%23add%20to%20the%20new%20message%0Aprint%28%22The%20coded%20message%20is%22,%20newMessage%29%0A%0Aword%20%3D%20%22zebra%22%0AcodedWord%20%3D%20%22%22%0Afor%20ch%20in%20word%3A%0A%20%20%20%20offset%20%3D%20ord%28ch%29%20-%20ord%28'a'%29%20%2B%201%20%23how%20many%20letters%20past%20'a'%0A%20%20%20%20wrap%20%3D%20offset%20%25%2026%20%20%23if%20larger%20than%2026,%20wrap%20back%20to%200%0A%20%20%20%20newChar%20%3D%20chr%28ord%28'a'%29%20%2B%20wrap%29%20%20%23compute%20the%20new%20letter%0A%20%20%20%20print%28wrap,%20chr%28ord%28'a'%29%20%2B%20wrap%29%29%20%20%20%20%23print%20the%20wrap%20%26%20new%20letter%0A%20%20%20%20codedWord%20%3D%20codedWord%20%2B%20newChar%20%23add%20the%20newChar%20to%20the%20coded%20word%0A%20%20%20%20%0Aprint%28%22The%20coded%20word%20%28with%20wrap%29%20is%22,%20codedWord%29%0A&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Caesar Cipher example</a>,<br>
 		<a href="http://pythontutor.com/visualize.html#code=mess%20%3D%20input%28'Please%20enter%20a%20message%3A'%29%0Aprint%28%22You%20entered%22,%20mess%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">input() example</a>,<br>
-		<!--<a href="summer24/CSCI127summer24Lecture2.pdf">Lecture Notes</a>-->
+		<a href="http://www.pythontutor.com/visualize.html#code=%23Mystery%20code%20for%20lecture%203%0A%0AstartTime%20%3D%20int%28input%28'Enter%20starting%20time%3A%20'%29%29%0Aduration%20%3D%20int%28input%28'Enter%20how%20long%3A%20'%29%29%0A%0Aprint%28'Your%20event%20starts%20at',%20startTime,%20%22o'clock.%22%29%0A%0AendTime%20%3D%20%28startTime%2Bduration%29%2512%0Aprint%28'Your%20event%20ends%20at',%20endTime,%20%22o'clock.%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%2210%22,%222%22%5D&textReferences=false">Event Timing (Arithmetic Challenge)</a>,
+		<a href="http://www.pythontutor.com/visualize.html#code=for%20d%20in%20range%2810,%200,%20-1%29%3A%0A%20%20%20%20print%28d%29%0Aprint%28%22Blast%20off!%22%29%0A%0Afor%20num%20in%20range%285,8%29%3A%0A%20%20%20%20print%28num,%202*num%29%0A%20%20%20%20%0As%20%3D%20%22City%20University%20of%20New%20York%22%0Aprint%28s%5B3%5D,%20s%5B0%3A3%5D,%20s%5B%3A3%5D%29%0Aprint%28s%5B5%3A8%5D,%20s%5B-1%5D%29%0A%0Anames%20%3D%20%5B%22Eleanor%22,%20%22Anna%22,%20%22Alice%22,%20%22Edith%22%5D%0Afor%20n%20in%20names%3A%0A%20%20%20%20print%28n%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Slicing Challenges</a>, <br>
+		<a href="https://trinket.io/python/8e9edc0a1b?runMode=console">Color Challenges</a> <br>
+		<b><a href="summer26/csci127_summer26_lec2_3.pdf" target="_blank">Lecture #2/3 Notes</a></b></td>
 		</td>
 		<td>
 		</td>
-		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/SimplePythonData/toctree.html">Chapter 2</a> &
-		<a href="https://runestone.academy/ns/books/published//thinkcspy/Debugging/toctree.html">Chapter 3</a></td>
+		<td rowspan=2>Think CS: <a href="http://interactivepython.org/runestone/static/thinkcspy/SimplePythonData/toctree.html">Chapter 2</a>, 
+		<a href="http://interactivepython.org/runestone/static/thinkcspy/Debugging/toctree.html">Chapter 3</a>, <a href="http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.11</a>, &
+		<a href="http://interactivepython.org/runestone/static/thinkcspy/Files/toctree.html">Chapter 11</a>, <a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Numpy tutorial (DataCamp)</a></td>
 
 	</tr>
 	<tr>
 		<td><b>Lab & Quiz :</b></td>
-		<td>String methods; Problem solving and the design process (simple parsing and translating)</td>
-		<td><a href="summer24/lab2.html"><p style="color:#FF0000";><b>Lab 2</b></p></a></td>
-		<td><a href="summer24/quizzes.html#Q2">Turtles & Loops</a>
-		</td>
-	</tr>
-
-<!--lecture 3-->
-<a id="l3"></a>
-	<tr>
-		<td rowspan=2><b>#2</b></td>
-		<td><b>Lecture:</b><br> June 4 </td>
-		<td>Arithmetic; Indexing  & Slicing; Colors, Hexadecimal notation;<br><br>
-    <!--   Prof. John Ranellucci, <a href="https://education.hunter.cuny.edu/about/faculty-staff/john-ranellucci/">Educational Psychology</a>-->
-		<!-- Guest Lecturer:  Katherine Howitt -->
-		</td>
 		<td>
-		<a href="http://www.pythontutor.com/visualize.html#code=%23Mystery%20code%20for%20lecture%203%0A%0AstartTime%20%3D%20int%28input%28'Enter%20starting%20time%3A%20'%29%29%0Aduration%20%3D%20int%28input%28'Enter%20how%20long%3A%20'%29%29%0A%0Aprint%28'Your%20event%20starts%20at',%20startTime,%20%22o'clock.%22%29%0A%0AendTime%20%3D%20%28startTime%2Bduration%29%2512%0Aprint%28'Your%20event%20ends%20at',%20endTime,%20%22o'clock.%22%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%2210%22,%222%22%5D&textReferences=false">Event Timing (Arithmetic Challenge)</a>,
-		<a href="http://www.pythontutor.com/visualize.html#code=for%20d%20in%20range%2810,%200,%20-1%29%3A%0A%20%20%20%20print%28d%29%0Aprint%28%22Blast%20off!%22%29%0A%0Afor%20num%20in%20range%285,8%29%3A%0A%20%20%20%20print%28num,%202*num%29%0A%20%20%20%20%0As%20%3D%20%22City%20University%20of%20New%20York%22%0Aprint%28s%5B3%5D,%20s%5B0%3A3%5D,%20s%5B%3A3%5D%29%0Aprint%28s%5B5%3A8%5D,%20s%5B-1%5D%29%0A%0Anames%20%3D%20%5B%22Eleanor%22,%20%22Anna%22,%20%22Alice%22,%20%22Edith%22%5D%0Afor%20n%20in%20names%3A%0A%20%20%20%20print%28n%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Slicing Challenges</a>, <br>
-		<a href="https://trinket.io/python/8e9edc0a1b?runMode=console">Color Challenges</a>,
-    <br>
-    <!--<a href="summer24/CSCI127summer24Lecture3.pdf">Lecture Notes</a>-->
-  
-		<td></td>
-		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/2DimensionalIterationImageProcessing.html">Section 8.11</a> &
-		<a href="https://runestone.academy/ns/books/published//thinkcspy/Files/toctree.html">Chapter 11</a>, <br>
-		<a href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Numpy tutorial (DataCamp)</a></td>
-	</tr>
-
-	<tr>
-		<td><b>Lab & Quiz:</b><br></td>
-		<td> Arrays and images in <a href="http://www.numpy.org">numpy</a>, hexadecimal representation of colors (image processing)
-		<td><a href="summer24/lab3.html"><p style="color:#FF0000";><b>Lab 3</b></p></a></td>
-		<td><a href="summer24/quizzes.html#Q3">Strings, Loops & Shell Commands</a>
+		    String methods; Problem solving and the design process (simple parsing and translating)<br><br>
+		    Colors, Arrays, Images, Intro to UNIX
+		</td>
+		<td><a href="summer26/lab2.html"><p style="color:#FF0000";><b>Lab 2</b></p></a>
+		<a href="summer26/lab3.html"><p style="color:#FF0000";><b>Lab 3</b></p></a></td>
+		<td>Turtles & Loops</a>
 		</td>
 	</tr>
 
 
 <!--lecture 4-->
 	<tr>
-		<td rowspan=2><b>#3</b></td>
-		<td><b>Lecture:</b><br>June 9</td>
+		<td rowspan=2><b>#2</b></td>
+		<td><b>Lecture:</b><br>June 4 - ONLINE</td>
 		<td>More on Lists & Arrays; Images; Decisions;<br><br>
 	<!--CS Survey:  <a href="http://www.hunter.cuny.edu/cs/Faculty/Sakas/">Prof. William Sakas</a> (computational linguistics) -->
 
@@ -209,32 +188,25 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		<a href="http://www.pythontutor.com/visualize.html#code=yearBorn%20%3D%20int%28input%28'Enter%20year%20born%3A%20'%29%29%0Aif%20yearBorn%20%3C%201946%3A%0A%20%20%20%20print%28%22Greatest%20Generation%22%29%0Aelif%20yearBorn%20%3C%3D%201964%3A%0A%20%20%20%20print%28%22Baby%20Boomer%22%29%0Aelif%20yearBorn%20%3C%3D%201984%3A%0A%20%20%20%20print%28%22Generation%20X%22%29%0Aelif%20yearBorn%20%3C%3D%202004%3A%0A%20%20%20%20print%28%22Millennial%22%29%0Aelse%3A%0A%20%20%20%20print%28%22TBD%22%29%0A%20%20%20%20%0Ax%20%3D%20int%28input%28'Enter%20number%3A%20'%29%29%0Aif%20x%20%25%202%20%3D%3D%200%3A%0A%20%20%20%20print%28'Even%20number'%29%0Aelse%3A%0A%20%20%20%20print%28'Odd%20number'%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%221966%22,%223%22%5D&textReferences=false">Decision Challenges</a>,<br>
 		<a href="files/turtleString.py">turtleString.py</a>,<br>
         <a href="images/csBridge.png">csBridge.png</a>,<br>
-        <a href="files/blue_bridge_incomplete.py">blue_bridge_incomplete.py</a>,<br>
-        <a href="files/blue_bridge_complete.py">blue_bridge_complete.py</a>,<br>
-        <a href="files/red_cyan_incomplete.py">red_cyan_incomplete.py</a>,<br>
-        <a href="files/red_cyan_complete.py">red_cyan_complete.py</a>,<br>
-        <a href="files/H_logo_incomplete.py">H_logo_incomplete.py</a>,<br>
         <a href="files/H_logo.py">H_logo.py</a>,<br>
-        <a href="files/vertical_red_blue_strips_incomplete.py">vertical_red_blue_strips_incomplete.py</a>,<br>
-        <a href="files/vertical_red_blue_strips.py">vertical_red_blue_strips.py</a>,<br>
-        <a href="files/grade.py">grade.py</a>,<br>
-  
-		<!--<a href="summer24/CSCI127summer24Lecture4.pdf">Lecture notes</a>--></td>
+		<b><a href="https://drive.google.com/file/d/1HlJP4483NxJ_dzo7lEWAvGOycAJZduqk/view?usp=sharing">Lecture #4 Recording</a></b>
+		<b><a href="summer26/csci127_summer26_lec4.pdf">Lecture #4 Notes</a></b></td>
+		
 		<td></td>
 		<td rowspan=2>Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/Selection/toctree.html">Chapter 7</a> & <a href="https://runestone.academy/ns/books/published//thinkcspy/Files/toctree.html">Chapter 11</a></td>
 	</tr>
 	<tr>
 		<td><b>Lab & Quiz </b></td>
 		<td>Programming with decisions & files (flood maps)
-		<td><a href="summer24/lab4.html"><p style="color:#FF0000";><b>Lab 4</b></p></a></td>
-		<td><a href="summer24/quizzes.html#Q4">Indexing, Slicing, Colors & Shell Commands</a>
+		<td><a href="summer26/lab4.html"><p style="color:#FF0000";><b>Lab 4</b></p></a></td>
+		<td>No Quiz<!--<a href="summer24/quizzes.html#Q4">Indexing, Slicing, Colors & Shell Commands</a>-->
 		</td>
 	</tr>
 
 <!--lecture 5-->
 	<tr>
 		<td rowspan=2><b>#3</b></td>
-		<td><b>Lecture:</b><br>June 5</td>
+		<td><b>Lecture:</b><br>June 9</td>
 		<td>Logical Expressions, Circuits, Binary Numbers;<br><br>
 	<!--	CS Survey:  <a href="https://huntercuny2x.github.io">Bernard Desert & Elise Harris</a> (CUNY2X@Hunter)<br><br>
 		Guest Lecturer:  Dr. Tiziana Ligorio-->
@@ -258,14 +230,14 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		<td><b>Lab & Quiz :</b></td>
 		<td>More on Decisions (snow pack);<br>
 		Circuits & Logical Expressions</td>
-		<td><a href="summer24/lab5.html"><p style="color:#FF0000";><b>Lab 5</b></p></a></td>
-		<td><a href="summer24/quizzes.html#Q5">Loops, Decision, Numpy Arrays & Shell Commands</a>
+		<td><a href="summer26/lab5.html"><p style="color:#FF0000";><b>Lab 5</b></p></a></td>
+		<td>Loops, Decision, Numpy Arrays & Shell Commands</a>
 		</td>
 	</tr>
 
 <!--lecture 6-->
 		<td rowspan=2><b>#4</b></td>
-		<td><b>Lecture:</b><br>June 16</td>
+		<td><b>Lecture:</b><br>June 11</td>
 		<td>Accessing formatted data;
       <!--Dictionaries;-->
 		<!--<br><br>CS Survey:  <a href="http://www.hunter.cuny.edu/physics/faculty/cruz/kelle-cruz">Prof. Kelle Cruz</a> (Astrophysics)<br><br>
@@ -287,15 +259,15 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		<td><b>Lab & Quiz :</b></td>
 		<td> CSV files via <a href="https://pandas.pydata.org"/>pandas</a> (population change); <br>
 		Shell Scripts, github </td>
-		<td><a href="summer24/lab6.html"><p style="color:#FF0000";><b>Lab 6</b></p></a></td>
-		<td><a href="summer24/quizzes.html#Q6">Circuits, Logical Expressions & Shell Commands</a>
+		<td><a href="summer26/lab6.html"><p style="color:#FF0000";><b>Lab 6</b></p></a></td>
+		<td>Circuits, Logical Expressions & Shell Commands</a>
 		</td>
 	</tr>
 
 <!--lecture 7-->
 	<tr>
 		<td rowspan=2><b>#4</b></td>
-		<td><b>Lecture:</b><br>June 18</td>
+		<td><b>Lecture:</b><br>June 16</td>
 		<td>Functions;<br> NYC OpenData
 		<br>
 		<!--Guest Lecturer:  Dr. Tiziana Ligorio
@@ -341,9 +313,9 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		Using <tt>main()</tt> functions;<br>
 		Python from the command line
 		</td>
-		<td><a href="summer24/lab7.html"><p style="color:#FF0000";><b>Lab 7</b></p></a></td>
+		<td><a href="summer26/lab7.html"><p style="color:#FF0000";><b>Lab 7</b></p></a></td>
 		<td>
-		<a href="summer24/quizzes.html#Q7">Formatted Data & Shell Commands</a>
+		Formatted Data & Shell Commands
 		</td>
 	</tr>
 
@@ -351,7 +323,7 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 <!--lecture 8-->
 	<tr>
 		<td rowspan=2><b>#5</b></td>
-		<td><b>Lecture:</b><br>June 23</td>
+		<td><b>Lecture:</b><br>June 18</td>
 		<td>More Functions & Parameters;
 		<!-- <br><br>  CS Survey:  <a href="http://www.hunter.cuny.edu/studentservices/cds">Keith Okrosy,</a> (Career Development Services @ Hunter)</td> -->
 		<td>
@@ -372,9 +344,9 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		Command line <tt>git</tt>
 		<br>
 		</td>
-		<td><a href="summer24/lab8.html"><p style="color:#FF0000";><b>Lab 8</b></p></a></td>
+		<td><a href="summer26/lab8.html"><p style="color:#FF0000";><b>Lab 8</b></p></a></td>
 		<td>
-		<a href="summer24/quizzes.html#Q8">Functions</a>
+		Functions
 		</td>
 	</tr>
 
@@ -382,7 +354,7 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 <!--lecture 9-->
 	<tr>
 		<td rowspan=2><b>#5</b></td>
-		<td><b>Lecture:</b><br>June 25</td>
+		<td><b>Lecture:</b><br>June 23</td>
 		<td>Programming with Functions, Top-down Design; <br>
 		Mapping GIS Data (Folium); <br>
 		Random Number Generation; <br>
@@ -407,16 +379,16 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		Folium/leaflet.js (mapping CUNY locations);
 		Finding errors;<br>
 		Regular expressions (command line)</td>
-		<td><a href="summer24/lab9.html"><p style="color:#FF0000";><b>Lab 9</b></p></a></td>
+		<td><a href="summer26/lab9.html"><p style="color:#FF0000";><b>Lab 9</b></p></a></td>
 		<td>
-		<a href="summer24/quizzes.html#Q9">Parameters & Functions</a>
+		Parameters & Functions
 		</td>
 	</tr>
 
 <!--lecture 10-->
 	<tr>
 		<td rowspan=2><b>#6</b></td>
-		<td><b>Lecture:</b><br>June 30</td>
+		<td><b>Lecture:</b><br>June 25</td>
 		<td>Indefinite Loops; Simulations; <br>
 		Design Patterns:  Max;
 		<br>
@@ -443,9 +415,9 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 		<td><b>Lab & Quiz </b></td>
 		<td>More on Indefinite loops;
 		Writing functions; unit testing <!--(simple recommender system);--> </td>
-		<td><a href="summer24/lab10.html"><p style="color:#FF0000";><b>Lab 10</b></p></a></td>
+		<td><a href="summer26/lab10.html"><p style="color:#FF0000";><b>Lab 10</b></p></a></td>
 		<td>
-		<a href="summer24/quizzes.html#Q10">Functions, Top-down Design & Shell Commands</a>
+        Functions, Top-down Design & Shell Commands
 		</td>
 	</tr>
 	<tr>
@@ -453,7 +425,7 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 
 <!--lecture 11-->
 		<td rowspan=2><b>#6</b></td>
-		<td><b>Lecture:</b><br>July 2</td>
+		<td><b>Lecture:</b><br>June 30</td>
 		<td>Introduction to C++:  program structure, data representation and I/O;<br>
 			C++ control structures;<br>
 			Final Exam Overview
@@ -481,12 +453,13 @@ This course presents an overview of computer science (CS) with an emphasis on pr
 	<tr>
 		<td><b>Lab & Quiz </b></td>
 		<td>Simplified machine language </td>
-		<td><a href="summer24/lab11.html"><p style="color:#FF0000";><b>Lab 11</b></p></a></td>
+		<td><a href="summer26/lab11.html"><p style="color:#FF0000";><b>Lab 11</b></p></a></td>
 		<td>
-		<a href="summer24/quizzes.html#Q11">Indefinite Loops, Simulations & Shell Commands</a>
+		Indefinite Loops, Simulations & Shell Commands
 		</td>
 	</tr>
 
+<!--lecture 11!!! INSERT NEW ROW HERE?-->
 
 
 	<tr>
@@ -494,7 +467,7 @@ This course presents an overview of computer science (CS) with an emphasis on pr
     <!--<td colspan = 4><span class="announcement">Final Exam</span></td>-->
     <!--TODO final exam July 12, 2023 12-2PM -->
     <td><b>Final Exam: 12-2PM</b></td>
-		<td colspan = 3><span class="announcement"><a href="summer24/final/final.html" target="blank">Final Exam Information</a></span></td>
+		<td colspan = 3><span class="announcement"><a href="summer26/final/final.html" target="blank">Final Exam Information</a></span></td>
 		<td></td>
 
 	</tr>
