@@ -1011,8 +1011,6 @@ The fare is 13.5
 	<li> <b>Due Date: June 24th</b>
 	<b style="float:right">Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <br><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
-	<p><b>Queens Library Branches Map</b></p>	
-
 
 	<p>New York City Open Data makes data for the <a href="https://data.cityofnewyork.us/Education/Queens-Library-Branches/kh3d-xhq7/about_data">Queens Library branches</a> publicly available. A sample file, <a href="../files/Queens_Library_Branches.csv"><tt>Queens_Library_Branches.csv</tt></a> was downloaded and can be used to test your program.</p>
 	<p>
@@ -1035,28 +1033,53 @@ Enter output file:  libraryMap.html</code></pre>
 
 <!--problem 39-->
 	 <li > <b>Due: June 24th</b>  
-	 <b style="float:right">Reading: <a href="http://python-visualization.github.io/folium/docs-master/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
+	    
+	<p style="float:right;margin-left:10pt"><b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <br>
+	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 
-		<p>
-		Using folium (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, name of the output file, and creates a map with markers for all the traffic collisions from the input file.
+	<p>
+	Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file, choice of unit size, and name of the output file, and creates a map with scaled markers for all the housing of that size from the input file.  When the user hovers over the marker, the name of the property, the number of units of that size and the coordinates.  The overall title for the map should include the housing type.</p>
 
-		<p>A sample run:
-<pre style = "background-color:lavender;width:400px">
-Enter CSV file name:  collisionsThHunterBday.csv
-Enter output file:  thMap.html
+	<p>The housing data is available from <a href="https://data.cityofnewyork.us/Housing-Development/Affordable-Housing-Production-by-Building/hg8x-zxpr/about_data">NYC Open Data</a> listing affordable and market rate housing by building location.  We created a smaller file, of just 2023 housing units, <a href="../files/Affordable_Housing_Production_by_Building_2023.csv">Affordable_Housing_Production_by_Building_2023.csv</a>. </p>
+
+	<p>If the user enters for size:</p>
+	<ul>
+		<li>0:  use the column: "Studio Units"</li>
+		<li>1:  use the column: "1-BR Units"</li>
+		<li>2:  use the column: "2-BR Units"</li>
+		<li>3:  use the column: "3-BR Units"</li>
+		<li>4:  use the column: "4-BR Units"</li>
+		<li>5:  use the column: "5-BR Units"</li>
+		<li>Otherwise use the column: "6-BR+ Units" </li>		
+	</ul>
+
+
+	<p>A sample run:
+<pre><code class="text">
+Enter input file: Affordable_Housing_Production_by_Building_2023.csv
+Enter number of bedrooms (0 for studio, 1 for one bedroom,...): 2
+Enter output file name: two_bed_2023.html
+</code>
 </pre>
-		<p>which would produce the html file:
+	<p>which would produce the HTML file:
 
-		<p><iframe src="../images/th.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+	<p><iframe src="../files/two_bed_2023.html" width="600" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-		<p>(The demo above is for March 18, 2016 using the time the collision occurred ("TIME") to label each marker and changed the underlying map with the option:
-		<tt>tiles="Cartodb Positron"</tt> when creating the map.)
 
-		<p> This assignment uses collision data collected and made publicly by
-		<a href="https://nycopendata.socrata.com">New York City Open Data</a>.
-		<!--TODO: See Programming Problem #39 for details on this data set.-->  When creating datasets to test your program, you will need to filter for both date (to keep the files from being huge) and that there's a location entered.  The former is explained above; to check the latter, add the additional filter condition of "LONGITUDE is not blank".
+	<p> Since the data includes all permits, the information for some private residences is not shared (marked 'Confidential' in the "Project Name" column).  Since those lack information, drop those rows before plotting:
 
-		<p><i>Hint:  For this data set, the names of the columns are "LATITUDE" and "LONGITUDE" (unlike the previous map problem, where the data was stored with "Latitude" and "Longitude"). </i>
+	<pre style = "background-color:lavender;width:550px">housing_df = housing_df[ housing_df['Project Name'] != 'Confidential']</pre>		
+
+	</p>
+	
+	Once the user has specified the housing type, you should make sure that you only plot rows that have information about that housing size (e.g. that are not null ).  For example, if they are interested in 1 bedroom apartments:
+	
+	
+	
+	<pre style = "background-color:lavender;width:550px">df = housing_df[ housing_df["1-BR Units"].notnull() ]</pre>
+
+
+</li>
 
 
 <!--problem 40-->
@@ -1068,54 +1091,25 @@ Enter output file:  thMap.html
 		<p><i>Hint:  See  <a href="lab9.html">Lab 9</a>.</i>
 	
 <!--problem 41-->
-	<li > <b>Due: June 24th</b> 	
-	<b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a> and <a href="https://python-visualization.github.io/folium/quickstart.html#Getting-Started">Folium Tutorial</a></b><br>
+	<li > <b>Due: June 25th</b> 	
+	<b style="float:right"> Reading:  <a href="https://runestone.academy/ns/books/published//thinkcspy/Dictionaries/toctree.html">Chapter 12</a> & <a href="lab10.html">Lab 10</a></b><br>
 
-		<p> Fill in the following functions in a program that maps GIS data from NYC OpenData CSV files and marks the current location and closest point:
-		<ul>
-			<li> <tt>getData()</tt> that asks the user for the name of the CSV and returns a dataframe of the contents.
-			<li> <tt>getColumnNames()</tt> that asks the user for the exact name of the columns that contains the latitude and longitude and returns those values as a tuple.  Since the NYC OpenData files use different names for the columns in different datasets (such as "Lat", "Latitude", "LATITUDE" for latitude), the program asks for the name of the column as well as the name of the data file.
-			<li> <tt>getLocale()</tt> asks the user for latitude and longitude of the user's current location and returns those floating points numbers.
-			<li> <tt>computeDist()</tt> that computes the squared distance
-			between two points <tt>(x1,y1)</tt> and <tt>(x2,y2)</tt>:
-				<blockquote>
-					<tt>(x1-x2)<sup>2</sup> + (y1-y2)<sup>2</sup></tt>
-				</blockquote>
-		</ul>
-
-		<p> A sample run to find the closest CUNY campus to the Brooklyn Navy Yard:
-<pre style ="background-color:lavender;width:400px">
-Enter CSV file name: cunyLocations.csv
-Enter column name for latitude: Latitude
-Enter column name for longitude: Longitude
-Enter current latitude: 40.7021
-Enter current longitude: -73.9708
-Enter output file: closestCUNY.html
+		<p>When students tap to enter at Hunter, their EmpID is stored as an 8-digit string. Many students tap multiple times a day, but we are interested in the total number of unique visitors at campus. Write a function <tt>unique_visitors()</tt> that takes a list of 8-digit strings and returns the number of unique strings that occur.</p>
+	
+		<p>For example:</p>
+		<pre><code class="python">ids = ['12345678','11223344','12312323','12345678']
+print("The number of unique visitors is ", unique_visitors(ids))</code>
 </pre>
-		<p>which would produce the html file:
+	would print:
+	<pre><code class="text">The number of unique visitors is 3</code></pre>
+	
+	since there are 4 entries but the first and fourth entries are duplicates of each other.
+	
+	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness.  As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly.  Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0).  If you have extra code for testing and such, comment it out before submitting.</p>
 
-		<p><iframe src="../images/closestCUNY.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+	<p><i>Hint:  Use a dictionary to store the IDs and return the length of the dictionary.</i></p>
 
-<!--
-		<p> Another sample run to find the closest recycling bin to Roosevelt Island (using the list of recycling bins from <a href="https://data.cityofnewyork.us/Environment/Litter-Basket-Inventory/es7t-6u8y">https://data.cityofnewyork.us/Environment/Litter-Basket-Inventory/es7t-6u8y</a>):
-<pre style ="background-color:lavender;width:400px">
-Enter CSV file name: recyclingBins.csv
-Enter column name for latitude: Latitude
-Enter column name for longitude: Longitude
-Enter current latitude: 40.7605
-Enter current longitude: -73.951
-Enter output file: recyc.html
-</pre>
-		<p>which would produce the html file:
-
-		<p><iframe src="../f17/recyc.html" width="600" height="400" frameborder="0" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
--->
-
-		<p>A template program, <tt>closestPoint.py</tt>, is available on the
-		<a href="https://github.com/stjohn/csci127">CSci 127 repo on github</a>.
-		The grading script does not run the whole program, but instead runs each of your functions separately ('unit tests') to determine correctness.  As such, the names of the functions must match exactly the ones listed above (else, the scripts cannot find them).
-
-		<p><i>Hint:  See <a href="lab9.html">Lab 9</a>.</i>
+</li>
 
 <!--problem 42-->
 	<li > <b>Due: June 26th</b> <b style="float:right">Reading: Think CS: <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a></b> <br>
