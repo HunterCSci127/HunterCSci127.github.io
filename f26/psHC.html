@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Honors Project, CSci 127, Introduction to Computer Science, Hunter College, CUNY, Fall 2026</title>
+  <link type="text/css" rel="stylesheet" href="../127.css" />
+  <style type="text/css">
+  	li {
+  		  padding-bottom: 7px;
+  }
+  </style>
+</head>
+<body>
+<div id="header"><br>
+<h2>Honors Project<br>
+CSci 127: Introduction to Computer Science<br>
+Hunter College, City University of New York<br>
+Fall 2026<br><br>
+</h2>
+</div>
+
+<div>
+<h3>General Notes</h3>
+<ul>
+  <li>The assignments below are incremental steps for your term project, in addition to the <a href="https://huntercsci127.github.io/f26/ps.html">Homework Exercises</a>. Students enrolled in the honors section are responsible for <b>both the standard homework exercises as well as the assignments below</b>.
+</ul>
+</div>
+
+<div>
+<hr>
+<p>Submit the following assignments via the honors section of <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.</p>
+<a id="set1"></a>
+<hr>
+
+<ul>
+
+  <li><b>HC 1: Team Contract and Introduction to the Opportunity Atlas</b>
+  <b style="float:right">Due Date: September 9</b><br>
+
+  <p>Throughout the semester, we will analyze data from the
+  <a href="https://opportunityinsights.org/paper/the-opportunity-atlas/" target="_blank">Opportunity Atlas</a>,
+  a landmark research project by economists Raj Chetty, Nathaniel Hendren, John Friedman, Maggie Jones, and Sonya Porter.
+  The Atlas tracks the long-term outcomes (income in adulthood, incarceration rates, college attendance) of children
+  who grew up in every Census tract in the United States, broken down by parental income, race, and gender.
+  It allows us to ask a simple but profound question: <i>does the neighborhood where you grow up shape where you end up in life?</i>
+
+  <h4>Step 1 &mdash; Project structure:</h4>
+  <p>You will work in teams. Each team will be assigned one of the five NYC boroughs to analyze, and each team member
+  will focus on a neighborhood within that borough. Throughout the semester, your team will build up a borough-level
+  analysis while each of you contributes a neighborhood-level case study. These will come together in a showcase
+  presentation at the end of the semester.
+
+  <p>The dataset for this project is fixed: you will use the Opportunity Atlas tract-level outcomes file
+  (<a href="https://opportunityinsights.org/wp-content/uploads/2018/10/tract_outcomes_simple.csv" target="_blank">tract_outcomes_simple.csv</a>),
+  merged with the 2010 Census tract centroid file for New York
+  (<a href="https://www2.census.gov/geo/docs/reference/cenpop2010/tract/CenPop2010_Mean_TR36.txt" target="_blank">CenPop2010_Mean_TR36.txt</a>),
+  which provides the latitude and longitude of each Census tract.
+  Download both files now and keep them for the rest of the semester.
+
+  <h4>Step 2 &mdash; Choose your neighborhood:</h4>
+  <p>With your team, decide which neighborhood each member will focus on. Each neighborhood should be different,
+  and together your neighborhoods should be reasonably representative of the borough. Pick a neighborhood
+  you know or are curious about. You will identify the Census tract(s) that correspond to your neighborhood in HC 2.
+
+  <h4>Step 3 &mdash; Team Contract:</h4>
+  <p>Work with your assigned team to fill out the
+  <a href="https://forms.gle/Nx2EXNPBwpfw2WTx7" target="_blank">Team Contract Google Form</a>,
+  which will guide you through agreeing on roles, communication, and expectations for the semester.
+  <br><b>Group submission:</b> one submission per team.
+
+  <h4>Step 4 &mdash; Dataset Summary:</h4>
+  <p>Read the
+  <a href="https://opportunityinsights.org/wp-content/uploads/2021/12/atlas_summary.pdf" target="_blank">non-technical summary</a>
+  of the Opportunity Atlas paper and write a short paragraph (3&ndash;5 sentences) in your own words
+  explaining what the Atlas measures and why it matters. Submit your paragraph as a .pdf to the assignment
+  <tt>HC1 - Dataset Summary</tt> in the honors section of <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+  <br><b>Individual submission:</b> one submission per student.
+
+  <hr>
+
+  <li><b>HC 2: Portrait of a Neighborhood</b>
+  <b style="float:right">Due Date: September 16</b><br>
+
+  <p>Each student will create a one-page PDF profile of their chosen neighborhood. Your summary must include
+  <b>at least</b> the following:
+  <ul>
+    <li>The name of the neighborhood (include in the title). Use the official NYC Neighborhood Tabulation
+        Area (NTA) name where possible.</li>
+    <li>The Census tract number(s) that correspond to your neighborhood. To find all tracts in your
+        neighborhood, use the
+        <a href="https://data.cityofnewyork.us/City-Government/2020-Census-Tracts-to-2020-NTAs-and-CDTAs-Equivale/hm78-6dwm" target="_blank">NYC Census Tract to NTA crosswalk</a>:
+        search for your neighborhood name in the <tt>NTAName</tt> column and collect all associated
+        tract IDs. You can also use the
+        <a href="https://opportunityatlas.org" target="_blank">Opportunity Atlas map</a>
+        to visually confirm which tracts fall within your neighborhood boundaries.</li>
+    <li>The zip code(s) of your neighborhood</li>
+    <li>A map of New York City with your neighborhood highlighted</li>
+    <li>A photo or image that captures your neighborhood</li>
+    <li>The demographics of your neighborhood (population, racial composition, median household income)</li>
+  </ul>
+  <p>Your summary should exceed these minimum requirements to receive full credit. Include any context you think
+  will be relevant to the future analysis, for example, historical background, notable institutions,
+  or economic characteristics. A great resource is
+  <a href="https://www.socialexplorer.com/" target="_blank">Social Explorer</a>:
+  from the top menu, select <tt>Resources &rarr; Demographic Profiles</tt> and enter your zip code(s).
+  <a href="https://censusreporter.org" target="_blank">Census Reporter</a> is another useful tool:
+  search for your neighborhood name to find demographic data organized by Census tract.
+
+  <p><b>Individual submission:</b> Submit a .pdf file containing your summary to the assignment
+  <tt>HC2 - Portrait of a Neighborhood</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+
+  <hr>
+
+  <li><b>HC 3: What is Economic Mobility?</b>
+  <b style="float:right">Due Date: September 23</b><br>
+
+  <p>This assignment asks you to build a shared understanding of the Opportunity Atlas and the concept of
+  intergenerational economic mobility. Working as a group, research and answer the following questions:
+  <ul>
+    <li>What does <i>intergenerational economic mobility</i> mean? What does it mean for a neighborhood to have
+        "high" or "low" opportunity?</li>
+    <li>What outcomes does the Opportunity Atlas measure, and how were they computed? (Who are the children
+        in the data? When were their incomes measured?)</li>
+    <li>What does the variable <tt>kfr_pooled_pooled_p25</tt> represent? Explain it in plain English,
+        as if to someone who has never heard of the Atlas.</li>
+    <li>What does it mean that the data is organized at the Census tract level? How large is a typical
+        Census tract?</li>
+    <li>What did the researchers find about how much outcomes vary across nearby neighborhoods in the US?
+        Does geography matter?</li>
+    <li>What are some limitations or caveats of the data that we should keep in mind as we analyze it?
+        (Hint: check the <a href="https://opportunityinsights.org/wp-content/uploads/2019/06/Atlas-FAQs.pdf" target="_blank">Atlas FAQ</a>.)</li>
+  </ul>
+
+  <p>You may collaborate using a Google Doc, <a href="https://miro.com/" target="_blank">Miro</a>,
+  or <a href="https://padlet.com/" target="_blank">Padlet</a> (both have free plans).
+
+  <p><b>Group submission:</b> Submit a single .pdf written in essay form (not a disconnected list of answers),
+  with your sources cited, to the assignment <tt>HC3 - What is Economic Mobility?</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.
+
+  <hr>
+
+  <li><b>HC 4: Opportunity in My Borough</b>
+  <b style="float:right">Due Date: September 30</b><br>
+
+  <p>Building on HC 3, your team will now focus its research on your assigned borough. Browse news articles,
+  policy reports, and public data to characterize what is known about economic opportunity, inequality,
+  and neighborhood outcomes in your borough. Your report should address questions such as:
+  <ul>
+    <li>Which neighborhoods within your borough are known for stronger or weaker economic outcomes,
+        and why?</li>
+    <li>What historical factors &mdash; such as redlining, public housing policy, school quality,
+        or immigration patterns &mdash; have shaped opportunity in your borough?</li>
+    <li>Are there recent policy initiatives aimed at improving opportunity in your borough?
+        What do they target?</li>
+    <li>How does your borough compare to the other four in terms of median income, poverty rate,
+        and racial composition?</li>
+  </ul>
+
+  <p><b>Grading criteria:</b>
+  <ul>
+    <li>Group gathers and reports on facts and data specific to their borough.</li>
+    <li>Group cites sources in support of their findings.</li>
+  </ul>
+
+  <p><b>Group submission:</b> Submit a single .pdf report written in essay form, with citations, to the assignment
+  <tt>HC4 - Opportunity in My Borough</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.
+
+  <hr>
+
+  <li><b>HC 5: Neighborhood Spotlight &mdash; Image Processing</b>
+  <b style="float:right">Due Date: October 7</b><br>
+
+  
+  <img src="../images/hc05_comparison.png" height="300">
+  
+
+  <p>For this assignment, you will create a spotlight visualization of your neighborhood: a satellite
+  map image in which everything outside a central rectangular region is converted to grayscale,
+  while the colors in the spotlight area are amplified. You will write two functions that each
+  transform an image region, apply them to the appropriate areas, and save a single output image.
+
+  <p>Start by downloading a .png map image of your neighborhood from Google Maps, zoomed
+  to a level where your neighborhood fills the frame. Load it using <tt>plt.imread()</tt>, which
+  returns a NumPy array of shape height &times; width &times; 3 with float values in [0,&nbsp;1]
+  for PNG files. Make a writable copy to modify, and define your spotlight boundaries as fractions
+  of the image dimensions (for example, the top and bottom of the spotlight at one-quarter and
+  three-quarters of the image height, and similarly for the left and right edges).
+
+  <p><b>Function 1 &mdash; <tt>to_grayscale(region)</tt>:</b>
+  Write a function that takes a rectangular image region (a NumPy array slice of shape
+  rows &times; cols &times; 3) and returns a copy of it converted to grayscale.
+  To convert a color pixel to grayscale, compute its luminance using the weighted formula
+  <tt>L = 0.299*R + 0.587*G + 0.114*B</tt>, then set all three channels to L.
+  Apply this function to each of the four border regions (upper, lower, left, and right).
+
+  <p><b>Function 2 &mdash; <tt>boost_saturation(region, factor)</tt>:</b>
+  Now think about what your first function actually did. The luminance L is the gray equivalent
+  of a pixel. Setting all three channels to L zeroes out how much each channel deviates from gray,
+  and that deviation is what carries color. Before writing any code, work through the following:
+  <ul>
+    <li>For a pixel (R, G, B) with luminance L, what is <tt>R - L</tt>? <tt>G - L</tt>?
+        <tt>B - L</tt>? What are these values for a pixel that is pure gray?</li>
+    <li>What does <tt>L + 0 * (R - L)</tt> give for each channel?
+        What about <tt>L + 1 * (R - L)</tt>? Do the results surprise you?</li>
+    <li>What would <tt>L + 2 * (R - L)</tt> give?</li>
+  </ul>
+  <p>Write <tt>boost_saturation(region, factor)</tt>, which returns a copy of the region with each
+  channel set to <tt>L + factor * (channel - L)</tt>, clipped to [0,&nbsp;1] using
+  <tt>numpy.clip(array, 0, 1)</tt>. Clipping caps every value in the array to the valid range:
+  anything below 0 is set to 0, anything above 1 is set to 1. You need this here because
+  multiplying the color deviation by a factor greater than 1 can push channel values outside the
+  range that a float image allows.
+  Apply the function to the spotlight area. Try <tt>factor</tt> values of 0, 0.5, 1,
+  1.5, and 2 and describe what you observe in each case. Which gives the strongest contrast between
+  the spotlight and the gray border?
+
+  <p>Once you have applied both functions, save the result as a single .png file using
+  <tt>plt.imsave()</tt>.
+
+  <p><b>Hint:</b> To apply a function to a region, pass the corresponding array slice directly.
+  For example:
+  <pre>
+result[:border_top, :] = to_grayscale(img[:border_top, :])
+  </pre>
+
+  <p><b>Individual submission:</b> Submit a .pdf file containing your Python code and both the original
+  and processed images side by side to the assignment <tt>HC5 - Neighborhood Spotlight</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+
+  <hr>
+
+  <li><b>HC 6: First Look at the Data</b>
+  <b style="float:right">Due Date: October 14 &mdash; IN LAB</b><br>
+
+  <p>In this guided in-lab session, you will load, merge, and begin exploring the two datasets
+  at the core of your project. Work through the provided
+  <a href="https://colab.research.google.com/drive/TBD" target="_blank">Jupyter notebook</a>,
+  which will walk you through the following steps:
+  <ul>
+    <li>Load <tt>tract_outcomes_simple.csv</tt> (the Opportunity Atlas outcomes) and
+        <tt>CenPop2010_Mean_TR36.txt</tt> (the Census tract centroids) into pandas DataFrames.</li>
+    <li>Merge the two DataFrames on the county and tract FIPS codes to add latitude and longitude
+        to each tract's outcome data.</li>
+    <li>Filter the merged DataFrame to NYC's five boroughs using their county FIPS codes
+        (005 = Bronx, 047 = Brooklyn, 061 = Manhattan, 081 = Queens, 085 = Staten Island).</li>
+    <li>Inspect the resulting DataFrame: how many tracts does each borough have?
+        What do the key columns look like? Are there missing values?</li>
+    <li>Run <tt>describe()</tt> on the main outcome variable (<tt>kfr_pooled_pooled_p25</tt>)
+        for your borough and discuss what you observe.</li>
+  </ul>
+  <p>By the end of the session, your team should have a clean, NYC-filtered DataFrame and a shared
+  plan for what you want to investigate in HC 7.
+
+  <p><b>Group submission:</b> Submit a .pdf outlining your team's plan for HC 7 to the assignment
+  <tt>HC6 - Borough Analysis Plan</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.
+
+  <hr>
+
+  <li><b>HC 7: Borough Data Analysis</b>
+  <b style="float:right">Due Date: October 28</b><br>
+
+  <p>Using the merged dataset from HC 6, your team will produce a full data analysis of your borough.
+  The analysis has two components:
+
+  <ul>
+    <li><b>Group component:</b> Analyze your borough as a whole and compare it to the other four boroughs.
+        What is the distribution of mobility outcomes across tracts in your borough?
+        How does it compare to the city-wide picture?</li>
+    <li><b>Individual component:</b> Each student digs deeper into their own neighborhood's Census tracts.
+        What are the mobility outcomes for your specific tracts? How do they compare to the borough average?</li>
+  </ul>
+
+  <p>Your analysis must go beyond <tt>describe()</tt> output. Observations should be supported by statistics
+  and at least <b>6 visualizations across at least 3 different plot types</b>. Every plot must be accompanied
+  by a written paragraph explaining what you observe &mdash; not just what the code does, but what the
+  finding means.
+
+  <p><b>Grading criteria:</b>
+  <ul>
+    <li>Provides statistics for the borough/neighborhood and discusses observations in writing.
+        Anomalous values should be noted and discussed. (meets: 2, exceeds: 3)</li>
+    <li>Makes observations that go beyond what <tt>describe()</tt> alone would reveal. (meets: 2, exceeds: 3)</li>
+    <li>Provides and discusses at least 6 visualizations across at least 3 plot types. (meets: 2, exceeds: 4)</li>
+    <li><b>Extra credit:</b> Connects data findings to the historical/policy research from HC 3 and HC 4,
+        supported by at least one plot. (5 points)</li>
+  </ul>
+
+  <p><b>Group submission:</b> Submit a .pdf to the assignment <tt>HC7 - Borough Data Analysis</tt>
+  in the honors section of <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.
+
+  <hr>
+
+  <li><b>HC 8: One Block Can Make a Difference</b>
+  <b style="float:right">Due Date: November 4</b><br>
+
+  <p>One of the Opportunity Atlas's most striking findings is that neighboring Census tracts can have
+  dramatically different outcomes &mdash; children who grew up just one block apart may end up with
+  very different adult incomes. In this assignment, you will look for evidence of this pattern in your
+  borough using a Python function you write yourself.
+
+  <p>To do this:
+  <ul>
+    <li>Write a function <tt>distance(lat1, lon1, lat2, lon2)</tt> that computes the distance in
+        kilometers between two points given their latitude and longitude coordinates.
+        You may use the simplified Euclidean approximation or the Haversine formula
+        (a useful reference: <a href="https://en.wikipedia.org/wiki/Haversine_formula" target="_blank">Wikipedia</a>).
+        Test your function on a few known pairs of locations.</li>
+    <li>Using your function, identify all pairs of Census tracts in your borough whose centroids
+        are within 1 km of each other (i.e., neighboring tracts).</li>
+    <li>For each such pair, compute the absolute difference in <tt>kfr_pooled_pooled_p25</tt>.</li>
+    <li>Find the pair with the largest difference. Where are these tracts? What do you know about
+        these neighborhoods from your earlier research?</li>
+    <li>Create a visualization that highlights these two tracts on a map and shows their outcomes
+        side by side.</li>
+  </ul>
+
+  <p>Write a short paragraph interpreting your finding. Does the contrast surprise you? Can you offer
+  any explanation for why these neighboring tracts have such different outcomes?
+
+  <p><b>Note:</b> Your program may take several minutes to run for larger boroughs (Brooklyn and Queens
+  have over 600 tracts each). This is normal &mdash; do not interrupt it.
+
+  <p><b>Extra credit:</b> Speed up your program by adding a bounding box pre-filter. Before computing
+  the full Haversine distance between two tracts, first check whether they are close enough in latitude
+  and longitude to possibly be within 1 km of each other. In NYC (latitude ~40.7&deg;N), 1 km corresponds
+  to roughly 0.009 degrees of latitude and 0.012 degrees of longitude. If two tracts differ by more than
+  these thresholds in either dimension, skip the Haversine calculation entirely. How much faster does
+  your program run with this optimization?
+
+  <p><b>Individual submission:</b> Submit a .pdf containing your Python code and written discussion
+  to the assignment <tt>HC8 - One Block Can Make a Difference</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+
+  <hr>
+
+  <li><b>HC 9: Mapping Opportunity with Plotly</b>
+  <b style="float:right">Due Date: November 11</b><br>
+
+  <p>Using the latitude and longitude coordinates from the merged dataset, you will create an interactive
+  Plotly scatter map of your borough in which each Census tract appears as a marker colored by its
+  mobility outcome (<tt>kfr_pooled_pooled_p25</tt>).
+
+  <p>To do this:
+  <ul>
+    <li>Filter the merged DataFrame to your borough.</li>
+    <li>Create a Plotly Express scatter map (<tt>px.scatter_mapbox</tt>) with one marker per tract,
+        using <tt>LATITUDE</tt> and <tt>LONGITUDE</tt> for position and <tt>kfr_pooled_pooled_p25</tt>
+        for color. Use a color scale that makes high and low values visually distinct.</li>
+    <li>Add hover text so that mousing over a marker shows the tract ID and the outcome value.</li>
+    <li>Save the map as an HTML file (you will embed it in your webpage in HC 12).</li>
+  </ul>
+
+  <p>Write a short paragraph interpreting the geographic pattern. Does opportunity cluster in particular
+  parts of your borough? Does the map match what you found in your HC 4 research?
+
+  <p><b>Individual submission:</b> Submit a .pdf containing your Python code, a screenshot of the map,
+  and your written interpretation to the assignment <tt>HC9 - Mapping Opportunity with Plotly</tt>
+  in the honors section of <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+
+  <hr>
+
+  <li><b>HC 10: Mobility Simulation</b>
+  <b style="float:right">Due Date: November 18</b><br>
+
+  <p>The Opportunity Atlas tells us the <i>average</i> adult income rank for children who grew up in each
+  tract &mdash; but individual outcomes vary around this average. In this assignment, you will write a
+  simulation that models this variability and uses random numbers to explore what outcomes look like
+  for a large number of hypothetical children from different neighborhoods.
+
+  <p>To do this:
+  <ul>
+    <li>Choose three Census tracts from your borough: one with a high mobility score, one with a low
+        score, and one in the middle.</li>
+    <li>For each tract, use <tt>random.gauss(mean, std)</tt> to simulate the adult income rank of
+        10,000 hypothetical children, using <tt>kfr_pooled_pooled_p25</tt> as the mean and
+        <tt>kfr_pooled_pooled_p25_se</tt> as the standard deviation. Clip simulated values to the
+        range [0, 1] since income ranks are bounded.</li>
+    <li>Plot the three distributions as overlapping histograms on the same figure, with a different
+        color for each tract.</li>
+    <li>Compute and report: what fraction of simulated children from the low-opportunity tract
+        exceed the mean outcome of the high-opportunity tract?</li>
+  </ul>
+
+  <p>Write a short paragraph reflecting on what the simulation reveals. What does overlap between the
+  distributions mean? What would it mean if the distributions did not overlap at all?
+
+  <p><b>Individual submission:</b> Submit a .pdf containing your Python code, histogram, and written reflection
+  to the assignment <tt>HC10 - Mobility Simulation</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+
+  <hr>
+
+  <li><b>HC 11: Neighborhood Webpage</b>
+  <b style="float:right">Due Date: December 2</b><br>
+
+  <p>In this two-part assignment, you will build an individual page for your neighborhood and then
+  collaborate with your team to create a shared borough project site.
+
+  <h4>Individual component &mdash; Neighborhood page:</h4>
+  <p>Create a <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> site for your
+  neighborhood. It should include:
+  <ul>
+    <li>The name of the neighborhood and its Census tract(s)</li>
+    <li>The spotlight map image from HC 5</li>
+    <li>The demographic profile and background from HC 2</li>
+    <li>A paragraph summarizing the key concepts from HC 3</li>
+    <li>A paragraph summarizing your borough-level research from HC 4</li>
+    <li>Key statistics and plot images from HC 7</li>
+    <li>Your "one block" finding from HC 8</li>
+    <li>The Plotly map from HC 9, embedded as an iframe (see below)</li>
+  </ul>
+
+  <h4>Group component &mdash; Team project website:</h4>
+  <p>Working with your team, create a shared GitHub Pages site for your borough project.
+  The team site should include:
+  <ul>
+    <li>A brief introduction to the Opportunity Atlas and the research question your team investigated</li>
+    <li>A summary of your borough-level findings from HC 7</li>
+    <li>Links to each team member's individual neighborhood page</li>
+  </ul>
+  <p>One team member should host the repository; the others can contribute via pull requests or by
+  being added as collaborators.
+
+  <p>To embed an HTML file as an <tt>iframe</tt>, use the following tag (assuming your map file is
+  called <tt>mymap.html</tt> and lives in the same directory as your page):
+  <pre>
+&lt;iframe src="mymap.html" width="600" height="400" frameborder="0"
+  marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
+  </pre>
+  If you are using Markdown, wrap the iframe tag in <tt>&lt;dl&gt;</tt> tags:
+  <pre>
+&lt;dl&gt;
+&lt;iframe src="mymap.html" width="600" height="400" frameborder="0"
+  marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/dl&gt;
+  </pre>
+
+  <p><b>Useful links:</b>
+  <ul>
+    <li><a href="https://pages.github.com/" target="_blank">GitHub Pages setup guide</a></li>
+    <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a></li>
+  </ul>
+
+  <p><b>Submissions:</b>
+  <ul>
+    <li><b>Individual:</b> Submit a .pdf containing the URL of your neighborhood page and a screenshot
+        to the assignment <tt>HC11 - Neighborhood Page</tt> in the honors section of
+        <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.</li>
+    <li><b>Group:</b> Submit a .pdf containing the URL of the team project site and a screenshot
+        to the assignment <tt>HC11 - Team Project Website</tt> in the honors section of
+        <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.</li>
+  </ul>
+
+  <hr>
+
+  <li><b>HC 12: Draft Presentation, Peer Feedback &amp; Team Evaluation</b>
+  <b style="float:right">Due Date: December 3 &mdash; IN LAB</b><br>
+
+  <p>In this in-class session, teams share their work with each other in a walk-around format.
+  Each team sets up at a station with their project website open and their two slides ready.
+  As other teams visit your station, give them your 3&ndash;5 minute presentation covering: who is
+  on the team, which neighborhoods were studied, a key finding from the data, and a link to the
+  project website.
+
+  <p>As you visit other teams, pay attention to both their presentation and their project website.
+  Take notes on what works well and what could be improved, considering the clarity of the analysis,
+  the quality of the visualizations, and how well the website communicates the findings to a general
+  audience. Be ready to share your observations as constructive verbal feedback on the spot.
+
+  <p>Finally, each student will complete the
+  <a href="GOOGLE_FORM_URL_TBD">peer evaluation Google Form</a>
+  <!-- TODO: replace href above with the actual Google Form URL before the semester -->
+  assessing each member of their own team's contributions over the semester, as outlined in the
+  Team Contract.
+
+  <p><b>Submissions:</b>
+  <ul>
+    <li><b>Group:</b> Submit your presentation slides (.pdf, 2 slides) to the assignment
+        <tt>HC12 - Presentation Slides</tt> in the honors section of
+        <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.</li>
+    <li><b>Individual:</b> Complete the
+        <a href="GOOGLE_FORM_URL_TBD">peer evaluation Google Form</a>.
+        <!-- TODO: replace href above with the actual Google Form URL before the semester --></li>
+  </ul>
+
+  <hr>
+
+  <li><b>HC 13: Final Showcase Presentation</b>
+  <b style="float:right">Due Date: December 10 &mdash; IN LAB</b><br>
+
+  <p>Each team will deliver a 5-minute final presentation (2 slides from HC12) summarizing their semester-long
+  investigation into economic opportunity in their borough. Presentations should incorporate feedback
+  received in HC 12.
+
+  <p>After the presentations, the class will break into small groups for a poster-session style
+  showcase: each team uses their project website to walk visitors through their work, fielding
+  questions about their methodology, findings, and what surprised them most. Visitors may include
+  invited guests from outside the class.
+
+  <p>Grading reflects both the prepared presentation and the quality of the interactive discussion.
+
+</ul>
+</div>
+
+<div>
+<i style="float:right">(This file was last modified on July 2, 2026.)</i><br>
+</div>
+
+</body>
+</html>
