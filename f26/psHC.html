@@ -178,27 +178,54 @@ Fall 2026<br><br>
 
   <p>For this assignment, you will create a spotlight visualization of your neighborhood: a satellite
   map image in which everything outside a central rectangular region is converted to grayscale,
-  while the colors in the spotlight area are amplified. You will write two functions that each
-  transform an image region, apply them to the appropriate areas, and save a single output image.
+  while the colors in the spotlight area are amplified and a black bounding box is drawn around it.
+  You will write a single Python script that loads the image, processes it with array slicing, and
+  saves one output image. The idea is to gray out the whole image, then paint the spotlight back in
+  with amplified color, and finally draw the box.
 
-  <p>Start by downloading a .png map image of your neighborhood from Google Maps, zoomed
-  to a level where your neighborhood fills the frame. Load it using <tt>plt.imread()</tt>, which
+  <p><b>Load the image and set up the spotlight.</b>
+  Start by downloading a .png map image of your neighborhood from Google Maps, zoomed
+  to a level where your neighborhood fills the frame. Ask the user for the input filename and the
+  output filename with <tt>input()</tt>, then load the image using <tt>plt.imread()</tt>, which
   returns a NumPy array of shape height &times; width &times; 3 with float values in [0,&nbsp;1]
-  for PNG files. Make a writable copy to modify, and define your spotlight boundaries as fractions
-  of the image dimensions (for example, the top and bottom of the spotlight at one-quarter and
-  three-quarters of the image height, and similarly for the left and right edges).
+  for PNG files:
+  <pre>
+in_file  = input('Enter the name of your image file: ')
+out_file = input('Enter the name for your output file: ')
+img = plt.imread(in_file)
+  </pre>
+  Make a writable copy to modify (call it <tt>result</tt>), and read the image
+  dimensions from <tt>img.shape</tt>. Then define your spotlight boundaries as fractions of the
+  image dimensions, for example the top and bottom of the spotlight at one-quarter and three-quarters
+  of the height, and similarly for the left and right edges:
+  <pre>
+height = img.shape[0]
+width  = img.shape[1]
 
-  <p><b>Function 1 &mdash; <tt>to_grayscale(region)</tt>:</b>
-  Write a function that takes a rectangular image region (a NumPy array slice of shape
-  rows &times; cols &times; 3) and returns a copy of it converted to grayscale.
-  To convert a color pixel to grayscale, compute its luminance using the weighted formula
-  <tt>L = 0.299*R + 0.587*G + 0.114*B</tt>, then set all three channels to L.
-  Apply this function to each of the four border regions (upper, lower, left, and right).
+top    = height // 4
+# Define bottom, left, and right in the same way
+  </pre>
+  Use <tt>//</tt> (integer division) here, not <tt>/</tt>, because an array index has to be a whole
+  number.
 
-  <p><b>Function 2 &mdash; <tt>boost_saturation(region, factor)</tt>:</b>
-  Now think about what your first function actually did. The luminance L is the gray equivalent
-  of a pixel. Setting all three channels to L zeroes out how much each channel deviates from gray,
-  and that deviation is what carries color. Before writing any code, work through the following:
+  <p><b>Step 1 &mdash; grayscale the whole image.</b>
+  A grayscale pixel has the same value in all three color channels. That value is the pixel's
+  <i>luminance</i>, computed with the weighted formula <tt>L = 0.299*R + 0.587*G + 0.114*B</tt>.
+  Because the red, green, and blue channels are the three "layers" of the array
+  (<tt>img[:,&nbsp;:,&nbsp;0]</tt>, <tt>img[:,&nbsp;:,&nbsp;1]</tt>, and <tt>img[:,&nbsp;:,&nbsp;2]</tt>),
+  you can compute the luminance for every pixel at once and then copy it into all three channels of
+  <tt>result</tt>:
+  <pre>
+L = 0.299 * img[:, :, 0] + 0.587 * img[:, :, 1] + 0.114 * img[:, :, 2]
+result[:, :, 0] = L
+# Set the other two channels to L as well
+  </pre>
+  Once all three channels hold L, the entire <tt>result</tt> image is gray.
+
+  <p><b>Step 2 &mdash; paint the spotlight back in with amplified color.</b>
+  Now think about what luminance actually captures. L is the gray equivalent of a pixel, so
+  <tt>channel&nbsp;-&nbsp;L</tt> measures how far that channel is from gray, and that deviation is
+  what carries the color. Before writing any code, work through the following:
   <ul>
     <li>For a pixel (R, G, B) with luminance L, what is <tt>R - L</tt>? <tt>G - L</tt>?
         <tt>B - L</tt>? What are these values for a pixel that is pure gray?</li>
@@ -206,24 +233,39 @@ Fall 2026<br><br>
         What about <tt>L + 1 * (R - L)</tt>? Do the results surprise you?</li>
     <li>What would <tt>L + 2 * (R - L)</tt> give?</li>
   </ul>
-  <p>Write <tt>boost_saturation(region, factor)</tt>, which returns a copy of the region with each
-  channel set to <tt>L + factor * (channel - L)</tt>, clipped to [0,&nbsp;1] using
-  <tt>numpy.clip(array, 0, 1)</tt>. Clipping caps every value in the array to the valid range:
-  anything below 0 is set to 0, anything above 1 is set to 1. You need this here because
-  multiplying the color deviation by a factor greater than 1 can push channel values outside the
-  range that a float image allows.
-  Apply the function to the spotlight area. Try <tt>factor</tt> values of 0, 0.5, 1,
-  1.5, and 2 and describe what you observe in each case. Which gives the strongest contrast between
-  the spotlight and the gray border?
-
-  <p>Once you have applied both functions, save the result as a single .png file using
-  <tt>plt.imsave()</tt>.
-
-  <p><b>Hint:</b> To apply a function to a region, pass the corresponding array slice directly.
-  For example:
+  <p>To amplify the color, set each channel to <tt>L + factor * (channel - L)</tt> for the central
+  region only, using a <tt>factor</tt> greater than 1. Multiplying the deviation by a factor larger
+  than 1 can push a channel value below 0 or above 1, so wrap the result in
+  <tt>numpy.clip(array, 0, 1)</tt>, which caps every value to the valid range (anything below 0
+  becomes 0, anything above 1 becomes 1). Compute the luminance of the central slice and assign the
+  boosted, clipped values back into that same slice of <tt>result</tt>:
   <pre>
-result[:border_top, :] = to_grayscale(img[:border_top, :])
+factor = 3.0
+center = img[top:bottom, left:right]
+Lc = 0.299 * center[:, :, 0] + 0.587 * center[:, :, 1] + 0.114 * center[:, :, 2]
+
+result[top:bottom, left:right, 0] = np.clip(Lc + factor * (center[:, :, 0] - Lc), 0, 1)
+# Do the same for channels 1 and 2
   </pre>
+  Try <tt>factor</tt> values of 0, 0.5, 1, 1.5, 2, and 3 and describe what you observe in each case.
+  Which gives the strongest contrast between the spotlight and the gray border? Use a factor of 3 for
+  your final image so the spotlight colors are strongly amplified.
+
+  <p><b>Step 3 &mdash; draw the black bounding box.</b>
+  To make the spotlight stand out, draw a black box along the four edges of the central rectangle.
+  Pick a thickness of a few pixels, then set those edge strips to black by assigning <tt>0</tt> to the
+  first three channels of each strip. The top edge is a strip a few rows tall spanning the width of the
+  spotlight, the left edge is a strip a few columns wide spanning its height, and similarly for the
+  bottom and right:
+  <pre>
+thickness = 4
+result[top:top + thickness, left:right, :3] = 0   # top edge
+# Now draw the bottom, left, and right edges the same way
+  </pre>
+  Draw the box last, so it sits on top of the amplified colors.
+
+  <p><b>Save your result.</b> Save the finished image as a single .png file using the output
+  filename you read earlier: <tt>plt.imsave(out_file, result)</tt>.
 
   <p><b>Individual submission:</b> Submit a .pdf file containing your Python code and both the original
   and processed images side by side to the assignment <tt>HC5 - Neighborhood Spotlight</tt> in the honors section of
@@ -341,7 +383,10 @@ result[:border_top, :] = to_grayscale(img[:border_top, :])
 
   <p>Using the latitude and longitude coordinates from the merged dataset, you will create an interactive
   Plotly scatter map of your borough in which each Census tract appears as a marker colored by its
-  mobility outcome (<tt>kfr_pooled_pooled_p25</tt>).
+  mobility outcome (<tt>kfr_pooled_pooled_p25</tt>). Keep in mind that these coordinates are tract
+  <i>centroids</i>, a single representative point (the population-weighted center) for each tract, so your
+  map shows opportunity at these locations, not spread across the tract's actual area. A large, sparsely
+  populated tract and a small, dense one both appear as a single dot.
 
   <p>To do this:
   <ul>
