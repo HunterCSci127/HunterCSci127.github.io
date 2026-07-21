@@ -334,47 +334,124 @@ result[top:top + thickness, left:right, :3] = 0   # top edge
   by a written paragraph explaining what you observe &mdash; not just what the code does, but what the
   finding means.
 
+  <p>You will submit your work as a Jupyter notebook (<tt>.ipynb</tt>), the same notebook in which you
+  obtain the data, compute the statistics, and produce the plots. The discussion described above should
+  appear in the notebook as markdown cells that <b>alternate with the code cells</b>: after each block of
+  code that produces a statistic or a plot, include a markdown cell that discusses what it shows. The
+  notebook should read as a narrative in which code and written analysis are interleaved, not a wall of
+  code followed by a separate write-up.
+
   <p><b>Grading criteria:</b>
   <ul>
     <li>Provides statistics for the borough/neighborhood and discusses observations in writing.
-        Anomalous values should be noted and discussed. (meets: 2, exceeds: 3)</li>
-    <li>Makes observations that go beyond what <tt>describe()</tt> alone would reveal. (meets: 2, exceeds: 3)</li>
-    <li>Provides and discusses at least 6 visualizations across at least 3 plot types. (meets: 2, exceeds: 4)</li>
+        Anomalous values should be noted and discussed.</li>
+    <li>Makes observations that go beyond what <tt>describe()</tt> alone would reveal.</li>
+    <li>Provides and discusses at least 6 visualizations across at least 3 plot types.</li>
     <li><b>Extra credit:</b> Connects data findings to the historical/policy research from HC 3 and HC 4,
         supported by at least one plot. (5 points)</li>
   </ul>
 
-  <p><b>Group submission:</b> Submit a .pdf to the assignment <tt>HC7 - Borough Data Analysis</tt>
-  in the honors section of <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.
+  <p><b>Group submission:</b> Submit your group notebook (<tt>.ipynb</tt>) to the assignment
+  <tt>HC7 - Borough Data Analysis (Group)</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per team.
+
+  <p><b>Individual submission:</b> Submit your individual notebook (<tt>.ipynb</tt>) to the assignment
+  <tt>HC7 - Neighborhood Data Analysis (Individual)</tt> in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. One submission per student.
 
   <hr>
 
   <li><b>HC 8: One Block Can Make a Difference</b>
   <b style="float:right">Due Date: November 4</b><br>
 
-  <p>One of the Opportunity Atlas's most striking findings is that neighboring Census tracts can have
+  <img src="../images/hc08.png" alt="One block can make a difference map" style="width:290px; float:left; margin:1.5em 1.5em 0.5em 0;">
+
+  <p style="clear:both">One of the Opportunity Atlas's most striking findings is that neighboring Census tracts can have
   dramatically different outcomes &mdash; children who grew up just one block apart may end up with
   very different adult incomes. In this assignment, you will look for evidence of this pattern in your
-  borough using a Python function you write yourself.
+  borough by pair-programming with your team-mate to develop a Python program.
 
   <p>To do this:
   <ul>
     <li>Write a function <tt>distance(lat1, lon1, lat2, lon2)</tt> that computes the distance in
-        kilometers between two points given their latitude and longitude coordinates.
-        You may use the simplified Euclidean approximation or the Haversine formula
+        kilometers between two points given their latitude and longitude coordinates, using the
+        Haversine formula
         (a useful reference: <a href="https://en.wikipedia.org/wiki/Haversine_formula" target="_blank">Wikipedia</a>).
-        Test your function on a few known pairs of locations.</li>
+        The Haversine formula, with latitude written as &phi;, longitude as &lambda;, and the Earth's
+        radius <tt>R</tt> taken as 6371 km, is
+        <p style="margin:0.4em 0 0.4em 2em">
+        <i>a</i> = sin&sup2;(&Delta;&phi;/2) + cos&nbsp;&phi;<sub>1</sub> &middot; cos&nbsp;&phi;<sub>2</sub> &middot; sin&sup2;(&Delta;&lambda;/2)<br>
+        <i>d</i> = 2<i>R</i> &middot; atan2(&radic;<i>a</i>, &radic;(1&minus;<i>a</i>))
+        </p>
+        where &Delta;&phi; is the difference of the two latitudes and &Delta;&lambda; the difference of
+        the two longitudes. The trigonometric functions expect their arguments in radians, so both the
+        latitudes and the longitudes (which the dataset stores in degrees) must be converted first. You
+        can get the math functions you need with
+        <tt>from math import radians, sin, cos, sqrt, atan2</tt>, where <tt>radians(x)</tt> converts a
+        value <tt>x</tt> from degrees to radians. Test your function on a few known pairs of locations
+        (for example, Hunter College at (40.7678, -73.9647) to the Empire State Building at
+        (40.7484, -73.9857) is about 2.8&nbsp;km).</li>
     <li>Using your function, identify all pairs of Census tracts in your borough whose centroids
-        are within 1 km of each other (i.e., neighboring tracts).</li>
-    <li>For each such pair, compute the absolute difference in <tt>kfr_pooled_pooled_p25</tt>.</li>
+        are within 1 km of each other (i.e., neighboring tracts). To compare every pair, use a nested
+        loop over the tracts where the inner loop starts one position past the outer one (if the outer
+        index is <tt>i</tt>, let the inner index <tt>j</tt> run from <tt>i + 1</tt> onward). That way
+        each pair is checked exactly once and no tract is ever compared with itself.</li>
+    <li>For each such pair, compute the absolute difference in <tt>kfr_pooled_pooled_p25</tt>. Keep in
+        mind that the distance and this difference are two separate quantities: the distance is only
+        used to decide whether a pair counts as neighbors (within 1 km), while the absolute difference
+        in <tt>kfr_pooled_pooled_p25</tt> measures how far apart their outcomes are. In other words, you
+        filter pairs by distance, then rank the pairs that survive by their outcome difference.</li>
     <li>Find the pair with the largest difference. Where are these tracts? What do you know about
         these neighborhoods from your earlier research?</li>
-    <li>Create a visualization that highlights these two tracts on a map and shows their outcomes
-        side by side.</li>
+    <li>Have your program compute and print a short summary for your borough: the number of tracts
+        analyzed, the number of neighboring pairs (within 1 km), the maximum outcome gap, the number of
+        neighboring pairs with a gap of at least 0.20 and at least 0.30, and the distance between the
+        largest-gap pair. These are the numbers that let you compare your borough to the others in your
+        discussion, so different boroughs will print very different summaries.</li>
+    <li>Create a map that highlights these two tracts and labels each one with its
+        <tt>kfr_pooled_pooled_p25</tt> value, so the two outcomes can be compared directly on the map.
+        A natural starting point is the static scatter map you built at the end of HC 6 (each tract drawn
+        as a dot at its centroid and colored by <tt>kfr_pooled_pooled_p25</tt>): reuse that as your base,
+        then mark and connect your two contrasting tracts on top of it. </li>
   </ul>
 
-  <p>Write a short paragraph interpreting your finding. Does the contrast surprise you? Can you offer
-  any explanation for why these neighboring tracts have such different outcomes?
+  <p>For example, running the program on Manhattan prints a summary like this (if your borough is not
+  Manhattan, your numbers will look quite different):
+  <pre>
+Summary statistics for Manhattan:
+  Tracts analyzed:          280
+  Neighbor pairs (&lt;= 1 km): 1933
+  Max gap:                  0.534
+  Pairs with gap &gt;= 0.20:   61
+  Pairs with gap &gt;= 0.30:   21
+  Top pair distance:        0.81 km
+  </pre>
+
+  <p><b>Program structure requirements:</b> <ul>
+    <li>Organize your program into functions. The distance calculation must live
+  in the <tt>distance(lat1, lon1, lat2, lon2)</tt> function described above, and everything else (loading
+  the data, searching for neighboring pairs, computing the statistics, printing them, and drawing the map)
+  must go inside a <tt>main()</tt> function. At the very bottom of your program, call <tt>main()</tt> from
+  inside the standard <tt>__main__</tt> guard, so it runs when you run the file directly:
+  <pre>
+if __name__ == "__main__":
+    main()
+  </pre>
+</li>
+<li>Save your map with name <b>hc08_map.png</b></li>
+
+</ul>
+
+
+  <p><b>Discussion:</b> Write a short paragraph interpreting your finding. Some boroughs are more internally divided than
+  others: in some you will find neighboring tracts whose outcomes differ dramatically, while in others
+  even the largest gap between neighbors is modest and nearby tracts look much alike. Either result is
+  meaningful, so let your data tell you which one your borough has. If you found a striking contrast,
+  what might explain why two tracts so close together diverged so sharply? If instead your borough's
+  neighbors look broadly similar, what does that sameness tell you? In either case, discuss what your
+  result says about your own neighborhood, drawing on what you learned in your earlier research: where
+  do your neighborhood's tracts sit in this picture, and what does that reveal about the place you are
+  studying?
 
   <p><b>Note:</b> Your program may take several minutes to run for larger boroughs (Brooklyn and Queens
   have over 600 tracts each). This is normal &mdash; do not interrupt it.
@@ -386,9 +463,11 @@ result[top:top + thickness, left:right, :3] = 0   # top edge
   these thresholds in either dimension, skip the Haversine calculation entirely. How much faster does
   your program run with this optimization?
 
-  <p><b>Individual submission:</b> Submit a .pdf containing your Python code and written discussion
-  to the assignment <tt>HC8 - One Block Can Make a Difference</tt> in the honors section of
-  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+  <p><b>Group submission:</b> This assignment has two separate submissions in the honors section of
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>, one per team. Submit your team's
+  Python program as a <tt>.py</tt> file to the assignment <tt>HC8 - Program</tt>, and submit a
+  <tt>.pdf</tt> containing an image of your map (the <tt>hc08_map.png</tt> your program saves) and your
+  written interpretation to the assignment <tt>HC8 - Discussion</tt>.
 
   <hr>
 
@@ -455,11 +534,13 @@ result[top:top + thickness, left:right, :3] = 0   # top edge
   <li><b>HC 11: Neighborhood Webpage</b>
   <b style="float:right">Due Date: December 2</b><br>
 
-  <p>In this two-part assignment, you will build an individual page for your neighborhood and then
+  <img src="../images/githubpages.jpg" alt="GitHub Pages" style="width:290px; float:left; margin:1.5em 1.5em 0.5em 0;">
+
+  <p style="clear:both">In this two-part assignment, you will build an individual page for your neighborhood and then
   collaborate with your team to create a shared borough project site.
 
   <h4>Individual component &mdash; Neighborhood page:</h4>
-  <p>Create a <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> site for your
+  <p>Create a <a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages</a> site for your
   neighborhood. It should include:
   <ul>
     <li>The name of the neighborhood and its Census tract(s)</li>
@@ -499,7 +580,7 @@ result[top:top + thickness, left:right, :3] = 0   # top edge
 
   <p><b>Useful links:</b>
   <ul>
-    <li><a href="https://pages.github.com/" target="_blank">GitHub Pages setup guide</a></li>
+    <li><a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages setup guide</a></li>
     <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a></li>
   </ul>
 
