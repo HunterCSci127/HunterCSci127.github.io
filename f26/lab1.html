@@ -180,6 +180,8 @@ for i in range(4):
 
 wn.exitonclick()</code></pre>
 
+<p>The line: <code class="inline">wn = turtle.Screen()</code> sets up a variable for the screen.  Like the turtle variables, the screen variable has many associated functions.  For example, you can change the background color (<code class="inline">wn.bgcolor("purple")</code>), add a title (<code class="inline">wn.title("My First Turtle Program")</code>) or have the window stay open until the user clicks (<code class="inline">wn.exitonclick()</code>).  You can also keep the window open with the command:  <code class="inline">turtle.exitonclick()</code> and no need to set up the <code class="inline">wn</code>.  We chose the first way to do this, since it echos the <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html">textbook</a>.</p>
+
 	<li> Save your program (<code class="inline">File > Save</code>). <br>
 	<i><b>IMPORTANT</b>:  Choose a name for your file that is <b>not</b> <tt>turtle.py</tt>.
 		When executing the "import turtle" statement, the computer first looks in the folder where the file is saved for the Turtle library and then in the libraries (and other places on the path).  So, it thinks the module is itself, causing all kinds of errors.  To avoid this, name your program something like "myTurtle.py" or "program2.py".</i>
