@@ -990,32 +990,27 @@ out3 = ...
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, March 22</b><br>
 	<b>Reading: Lecture 4, <a href="lab4.html">Lab 4</a></b><br>
 	<b>Available Libraries:  <i>none</i> </b></p>
-	<p><b>Noise Exposure Safety</b></p>
+	<p><b>Parking Garage Fee</b></p>
 
-	<p>Write a program that asks the user for a noise level in decibels (dB) and the number of hours of exposure (asks for two input values). 
-		<br> Based on NIOSH/OSHA guidelines, the maximum safe exposure time decreases as noise level increases:
+	<p>Write a program that asks the user for the number of hours a car was parked and prints the parking fee.
+		<br> The garage charges a flat rate for each block of time:
 	<ul>
-		<li>Between 0 and 85 dB (inclusive), the safe limit is up to 8 hours.</li>
-		<li>Between 86 and 88 dB (inclusive), the safe limit is up to 4 hours.</li>
-		<li>Between 89 and 91 dB (inclusive), the safe limit is up to 2 hours.</li>
-		<li>Between 92 and 94 dB (inclusive), the safe limit is up to 1 hour.</li>
-		<li>Above 94 dB, no duration of exposure is considered safe.</li>
+		<li>2 hours or less:  $10</li>
+		<li>More than 2 hours, up to and including 5 hours:  $18</li>
+		<li>More than 5 hours, up to and including 12 hours:  $25</li>
+		<li>More than 12 hours:  $40 (daily maximum)</li>
 	</ul>
-	<br>
-	The program should print <tt>"Safe"</tt> when the number of hours is within the limit for the noise level. It should print <tt>"Caution"</tt> when the number of hours is above the limit for the noise level. It should print <tt>"Unsafe"</tt> whenever the noise level is above 94dB.</p>
+	</p>
 
 	<p>Sample runs:
-	<pre><code class="text">Enter noise level in decibels: 87
-Enter hours of exposure: 3
-Safe</code></pre>
-	<pre><code class="text">Enter noise level in decibels: 87
-Enter hours of exposure: 6
-Caution</code></pre>
-	<pre><code class="text">Enter noise level in decibels: 97
-Enter hours of exposure: 1
-Unsafe</code></pre>
+	<pre><code class="text">Enter hours parked: 2
+Parking fee: $10</code></pre>
+	<pre><code class="text">Enter hours parked: 2.5
+Parking fee: $18</code></pre>
+	<pre><code class="text">Enter hours parked: 14
+Parking fee: $40</code></pre>
 
-	<p>Note:  "inclusive" for a range of numbers means that it includes the endpoints.  For example, "between 4 and 8, inclusive" means all values that are greater than or equal to 4 and are also less than or equal to 8.</p>
+	<p>Note:  The number of hours entered may include a fraction of an hour (for example, <tt>2.5</tt>).</p>
 
 </li>
 
@@ -1056,42 +1051,42 @@ AliceSprings   -5.2
 <p style="float:right;margin-left:10pt"><b>Due Date: 5pm, March 24</b><br>
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab6.html">Lab 6</a> </b><br>
 	<b>Available Libraries: pandas</b></p>
-	<p><b>Fuel Cost Estimator</b></p>
+	<p><b>Attendance Rate</b></p>
 
 	<p>
-	Using <tt>pandas</tt>, write a program that asks the user for a trips file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates the fuel cost for each trip, and prints out the data with a new column named <tt>Fuel_Cost</tt> showing the cost in dollars. Assume that the CSV files have the columns: <tt>"Trip"</tt>, <tt>"Distance_miles"</tt>, <tt>"MPG"</tt>, and <tt>"Price_per_gallon"</tt>. MPG stands for miles per gallon, i.e. how many miles the car travels on one gallon of fuel. The fuel cost for a trip is calculated as:
-	<p><tt>Fuel_Cost = Distance_miles / MPG * Price_per_gallon</tt></p>
+	Using <tt>pandas</tt>, write a program that asks the user for an attendance file, in comma separated value (CSV) format, reads in the corresponding CSV file, calculates the attendance rate for each class, and prints out the data with a new column named <tt>Attendance_Rate</tt> showing the percentage of enrolled students who were present. Assume that the CSV files have the columns: <tt>"Class"</tt>, <tt>"Enrolled"</tt>, and <tt>"Absent"</tt>. <tt>Enrolled</tt> is the number of students registered for the class and <tt>Absent</tt> is the number of those students who did not attend. The attendance rate for a class is calculated as:
+	<p><tt>Attendance_Rate = (Enrolled - Absent) / Enrolled * 100</tt></p>
 
 	<p>
-	For example if the CSV file, <a href="../files/trips.csv">trips.csv</a>, contained:
+	For example if the CSV file, <a href="../files/attendance.csv">attendance.csv</a>, contained:
 
 <p>
 <table border=1>
 <tr>
- <th>Trip</th><th>Distance_miles</th><th>MPG</th><th>Price_per_gallon</th>
+ <th>Class</th><th>Enrolled</th><th>Absent</th>
 </tr>
 <tr>
- <td>NYC to Boston</td><td>215</td><td>30</td><td>3.50</td>
+ <td>CSCI 127</td><td>120</td><td>9</td>
 </tr>
 <tr>
- <td>NYC to Philadelphia</td><td>95</td><td>30</td><td>3.45</td>
+ <td>MATH 150</td><td>85</td><td>4</td>
 </tr>
 <tr>
- <td>NYC to Washington DC</td><td>225</td><td>28</td><td>3.55</td>
+ <td>ENGL 220</td><td>32</td><td>3</td>
 </tr>
 <tr>
- <td>NYC to Albany</td><td>150</td><td>32</td><td>3.40</td>
+ <td>BIOL 100</td><td>210</td><td>17</td>
 </tr>
 </table>
 
 <p>A sample run of your program would be:
-	<pre><code class="shell">Enter trips file name: trips.csv
-Fuel costs:
-                   Trip  Distance_miles  MPG  Price_per_gallon  Fuel_Cost
-0         NYC to Boston             215   30              3.50  25.083333
-1   NYC to Philadelphia              95   30              3.45  10.925000
-2  NYC to Washington DC             225   28              3.55  28.526786
-3          NYC to Albany            150   32              3.40  15.937500
+	<pre><code class="shell">Enter attendance file name: attendance.csv
+Attendance rates:
+      Class  Enrolled  Absent  Attendance_Rate
+0  CSCI 127       120       9        92.500000
+1  MATH 150        85       4        95.294118
+2  ENGL 220        32       3        90.625000
+3  BIOL 100       210      17        91.904762
 </code></pre>
 </li>
 
