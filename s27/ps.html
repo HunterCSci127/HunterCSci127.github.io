@@ -1182,37 +1182,41 @@ AccountNameGoesHere
 	<b>Reading: Think CS <a href="https://runestone.academy/ns/books/published/thinkcspy/Functions/toctree.html">Chapter 6</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html" target="_blank">Chapter 7</a>, 
 	<a href="lab5.html">Lab 5</a>, <a href="lab8.html">Lab 8</a>  & <a href="https://www.datacamp.com/tutorial/python-numpy-tutorial">Numpy Tutorial</a></b><br>
 	<b>Available Libraries: matplotlib, numpy</b></p>
-	<p><b>Counting Pixels Near a Color</b></p>
+	<p><b>Measuring Tree Canopy</b></p>
 
 	<p>
-	Write a function <tt>count_pixels_near_color(filename, r, g, b, tolerance)</tt> that takes the filename of an image, a target color given as red, green, and blue values, and a tolerance value. The function returns the number of pixels where each channel is within <tt>tolerance</tt> of the corresponding target value. That is, a pixel at position <tt>(i,j)</tt> is counted if:
-	<ul>
-		<li>the absolute difference between the pixel's red channel and <tt>r</tt> is less than or equal to <tt>tolerance</tt>,</li>
-		<li>the absolute difference between the pixel's green channel and <tt>g</tt> is less than or equal to <tt>tolerance</tt>, and</li>
-		<li>the absolute difference between the pixel's blue channel and <tt>b</tt> is less than or equal to <tt>tolerance</tt>.</li>
-	</ul>
-	For example, a pixel with RGB values (220, 10, 30) and a target color of (255, 0, 0) with tolerance 50 would be counted because |220-255| = 35 &le; 50, |10-0| = 10 &le; 50, and |30-0| = 30 &le; 50. However, a pixel with RGB values (100, 200, 50) would not be counted because |100-255| = 155 > 50.
+	Ecologists estimate how much of a forest is covered by leafy canopy by photographing it straight down from an aircraft or drone and measuring how much of the picture is leaf rather than trunk, soil, or sky.
 	</p>
 
-	<p><b>Note on image values:</b> When reading a PNG file with <tt>plt.imread()</tt>, pixel values are returned as floats between 0 and 1. To compare them to the target color values (which are between 0 and 255), you will need to multiply each channel by 255 first.</p>
+	<p>
+	Write a function <tt>percent_canopy(filename, margin)</tt> that takes the filename of an image and a margin value, and returns the percentage of the image's pixels that are canopy. A pixel counts as canopy when its green channel is greater than its red channel by more than <tt>margin</tt> and greater than its blue channel by more than <tt>margin</tt>.
+	</p>
 
-	<p>An example, using the file <a href="../images/pink_landscape.png">pink_landscape.png</a> as the input file:
-	<p><img src="../images/pink_landscape.png" height=200></p>
-	<i>image credits craiyon.com</i>
-	<p>the following code, using your function:
-	<pre><code class="python">count = count_pixels_near_color('pink_landscape.png', 200, 100, 100, 50)
-print(count)
-</code></pre></p>
-	<p>will output<br><code>72488</code></p>
+	<p>
+	For example, with a margin of 8, a pixel with RGB values (60, 140, 70) counts as canopy, because 140 &gt; 60 + 8 and 140 &gt; 70 + 8.  A pixel with RGB values (150, 155, 140) does not, because 155 is not more than 150 + 8.
+	</p>
 
-	<p>In another example, using the file <a href="../images/green_landscape.png">green_landscape.png</a> as the input file:
-	<p><img src="../images/green_landscape.png" height=200></p>
-	<i>image credits craiyon.com</i>
+	<p><b>Note on image values:</b> When reading a PNG file with <tt>plt.imread()</tt>, pixel values are returned as floats between 0 and 1. To compare them using the margin (which is on a 0 to 255 scale), you will need to multiply each channel by 255 first.</p>
+
+	<p><b>About the images:</b> Two aerial photographs of the same woodland in Van Cortlandt Park, the Bronx &mdash; one flown in full leaf, one after the leaves had dropped.  Each is a 3 &times; 3 block of tiles (zoom 17, <tt>x</tt> = 38634&ndash;38636, <tt>y</tt> = 49190&ndash;49192, <tt>year</tt> = 2008 and 2014) from the City's aerial photo tile service, <tt>https://maps.nyc.gov/xyz/1.0.0/photo/{year}/{z}/{x}/{y}.png8</tt>.</p>
+
+	<p><i>Imagery &copy; City of New York, CC BY 4.0.</i></p>
+
+	<p>An example, using the file <a href="../images/vancortlandt_park_2008.png">vancortlandt_park_2008.png</a> as the input file:
+	<p><img src="../images/vancortlandt_park_2008.png" height=200></p>
 	<p>the following code, using your function:
-	<pre><code class="python">count = count_pixels_near_color('green_landscape.png', 200, 100, 100, 50)
-print(count)
+	<pre><code class="python">percent = percent_canopy('vancortlandt_park_2008.png', 8)
+print(percent)
 </code></pre></p>
-	<p>will output<br><code>0</code></p>
+	<p>will output<br><code>66.52425130208334</code></p>
+
+	<p>In another example, using the file <a href="../images/vancortlandt_park_2014.png">vancortlandt_park_2014.png</a> as the input file:
+	<p><img src="../images/vancortlandt_park_2014.png" height=200></p>
+	<p>the following code, using your function:
+	<pre><code class="python">percent = percent_canopy('vancortlandt_park_2014.png', 8)
+print(percent)
+</code></pre></p>
+	<p>will output<br><code>0.016954210069444444</code></p>
 
 	<p><b>Note:</b> The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see Lab 7).</p>
 	<p><i>Hint: See Section 2 of <a href="lab5.html">Lab 5</a>, Snow Pack in California, for an example of counting pixels.</i></p>	
