@@ -243,6 +243,10 @@ It is often quite useful to break a string into pieces, and work with those piec
 <p>Now, translate the above <b>pseudocode</b> (informal but detailed description of the steps in a program) into Python and test that your program works.  Once done, see <a href="ps.html#set2">Homework List</a>.</p>
 
 <p>
+
+
+<h4>Hints:</h4>  
+
 To <b>concatenate</b> strings you can use the + operator. For example:</p>
 <pre><code class="python">print('hi'+'bye')</code>
 </pre>
@@ -250,7 +254,30 @@ To <b>concatenate</b> strings you can use the + operator. For example:</p>
 will output:
 <pre><code class="python">hibye</code></pre>
 
-
+How to get started?  Let's look at each step of the pseudocode:
+<ol>
+	<li> Prompt for a phrase & read it in.<br>
+		<em>We need to set up a variable, and store input from the user there.  To do this, we use the <code>input()</code> command described in Section 2 above.  That is:  </em>
+			<pre><code class="python">phrase = input('Enter a phrase:')</code></pre>
+	<li> Make the phrase upper case.
+		<br>
+		<em>In lecture and in the <a href="https://runestone.academy/ns/books/published//thinkcspy/Strings/StringMethods.html">textbook reading</a>, various string methods were introduced.  For example, when you apply <code>lower()</code> to a string, it gives the string in lower case.  Here, we want the string in upper case letters, so, we write: </em><pre><code class="python">phrase = phrase.upper()</code></pre>  
+		<em></em>Note that we have to store upper case string back in the variable to save the change.</em>
+	<li> Split up the phrase into words.
+		<br><em>We are now ready to use <code>split()</code> from above.  Let's call the pieces that it returns <code>words</code>:  </em>
+		<pre><code class="python">words = phrase.split()</code></pre>
+	<li> Take the first letter of each word (keep in mind that <code>split()</code> returns a list of the words), concatenate and make an acronym of it.
+		<br><em>This last step is doing the bulk of the work for us.  
+			<ul>
+				<li>First, we need to set up a variable to hold our acronym.  We will start it as an empty string, and add to it as we go:  <pre><code class="python">acronym=""</code></pre></li>
+				<li>Next, we need to loop through the words.  We can do this with a <code>for</code> loop:</li>
+				<pre><code class="python">for word in words:</code></pre>
+				<li>And last, inside the loop, we add the first letter of the word to the acronym:
+				<pre><code class="python">    acronym = acronym + word[0]</code></pre>
+				</li>
+			</ul></em>
+</ol>
+<p>Test the code you just wrote on your machine.  Try it with several different phrases, and when it works correctly, submit to Gradescope.</p>
 
 
 <br><hr>
