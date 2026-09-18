@@ -323,42 +323,42 @@ I LOVE PYTHON!
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, February 22</b><br>
 	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/SimplePythonData/toctree.html" target="_blank">Chapter 2</a> & <a href="lab2.html">Lab 2</a></b><br>
 	<b>Available Libraries:  <i>none</i></b></p>
-	<p><b>Lowercase ASCII</b></p>
+	<p><b>Uppercase ASCII</b></p>
 
-	<p>Write a program that prompts the user to enter a phrase, converts the phrase to lowercase, and then prints out each lowercase character and its corresponding ASCII code.</p>
+	<p>Write a program that prompts the user to enter a phrase, converts the phrase to uppercase, and then, for each uppercase character, prints the character, its corresponding ASCII code, and the character that comes next in the ASCII table (the character whose ASCII code is one greater).</p>
 
 	<p>A sample run of your program should look like:</p>
-<pre><code class="shell">Enter a phrase: abc
-a 97
-b 98
-c 99</code></pre>
+<pre><code class="shell">Enter a phrase: ABC
+A 65 B
+B 66 C
+C 67 D</code></pre>
 
 	<p>And another sample run:</p>
-<pre><code class="shell">Enter a phrase: ABC
-a 97
-b 98
-c 99</code></pre>
+<pre><code class="shell">Enter a phrase: abc
+A 65 B
+B 66 C
+C 67 D</code></pre>
 
 
 	<p>Another run, with a longer phrase:</p>
 <pre><code class="shell">Enter a phrase:  I love Python!
-i 105
-  32
-l 108
-o 111
-v 118
-e 101
-  32
-p 112
-y 121
-t 116
-h 104
-o 111
-n 110
-! 33
+I 73 J
+  32 !
+L 76 M
+O 79 P
+V 86 W
+E 69 F
+  32 !
+P 80 Q
+Y 89 Z
+T 84 U
+H 72 I
+O 79 P
+N 78 O
+! 33 "
 </code></pre>
 		
-	<p><i>Hint:  The first step is to ask the user for input (see Section 2 of <a href="lab2.html">Lab 2</a>).  If <tt>c</tt> is a character, <code class="inline">ord(c)</code> returns its ASCII code.  For example, if <tt>c</tt> is 'i', then <code class="inline">ord(c)</code> returns 105.  See <a href="lab2.html">Lab 2</a> for more on ASCII and characters.</i>
+	<p><i>Hint:  See Section 2 of <a href="lab2.html">Lab 2</a> for the functions that convert between characters and their ASCII codes.</i>
 	</p>
 </li>
 
@@ -370,32 +370,35 @@ n 110
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, February 23</b><br>
 	<b>Reading:   <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab2.html">Lab 2</a></b><br>
 	<b>Available Libraries: turtle </b></p>
-	<p><b>Sparkle</b></p>	
+	<p><b>Hexagonal Spiral</b></p>	
 
 
 	<p>Write a program, using the turtle library, that implements the pseudocode below:</p>
 
 	<pre><code class="shell">Set the speed to 0.
-Set the pen size to 1.
+Set the pen size to 2.
 Hide the turtle.
 
-For i = 20, 24, 28, ..., 200:
+For i = 5, 10, 15, ..., 120:
   Change the color to "cyan" 
   Walk forward i steps
-  Turn left 90 degrees
+  Turn left 60 degrees
+  Change the color to "magenta" 
+  Walk forward i steps
+  Turn left 60 degrees
   Change the color to "gold" 
   Walk forward i steps
-  Turn right 185 degrees</code></pre>
+  Turn left 60 degrees</code></pre>
 
 	
 	<p>Your output should look similar to:</p>
 				<br>
-				<img src="../images/sparkle_f26.png" height=250>
+				<img src="../images/hexspiral_s27.png" height=250>
 		
 		
 	<p><b>Notes:</b>
 	<ul>
-		<li>Use <code>range()</code> with a step parameter to generate every other number. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</li>
+		<li>Use <code>range()</code> with a step parameter to generate the numbers 5, 10, 15, ..., 120. See examples of <code class="inline">range(start,stop,step)</code> in Section 4 of <a href="lab2.html">Lab 2</a>.</li>
 		<li>For testing purposes, only a subset of turtle commands is supported (as noted in earlier programs):
 		<pre><code class="python">backward, color, colormode, forward, goto, hideturtle, home, left, pendown,
 penup, pensize, right, shape, showturtle, speed, stamp</code></pre>
@@ -761,15 +764,14 @@ Cents: 2</code></pre>
 		<ol>
 			<li>If the elevation is less than or equal to zero, color blue.</li>
 			<li>For elevation larger than zero but less than or equal to the Sandy storm surge (6 feet), set color to be orange (100% red, 50% green, 0% blue). </li>
-			<li>For elevation just above the Sandy storm surge (6 feet) and less than or equal to 13 feet, set color to be light grey (25% red, 25% green, 25% blue).</li>
-			<li>For elevation just above 13 feet but less than or equal to 20 feet, set color to be dark grey (75% red, 75% green, 75% blue).</li>
+			<li>For elevation just above the Sandy storm surge (6 feet) and less than or equal to 20 feet, set color to be grey (50% red, 50% green, 50% blue).</li>
 			<li>For elevation that is above 20, set color to be light green (0% red, 100% green, 50% blue).</li>
 		</ol>
 
 
 		<p> Your resulting map should look like:
-		</p><p> <img src="../images/stratified_outline_topo.png" width="300">
-		</p><p> and be saved to a file called <tt>black_outline_topo.png</tt>.
+		</p><p> <img src="../images/stratified_topo_s27.png" width="300">
+		</p><p> and be saved to a file called <tt>stratified_topo.png</tt>.
 
 
 	</p><p> Note:  before submitting your program for grading, remove the commands that show the image (i.e. the ones that pop up the graphics window with the image).  The program is graded on a server on the cloud and does not have a graphics window, so, the <code>plt.show()</code> and <code>plt.imshow()</code> commands will give an error.  Instead, the files your program produces are compared pixel-by-pixel to the answer to check for correctness.</p>
