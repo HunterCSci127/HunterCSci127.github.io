@@ -1230,91 +1230,56 @@ print(percent)
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, <a href="lab7.html">Lab 7</a> </b><br>
 	<b>Available Libraries: pandas</b></p>
 
-	<p><b>Video Game Sales Analysis</b></p>
+	<p><b>Restaurant Inspection Results</b></p>
 
-	<p>The file <a href="../files/vgsales.csv">vgsales.csv</a> contains data on video game sales. Each row represents a game and includes its title, platform, release year, genre, publisher, and sales figures across different regions.</p>
+	<p>The file <a href="../files/restaurant_inspections.csv">restaurant_inspections.csv</a> contains results of New York City restaurant inspections.  Each row is one inspection and includes the restaurant's name, borough, cuisine, the letter grade it received, its inspection score, and the date of the inspection.  The data is a sample of the <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">DOHMH New York City Restaurant Inspection Results</a> dataset published on NYC Open Data.</p>
 
-	<p><b>Step 1: Create Your Personalized Dataset (<tt>IDfiltered_vgsales.csv</tt>)</b></p>
-
-	<p>Before writing your program, you must filter <tt>vgsales.csv</tt> to create a dataset unique to you. Use the <b>last two digits</b> of your EmplID number to determine a 10-year window of data to keep:</p>
-
-	<ol>
-		<li>Take the last two digits of your EmplID number. Call this number <tt>NN</tt>.</li>
-		<li>Compute your start year: <code>start_year = 1980 + (NN % 30)</code></li>
-		<li>Your year window is <tt>start_year</tt> to <tt>start_year + 9</tt> (inclusive).</li>
-		<li>Filter <tt>vgsales.csv</tt> to keep only rows where the <tt>Year</tt> falls within your window.</li>
-		<li>Save the result as <tt>IDfiltered_vgsales.csv</tt>.</li>
-	</ol>
-
-	<p><b>Example:</b> If your EmplID number is <tt>54034766</tt>, the last two digits are <tt>66</tt>.<br>
-	<code>start_year = 1980 + (66 % 30) = 1980 + 6 = 1986</code><br>
-	You keep only rows where <tt>Year</tt> is between <tt>1986</tt> and <tt>1995</tt> (inclusive).<br>
-	Your output file would be named <tt>IDfiltered_vgsales.csv</tt>.</p>
-
-	<p>You can filter and save the CSV using pandas. Assuming the dataframe in which you read <tt>vgsales.csv</tt> is called <tt>df</tt>:</p>
-	<pre><code class="python">
-filtered = df[(df['Year'] >= start_year) & (df['Year'] <= start_year + 9)]
-filtered.to_csv('IDfiltered_vgsales.csv', index=False)
-</code></pre>
-
-<p><b>Step 2: Write Your Program (<tt>hw33.py</tt>)</b></p>
-
-	<p>Adapt the parking ticket program from <a href="lab7.html">Lab 7</a> to analyze video game sales data. Your program should:
+	<p>Adapt the parking ticket program from <a href="lab7.html">Lab 7</a> to analyze restaurant inspection data.  Your program should read <tt>restaurant_inspections.csv</tt> and:
 	</p>
 	<ul>
-		<li>Ask the user for the name of the input CSV file.</li>
-		<li>Ask the user for a platform to filter by (e.g., <code>PS4</code>, <code>Wii</code>, <code>X360</code>).</li>
+		<li>Ask the user for a borough to filter by (e.g., <code>Queens</code>, <code>Manhattan</code>, <code>Bronx</code>).</li>
 		<li>Ask the user for the attribute (column name) to analyze.</li>
-		<li>Display the top 5 values for that attribute among games on the chosen platform.</li>
+		<li>Ask the user how many top values to display.</li>
+		<li>Display the top <tt>n</tt> values for that attribute among the inspections in the chosen borough.</li>
 	</ul>
 
 	<p><b>Valid attributes</b> the user may enter:</p>
 	<ul>
-		<li><code>Genre</code> - Genre of the game (Action, Sports, etc.)</li>
-		<li><code>Publisher</code> - Publisher of the game</li>
-		<li><code>Year</code> - Year the game was released</li>
+		<li><code>Cuisine</code> - the type of food served</li>
+		<li><code>Grade</code> - the letter grade given at the inspection (A, B, or C)</li>
+		<li><code>Score</code> - the inspection score (lower is better)</li>
 	</ul>
 
 	<p><b>Hint:</b> To select only the rows where a column matches a specific value, you can use the following pattern:
-	<pre><code class="python">filtered = df[df['Platform'] == platform]
+	<pre><code class="python">filtered = df[df['Borough'] == borough]
 </code></pre>
-	This creates a new dataframe <tt>filtered</tt> containing only the rows where the <tt>Platform</tt> column equals the value stored in <tt>platform</tt>.</p>
+	This creates a new dataframe <tt>filtered</tt> containing only the rows where the <tt>Borough</tt> column equals the value stored in <tt>borough</tt>.</p>
 
 	<p>A sample run:</p>
-	<pre><code class="shell">Enter CSV file name: vgsales.csv
-Enter platform: PS4
-Enter attribute: Genre
-The top 5 values for Genre on PS4 are:
-Genre
-Action           31
-Role-Playing     28
-Sports           19
-Shooter          13
-Adventure        10
+	<pre><code class="shell">Enter borough: Queens
+Enter attribute: Cuisine
+Enter how many top values to display: 5
+The top 5 values for Cuisine in Queens are:
+Cuisine
+Chinese                     454
+American                    397
+Latin American              317
+Bakery Products/Desserts    190
+Pizza                       184
 Name: count, dtype: int64
 </code></pre>
 
 	<p>And another run:</p>
-	<pre><code class="shell">Enter CSV file name: vgsales.csv
-Enter platform: Wii
-Enter attribute: Publisher
-The top 5 values for Publisher on Wii are:
-Publisher
-Ubisoft             51
-Activision          12
-Electronic Arts     10
-Nintendo            9
-THQ                 8
+	<pre><code class="shell">Enter borough: Manhattan
+Enter attribute: Grade
+Enter how many top values to display: 3
+The top 3 values for Grade in Manhattan are:
+Grade
+A    2910
+B    1290
+C     733
 Name: count, dtype: int64
 </code></pre>
-
-<p><i>Note: The values shown above are for a particular EmplID and year range. Your output will differ since each student's filtered dataset is unique.</i></p>
-
-	<p><b>Submission:</b> Submit (upload) the following <b>two files</b> to Gradescope:</p>
-	<ol>
-		<li><tt>hw33.py</tt>: your Python program</li>
-		<li><tt>IDfiltered_vgsales.csv</tt>: your personalized filtered CSV file (where <tt>ID</tt> is your EmplID number)</li>
-	</ol>
 	
 </li>
 
