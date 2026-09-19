@@ -1337,46 +1337,36 @@ For each color and distance in the zipped lists:
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, April 5</b><br>
 	<b>Reading: <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/ConditionalExecutionBinarySelection.html">Section 7.4</a>, <a href="lab4.html">Lab 4</a>, <a href="lab7.html">Lab 7</a> and <a href="lab8.html">Lab 8</a></b><br>
 	<b>Available Libraries:  <i>none</i></b></p>
-	<p><b>HTTP Status Code</b></p>
+	<p><b>Website Domain Type</b></p>
 
-	<p>Write the function <tt>status_to_message(code)</tt> which takes an HTTP status code as an integer and returns the corresponding message as a string.</p>
-	<ol>
-		<li>If the code does not correspond to a known status code, your function should return <tt>"Unknown"</tt>.</li>
-		<li>Use the following status codes:
-			<pre>200: OK
-201: Created
-301: Moved Permanently
-302: Found
-400: Bad Request
-401: Unauthorized
-403: Forbidden
-404: Not Found
-418: I'm a Teapot
-500: Internal Server Error
-503: Service Unavailable</pre>
-		</li>
-	</ol>
+	<p>Write a program, using function <tt>main()</tt>, that inputs a website URL such as <tt>www.apple.com</tt> or <tt>hunter.edu</tt>.  Find the website name and its top level domain type, and print them.</p>
 
-	<p>A sample call of the function:
-	<pre><code class="python">print("Status 404:", status_to_message(404))</code></pre>
-	<p>would print:</p>
-	<pre><code class="text">Status 404: Not Found</code></pre>
+	<ul>
+		<li>If the top level domain is <tt>com</tt>, print <tt>commercial</tt></li>
+		<li>otherwise, if it is <tt>edu</tt>, print <tt>education</tt></li>
+		<li>otherwise, if it is <tt>org</tt>, print <tt>organization</tt></li>
+		<li>otherwise, if it is <tt>gov</tt>, print <tt>government</tt></li>
+		<li>otherwise, if it is <tt>net</tt>, print <tt>network</tt></li>
+		<li>otherwise, if it is <tt>info</tt>, print <tt>information</tt></li>
+		<li>otherwise, print <tt>other</tt></li>
+	</ul>
 
-	<p>And another example call of the function:
-	<pre><code class="python">code = 201
-print("Status", code, ":", status_to_message(code))</code></pre>
-	<p>would print:</p>
-	<pre><code class="text">Status 201 : Created</code></pre>
+	<p>A sample run of your program:</p>
+	<pre><code class="text">Enter a website URL: chat.openai.com
+website name: openai
+commercial</code></pre>
 
-	<p>And an invalid input example:
-	<pre><code class="python">print("Status 999:", status_to_message(999))</code></pre>
-	<p>would print:</p>
-	<pre><code class="text">Status 999: Unknown</code></pre>
+	<p>Another sample run:</p>
+	<pre><code class="text">Enter a website URL: hunter.edu
+website name: hunter
+education</code></pre>
 
-	<p>Note: The grading script does not run the whole program, but instead tests your function separately ('unit tests') to determine correctness. As such, the function name must match exactly (else, the scripts cannot find it). Before submitting your program for grading, remove any commands that are outside a function definition. To test the function you wrote, we import your file and then call the function directly. Code outside of function definitions will give compilation errors and prevents the tests from completing (giving a grade of 0). If you have extra code for testing and such, either comment it out before submitting, or use conditional execution (see <a href="lab7.html">Lab 7</a>).</p>
+	<p>And another, using the Air Force website:</p>
+	<pre><code class="text">Enter a website URL: www.af.mil
+website name: af
+other</code></pre>
 
-	<p><i>Hint: See Lecture 8 for related programs.</i></p>
-
+	<p><i>Hint:  A website address can come in several forms &mdash; <tt>websiteName.com</tt>, <tt>www.websiteName.com</tt>, or <tt>https://www.websiteName.com</tt> &mdash; so the website name is not always in the same position when you split the address by <tt>'.'</tt>.  Counting from the end works for all of them:  use negative indices to get the last piece (the top level domain) and the second-to-last piece (the website name).  See <a href="lab7.html">Lab 7</a>.</i></p>
 
 
 </li>
