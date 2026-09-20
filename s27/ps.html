@@ -785,7 +785,7 @@ Cents: 2</code></pre>
 
 <li >
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, March 12</b><br>
-		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/ListComprehensions.html#list-comprehensions" target="_blank">Section 10.23</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab4.html">Lab 4</a></b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/ListComprehensions.html#list-comprehensions" target="_blank">Section 10.23</a> & <a href="lab4.html">Lab 4</a></b><br>
 		<b>Available Libraries:  <i>none</i> </b></p>
 		<p><b>Two-Part Numbers</b></p>
 	
@@ -1711,20 +1711,20 @@ draw_tree(tess,100,"indigo","black")
 	<b>Reading: <a href="https://pandas.pydata.org/pandas-docs/stable/10min.html">10-mins to Pandas</a>, <br><a href="https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python#gs.hnyRaik">DC Pandas</a>, 
 	<a href="https://plotly.com/python/maps/">Plotly Maps</a>, <a href="lab9.html">Lab 9</a></b><br>
 	<b>Available Libraries: pandas, plotly</b></p>
-	<p><b>NYC Hospitals Map</b></p>
+	<p><b>NYC Subway Stations Map</b></p>
 
-	<p>New York City Open Data makes data for <a href="https://data.cityofnewyork.us/Health/NYC-Health-Hospitals-patient-care-locations-2011/f7b6-v6v3">NYC hospitals and health facilities</a> publicly available. A sample file, <a href="../files/nyc_hospitals.csv"><tt>nyc_hospitals.csv</tt></a> was downloaded and can be used to test your program.</p>
+	<p>New York State Open Data makes data for <a href="https://data.ny.gov/Transportation/MTA-Subway-Stations/39hk-dx4f">MTA subway stations</a> publicly available. A sample file, <a href="../files/nyc_subway_stations.csv"><tt>nyc_subway_stations.csv</tt></a> was downloaded and can be used to test your program.</p>
 
-	<p>Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file and the name of the output file, and creates a map with markers for all NYC health facilities from the input file. The markers should be colored by <tt>Facility Type</tt>, and when the user hovers over a marker, the <tt>Facility Name</tt> should appear in the pop-up box.</p>
+	<p>Using <a href="https://plotly.com/python/maps/">Plotly Express</a> (see <a href="lab9.html">Lab 9</a>), write a program that asks the user for the name of a CSV file and the name of the output file, and creates a map with markers for all subway stations from the input file. The markers should be colored by <tt>Borough</tt>, and when the user hovers over a marker, the <tt>Station Name</tt> should appear in the pop-up box.</p>
 
 	<p>To color markers by a column in plotly express, use the <tt>color</tt> parameter, e.g. <code>color="Column Name"</code>.</p>
 
 	<p>A sample run:
-<pre><code class="text">Enter CSV file name: nyc_hospitals.csv
-Enter output file: hospitalsMap.html</code></pre>
+<pre><code class="text">Enter CSV file name: nyc_subway_stations.csv
+Enter output file: subwayStationsMap.html</code></pre>
 	<p>which would produce the HTML file:
 
-	<p><iframe src="../files/hospitalsMap.html" width="800" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+	<p><iframe src="../files/subwayStationsMap.html" width="800" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
 </li>
@@ -1802,39 +1802,36 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 		<b>Reading:  Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>
 			& <a href="lab10.html">Lab 10</a></b><br>
 		<b>Available Libraries:  <i>none</i></b></p>
-		<p><b>Account Registration</b></p>
+		<p><b>Vanity Plate Request</b></p>
 
-<p>Write a program that asks the user to register an account by entering a valid username and a valid password. The program should keep prompting for each field until both are valid, displaying a specific error message for each failed condition.</p>
+<p>Write a program that asks the user to request a vanity license plate. The program should keep prompting until the requested plate is valid.  Each time an invalid plate is entered, the program should display exactly one error message:  the one from the sample output below that corresponds to the failed condition.</p>
 
-<p>A username is considered invalid if:</p>
+<p>A vanity plate is considered invalid if:</p>
 <ul>
-  <li>it has fewer than 4 characters, or</li>
-  <li>it matches one of the following reserved words (case-insensitive): <tt>admin</tt>, <tt>root</tt>, or <tt>guest</tt> (so <tt>Admin</tt>, <tt>ADMIN</tt>, <tt>ADMin</tt>, etc. are all invalid).</li>
+  <li>it has fewer than 2 characters or more than 8 characters, or</li>
+  <li>it contains anything other than letters and digits (no spaces, hyphens, or other punctuation), or</li>
+  <li>it does not contain at least one letter, or</li>
+  <li>it matches one of the following reserved words (case-insensitive): <tt>NYPD</tt>, <tt>FDNY</tt>, or <tt>MTA</tt> (so <tt>nypd</tt>, <tt>Nypd</tt>, <tt>NYpd</tt>, etc. are all invalid).</li>
 </ul>
 
-<p>A password is considered invalid if:</p>
-<ul>
-  <li>it has fewer than 6 characters, or</li>
-  <li>it does not contain at least one digit.</li>
-</ul>
+<p>Once the plate is valid, the program should print a confirmation message.</p>
 
-<p>Once both are valid, the program should print a confirmation message.</p>
-
-<p><b>Note:</b> To check whether a single character is a digit, you can use the <tt>isdigit()</tt> method. For example, <code>"3".isdigit()</code> returns <tt>True</tt>, while <code>"a".isdigit()</code> returns <tt>False</tt>. </p>
+<p><b>Note:</b> To check whether a string contains only letters and digits, you can use the <tt>isalnum()</tt> method. For example, <code>"AB12".isalnum()</code> returns <tt>True</tt>, while <code>"AB 12".isalnum()</code> returns <tt>False</tt>.  To check whether a single character is a letter, you can use the <tt>isalpha()</tt> method:  <code>"a".isalpha()</code> returns <tt>True</tt>, while <code>"4".isalpha()</code> returns <tt>False</tt>.</p>
 
 <h3>Sample Run</h3>
 <pre style = "background-color:lavender;width:450px">
-Enter a username: bob
-Invalid username: must be at least 4 characters.
-Enter a username: ADMIN
-Invalid username: reserved word.
-Enter a username: falco42
-Enter a password: pass
-Invalid password: must be at least 6 characters.
-Enter a password: password
-Invalid password: must contain at least one digit.
-Enter a password: pass42
-Account created for falco42.
+Enter a vanity plate: A
+Invalid plate: must be between 2 and 8 characters.
+Enter a vanity plate: GOMETS12345
+Invalid plate: must be between 2 and 8 characters.
+Enter a vanity plate: GO-METS
+Invalid plate: letters and digits only.
+Enter a vanity plate: 12345678
+Invalid plate: must contain at least one letter.
+Enter a vanity plate: nypd
+Invalid plate: reserved word.
+Enter a vanity plate: HUNTER1
+Plate HUNTER1 approved.
 </pre>
 
 </li>
