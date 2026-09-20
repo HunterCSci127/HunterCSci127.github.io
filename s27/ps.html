@@ -785,7 +785,7 @@ Cents: 2</code></pre>
 
 <li >
 	<p style="float:right;margin-left:10pt"><b>Due Date: 5pm, March 12</b><br>
-		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/ListComprehensions.html#list-comprehensions" target="_blank">Section 10.23</a>, <a href="https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html" target="_blank">Chapter 4</a> & <a href="lab4.html">Lab 4</a></b><br>
+		<b>Reading:  <a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/ListComprehensions.html#list-comprehensions" target="_blank">Section 10.23</a> & <a href="lab4.html">Lab 4</a></b><br>
 		<b>Available Libraries:  <i>none</i> </b></p>
 		<p><b>Two-Part Numbers</b></p>
 	
@@ -1802,39 +1802,36 @@ print(make_addr_df(hc_last, hc_first, hc_email))
 		<b>Reading:  Think CS: <a href="https://runestone.academy/ns/books/published//thinkcspy/MoreAboutIteration/toctree.html">Chapter 8</a>
 			& <a href="lab10.html">Lab 10</a></b><br>
 		<b>Available Libraries:  <i>none</i></b></p>
-		<p><b>Account Registration</b></p>
+		<p><b>Vanity Plate Request</b></p>
 
-<p>Write a program that asks the user to register an account by entering a valid username and a valid password. The program should keep prompting for each field until both are valid, displaying a specific error message for each failed condition.</p>
+<p>Write a program that asks the user to request a vanity license plate. The program should keep prompting until the requested plate is valid.  Each time an invalid plate is entered, the program should display exactly one error message:  the one from the sample output below that corresponds to the failed condition.</p>
 
-<p>A username is considered invalid if:</p>
+<p>A vanity plate is considered invalid if:</p>
 <ul>
-  <li>it has fewer than 4 characters, or</li>
-  <li>it matches one of the following reserved words (case-insensitive): <tt>admin</tt>, <tt>root</tt>, or <tt>guest</tt> (so <tt>Admin</tt>, <tt>ADMIN</tt>, <tt>ADMin</tt>, etc. are all invalid).</li>
+  <li>it has fewer than 2 characters or more than 8 characters, or</li>
+  <li>it contains anything other than letters and digits (no spaces, hyphens, or other punctuation), or</li>
+  <li>it does not contain at least one letter, or</li>
+  <li>it matches one of the following reserved words (case-insensitive): <tt>NYPD</tt>, <tt>FDNY</tt>, or <tt>MTA</tt> (so <tt>nypd</tt>, <tt>Nypd</tt>, <tt>NYpd</tt>, etc. are all invalid).</li>
 </ul>
 
-<p>A password is considered invalid if:</p>
-<ul>
-  <li>it has fewer than 6 characters, or</li>
-  <li>it does not contain at least one digit.</li>
-</ul>
+<p>Once the plate is valid, the program should print a confirmation message.</p>
 
-<p>Once both are valid, the program should print a confirmation message.</p>
-
-<p><b>Note:</b> To check whether a single character is a digit, you can use the <tt>isdigit()</tt> method. For example, <code>"3".isdigit()</code> returns <tt>True</tt>, while <code>"a".isdigit()</code> returns <tt>False</tt>. </p>
+<p><b>Note:</b> To check whether a string contains only letters and digits, you can use the <tt>isalnum()</tt> method. For example, <code>"AB12".isalnum()</code> returns <tt>True</tt>, while <code>"AB 12".isalnum()</code> returns <tt>False</tt>.  To check whether a single character is a letter, you can use the <tt>isalpha()</tt> method:  <code>"a".isalpha()</code> returns <tt>True</tt>, while <code>"4".isalpha()</code> returns <tt>False</tt>.</p>
 
 <h3>Sample Run</h3>
 <pre style = "background-color:lavender;width:450px">
-Enter a username: bob
-Invalid username: must be at least 4 characters.
-Enter a username: ADMIN
-Invalid username: reserved word.
-Enter a username: falco42
-Enter a password: pass
-Invalid password: must be at least 6 characters.
-Enter a password: password
-Invalid password: must contain at least one digit.
-Enter a password: pass42
-Account created for falco42.
+Enter a vanity plate: A
+Invalid plate: must be between 2 and 8 characters.
+Enter a vanity plate: GOMETS12345
+Invalid plate: must be between 2 and 8 characters.
+Enter a vanity plate: GO-METS
+Invalid plate: letters and digits only.
+Enter a vanity plate: 12345678
+Invalid plate: must contain at least one letter.
+Enter a vanity plate: nypd
+Invalid plate: reserved word.
+Enter a vanity plate: HUNTER1
+Plate HUNTER1 approved.
 </pre>
 
 </li>
