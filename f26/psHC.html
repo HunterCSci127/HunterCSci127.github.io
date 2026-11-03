@@ -485,6 +485,10 @@ if __name__ == "__main__":
   map shows opportunity at these locations, not spread across the tract's actual area. A large, sparsely
   populated tract and a small, dense one both appear as a single dot.
 
+  <p>For example, here is the map for Brooklyn. Hover over a marker to see the tract ID and its outcome:</p>
+  <iframe src="../files/hc09_brooklyn_map.html" width="600" height="400" frameborder="0"
+    marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
   <p><strong>To do this:</strong></p>
 
 <p>Write a Python program that asks the user for two inputs, in this order:</p>
@@ -496,7 +500,7 @@ if __name__ == "__main__":
 <p>Your program should then:</p>
 <ul>
   <li>Read the merged dataset <code>nyc_opportunity.csv</code> you saved in HC 6, and filter it to the borough entered. Use the borough the user enters; don't hard-code your own. Your program will be tested on boroughs other than yours.</li>
-  <li>Create a Plotly Express scatter map (<code>px.scatter_mapbox</code>) with one marker per tract, using <code>LATITUDE</code> and <code>LONGITUDE</code> for position and <code>kfr_pooled_pooled_p25</code> for color. Use a color scale that makes high and low values visually distinct. You may drop tracts that have no <code>kfr_pooled_pooled_p25</code> value.</li>
+  <li>Create a Plotly Express scatter map (<code>px.scatter_map</code>) with one marker per tract, using <code>LATITUDE</code> and <code>LONGITUDE</code> for position and <code>kfr_pooled_pooled_p25</code> for color. Use a color scale that makes high and low values visually distinct. You may drop tracts that have no <code>kfr_pooled_pooled_p25</code> value.</li>
   <li>Add hover text so that mousing over a marker shows the tract ID (the <code>tract</code> column) and the outcome value.</li>
   <li>Save the map with <code>fig.write_html()</code> using the output filename entered (you will embed it in your webpage in HC 12).</li>
 </ul>
@@ -504,7 +508,6 @@ if __name__ == "__main__":
 <p>Run your program on your own borough to make your map.</p>
 
 <p><strong>Group submission:</strong> Submit your <code>.py</code> file to <tt>HC9 - Program</tt> on <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. It must begin with a comment that includes your name and email.</p>
-
   <hr>
 
   <li><b>HC 10: Mobility Simulation</b>
