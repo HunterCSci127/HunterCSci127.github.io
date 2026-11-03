@@ -485,22 +485,25 @@ if __name__ == "__main__":
   map shows opportunity at these locations, not spread across the tract's actual area. A large, sparsely
   populated tract and a small, dense one both appear as a single dot.
 
-  <p>To do this:
-  <ul>
-    <li>Filter the merged DataFrame to your borough.</li>
-    <li>Create a Plotly Express scatter map (<tt>px.scatter_mapbox</tt>) with one marker per tract,
-        using <tt>LATITUDE</tt> and <tt>LONGITUDE</tt> for position and <tt>kfr_pooled_pooled_p25</tt>
-        for color. Use a color scale that makes high and low values visually distinct.</li>
-    <li>Add hover text so that mousing over a marker shows the tract ID and the outcome value.</li>
-    <li>Save the map as an HTML file (you will embed it in your webpage in HC 12).</li>
-  </ul>
+  <p><strong>To do this:</strong></p>
 
-  <p>Write a short paragraph interpreting the geographic pattern. Does opportunity cluster in particular
-  parts of your borough? Does the map match what you found in your HC 4 research?
+<p>Write a Python program that asks the user for two inputs, in this order:</p>
+<ol>
+  <li>The name of a borough (for example, <code>Manhattan</code> or <code>Staten Island</code>).</li>
+  <li>The name of the output file to save the map in (for example, <code>manhattan_map.html</code>).</li>
+</ol>
 
-  <p><b>Individual submission:</b> Submit a .pdf containing your Python code, a screenshot of the map,
-  and your written interpretation to the assignment <tt>HC9 - Mapping Opportunity with Plotly</tt>
-  in the honors section of <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+<p>Your program should then:</p>
+<ul>
+  <li>Read the merged dataset <code>nyc_opportunity.csv</code> you saved in HC 6, and filter it to the borough entered. Use the borough the user enters; don't hard-code your own. Your program will be tested on boroughs other than yours.</li>
+  <li>Create a Plotly Express scatter map (<code>px.scatter_mapbox</code>) with one marker per tract, using <code>LATITUDE</code> and <code>LONGITUDE</code> for position and <code>kfr_pooled_pooled_p25</code> for color. Use a color scale that makes high and low values visually distinct. You may drop tracts that have no <code>kfr_pooled_pooled_p25</code> value.</li>
+  <li>Add hover text so that mousing over a marker shows the tract ID (the <code>tract</code> column) and the outcome value.</li>
+  <li>Save the map with <code>fig.write_html()</code> using the output filename entered (you will embed it in your webpage in HC 12).</li>
+</ul>
+
+<p>Run your program on your own borough to make your map.</p>
+
+<p><strong>Group submission:</strong> Submit your <code>.py</code> file to <tt>HC9 - Program</tt> on <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>. It must begin with a comment that includes your name and email.</p>
 
   <hr>
 
