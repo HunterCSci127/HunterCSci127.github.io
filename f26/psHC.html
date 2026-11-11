@@ -518,26 +518,45 @@ if __name__ == "__main__":
   simulation that models this variability and uses random numbers to explore what outcomes look like
   for a large number of hypothetical children from different neighborhoods.
 
+  <p>Your program does not read the data file this time. It asks the user for the numbers it needs,
+  which means you can run it on any three tracts without changing the code.
+
   <p>To do this:
   <ul>
-    <li>Choose three Census tracts from your borough: one with a high mobility score, one with a low
-        score, and one in the middle.</li>
-    <li>For each tract, use <tt>random.gauss(mean, std)</tt> to simulate the adult income rank of
-        10,000 hypothetical children, using <tt>kfr_pooled_pooled_p25</tt> as the mean and
-        <tt>kfr_pooled_pooled_p25_se</tt> as the standard deviation. Clip simulated values to the
-        range [0, 1] since income ranks are bounded.</li>
-    <li>Plot the three distributions as overlapping histograms on the same figure, with a different
-        color for each tract.</li>
-    <li>Compute and report: what fraction of simulated children from the low-opportunity tract
-        exceed the mean outcome of the high-opportunity tract?</li>
+    <li>Ask the user for six numbers, in this order: the mobility score and the standard deviation of
+        a <b>high</b> tract, then of a <b>middle</b> tract, then of a <b>low</b> tract. Read each one
+        with <tt>input()</tt> and convert it with <tt>float()</tt>, since <tt>input()</tt> always
+        gives you a string.</li>
+    <li>Test your program with real numbers from your own borough. Pick three of its tracts, one with
+        a high mobility score, one with a low one, and one in between, use each tract's
+        <tt>kfr_pooled_pooled_p25</tt> as its  mobility score and its
+        <tt>kfr_pooled_pooled_p25_se</tt> as standard deviation. These are the numbers you will
+        want to run your program with for your final presentation, so choose tracts that say
+        something about your borough.</li>
+    <li>For each of the three tracts, simulate 10,000 hypothetical children.. Each child is one call
+        to <tt>random.gauss(mean, std)</tt>, using that tract's mobility score as the mean and its
+        standard deviation as the standard deviation, and the number it returns is that child's adult
+        income rank. Collect the 10,000  results for a tract in a list.<>
+    <li><b>Clip each simulated value to the range [0, 1].</b> An income rank is a percentile: 0 is the
+        bottom of the national income distribution and 1 is the top, so there is no such thing as a
+        rank of -0.08 or 1.12. But <tt>random.gauss</tt> does not know that. It can return any number,
+        and the larger a tract's standard deviation is, the more often it returns one outside the
+        range. Clipping means replacing any such value with the nearest value that is allowed. Right
+        after you draw a rank, and before you add it to your list, check it: if it is less than 0, set
+        it to 0; if it is greater than 1, set it to 1. 
+    <li>Plot the three sets of simulated outcomes as overlapping histograms on the same figure, with a
+        different color for each tract.</li>
+    <li>Compute and report what fraction of the simulated children from the low tract do better than
+        the <i>average</i> simulated child from the high tract. Do it in two steps. First find that
+        average of the **high tract's** simulated outcomes. Then count
+        how many of the **low tract's** 10,000 simulated outcomes are greater than that average, and
+        divide the count by 10,000. Print out the two results indicating what they are. for example
+        <tt>Fraction above the high tract's mean: 0.0123</tt>.</li>
   </ul>
 
-  <p>Write a short paragraph reflecting on what the simulation reveals. What does overlap between the
-  distributions mean? What would it mean if the distributions did not overlap at all?
-
-  <p><b>Individual submission:</b> Submit a .pdf containing your Python code, histogram, and written reflection
-  to the assignment <tt>HC10 - Mobility Simulation</tt> in the honors section of
-  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>.
+  
+  <p><b>Group submission:</b> Submit your Python program as a <tt>.py</tt> file to <tt>HC10 - Mobility Simulation</tt> on
+  <a href="https://www.gradescope.com/courses/1333153">Gradescope</a>; it must begin with a comment that includes your name and email. 
 
   <hr>
 
